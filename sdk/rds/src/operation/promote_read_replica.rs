@@ -126,7 +126,7 @@ impl PromoteReadReplicaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PromoteReadReplica`.
+/// Orchestration and serialization glue logic for `PromoteReadReplica`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

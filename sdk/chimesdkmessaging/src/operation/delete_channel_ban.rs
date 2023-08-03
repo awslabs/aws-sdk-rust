@@ -157,7 +157,7 @@ impl DeleteChannelBanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteChannelBan`.
+/// Orchestration and serialization glue logic for `DeleteChannelBan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

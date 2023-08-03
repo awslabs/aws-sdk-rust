@@ -129,7 +129,7 @@ impl ListAppInputSourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppInputSources`.
+/// Orchestration and serialization glue logic for `ListAppInputSources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

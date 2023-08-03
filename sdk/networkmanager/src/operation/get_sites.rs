@@ -168,7 +168,7 @@ impl GetSitesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSites`.
+/// Orchestration and serialization glue logic for `GetSites`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CancelCapacityReservationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelCapacityReservation`.
+/// Orchestration and serialization glue logic for `CancelCapacityReservation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

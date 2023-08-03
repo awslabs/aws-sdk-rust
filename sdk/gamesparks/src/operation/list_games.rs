@@ -134,7 +134,7 @@ impl ListGamesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGames`.
+/// Orchestration and serialization glue logic for `ListGames`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAlias`.
+/// Orchestration and serialization glue logic for `DescribeAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

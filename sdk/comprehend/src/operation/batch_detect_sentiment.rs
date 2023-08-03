@@ -133,7 +133,7 @@ impl BatchDetectSentimentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDetectSentiment`.
+/// Orchestration and serialization glue logic for `BatchDetectSentiment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

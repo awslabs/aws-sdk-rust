@@ -131,7 +131,7 @@ impl DeleteAppInputSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppInputSource`.
+/// Orchestration and serialization glue logic for `DeleteAppInputSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

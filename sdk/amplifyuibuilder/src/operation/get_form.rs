@@ -176,7 +176,7 @@ impl GetFormInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetForm`.
+/// Orchestration and serialization glue logic for `GetForm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

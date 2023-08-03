@@ -170,7 +170,7 @@ impl GetCaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCase`.
+/// Orchestration and serialization glue logic for `GetCase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

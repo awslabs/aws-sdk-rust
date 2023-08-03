@@ -127,7 +127,7 @@ impl AssociateSourceServersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateSourceServers`.
+/// Orchestration and serialization glue logic for `AssociateSourceServers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

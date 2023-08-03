@@ -170,7 +170,7 @@ impl UpdateThemePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateThemePermissions`.
+/// Orchestration and serialization glue logic for `UpdateThemePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl AddBridgeSourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddBridgeSources`.
+/// Orchestration and serialization glue logic for `AddBridgeSources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

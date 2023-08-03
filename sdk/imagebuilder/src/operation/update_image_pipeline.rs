@@ -132,7 +132,7 @@ impl UpdateImagePipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateImagePipeline`.
+/// Orchestration and serialization glue logic for `UpdateImagePipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

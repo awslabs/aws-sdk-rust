@@ -156,7 +156,7 @@ impl DeleteProgramInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProgram`.
+/// Orchestration and serialization glue logic for `DeleteProgram`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

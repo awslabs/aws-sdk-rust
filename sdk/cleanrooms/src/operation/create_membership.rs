@@ -126,7 +126,7 @@ impl CreateMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMembership`.
+/// Orchestration and serialization glue logic for `CreateMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

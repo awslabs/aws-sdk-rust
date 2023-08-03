@@ -138,7 +138,7 @@ impl ListMediaCapturePipelinesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMediaCapturePipelines`.
+/// Orchestration and serialization glue logic for `ListMediaCapturePipelines`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

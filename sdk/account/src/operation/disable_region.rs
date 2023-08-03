@@ -126,7 +126,7 @@ impl DisableRegionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableRegion`.
+/// Orchestration and serialization glue logic for `DisableRegion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

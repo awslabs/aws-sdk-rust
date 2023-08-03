@@ -150,7 +150,7 @@ impl ListIntentStageMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIntentStageMetrics`.
+/// Orchestration and serialization glue logic for `ListIntentStageMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

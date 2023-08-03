@@ -126,7 +126,7 @@ impl ReleaseIpamPoolAllocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReleaseIpamPoolAllocation`.
+/// Orchestration and serialization glue logic for `ReleaseIpamPoolAllocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

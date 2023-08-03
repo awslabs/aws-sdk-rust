@@ -131,7 +131,7 @@ impl GetBlueprintsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBlueprints`.
+/// Orchestration and serialization glue logic for `GetBlueprints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

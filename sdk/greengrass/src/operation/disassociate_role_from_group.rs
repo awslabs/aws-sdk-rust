@@ -136,7 +136,7 @@ impl DisassociateRoleFromGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateRoleFromGroup`.
+/// Orchestration and serialization glue logic for `DisassociateRoleFromGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl CreateFindingsFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFindingsFilter`.
+/// Orchestration and serialization glue logic for `CreateFindingsFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

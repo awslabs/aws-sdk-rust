@@ -113,7 +113,7 @@ impl GetSupportedResourceTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSupportedResourceTypes`.
+/// Orchestration and serialization glue logic for `GetSupportedResourceTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreatePublicVirtualInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePublicVirtualInterface`.
+/// Orchestration and serialization glue logic for `CreatePublicVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

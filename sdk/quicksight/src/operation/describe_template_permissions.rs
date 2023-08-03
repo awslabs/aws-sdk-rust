@@ -156,7 +156,7 @@ impl DescribeTemplatePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTemplatePermissions`.
+/// Orchestration and serialization glue logic for `DescribeTemplatePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

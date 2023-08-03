@@ -128,7 +128,7 @@ impl ListStreamSessionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStreamSessions`.
+/// Orchestration and serialization glue logic for `ListStreamSessions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

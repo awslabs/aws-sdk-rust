@@ -125,7 +125,7 @@ impl TagRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagRole`.
+/// Orchestration and serialization glue logic for `TagRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

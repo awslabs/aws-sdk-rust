@@ -156,7 +156,7 @@ impl DescribePublishingDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePublishingDestination`.
+/// Orchestration and serialization glue logic for `DescribePublishingDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

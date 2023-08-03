@@ -152,7 +152,7 @@ impl GetPropertyValueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPropertyValue`.
+/// Orchestration and serialization glue logic for `GetPropertyValue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

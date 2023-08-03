@@ -126,7 +126,7 @@ impl DescribeAggregateIdFormatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAggregateIdFormat`.
+/// Orchestration and serialization glue logic for `DescribeAggregateIdFormat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

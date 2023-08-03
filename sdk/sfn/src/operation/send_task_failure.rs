@@ -131,7 +131,7 @@ impl SendTaskFailureInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendTaskFailure`.
+/// Orchestration and serialization glue logic for `SendTaskFailure`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

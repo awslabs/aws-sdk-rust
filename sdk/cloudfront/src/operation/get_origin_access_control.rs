@@ -132,7 +132,7 @@ impl GetOriginAccessControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOriginAccessControl`.
+/// Orchestration and serialization glue logic for `GetOriginAccessControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

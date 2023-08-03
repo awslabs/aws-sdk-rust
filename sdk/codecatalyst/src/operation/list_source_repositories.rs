@@ -157,7 +157,7 @@ impl ListSourceRepositoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSourceRepositories`.
+/// Orchestration and serialization glue logic for `ListSourceRepositories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

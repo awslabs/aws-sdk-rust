@@ -179,7 +179,7 @@ impl SetVaultAccessPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetVaultAccessPolicy`.
+/// Orchestration and serialization glue logic for `SetVaultAccessPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

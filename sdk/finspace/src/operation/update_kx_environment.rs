@@ -152,7 +152,7 @@ impl UpdateKxEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateKxEnvironment`.
+/// Orchestration and serialization glue logic for `UpdateKxEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

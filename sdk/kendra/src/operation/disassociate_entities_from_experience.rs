@@ -116,7 +116,7 @@ impl DisassociateEntitiesFromExperienceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateEntitiesFromExperience`.
+/// Orchestration and serialization glue logic for `DisassociateEntitiesFromExperience`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

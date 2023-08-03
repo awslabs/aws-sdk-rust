@@ -125,7 +125,7 @@ impl CancelServicePipelineDeploymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelServicePipelineDeployment`.
+/// Orchestration and serialization glue logic for `CancelServicePipelineDeployment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

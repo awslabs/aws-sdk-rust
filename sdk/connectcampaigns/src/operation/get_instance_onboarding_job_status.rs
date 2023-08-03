@@ -130,7 +130,7 @@ impl GetInstanceOnboardingJobStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInstanceOnboardingJobStatus`.
+/// Orchestration and serialization glue logic for `GetInstanceOnboardingJobStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

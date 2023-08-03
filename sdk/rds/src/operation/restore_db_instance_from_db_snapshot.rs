@@ -120,7 +120,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreDBInstanceFromDBSnapshot`.
+/// Orchestration and serialization glue logic for `RestoreDBInstanceFromDBSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

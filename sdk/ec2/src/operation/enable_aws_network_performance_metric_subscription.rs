@@ -111,7 +111,7 @@ impl EnableAwsNetworkPerformanceMetricSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableAwsNetworkPerformanceMetricSubscription`.
+/// Orchestration and serialization glue logic for `EnableAwsNetworkPerformanceMetricSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

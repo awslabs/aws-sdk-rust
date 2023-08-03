@@ -131,7 +131,7 @@ impl GetBucketsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBuckets`.
+/// Orchestration and serialization glue logic for `GetBuckets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

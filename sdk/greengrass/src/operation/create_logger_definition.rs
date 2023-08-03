@@ -128,7 +128,7 @@ impl CreateLoggerDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLoggerDefinition`.
+/// Orchestration and serialization glue logic for `CreateLoggerDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl GetDeploymentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDeployments`.
+/// Orchestration and serialization glue logic for `GetDeployments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

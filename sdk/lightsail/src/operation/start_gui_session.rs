@@ -131,7 +131,7 @@ impl StartGuiSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartGUISession`.
+/// Orchestration and serialization glue logic for `StartGUISession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

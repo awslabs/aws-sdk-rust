@@ -131,7 +131,7 @@ impl DeleteAppVersionResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppVersionResource`.
+/// Orchestration and serialization glue logic for `DeleteAppVersionResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

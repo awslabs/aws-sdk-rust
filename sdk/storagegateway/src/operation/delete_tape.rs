@@ -131,7 +131,7 @@ impl DeleteTapeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTape`.
+/// Orchestration and serialization glue logic for `DeleteTape`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

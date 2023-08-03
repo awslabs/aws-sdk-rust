@@ -144,7 +144,7 @@ impl UploadDocumentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UploadDocuments`.
+/// Orchestration and serialization glue logic for `UploadDocuments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

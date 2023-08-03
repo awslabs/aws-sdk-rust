@@ -137,7 +137,7 @@ impl CreateGatewayGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateGatewayGroup`.
+/// Orchestration and serialization glue logic for `CreateGatewayGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

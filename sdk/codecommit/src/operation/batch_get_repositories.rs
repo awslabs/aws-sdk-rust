@@ -133,7 +133,7 @@ impl BatchGetRepositoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetRepositories`.
+/// Orchestration and serialization glue logic for `BatchGetRepositories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

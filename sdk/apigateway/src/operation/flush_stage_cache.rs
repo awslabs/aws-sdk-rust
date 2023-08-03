@@ -160,7 +160,7 @@ impl FlushStageCacheInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `FlushStageCache`.
+/// Orchestration and serialization glue logic for `FlushStageCache`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

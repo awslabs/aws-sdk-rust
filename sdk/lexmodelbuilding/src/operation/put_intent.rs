@@ -146,7 +146,7 @@ impl PutIntentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutIntent`.
+/// Orchestration and serialization glue logic for `PutIntent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

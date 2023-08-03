@@ -116,7 +116,7 @@ impl DeleteColumnStatisticsForPartitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteColumnStatisticsForPartition`.
+/// Orchestration and serialization glue logic for `DeleteColumnStatisticsForPartition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

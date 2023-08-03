@@ -126,7 +126,7 @@ impl GetResourcesSummaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResourcesSummary`.
+/// Orchestration and serialization glue logic for `GetResourcesSummary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

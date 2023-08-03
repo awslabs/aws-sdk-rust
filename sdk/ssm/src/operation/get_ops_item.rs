@@ -131,7 +131,7 @@ impl GetOpsItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOpsItem`.
+/// Orchestration and serialization glue logic for `GetOpsItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

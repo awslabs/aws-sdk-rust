@@ -126,7 +126,7 @@ impl ListOrdersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOrders`.
+/// Orchestration and serialization glue logic for `ListOrders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

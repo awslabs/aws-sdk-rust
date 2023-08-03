@@ -132,7 +132,7 @@ impl RegisterDelegatedAdministratorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterDelegatedAdministrator`.
+/// Orchestration and serialization glue logic for `RegisterDelegatedAdministrator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

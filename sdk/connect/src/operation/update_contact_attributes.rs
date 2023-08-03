@@ -126,7 +126,7 @@ impl UpdateContactAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContactAttributes`.
+/// Orchestration and serialization glue logic for `UpdateContactAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

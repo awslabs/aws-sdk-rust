@@ -193,7 +193,7 @@ impl PutObjectTaggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutObjectTagging`.
+/// Orchestration and serialization glue logic for `PutObjectTagging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

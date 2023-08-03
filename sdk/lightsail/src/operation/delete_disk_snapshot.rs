@@ -133,7 +133,7 @@ impl DeleteDiskSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDiskSnapshot`.
+/// Orchestration and serialization glue logic for `DeleteDiskSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

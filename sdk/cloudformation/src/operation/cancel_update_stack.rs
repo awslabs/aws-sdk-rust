@@ -126,7 +126,7 @@ impl CancelUpdateStackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelUpdateStack`.
+/// Orchestration and serialization glue logic for `CancelUpdateStack`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

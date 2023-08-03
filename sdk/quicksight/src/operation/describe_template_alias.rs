@@ -176,7 +176,7 @@ impl DescribeTemplateAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTemplateAlias`.
+/// Orchestration and serialization glue logic for `DescribeTemplateAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

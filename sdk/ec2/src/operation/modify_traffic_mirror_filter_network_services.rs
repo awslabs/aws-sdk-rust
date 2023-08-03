@@ -111,7 +111,7 @@ impl ModifyTrafficMirrorFilterNetworkServicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyTrafficMirrorFilterNetworkServices`.
+/// Orchestration and serialization glue logic for `ModifyTrafficMirrorFilterNetworkServices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

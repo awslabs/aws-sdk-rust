@@ -126,7 +126,7 @@ impl GetEnrollmentStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEnrollmentStatus`.
+/// Orchestration and serialization glue logic for `GetEnrollmentStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

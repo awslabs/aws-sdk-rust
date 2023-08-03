@@ -167,7 +167,7 @@ impl UpdateSecurityProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSecurityProfile`.
+/// Orchestration and serialization glue logic for `UpdateSecurityProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

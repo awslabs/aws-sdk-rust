@@ -127,7 +127,7 @@ impl DescribeAcceleratorOfferingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAcceleratorOfferings`.
+/// Orchestration and serialization glue logic for `DescribeAcceleratorOfferings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

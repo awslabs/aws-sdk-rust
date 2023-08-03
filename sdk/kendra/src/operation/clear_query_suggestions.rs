@@ -131,7 +131,7 @@ impl ClearQuerySuggestionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ClearQuerySuggestions`.
+/// Orchestration and serialization glue logic for `ClearQuerySuggestions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

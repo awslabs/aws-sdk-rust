@@ -157,7 +157,7 @@ impl SetDataRetrievalPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetDataRetrievalPolicy`.
+/// Orchestration and serialization glue logic for `SetDataRetrievalPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

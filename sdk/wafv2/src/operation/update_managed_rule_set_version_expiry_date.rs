@@ -116,7 +116,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateManagedRuleSetVersionExpiryDate`.
+/// Orchestration and serialization glue logic for `UpdateManagedRuleSetVersionExpiryDate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

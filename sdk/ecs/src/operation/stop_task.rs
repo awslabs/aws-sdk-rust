@@ -130,7 +130,7 @@ impl StopTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopTask`.
+/// Orchestration and serialization glue logic for `StopTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

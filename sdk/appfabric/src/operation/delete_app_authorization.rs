@@ -150,7 +150,7 @@ impl DeleteAppAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppAuthorization`.
+/// Orchestration and serialization glue logic for `DeleteAppAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

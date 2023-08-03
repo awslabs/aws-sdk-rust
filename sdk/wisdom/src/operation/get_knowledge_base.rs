@@ -136,7 +136,7 @@ impl GetKnowledgeBaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetKnowledgeBase`.
+/// Orchestration and serialization glue logic for `GetKnowledgeBase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

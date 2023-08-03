@@ -133,7 +133,7 @@ impl GetMobileSdkReleaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMobileSdkRelease`.
+/// Orchestration and serialization glue logic for `GetMobileSdkRelease`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

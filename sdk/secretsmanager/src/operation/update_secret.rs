@@ -135,7 +135,7 @@ impl UpdateSecretInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSecret`.
+/// Orchestration and serialization glue logic for `UpdateSecret`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

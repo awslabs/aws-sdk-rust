@@ -156,7 +156,7 @@ impl GetConfigurationProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConfigurationProfile`.
+/// Orchestration and serialization glue logic for `GetConfigurationProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

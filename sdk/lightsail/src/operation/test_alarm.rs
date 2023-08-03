@@ -131,7 +131,7 @@ impl TestAlarmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestAlarm`.
+/// Orchestration and serialization glue logic for `TestAlarm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

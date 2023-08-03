@@ -131,7 +131,7 @@ impl ListTopicsDetectionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTopicsDetectionJobs`.
+/// Orchestration and serialization glue logic for `ListTopicsDetectionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

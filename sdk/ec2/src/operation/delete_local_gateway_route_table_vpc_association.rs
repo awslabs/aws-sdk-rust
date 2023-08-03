@@ -111,7 +111,7 @@ impl DeleteLocalGatewayRouteTableVpcAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLocalGatewayRouteTableVpcAssociation`.
+/// Orchestration and serialization glue logic for `DeleteLocalGatewayRouteTableVpcAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

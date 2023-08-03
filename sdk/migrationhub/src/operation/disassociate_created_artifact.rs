@@ -131,7 +131,7 @@ impl DisassociateCreatedArtifactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateCreatedArtifact`.
+/// Orchestration and serialization glue logic for `DisassociateCreatedArtifact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

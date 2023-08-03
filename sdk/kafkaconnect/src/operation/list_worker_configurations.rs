@@ -133,7 +133,7 @@ impl ListWorkerConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWorkerConfigurations`.
+/// Orchestration and serialization glue logic for `ListWorkerConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

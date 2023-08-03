@@ -131,7 +131,7 @@ impl DescribeEventAggregatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEventAggregates`.
+/// Orchestration and serialization glue logic for `DescribeEventAggregates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -169,7 +169,7 @@ impl PutBucketTaggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketTagging`.
+/// Orchestration and serialization glue logic for `PutBucketTagging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

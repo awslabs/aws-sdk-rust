@@ -127,7 +127,7 @@ impl PutScheduledUpdateGroupActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutScheduledUpdateGroupAction`.
+/// Orchestration and serialization glue logic for `PutScheduledUpdateGroupAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl GetAppMonitorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAppMonitor`.
+/// Orchestration and serialization glue logic for `GetAppMonitor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

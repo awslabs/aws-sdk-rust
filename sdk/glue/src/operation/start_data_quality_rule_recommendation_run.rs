@@ -116,7 +116,7 @@ impl StartDataQualityRuleRecommendationRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDataQualityRuleRecommendationRun`.
+/// Orchestration and serialization glue logic for `StartDataQualityRuleRecommendationRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl UpdateMacieSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMacieSession`.
+/// Orchestration and serialization glue logic for `UpdateMacieSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

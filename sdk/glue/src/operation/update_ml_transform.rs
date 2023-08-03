@@ -131,7 +131,7 @@ impl UpdateMlTransformInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMLTransform`.
+/// Orchestration and serialization glue logic for `UpdateMLTransform`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -160,7 +160,7 @@ impl GetGatewayResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGatewayResponse`.
+/// Orchestration and serialization glue logic for `GetGatewayResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

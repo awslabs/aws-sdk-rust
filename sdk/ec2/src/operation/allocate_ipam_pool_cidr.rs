@@ -130,7 +130,7 @@ impl AllocateIpamPoolCidrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AllocateIpamPoolCidr`.
+/// Orchestration and serialization glue logic for `AllocateIpamPoolCidr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

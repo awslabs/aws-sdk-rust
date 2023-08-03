@@ -152,7 +152,7 @@ impl PublishLayerVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PublishLayerVersion`.
+/// Orchestration and serialization glue logic for `PublishLayerVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -156,7 +156,7 @@ impl GetSourceRepositoryCloneUrlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSourceRepositoryCloneUrls`.
+/// Orchestration and serialization glue logic for `GetSourceRepositoryCloneUrls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

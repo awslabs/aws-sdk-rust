@@ -126,7 +126,7 @@ impl ModifyVpnTunnelCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyVpnTunnelCertificate`.
+/// Orchestration and serialization glue logic for `ModifyVpnTunnelCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

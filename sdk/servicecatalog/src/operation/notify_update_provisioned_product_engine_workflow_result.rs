@@ -120,7 +120,7 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `NotifyUpdateProvisionedProductEngineWorkflowResult`.
+/// Orchestration and serialization glue logic for `NotifyUpdateProvisionedProductEngineWorkflowResult`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

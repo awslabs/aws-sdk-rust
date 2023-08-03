@@ -131,7 +131,7 @@ impl PutRecommendationPreferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutRecommendationPreferences`.
+/// Orchestration and serialization glue logic for `PutRecommendationPreferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

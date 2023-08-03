@@ -155,7 +155,7 @@ impl GetApplicationVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApplicationVersion`.
+/// Orchestration and serialization glue logic for `GetApplicationVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

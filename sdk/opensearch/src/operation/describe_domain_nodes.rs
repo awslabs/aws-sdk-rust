@@ -136,7 +136,7 @@ impl DescribeDomainNodesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDomainNodes`.
+/// Orchestration and serialization glue logic for `DescribeDomainNodes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

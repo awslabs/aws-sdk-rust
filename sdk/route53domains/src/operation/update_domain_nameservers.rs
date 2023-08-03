@@ -131,7 +131,7 @@ impl UpdateDomainNameserversInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDomainNameservers`.
+/// Orchestration and serialization glue logic for `UpdateDomainNameservers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

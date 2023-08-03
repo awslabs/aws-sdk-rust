@@ -113,7 +113,7 @@ impl GetServiceRoleForAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceRoleForAccount`.
+/// Orchestration and serialization glue logic for `GetServiceRoleForAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

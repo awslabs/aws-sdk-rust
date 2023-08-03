@@ -127,7 +127,7 @@ impl ListDirectoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDirectories`.
+/// Orchestration and serialization glue logic for `ListDirectories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

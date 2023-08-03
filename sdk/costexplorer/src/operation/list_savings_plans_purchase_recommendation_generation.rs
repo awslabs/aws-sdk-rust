@@ -116,7 +116,7 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSavingsPlansPurchaseRecommendationGeneration`.
+/// Orchestration and serialization glue logic for `ListSavingsPlansPurchaseRecommendationGeneration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

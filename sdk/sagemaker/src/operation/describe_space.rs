@@ -131,7 +131,7 @@ impl DescribeSpaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSpace`.
+/// Orchestration and serialization glue logic for `DescribeSpace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

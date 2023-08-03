@@ -131,7 +131,7 @@ impl GetAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAlias`.
+/// Orchestration and serialization glue logic for `GetAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

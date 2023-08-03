@@ -159,7 +159,7 @@ impl ListDevEnvironmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDevEnvironments`.
+/// Orchestration and serialization glue logic for `ListDevEnvironments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

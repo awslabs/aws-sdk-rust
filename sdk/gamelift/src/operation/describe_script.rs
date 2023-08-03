@@ -131,7 +131,7 @@ impl DescribeScriptInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeScript`.
+/// Orchestration and serialization glue logic for `DescribeScript`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

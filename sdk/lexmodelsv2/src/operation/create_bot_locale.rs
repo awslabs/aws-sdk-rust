@@ -170,7 +170,7 @@ impl CreateBotLocaleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBotLocale`.
+/// Orchestration and serialization glue logic for `CreateBotLocale`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

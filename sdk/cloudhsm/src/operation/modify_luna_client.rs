@@ -131,7 +131,7 @@ impl ModifyLunaClientInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyLunaClient`.
+/// Orchestration and serialization glue logic for `ModifyLunaClient`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

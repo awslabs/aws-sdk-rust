@@ -199,7 +199,7 @@ impl GetUsageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUsage`.
+/// Orchestration and serialization glue logic for `GetUsage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

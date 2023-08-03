@@ -136,7 +136,7 @@ impl DeleteGlobalNetworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGlobalNetwork`.
+/// Orchestration and serialization glue logic for `DeleteGlobalNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl StopGuiSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopGUISession`.
+/// Orchestration and serialization glue logic for `StopGUISession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

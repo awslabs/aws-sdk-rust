@@ -175,7 +175,7 @@ impl GetCampaignActivitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCampaignActivities`.
+/// Orchestration and serialization glue logic for `GetCampaignActivities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl GetCurrentUserDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCurrentUserData`.
+/// Orchestration and serialization glue logic for `GetCurrentUserData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

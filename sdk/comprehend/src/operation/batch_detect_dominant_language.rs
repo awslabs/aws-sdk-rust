@@ -131,7 +131,7 @@ impl BatchDetectDominantLanguageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDetectDominantLanguage`.
+/// Orchestration and serialization glue logic for `BatchDetectDominantLanguage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

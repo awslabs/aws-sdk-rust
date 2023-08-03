@@ -169,7 +169,7 @@ impl ListReportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListReportJobs`.
+/// Orchestration and serialization glue logic for `ListReportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

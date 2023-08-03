@@ -150,7 +150,7 @@ impl ResetUserPasswordInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetUserPassword`.
+/// Orchestration and serialization glue logic for `ResetUserPassword`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

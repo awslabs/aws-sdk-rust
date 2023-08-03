@@ -146,7 +146,7 @@ impl UpdatePortalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePortal`.
+/// Orchestration and serialization glue logic for `UpdatePortal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

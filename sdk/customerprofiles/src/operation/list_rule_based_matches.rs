@@ -161,7 +161,7 @@ impl ListRuleBasedMatchesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRuleBasedMatches`.
+/// Orchestration and serialization glue logic for `ListRuleBasedMatches`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

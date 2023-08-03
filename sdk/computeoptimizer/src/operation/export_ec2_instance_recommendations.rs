@@ -125,7 +125,7 @@ impl ExportEc2InstanceRecommendationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportEC2InstanceRecommendations`.
+/// Orchestration and serialization glue logic for `ExportEC2InstanceRecommendations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

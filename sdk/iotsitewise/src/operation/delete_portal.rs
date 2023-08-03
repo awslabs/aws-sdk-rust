@@ -155,7 +155,7 @@ impl DeletePortalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePortal`.
+/// Orchestration and serialization glue logic for `DeletePortal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

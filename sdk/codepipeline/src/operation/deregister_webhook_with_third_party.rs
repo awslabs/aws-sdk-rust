@@ -125,7 +125,7 @@ impl DeregisterWebhookWithThirdPartyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterWebhookWithThirdParty`.
+/// Orchestration and serialization glue logic for `DeregisterWebhookWithThirdParty`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

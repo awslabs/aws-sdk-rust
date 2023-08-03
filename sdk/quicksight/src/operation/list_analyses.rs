@@ -161,7 +161,7 @@ impl ListAnalysesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnalyses`.
+/// Orchestration and serialization glue logic for `ListAnalyses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

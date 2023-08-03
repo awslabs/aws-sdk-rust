@@ -135,7 +135,7 @@ impl CreateDocumentClassifierInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDocumentClassifier`.
+/// Orchestration and serialization glue logic for `CreateDocumentClassifier`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

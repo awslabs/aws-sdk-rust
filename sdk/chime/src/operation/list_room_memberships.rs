@@ -181,7 +181,7 @@ impl ListRoomMembershipsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRoomMemberships`.
+/// Orchestration and serialization glue logic for `ListRoomMemberships`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl ListQuerySuggestionsBlockListsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListQuerySuggestionsBlockLists`.
+/// Orchestration and serialization glue logic for `ListQuerySuggestionsBlockLists`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

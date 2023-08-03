@@ -131,7 +131,7 @@ impl DeleteImportedKeyMaterialInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteImportedKeyMaterial`.
+/// Orchestration and serialization glue logic for `DeleteImportedKeyMaterial`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

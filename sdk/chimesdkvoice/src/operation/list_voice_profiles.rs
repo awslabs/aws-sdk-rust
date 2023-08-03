@@ -156,7 +156,7 @@ impl ListVoiceProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVoiceProfiles`.
+/// Orchestration and serialization glue logic for `ListVoiceProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

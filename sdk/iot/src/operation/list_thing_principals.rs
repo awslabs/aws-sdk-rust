@@ -158,7 +158,7 @@ impl ListThingPrincipalsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListThingPrincipals`.
+/// Orchestration and serialization glue logic for `ListThingPrincipals`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

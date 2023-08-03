@@ -125,7 +125,7 @@ impl ListAvailableResourceDimensionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAvailableResourceDimensions`.
+/// Orchestration and serialization glue logic for `ListAvailableResourceDimensions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

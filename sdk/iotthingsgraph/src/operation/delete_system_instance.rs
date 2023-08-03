@@ -133,7 +133,7 @@ impl DeleteSystemInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSystemInstance`.
+/// Orchestration and serialization glue logic for `DeleteSystemInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

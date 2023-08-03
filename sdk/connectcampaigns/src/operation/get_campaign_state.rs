@@ -132,7 +132,7 @@ impl GetCampaignStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCampaignState`.
+/// Orchestration and serialization glue logic for `GetCampaignState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

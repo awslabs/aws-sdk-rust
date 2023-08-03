@@ -131,7 +131,7 @@ impl DeleteMaintenanceWindowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMaintenanceWindow`.
+/// Orchestration and serialization glue logic for `DeleteMaintenanceWindow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

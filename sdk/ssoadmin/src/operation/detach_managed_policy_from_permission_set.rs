@@ -116,7 +116,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachManagedPolicyFromPermissionSet`.
+/// Orchestration and serialization glue logic for `DetachManagedPolicyFromPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl AdminRemoveUserFromGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminRemoveUserFromGroup`.
+/// Orchestration and serialization glue logic for `AdminRemoveUserFromGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

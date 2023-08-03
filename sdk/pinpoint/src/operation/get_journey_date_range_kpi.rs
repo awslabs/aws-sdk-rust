@@ -220,7 +220,7 @@ impl GetJourneyDateRangeKpiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetJourneyDateRangeKpi`.
+/// Orchestration and serialization glue logic for `GetJourneyDateRangeKpi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

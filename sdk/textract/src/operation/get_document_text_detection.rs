@@ -131,7 +131,7 @@ impl GetDocumentTextDetectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDocumentTextDetection`.
+/// Orchestration and serialization glue logic for `GetDocumentTextDetection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

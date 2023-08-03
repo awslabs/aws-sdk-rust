@@ -131,7 +131,7 @@ impl RegisterScalableTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterScalableTarget`.
+/// Orchestration and serialization glue logic for `RegisterScalableTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DescribeDomainConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDomainConfig`.
+/// Orchestration and serialization glue logic for `DescribeDomainConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

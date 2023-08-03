@@ -126,7 +126,7 @@ impl CreateDbSecurityGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDBSecurityGroup`.
+/// Orchestration and serialization glue logic for `CreateDBSecurityGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

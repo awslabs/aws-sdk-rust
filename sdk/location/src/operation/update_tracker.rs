@@ -152,7 +152,7 @@ impl UpdateTrackerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTracker`.
+/// Orchestration and serialization glue logic for `UpdateTracker`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListWhatIfForecastsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWhatIfForecasts`.
+/// Orchestration and serialization glue logic for `ListWhatIfForecasts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateLogPatternInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLogPattern`.
+/// Orchestration and serialization glue logic for `UpdateLogPattern`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

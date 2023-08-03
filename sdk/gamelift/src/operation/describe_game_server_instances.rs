@@ -131,7 +131,7 @@ impl DescribeGameServerInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeGameServerInstances`.
+/// Orchestration and serialization glue logic for `DescribeGameServerInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

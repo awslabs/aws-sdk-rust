@@ -137,7 +137,7 @@ impl AttachPrincipalPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachPrincipalPolicy`.
+/// Orchestration and serialization glue logic for `AttachPrincipalPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

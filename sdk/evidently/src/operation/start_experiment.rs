@@ -170,7 +170,7 @@ impl StartExperimentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartExperiment`.
+/// Orchestration and serialization glue logic for `StartExperiment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

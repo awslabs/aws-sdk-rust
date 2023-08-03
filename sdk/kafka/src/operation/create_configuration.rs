@@ -128,7 +128,7 @@ impl CreateConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateConfiguration`.
+/// Orchestration and serialization glue logic for `CreateConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

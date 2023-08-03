@@ -150,7 +150,7 @@ impl StartVoiceToneAnalysisTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartVoiceToneAnalysisTask`.
+/// Orchestration and serialization glue logic for `StartVoiceToneAnalysisTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

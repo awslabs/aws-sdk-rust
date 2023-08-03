@@ -135,7 +135,7 @@ impl DeleteVpcEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpcEndpoint`.
+/// Orchestration and serialization glue logic for `DeleteVpcEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

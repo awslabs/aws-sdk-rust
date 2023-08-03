@@ -133,7 +133,7 @@ impl AdminConfirmSignUpInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminConfirmSignUp`.
+/// Orchestration and serialization glue logic for `AdminConfirmSignUp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

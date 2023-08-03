@@ -124,7 +124,7 @@ impl GetHomeRegionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetHomeRegion`.
+/// Orchestration and serialization glue logic for `GetHomeRegion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

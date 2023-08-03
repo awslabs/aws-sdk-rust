@@ -126,7 +126,7 @@ impl DetectMetricSetConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectMetricSetConfig`.
+/// Orchestration and serialization glue logic for `DetectMetricSetConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

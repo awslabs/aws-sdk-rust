@@ -126,7 +126,7 @@ impl DeleteDataLakeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataLake`.
+/// Orchestration and serialization glue logic for `DeleteDataLake`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

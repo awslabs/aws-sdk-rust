@@ -133,7 +133,7 @@ impl CancelTaskExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelTaskExecution`.
+/// Orchestration and serialization glue logic for `CancelTaskExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

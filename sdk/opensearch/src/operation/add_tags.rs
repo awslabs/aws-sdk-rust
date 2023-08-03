@@ -126,7 +126,7 @@ impl AddTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddTags`.
+/// Orchestration and serialization glue logic for `AddTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

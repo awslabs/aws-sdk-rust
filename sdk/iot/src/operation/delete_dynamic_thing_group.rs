@@ -153,7 +153,7 @@ impl DeleteDynamicThingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDynamicThingGroup`.
+/// Orchestration and serialization glue logic for `DeleteDynamicThingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

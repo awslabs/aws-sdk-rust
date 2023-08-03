@@ -128,7 +128,7 @@ impl CopyDbSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CopyDBSnapshot`.
+/// Orchestration and serialization glue logic for `CopyDBSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

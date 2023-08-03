@@ -112,7 +112,7 @@ impl ListReplacePermissionAssociationsWorkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListReplacePermissionAssociationsWork`.
+/// Orchestration and serialization glue logic for `ListReplacePermissionAssociationsWork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

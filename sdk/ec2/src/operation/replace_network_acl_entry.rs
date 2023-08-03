@@ -126,7 +126,7 @@ impl ReplaceNetworkAclEntryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReplaceNetworkAclEntry`.
+/// Orchestration and serialization glue logic for `ReplaceNetworkAclEntry`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

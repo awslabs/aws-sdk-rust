@@ -111,7 +111,7 @@ impl DescribeIamInstanceProfileAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeIamInstanceProfileAssociations`.
+/// Orchestration and serialization glue logic for `DescribeIamInstanceProfileAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

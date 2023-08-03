@@ -172,7 +172,7 @@ impl GetExperimentResultsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetExperimentResults`.
+/// Orchestration and serialization glue logic for `GetExperimentResults`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

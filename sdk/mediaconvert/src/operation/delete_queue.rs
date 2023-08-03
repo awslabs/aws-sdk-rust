@@ -132,7 +132,7 @@ impl DeleteQueueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteQueue`.
+/// Orchestration and serialization glue logic for `DeleteQueue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

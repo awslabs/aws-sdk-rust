@@ -154,7 +154,7 @@ impl CreateDataViewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataView`.
+/// Orchestration and serialization glue logic for `CreateDataView`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

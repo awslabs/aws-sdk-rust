@@ -133,7 +133,7 @@ impl GetOperationDetailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOperationDetail`.
+/// Orchestration and serialization glue logic for `GetOperationDetail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

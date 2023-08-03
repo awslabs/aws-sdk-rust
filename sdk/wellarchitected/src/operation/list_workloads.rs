@@ -126,7 +126,7 @@ impl ListWorkloadsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWorkloads`.
+/// Orchestration and serialization glue logic for `ListWorkloads`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

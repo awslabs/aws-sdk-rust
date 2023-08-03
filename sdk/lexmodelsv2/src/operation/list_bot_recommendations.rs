@@ -183,7 +183,7 @@ impl ListBotRecommendationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBotRecommendations`.
+/// Orchestration and serialization glue logic for `ListBotRecommendations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

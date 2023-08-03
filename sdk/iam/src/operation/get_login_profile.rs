@@ -126,7 +126,7 @@ impl GetLoginProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLoginProfile`.
+/// Orchestration and serialization glue logic for `GetLoginProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

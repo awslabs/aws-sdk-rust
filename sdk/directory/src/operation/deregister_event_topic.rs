@@ -133,7 +133,7 @@ impl DeregisterEventTopicInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterEventTopic`.
+/// Orchestration and serialization glue logic for `DeregisterEventTopic`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

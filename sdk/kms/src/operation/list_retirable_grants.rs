@@ -133,7 +133,7 @@ impl ListRetirableGrantsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRetirableGrants`.
+/// Orchestration and serialization glue logic for `ListRetirableGrants`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

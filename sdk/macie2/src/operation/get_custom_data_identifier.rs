@@ -132,7 +132,7 @@ impl GetCustomDataIdentifierInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCustomDataIdentifier`.
+/// Orchestration and serialization glue logic for `GetCustomDataIdentifier`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

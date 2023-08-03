@@ -132,7 +132,7 @@ impl ResumeCampaignInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResumeCampaign`.
+/// Orchestration and serialization glue logic for `ResumeCampaign`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

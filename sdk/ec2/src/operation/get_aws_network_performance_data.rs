@@ -126,7 +126,7 @@ impl GetAwsNetworkPerformanceDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAwsNetworkPerformanceData`.
+/// Orchestration and serialization glue logic for `GetAwsNetworkPerformanceData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

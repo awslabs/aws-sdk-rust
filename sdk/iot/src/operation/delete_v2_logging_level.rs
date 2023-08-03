@@ -151,7 +151,7 @@ impl DeleteV2LoggingLevelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteV2LoggingLevel`.
+/// Orchestration and serialization glue logic for `DeleteV2LoggingLevel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

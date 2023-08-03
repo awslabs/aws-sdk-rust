@@ -170,7 +170,7 @@ impl UpdateVodSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVodSource`.
+/// Orchestration and serialization glue logic for `UpdateVodSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

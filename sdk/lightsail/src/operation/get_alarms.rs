@@ -131,7 +131,7 @@ impl GetAlarmsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAlarms`.
+/// Orchestration and serialization glue logic for `GetAlarms`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ImportCatalogToGlueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportCatalogToGlue`.
+/// Orchestration and serialization glue logic for `ImportCatalogToGlue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

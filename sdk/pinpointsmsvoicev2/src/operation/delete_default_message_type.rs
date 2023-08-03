@@ -131,7 +131,7 @@ impl DeleteDefaultMessageTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDefaultMessageType`.
+/// Orchestration and serialization glue logic for `DeleteDefaultMessageType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

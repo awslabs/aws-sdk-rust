@@ -128,7 +128,7 @@ impl CreateVpcConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVpcConnection`.
+/// Orchestration and serialization glue logic for `CreateVpcConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

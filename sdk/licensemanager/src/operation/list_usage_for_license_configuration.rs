@@ -116,7 +116,7 @@ impl ListUsageForLicenseConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListUsageForLicenseConfiguration`.
+/// Orchestration and serialization glue logic for `ListUsageForLicenseConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

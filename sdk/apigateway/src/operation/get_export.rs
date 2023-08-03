@@ -183,7 +183,7 @@ impl GetExportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetExport`.
+/// Orchestration and serialization glue logic for `GetExport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

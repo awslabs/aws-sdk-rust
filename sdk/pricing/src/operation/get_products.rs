@@ -131,7 +131,7 @@ impl GetProductsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetProducts`.
+/// Orchestration and serialization glue logic for `GetProducts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

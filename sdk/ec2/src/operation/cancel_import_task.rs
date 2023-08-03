@@ -126,7 +126,7 @@ impl CancelImportTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelImportTask`.
+/// Orchestration and serialization glue logic for `CancelImportTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

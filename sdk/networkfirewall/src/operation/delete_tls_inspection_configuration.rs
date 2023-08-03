@@ -125,7 +125,7 @@ impl DeleteTlsInspectionConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTLSInspectionConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteTLSInspectionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

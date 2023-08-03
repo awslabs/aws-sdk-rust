@@ -150,7 +150,7 @@ impl TagResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagResource`.
+/// Orchestration and serialization glue logic for `TagResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

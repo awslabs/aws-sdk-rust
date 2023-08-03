@@ -131,7 +131,7 @@ impl AddTagsToCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddTagsToCertificate`.
+/// Orchestration and serialization glue logic for `AddTagsToCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

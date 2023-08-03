@@ -133,7 +133,7 @@ impl DescribeConnectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConnections`.
+/// Orchestration and serialization glue logic for `DescribeConnections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

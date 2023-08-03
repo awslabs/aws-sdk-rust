@@ -126,7 +126,7 @@ impl CancelSpotFleetRequestsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelSpotFleetRequests`.
+/// Orchestration and serialization glue logic for `CancelSpotFleetRequests`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

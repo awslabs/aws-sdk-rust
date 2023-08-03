@@ -131,7 +131,7 @@ impl ListModelCardVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListModelCardVersions`.
+/// Orchestration and serialization glue logic for `ListModelCardVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

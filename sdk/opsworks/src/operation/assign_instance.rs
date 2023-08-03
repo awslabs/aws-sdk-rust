@@ -131,7 +131,7 @@ impl AssignInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssignInstance`.
+/// Orchestration and serialization glue logic for `AssignInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

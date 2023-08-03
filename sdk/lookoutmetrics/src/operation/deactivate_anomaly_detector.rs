@@ -127,7 +127,7 @@ impl DeactivateAnomalyDetectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeactivateAnomalyDetector`.
+/// Orchestration and serialization glue logic for `DeactivateAnomalyDetector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

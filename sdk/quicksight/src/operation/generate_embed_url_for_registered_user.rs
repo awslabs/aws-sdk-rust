@@ -135,7 +135,7 @@ impl GenerateEmbedUrlForRegisteredUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateEmbedUrlForRegisteredUser`.
+/// Orchestration and serialization glue logic for `GenerateEmbedUrlForRegisteredUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

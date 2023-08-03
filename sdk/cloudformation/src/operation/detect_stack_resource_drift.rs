@@ -126,7 +126,7 @@ impl DetectStackResourceDriftInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectStackResourceDrift`.
+/// Orchestration and serialization glue logic for `DetectStackResourceDrift`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

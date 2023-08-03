@@ -126,7 +126,7 @@ impl CreateDatastoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDatastore`.
+/// Orchestration and serialization glue logic for `CreateDatastore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

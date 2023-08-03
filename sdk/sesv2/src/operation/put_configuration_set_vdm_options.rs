@@ -151,7 +151,7 @@ impl PutConfigurationSetVdmOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutConfigurationSetVdmOptions`.
+/// Orchestration and serialization glue logic for `PutConfigurationSetVdmOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

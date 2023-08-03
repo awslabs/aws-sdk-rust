@@ -125,7 +125,7 @@ impl CreateContainerServiceDeploymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateContainerServiceDeployment`.
+/// Orchestration and serialization glue logic for `CreateContainerServiceDeployment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

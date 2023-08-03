@@ -131,7 +131,7 @@ impl StopInferenceSchedulerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopInferenceScheduler`.
+/// Orchestration and serialization glue logic for `StopInferenceScheduler`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateImagePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateImagePermissions`.
+/// Orchestration and serialization glue logic for `UpdateImagePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

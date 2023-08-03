@@ -131,7 +131,7 @@ impl UpdateAclInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateACL`.
+/// Orchestration and serialization glue logic for `UpdateACL`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

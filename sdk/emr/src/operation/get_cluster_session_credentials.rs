@@ -131,7 +131,7 @@ impl GetClusterSessionCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetClusterSessionCredentials`.
+/// Orchestration and serialization glue logic for `GetClusterSessionCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

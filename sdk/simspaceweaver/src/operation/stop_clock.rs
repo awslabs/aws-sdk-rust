@@ -126,7 +126,7 @@ impl StopClockInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopClock`.
+/// Orchestration and serialization glue logic for `StopClock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

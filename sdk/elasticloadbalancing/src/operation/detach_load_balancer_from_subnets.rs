@@ -127,7 +127,7 @@ impl DetachLoadBalancerFromSubnetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachLoadBalancerFromSubnets`.
+/// Orchestration and serialization glue logic for `DetachLoadBalancerFromSubnets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

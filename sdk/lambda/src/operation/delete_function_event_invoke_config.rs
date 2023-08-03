@@ -144,7 +144,7 @@ impl DeleteFunctionEventInvokeConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFunctionEventInvokeConfig`.
+/// Orchestration and serialization glue logic for `DeleteFunctionEventInvokeConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

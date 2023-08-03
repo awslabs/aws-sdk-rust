@@ -125,7 +125,7 @@ impl UpdateAvailabilityConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAvailabilityConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateAvailabilityConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

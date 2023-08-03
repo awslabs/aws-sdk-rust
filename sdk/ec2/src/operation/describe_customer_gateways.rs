@@ -126,7 +126,7 @@ impl DescribeCustomerGatewaysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCustomerGateways`.
+/// Orchestration and serialization glue logic for `DescribeCustomerGateways`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

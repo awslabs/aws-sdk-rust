@@ -133,7 +133,7 @@ impl ListCompatibleImagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCompatibleImages`.
+/// Orchestration and serialization glue logic for `ListCompatibleImages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl UpdateFailbackReplicationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFailbackReplicationConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateFailbackReplicationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

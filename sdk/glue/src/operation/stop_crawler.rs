@@ -131,7 +131,7 @@ impl StopCrawlerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopCrawler`.
+/// Orchestration and serialization glue logic for `StopCrawler`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl GetCanaryRunsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCanaryRuns`.
+/// Orchestration and serialization glue logic for `GetCanaryRuns`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

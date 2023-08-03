@@ -175,7 +175,7 @@ impl DeleteLensInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLens`.
+/// Orchestration and serialization glue logic for `DeleteLens`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -134,7 +134,7 @@ impl GetSequenceStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSequenceStore`.
+/// Orchestration and serialization glue logic for `GetSequenceStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetTagKeysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTagKeys`.
+/// Orchestration and serialization glue logic for `GetTagKeys`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

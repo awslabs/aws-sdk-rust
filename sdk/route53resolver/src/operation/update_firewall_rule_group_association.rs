@@ -116,7 +116,7 @@ impl UpdateFirewallRuleGroupAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFirewallRuleGroupAssociation`.
+/// Orchestration and serialization glue logic for `UpdateFirewallRuleGroupAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

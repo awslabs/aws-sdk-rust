@@ -133,7 +133,7 @@ impl ListSchemaExtensionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSchemaExtensions`.
+/// Orchestration and serialization glue logic for `ListSchemaExtensions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

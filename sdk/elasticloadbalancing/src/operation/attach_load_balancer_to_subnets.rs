@@ -126,7 +126,7 @@ impl AttachLoadBalancerToSubnetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachLoadBalancerToSubnets`.
+/// Orchestration and serialization glue logic for `AttachLoadBalancerToSubnets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DescribeFleetMetricInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetMetric`.
+/// Orchestration and serialization glue logic for `DescribeFleetMetric`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

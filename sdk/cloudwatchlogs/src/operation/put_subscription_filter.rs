@@ -131,7 +131,7 @@ impl PutSubscriptionFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSubscriptionFilter`.
+/// Orchestration and serialization glue logic for `PutSubscriptionFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

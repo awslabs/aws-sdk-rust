@@ -124,7 +124,7 @@ impl GetDistributionBundlesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDistributionBundles`.
+/// Orchestration and serialization glue logic for `GetDistributionBundles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

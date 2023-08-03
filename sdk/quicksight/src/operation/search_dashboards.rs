@@ -150,7 +150,7 @@ impl SearchDashboardsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchDashboards`.
+/// Orchestration and serialization glue logic for `SearchDashboards`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

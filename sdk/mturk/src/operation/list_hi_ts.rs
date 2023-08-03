@@ -130,7 +130,7 @@ impl ListHiTsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHITs`.
+/// Orchestration and serialization glue logic for `ListHITs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

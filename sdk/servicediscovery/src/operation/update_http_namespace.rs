@@ -137,7 +137,7 @@ impl UpdateHttpNamespaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateHttpNamespace`.
+/// Orchestration and serialization glue logic for `UpdateHttpNamespace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

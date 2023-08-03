@@ -131,7 +131,7 @@ impl DeleteChapCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteChapCredentials`.
+/// Orchestration and serialization glue logic for `DeleteChapCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

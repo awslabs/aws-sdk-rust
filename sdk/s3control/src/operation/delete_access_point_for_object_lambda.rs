@@ -126,7 +126,7 @@ impl DeleteAccessPointForObjectLambdaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccessPointForObjectLambda`.
+/// Orchestration and serialization glue logic for `DeleteAccessPointForObjectLambda`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

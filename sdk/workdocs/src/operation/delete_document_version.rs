@@ -177,7 +177,7 @@ impl DeleteDocumentVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDocumentVersion`.
+/// Orchestration and serialization glue logic for `DeleteDocumentVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl GetPendingJobExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPendingJobExecutions`.
+/// Orchestration and serialization glue logic for `GetPendingJobExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

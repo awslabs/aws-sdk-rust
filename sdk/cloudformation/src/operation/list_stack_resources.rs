@@ -126,7 +126,7 @@ impl ListStackResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStackResources`.
+/// Orchestration and serialization glue logic for `ListStackResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteCustomKeyStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomKeyStore`.
+/// Orchestration and serialization glue logic for `DeleteCustomKeyStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

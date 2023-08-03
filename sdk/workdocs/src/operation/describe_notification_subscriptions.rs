@@ -143,7 +143,7 @@ impl DescribeNotificationSubscriptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNotificationSubscriptions`.
+/// Orchestration and serialization glue logic for `DescribeNotificationSubscriptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl GetClusterPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetClusterPolicy`.
+/// Orchestration and serialization glue logic for `GetClusterPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

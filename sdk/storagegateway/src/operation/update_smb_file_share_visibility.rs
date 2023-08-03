@@ -131,7 +131,7 @@ impl UpdateSmbFileShareVisibilityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSMBFileShareVisibility`.
+/// Orchestration and serialization glue logic for `UpdateSMBFileShareVisibility`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

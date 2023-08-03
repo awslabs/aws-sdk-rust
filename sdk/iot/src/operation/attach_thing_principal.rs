@@ -137,7 +137,7 @@ impl AttachThingPrincipalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachThingPrincipal`.
+/// Orchestration and serialization glue logic for `AttachThingPrincipal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

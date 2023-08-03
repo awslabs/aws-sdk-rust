@@ -136,7 +136,7 @@ impl DisassociateFileSystemAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateFileSystemAliases`.
+/// Orchestration and serialization glue logic for `DisassociateFileSystemAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

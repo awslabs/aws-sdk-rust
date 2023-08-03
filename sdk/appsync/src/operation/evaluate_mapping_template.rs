@@ -127,7 +127,7 @@ impl EvaluateMappingTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EvaluateMappingTemplate`.
+/// Orchestration and serialization glue logic for `EvaluateMappingTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

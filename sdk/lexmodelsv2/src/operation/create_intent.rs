@@ -190,7 +190,7 @@ impl CreateIntentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateIntent`.
+/// Orchestration and serialization glue logic for `CreateIntent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

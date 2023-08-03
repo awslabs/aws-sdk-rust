@@ -126,7 +126,7 @@ impl AcknowledgeOrderReceiptInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcknowledgeOrderReceipt`.
+/// Orchestration and serialization glue logic for `AcknowledgeOrderReceipt`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

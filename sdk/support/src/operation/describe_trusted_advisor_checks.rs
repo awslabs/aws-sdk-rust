@@ -131,7 +131,7 @@ impl DescribeTrustedAdvisorChecksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTrustedAdvisorChecks`.
+/// Orchestration and serialization glue logic for `DescribeTrustedAdvisorChecks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

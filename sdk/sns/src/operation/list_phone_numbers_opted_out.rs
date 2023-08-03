@@ -126,7 +126,7 @@ impl ListPhoneNumbersOptedOutInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPhoneNumbersOptedOut`.
+/// Orchestration and serialization glue logic for `ListPhoneNumbersOptedOut`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

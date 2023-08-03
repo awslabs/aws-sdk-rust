@@ -129,7 +129,7 @@ impl SearchVulnerabilitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchVulnerabilities`.
+/// Orchestration and serialization glue logic for `SearchVulnerabilities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

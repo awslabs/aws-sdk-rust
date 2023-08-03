@@ -131,7 +131,7 @@ impl CreateRegexPatternSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRegexPatternSet`.
+/// Orchestration and serialization glue logic for `CreateRegexPatternSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

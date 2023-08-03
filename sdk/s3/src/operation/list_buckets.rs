@@ -119,7 +119,7 @@ impl ListBucketsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBuckets`.
+/// Orchestration and serialization glue logic for `ListBuckets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

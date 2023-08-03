@@ -128,7 +128,7 @@ impl CreateSubscriptionDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSubscriptionDefinition`.
+/// Orchestration and serialization glue logic for `CreateSubscriptionDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

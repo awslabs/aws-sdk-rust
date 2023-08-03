@@ -131,7 +131,7 @@ impl DescribeListenerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeListener`.
+/// Orchestration and serialization glue logic for `DescribeListener`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

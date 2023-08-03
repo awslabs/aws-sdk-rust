@@ -131,7 +131,7 @@ impl ListTerminologiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTerminologies`.
+/// Orchestration and serialization glue logic for `ListTerminologies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

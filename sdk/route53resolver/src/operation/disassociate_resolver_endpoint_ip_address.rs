@@ -116,7 +116,7 @@ impl DisassociateResolverEndpointIpAddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateResolverEndpointIpAddress`.
+/// Orchestration and serialization glue logic for `DisassociateResolverEndpointIpAddress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

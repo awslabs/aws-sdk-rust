@@ -150,7 +150,7 @@ impl UpdateEventActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEventAction`.
+/// Orchestration and serialization glue logic for `UpdateEventAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

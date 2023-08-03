@@ -140,7 +140,7 @@ impl GetLatestConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLatestConfiguration`.
+/// Orchestration and serialization glue logic for `GetLatestConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

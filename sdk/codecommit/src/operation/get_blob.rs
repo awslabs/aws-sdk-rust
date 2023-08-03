@@ -131,7 +131,7 @@ impl GetBlobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBlob`.
+/// Orchestration and serialization glue logic for `GetBlob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

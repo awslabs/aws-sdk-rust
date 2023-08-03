@@ -131,7 +131,7 @@ impl MergeDeveloperIdentitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MergeDeveloperIdentities`.
+/// Orchestration and serialization glue logic for `MergeDeveloperIdentities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

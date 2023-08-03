@@ -131,7 +131,7 @@ impl CreateTemplateSyncConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTemplateSyncConfig`.
+/// Orchestration and serialization glue logic for `CreateTemplateSyncConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

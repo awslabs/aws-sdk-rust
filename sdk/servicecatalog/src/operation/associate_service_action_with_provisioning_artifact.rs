@@ -116,7 +116,7 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateServiceActionWithProvisioningArtifact`.
+/// Orchestration and serialization glue logic for `AssociateServiceActionWithProvisioningArtifact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

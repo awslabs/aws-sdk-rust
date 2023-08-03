@@ -131,7 +131,7 @@ impl ListPagesByEngagementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPagesByEngagement`.
+/// Orchestration and serialization glue logic for `ListPagesByEngagement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

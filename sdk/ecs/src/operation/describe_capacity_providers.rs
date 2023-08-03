@@ -131,7 +131,7 @@ impl DescribeCapacityProvidersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCapacityProviders`.
+/// Orchestration and serialization glue logic for `DescribeCapacityProviders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

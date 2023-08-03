@@ -126,7 +126,7 @@ impl UpdateDataLakeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDataLake`.
+/// Orchestration and serialization glue logic for `UpdateDataLake`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

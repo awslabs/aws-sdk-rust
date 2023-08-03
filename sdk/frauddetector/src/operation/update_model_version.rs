@@ -133,7 +133,7 @@ impl UpdateModelVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateModelVersion`.
+/// Orchestration and serialization glue logic for `UpdateModelVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

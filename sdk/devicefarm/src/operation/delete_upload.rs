@@ -131,7 +131,7 @@ impl DeleteUploadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUpload`.
+/// Orchestration and serialization glue logic for `DeleteUpload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

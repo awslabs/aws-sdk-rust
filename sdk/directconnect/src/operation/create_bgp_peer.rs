@@ -131,7 +131,7 @@ impl CreateBgpPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBGPPeer`.
+/// Orchestration and serialization glue logic for `CreateBGPPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

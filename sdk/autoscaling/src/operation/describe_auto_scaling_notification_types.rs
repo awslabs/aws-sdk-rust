@@ -104,7 +104,7 @@ impl DescribeAutoScalingNotificationTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAutoScalingNotificationTypes`.
+/// Orchestration and serialization glue logic for `DescribeAutoScalingNotificationTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

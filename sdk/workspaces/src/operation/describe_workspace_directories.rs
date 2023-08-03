@@ -131,7 +131,7 @@ impl DescribeWorkspaceDirectoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorkspaceDirectories`.
+/// Orchestration and serialization glue logic for `DescribeWorkspaceDirectories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

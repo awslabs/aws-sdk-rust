@@ -131,7 +131,7 @@ impl CreateCampaignInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCampaign`.
+/// Orchestration and serialization glue logic for `CreateCampaign`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

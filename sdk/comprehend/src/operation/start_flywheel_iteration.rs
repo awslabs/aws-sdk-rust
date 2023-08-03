@@ -131,7 +131,7 @@ impl StartFlywheelIterationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartFlywheelIteration`.
+/// Orchestration and serialization glue logic for `StartFlywheelIteration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -120,7 +120,7 @@ impl DescribeLoadBalancerPolicyTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLoadBalancerPolicyTypes`.
+/// Orchestration and serialization glue logic for `DescribeLoadBalancerPolicyTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

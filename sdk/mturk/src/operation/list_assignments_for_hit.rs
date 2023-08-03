@@ -131,7 +131,7 @@ impl ListAssignmentsForHitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssignmentsForHIT`.
+/// Orchestration and serialization glue logic for `ListAssignmentsForHIT`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

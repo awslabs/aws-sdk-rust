@@ -160,7 +160,7 @@ impl GetDocumentationPartInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDocumentationPart`.
+/// Orchestration and serialization glue logic for `GetDocumentationPart`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

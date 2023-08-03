@@ -140,7 +140,7 @@ impl GetJobTaggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetJobTagging`.
+/// Orchestration and serialization glue logic for `GetJobTagging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl CreateStackSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStackSet`.
+/// Orchestration and serialization glue logic for `CreateStackSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

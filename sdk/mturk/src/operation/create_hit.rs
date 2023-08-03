@@ -131,7 +131,7 @@ impl CreateHitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateHIT`.
+/// Orchestration and serialization glue logic for `CreateHIT`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

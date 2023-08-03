@@ -150,7 +150,7 @@ impl DescribeDomainAutoTunesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDomainAutoTunes`.
+/// Orchestration and serialization glue logic for `DescribeDomainAutoTunes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

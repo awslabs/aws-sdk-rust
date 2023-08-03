@@ -131,7 +131,7 @@ impl GetClassifierInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetClassifier`.
+/// Orchestration and serialization glue logic for `GetClassifier`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl MergePullRequestByThreeWayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MergePullRequestByThreeWay`.
+/// Orchestration and serialization glue logic for `MergePullRequestByThreeWay`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

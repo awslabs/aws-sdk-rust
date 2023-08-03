@@ -130,7 +130,7 @@ impl CreateVerifiedAccessGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVerifiedAccessGroup`.
+/// Orchestration and serialization glue logic for `CreateVerifiedAccessGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

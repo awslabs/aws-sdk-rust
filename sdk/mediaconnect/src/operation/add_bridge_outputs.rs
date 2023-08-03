@@ -150,7 +150,7 @@ impl AddBridgeOutputsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddBridgeOutputs`.
+/// Orchestration and serialization glue logic for `AddBridgeOutputs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

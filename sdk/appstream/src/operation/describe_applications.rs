@@ -133,7 +133,7 @@ impl DescribeApplicationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeApplications`.
+/// Orchestration and serialization glue logic for `DescribeApplications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

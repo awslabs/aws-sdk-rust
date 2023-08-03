@@ -131,7 +131,7 @@ impl CreatePullThroughCacheRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePullThroughCacheRule`.
+/// Orchestration and serialization glue logic for `CreatePullThroughCacheRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

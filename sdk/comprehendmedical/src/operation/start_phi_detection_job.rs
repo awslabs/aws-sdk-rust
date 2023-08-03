@@ -135,7 +135,7 @@ impl StartPhiDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartPHIDetectionJob`.
+/// Orchestration and serialization glue logic for `StartPHIDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

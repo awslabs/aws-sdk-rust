@@ -131,7 +131,7 @@ impl CreateBatchSegmentJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBatchSegmentJob`.
+/// Orchestration and serialization glue logic for `CreateBatchSegmentJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

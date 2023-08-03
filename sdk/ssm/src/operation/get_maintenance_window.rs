@@ -133,7 +133,7 @@ impl GetMaintenanceWindowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMaintenanceWindow`.
+/// Orchestration and serialization glue logic for `GetMaintenanceWindow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -121,7 +121,7 @@ impl ListSlackChannelConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSlackChannelConfigurations`.
+/// Orchestration and serialization glue logic for `ListSlackChannelConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

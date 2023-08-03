@@ -111,7 +111,7 @@ impl GetIdentityMailFromDomainAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIdentityMailFromDomainAttributes`.
+/// Orchestration and serialization glue logic for `GetIdentityMailFromDomainAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

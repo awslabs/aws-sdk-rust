@@ -126,7 +126,7 @@ impl GetFederationTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFederationToken`.
+/// Orchestration and serialization glue logic for `GetFederationToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

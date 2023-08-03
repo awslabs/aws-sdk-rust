@@ -170,7 +170,7 @@ impl UpdateSegmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSegment`.
+/// Orchestration and serialization glue logic for `UpdateSegment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

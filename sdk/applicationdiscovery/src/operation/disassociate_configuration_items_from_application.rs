@@ -116,7 +116,7 @@ impl DisassociateConfigurationItemsFromApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateConfigurationItemsFromApplication`.
+/// Orchestration and serialization glue logic for `DisassociateConfigurationItemsFromApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

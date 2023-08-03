@@ -126,7 +126,7 @@ impl ActivateTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ActivateType`.
+/// Orchestration and serialization glue logic for `ActivateType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

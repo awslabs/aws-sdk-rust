@@ -131,7 +131,7 @@ impl DescribeEc2InstanceLimitsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEC2InstanceLimits`.
+/// Orchestration and serialization glue logic for `DescribeEC2InstanceLimits`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

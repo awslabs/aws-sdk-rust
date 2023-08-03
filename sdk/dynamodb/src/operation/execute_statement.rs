@@ -131,7 +131,7 @@ impl ExecuteStatementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExecuteStatement`.
+/// Orchestration and serialization glue logic for `ExecuteStatement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

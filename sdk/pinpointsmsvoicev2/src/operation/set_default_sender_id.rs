@@ -133,7 +133,7 @@ impl SetDefaultSenderIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetDefaultSenderId`.
+/// Orchestration and serialization glue logic for `SetDefaultSenderId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

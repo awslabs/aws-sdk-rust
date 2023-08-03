@@ -126,7 +126,7 @@ impl TranslatePinDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TranslatePinData`.
+/// Orchestration and serialization glue logic for `TranslatePinData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

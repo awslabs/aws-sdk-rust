@@ -126,7 +126,7 @@ impl AssociateSubnetCidrBlockInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateSubnetCidrBlock`.
+/// Orchestration and serialization glue logic for `AssociateSubnetCidrBlock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

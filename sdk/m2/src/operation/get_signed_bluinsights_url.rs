@@ -112,7 +112,7 @@ impl GetSignedBluinsightsUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSignedBluinsightsUrl`.
+/// Orchestration and serialization glue logic for `GetSignedBluinsightsUrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -172,7 +172,7 @@ impl SearchRelatedItemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchRelatedItems`.
+/// Orchestration and serialization glue logic for `SearchRelatedItems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

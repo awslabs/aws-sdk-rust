@@ -136,7 +136,7 @@ impl DeleteCoreDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCoreDefinition`.
+/// Orchestration and serialization glue logic for `DeleteCoreDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

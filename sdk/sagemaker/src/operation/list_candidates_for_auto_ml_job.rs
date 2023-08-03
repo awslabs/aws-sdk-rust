@@ -131,7 +131,7 @@ impl ListCandidatesForAutoMlJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCandidatesForAutoMLJob`.
+/// Orchestration and serialization glue logic for `ListCandidatesForAutoMLJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

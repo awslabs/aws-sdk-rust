@@ -133,7 +133,7 @@ impl DeleteFlowTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFlowTemplate`.
+/// Orchestration and serialization glue logic for `DeleteFlowTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

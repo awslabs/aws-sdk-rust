@@ -131,7 +131,7 @@ impl RenewCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RenewCertificate`.
+/// Orchestration and serialization glue logic for `RenewCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl DeleteWirelessGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWirelessGateway`.
+/// Orchestration and serialization glue logic for `DeleteWirelessGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

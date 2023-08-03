@@ -146,7 +146,7 @@ impl PutDedicatedIpInPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutDedicatedIpInPool`.
+/// Orchestration and serialization glue logic for `PutDedicatedIpInPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

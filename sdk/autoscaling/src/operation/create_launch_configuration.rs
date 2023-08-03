@@ -126,7 +126,7 @@ impl CreateLaunchConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLaunchConfiguration`.
+/// Orchestration and serialization glue logic for `CreateLaunchConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

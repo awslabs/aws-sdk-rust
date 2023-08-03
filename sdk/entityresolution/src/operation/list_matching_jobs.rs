@@ -158,7 +158,7 @@ impl ListMatchingJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMatchingJobs`.
+/// Orchestration and serialization glue logic for `ListMatchingJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

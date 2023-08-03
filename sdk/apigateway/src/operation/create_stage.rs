@@ -154,7 +154,7 @@ impl CreateStageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStage`.
+/// Orchestration and serialization glue logic for `CreateStage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

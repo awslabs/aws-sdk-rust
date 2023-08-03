@@ -132,7 +132,7 @@ impl GetOutpostInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOutpost`.
+/// Orchestration and serialization glue logic for `GetOutpost`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

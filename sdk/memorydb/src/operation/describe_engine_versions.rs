@@ -131,7 +131,7 @@ impl DescribeEngineVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEngineVersions`.
+/// Orchestration and serialization glue logic for `DescribeEngineVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeForecastExportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeForecastExportJob`.
+/// Orchestration and serialization glue logic for `DescribeForecastExportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

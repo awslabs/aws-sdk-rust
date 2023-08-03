@@ -134,7 +134,7 @@ impl CreateWebLoginTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWebLoginToken`.
+/// Orchestration and serialization glue logic for `CreateWebLoginToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreateDhcpOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDhcpOptions`.
+/// Orchestration and serialization glue logic for `CreateDhcpOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

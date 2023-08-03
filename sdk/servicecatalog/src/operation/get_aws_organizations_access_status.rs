@@ -118,7 +118,7 @@ impl GetAwsOrganizationsAccessStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAWSOrganizationsAccessStatus`.
+/// Orchestration and serialization glue logic for `GetAWSOrganizationsAccessStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

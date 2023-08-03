@@ -156,7 +156,7 @@ impl CreateWorkloadShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorkloadShare`.
+/// Orchestration and serialization glue logic for `CreateWorkloadShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

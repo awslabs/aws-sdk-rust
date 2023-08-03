@@ -111,7 +111,7 @@ impl DescribeNotificationConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNotificationConfigurations`.
+/// Orchestration and serialization glue logic for `DescribeNotificationConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

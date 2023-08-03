@@ -131,7 +131,7 @@ impl UpdateServicePrimaryTaskSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateServicePrimaryTaskSet`.
+/// Orchestration and serialization glue logic for `UpdateServicePrimaryTaskSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

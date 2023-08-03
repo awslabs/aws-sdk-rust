@@ -136,7 +136,7 @@ impl DeleteVoiceConnectorProxyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVoiceConnectorProxy`.
+/// Orchestration and serialization glue logic for `DeleteVoiceConnectorProxy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -162,7 +162,7 @@ impl BatchUnsuspendUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUnsuspendUser`.
+/// Orchestration and serialization glue logic for `BatchUnsuspendUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -116,7 +116,7 @@ impl GetScalingPlanResourceForecastDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetScalingPlanResourceForecastData`.
+/// Orchestration and serialization glue logic for `GetScalingPlanResourceForecastData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

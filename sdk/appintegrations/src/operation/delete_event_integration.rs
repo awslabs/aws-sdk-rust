@@ -132,7 +132,7 @@ impl DeleteEventIntegrationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEventIntegration`.
+/// Orchestration and serialization glue logic for `DeleteEventIntegration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

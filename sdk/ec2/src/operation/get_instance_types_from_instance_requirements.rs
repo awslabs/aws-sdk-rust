@@ -111,7 +111,7 @@ impl GetInstanceTypesFromInstanceRequirementsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInstanceTypesFromInstanceRequirements`.
+/// Orchestration and serialization glue logic for `GetInstanceTypesFromInstanceRequirements`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

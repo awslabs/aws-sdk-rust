@@ -127,7 +127,7 @@ impl UpdateAccountConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAccountConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateAccountConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

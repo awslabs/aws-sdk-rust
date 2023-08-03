@@ -131,7 +131,7 @@ impl UpdateQuerySuggestionsConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateQuerySuggestionsConfig`.
+/// Orchestration and serialization glue logic for `UpdateQuerySuggestionsConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

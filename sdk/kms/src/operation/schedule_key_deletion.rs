@@ -133,7 +133,7 @@ impl ScheduleKeyDeletionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ScheduleKeyDeletion`.
+/// Orchestration and serialization glue logic for `ScheduleKeyDeletion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

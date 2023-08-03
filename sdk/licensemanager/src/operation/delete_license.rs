@@ -131,7 +131,7 @@ impl DeleteLicenseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLicense`.
+/// Orchestration and serialization glue logic for `DeleteLicense`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

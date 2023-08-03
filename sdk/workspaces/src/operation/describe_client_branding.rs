@@ -131,7 +131,7 @@ impl DescribeClientBrandingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClientBranding`.
+/// Orchestration and serialization glue logic for `DescribeClientBranding`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateSubscriberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSubscriber`.
+/// Orchestration and serialization glue logic for `UpdateSubscriber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

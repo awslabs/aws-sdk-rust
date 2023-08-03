@@ -157,7 +157,7 @@ impl DeleteNotificationSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNotificationSubscription`.
+/// Orchestration and serialization glue logic for `DeleteNotificationSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

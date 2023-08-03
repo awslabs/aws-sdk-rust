@@ -112,7 +112,7 @@ impl PingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `Ping`.
+/// Orchestration and serialization glue logic for `Ping`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

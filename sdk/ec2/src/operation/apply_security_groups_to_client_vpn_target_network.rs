@@ -111,7 +111,7 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ApplySecurityGroupsToClientVpnTargetNetwork`.
+/// Orchestration and serialization glue logic for `ApplySecurityGroupsToClientVpnTargetNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

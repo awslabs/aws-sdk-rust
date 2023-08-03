@@ -118,7 +118,7 @@ impl GetRegistryScanningConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRegistryScanningConfiguration`.
+/// Orchestration and serialization glue logic for `GetRegistryScanningConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

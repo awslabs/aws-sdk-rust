@@ -155,7 +155,7 @@ impl ListResourceProfileDetectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourceProfileDetections`.
+/// Orchestration and serialization glue logic for `ListResourceProfileDetections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

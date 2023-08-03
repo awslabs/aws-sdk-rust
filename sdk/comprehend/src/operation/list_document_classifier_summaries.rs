@@ -125,7 +125,7 @@ impl ListDocumentClassifierSummariesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDocumentClassifierSummaries`.
+/// Orchestration and serialization glue logic for `ListDocumentClassifierSummaries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

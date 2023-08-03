@@ -132,7 +132,7 @@ impl DeleteOutpostInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteOutpost`.
+/// Orchestration and serialization glue logic for `DeleteOutpost`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

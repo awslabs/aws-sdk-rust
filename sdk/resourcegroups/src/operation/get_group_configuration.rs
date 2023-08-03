@@ -127,7 +127,7 @@ impl GetGroupConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGroupConfiguration`.
+/// Orchestration and serialization glue logic for `GetGroupConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

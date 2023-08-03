@@ -133,7 +133,7 @@ impl DescribePatchGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePatchGroups`.
+/// Orchestration and serialization glue logic for `DescribePatchGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

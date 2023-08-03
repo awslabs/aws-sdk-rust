@@ -172,7 +172,7 @@ impl DismissUserContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DismissUserContact`.
+/// Orchestration and serialization glue logic for `DismissUserContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

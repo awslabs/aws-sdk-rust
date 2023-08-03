@@ -124,7 +124,7 @@ impl PeerVpcInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PeerVpc`.
+/// Orchestration and serialization glue logic for `PeerVpc`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl DeactivateEvaluationFormInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeactivateEvaluationForm`.
+/// Orchestration and serialization glue logic for `DeactivateEvaluationForm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

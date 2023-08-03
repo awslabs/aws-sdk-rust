@@ -111,7 +111,7 @@ impl DeregisterTransitGatewayMulticastGroupMembersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterTransitGatewayMulticastGroupMembers`.
+/// Orchestration and serialization glue logic for `DeregisterTransitGatewayMulticastGroupMembers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

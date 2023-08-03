@@ -156,7 +156,7 @@ impl GetResourcePositionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResourcePosition`.
+/// Orchestration and serialization glue logic for `GetResourcePosition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

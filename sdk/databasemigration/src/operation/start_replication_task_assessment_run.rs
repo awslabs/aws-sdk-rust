@@ -116,7 +116,7 @@ impl StartReplicationTaskAssessmentRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartReplicationTaskAssessmentRun`.
+/// Orchestration and serialization glue logic for `StartReplicationTaskAssessmentRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

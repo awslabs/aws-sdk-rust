@@ -126,7 +126,7 @@ impl UpdateTagsForResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTagsForResource`.
+/// Orchestration and serialization glue logic for `UpdateTagsForResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

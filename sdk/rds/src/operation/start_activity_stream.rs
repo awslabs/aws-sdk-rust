@@ -126,7 +126,7 @@ impl StartActivityStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartActivityStream`.
+/// Orchestration and serialization glue logic for `StartActivityStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

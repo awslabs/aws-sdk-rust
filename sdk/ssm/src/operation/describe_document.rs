@@ -131,7 +131,7 @@ impl DescribeDocumentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDocument`.
+/// Orchestration and serialization glue logic for `DescribeDocument`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

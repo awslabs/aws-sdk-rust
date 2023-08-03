@@ -140,7 +140,7 @@ impl GetComponentPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetComponentPolicy`.
+/// Orchestration and serialization glue logic for `GetComponentPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

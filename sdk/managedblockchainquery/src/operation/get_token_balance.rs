@@ -126,7 +126,7 @@ impl GetTokenBalanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTokenBalance`.
+/// Orchestration and serialization glue logic for `GetTokenBalance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

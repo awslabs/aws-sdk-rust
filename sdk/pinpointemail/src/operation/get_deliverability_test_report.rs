@@ -136,7 +136,7 @@ impl GetDeliverabilityTestReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDeliverabilityTestReport`.
+/// Orchestration and serialization glue logic for `GetDeliverabilityTestReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

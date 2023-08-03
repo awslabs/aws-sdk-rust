@@ -126,7 +126,7 @@ impl BatchApplyUpdateActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchApplyUpdateAction`.
+/// Orchestration and serialization glue logic for `BatchApplyUpdateAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

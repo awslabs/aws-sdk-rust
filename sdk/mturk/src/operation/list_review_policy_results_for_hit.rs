@@ -125,7 +125,7 @@ impl ListReviewPolicyResultsForHitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListReviewPolicyResultsForHIT`.
+/// Orchestration and serialization glue logic for `ListReviewPolicyResultsForHIT`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

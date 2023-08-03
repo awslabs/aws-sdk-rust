@@ -130,7 +130,7 @@ impl CreateAnalyzerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAnalyzer`.
+/// Orchestration and serialization glue logic for `CreateAnalyzer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

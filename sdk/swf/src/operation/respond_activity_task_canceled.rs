@@ -131,7 +131,7 @@ impl RespondActivityTaskCanceledInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RespondActivityTaskCanceled`.
+/// Orchestration and serialization glue logic for `RespondActivityTaskCanceled`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

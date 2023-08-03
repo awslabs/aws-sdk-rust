@@ -136,7 +136,7 @@ impl GetApnsVoipChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApnsVoipChannel`.
+/// Orchestration and serialization glue logic for `GetApnsVoipChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

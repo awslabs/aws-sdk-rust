@@ -152,7 +152,7 @@ impl UpdateChannelClassInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateChannelClass`.
+/// Orchestration and serialization glue logic for `UpdateChannelClass`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

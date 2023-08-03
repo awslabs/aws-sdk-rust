@@ -126,7 +126,7 @@ impl DescribeAddressTransfersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAddressTransfers`.
+/// Orchestration and serialization glue logic for `DescribeAddressTransfers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

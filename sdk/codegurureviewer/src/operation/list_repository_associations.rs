@@ -168,7 +168,7 @@ impl ListRepositoryAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRepositoryAssociations`.
+/// Orchestration and serialization glue logic for `ListRepositoryAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

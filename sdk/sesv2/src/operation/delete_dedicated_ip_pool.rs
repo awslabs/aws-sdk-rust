@@ -136,7 +136,7 @@ impl DeleteDedicatedIpPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDedicatedIpPool`.
+/// Orchestration and serialization glue logic for `DeleteDedicatedIpPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

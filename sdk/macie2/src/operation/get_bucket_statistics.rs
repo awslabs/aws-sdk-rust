@@ -129,7 +129,7 @@ impl GetBucketStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketStatistics`.
+/// Orchestration and serialization glue logic for `GetBucketStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

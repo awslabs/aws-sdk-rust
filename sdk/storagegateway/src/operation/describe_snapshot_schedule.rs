@@ -131,7 +131,7 @@ impl DescribeSnapshotScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSnapshotSchedule`.
+/// Orchestration and serialization glue logic for `DescribeSnapshotSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

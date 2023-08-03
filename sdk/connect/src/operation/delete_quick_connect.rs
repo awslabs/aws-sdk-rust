@@ -156,7 +156,7 @@ impl DeleteQuickConnectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteQuickConnect`.
+/// Orchestration and serialization glue logic for `DeleteQuickConnect`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

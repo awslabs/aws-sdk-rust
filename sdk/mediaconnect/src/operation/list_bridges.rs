@@ -139,7 +139,7 @@ impl ListBridgesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBridges`.
+/// Orchestration and serialization glue logic for `ListBridges`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

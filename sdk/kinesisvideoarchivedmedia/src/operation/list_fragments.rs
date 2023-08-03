@@ -126,7 +126,7 @@ impl ListFragmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFragments`.
+/// Orchestration and serialization glue logic for `ListFragments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

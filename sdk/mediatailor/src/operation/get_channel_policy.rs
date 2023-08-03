@@ -136,7 +136,7 @@ impl GetChannelPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetChannelPolicy`.
+/// Orchestration and serialization glue logic for `GetChannelPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

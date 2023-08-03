@@ -98,7 +98,7 @@ impl GetEc2DeepInspectionConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEc2DeepInspectionConfiguration`.
+/// Orchestration and serialization glue logic for `GetEc2DeepInspectionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

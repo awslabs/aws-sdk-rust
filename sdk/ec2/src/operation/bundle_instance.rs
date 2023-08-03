@@ -128,7 +128,7 @@ impl BundleInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BundleInstance`.
+/// Orchestration and serialization glue logic for `BundleInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

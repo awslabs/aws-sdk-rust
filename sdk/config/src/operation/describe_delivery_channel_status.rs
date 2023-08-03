@@ -132,7 +132,7 @@ impl DescribeDeliveryChannelStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDeliveryChannelStatus`.
+/// Orchestration and serialization glue logic for `DescribeDeliveryChannelStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

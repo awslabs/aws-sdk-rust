@@ -131,7 +131,7 @@ impl SubmitContainerStateChangeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SubmitContainerStateChange`.
+/// Orchestration and serialization glue logic for `SubmitContainerStateChange`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

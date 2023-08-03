@@ -126,7 +126,7 @@ impl DeleteInfrastructureConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInfrastructureConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteInfrastructureConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

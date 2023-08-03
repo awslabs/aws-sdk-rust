@@ -126,7 +126,7 @@ impl ListReceiptRuleSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListReceiptRuleSets`.
+/// Orchestration and serialization glue logic for `ListReceiptRuleSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

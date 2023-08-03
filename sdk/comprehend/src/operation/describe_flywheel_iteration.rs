@@ -131,7 +131,7 @@ impl DescribeFlywheelIterationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFlywheelIteration`.
+/// Orchestration and serialization glue logic for `DescribeFlywheelIteration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

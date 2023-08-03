@@ -136,7 +136,7 @@ impl ListPolicyVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPolicyVersions`.
+/// Orchestration and serialization glue logic for `ListPolicyVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

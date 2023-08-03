@@ -155,7 +155,7 @@ impl GetExportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetExportJobs`.
+/// Orchestration and serialization glue logic for `GetExportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

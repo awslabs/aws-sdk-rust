@@ -176,7 +176,7 @@ impl ListRevisionAssetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRevisionAssets`.
+/// Orchestration and serialization glue logic for `ListRevisionAssets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

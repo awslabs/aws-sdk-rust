@@ -112,7 +112,7 @@ impl DisassociateDefaultViewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateDefaultView`.
+/// Orchestration and serialization glue logic for `DisassociateDefaultView`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

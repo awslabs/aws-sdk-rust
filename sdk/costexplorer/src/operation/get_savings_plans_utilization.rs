@@ -131,7 +131,7 @@ impl GetSavingsPlansUtilizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSavingsPlansUtilization`.
+/// Orchestration and serialization glue logic for `GetSavingsPlansUtilization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DisassociateUserSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateUserSettings`.
+/// Orchestration and serialization glue logic for `DisassociateUserSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

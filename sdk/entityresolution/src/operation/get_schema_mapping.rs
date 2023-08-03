@@ -132,7 +132,7 @@ impl GetSchemaMappingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSchemaMapping`.
+/// Orchestration and serialization glue logic for `GetSchemaMapping`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

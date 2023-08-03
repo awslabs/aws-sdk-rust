@@ -135,7 +135,7 @@ impl ProvisionProductInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ProvisionProduct`.
+/// Orchestration and serialization glue logic for `ProvisionProduct`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

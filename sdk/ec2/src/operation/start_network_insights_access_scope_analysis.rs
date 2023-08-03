@@ -115,7 +115,7 @@ impl StartNetworkInsightsAccessScopeAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartNetworkInsightsAccessScopeAnalysis`.
+/// Orchestration and serialization glue logic for `StartNetworkInsightsAccessScopeAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

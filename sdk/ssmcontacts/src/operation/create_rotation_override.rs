@@ -131,7 +131,7 @@ impl CreateRotationOverrideInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRotationOverride`.
+/// Orchestration and serialization glue logic for `CreateRotationOverride`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

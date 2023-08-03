@@ -128,7 +128,7 @@ impl BatchPutAssetPropertyValueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchPutAssetPropertyValue`.
+/// Orchestration and serialization glue logic for `BatchPutAssetPropertyValue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DisableFastLaunchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableFastLaunch`.
+/// Orchestration and serialization glue logic for `DisableFastLaunch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

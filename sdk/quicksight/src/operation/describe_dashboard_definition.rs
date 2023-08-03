@@ -181,7 +181,7 @@ impl DescribeDashboardDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDashboardDefinition`.
+/// Orchestration and serialization glue logic for `DescribeDashboardDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

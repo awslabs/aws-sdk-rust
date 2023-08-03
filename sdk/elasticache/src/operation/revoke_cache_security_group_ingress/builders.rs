@@ -21,9 +21,9 @@ impl RevokeCacheSecurityGroupIngressFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl RevokeCacheSecurityGroupIngressFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl RevokeCacheSecurityGroupIngressFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressError>
     >{
         self.customize_middleware().await
     }

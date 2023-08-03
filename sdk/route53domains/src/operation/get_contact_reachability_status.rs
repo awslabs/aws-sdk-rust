@@ -131,7 +131,7 @@ impl GetContactReachabilityStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContactReachabilityStatus`.
+/// Orchestration and serialization glue logic for `GetContactReachabilityStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

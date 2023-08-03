@@ -126,7 +126,7 @@ impl CreateLoadBalancerListenersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLoadBalancerListeners`.
+/// Orchestration and serialization glue logic for `CreateLoadBalancerListeners`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

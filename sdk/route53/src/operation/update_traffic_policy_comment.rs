@@ -168,7 +168,7 @@ impl UpdateTrafficPolicyCommentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTrafficPolicyComment`.
+/// Orchestration and serialization glue logic for `UpdateTrafficPolicyComment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

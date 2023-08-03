@@ -131,7 +131,7 @@ impl ListPageReceiptsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPageReceipts`.
+/// Orchestration and serialization glue logic for `ListPageReceipts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

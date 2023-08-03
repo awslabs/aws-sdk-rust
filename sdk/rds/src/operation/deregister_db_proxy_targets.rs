@@ -126,7 +126,7 @@ impl DeregisterDbProxyTargetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterDBProxyTargets`.
+/// Orchestration and serialization glue logic for `DeregisterDBProxyTargets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

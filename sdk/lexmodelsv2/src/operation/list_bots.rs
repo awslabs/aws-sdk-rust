@@ -126,7 +126,7 @@ impl ListBotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBots`.
+/// Orchestration and serialization glue logic for `ListBots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl ExportEcsServiceRecommendationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportECSServiceRecommendations`.
+/// Orchestration and serialization glue logic for `ExportECSServiceRecommendations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

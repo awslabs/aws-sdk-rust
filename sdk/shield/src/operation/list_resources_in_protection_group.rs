@@ -125,7 +125,7 @@ impl ListResourcesInProtectionGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourcesInProtectionGroup`.
+/// Orchestration and serialization glue logic for `ListResourcesInProtectionGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

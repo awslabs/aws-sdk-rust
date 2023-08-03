@@ -120,7 +120,7 @@ impl RegisterTargetWithMaintenanceWindowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterTargetWithMaintenanceWindow`.
+/// Orchestration and serialization glue logic for `RegisterTargetWithMaintenanceWindow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateWorkspaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorkspace`.
+/// Orchestration and serialization glue logic for `UpdateWorkspace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

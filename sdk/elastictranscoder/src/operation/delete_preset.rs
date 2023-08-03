@@ -132,7 +132,7 @@ impl DeletePresetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePreset`.
+/// Orchestration and serialization glue logic for `DeletePreset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

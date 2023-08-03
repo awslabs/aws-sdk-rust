@@ -133,7 +133,7 @@ impl UpdateLocationHdfsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLocationHdfs`.
+/// Orchestration and serialization glue logic for `UpdateLocationHdfs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

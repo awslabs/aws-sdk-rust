@@ -140,7 +140,7 @@ impl GetImagePipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetImagePipeline`.
+/// Orchestration and serialization glue logic for `GetImagePipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

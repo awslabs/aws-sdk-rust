@@ -131,7 +131,7 @@ impl DeleteTrialInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTrial`.
+/// Orchestration and serialization glue logic for `DeleteTrial`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

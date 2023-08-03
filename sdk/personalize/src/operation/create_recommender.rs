@@ -131,7 +131,7 @@ impl CreateRecommenderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRecommender`.
+/// Orchestration and serialization glue logic for `CreateRecommender`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

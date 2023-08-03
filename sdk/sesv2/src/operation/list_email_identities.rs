@@ -134,7 +134,7 @@ impl ListEmailIdentitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEmailIdentities`.
+/// Orchestration and serialization glue logic for `ListEmailIdentities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

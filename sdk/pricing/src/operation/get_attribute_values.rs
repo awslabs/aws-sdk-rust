@@ -133,7 +133,7 @@ impl GetAttributeValuesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAttributeValues`.
+/// Orchestration and serialization glue logic for `GetAttributeValues`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

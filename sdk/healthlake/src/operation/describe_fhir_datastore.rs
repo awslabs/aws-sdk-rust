@@ -131,7 +131,7 @@ impl DescribeFhirDatastoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFHIRDatastore`.
+/// Orchestration and serialization glue logic for `DescribeFHIRDatastore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

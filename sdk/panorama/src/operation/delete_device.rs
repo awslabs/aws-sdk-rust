@@ -132,7 +132,7 @@ impl DeleteDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDevice`.
+/// Orchestration and serialization glue logic for `DeleteDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

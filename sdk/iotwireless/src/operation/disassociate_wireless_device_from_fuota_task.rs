@@ -141,7 +141,7 @@ impl DisassociateWirelessDeviceFromFuotaTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateWirelessDeviceFromFuotaTask`.
+/// Orchestration and serialization glue logic for `DisassociateWirelessDeviceFromFuotaTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

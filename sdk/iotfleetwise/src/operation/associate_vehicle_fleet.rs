@@ -131,7 +131,7 @@ impl AssociateVehicleFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateVehicleFleet`.
+/// Orchestration and serialization glue logic for `AssociateVehicleFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

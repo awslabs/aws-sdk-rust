@@ -131,7 +131,7 @@ impl ListAdminsManagingAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAdminsManagingAccount`.
+/// Orchestration and serialization glue logic for `ListAdminsManagingAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

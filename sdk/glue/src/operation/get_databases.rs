@@ -131,7 +131,7 @@ impl GetDatabasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDatabases`.
+/// Orchestration and serialization glue logic for `GetDatabases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl GetQuerySuggestionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetQuerySuggestions`.
+/// Orchestration and serialization glue logic for `GetQuerySuggestions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

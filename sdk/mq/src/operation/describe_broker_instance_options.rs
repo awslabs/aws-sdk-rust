@@ -160,7 +160,7 @@ impl DescribeBrokerInstanceOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBrokerInstanceOptions`.
+/// Orchestration and serialization glue logic for `DescribeBrokerInstanceOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

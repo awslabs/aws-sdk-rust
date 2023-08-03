@@ -131,7 +131,7 @@ impl ListLineageGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLineageGroups`.
+/// Orchestration and serialization glue logic for `ListLineageGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

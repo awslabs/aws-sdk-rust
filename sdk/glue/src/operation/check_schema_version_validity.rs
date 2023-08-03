@@ -131,7 +131,7 @@ impl CheckSchemaVersionValidityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CheckSchemaVersionValidity`.
+/// Orchestration and serialization glue logic for `CheckSchemaVersionValidity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

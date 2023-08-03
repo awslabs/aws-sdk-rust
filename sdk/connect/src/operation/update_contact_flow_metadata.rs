@@ -170,7 +170,7 @@ impl UpdateContactFlowMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContactFlowMetadata`.
+/// Orchestration and serialization glue logic for `UpdateContactFlowMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -116,7 +116,7 @@ impl DisableApplicationLayerAutomaticResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableApplicationLayerAutomaticResponse`.
+/// Orchestration and serialization glue logic for `DisableApplicationLayerAutomaticResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

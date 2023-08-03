@@ -131,7 +131,7 @@ impl DeregisterWorkspaceDirectoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterWorkspaceDirectory`.
+/// Orchestration and serialization glue logic for `DeregisterWorkspaceDirectory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

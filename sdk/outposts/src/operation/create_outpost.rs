@@ -126,7 +126,7 @@ impl CreateOutpostInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateOutpost`.
+/// Orchestration and serialization glue logic for `CreateOutpost`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

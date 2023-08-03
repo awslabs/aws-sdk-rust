@@ -126,7 +126,7 @@ impl ListAuditFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAuditFindings`.
+/// Orchestration and serialization glue logic for `ListAuditFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

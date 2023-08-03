@@ -131,7 +131,7 @@ impl DescribeServiceUpdatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeServiceUpdates`.
+/// Orchestration and serialization glue logic for `DescribeServiceUpdates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

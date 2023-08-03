@@ -133,7 +133,7 @@ impl CreateStreamingUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStreamingURL`.
+/// Orchestration and serialization glue logic for `CreateStreamingURL`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

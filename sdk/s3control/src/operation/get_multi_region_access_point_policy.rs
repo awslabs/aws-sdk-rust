@@ -149,7 +149,7 @@ impl GetMultiRegionAccessPointPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMultiRegionAccessPointPolicy`.
+/// Orchestration and serialization glue logic for `GetMultiRegionAccessPointPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

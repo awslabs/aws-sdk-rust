@@ -125,7 +125,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfirmPrivateVirtualInterface`.
+/// Orchestration and serialization glue logic for `ConfirmPrivateVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

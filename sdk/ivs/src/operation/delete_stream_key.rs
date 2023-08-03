@@ -126,7 +126,7 @@ impl DeleteStreamKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStreamKey`.
+/// Orchestration and serialization glue logic for `DeleteStreamKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

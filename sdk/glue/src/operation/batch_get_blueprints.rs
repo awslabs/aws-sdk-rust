@@ -133,7 +133,7 @@ impl BatchGetBlueprintsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetBlueprints`.
+/// Orchestration and serialization glue logic for `BatchGetBlueprints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

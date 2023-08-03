@@ -133,7 +133,7 @@ impl DescribeEventTrackerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEventTracker`.
+/// Orchestration and serialization glue logic for `DescribeEventTracker`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

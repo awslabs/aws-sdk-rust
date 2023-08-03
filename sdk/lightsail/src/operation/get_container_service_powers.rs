@@ -124,7 +124,7 @@ impl GetContainerServicePowersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContainerServicePowers`.
+/// Orchestration and serialization glue logic for `GetContainerServicePowers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

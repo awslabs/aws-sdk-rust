@@ -161,7 +161,7 @@ impl DeleteStudioComponentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStudioComponent`.
+/// Orchestration and serialization glue logic for `DeleteStudioComponent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

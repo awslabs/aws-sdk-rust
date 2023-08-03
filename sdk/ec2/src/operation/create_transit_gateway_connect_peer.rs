@@ -120,7 +120,7 @@ impl CreateTransitGatewayConnectPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTransitGatewayConnectPeer`.
+/// Orchestration and serialization glue logic for `CreateTransitGatewayConnectPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

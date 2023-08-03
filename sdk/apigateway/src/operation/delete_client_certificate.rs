@@ -140,7 +140,7 @@ impl DeleteClientCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteClientCertificate`.
+/// Orchestration and serialization glue logic for `DeleteClientCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

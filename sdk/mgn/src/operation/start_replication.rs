@@ -126,7 +126,7 @@ impl StartReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartReplication`.
+/// Orchestration and serialization glue logic for `StartReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

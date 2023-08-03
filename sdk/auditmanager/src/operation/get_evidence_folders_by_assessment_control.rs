@@ -176,7 +176,7 @@ impl GetEvidenceFoldersByAssessmentControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEvidenceFoldersByAssessmentControl`.
+/// Orchestration and serialization glue logic for `GetEvidenceFoldersByAssessmentControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

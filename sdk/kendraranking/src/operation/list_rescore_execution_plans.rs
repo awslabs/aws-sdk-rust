@@ -152,7 +152,7 @@ impl ListRescoreExecutionPlansInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRescoreExecutionPlans`.
+/// Orchestration and serialization glue logic for `ListRescoreExecutionPlans`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

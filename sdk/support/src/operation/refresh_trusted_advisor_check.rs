@@ -131,7 +131,7 @@ impl RefreshTrustedAdvisorCheckInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RefreshTrustedAdvisorCheck`.
+/// Orchestration and serialization glue logic for `RefreshTrustedAdvisorCheck`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -142,7 +142,7 @@ impl GetEffectivePoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEffectivePolicies`.
+/// Orchestration and serialization glue logic for `GetEffectivePolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

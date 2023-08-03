@@ -150,7 +150,7 @@ impl DisassociateLensesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateLenses`.
+/// Orchestration and serialization glue logic for `DisassociateLenses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

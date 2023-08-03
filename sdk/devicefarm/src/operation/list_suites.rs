@@ -131,7 +131,7 @@ impl ListSuitesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSuites`.
+/// Orchestration and serialization glue logic for `ListSuites`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl DeleteDataSetRefreshPropertiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataSetRefreshProperties`.
+/// Orchestration and serialization glue logic for `DeleteDataSetRefreshProperties`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

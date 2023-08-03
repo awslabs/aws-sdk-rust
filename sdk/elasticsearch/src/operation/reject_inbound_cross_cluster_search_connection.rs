@@ -121,7 +121,7 @@ impl RejectInboundCrossClusterSearchConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RejectInboundCrossClusterSearchConnection`.
+/// Orchestration and serialization glue logic for `RejectInboundCrossClusterSearchConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListResolverEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResolverEndpoints`.
+/// Orchestration and serialization glue logic for `ListResolverEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

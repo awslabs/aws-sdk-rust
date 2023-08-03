@@ -131,7 +131,7 @@ impl UpdateTrailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTrail`.
+/// Orchestration and serialization glue logic for `UpdateTrail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateWorkgroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorkgroup`.
+/// Orchestration and serialization glue logic for `UpdateWorkgroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

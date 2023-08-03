@@ -131,7 +131,7 @@ impl DescribeStorediScsiVolumesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStorediSCSIVolumes`.
+/// Orchestration and serialization glue logic for `DescribeStorediSCSIVolumes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

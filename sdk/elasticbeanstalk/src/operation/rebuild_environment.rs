@@ -126,7 +126,7 @@ impl RebuildEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RebuildEnvironment`.
+/// Orchestration and serialization glue logic for `RebuildEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateAccessLogSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAccessLogSubscription`.
+/// Orchestration and serialization glue logic for `CreateAccessLogSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

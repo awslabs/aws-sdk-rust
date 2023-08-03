@@ -132,7 +132,7 @@ impl PutBandwidthRateLimitScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBandwidthRateLimitSchedule`.
+/// Orchestration and serialization glue logic for `PutBandwidthRateLimitSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeleteMetricStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMetricStream`.
+/// Orchestration and serialization glue logic for `DeleteMetricStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

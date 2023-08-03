@@ -116,7 +116,7 @@ impl DetachCertificateFromDistributionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachCertificateFromDistribution`.
+/// Orchestration and serialization glue logic for `DetachCertificateFromDistribution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

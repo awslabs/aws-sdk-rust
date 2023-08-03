@@ -136,7 +136,7 @@ impl DescribePhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePhoneNumber`.
+/// Orchestration and serialization glue logic for `DescribePhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

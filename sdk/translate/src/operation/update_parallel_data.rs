@@ -137,7 +137,7 @@ impl UpdateParallelDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateParallelData`.
+/// Orchestration and serialization glue logic for `UpdateParallelData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

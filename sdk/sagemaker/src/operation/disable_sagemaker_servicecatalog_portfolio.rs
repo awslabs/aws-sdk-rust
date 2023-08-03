@@ -109,7 +109,7 @@ impl DisableSagemakerServicecatalogPortfolioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableSagemakerServicecatalogPortfolio`.
+/// Orchestration and serialization glue logic for `DisableSagemakerServicecatalogPortfolio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl BatchWriteItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchWriteItem`.
+/// Orchestration and serialization glue logic for `BatchWriteItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

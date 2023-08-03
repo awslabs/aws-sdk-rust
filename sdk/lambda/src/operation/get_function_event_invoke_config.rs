@@ -150,7 +150,7 @@ impl GetFunctionEventInvokeConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFunctionEventInvokeConfig`.
+/// Orchestration and serialization glue logic for `GetFunctionEventInvokeConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

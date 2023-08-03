@@ -131,7 +131,7 @@ impl SearchThingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchThings`.
+/// Orchestration and serialization glue logic for `SearchThings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl UpdateLoggingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLoggingConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateLoggingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

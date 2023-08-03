@@ -116,7 +116,7 @@ impl DescribeTargetedSentimentDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTargetedSentimentDetectionJob`.
+/// Orchestration and serialization glue logic for `DescribeTargetedSentimentDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

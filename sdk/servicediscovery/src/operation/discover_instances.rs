@@ -133,7 +133,7 @@ impl DiscoverInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DiscoverInstances`.
+/// Orchestration and serialization glue logic for `DiscoverInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

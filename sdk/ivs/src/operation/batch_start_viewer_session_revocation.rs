@@ -112,7 +112,7 @@ impl BatchStartViewerSessionRevocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchStartViewerSessionRevocation`.
+/// Orchestration and serialization glue logic for `BatchStartViewerSessionRevocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

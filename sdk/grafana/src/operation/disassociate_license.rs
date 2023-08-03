@@ -156,7 +156,7 @@ impl DisassociateLicenseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateLicense`.
+/// Orchestration and serialization glue logic for `DisassociateLicense`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

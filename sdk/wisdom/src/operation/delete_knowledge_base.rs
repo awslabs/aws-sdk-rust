@@ -136,7 +136,7 @@ impl DeleteKnowledgeBaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteKnowledgeBase`.
+/// Orchestration and serialization glue logic for `DeleteKnowledgeBase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

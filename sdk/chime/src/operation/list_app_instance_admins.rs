@@ -163,7 +163,7 @@ impl ListAppInstanceAdminsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppInstanceAdmins`.
+/// Orchestration and serialization glue logic for `ListAppInstanceAdmins`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl RemoveManagedScalingPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveManagedScalingPolicy`.
+/// Orchestration and serialization glue logic for `RemoveManagedScalingPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl StartReadSetActivationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartReadSetActivationJob`.
+/// Orchestration and serialization glue logic for `StartReadSetActivationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

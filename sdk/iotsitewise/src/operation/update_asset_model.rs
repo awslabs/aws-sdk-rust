@@ -156,7 +156,7 @@ impl UpdateAssetModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAssetModel`.
+/// Orchestration and serialization glue logic for `UpdateAssetModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

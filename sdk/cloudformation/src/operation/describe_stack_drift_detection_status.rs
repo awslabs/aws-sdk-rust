@@ -111,7 +111,7 @@ impl DescribeStackDriftDetectionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStackDriftDetectionStatus`.
+/// Orchestration and serialization glue logic for `DescribeStackDriftDetectionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

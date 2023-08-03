@@ -133,7 +133,7 @@ impl GetConnectionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConnectionStatus`.
+/// Orchestration and serialization glue logic for `GetConnectionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

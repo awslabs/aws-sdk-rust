@@ -159,7 +159,7 @@ impl ListExperimentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListExperiments`.
+/// Orchestration and serialization glue logic for `ListExperiments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

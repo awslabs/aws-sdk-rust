@@ -125,7 +125,7 @@ impl UpdateQuerySuggestionsBlockListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateQuerySuggestionsBlockList`.
+/// Orchestration and serialization glue logic for `UpdateQuerySuggestionsBlockList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

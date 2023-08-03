@@ -128,7 +128,7 @@ impl DisableLoggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableLogging`.
+/// Orchestration and serialization glue logic for `DisableLogging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteCodeSigningConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCodeSigningConfig`.
+/// Orchestration and serialization glue logic for `DeleteCodeSigningConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

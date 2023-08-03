@@ -131,7 +131,7 @@ impl ListProtectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProtections`.
+/// Orchestration and serialization glue logic for `ListProtections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

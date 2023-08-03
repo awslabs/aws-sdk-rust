@@ -150,7 +150,7 @@ impl UpdateMemberDetectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMemberDetectors`.
+/// Orchestration and serialization glue logic for `UpdateMemberDetectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

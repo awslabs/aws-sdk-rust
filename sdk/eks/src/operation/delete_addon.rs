@@ -171,7 +171,7 @@ impl DeleteAddonInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAddon`.
+/// Orchestration and serialization glue logic for `DeleteAddon`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

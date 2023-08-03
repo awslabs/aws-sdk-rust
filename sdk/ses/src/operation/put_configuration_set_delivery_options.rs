@@ -111,7 +111,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutConfigurationSetDeliveryOptions`.
+/// Orchestration and serialization glue logic for `PutConfigurationSetDeliveryOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

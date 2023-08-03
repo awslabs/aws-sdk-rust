@@ -133,7 +133,7 @@ impl ListEndpointAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEndpointAccess`.
+/// Orchestration and serialization glue logic for `ListEndpointAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

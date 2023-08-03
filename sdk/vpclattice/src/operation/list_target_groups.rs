@@ -150,7 +150,7 @@ impl ListTargetGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTargetGroups`.
+/// Orchestration and serialization glue logic for `ListTargetGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

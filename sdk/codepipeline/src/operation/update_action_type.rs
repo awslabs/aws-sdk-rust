@@ -131,7 +131,7 @@ impl UpdateActionTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateActionType`.
+/// Orchestration and serialization glue logic for `UpdateActionType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

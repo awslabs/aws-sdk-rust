@@ -126,7 +126,7 @@ impl ListTagsForResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTagsForResource`.
+/// Orchestration and serialization glue logic for `ListTagsForResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl RegisterInstanceEventNotificationAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterInstanceEventNotificationAttributes`.
+/// Orchestration and serialization glue logic for `RegisterInstanceEventNotificationAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

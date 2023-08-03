@@ -129,7 +129,7 @@ impl GetResourcePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResourcePolicy`.
+/// Orchestration and serialization glue logic for `GetResourcePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

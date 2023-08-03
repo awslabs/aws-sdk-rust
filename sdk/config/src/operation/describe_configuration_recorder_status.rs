@@ -116,7 +116,7 @@ impl DescribeConfigurationRecorderStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConfigurationRecorderStatus`.
+/// Orchestration and serialization glue logic for `DescribeConfigurationRecorderStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

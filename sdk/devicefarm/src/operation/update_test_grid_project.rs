@@ -131,7 +131,7 @@ impl UpdateTestGridProjectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTestGridProject`.
+/// Orchestration and serialization glue logic for `UpdateTestGridProject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

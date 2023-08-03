@@ -131,7 +131,7 @@ impl PutOrganizationConfigRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutOrganizationConfigRule`.
+/// Orchestration and serialization glue logic for `PutOrganizationConfigRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

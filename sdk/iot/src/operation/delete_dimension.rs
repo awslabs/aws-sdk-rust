@@ -132,7 +132,7 @@ impl DeleteDimensionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDimension`.
+/// Orchestration and serialization glue logic for `DeleteDimension`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteRepositoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRepository`.
+/// Orchestration and serialization glue logic for `DeleteRepository`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

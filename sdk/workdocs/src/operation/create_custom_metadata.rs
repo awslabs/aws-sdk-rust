@@ -167,7 +167,7 @@ impl CreateCustomMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCustomMetadata`.
+/// Orchestration and serialization glue logic for `CreateCustomMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

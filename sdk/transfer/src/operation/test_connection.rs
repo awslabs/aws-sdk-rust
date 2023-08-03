@@ -131,7 +131,7 @@ impl TestConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestConnection`.
+/// Orchestration and serialization glue logic for `TestConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

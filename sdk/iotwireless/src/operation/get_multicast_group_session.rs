@@ -132,7 +132,7 @@ impl GetMulticastGroupSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMulticastGroupSession`.
+/// Orchestration and serialization glue logic for `GetMulticastGroupSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

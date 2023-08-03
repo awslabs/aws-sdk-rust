@@ -126,7 +126,7 @@ impl MoveByoipCidrToIpamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MoveByoipCidrToIpam`.
+/// Orchestration and serialization glue logic for `MoveByoipCidrToIpam`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

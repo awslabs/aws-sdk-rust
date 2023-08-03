@@ -112,7 +112,7 @@ impl DescribeCompanyNetworkConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCompanyNetworkConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeCompanyNetworkConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

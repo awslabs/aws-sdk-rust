@@ -168,7 +168,7 @@ impl CalculateRouteMatrixInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CalculateRouteMatrix`.
+/// Orchestration and serialization glue logic for `CalculateRouteMatrix`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

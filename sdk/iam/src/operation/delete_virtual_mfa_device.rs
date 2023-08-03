@@ -126,7 +126,7 @@ impl DeleteVirtualMfaDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVirtualMFADevice`.
+/// Orchestration and serialization glue logic for `DeleteVirtualMFADevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

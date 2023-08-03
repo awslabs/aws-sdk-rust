@@ -133,7 +133,7 @@ impl PutRetentionPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutRetentionPolicy`.
+/// Orchestration and serialization glue logic for `PutRetentionPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl PutResourceSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutResourceSet`.
+/// Orchestration and serialization glue logic for `PutResourceSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

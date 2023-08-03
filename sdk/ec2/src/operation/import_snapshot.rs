@@ -128,7 +128,7 @@ impl ImportSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportSnapshot`.
+/// Orchestration and serialization glue logic for `ImportSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

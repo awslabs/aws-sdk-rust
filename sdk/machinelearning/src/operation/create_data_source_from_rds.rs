@@ -131,7 +131,7 @@ impl CreateDataSourceFromRdsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataSourceFromRDS`.
+/// Orchestration and serialization glue logic for `CreateDataSourceFromRDS`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

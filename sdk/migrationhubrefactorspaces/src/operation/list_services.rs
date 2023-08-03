@@ -172,7 +172,7 @@ impl ListServicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServices`.
+/// Orchestration and serialization glue logic for `ListServices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

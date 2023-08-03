@@ -131,7 +131,7 @@ impl DeregisterManagedInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterManagedInstance`.
+/// Orchestration and serialization glue logic for `DeregisterManagedInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

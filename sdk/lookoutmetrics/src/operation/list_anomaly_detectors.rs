@@ -128,7 +128,7 @@ impl ListAnomalyDetectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnomalyDetectors`.
+/// Orchestration and serialization glue logic for `ListAnomalyDetectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

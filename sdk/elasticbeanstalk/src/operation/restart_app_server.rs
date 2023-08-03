@@ -126,7 +126,7 @@ impl RestartAppServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestartAppServer`.
+/// Orchestration and serialization glue logic for `RestartAppServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

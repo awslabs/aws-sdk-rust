@@ -146,7 +146,7 @@ impl DescribeMeshInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMesh`.
+/// Orchestration and serialization glue logic for `DescribeMesh`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

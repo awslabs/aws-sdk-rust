@@ -161,7 +161,7 @@ impl DeleteLaunchProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLaunchProfile`.
+/// Orchestration and serialization glue logic for `DeleteLaunchProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

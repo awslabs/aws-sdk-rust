@@ -131,7 +131,7 @@ impl GetUsageForecastInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUsageForecast`.
+/// Orchestration and serialization glue logic for `GetUsageForecast`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

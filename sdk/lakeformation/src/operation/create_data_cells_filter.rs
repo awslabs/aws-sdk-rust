@@ -126,7 +126,7 @@ impl CreateDataCellsFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataCellsFilter`.
+/// Orchestration and serialization glue logic for `CreateDataCellsFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

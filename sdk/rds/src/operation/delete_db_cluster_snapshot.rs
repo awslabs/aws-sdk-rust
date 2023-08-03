@@ -126,7 +126,7 @@ impl DeleteDbClusterSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDBClusterSnapshot`.
+/// Orchestration and serialization glue logic for `DeleteDBClusterSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

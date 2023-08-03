@@ -136,7 +136,7 @@ impl DeleteAppInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteApp`.
+/// Orchestration and serialization glue logic for `DeleteApp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

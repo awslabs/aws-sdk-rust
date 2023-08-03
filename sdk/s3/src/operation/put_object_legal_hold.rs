@@ -193,7 +193,7 @@ impl PutObjectLegalHoldInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutObjectLegalHold`.
+/// Orchestration and serialization glue logic for `PutObjectLegalHold`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

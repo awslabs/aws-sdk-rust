@@ -126,7 +126,7 @@ impl DescribeReservedInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReservedInstances`.
+/// Orchestration and serialization glue logic for `DescribeReservedInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

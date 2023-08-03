@@ -160,7 +160,7 @@ impl ListElasticsearchInstanceTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListElasticsearchInstanceTypes`.
+/// Orchestration and serialization glue logic for `ListElasticsearchInstanceTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

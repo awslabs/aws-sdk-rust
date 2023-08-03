@@ -131,7 +131,7 @@ impl ListCustomRoutingListenersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCustomRoutingListeners`.
+/// Orchestration and serialization glue logic for `ListCustomRoutingListeners`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

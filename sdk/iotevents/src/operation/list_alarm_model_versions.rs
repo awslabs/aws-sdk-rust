@@ -158,7 +158,7 @@ impl ListAlarmModelVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAlarmModelVersions`.
+/// Orchestration and serialization glue logic for `ListAlarmModelVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

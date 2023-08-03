@@ -137,7 +137,7 @@ impl CreateFirewallRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFirewallRule`.
+/// Orchestration and serialization glue logic for `CreateFirewallRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

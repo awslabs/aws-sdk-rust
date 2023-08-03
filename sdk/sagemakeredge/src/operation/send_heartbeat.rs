@@ -126,7 +126,7 @@ impl SendHeartbeatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendHeartbeat`.
+/// Orchestration and serialization glue logic for `SendHeartbeat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

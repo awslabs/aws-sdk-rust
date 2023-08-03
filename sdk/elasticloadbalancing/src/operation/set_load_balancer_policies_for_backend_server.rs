@@ -111,7 +111,7 @@ impl SetLoadBalancerPoliciesForBackendServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetLoadBalancerPoliciesForBackendServer`.
+/// Orchestration and serialization glue logic for `SetLoadBalancerPoliciesForBackendServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

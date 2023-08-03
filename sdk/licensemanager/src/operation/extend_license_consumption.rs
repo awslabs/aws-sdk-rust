@@ -131,7 +131,7 @@ impl ExtendLicenseConsumptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExtendLicenseConsumption`.
+/// Orchestration and serialization glue logic for `ExtendLicenseConsumption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

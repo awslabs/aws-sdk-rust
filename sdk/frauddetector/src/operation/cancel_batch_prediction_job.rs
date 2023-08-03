@@ -131,7 +131,7 @@ impl CancelBatchPredictionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelBatchPredictionJob`.
+/// Orchestration and serialization glue logic for `CancelBatchPredictionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

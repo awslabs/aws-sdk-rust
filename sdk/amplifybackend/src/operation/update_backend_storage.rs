@@ -172,7 +172,7 @@ impl UpdateBackendStorageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBackendStorage`.
+/// Orchestration and serialization glue logic for `UpdateBackendStorage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

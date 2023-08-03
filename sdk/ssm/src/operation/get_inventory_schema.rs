@@ -133,7 +133,7 @@ impl GetInventorySchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInventorySchema`.
+/// Orchestration and serialization glue logic for `GetInventorySchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

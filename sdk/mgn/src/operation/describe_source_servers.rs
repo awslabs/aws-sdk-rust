@@ -126,7 +126,7 @@ impl DescribeSourceServersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSourceServers`.
+/// Orchestration and serialization glue logic for `DescribeSourceServers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

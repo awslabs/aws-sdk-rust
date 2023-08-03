@@ -144,7 +144,7 @@ impl UpdateOrganizationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateOrganizationConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateOrganizationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

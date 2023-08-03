@@ -128,7 +128,7 @@ impl StopDbInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopDBInstance`.
+/// Orchestration and serialization glue logic for `StopDBInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

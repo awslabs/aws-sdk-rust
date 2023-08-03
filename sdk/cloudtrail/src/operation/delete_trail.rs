@@ -131,7 +131,7 @@ impl DeleteTrailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTrail`.
+/// Orchestration and serialization glue logic for `DeleteTrail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

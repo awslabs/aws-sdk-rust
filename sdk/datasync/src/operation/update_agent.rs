@@ -131,7 +131,7 @@ impl UpdateAgentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAgent`.
+/// Orchestration and serialization glue logic for `UpdateAgent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

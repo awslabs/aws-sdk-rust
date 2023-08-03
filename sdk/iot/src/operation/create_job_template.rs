@@ -150,7 +150,7 @@ impl CreateJobTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateJobTemplate`.
+/// Orchestration and serialization glue logic for `CreateJobTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

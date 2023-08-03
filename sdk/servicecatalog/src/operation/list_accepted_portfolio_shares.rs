@@ -131,7 +131,7 @@ impl ListAcceptedPortfolioSharesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAcceptedPortfolioShares`.
+/// Orchestration and serialization glue logic for `ListAcceptedPortfolioShares`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

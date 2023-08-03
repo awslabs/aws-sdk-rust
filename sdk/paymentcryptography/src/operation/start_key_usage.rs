@@ -131,7 +131,7 @@ impl StartKeyUsageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartKeyUsage`.
+/// Orchestration and serialization glue logic for `StartKeyUsage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

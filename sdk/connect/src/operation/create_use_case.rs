@@ -164,7 +164,7 @@ impl CreateUseCaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateUseCase`.
+/// Orchestration and serialization glue logic for `CreateUseCase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

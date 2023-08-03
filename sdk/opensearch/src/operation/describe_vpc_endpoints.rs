@@ -129,7 +129,7 @@ impl DescribeVpcEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVpcEndpoints`.
+/// Orchestration and serialization glue logic for `DescribeVpcEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

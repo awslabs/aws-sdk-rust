@@ -132,7 +132,7 @@ impl GetImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetImportJob`.
+/// Orchestration and serialization glue logic for `GetImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

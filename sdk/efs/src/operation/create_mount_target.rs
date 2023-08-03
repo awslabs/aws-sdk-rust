@@ -127,7 +127,7 @@ impl CreateMountTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMountTarget`.
+/// Orchestration and serialization glue logic for `CreateMountTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

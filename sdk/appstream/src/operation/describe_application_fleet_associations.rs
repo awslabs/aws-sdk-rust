@@ -116,7 +116,7 @@ impl DescribeApplicationFleetAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeApplicationFleetAssociations`.
+/// Orchestration and serialization glue logic for `DescribeApplicationFleetAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

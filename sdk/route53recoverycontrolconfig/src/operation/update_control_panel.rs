@@ -128,7 +128,7 @@ impl UpdateControlPanelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateControlPanel`.
+/// Orchestration and serialization glue logic for `UpdateControlPanel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

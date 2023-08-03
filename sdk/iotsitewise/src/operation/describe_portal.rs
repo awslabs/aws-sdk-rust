@@ -134,7 +134,7 @@ impl DescribePortalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePortal`.
+/// Orchestration and serialization glue logic for `DescribePortal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

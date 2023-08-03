@@ -133,7 +133,7 @@ impl ListSchemaVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSchemaVersions`.
+/// Orchestration and serialization glue logic for `ListSchemaVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

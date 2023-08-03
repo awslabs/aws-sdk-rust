@@ -133,7 +133,7 @@ impl CreateEndpointConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEndpointConfig`.
+/// Orchestration and serialization glue logic for `CreateEndpointConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

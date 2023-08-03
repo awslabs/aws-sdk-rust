@@ -116,7 +116,7 @@ impl AddApplicationReferenceDataSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddApplicationReferenceDataSource`.
+/// Orchestration and serialization glue logic for `AddApplicationReferenceDataSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

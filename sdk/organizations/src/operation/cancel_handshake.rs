@@ -131,7 +131,7 @@ impl CancelHandshakeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelHandshake`.
+/// Orchestration and serialization glue logic for `CancelHandshake`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

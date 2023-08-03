@@ -131,7 +131,7 @@ impl DescribeFlowDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFlowDefinition`.
+/// Orchestration and serialization glue logic for `DescribeFlowDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

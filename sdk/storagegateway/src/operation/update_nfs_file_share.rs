@@ -133,7 +133,7 @@ impl UpdateNfsFileShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateNFSFileShare`.
+/// Orchestration and serialization glue logic for `UpdateNFSFileShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

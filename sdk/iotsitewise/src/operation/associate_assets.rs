@@ -152,7 +152,7 @@ impl AssociateAssetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateAssets`.
+/// Orchestration and serialization glue logic for `AssociateAssets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

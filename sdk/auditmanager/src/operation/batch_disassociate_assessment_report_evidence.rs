@@ -135,7 +135,7 @@ impl BatchDisassociateAssessmentReportEvidenceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDisassociateAssessmentReportEvidence`.
+/// Orchestration and serialization glue logic for `BatchDisassociateAssessmentReportEvidence`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

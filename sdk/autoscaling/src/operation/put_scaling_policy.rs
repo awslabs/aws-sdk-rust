@@ -126,7 +126,7 @@ impl PutScalingPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutScalingPolicy`.
+/// Orchestration and serialization glue logic for `PutScalingPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

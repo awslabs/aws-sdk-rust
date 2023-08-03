@@ -172,7 +172,7 @@ impl UpdateWorkloadShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorkloadShare`.
+/// Orchestration and serialization glue logic for `UpdateWorkloadShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

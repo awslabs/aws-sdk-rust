@@ -131,7 +131,7 @@ impl ListWorkflowsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWorkflows`.
+/// Orchestration and serialization glue logic for `ListWorkflows`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

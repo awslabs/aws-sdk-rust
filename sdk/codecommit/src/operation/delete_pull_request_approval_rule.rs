@@ -132,7 +132,7 @@ impl DeletePullRequestApprovalRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePullRequestApprovalRule`.
+/// Orchestration and serialization glue logic for `DeletePullRequestApprovalRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

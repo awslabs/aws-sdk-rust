@@ -126,7 +126,7 @@ impl ModifyHostsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyHosts`.
+/// Orchestration and serialization glue logic for `ModifyHosts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

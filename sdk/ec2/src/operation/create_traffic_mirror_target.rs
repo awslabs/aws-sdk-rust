@@ -130,7 +130,7 @@ impl CreateTrafficMirrorTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrafficMirrorTarget`.
+/// Orchestration and serialization glue logic for `CreateTrafficMirrorTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -129,7 +129,7 @@ impl CreateAwsLogSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAwsLogSource`.
+/// Orchestration and serialization glue logic for `CreateAwsLogSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

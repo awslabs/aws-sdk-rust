@@ -131,7 +131,7 @@ impl DeleteCorsPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCorsPolicy`.
+/// Orchestration and serialization glue logic for `DeleteCorsPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

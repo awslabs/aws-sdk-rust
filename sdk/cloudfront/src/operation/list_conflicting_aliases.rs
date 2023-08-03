@@ -170,7 +170,7 @@ impl ListConflictingAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListConflictingAliases`.
+/// Orchestration and serialization glue logic for `ListConflictingAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

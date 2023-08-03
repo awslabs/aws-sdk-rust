@@ -126,7 +126,7 @@ impl StartSpeechSynthesisTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartSpeechSynthesisTask`.
+/// Orchestration and serialization glue logic for `StartSpeechSynthesisTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

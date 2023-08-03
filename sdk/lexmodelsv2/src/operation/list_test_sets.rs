@@ -126,7 +126,7 @@ impl ListTestSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTestSets`.
+/// Orchestration and serialization glue logic for `ListTestSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

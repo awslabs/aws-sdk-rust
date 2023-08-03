@@ -126,7 +126,7 @@ impl ModifyActivityStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyActivityStream`.
+/// Orchestration and serialization glue logic for `ModifyActivityStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

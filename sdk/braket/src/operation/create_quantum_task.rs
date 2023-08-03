@@ -130,7 +130,7 @@ impl CreateQuantumTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateQuantumTask`.
+/// Orchestration and serialization glue logic for `CreateQuantumTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

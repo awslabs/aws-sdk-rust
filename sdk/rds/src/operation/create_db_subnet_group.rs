@@ -126,7 +126,7 @@ impl CreateDbSubnetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDBSubnetGroup`.
+/// Orchestration and serialization glue logic for `CreateDBSubnetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

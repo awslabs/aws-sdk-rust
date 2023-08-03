@@ -150,7 +150,7 @@ impl CreatePlacementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePlacement`.
+/// Orchestration and serialization glue logic for `CreatePlacement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -143,7 +143,7 @@ impl CreateCertificateFromCsrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCertificateFromCsr`.
+/// Orchestration and serialization glue logic for `CreateCertificateFromCsr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

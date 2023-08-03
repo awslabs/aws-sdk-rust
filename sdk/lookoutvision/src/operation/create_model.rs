@@ -157,7 +157,7 @@ impl CreateModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateModel`.
+/// Orchestration and serialization glue logic for `CreateModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

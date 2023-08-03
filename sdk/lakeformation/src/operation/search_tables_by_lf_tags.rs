@@ -126,7 +126,7 @@ impl SearchTablesByLfTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchTablesByLFTags`.
+/// Orchestration and serialization glue logic for `SearchTablesByLFTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

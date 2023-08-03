@@ -21,9 +21,9 @@ impl BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDevice, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDevice, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDevice, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDevice, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>
     >{
         self.customize_middleware().await
     }

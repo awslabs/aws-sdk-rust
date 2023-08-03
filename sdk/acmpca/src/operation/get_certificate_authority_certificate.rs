@@ -116,7 +116,7 @@ impl GetCertificateAuthorityCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCertificateAuthorityCertificate`.
+/// Orchestration and serialization glue logic for `GetCertificateAuthorityCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

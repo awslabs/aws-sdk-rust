@@ -146,7 +146,7 @@ impl UpdatePipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePipeline`.
+/// Orchestration and serialization glue logic for `UpdatePipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

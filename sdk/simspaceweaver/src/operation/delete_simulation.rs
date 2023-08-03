@@ -140,7 +140,7 @@ impl DeleteSimulationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSimulation`.
+/// Orchestration and serialization glue logic for `DeleteSimulation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

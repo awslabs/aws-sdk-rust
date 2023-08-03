@@ -132,7 +132,7 @@ impl DescribeComponentConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeComponentConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeComponentConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

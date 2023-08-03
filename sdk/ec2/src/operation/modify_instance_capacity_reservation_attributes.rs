@@ -111,7 +111,7 @@ impl ModifyInstanceCapacityReservationAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyInstanceCapacityReservationAttributes`.
+/// Orchestration and serialization glue logic for `ModifyInstanceCapacityReservationAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

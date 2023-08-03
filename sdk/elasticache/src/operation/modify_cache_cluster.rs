@@ -126,7 +126,7 @@ impl ModifyCacheClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyCacheCluster`.
+/// Orchestration and serialization glue logic for `ModifyCacheCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

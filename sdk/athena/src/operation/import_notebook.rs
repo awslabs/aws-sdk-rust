@@ -131,7 +131,7 @@ impl ImportNotebookInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportNotebook`.
+/// Orchestration and serialization glue logic for `ImportNotebook`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

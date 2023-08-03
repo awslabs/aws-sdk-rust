@@ -155,7 +155,7 @@ impl ListSignalCatalogsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSignalCatalogs`.
+/// Orchestration and serialization glue logic for `ListSignalCatalogs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

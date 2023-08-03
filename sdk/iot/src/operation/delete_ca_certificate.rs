@@ -136,7 +136,7 @@ impl DeleteCaCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCACertificate`.
+/// Orchestration and serialization glue logic for `DeleteCACertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

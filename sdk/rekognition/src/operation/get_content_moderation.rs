@@ -133,7 +133,7 @@ impl GetContentModerationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContentModeration`.
+/// Orchestration and serialization glue logic for `GetContentModeration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

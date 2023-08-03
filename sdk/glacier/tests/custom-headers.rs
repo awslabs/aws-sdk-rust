@@ -39,3 +39,49 @@ async fn set_correct_headers() {
         ],
     ));
 }
+
+#[tokio::test]
+async fn autofill_account_id() {
+    let (conn, handler) = capture_request(None);
+    let conf = aws_sdk_glacier::Config::builder()
+        .region(Region::new("us-east-1"))
+        .credentials_provider(Credentials::for_tests())
+        .http_connector(conn)
+        .build();
+
+    let client = aws_sdk_glacier::Client::from_conf(conf);
+    let _resp = client
+        .abort_multipart_upload()
+        .vault_name("vault")
+        .upload_id("some/upload/id")
+        .send()
+        .await;
+    let req = handler.expect_request();
+    assert_eq!(
+        "/-/vaults/vault/multipart-uploads/some%2Fupload%2Fid",
+        req.uri().path()
+    );
+}
+
+#[tokio::test]
+async fn api_version_set() {
+    let (conn, handler) = capture_request(None);
+    let conf = aws_sdk_glacier::Config::builder()
+        .region(Region::new("us-east-1"))
+        .credentials_provider(Credentials::for_tests())
+        .http_connector(conn)
+        .build();
+
+    let client = aws_sdk_glacier::Client::from_conf(conf);
+    let _resp = client
+        .abort_multipart_upload()
+        .vault_name("vault")
+        .upload_id("some/upload/id")
+        .send()
+        .await;
+    let req = handler.expect_request();
+    assert_ok(validate_headers(
+        req.headers(),
+        [("x-amz-glacier-version", "2012-06-01")],
+    ));
+}

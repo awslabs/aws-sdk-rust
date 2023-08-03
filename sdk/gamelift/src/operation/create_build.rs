@@ -131,7 +131,7 @@ impl CreateBuildInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBuild`.
+/// Orchestration and serialization glue logic for `CreateBuild`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

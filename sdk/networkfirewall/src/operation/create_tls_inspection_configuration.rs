@@ -125,7 +125,7 @@ impl CreateTlsInspectionConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTLSInspectionConfiguration`.
+/// Orchestration and serialization glue logic for `CreateTLSInspectionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

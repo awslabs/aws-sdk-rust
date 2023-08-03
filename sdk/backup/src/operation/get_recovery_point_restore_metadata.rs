@@ -144,7 +144,7 @@ impl GetRecoveryPointRestoreMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRecoveryPointRestoreMetadata`.
+/// Orchestration and serialization glue logic for `GetRecoveryPointRestoreMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

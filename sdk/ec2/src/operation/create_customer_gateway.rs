@@ -126,7 +126,7 @@ impl CreateCustomerGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCustomerGateway`.
+/// Orchestration and serialization glue logic for `CreateCustomerGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

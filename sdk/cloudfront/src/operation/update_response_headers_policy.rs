@@ -147,7 +147,7 @@ impl UpdateResponseHeadersPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResponseHeadersPolicy`.
+/// Orchestration and serialization glue logic for `UpdateResponseHeadersPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -158,7 +158,7 @@ impl ListChangesetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListChangesets`.
+/// Orchestration and serialization glue logic for `ListChangesets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

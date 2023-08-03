@@ -116,7 +116,7 @@ impl GetEc2RecommendationProjectedMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEC2RecommendationProjectedMetrics`.
+/// Orchestration and serialization glue logic for `GetEC2RecommendationProjectedMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -167,7 +167,7 @@ impl ListChannelBansInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListChannelBans`.
+/// Orchestration and serialization glue logic for `ListChannelBans`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

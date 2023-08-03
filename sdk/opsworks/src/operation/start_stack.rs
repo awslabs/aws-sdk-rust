@@ -131,7 +131,7 @@ impl StartStackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartStack`.
+/// Orchestration and serialization glue logic for `StartStack`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CheckCapacityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CheckCapacity`.
+/// Orchestration and serialization glue logic for `CheckCapacity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

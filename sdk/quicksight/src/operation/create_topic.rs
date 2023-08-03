@@ -150,7 +150,7 @@ impl CreateTopicInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTopic`.
+/// Orchestration and serialization glue logic for `CreateTopic`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

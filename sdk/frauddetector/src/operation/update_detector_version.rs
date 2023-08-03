@@ -131,7 +131,7 @@ impl UpdateDetectorVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDetectorVersion`.
+/// Orchestration and serialization glue logic for `UpdateDetectorVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

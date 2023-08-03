@@ -131,7 +131,7 @@ impl ReEncryptInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReEncrypt`.
+/// Orchestration and serialization glue logic for `ReEncrypt`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

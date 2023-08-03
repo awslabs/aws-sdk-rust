@@ -131,7 +131,7 @@ impl CreateLogSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLogSubscription`.
+/// Orchestration and serialization glue logic for `CreateLogSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl ListLogSourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLogSources`.
+/// Orchestration and serialization glue logic for `ListLogSources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

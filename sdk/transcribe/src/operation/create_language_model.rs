@@ -133,7 +133,7 @@ impl CreateLanguageModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLanguageModel`.
+/// Orchestration and serialization glue logic for `CreateLanguageModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

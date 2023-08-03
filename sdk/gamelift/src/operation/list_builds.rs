@@ -131,7 +131,7 @@ impl ListBuildsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBuilds`.
+/// Orchestration and serialization glue logic for `ListBuilds`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

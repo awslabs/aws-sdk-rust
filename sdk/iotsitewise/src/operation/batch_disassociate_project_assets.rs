@@ -150,7 +150,7 @@ impl BatchDisassociateProjectAssetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDisassociateProjectAssets`.
+/// Orchestration and serialization glue logic for `BatchDisassociateProjectAssets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

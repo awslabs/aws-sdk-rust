@@ -156,7 +156,7 @@ impl GetEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEnvironment`.
+/// Orchestration and serialization glue logic for `GetEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

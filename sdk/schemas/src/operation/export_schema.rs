@@ -189,7 +189,7 @@ impl ExportSchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportSchema`.
+/// Orchestration and serialization glue logic for `ExportSchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

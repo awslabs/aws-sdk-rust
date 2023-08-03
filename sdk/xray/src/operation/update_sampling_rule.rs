@@ -128,7 +128,7 @@ impl UpdateSamplingRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSamplingRule`.
+/// Orchestration and serialization glue logic for `UpdateSamplingRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

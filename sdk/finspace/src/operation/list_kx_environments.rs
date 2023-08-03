@@ -134,7 +134,7 @@ impl ListKxEnvironmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListKxEnvironments`.
+/// Orchestration and serialization glue logic for `ListKxEnvironments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

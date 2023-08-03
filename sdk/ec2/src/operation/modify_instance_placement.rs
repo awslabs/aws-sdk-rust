@@ -126,7 +126,7 @@ impl ModifyInstancePlacementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyInstancePlacement`.
+/// Orchestration and serialization glue logic for `ModifyInstancePlacement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

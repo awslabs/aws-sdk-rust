@@ -131,7 +131,7 @@ impl DecreaseReplicationFactorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DecreaseReplicationFactor`.
+/// Orchestration and serialization glue logic for `DecreaseReplicationFactor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

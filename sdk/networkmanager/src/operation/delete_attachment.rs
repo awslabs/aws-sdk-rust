@@ -136,7 +136,7 @@ impl DeleteAttachmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAttachment`.
+/// Orchestration and serialization glue logic for `DeleteAttachment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

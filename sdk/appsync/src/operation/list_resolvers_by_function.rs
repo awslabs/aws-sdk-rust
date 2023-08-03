@@ -178,7 +178,7 @@ impl ListResolversByFunctionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResolversByFunction`.
+/// Orchestration and serialization glue logic for `ListResolversByFunction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

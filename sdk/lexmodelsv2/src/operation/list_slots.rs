@@ -202,7 +202,7 @@ impl ListSlotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSlots`.
+/// Orchestration and serialization glue logic for `ListSlots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

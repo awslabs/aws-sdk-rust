@@ -127,7 +127,7 @@ impl CreateSolNetworkPackageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSolNetworkPackage`.
+/// Orchestration and serialization glue logic for `CreateSolNetworkPackage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

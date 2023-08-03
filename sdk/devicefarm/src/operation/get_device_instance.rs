@@ -131,7 +131,7 @@ impl GetDeviceInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDeviceInstance`.
+/// Orchestration and serialization glue logic for `GetDeviceInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

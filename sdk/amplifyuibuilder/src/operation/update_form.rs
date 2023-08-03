@@ -213,7 +213,7 @@ impl UpdateFormInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateForm`.
+/// Orchestration and serialization glue logic for `UpdateForm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

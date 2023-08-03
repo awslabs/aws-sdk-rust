@@ -134,7 +134,7 @@ impl ListConfiguredTablesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListConfiguredTables`.
+/// Orchestration and serialization glue logic for `ListConfiguredTables`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

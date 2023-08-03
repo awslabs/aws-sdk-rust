@@ -131,7 +131,7 @@ impl UntagProjectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UntagProject`.
+/// Orchestration and serialization glue logic for `UntagProject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

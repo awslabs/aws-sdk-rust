@@ -155,7 +155,7 @@ impl PutStudioMembersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutStudioMembers`.
+/// Orchestration and serialization glue logic for `PutStudioMembers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

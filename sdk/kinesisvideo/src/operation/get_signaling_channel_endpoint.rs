@@ -127,7 +127,7 @@ impl GetSignalingChannelEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSignalingChannelEndpoint`.
+/// Orchestration and serialization glue logic for `GetSignalingChannelEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

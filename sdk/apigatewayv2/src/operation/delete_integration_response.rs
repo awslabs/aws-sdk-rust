@@ -169,7 +169,7 @@ impl DeleteIntegrationResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIntegrationResponse`.
+/// Orchestration and serialization glue logic for `DeleteIntegrationResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

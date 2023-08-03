@@ -140,7 +140,7 @@ impl DeactivateUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeactivateUser`.
+/// Orchestration and serialization glue logic for `DeactivateUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

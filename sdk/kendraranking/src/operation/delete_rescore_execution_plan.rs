@@ -130,7 +130,7 @@ impl DeleteRescoreExecutionPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRescoreExecutionPlan`.
+/// Orchestration and serialization glue logic for `DeleteRescoreExecutionPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

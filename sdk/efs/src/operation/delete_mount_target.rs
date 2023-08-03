@@ -136,7 +136,7 @@ impl DeleteMountTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMountTarget`.
+/// Orchestration and serialization glue logic for `DeleteMountTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

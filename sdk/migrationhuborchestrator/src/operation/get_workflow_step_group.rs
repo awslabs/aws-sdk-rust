@@ -160,7 +160,7 @@ impl GetWorkflowStepGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorkflowStepGroup`.
+/// Orchestration and serialization glue logic for `GetWorkflowStepGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

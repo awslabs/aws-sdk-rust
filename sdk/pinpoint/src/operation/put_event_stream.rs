@@ -150,7 +150,7 @@ impl PutEventStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutEventStream`.
+/// Orchestration and serialization glue logic for `PutEventStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

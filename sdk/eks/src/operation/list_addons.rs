@@ -158,7 +158,7 @@ impl ListAddonsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAddons`.
+/// Orchestration and serialization glue logic for `ListAddons`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateWorkforceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorkforce`.
+/// Orchestration and serialization glue logic for `UpdateWorkforce`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl ListImageScanFindingAggregationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImageScanFindingAggregations`.
+/// Orchestration and serialization glue logic for `ListImageScanFindingAggregations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

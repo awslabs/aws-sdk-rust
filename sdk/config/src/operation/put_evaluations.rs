@@ -131,7 +131,7 @@ impl PutEvaluationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutEvaluations`.
+/// Orchestration and serialization glue logic for `PutEvaluations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

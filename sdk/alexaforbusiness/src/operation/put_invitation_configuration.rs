@@ -131,7 +131,7 @@ impl PutInvitationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutInvitationConfiguration`.
+/// Orchestration and serialization glue logic for `PutInvitationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

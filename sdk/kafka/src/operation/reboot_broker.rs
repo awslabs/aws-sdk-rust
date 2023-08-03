@@ -150,7 +150,7 @@ impl RebootBrokerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RebootBroker`.
+/// Orchestration and serialization glue logic for `RebootBroker`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

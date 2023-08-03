@@ -131,7 +131,7 @@ impl CreateInterconnectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateInterconnect`.
+/// Orchestration and serialization glue logic for `CreateInterconnect`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

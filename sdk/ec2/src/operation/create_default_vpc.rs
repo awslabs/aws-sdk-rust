@@ -126,7 +126,7 @@ impl CreateDefaultVpcInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDefaultVpc`.
+/// Orchestration and serialization glue logic for `CreateDefaultVpc`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

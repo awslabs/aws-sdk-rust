@@ -131,7 +131,7 @@ impl BatchPutDocumentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchPutDocument`.
+/// Orchestration and serialization glue logic for `BatchPutDocument`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListInstanceProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstanceProfiles`.
+/// Orchestration and serialization glue logic for `ListInstanceProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

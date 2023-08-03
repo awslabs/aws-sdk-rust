@@ -126,7 +126,7 @@ impl RejectVpcPeeringConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RejectVpcPeeringConnection`.
+/// Orchestration and serialization glue logic for `RejectVpcPeeringConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

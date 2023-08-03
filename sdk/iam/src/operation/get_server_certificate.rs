@@ -126,7 +126,7 @@ impl GetServerCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServerCertificate`.
+/// Orchestration and serialization glue logic for `GetServerCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl StartObjectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartObject`.
+/// Orchestration and serialization glue logic for `StartObject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

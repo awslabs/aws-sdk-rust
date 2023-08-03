@@ -128,7 +128,7 @@ impl CreateSnapshotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSnapshots`.
+/// Orchestration and serialization glue logic for `CreateSnapshots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

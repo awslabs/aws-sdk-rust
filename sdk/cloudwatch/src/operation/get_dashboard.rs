@@ -126,7 +126,7 @@ impl GetDashboardInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDashboard`.
+/// Orchestration and serialization glue logic for `GetDashboard`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

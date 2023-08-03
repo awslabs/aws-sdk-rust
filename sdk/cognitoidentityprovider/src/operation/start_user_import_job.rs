@@ -133,7 +133,7 @@ impl StartUserImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartUserImportJob`.
+/// Orchestration and serialization glue logic for `StartUserImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

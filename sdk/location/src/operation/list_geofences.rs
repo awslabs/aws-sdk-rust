@@ -152,7 +152,7 @@ impl ListGeofencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGeofences`.
+/// Orchestration and serialization glue logic for `ListGeofences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

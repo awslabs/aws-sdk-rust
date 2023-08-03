@@ -131,7 +131,7 @@ impl AcknowledgeJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcknowledgeJob`.
+/// Orchestration and serialization glue logic for `AcknowledgeJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

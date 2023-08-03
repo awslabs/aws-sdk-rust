@@ -131,7 +131,7 @@ impl DeleteVpcIngressConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpcIngressConnection`.
+/// Orchestration and serialization glue logic for `DeleteVpcIngressConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

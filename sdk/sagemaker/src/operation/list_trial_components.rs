@@ -133,7 +133,7 @@ impl ListTrialComponentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTrialComponents`.
+/// Orchestration and serialization glue logic for `ListTrialComponents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

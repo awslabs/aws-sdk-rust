@@ -135,7 +135,7 @@ impl DescribeFileSystemAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFileSystemAliases`.
+/// Orchestration and serialization glue logic for `DescribeFileSystemAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl GetEventDataStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEventDataStore`.
+/// Orchestration and serialization glue logic for `GetEventDataStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

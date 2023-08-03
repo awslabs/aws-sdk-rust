@@ -116,7 +116,7 @@ impl DescribePendingAggregationRequestsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePendingAggregationRequests`.
+/// Orchestration and serialization glue logic for `DescribePendingAggregationRequests`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

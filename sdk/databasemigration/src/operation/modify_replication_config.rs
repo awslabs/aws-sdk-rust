@@ -131,7 +131,7 @@ impl ModifyReplicationConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyReplicationConfig`.
+/// Orchestration and serialization glue logic for `ModifyReplicationConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

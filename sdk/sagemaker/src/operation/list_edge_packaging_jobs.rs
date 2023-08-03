@@ -131,7 +131,7 @@ impl ListEdgePackagingJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEdgePackagingJobs`.
+/// Orchestration and serialization glue logic for `ListEdgePackagingJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

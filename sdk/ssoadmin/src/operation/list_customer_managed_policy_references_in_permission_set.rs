@@ -116,7 +116,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCustomerManagedPolicyReferencesInPermissionSet`.
+/// Orchestration and serialization glue logic for `ListCustomerManagedPolicyReferencesInPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

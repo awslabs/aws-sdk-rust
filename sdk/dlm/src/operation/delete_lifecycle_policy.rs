@@ -132,7 +132,7 @@ impl DeleteLifecyclePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLifecyclePolicy`.
+/// Orchestration and serialization glue logic for `DeleteLifecyclePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

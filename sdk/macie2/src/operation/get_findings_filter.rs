@@ -132,7 +132,7 @@ impl GetFindingsFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFindingsFilter`.
+/// Orchestration and serialization glue logic for `GetFindingsFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -120,7 +120,7 @@ impl DescribeNodeConfigurationOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNodeConfigurationOptions`.
+/// Orchestration and serialization glue logic for `DescribeNodeConfigurationOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

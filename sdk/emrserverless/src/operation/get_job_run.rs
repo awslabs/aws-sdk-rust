@@ -156,7 +156,7 @@ impl GetJobRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetJobRun`.
+/// Orchestration and serialization glue logic for `GetJobRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

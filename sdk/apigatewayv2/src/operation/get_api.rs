@@ -132,7 +132,7 @@ impl GetApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApi`.
+/// Orchestration and serialization glue logic for `GetApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

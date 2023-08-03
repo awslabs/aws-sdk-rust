@@ -125,7 +125,7 @@ impl GetRelationalDatabaseBlueprintsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRelationalDatabaseBlueprints`.
+/// Orchestration and serialization glue logic for `GetRelationalDatabaseBlueprints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

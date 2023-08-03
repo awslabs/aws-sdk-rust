@@ -131,7 +131,7 @@ impl ListIndicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIndices`.
+/// Orchestration and serialization glue logic for `ListIndices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

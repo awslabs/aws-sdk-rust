@@ -150,7 +150,7 @@ impl CreateSubscriberNotificationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSubscriberNotification`.
+/// Orchestration and serialization glue logic for `CreateSubscriberNotification`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

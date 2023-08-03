@@ -133,7 +133,7 @@ impl ModifyInstanceGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyInstanceGroups`.
+/// Orchestration and serialization glue logic for `ModifyInstanceGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

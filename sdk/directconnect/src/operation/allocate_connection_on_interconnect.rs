@@ -125,7 +125,7 @@ impl AllocateConnectionOnInterconnectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AllocateConnectionOnInterconnect`.
+/// Orchestration and serialization glue logic for `AllocateConnectionOnInterconnect`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

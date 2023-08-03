@@ -126,7 +126,7 @@ impl CreateBackendInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBackend`.
+/// Orchestration and serialization glue logic for `CreateBackend`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

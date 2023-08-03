@@ -141,7 +141,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateWirelessDeviceFromMulticastGroup`.
+/// Orchestration and serialization glue logic for `DisassociateWirelessDeviceFromMulticastGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

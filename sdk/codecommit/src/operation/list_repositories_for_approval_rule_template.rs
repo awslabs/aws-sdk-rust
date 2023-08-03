@@ -116,7 +116,7 @@ impl ListRepositoriesForApprovalRuleTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRepositoriesForApprovalRuleTemplate`.
+/// Orchestration and serialization glue logic for `ListRepositoriesForApprovalRuleTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl AddProfilePermissionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddProfilePermission`.
+/// Orchestration and serialization glue logic for `AddProfilePermission`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

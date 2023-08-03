@@ -111,7 +111,7 @@ impl DescribeLoadBalancerTargetGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLoadBalancerTargetGroups`.
+/// Orchestration and serialization glue logic for `DescribeLoadBalancerTargetGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

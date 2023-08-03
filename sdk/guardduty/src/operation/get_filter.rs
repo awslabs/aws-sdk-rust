@@ -156,7 +156,7 @@ impl GetFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFilter`.
+/// Orchestration and serialization glue logic for `GetFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

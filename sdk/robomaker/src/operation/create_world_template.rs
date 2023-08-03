@@ -128,7 +128,7 @@ impl CreateWorldTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorldTemplate`.
+/// Orchestration and serialization glue logic for `CreateWorldTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

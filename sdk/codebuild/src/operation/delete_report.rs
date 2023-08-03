@@ -131,7 +131,7 @@ impl DeleteReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteReport`.
+/// Orchestration and serialization glue logic for `DeleteReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

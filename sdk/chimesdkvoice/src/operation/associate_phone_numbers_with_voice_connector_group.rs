@@ -145,7 +145,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociatePhoneNumbersWithVoiceConnectorGroup`.
+/// Orchestration and serialization glue logic for `AssociatePhoneNumbersWithVoiceConnectorGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

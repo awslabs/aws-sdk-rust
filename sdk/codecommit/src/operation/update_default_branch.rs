@@ -133,7 +133,7 @@ impl UpdateDefaultBranchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDefaultBranch`.
+/// Orchestration and serialization glue logic for `UpdateDefaultBranch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

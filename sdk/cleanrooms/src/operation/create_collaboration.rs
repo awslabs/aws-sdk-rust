@@ -128,7 +128,7 @@ impl CreateCollaborationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCollaboration`.
+/// Orchestration and serialization glue logic for `CreateCollaboration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

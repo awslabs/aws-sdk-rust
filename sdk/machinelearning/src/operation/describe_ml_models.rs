@@ -131,7 +131,7 @@ impl DescribeMlModelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMLModels`.
+/// Orchestration and serialization glue logic for `DescribeMLModels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeExclusionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeExclusions`.
+/// Orchestration and serialization glue logic for `DescribeExclusions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

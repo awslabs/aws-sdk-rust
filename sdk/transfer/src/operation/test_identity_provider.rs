@@ -133,7 +133,7 @@ impl TestIdentityProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestIdentityProvider`.
+/// Orchestration and serialization glue logic for `TestIdentityProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

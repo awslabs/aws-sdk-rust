@@ -133,7 +133,7 @@ impl GetDocumentAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDocumentAnalysis`.
+/// Orchestration and serialization glue logic for `GetDocumentAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

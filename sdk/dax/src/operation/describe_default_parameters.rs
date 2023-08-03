@@ -131,7 +131,7 @@ impl DescribeDefaultParametersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDefaultParameters`.
+/// Orchestration and serialization glue logic for `DescribeDefaultParameters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

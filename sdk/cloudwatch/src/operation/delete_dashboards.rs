@@ -126,7 +126,7 @@ impl DeleteDashboardsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDashboards`.
+/// Orchestration and serialization glue logic for `DeleteDashboards`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

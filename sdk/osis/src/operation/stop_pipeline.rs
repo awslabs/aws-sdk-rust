@@ -136,7 +136,7 @@ impl StopPipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopPipeline`.
+/// Orchestration and serialization glue logic for `StopPipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

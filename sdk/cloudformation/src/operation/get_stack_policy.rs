@@ -128,7 +128,7 @@ impl GetStackPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetStackPolicy`.
+/// Orchestration and serialization glue logic for `GetStackPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

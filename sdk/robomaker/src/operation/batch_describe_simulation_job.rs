@@ -127,7 +127,7 @@ impl BatchDescribeSimulationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDescribeSimulationJob`.
+/// Orchestration and serialization glue logic for `BatchDescribeSimulationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl DescribeWorldExportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorldExportJob`.
+/// Orchestration and serialization glue logic for `DescribeWorldExportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

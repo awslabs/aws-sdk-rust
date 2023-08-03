@@ -131,7 +131,7 @@ impl DeleteVocabularyFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVocabularyFilter`.
+/// Orchestration and serialization glue logic for `DeleteVocabularyFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

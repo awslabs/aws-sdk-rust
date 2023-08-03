@@ -133,7 +133,7 @@ impl ListInstanceGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstanceGroups`.
+/// Orchestration and serialization glue logic for `ListInstanceGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

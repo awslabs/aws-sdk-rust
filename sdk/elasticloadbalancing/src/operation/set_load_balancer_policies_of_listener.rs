@@ -111,7 +111,7 @@ impl SetLoadBalancerPoliciesOfListenerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetLoadBalancerPoliciesOfListener`.
+/// Orchestration and serialization glue logic for `SetLoadBalancerPoliciesOfListener`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

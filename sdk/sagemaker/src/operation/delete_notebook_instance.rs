@@ -131,7 +131,7 @@ impl DeleteNotebookInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNotebookInstance`.
+/// Orchestration and serialization glue logic for `DeleteNotebookInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

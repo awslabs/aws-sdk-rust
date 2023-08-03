@@ -166,7 +166,7 @@ impl GetUtterancesViewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUtterancesView`.
+/// Orchestration and serialization glue logic for `GetUtterancesView`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAlias`.
+/// Orchestration and serialization glue logic for `DeleteAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

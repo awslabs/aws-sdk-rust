@@ -131,7 +131,7 @@ impl BatchGetReportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetReports`.
+/// Orchestration and serialization glue logic for `BatchGetReports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

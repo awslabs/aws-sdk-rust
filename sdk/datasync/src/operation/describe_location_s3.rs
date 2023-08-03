@@ -133,7 +133,7 @@ impl DescribeLocationS3Input {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocationS3`.
+/// Orchestration and serialization glue logic for `DescribeLocationS3`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

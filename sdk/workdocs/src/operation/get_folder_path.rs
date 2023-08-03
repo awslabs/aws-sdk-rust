@@ -167,7 +167,7 @@ impl GetFolderPathInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFolderPath`.
+/// Orchestration and serialization glue logic for `GetFolderPath`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

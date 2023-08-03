@@ -133,7 +133,7 @@ impl InitiateLayerUploadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InitiateLayerUpload`.
+/// Orchestration and serialization glue logic for `InitiateLayerUpload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

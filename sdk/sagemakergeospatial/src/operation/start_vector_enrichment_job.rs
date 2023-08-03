@@ -131,7 +131,7 @@ impl StartVectorEnrichmentJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartVectorEnrichmentJob`.
+/// Orchestration and serialization glue logic for `StartVectorEnrichmentJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

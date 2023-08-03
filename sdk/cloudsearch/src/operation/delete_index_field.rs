@@ -126,7 +126,7 @@ impl DeleteIndexFieldInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIndexField`.
+/// Orchestration and serialization glue logic for `DeleteIndexField`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

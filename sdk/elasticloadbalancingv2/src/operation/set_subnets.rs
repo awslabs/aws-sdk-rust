@@ -126,7 +126,7 @@ impl SetSubnetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetSubnets`.
+/// Orchestration and serialization glue logic for `SetSubnets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

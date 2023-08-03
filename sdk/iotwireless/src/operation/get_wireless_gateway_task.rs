@@ -132,7 +132,7 @@ impl GetWirelessGatewayTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWirelessGatewayTask`.
+/// Orchestration and serialization glue logic for `GetWirelessGatewayTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateSensitivityInspectionTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSensitivityInspectionTemplate`.
+/// Orchestration and serialization glue logic for `UpdateSensitivityInspectionTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

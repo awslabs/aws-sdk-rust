@@ -130,7 +130,7 @@ impl CreateClassificationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateClassificationJob`.
+/// Orchestration and serialization glue logic for `CreateClassificationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

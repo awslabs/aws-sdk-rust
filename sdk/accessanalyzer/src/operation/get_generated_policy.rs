@@ -159,7 +159,7 @@ impl GetGeneratedPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGeneratedPolicy`.
+/// Orchestration and serialization glue logic for `GetGeneratedPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

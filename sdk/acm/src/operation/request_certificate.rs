@@ -131,7 +131,7 @@ impl RequestCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RequestCertificate`.
+/// Orchestration and serialization glue logic for `RequestCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

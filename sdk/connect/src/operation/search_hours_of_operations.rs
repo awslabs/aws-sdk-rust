@@ -127,7 +127,7 @@ impl SearchHoursOfOperationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchHoursOfOperations`.
+/// Orchestration and serialization glue logic for `SearchHoursOfOperations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

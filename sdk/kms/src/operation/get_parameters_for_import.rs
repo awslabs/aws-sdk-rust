@@ -131,7 +131,7 @@ impl GetParametersForImportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetParametersForImport`.
+/// Orchestration and serialization glue logic for `GetParametersForImport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

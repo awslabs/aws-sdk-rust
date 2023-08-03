@@ -137,7 +137,7 @@ impl GetWorkerFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorkerFleet`.
+/// Orchestration and serialization glue logic for `GetWorkerFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

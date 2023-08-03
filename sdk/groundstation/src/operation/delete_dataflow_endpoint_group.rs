@@ -136,7 +136,7 @@ impl DeleteDataflowEndpointGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataflowEndpointGroup`.
+/// Orchestration and serialization glue logic for `DeleteDataflowEndpointGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

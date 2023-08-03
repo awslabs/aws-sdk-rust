@@ -116,7 +116,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateInstanceAccessControlAttributeConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateInstanceAccessControlAttributeConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

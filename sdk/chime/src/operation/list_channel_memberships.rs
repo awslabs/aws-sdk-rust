@@ -169,7 +169,7 @@ impl ListChannelMembershipsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListChannelMemberships`.
+/// Orchestration and serialization glue logic for `ListChannelMemberships`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

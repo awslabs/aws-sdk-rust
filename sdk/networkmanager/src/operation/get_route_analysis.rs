@@ -156,7 +156,7 @@ impl GetRouteAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRouteAnalysis`.
+/// Orchestration and serialization glue logic for `GetRouteAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

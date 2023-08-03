@@ -132,7 +132,7 @@ impl CreateSimulationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSimulationJob`.
+/// Orchestration and serialization glue logic for `CreateSimulationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

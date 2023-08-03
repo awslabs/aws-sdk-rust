@@ -133,7 +133,7 @@ impl SendAutomationSignalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendAutomationSignal`.
+/// Orchestration and serialization glue logic for `SendAutomationSignal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

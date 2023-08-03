@@ -132,7 +132,7 @@ impl UpdateIncidentRecordInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIncidentRecord`.
+/// Orchestration and serialization glue logic for `UpdateIncidentRecord`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

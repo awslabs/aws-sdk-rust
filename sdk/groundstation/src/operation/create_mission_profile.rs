@@ -128,7 +128,7 @@ impl CreateMissionProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMissionProfile`.
+/// Orchestration and serialization glue logic for `CreateMissionProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

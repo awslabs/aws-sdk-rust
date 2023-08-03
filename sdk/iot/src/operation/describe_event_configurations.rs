@@ -112,7 +112,7 @@ impl DescribeEventConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEventConfigurations`.
+/// Orchestration and serialization glue logic for `DescribeEventConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

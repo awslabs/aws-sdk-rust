@@ -136,7 +136,7 @@ impl DisableTrustAnchorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableTrustAnchor`.
+/// Orchestration and serialization glue logic for `DisableTrustAnchor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

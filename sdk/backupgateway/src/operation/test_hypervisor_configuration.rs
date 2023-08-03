@@ -131,7 +131,7 @@ impl TestHypervisorConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestHypervisorConfiguration`.
+/// Orchestration and serialization glue logic for `TestHypervisorConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

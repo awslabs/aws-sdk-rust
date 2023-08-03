@@ -131,7 +131,7 @@ impl GetAutomationExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAutomationExecution`.
+/// Orchestration and serialization glue logic for `GetAutomationExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

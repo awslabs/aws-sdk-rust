@@ -126,7 +126,7 @@ impl CreatePublicKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePublicKey`.
+/// Orchestration and serialization glue logic for `CreatePublicKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

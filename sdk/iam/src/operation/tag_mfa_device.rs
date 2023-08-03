@@ -128,7 +128,7 @@ impl TagMfaDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagMFADevice`.
+/// Orchestration and serialization glue logic for `TagMFADevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

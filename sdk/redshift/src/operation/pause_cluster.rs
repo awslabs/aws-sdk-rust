@@ -126,7 +126,7 @@ impl PauseClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PauseCluster`.
+/// Orchestration and serialization glue logic for `PauseCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

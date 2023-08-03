@@ -133,7 +133,7 @@ impl DeletePolicyTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePolicyTemplate`.
+/// Orchestration and serialization glue logic for `DeletePolicyTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

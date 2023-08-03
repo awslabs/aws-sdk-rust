@@ -131,7 +131,7 @@ impl AdminUpdateAuthEventFeedbackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminUpdateAuthEventFeedback`.
+/// Orchestration and serialization glue logic for `AdminUpdateAuthEventFeedback`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

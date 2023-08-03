@@ -126,7 +126,7 @@ impl CreateProfileJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateProfileJob`.
+/// Orchestration and serialization glue logic for `CreateProfileJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

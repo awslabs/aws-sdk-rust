@@ -127,7 +127,7 @@ impl DescribePackagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePackages`.
+/// Orchestration and serialization glue logic for `DescribePackages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

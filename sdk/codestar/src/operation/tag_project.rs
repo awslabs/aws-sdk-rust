@@ -131,7 +131,7 @@ impl TagProjectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagProject`.
+/// Orchestration and serialization glue logic for `TagProject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

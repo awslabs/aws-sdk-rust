@@ -131,7 +131,7 @@ impl IsMemberInGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `IsMemberInGroups`.
+/// Orchestration and serialization glue logic for `IsMemberInGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -129,7 +129,7 @@ impl CreateViewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateView`.
+/// Orchestration and serialization glue logic for `CreateView`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

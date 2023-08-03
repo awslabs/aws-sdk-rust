@@ -106,7 +106,7 @@ impl DeleteElasticsearchServiceRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteElasticsearchServiceRole`.
+/// Orchestration and serialization glue logic for `DeleteElasticsearchServiceRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl CreateApiDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateApiDestination`.
+/// Orchestration and serialization glue logic for `CreateApiDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

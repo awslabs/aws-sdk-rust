@@ -131,7 +131,7 @@ impl ListWhatIfForecastExportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWhatIfForecastExports`.
+/// Orchestration and serialization glue logic for `ListWhatIfForecastExports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateConditionalForwarderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateConditionalForwarder`.
+/// Orchestration and serialization glue logic for `CreateConditionalForwarder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

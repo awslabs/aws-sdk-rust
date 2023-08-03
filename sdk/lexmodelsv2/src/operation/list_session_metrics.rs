@@ -152,7 +152,7 @@ impl ListSessionMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSessionMetrics`.
+/// Orchestration and serialization glue logic for `ListSessionMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

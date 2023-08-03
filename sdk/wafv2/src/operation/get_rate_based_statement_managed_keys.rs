@@ -116,7 +116,7 @@ impl GetRateBasedStatementManagedKeysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRateBasedStatementManagedKeys`.
+/// Orchestration and serialization glue logic for `GetRateBasedStatementManagedKeys`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

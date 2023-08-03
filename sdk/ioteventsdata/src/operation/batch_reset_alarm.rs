@@ -126,7 +126,7 @@ impl BatchResetAlarmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchResetAlarm`.
+/// Orchestration and serialization glue logic for `BatchResetAlarm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

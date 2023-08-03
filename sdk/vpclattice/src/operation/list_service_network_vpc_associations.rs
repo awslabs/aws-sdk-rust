@@ -136,7 +136,7 @@ impl ListServiceNetworkVpcAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServiceNetworkVpcAssociations`.
+/// Orchestration and serialization glue logic for `ListServiceNetworkVpcAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl DescribeConnectorEntityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConnectorEntity`.
+/// Orchestration and serialization glue logic for `DescribeConnectorEntity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

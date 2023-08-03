@@ -205,7 +205,7 @@ impl ExportApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportApi`.
+/// Orchestration and serialization glue logic for `ExportApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ArchiveWaveInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ArchiveWave`.
+/// Orchestration and serialization glue logic for `ArchiveWave`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

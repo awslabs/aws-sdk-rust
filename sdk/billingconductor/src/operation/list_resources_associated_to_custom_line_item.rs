@@ -112,7 +112,7 @@ impl ListResourcesAssociatedToCustomLineItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourcesAssociatedToCustomLineItem`.
+/// Orchestration and serialization glue logic for `ListResourcesAssociatedToCustomLineItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl GetPublicKeyConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPublicKeyConfig`.
+/// Orchestration and serialization glue logic for `GetPublicKeyConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

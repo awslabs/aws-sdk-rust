@@ -112,7 +112,7 @@ impl UpdateOrgEc2DeepInspectionConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateOrgEc2DeepInspectionConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateOrgEc2DeepInspectionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

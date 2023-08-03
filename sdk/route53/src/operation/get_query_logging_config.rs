@@ -132,7 +132,7 @@ impl GetQueryLoggingConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetQueryLoggingConfig`.
+/// Orchestration and serialization glue logic for `GetQueryLoggingConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

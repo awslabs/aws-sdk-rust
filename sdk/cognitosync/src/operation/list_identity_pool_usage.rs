@@ -132,7 +132,7 @@ impl ListIdentityPoolUsageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIdentityPoolUsage`.
+/// Orchestration and serialization glue logic for `ListIdentityPoolUsage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

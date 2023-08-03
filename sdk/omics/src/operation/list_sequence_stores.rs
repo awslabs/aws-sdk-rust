@@ -152,7 +152,7 @@ impl ListSequenceStoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSequenceStores`.
+/// Orchestration and serialization glue logic for `ListSequenceStores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl CreateBackendEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBackendEnvironment`.
+/// Orchestration and serialization glue logic for `CreateBackendEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

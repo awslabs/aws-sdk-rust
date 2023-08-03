@@ -131,7 +131,7 @@ impl GetFlowTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFlowTemplate`.
+/// Orchestration and serialization glue logic for `GetFlowTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

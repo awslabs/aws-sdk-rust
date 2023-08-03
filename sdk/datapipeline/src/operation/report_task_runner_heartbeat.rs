@@ -131,7 +131,7 @@ impl ReportTaskRunnerHeartbeatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReportTaskRunnerHeartbeat`.
+/// Orchestration and serialization glue logic for `ReportTaskRunnerHeartbeat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateTapesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTapes`.
+/// Orchestration and serialization glue logic for `CreateTapes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

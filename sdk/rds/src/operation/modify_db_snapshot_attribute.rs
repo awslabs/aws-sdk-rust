@@ -126,7 +126,7 @@ impl ModifyDbSnapshotAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyDBSnapshotAttribute`.
+/// Orchestration and serialization glue logic for `ModifyDBSnapshotAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

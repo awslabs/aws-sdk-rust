@@ -127,7 +127,7 @@ impl PutPortfolioPreferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutPortfolioPreferences`.
+/// Orchestration and serialization glue logic for `PutPortfolioPreferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

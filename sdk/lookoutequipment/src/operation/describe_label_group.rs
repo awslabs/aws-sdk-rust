@@ -133,7 +133,7 @@ impl DescribeLabelGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLabelGroup`.
+/// Orchestration and serialization glue logic for `DescribeLabelGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl TerminateRecoveryInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TerminateRecoveryInstances`.
+/// Orchestration and serialization glue logic for `TerminateRecoveryInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

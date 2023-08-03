@@ -175,7 +175,7 @@ impl UpdateStudioComponentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStudioComponent`.
+/// Orchestration and serialization glue logic for `UpdateStudioComponent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

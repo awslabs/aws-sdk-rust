@@ -172,7 +172,7 @@ impl GetDevicePositionHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDevicePositionHistory`.
+/// Orchestration and serialization glue logic for `GetDevicePositionHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

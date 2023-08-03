@@ -126,7 +126,7 @@ impl DisableControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableControl`.
+/// Orchestration and serialization glue logic for `DisableControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

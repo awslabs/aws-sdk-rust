@@ -126,7 +126,7 @@ impl ListImportErrorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImportErrors`.
+/// Orchestration and serialization glue logic for `ListImportErrors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

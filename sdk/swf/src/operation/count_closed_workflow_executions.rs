@@ -132,7 +132,7 @@ impl CountClosedWorkflowExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CountClosedWorkflowExecutions`.
+/// Orchestration and serialization glue logic for `CountClosedWorkflowExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ListMfaDeviceTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMFADeviceTags`.
+/// Orchestration and serialization glue logic for `ListMFADeviceTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreateHsmConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateHsmConfiguration`.
+/// Orchestration and serialization glue logic for `CreateHsmConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

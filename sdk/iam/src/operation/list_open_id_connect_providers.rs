@@ -119,7 +119,7 @@ impl ListOpenIdConnectProvidersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOpenIDConnectProviders`.
+/// Orchestration and serialization glue logic for `ListOpenIDConnectProviders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

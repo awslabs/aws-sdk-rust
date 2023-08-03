@@ -131,7 +131,7 @@ impl PutNotificationChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutNotificationChannel`.
+/// Orchestration and serialization glue logic for `PutNotificationChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

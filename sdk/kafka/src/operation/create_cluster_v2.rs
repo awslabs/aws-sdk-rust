@@ -126,7 +126,7 @@ impl CreateClusterV2Input {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateClusterV2`.
+/// Orchestration and serialization glue logic for `CreateClusterV2`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

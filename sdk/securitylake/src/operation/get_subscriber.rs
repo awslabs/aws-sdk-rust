@@ -136,7 +136,7 @@ impl GetSubscriberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSubscriber`.
+/// Orchestration and serialization glue logic for `GetSubscriber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

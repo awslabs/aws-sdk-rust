@@ -113,7 +113,7 @@ impl GetAccountSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccountSettings`.
+/// Orchestration and serialization glue logic for `GetAccountSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

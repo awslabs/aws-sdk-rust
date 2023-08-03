@@ -120,7 +120,7 @@ impl RestoreTableFromClusterSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreTableFromClusterSnapshot`.
+/// Orchestration and serialization glue logic for `RestoreTableFromClusterSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -153,7 +153,7 @@ impl ListVpcAssociationAuthorizationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVPCAssociationAuthorizations`.
+/// Orchestration and serialization glue logic for `ListVPCAssociationAuthorizations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

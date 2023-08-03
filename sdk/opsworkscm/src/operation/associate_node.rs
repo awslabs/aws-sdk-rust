@@ -131,7 +131,7 @@ impl AssociateNodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateNode`.
+/// Orchestration and serialization glue logic for `AssociateNode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

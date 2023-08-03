@@ -131,7 +131,7 @@ impl RemoveAutoScalingPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveAutoScalingPolicy`.
+/// Orchestration and serialization glue logic for `RemoveAutoScalingPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

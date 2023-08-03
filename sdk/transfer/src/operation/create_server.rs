@@ -131,7 +131,7 @@ impl CreateServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateServer`.
+/// Orchestration and serialization glue logic for `CreateServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

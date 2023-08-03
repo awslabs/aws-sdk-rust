@@ -126,7 +126,7 @@ impl AttachRolePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachRolePolicy`.
+/// Orchestration and serialization glue logic for `AttachRolePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

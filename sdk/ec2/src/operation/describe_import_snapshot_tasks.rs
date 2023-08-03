@@ -126,7 +126,7 @@ impl DescribeImportSnapshotTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeImportSnapshotTasks`.
+/// Orchestration and serialization glue logic for `DescribeImportSnapshotTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

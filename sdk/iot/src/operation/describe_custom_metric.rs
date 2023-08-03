@@ -136,7 +136,7 @@ impl DescribeCustomMetricInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCustomMetric`.
+/// Orchestration and serialization glue logic for `DescribeCustomMetric`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -156,7 +156,7 @@ impl GetTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetToken`.
+/// Orchestration and serialization glue logic for `GetToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

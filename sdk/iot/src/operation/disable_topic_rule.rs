@@ -132,7 +132,7 @@ impl DisableTopicRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableTopicRule`.
+/// Orchestration and serialization glue logic for `DisableTopicRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

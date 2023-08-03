@@ -135,7 +135,7 @@ impl StartEngagementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartEngagement`.
+/// Orchestration and serialization glue logic for `StartEngagement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

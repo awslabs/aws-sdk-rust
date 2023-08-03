@@ -131,7 +131,7 @@ impl UpdateContextInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContext`.
+/// Orchestration and serialization glue logic for `UpdateContext`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

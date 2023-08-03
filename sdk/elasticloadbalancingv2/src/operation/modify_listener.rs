@@ -128,7 +128,7 @@ impl ModifyListenerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyListener`.
+/// Orchestration and serialization glue logic for `ModifyListener`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

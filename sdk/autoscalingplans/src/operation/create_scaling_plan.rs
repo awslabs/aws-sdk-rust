@@ -131,7 +131,7 @@ impl CreateScalingPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateScalingPlan`.
+/// Orchestration and serialization glue logic for `CreateScalingPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

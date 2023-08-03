@@ -128,7 +128,7 @@ impl GetGroupPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGroupPolicy`.
+/// Orchestration and serialization glue logic for `GetGroupPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ConfirmConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfirmConnection`.
+/// Orchestration and serialization glue logic for `ConfirmConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

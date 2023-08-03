@@ -154,7 +154,7 @@ impl ListGeoLocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGeoLocations`.
+/// Orchestration and serialization glue logic for `ListGeoLocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

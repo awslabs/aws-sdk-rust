@@ -154,7 +154,7 @@ impl CreateLensVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLensVersion`.
+/// Orchestration and serialization glue logic for `CreateLensVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

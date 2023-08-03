@@ -136,7 +136,7 @@ impl ListPortalsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPortals`.
+/// Orchestration and serialization glue logic for `ListPortals`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

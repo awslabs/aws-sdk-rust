@@ -131,7 +131,7 @@ impl ListHostsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHosts`.
+/// Orchestration and serialization glue logic for `ListHosts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

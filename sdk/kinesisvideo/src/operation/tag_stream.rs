@@ -126,7 +126,7 @@ impl TagStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagStream`.
+/// Orchestration and serialization glue logic for `TagStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

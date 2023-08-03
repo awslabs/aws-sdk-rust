@@ -126,7 +126,7 @@ impl CancelWorldExportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelWorldExportJob`.
+/// Orchestration and serialization glue logic for `CancelWorldExportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

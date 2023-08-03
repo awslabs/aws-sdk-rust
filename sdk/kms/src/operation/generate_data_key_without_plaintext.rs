@@ -125,7 +125,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateDataKeyWithoutPlaintext`.
+/// Orchestration and serialization glue logic for `GenerateDataKeyWithoutPlaintext`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

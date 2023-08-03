@@ -121,7 +121,7 @@ impl RegisterOrganizationAdminAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterOrganizationAdminAccount`.
+/// Orchestration and serialization glue logic for `RegisterOrganizationAdminAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

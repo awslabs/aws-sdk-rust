@@ -137,7 +137,7 @@ impl CreateContactChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateContactChannel`.
+/// Orchestration and serialization glue logic for `CreateContactChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -178,7 +178,7 @@ impl ListProposalVotesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProposalVotes`.
+/// Orchestration and serialization glue logic for `ListProposalVotes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

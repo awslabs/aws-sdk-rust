@@ -128,7 +128,7 @@ impl RollbackTransactionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RollbackTransaction`.
+/// Orchestration and serialization glue logic for `RollbackTransaction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

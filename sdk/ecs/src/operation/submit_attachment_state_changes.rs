@@ -131,7 +131,7 @@ impl SubmitAttachmentStateChangesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SubmitAttachmentStateChanges`.
+/// Orchestration and serialization glue logic for `SubmitAttachmentStateChanges`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

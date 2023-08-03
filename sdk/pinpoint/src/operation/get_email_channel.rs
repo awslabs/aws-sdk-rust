@@ -136,7 +136,7 @@ impl GetEmailChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEmailChannel`.
+/// Orchestration and serialization glue logic for `GetEmailChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

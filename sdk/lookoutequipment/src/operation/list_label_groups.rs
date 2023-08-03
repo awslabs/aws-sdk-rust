@@ -131,7 +131,7 @@ impl ListLabelGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLabelGroups`.
+/// Orchestration and serialization glue logic for `ListLabelGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

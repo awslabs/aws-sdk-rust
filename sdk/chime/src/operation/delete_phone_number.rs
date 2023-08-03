@@ -136,7 +136,7 @@ impl DeletePhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePhoneNumber`.
+/// Orchestration and serialization glue logic for `DeletePhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

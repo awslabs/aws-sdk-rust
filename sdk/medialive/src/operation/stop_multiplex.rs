@@ -136,7 +136,7 @@ impl StopMultiplexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopMultiplex`.
+/// Orchestration and serialization glue logic for `StopMultiplex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

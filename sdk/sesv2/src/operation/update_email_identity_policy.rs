@@ -170,7 +170,7 @@ impl UpdateEmailIdentityPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEmailIdentityPolicy`.
+/// Orchestration and serialization glue logic for `UpdateEmailIdentityPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

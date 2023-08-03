@@ -131,7 +131,7 @@ impl CreateEnvironmentTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEnvironmentTemplate`.
+/// Orchestration and serialization glue logic for `CreateEnvironmentTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

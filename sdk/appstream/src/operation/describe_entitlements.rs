@@ -133,7 +133,7 @@ impl DescribeEntitlementsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEntitlements`.
+/// Orchestration and serialization glue logic for `DescribeEntitlements`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

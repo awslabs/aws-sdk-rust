@@ -131,7 +131,7 @@ impl CreateWorldGenerationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorldGenerationJob`.
+/// Orchestration and serialization glue logic for `CreateWorldGenerationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

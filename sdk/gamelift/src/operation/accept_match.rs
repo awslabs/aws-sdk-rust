@@ -131,7 +131,7 @@ impl AcceptMatchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptMatch`.
+/// Orchestration and serialization glue logic for `AcceptMatch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

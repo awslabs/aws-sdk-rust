@@ -156,7 +156,7 @@ impl DeleteEventStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEventStream`.
+/// Orchestration and serialization glue logic for `DeleteEventStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

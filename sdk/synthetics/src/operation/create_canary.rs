@@ -126,7 +126,7 @@ impl CreateCanaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCanary`.
+/// Orchestration and serialization glue logic for `CreateCanary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

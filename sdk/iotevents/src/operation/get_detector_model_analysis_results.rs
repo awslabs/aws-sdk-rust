@@ -152,7 +152,7 @@ impl GetDetectorModelAnalysisResultsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDetectorModelAnalysisResults`.
+/// Orchestration and serialization glue logic for `GetDetectorModelAnalysisResults`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

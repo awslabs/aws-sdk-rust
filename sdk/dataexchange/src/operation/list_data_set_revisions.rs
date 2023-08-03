@@ -156,7 +156,7 @@ impl ListDataSetRevisionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDataSetRevisions`.
+/// Orchestration and serialization glue logic for `ListDataSetRevisions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

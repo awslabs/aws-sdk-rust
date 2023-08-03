@@ -133,7 +133,7 @@ impl DeleteRegexMatchSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRegexMatchSet`.
+/// Orchestration and serialization glue logic for `DeleteRegexMatchSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

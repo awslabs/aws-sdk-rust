@@ -131,7 +131,7 @@ impl ResumeResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResumeResource`.
+/// Orchestration and serialization glue logic for `ResumeResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

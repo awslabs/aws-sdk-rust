@@ -128,7 +128,7 @@ impl RevokeDomainAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RevokeDomainAccess`.
+/// Orchestration and serialization glue logic for `RevokeDomainAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl DescribeOrganizationResourceCollectionHealthInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeOrganizationResourceCollectionHealth`.
+/// Orchestration and serialization glue logic for `DescribeOrganizationResourceCollectionHealth`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

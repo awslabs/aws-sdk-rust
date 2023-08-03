@@ -130,7 +130,7 @@ impl CreateWorkloadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorkload`.
+/// Orchestration and serialization glue logic for `CreateWorkload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

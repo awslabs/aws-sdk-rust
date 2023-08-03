@@ -166,7 +166,7 @@ impl ListThingsInThingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListThingsInThingGroup`.
+/// Orchestration and serialization glue logic for `ListThingsInThingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

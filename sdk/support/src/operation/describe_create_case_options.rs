@@ -131,7 +131,7 @@ impl DescribeCreateCaseOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCreateCaseOptions`.
+/// Orchestration and serialization glue logic for `DescribeCreateCaseOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

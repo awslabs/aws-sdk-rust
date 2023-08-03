@@ -128,7 +128,7 @@ impl RetryDataReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RetryDataReplication`.
+/// Orchestration and serialization glue logic for `RetryDataReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

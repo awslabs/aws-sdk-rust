@@ -126,7 +126,7 @@ impl CreateUploadUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateUploadUrl`.
+/// Orchestration and serialization glue logic for `CreateUploadUrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

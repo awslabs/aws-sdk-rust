@@ -131,7 +131,7 @@ impl EnableAwsServiceAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableAWSServiceAccess`.
+/// Orchestration and serialization glue logic for `EnableAWSServiceAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

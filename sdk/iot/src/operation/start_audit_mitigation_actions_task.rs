@@ -148,7 +148,7 @@ impl StartAuditMitigationActionsTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartAuditMitigationActionsTask`.
+/// Orchestration and serialization glue logic for `StartAuditMitigationActionsTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

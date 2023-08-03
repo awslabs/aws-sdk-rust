@@ -131,7 +131,7 @@ impl TestEventPatternInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestEventPattern`.
+/// Orchestration and serialization glue logic for `TestEventPattern`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

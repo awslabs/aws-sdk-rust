@@ -131,7 +131,7 @@ impl UpdateCallAnalyticsCategoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCallAnalyticsCategory`.
+/// Orchestration and serialization glue logic for `UpdateCallAnalyticsCategory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

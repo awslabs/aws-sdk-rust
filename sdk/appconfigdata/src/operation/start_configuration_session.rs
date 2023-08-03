@@ -126,7 +126,7 @@ impl StartConfigurationSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartConfigurationSession`.
+/// Orchestration and serialization glue logic for `StartConfigurationSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

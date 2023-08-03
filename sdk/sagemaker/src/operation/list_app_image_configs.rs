@@ -133,7 +133,7 @@ impl ListAppImageConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppImageConfigs`.
+/// Orchestration and serialization glue logic for `ListAppImageConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -141,7 +141,7 @@ impl DeregisterAppInstanceUserEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterAppInstanceUserEndpoint`.
+/// Orchestration and serialization glue logic for `DeregisterAppInstanceUserEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

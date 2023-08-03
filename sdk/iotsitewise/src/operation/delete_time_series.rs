@@ -159,7 +159,7 @@ impl DeleteTimeSeriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTimeSeries`.
+/// Orchestration and serialization glue logic for `DeleteTimeSeries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

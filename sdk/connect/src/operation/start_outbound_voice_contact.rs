@@ -131,7 +131,7 @@ impl StartOutboundVoiceContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartOutboundVoiceContact`.
+/// Orchestration and serialization glue logic for `StartOutboundVoiceContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

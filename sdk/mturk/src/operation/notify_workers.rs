@@ -131,7 +131,7 @@ impl NotifyWorkersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `NotifyWorkers`.
+/// Orchestration and serialization glue logic for `NotifyWorkers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

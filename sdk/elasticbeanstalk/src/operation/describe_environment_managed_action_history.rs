@@ -111,7 +111,7 @@ impl DescribeEnvironmentManagedActionHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEnvironmentManagedActionHistory`.
+/// Orchestration and serialization glue logic for `DescribeEnvironmentManagedActionHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

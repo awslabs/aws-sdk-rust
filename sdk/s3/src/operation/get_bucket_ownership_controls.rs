@@ -131,7 +131,7 @@ impl GetBucketOwnershipControlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketOwnershipControls`.
+/// Orchestration and serialization glue logic for `GetBucketOwnershipControls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

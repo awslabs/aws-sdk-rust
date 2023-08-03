@@ -191,7 +191,7 @@ impl GetEvidenceByEvidenceFolderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEvidenceByEvidenceFolder`.
+/// Orchestration and serialization glue logic for `GetEvidenceByEvidenceFolder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

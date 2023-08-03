@@ -111,7 +111,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceLastAccessedDetailsWithEntities`.
+/// Orchestration and serialization glue logic for `GetServiceLastAccessedDetailsWithEntities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

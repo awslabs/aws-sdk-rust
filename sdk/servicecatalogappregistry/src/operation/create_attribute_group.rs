@@ -132,7 +132,7 @@ impl CreateAttributeGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAttributeGroup`.
+/// Orchestration and serialization glue logic for `CreateAttributeGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl DeleteWorldTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorldTemplate`.
+/// Orchestration and serialization glue logic for `DeleteWorldTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

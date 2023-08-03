@@ -133,7 +133,7 @@ impl NotifyWhenUploadedInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `NotifyWhenUploaded`.
+/// Orchestration and serialization glue logic for `NotifyWhenUploaded`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

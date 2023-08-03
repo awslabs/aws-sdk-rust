@@ -111,7 +111,7 @@ impl RegisterDataLakeDelegatedAdministratorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterDataLakeDelegatedAdministrator`.
+/// Orchestration and serialization glue logic for `RegisterDataLakeDelegatedAdministrator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

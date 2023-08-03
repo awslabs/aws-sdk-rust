@@ -153,7 +153,7 @@ impl GetSuiteDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSuiteDefinition`.
+/// Orchestration and serialization glue logic for `GetSuiteDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

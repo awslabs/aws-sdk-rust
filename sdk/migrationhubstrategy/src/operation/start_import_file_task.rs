@@ -129,7 +129,7 @@ impl StartImportFileTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartImportFileTask`.
+/// Orchestration and serialization glue logic for `StartImportFileTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -156,7 +156,7 @@ impl DescribeDashboardPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDashboardPermissions`.
+/// Orchestration and serialization glue logic for `DescribeDashboardPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

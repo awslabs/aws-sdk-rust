@@ -126,7 +126,7 @@ impl OptInPhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `OptInPhoneNumber`.
+/// Orchestration and serialization glue logic for `OptInPhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

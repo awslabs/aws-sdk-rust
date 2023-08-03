@@ -131,7 +131,7 @@ impl DisassociateTrialComponentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateTrialComponent`.
+/// Orchestration and serialization glue logic for `DisassociateTrialComponent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

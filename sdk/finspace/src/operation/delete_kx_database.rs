@@ -188,7 +188,7 @@ impl DeleteKxDatabaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteKxDatabase`.
+/// Orchestration and serialization glue logic for `DeleteKxDatabase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

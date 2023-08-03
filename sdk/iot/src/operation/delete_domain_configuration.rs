@@ -136,7 +136,7 @@ impl DeleteDomainConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDomainConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteDomainConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -156,7 +156,7 @@ impl DeleteDeploymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDeployment`.
+/// Orchestration and serialization glue logic for `DeleteDeployment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

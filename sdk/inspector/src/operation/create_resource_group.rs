@@ -133,7 +133,7 @@ impl CreateResourceGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateResourceGroup`.
+/// Orchestration and serialization glue logic for `CreateResourceGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

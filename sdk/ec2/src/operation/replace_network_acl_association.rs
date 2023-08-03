@@ -126,7 +126,7 @@ impl ReplaceNetworkAclAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReplaceNetworkAclAssociation`.
+/// Orchestration and serialization glue logic for `ReplaceNetworkAclAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

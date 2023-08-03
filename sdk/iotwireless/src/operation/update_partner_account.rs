@@ -172,7 +172,7 @@ impl UpdatePartnerAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePartnerAccount`.
+/// Orchestration and serialization glue logic for `UpdatePartnerAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

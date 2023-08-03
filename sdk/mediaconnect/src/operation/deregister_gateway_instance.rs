@@ -153,7 +153,7 @@ impl DeregisterGatewayInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterGatewayInstance`.
+/// Orchestration and serialization glue logic for `DeregisterGatewayInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

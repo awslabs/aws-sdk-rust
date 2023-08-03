@@ -116,7 +116,7 @@ impl GetCapacityAssignmentConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCapacityAssignmentConfiguration`.
+/// Orchestration and serialization glue logic for `GetCapacityAssignmentConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

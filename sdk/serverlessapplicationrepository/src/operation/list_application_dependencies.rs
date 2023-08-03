@@ -166,7 +166,7 @@ impl ListApplicationDependenciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListApplicationDependencies`.
+/// Orchestration and serialization glue logic for `ListApplicationDependencies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

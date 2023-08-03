@@ -136,7 +136,7 @@ impl GetVoiceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVoiceProfile`.
+/// Orchestration and serialization glue logic for `GetVoiceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

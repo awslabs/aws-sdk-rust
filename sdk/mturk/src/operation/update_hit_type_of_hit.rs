@@ -133,7 +133,7 @@ impl UpdateHitTypeOfHitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateHITTypeOfHIT`.
+/// Orchestration and serialization glue logic for `UpdateHITTypeOfHIT`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -156,7 +156,7 @@ impl DescribeRecoveryPointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRecoveryPoint`.
+/// Orchestration and serialization glue logic for `DescribeRecoveryPoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

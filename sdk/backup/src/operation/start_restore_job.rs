@@ -126,7 +126,7 @@ impl StartRestoreJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartRestoreJob`.
+/// Orchestration and serialization glue logic for `StartRestoreJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

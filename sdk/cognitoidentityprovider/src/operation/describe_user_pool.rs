@@ -131,7 +131,7 @@ impl DescribeUserPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeUserPool`.
+/// Orchestration and serialization glue logic for `DescribeUserPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

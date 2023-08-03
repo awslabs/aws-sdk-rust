@@ -131,7 +131,7 @@ impl PutResourceAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutResourceAttributes`.
+/// Orchestration and serialization glue logic for `PutResourceAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl CreateVirtualGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVirtualGateway`.
+/// Orchestration and serialization glue logic for `CreateVirtualGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

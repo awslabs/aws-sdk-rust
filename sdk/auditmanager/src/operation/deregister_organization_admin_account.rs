@@ -112,7 +112,7 @@ impl DeregisterOrganizationAdminAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterOrganizationAdminAccount`.
+/// Orchestration and serialization glue logic for `DeregisterOrganizationAdminAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

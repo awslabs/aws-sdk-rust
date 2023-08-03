@@ -173,7 +173,7 @@ impl GetRepositoryEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRepositoryEndpoint`.
+/// Orchestration and serialization glue logic for `GetRepositoryEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

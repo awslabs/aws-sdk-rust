@@ -131,7 +131,7 @@ impl DisassociateS3ResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateS3Resources`.
+/// Orchestration and serialization glue logic for `DisassociateS3Resources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

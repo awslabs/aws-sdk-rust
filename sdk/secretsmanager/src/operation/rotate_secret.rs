@@ -135,7 +135,7 @@ impl RotateSecretInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RotateSecret`.
+/// Orchestration and serialization glue logic for `RotateSecret`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

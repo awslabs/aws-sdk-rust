@@ -125,7 +125,7 @@ impl DescribePiiEntitiesDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePiiEntitiesDetectionJob`.
+/// Orchestration and serialization glue logic for `DescribePiiEntitiesDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -151,7 +151,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTrafficPolicyInstancesByHostedZone`.
+/// Orchestration and serialization glue logic for `ListTrafficPolicyInstancesByHostedZone`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

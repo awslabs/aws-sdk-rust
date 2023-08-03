@@ -131,7 +131,7 @@ impl DeleteDataQualityRulesetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataQualityRuleset`.
+/// Orchestration and serialization glue logic for `DeleteDataQualityRuleset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

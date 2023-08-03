@@ -145,7 +145,7 @@ impl ListEventConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEventConfigurations`.
+/// Orchestration and serialization glue logic for `ListEventConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

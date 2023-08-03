@@ -130,7 +130,7 @@ impl ApplyArchiveRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ApplyArchiveRule`.
+/// Orchestration and serialization glue logic for `ApplyArchiveRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

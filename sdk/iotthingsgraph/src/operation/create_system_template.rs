@@ -133,7 +133,7 @@ impl CreateSystemTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSystemTemplate`.
+/// Orchestration and serialization glue logic for `CreateSystemTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

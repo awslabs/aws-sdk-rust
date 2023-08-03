@@ -129,7 +129,7 @@ impl BatchGetAssetPropertyValueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetAssetPropertyValue`.
+/// Orchestration and serialization glue logic for `BatchGetAssetPropertyValue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

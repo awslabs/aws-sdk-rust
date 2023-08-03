@@ -132,7 +132,7 @@ impl DeleteMedicalTranscriptionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMedicalTranscriptionJob`.
+/// Orchestration and serialization glue logic for `DeleteMedicalTranscriptionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

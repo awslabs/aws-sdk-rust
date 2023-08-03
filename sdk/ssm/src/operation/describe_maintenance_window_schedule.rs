@@ -116,7 +116,7 @@ impl DescribeMaintenanceWindowScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMaintenanceWindowSchedule`.
+/// Orchestration and serialization glue logic for `DescribeMaintenanceWindowSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

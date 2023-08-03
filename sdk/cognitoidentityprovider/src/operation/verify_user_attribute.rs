@@ -134,7 +134,7 @@ impl VerifyUserAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `VerifyUserAttribute`.
+/// Orchestration and serialization glue logic for `VerifyUserAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

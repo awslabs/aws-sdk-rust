@@ -136,7 +136,7 @@ impl DeleteEmailChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEmailChannel`.
+/// Orchestration and serialization glue logic for `DeleteEmailChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

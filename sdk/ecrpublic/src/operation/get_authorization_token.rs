@@ -124,7 +124,7 @@ impl GetAuthorizationTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAuthorizationToken`.
+/// Orchestration and serialization glue logic for `GetAuthorizationToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

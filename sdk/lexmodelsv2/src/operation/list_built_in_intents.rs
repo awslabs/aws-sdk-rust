@@ -152,7 +152,7 @@ impl ListBuiltInIntentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBuiltInIntents`.
+/// Orchestration and serialization glue logic for `ListBuiltInIntents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

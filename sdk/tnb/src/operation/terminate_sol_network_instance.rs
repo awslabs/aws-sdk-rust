@@ -150,7 +150,7 @@ impl TerminateSolNetworkInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TerminateSolNetworkInstance`.
+/// Orchestration and serialization glue logic for `TerminateSolNetworkInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

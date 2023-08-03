@@ -116,7 +116,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccountsForProvisionedPermissionSet`.
+/// Orchestration and serialization glue logic for `ListAccountsForProvisionedPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

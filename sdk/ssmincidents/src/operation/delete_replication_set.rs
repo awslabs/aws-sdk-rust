@@ -137,7 +137,7 @@ impl DeleteReplicationSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteReplicationSet`.
+/// Orchestration and serialization glue logic for `DeleteReplicationSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

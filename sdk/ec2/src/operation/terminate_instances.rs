@@ -126,7 +126,7 @@ impl TerminateInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TerminateInstances`.
+/// Orchestration and serialization glue logic for `TerminateInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

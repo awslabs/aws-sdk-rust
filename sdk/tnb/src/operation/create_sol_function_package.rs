@@ -127,7 +127,7 @@ impl CreateSolFunctionPackageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSolFunctionPackage`.
+/// Orchestration and serialization glue logic for `CreateSolFunctionPackage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

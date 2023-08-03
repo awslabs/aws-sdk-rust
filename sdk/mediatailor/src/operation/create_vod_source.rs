@@ -170,7 +170,7 @@ impl CreateVodSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVodSource`.
+/// Orchestration and serialization glue logic for `CreateVodSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

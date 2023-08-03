@@ -183,7 +183,7 @@ impl DeleteArchiveInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteArchive`.
+/// Orchestration and serialization glue logic for `DeleteArchive`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

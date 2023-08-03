@@ -212,7 +212,7 @@ impl ListPackageVersionDependenciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPackageVersionDependencies`.
+/// Orchestration and serialization glue logic for `ListPackageVersionDependencies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

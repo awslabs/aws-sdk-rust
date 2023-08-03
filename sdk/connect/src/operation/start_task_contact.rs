@@ -130,7 +130,7 @@ impl StartTaskContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartTaskContact`.
+/// Orchestration and serialization glue logic for `StartTaskContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

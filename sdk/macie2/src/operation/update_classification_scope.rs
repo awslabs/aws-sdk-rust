@@ -146,7 +146,7 @@ impl UpdateClassificationScopeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateClassificationScope`.
+/// Orchestration and serialization glue logic for `UpdateClassificationScope`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

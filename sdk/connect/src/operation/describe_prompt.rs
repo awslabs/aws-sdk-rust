@@ -156,7 +156,7 @@ impl DescribePromptInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePrompt`.
+/// Orchestration and serialization glue logic for `DescribePrompt`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

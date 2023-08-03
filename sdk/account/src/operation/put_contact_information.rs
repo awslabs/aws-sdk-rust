@@ -126,7 +126,7 @@ impl PutContactInformationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutContactInformation`.
+/// Orchestration and serialization glue logic for `PutContactInformation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

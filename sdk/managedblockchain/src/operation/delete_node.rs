@@ -170,7 +170,7 @@ impl DeleteNodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNode`.
+/// Orchestration and serialization glue logic for `DeleteNode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

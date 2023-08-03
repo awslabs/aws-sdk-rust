@@ -112,7 +112,7 @@ impl BatchAssociateResourcesToCustomLineItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchAssociateResourcesToCustomLineItem`.
+/// Orchestration and serialization glue logic for `BatchAssociateResourcesToCustomLineItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

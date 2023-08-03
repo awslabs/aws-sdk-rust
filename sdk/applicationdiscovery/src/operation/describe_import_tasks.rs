@@ -133,7 +133,7 @@ impl DescribeImportTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeImportTasks`.
+/// Orchestration and serialization glue logic for `DescribeImportTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListRunsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRuns`.
+/// Orchestration and serialization glue logic for `ListRuns`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl GetTrustStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTrustStore`.
+/// Orchestration and serialization glue logic for `GetTrustStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

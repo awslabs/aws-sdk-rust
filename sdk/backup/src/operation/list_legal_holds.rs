@@ -134,7 +134,7 @@ impl ListLegalHoldsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLegalHolds`.
+/// Orchestration and serialization glue logic for `ListLegalHolds`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

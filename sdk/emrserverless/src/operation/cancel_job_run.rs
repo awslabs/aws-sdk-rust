@@ -156,7 +156,7 @@ impl CancelJobRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelJobRun`.
+/// Orchestration and serialization glue logic for `CancelJobRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

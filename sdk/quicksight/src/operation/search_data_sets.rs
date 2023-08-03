@@ -150,7 +150,7 @@ impl SearchDataSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchDataSets`.
+/// Orchestration and serialization glue logic for `SearchDataSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

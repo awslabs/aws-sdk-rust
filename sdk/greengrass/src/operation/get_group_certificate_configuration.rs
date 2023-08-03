@@ -130,7 +130,7 @@ impl GetGroupCertificateConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGroupCertificateConfiguration`.
+/// Orchestration and serialization glue logic for `GetGroupCertificateConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

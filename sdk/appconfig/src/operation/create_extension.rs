@@ -130,7 +130,7 @@ impl CreateExtensionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateExtension`.
+/// Orchestration and serialization glue logic for `CreateExtension`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

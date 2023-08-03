@@ -127,7 +127,7 @@ impl PutDomainPermissionsPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutDomainPermissionsPolicy`.
+/// Orchestration and serialization glue logic for `PutDomainPermissionsPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

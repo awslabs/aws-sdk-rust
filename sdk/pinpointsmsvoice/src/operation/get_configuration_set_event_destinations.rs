@@ -121,7 +121,7 @@ impl GetConfigurationSetEventDestinationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConfigurationSetEventDestinations`.
+/// Orchestration and serialization glue logic for `GetConfigurationSetEventDestinations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

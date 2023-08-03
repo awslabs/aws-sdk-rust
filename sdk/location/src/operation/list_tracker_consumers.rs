@@ -154,7 +154,7 @@ impl ListTrackerConsumersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTrackerConsumers`.
+/// Orchestration and serialization glue logic for `ListTrackerConsumers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

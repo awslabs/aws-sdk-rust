@@ -150,7 +150,7 @@ impl PutVoiceConnectorProxyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutVoiceConnectorProxy`.
+/// Orchestration and serialization glue logic for `PutVoiceConnectorProxy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

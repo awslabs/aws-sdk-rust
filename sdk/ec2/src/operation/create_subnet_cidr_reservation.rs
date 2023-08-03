@@ -126,7 +126,7 @@ impl CreateSubnetCidrReservationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSubnetCidrReservation`.
+/// Orchestration and serialization glue logic for `CreateSubnetCidrReservation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

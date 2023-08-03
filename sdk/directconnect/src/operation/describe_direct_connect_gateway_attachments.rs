@@ -116,7 +116,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDirectConnectGatewayAttachments`.
+/// Orchestration and serialization glue logic for `DescribeDirectConnectGatewayAttachments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl DescribeTransactionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTransaction`.
+/// Orchestration and serialization glue logic for `DescribeTransaction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

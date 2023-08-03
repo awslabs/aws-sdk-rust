@@ -132,7 +132,7 @@ impl GetPortalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPortal`.
+/// Orchestration and serialization glue logic for `GetPortal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

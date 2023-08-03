@@ -159,7 +159,7 @@ impl GetApiKeysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApiKeys`.
+/// Orchestration and serialization glue logic for `GetApiKeys`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

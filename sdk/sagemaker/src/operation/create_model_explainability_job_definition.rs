@@ -116,7 +116,7 @@ impl CreateModelExplainabilityJobDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateModelExplainabilityJobDefinition`.
+/// Orchestration and serialization glue logic for `CreateModelExplainabilityJobDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

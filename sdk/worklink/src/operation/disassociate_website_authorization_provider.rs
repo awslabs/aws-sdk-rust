@@ -112,7 +112,7 @@ impl DisassociateWebsiteAuthorizationProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateWebsiteAuthorizationProvider`.
+/// Orchestration and serialization glue logic for `DisassociateWebsiteAuthorizationProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

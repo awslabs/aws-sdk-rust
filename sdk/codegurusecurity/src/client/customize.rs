@@ -90,6 +90,7 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
             + ::std::marker::Sync
             + ::std::clone::Clone
             + 'static,
+        Retry: ::std::marker::Send + ::std::marker::Sync + ::std::clone::Clone,
         Retry: ::aws_smithy_http::retry::ClassifyRetry<
                 ::aws_smithy_http::result::SdkSuccess<T>,
                 ::aws_smithy_http::result::SdkError<E>,

@@ -131,7 +131,7 @@ impl SetDefaultMessageTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetDefaultMessageType`.
+/// Orchestration and serialization glue logic for `SetDefaultMessageType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

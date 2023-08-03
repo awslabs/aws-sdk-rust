@@ -138,7 +138,7 @@ impl DescribeAppInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAppInstance`.
+/// Orchestration and serialization glue logic for `DescribeAppInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

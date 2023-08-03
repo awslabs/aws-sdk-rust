@@ -174,7 +174,7 @@ impl PostAgentProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PostAgentProfile`.
+/// Orchestration and serialization glue logic for `PostAgentProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListApplicationDpuSizesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListApplicationDPUSizes`.
+/// Orchestration and serialization glue logic for `ListApplicationDPUSizes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

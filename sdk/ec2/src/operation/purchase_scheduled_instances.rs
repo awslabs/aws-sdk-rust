@@ -130,7 +130,7 @@ impl PurchaseScheduledInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PurchaseScheduledInstances`.
+/// Orchestration and serialization glue logic for `PurchaseScheduledInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

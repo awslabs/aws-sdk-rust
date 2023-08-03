@@ -127,7 +127,7 @@ impl RemoveThingFromBillingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveThingFromBillingGroup`.
+/// Orchestration and serialization glue logic for `RemoveThingFromBillingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeEventCategoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEventCategories`.
+/// Orchestration and serialization glue logic for `DescribeEventCategories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

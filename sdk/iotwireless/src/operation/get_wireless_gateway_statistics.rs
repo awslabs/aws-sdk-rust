@@ -136,7 +136,7 @@ impl GetWirelessGatewayStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWirelessGatewayStatistics`.
+/// Orchestration and serialization glue logic for `GetWirelessGatewayStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

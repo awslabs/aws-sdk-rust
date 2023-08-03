@@ -136,7 +136,7 @@ impl DisassociateBrowserSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateBrowserSettings`.
+/// Orchestration and serialization glue logic for `DisassociateBrowserSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

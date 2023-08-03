@@ -131,7 +131,7 @@ impl UpdateHitReviewStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateHITReviewStatus`.
+/// Orchestration and serialization glue logic for `UpdateHITReviewStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

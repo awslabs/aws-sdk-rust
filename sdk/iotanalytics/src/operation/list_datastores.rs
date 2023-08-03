@@ -134,7 +134,7 @@ impl ListDatastoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDatastores`.
+/// Orchestration and serialization glue logic for `ListDatastores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

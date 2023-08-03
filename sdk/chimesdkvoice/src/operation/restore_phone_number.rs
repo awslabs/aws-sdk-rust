@@ -146,7 +146,7 @@ impl RestorePhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestorePhoneNumber`.
+/// Orchestration and serialization glue logic for `RestorePhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

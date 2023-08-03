@@ -130,7 +130,7 @@ impl CreateStackInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStackInstances`.
+/// Orchestration and serialization glue logic for `CreateStackInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

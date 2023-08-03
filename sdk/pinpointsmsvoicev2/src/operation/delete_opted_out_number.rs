@@ -131,7 +131,7 @@ impl DeleteOptedOutNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteOptedOutNumber`.
+/// Orchestration and serialization glue logic for `DeleteOptedOutNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

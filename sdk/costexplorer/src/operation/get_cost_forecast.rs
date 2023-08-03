@@ -131,7 +131,7 @@ impl GetCostForecastInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCostForecast`.
+/// Orchestration and serialization glue logic for `GetCostForecast`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl UpdateContactEvaluationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContactEvaluation`.
+/// Orchestration and serialization glue logic for `UpdateContactEvaluation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

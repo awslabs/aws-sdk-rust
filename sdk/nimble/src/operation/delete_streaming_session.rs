@@ -161,7 +161,7 @@ impl DeleteStreamingSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStreamingSession`.
+/// Orchestration and serialization glue logic for `DeleteStreamingSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

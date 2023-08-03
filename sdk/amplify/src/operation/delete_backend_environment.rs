@@ -156,7 +156,7 @@ impl DeleteBackendEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBackendEnvironment`.
+/// Orchestration and serialization glue logic for `DeleteBackendEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

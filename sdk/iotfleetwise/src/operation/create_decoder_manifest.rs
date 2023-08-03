@@ -131,7 +131,7 @@ impl CreateDecoderManifestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDecoderManifest`.
+/// Orchestration and serialization glue logic for `CreateDecoderManifest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

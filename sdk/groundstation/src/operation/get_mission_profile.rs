@@ -136,7 +136,7 @@ impl GetMissionProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMissionProfile`.
+/// Orchestration and serialization glue logic for `GetMissionProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

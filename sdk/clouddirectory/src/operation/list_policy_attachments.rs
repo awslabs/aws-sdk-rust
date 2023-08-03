@@ -128,7 +128,7 @@ impl ListPolicyAttachmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPolicyAttachments`.
+/// Orchestration and serialization glue logic for `ListPolicyAttachments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

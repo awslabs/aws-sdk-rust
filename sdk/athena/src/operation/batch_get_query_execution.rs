@@ -131,7 +131,7 @@ impl BatchGetQueryExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetQueryExecution`.
+/// Orchestration and serialization glue logic for `BatchGetQueryExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

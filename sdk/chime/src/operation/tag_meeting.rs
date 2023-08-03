@@ -156,7 +156,7 @@ impl TagMeetingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagMeeting`.
+/// Orchestration and serialization glue logic for `TagMeeting`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

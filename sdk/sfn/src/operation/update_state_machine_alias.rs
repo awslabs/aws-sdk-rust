@@ -131,7 +131,7 @@ impl UpdateStateMachineAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStateMachineAlias`.
+/// Orchestration and serialization glue logic for `UpdateStateMachineAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -178,7 +178,7 @@ impl DescribeUpdateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeUpdate`.
+/// Orchestration and serialization glue logic for `DescribeUpdate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

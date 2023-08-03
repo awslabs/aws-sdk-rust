@@ -156,7 +156,7 @@ impl DescribeDatasetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDataset`.
+/// Orchestration and serialization glue logic for `DescribeDataset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

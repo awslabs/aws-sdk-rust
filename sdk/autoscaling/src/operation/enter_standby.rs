@@ -126,7 +126,7 @@ impl EnterStandbyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnterStandby`.
+/// Orchestration and serialization glue logic for `EnterStandby`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

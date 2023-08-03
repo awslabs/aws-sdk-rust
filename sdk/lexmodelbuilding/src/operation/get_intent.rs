@@ -156,7 +156,7 @@ impl GetIntentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIntent`.
+/// Orchestration and serialization glue logic for `GetIntent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

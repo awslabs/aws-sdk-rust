@@ -158,7 +158,7 @@ impl ListClientVpcConnectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListClientVpcConnections`.
+/// Orchestration and serialization glue logic for `ListClientVpcConnections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

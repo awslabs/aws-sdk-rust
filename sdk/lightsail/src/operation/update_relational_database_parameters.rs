@@ -116,7 +116,7 @@ impl UpdateRelationalDatabaseParametersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRelationalDatabaseParameters`.
+/// Orchestration and serialization glue logic for `UpdateRelationalDatabaseParameters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

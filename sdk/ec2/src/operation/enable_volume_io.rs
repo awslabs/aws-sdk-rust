@@ -128,7 +128,7 @@ impl EnableVolumeIoInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableVolumeIO`.
+/// Orchestration and serialization glue logic for `EnableVolumeIO`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

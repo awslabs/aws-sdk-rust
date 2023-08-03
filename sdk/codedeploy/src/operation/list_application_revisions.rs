@@ -131,7 +131,7 @@ impl ListApplicationRevisionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListApplicationRevisions`.
+/// Orchestration and serialization glue logic for `ListApplicationRevisions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

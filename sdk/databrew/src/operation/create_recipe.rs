@@ -126,7 +126,7 @@ impl CreateRecipeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRecipe`.
+/// Orchestration and serialization glue logic for `CreateRecipe`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

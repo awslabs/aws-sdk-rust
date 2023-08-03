@@ -127,7 +127,7 @@ impl ListSopRecommendationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSopRecommendations`.
+/// Orchestration and serialization glue logic for `ListSopRecommendations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -229,7 +229,7 @@ impl CopyPackageVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CopyPackageVersions`.
+/// Orchestration and serialization glue logic for `CopyPackageVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

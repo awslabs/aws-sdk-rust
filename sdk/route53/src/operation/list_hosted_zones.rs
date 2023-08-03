@@ -142,7 +142,7 @@ impl ListHostedZonesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHostedZones`.
+/// Orchestration and serialization glue logic for `ListHostedZones`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

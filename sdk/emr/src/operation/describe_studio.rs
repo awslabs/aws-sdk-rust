@@ -131,7 +131,7 @@ impl DescribeStudioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStudio`.
+/// Orchestration and serialization glue logic for `DescribeStudio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

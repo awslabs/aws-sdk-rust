@@ -172,7 +172,7 @@ impl UpdateProxySessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateProxySession`.
+/// Orchestration and serialization glue logic for `UpdateProxySession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

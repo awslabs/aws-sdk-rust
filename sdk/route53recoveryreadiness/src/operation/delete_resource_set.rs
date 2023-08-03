@@ -136,7 +136,7 @@ impl DeleteResourceSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteResourceSet`.
+/// Orchestration and serialization glue logic for `DeleteResourceSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

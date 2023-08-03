@@ -133,7 +133,7 @@ impl DeleteModelPackageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteModelPackage`.
+/// Orchestration and serialization glue logic for `DeleteModelPackage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

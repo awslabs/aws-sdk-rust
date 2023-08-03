@@ -126,7 +126,7 @@ impl ReserveContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReserveContact`.
+/// Orchestration and serialization glue logic for `ReserveContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

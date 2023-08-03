@@ -116,7 +116,7 @@ impl DescribeDataRepositoryAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDataRepositoryAssociations`.
+/// Orchestration and serialization glue logic for `DescribeDataRepositoryAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteSpaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSpace`.
+/// Orchestration and serialization glue logic for `DeleteSpace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

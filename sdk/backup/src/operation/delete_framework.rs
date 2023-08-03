@@ -136,7 +136,7 @@ impl DeleteFrameworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFramework`.
+/// Orchestration and serialization glue logic for `DeleteFramework`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

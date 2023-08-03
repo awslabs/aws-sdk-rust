@@ -126,7 +126,7 @@ impl DescribeIpv6PoolsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeIpv6Pools`.
+/// Orchestration and serialization glue logic for `DescribeIpv6Pools`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

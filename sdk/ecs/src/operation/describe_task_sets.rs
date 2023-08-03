@@ -131,7 +131,7 @@ impl DescribeTaskSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTaskSets`.
+/// Orchestration and serialization glue logic for `DescribeTaskSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateWebhookInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWebhook`.
+/// Orchestration and serialization glue logic for `CreateWebhook`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

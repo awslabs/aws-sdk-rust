@@ -133,7 +133,7 @@ impl UpdateResolverRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResolverRule`.
+/// Orchestration and serialization glue logic for `UpdateResolverRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

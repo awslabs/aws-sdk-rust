@@ -131,7 +131,7 @@ impl GetLabelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLabels`.
+/// Orchestration and serialization glue logic for `GetLabels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

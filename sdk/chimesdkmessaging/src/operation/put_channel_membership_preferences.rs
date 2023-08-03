@@ -165,7 +165,7 @@ impl PutChannelMembershipPreferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutChannelMembershipPreferences`.
+/// Orchestration and serialization glue logic for `PutChannelMembershipPreferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

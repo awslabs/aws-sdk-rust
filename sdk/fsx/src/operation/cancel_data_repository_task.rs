@@ -131,7 +131,7 @@ impl CancelDataRepositoryTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelDataRepositoryTask`.
+/// Orchestration and serialization glue logic for `CancelDataRepositoryTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

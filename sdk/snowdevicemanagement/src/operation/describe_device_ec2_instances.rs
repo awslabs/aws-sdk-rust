@@ -150,7 +150,7 @@ impl DescribeDeviceEc2InstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDeviceEc2Instances`.
+/// Orchestration and serialization glue logic for `DescribeDeviceEc2Instances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

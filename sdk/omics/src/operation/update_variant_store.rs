@@ -150,7 +150,7 @@ impl UpdateVariantStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVariantStore`.
+/// Orchestration and serialization glue logic for `UpdateVariantStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

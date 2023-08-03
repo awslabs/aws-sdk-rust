@@ -126,7 +126,7 @@ impl DeleteChangeSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteChangeSet`.
+/// Orchestration and serialization glue logic for `DeleteChangeSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

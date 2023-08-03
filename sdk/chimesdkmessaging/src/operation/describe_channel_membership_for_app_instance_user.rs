@@ -147,7 +147,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeChannelMembershipForAppInstanceUser`.
+/// Orchestration and serialization glue logic for `DescribeChannelMembershipForAppInstanceUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

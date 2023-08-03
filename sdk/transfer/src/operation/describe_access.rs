@@ -131,7 +131,7 @@ impl DescribeAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAccess`.
+/// Orchestration and serialization glue logic for `DescribeAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

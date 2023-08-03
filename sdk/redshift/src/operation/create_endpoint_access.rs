@@ -126,7 +126,7 @@ impl CreateEndpointAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEndpointAccess`.
+/// Orchestration and serialization glue logic for `CreateEndpointAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -158,7 +158,7 @@ impl ListDeviceDefinitionVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDeviceDefinitionVersions`.
+/// Orchestration and serialization glue logic for `ListDeviceDefinitionVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

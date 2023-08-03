@@ -133,7 +133,7 @@ impl GetCustomEntityTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCustomEntityType`.
+/// Orchestration and serialization glue logic for `GetCustomEntityType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

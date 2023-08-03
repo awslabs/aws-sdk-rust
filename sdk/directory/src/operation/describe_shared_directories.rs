@@ -131,7 +131,7 @@ impl DescribeSharedDirectoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSharedDirectories`.
+/// Orchestration and serialization glue logic for `DescribeSharedDirectories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

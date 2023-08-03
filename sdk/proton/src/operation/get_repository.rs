@@ -131,7 +131,7 @@ impl GetRepositoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRepository`.
+/// Orchestration and serialization glue logic for `GetRepository`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

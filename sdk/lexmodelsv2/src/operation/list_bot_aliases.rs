@@ -146,7 +146,7 @@ impl ListBotAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBotAliases`.
+/// Orchestration and serialization glue logic for `ListBotAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

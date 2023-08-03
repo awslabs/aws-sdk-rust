@@ -127,7 +127,7 @@ impl DeleteEdgeConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEdgeConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteEdgeConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

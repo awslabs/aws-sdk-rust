@@ -112,7 +112,7 @@ impl DescribeAccountHealthInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAccountHealth`.
+/// Orchestration and serialization glue logic for `DescribeAccountHealth`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

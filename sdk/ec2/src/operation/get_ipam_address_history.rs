@@ -126,7 +126,7 @@ impl GetIpamAddressHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIpamAddressHistory`.
+/// Orchestration and serialization glue logic for `GetIpamAddressHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

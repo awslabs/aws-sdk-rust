@@ -131,7 +131,7 @@ impl CreateTrafficMirrorFilterRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrafficMirrorFilterRule`.
+/// Orchestration and serialization glue logic for `CreateTrafficMirrorFilterRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

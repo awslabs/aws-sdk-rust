@@ -150,7 +150,7 @@ impl ListIntentPathsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIntentPaths`.
+/// Orchestration and serialization glue logic for `ListIntentPaths`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListBonusPaymentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBonusPayments`.
+/// Orchestration and serialization glue logic for `ListBonusPayments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

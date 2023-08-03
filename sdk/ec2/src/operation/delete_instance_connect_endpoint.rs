@@ -127,7 +127,7 @@ impl DeleteInstanceConnectEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInstanceConnectEndpoint`.
+/// Orchestration and serialization glue logic for `DeleteInstanceConnectEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

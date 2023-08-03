@@ -155,7 +155,7 @@ impl PutBucketInventoryConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketInventoryConfiguration`.
+/// Orchestration and serialization glue logic for `PutBucketInventoryConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

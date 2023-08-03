@@ -21,9 +21,9 @@ impl DeregisterOrganizationDelegatedAdminFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdmin, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdmin, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl DeregisterOrganizationDelegatedAdminFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl DeregisterOrganizationDelegatedAdminFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdmin, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdmin, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError>
     >{
         self.customize_middleware().await
     }

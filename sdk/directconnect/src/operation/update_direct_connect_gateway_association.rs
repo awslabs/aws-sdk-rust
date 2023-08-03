@@ -116,7 +116,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDirectConnectGatewayAssociation`.
+/// Orchestration and serialization glue logic for `UpdateDirectConnectGatewayAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

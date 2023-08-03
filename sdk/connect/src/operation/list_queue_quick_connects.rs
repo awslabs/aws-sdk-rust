@@ -178,7 +178,7 @@ impl ListQueueQuickConnectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListQueueQuickConnects`.
+/// Orchestration and serialization glue logic for `ListQueueQuickConnects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

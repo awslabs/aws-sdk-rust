@@ -172,7 +172,7 @@ impl UpdateSceneInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateScene`.
+/// Orchestration and serialization glue logic for `UpdateScene`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

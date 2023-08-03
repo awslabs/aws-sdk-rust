@@ -126,7 +126,7 @@ impl DescribeFeedbackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFeedback`.
+/// Orchestration and serialization glue logic for `DescribeFeedback`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

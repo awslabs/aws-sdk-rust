@@ -166,7 +166,7 @@ impl GetSessionEmbedUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSessionEmbedUrl`.
+/// Orchestration and serialization glue logic for `GetSessionEmbedUrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

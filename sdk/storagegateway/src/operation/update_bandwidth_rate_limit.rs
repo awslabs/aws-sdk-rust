@@ -131,7 +131,7 @@ impl UpdateBandwidthRateLimitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBandwidthRateLimit`.
+/// Orchestration and serialization glue logic for `UpdateBandwidthRateLimit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

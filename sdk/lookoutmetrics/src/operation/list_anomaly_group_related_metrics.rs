@@ -121,7 +121,7 @@ impl ListAnomalyGroupRelatedMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnomalyGroupRelatedMetrics`.
+/// Orchestration and serialization glue logic for `ListAnomalyGroupRelatedMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

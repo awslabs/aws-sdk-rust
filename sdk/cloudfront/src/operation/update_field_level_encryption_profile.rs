@@ -136,7 +136,7 @@ impl UpdateFieldLevelEncryptionProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFieldLevelEncryptionProfile`.
+/// Orchestration and serialization glue logic for `UpdateFieldLevelEncryptionProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

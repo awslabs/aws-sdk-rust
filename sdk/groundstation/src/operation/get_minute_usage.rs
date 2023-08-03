@@ -126,7 +126,7 @@ impl GetMinuteUsageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMinuteUsage`.
+/// Orchestration and serialization glue logic for `GetMinuteUsage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

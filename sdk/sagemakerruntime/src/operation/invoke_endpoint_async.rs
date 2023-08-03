@@ -137,7 +137,7 @@ impl InvokeEndpointAsyncInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InvokeEndpointAsync`.
+/// Orchestration and serialization glue logic for `InvokeEndpointAsync`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

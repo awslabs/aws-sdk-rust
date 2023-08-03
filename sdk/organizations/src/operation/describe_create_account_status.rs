@@ -131,7 +131,7 @@ impl DescribeCreateAccountStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCreateAccountStatus`.
+/// Orchestration and serialization glue logic for `DescribeCreateAccountStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

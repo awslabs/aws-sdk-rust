@@ -131,7 +131,7 @@ impl IsAuthorizedWithTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `IsAuthorizedWithToken`.
+/// Orchestration and serialization glue logic for `IsAuthorizedWithToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

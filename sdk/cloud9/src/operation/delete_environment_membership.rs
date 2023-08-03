@@ -131,7 +131,7 @@ impl DeleteEnvironmentMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEnvironmentMembership`.
+/// Orchestration and serialization glue logic for `DeleteEnvironmentMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

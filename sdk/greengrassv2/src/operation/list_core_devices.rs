@@ -148,7 +148,7 @@ impl ListCoreDevicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCoreDevices`.
+/// Orchestration and serialization glue logic for `ListCoreDevices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

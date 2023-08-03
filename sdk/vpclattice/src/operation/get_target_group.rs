@@ -136,7 +136,7 @@ impl GetTargetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTargetGroup`.
+/// Orchestration and serialization glue logic for `GetTargetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

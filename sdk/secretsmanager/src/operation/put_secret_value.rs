@@ -135,7 +135,7 @@ impl PutSecretValueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSecretValue`.
+/// Orchestration and serialization glue logic for `PutSecretValue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

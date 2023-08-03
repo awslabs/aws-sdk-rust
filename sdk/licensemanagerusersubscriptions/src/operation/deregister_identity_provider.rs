@@ -127,7 +127,7 @@ impl DeregisterIdentityProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterIdentityProvider`.
+/// Orchestration and serialization glue logic for `DeregisterIdentityProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

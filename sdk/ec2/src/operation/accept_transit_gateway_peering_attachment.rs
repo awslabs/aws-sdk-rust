@@ -111,7 +111,7 @@ impl AcceptTransitGatewayPeeringAttachmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptTransitGatewayPeeringAttachment`.
+/// Orchestration and serialization glue logic for `AcceptTransitGatewayPeeringAttachment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

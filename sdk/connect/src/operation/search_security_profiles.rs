@@ -127,7 +127,7 @@ impl SearchSecurityProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchSecurityProfiles`.
+/// Orchestration and serialization glue logic for `SearchSecurityProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

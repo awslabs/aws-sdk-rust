@@ -150,7 +150,7 @@ impl DescribeAlarmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAlarm`.
+/// Orchestration and serialization glue logic for `DescribeAlarm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

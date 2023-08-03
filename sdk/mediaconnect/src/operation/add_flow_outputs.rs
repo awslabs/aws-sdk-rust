@@ -146,7 +146,7 @@ impl AddFlowOutputsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddFlowOutputs`.
+/// Orchestration and serialization glue logic for `AddFlowOutputs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

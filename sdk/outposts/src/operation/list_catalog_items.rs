@@ -164,7 +164,7 @@ impl ListCatalogItemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCatalogItems`.
+/// Orchestration and serialization glue logic for `ListCatalogItems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

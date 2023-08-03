@@ -112,7 +112,7 @@ impl GetAdministratorAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAdministratorAccount`.
+/// Orchestration and serialization glue logic for `GetAdministratorAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

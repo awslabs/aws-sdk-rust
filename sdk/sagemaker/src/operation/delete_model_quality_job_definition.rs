@@ -125,7 +125,7 @@ impl DeleteModelQualityJobDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteModelQualityJobDefinition`.
+/// Orchestration and serialization glue logic for `DeleteModelQualityJobDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

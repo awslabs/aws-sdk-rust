@@ -131,7 +131,7 @@ impl DeleteIpGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIpGroup`.
+/// Orchestration and serialization glue logic for `DeleteIpGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

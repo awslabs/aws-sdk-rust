@@ -180,7 +180,7 @@ impl AssociatePhoneNumberWithUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociatePhoneNumberWithUser`.
+/// Orchestration and serialization glue logic for `AssociatePhoneNumberWithUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

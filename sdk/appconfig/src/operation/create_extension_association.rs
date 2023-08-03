@@ -126,7 +126,7 @@ impl CreateExtensionAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateExtensionAssociation`.
+/// Orchestration and serialization glue logic for `CreateExtensionAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

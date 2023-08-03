@@ -193,7 +193,7 @@ impl PutObjectRetentionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutObjectRetention`.
+/// Orchestration and serialization glue logic for `PutObjectRetention`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

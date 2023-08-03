@@ -116,7 +116,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTrustedAdvisorCheckRefreshStatuses`.
+/// Orchestration and serialization glue logic for `DescribeTrustedAdvisorCheckRefreshStatuses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

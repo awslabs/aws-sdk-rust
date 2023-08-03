@@ -126,7 +126,7 @@ impl SearchInsightsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchInsights`.
+/// Orchestration and serialization glue logic for `SearchInsights`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

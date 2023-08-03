@@ -170,7 +170,7 @@ impl UpdateAnalysisPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAnalysisPermissions`.
+/// Orchestration and serialization glue logic for `UpdateAnalysisPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

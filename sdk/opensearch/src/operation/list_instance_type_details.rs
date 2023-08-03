@@ -182,7 +182,7 @@ impl ListInstanceTypeDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstanceTypeDetails`.
+/// Orchestration and serialization glue logic for `ListInstanceTypeDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

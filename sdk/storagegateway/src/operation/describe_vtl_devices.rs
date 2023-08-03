@@ -133,7 +133,7 @@ impl DescribeVtlDevicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVTLDevices`.
+/// Orchestration and serialization glue logic for `DescribeVTLDevices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

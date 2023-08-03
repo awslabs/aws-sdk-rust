@@ -136,7 +136,7 @@ impl GetChannelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetChannels`.
+/// Orchestration and serialization glue logic for `GetChannels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

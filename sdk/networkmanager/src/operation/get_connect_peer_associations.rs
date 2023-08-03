@@ -168,7 +168,7 @@ impl GetConnectPeerAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConnectPeerAssociations`.
+/// Orchestration and serialization glue logic for `GetConnectPeerAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

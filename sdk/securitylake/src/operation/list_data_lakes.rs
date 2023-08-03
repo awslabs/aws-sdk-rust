@@ -131,7 +131,7 @@ impl ListDataLakesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDataLakes`.
+/// Orchestration and serialization glue logic for `ListDataLakes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

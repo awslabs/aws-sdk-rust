@@ -132,7 +132,7 @@ impl RotateChannelCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RotateChannelCredentials`.
+/// Orchestration and serialization glue logic for `RotateChannelCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

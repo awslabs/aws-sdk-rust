@@ -131,7 +131,7 @@ impl DeleteMlModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMLModel`.
+/// Orchestration and serialization glue logic for `DeleteMLModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

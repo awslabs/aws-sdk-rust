@@ -150,7 +150,7 @@ impl ListRecipeVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRecipeVersions`.
+/// Orchestration and serialization glue logic for `ListRecipeVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

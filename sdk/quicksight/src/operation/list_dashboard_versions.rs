@@ -181,7 +181,7 @@ impl ListDashboardVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDashboardVersions`.
+/// Orchestration and serialization glue logic for `ListDashboardVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

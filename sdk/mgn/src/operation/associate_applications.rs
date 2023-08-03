@@ -128,7 +128,7 @@ impl AssociateApplicationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateApplications`.
+/// Orchestration and serialization glue logic for `AssociateApplications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

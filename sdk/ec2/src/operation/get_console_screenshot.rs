@@ -126,7 +126,7 @@ impl GetConsoleScreenshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConsoleScreenshot`.
+/// Orchestration and serialization glue logic for `GetConsoleScreenshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

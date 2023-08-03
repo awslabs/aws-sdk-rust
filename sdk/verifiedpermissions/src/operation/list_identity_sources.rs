@@ -133,7 +133,7 @@ impl ListIdentitySourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIdentitySources`.
+/// Orchestration and serialization glue logic for `ListIdentitySources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

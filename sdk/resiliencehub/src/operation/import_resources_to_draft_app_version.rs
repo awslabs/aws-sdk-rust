@@ -112,7 +112,7 @@ impl ImportResourcesToDraftAppVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportResourcesToDraftAppVersion`.
+/// Orchestration and serialization glue logic for `ImportResourcesToDraftAppVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

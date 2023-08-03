@@ -126,7 +126,7 @@ impl DescribeDbProxyEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDBProxyEndpoints`.
+/// Orchestration and serialization glue logic for `DescribeDBProxyEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeletePartitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePartition`.
+/// Orchestration and serialization glue logic for `DeletePartition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

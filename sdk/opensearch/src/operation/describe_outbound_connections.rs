@@ -130,7 +130,7 @@ impl DescribeOutboundConnectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeOutboundConnections`.
+/// Orchestration and serialization glue logic for `DescribeOutboundConnections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

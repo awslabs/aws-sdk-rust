@@ -116,7 +116,7 @@ impl UpdateApprovalRuleTemplateDescriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateApprovalRuleTemplateDescription`.
+/// Orchestration and serialization glue logic for `UpdateApprovalRuleTemplateDescription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

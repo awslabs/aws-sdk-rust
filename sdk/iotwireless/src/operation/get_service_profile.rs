@@ -132,7 +132,7 @@ impl GetServiceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceProfile`.
+/// Orchestration and serialization glue logic for `GetServiceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl CreateDeviceDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDeviceDefinition`.
+/// Orchestration and serialization glue logic for `CreateDeviceDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

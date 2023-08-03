@@ -196,7 +196,7 @@ impl DeleteFolderMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFolderMembership`.
+/// Orchestration and serialization glue logic for `DeleteFolderMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

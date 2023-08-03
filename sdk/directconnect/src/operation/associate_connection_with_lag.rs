@@ -131,7 +131,7 @@ impl AssociateConnectionWithLagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateConnectionWithLag`.
+/// Orchestration and serialization glue logic for `AssociateConnectionWithLag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

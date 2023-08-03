@@ -111,7 +111,7 @@ impl DescribeVpcClassicLinkDnsSupportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVpcClassicLinkDnsSupport`.
+/// Orchestration and serialization glue logic for `DescribeVpcClassicLinkDnsSupport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

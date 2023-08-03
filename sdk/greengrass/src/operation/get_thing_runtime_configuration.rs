@@ -136,7 +136,7 @@ impl GetThingRuntimeConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetThingRuntimeConfiguration`.
+/// Orchestration and serialization glue logic for `GetThingRuntimeConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

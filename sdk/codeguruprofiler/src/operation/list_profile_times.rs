@@ -199,7 +199,7 @@ impl ListProfileTimesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProfileTimes`.
+/// Orchestration and serialization glue logic for `ListProfileTimes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

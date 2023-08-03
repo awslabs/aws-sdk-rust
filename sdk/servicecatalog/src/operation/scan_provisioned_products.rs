@@ -131,7 +131,7 @@ impl ScanProvisionedProductsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ScanProvisionedProducts`.
+/// Orchestration and serialization glue logic for `ScanProvisionedProducts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

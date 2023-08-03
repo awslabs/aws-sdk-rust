@@ -152,7 +152,7 @@ impl ListFunctionDefinitionVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFunctionDefinitionVersions`.
+/// Orchestration and serialization glue logic for `ListFunctionDefinitionVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

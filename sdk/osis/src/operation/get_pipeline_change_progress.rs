@@ -136,7 +136,7 @@ impl GetPipelineChangeProgressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPipelineChangeProgress`.
+/// Orchestration and serialization glue logic for `GetPipelineChangeProgress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

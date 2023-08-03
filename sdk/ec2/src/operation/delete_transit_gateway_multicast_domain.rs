@@ -111,7 +111,7 @@ impl DeleteTransitGatewayMulticastDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTransitGatewayMulticastDomain`.
+/// Orchestration and serialization glue logic for `DeleteTransitGatewayMulticastDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

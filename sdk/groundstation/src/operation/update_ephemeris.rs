@@ -150,7 +150,7 @@ impl UpdateEphemerisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEphemeris`.
+/// Orchestration and serialization glue logic for `UpdateEphemeris`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

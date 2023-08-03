@@ -156,7 +156,7 @@ impl DeleteConfigurationProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteConfigurationProfile`.
+/// Orchestration and serialization glue logic for `DeleteConfigurationProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

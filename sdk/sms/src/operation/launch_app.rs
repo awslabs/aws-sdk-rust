@@ -131,7 +131,7 @@ impl LaunchAppInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `LaunchApp`.
+/// Orchestration and serialization glue logic for `LaunchApp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListHubContentVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHubContentVersions`.
+/// Orchestration and serialization glue logic for `ListHubContentVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

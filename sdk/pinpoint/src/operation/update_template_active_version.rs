@@ -170,7 +170,7 @@ impl UpdateTemplateActiveVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTemplateActiveVersion`.
+/// Orchestration and serialization glue logic for `UpdateTemplateActiveVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

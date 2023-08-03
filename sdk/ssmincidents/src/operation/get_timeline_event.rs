@@ -156,7 +156,7 @@ impl GetTimelineEventInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTimelineEvent`.
+/// Orchestration and serialization glue logic for `GetTimelineEvent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

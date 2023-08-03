@@ -158,7 +158,7 @@ impl ListAccountRolesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccountRoles`.
+/// Orchestration and serialization glue logic for `ListAccountRoles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

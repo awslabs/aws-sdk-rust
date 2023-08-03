@@ -116,7 +116,7 @@ impl AssociateResolverEndpointIpAddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateResolverEndpointIpAddress`.
+/// Orchestration and serialization glue logic for `AssociateResolverEndpointIpAddress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

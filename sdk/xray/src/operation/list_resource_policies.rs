@@ -128,7 +128,7 @@ impl ListResourcePoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourcePolicies`.
+/// Orchestration and serialization glue logic for `ListResourcePolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

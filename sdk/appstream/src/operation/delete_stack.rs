@@ -131,7 +131,7 @@ impl DeleteStackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStack`.
+/// Orchestration and serialization glue logic for `DeleteStack`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

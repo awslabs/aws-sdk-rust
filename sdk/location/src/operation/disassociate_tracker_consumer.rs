@@ -158,7 +158,7 @@ impl DisassociateTrackerConsumerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateTrackerConsumer`.
+/// Orchestration and serialization glue logic for `DisassociateTrackerConsumer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

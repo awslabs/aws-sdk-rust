@@ -132,7 +132,7 @@ impl GetFuotaTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFuotaTask`.
+/// Orchestration and serialization glue logic for `GetFuotaTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl CreateSchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSchema`.
+/// Orchestration and serialization glue logic for `CreateSchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

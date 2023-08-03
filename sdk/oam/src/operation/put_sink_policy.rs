@@ -126,7 +126,7 @@ impl PutSinkPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSinkPolicy`.
+/// Orchestration and serialization glue logic for `PutSinkPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

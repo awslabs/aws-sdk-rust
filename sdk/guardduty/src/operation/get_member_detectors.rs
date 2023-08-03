@@ -152,7 +152,7 @@ impl GetMemberDetectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMemberDetectors`.
+/// Orchestration and serialization glue logic for `GetMemberDetectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribePublicIpv4PoolsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePublicIpv4Pools`.
+/// Orchestration and serialization glue logic for `DescribePublicIpv4Pools`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

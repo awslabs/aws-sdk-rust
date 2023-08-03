@@ -126,7 +126,7 @@ impl EnableFastSnapshotRestoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableFastSnapshotRestores`.
+/// Orchestration and serialization glue logic for `EnableFastSnapshotRestores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

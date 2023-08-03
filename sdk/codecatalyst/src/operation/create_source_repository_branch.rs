@@ -189,7 +189,7 @@ impl CreateSourceRepositoryBranchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSourceRepositoryBranch`.
+/// Orchestration and serialization glue logic for `CreateSourceRepositoryBranch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

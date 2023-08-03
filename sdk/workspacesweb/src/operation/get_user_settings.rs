@@ -136,7 +136,7 @@ impl GetUserSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUserSettings`.
+/// Orchestration and serialization glue logic for `GetUserSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

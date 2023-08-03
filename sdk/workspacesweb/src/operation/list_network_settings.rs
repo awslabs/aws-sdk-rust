@@ -134,7 +134,7 @@ impl ListNetworkSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListNetworkSettings`.
+/// Orchestration and serialization glue logic for `ListNetworkSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

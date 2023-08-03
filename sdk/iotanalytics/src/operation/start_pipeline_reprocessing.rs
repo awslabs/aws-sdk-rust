@@ -150,7 +150,7 @@ impl StartPipelineReprocessingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartPipelineReprocessing`.
+/// Orchestration and serialization glue logic for `StartPipelineReprocessing`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeElasticGpusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeElasticGpus`.
+/// Orchestration and serialization glue logic for `DescribeElasticGpus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

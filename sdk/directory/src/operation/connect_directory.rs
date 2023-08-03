@@ -131,7 +131,7 @@ impl ConnectDirectoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConnectDirectory`.
+/// Orchestration and serialization glue logic for `ConnectDirectory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

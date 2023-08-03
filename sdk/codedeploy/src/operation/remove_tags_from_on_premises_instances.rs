@@ -116,7 +116,7 @@ impl RemoveTagsFromOnPremisesInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveTagsFromOnPremisesInstances`.
+/// Orchestration and serialization glue logic for `RemoveTagsFromOnPremisesInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

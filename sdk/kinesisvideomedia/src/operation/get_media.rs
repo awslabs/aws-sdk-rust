@@ -126,7 +126,7 @@ impl GetMediaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMedia`.
+/// Orchestration and serialization glue logic for `GetMedia`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

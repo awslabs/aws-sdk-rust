@@ -131,7 +131,7 @@ impl AddWorkingStorageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddWorkingStorage`.
+/// Orchestration and serialization glue logic for `AddWorkingStorage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

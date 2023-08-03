@@ -133,7 +133,7 @@ impl UpdateContactChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContactChannel`.
+/// Orchestration and serialization glue logic for `UpdateContactChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

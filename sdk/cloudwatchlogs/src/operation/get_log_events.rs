@@ -131,7 +131,7 @@ impl GetLogEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLogEvents`.
+/// Orchestration and serialization glue logic for `GetLogEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

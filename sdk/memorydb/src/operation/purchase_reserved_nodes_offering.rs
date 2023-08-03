@@ -132,7 +132,7 @@ impl PurchaseReservedNodesOfferingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PurchaseReservedNodesOffering`.
+/// Orchestration and serialization glue logic for `PurchaseReservedNodesOffering`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl DescribeOptOutListsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeOptOutLists`.
+/// Orchestration and serialization glue logic for `DescribeOptOutLists`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl GetParametersByPathInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetParametersByPath`.
+/// Orchestration and serialization glue logic for `GetParametersByPath`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

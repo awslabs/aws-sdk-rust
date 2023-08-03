@@ -131,7 +131,7 @@ impl DeleteAddressBookInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAddressBook`.
+/// Orchestration and serialization glue logic for `DeleteAddressBook`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

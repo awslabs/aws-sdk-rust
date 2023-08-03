@@ -150,7 +150,7 @@ impl VerifyOtpMessageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `VerifyOTPMessage`.
+/// Orchestration and serialization glue logic for `VerifyOTPMessage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

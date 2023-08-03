@@ -188,7 +188,7 @@ impl DescribeSlotTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSlotType`.
+/// Orchestration and serialization glue logic for `DescribeSlotType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateSmbLocalGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSMBLocalGroups`.
+/// Orchestration and serialization glue logic for `UpdateSMBLocalGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

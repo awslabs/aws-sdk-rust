@@ -133,7 +133,7 @@ impl DeleteHumanTaskUiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHumanTaskUi`.
+/// Orchestration and serialization glue logic for `DeleteHumanTaskUi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

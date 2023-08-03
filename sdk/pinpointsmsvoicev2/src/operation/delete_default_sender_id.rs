@@ -131,7 +131,7 @@ impl DeleteDefaultSenderIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDefaultSenderId`.
+/// Orchestration and serialization glue logic for `DeleteDefaultSenderId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

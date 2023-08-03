@@ -126,7 +126,7 @@ impl DeleteAnomalyDetectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAnomalyDetector`.
+/// Orchestration and serialization glue logic for `DeleteAnomalyDetector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

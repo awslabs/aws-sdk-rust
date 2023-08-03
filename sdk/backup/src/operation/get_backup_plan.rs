@@ -150,7 +150,7 @@ impl GetBackupPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBackupPlan`.
+/// Orchestration and serialization glue logic for `GetBackupPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

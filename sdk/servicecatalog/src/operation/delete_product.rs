@@ -131,7 +131,7 @@ impl DeleteProductInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProduct`.
+/// Orchestration and serialization glue logic for `DeleteProduct`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

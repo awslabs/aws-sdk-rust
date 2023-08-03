@@ -156,7 +156,7 @@ impl GetArchiveRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetArchiveRule`.
+/// Orchestration and serialization glue logic for `GetArchiveRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

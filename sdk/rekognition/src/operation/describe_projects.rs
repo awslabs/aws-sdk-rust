@@ -131,7 +131,7 @@ impl DescribeProjectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeProjects`.
+/// Orchestration and serialization glue logic for `DescribeProjects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

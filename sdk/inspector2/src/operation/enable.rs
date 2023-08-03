@@ -130,7 +130,7 @@ impl EnableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `Enable`.
+/// Orchestration and serialization glue logic for `Enable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

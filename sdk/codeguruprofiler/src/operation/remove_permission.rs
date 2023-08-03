@@ -184,7 +184,7 @@ impl RemovePermissionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemovePermission`.
+/// Orchestration and serialization glue logic for `RemovePermission`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

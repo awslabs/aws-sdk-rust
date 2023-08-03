@@ -170,7 +170,7 @@ impl AssociateQueueQuickConnectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateQueueQuickConnects`.
+/// Orchestration and serialization glue logic for `AssociateQueueQuickConnects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

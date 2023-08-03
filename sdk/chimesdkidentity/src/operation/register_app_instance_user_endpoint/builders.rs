@@ -21,9 +21,9 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl RegisterAppInstanceUserEndpointFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError>
     >{
         self.customize_middleware().await
     }

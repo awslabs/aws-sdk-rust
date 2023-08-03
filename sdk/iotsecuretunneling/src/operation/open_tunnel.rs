@@ -131,7 +131,7 @@ impl OpenTunnelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `OpenTunnel`.
+/// Orchestration and serialization glue logic for `OpenTunnel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

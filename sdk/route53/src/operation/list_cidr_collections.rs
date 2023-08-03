@@ -135,7 +135,7 @@ impl ListCidrCollectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCidrCollections`.
+/// Orchestration and serialization glue logic for `ListCidrCollections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

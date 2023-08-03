@@ -134,7 +134,7 @@ impl ListWirelessGatewaysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWirelessGateways`.
+/// Orchestration and serialization glue logic for `ListWirelessGateways`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

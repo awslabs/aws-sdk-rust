@@ -130,7 +130,7 @@ impl RescoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `Rescore`.
+/// Orchestration and serialization glue logic for `Rescore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

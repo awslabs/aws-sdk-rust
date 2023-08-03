@@ -128,7 +128,7 @@ impl DeregisterImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterImage`.
+/// Orchestration and serialization glue logic for `DeregisterImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

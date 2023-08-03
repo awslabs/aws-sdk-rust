@@ -156,7 +156,7 @@ impl GetChunkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetChunk`.
+/// Orchestration and serialization glue logic for `GetChunk`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

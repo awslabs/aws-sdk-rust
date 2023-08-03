@@ -150,7 +150,7 @@ impl CreateAppInstanceAdminInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAppInstanceAdmin`.
+/// Orchestration and serialization glue logic for `CreateAppInstanceAdmin`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

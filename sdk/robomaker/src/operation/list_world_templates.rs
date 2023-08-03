@@ -128,7 +128,7 @@ impl ListWorldTemplatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWorldTemplates`.
+/// Orchestration and serialization glue logic for `ListWorldTemplates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

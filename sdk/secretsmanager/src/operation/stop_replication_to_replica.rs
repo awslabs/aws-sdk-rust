@@ -131,7 +131,7 @@ impl StopReplicationToReplicaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopReplicationToReplica`.
+/// Orchestration and serialization glue logic for `StopReplicationToReplica`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

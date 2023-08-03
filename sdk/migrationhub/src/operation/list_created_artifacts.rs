@@ -133,7 +133,7 @@ impl ListCreatedArtifactsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCreatedArtifacts`.
+/// Orchestration and serialization glue logic for `ListCreatedArtifacts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

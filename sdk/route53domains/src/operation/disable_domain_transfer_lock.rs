@@ -131,7 +131,7 @@ impl DisableDomainTransferLockInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableDomainTransferLock`.
+/// Orchestration and serialization glue logic for `DisableDomainTransferLock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

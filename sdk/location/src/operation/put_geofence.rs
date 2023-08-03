@@ -172,7 +172,7 @@ impl PutGeofenceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutGeofence`.
+/// Orchestration and serialization glue logic for `PutGeofence`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

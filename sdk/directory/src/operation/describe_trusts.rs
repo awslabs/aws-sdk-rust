@@ -131,7 +131,7 @@ impl DescribeTrustsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTrusts`.
+/// Orchestration and serialization glue logic for `DescribeTrusts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

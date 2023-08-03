@@ -177,7 +177,7 @@ impl SetVaultNotificationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetVaultNotifications`.
+/// Orchestration and serialization glue logic for `SetVaultNotifications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

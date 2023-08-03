@@ -172,7 +172,7 @@ impl GetBackendApiModelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBackendAPIModels`.
+/// Orchestration and serialization glue logic for `GetBackendAPIModels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

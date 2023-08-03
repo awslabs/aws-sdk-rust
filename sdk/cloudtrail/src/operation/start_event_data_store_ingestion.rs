@@ -131,7 +131,7 @@ impl StartEventDataStoreIngestionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartEventDataStoreIngestion`.
+/// Orchestration and serialization glue logic for `StartEventDataStoreIngestion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

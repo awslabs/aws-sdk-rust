@@ -148,7 +148,7 @@ impl UpdateOriginEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateOriginEndpoint`.
+/// Orchestration and serialization glue logic for `UpdateOriginEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

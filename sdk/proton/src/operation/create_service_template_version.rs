@@ -135,7 +135,7 @@ impl CreateServiceTemplateVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateServiceTemplateVersion`.
+/// Orchestration and serialization glue logic for `CreateServiceTemplateVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

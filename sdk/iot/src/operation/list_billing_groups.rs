@@ -142,7 +142,7 @@ impl ListBillingGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBillingGroups`.
+/// Orchestration and serialization glue logic for `ListBillingGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

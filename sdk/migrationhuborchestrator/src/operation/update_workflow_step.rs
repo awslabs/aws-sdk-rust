@@ -148,7 +148,7 @@ impl UpdateWorkflowStepInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorkflowStep`.
+/// Orchestration and serialization glue logic for `UpdateWorkflowStep`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

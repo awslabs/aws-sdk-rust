@@ -133,7 +133,7 @@ impl DeregisterElasticIpInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterElasticIp`.
+/// Orchestration and serialization glue logic for `DeregisterElasticIp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

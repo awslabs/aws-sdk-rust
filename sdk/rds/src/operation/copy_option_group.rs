@@ -126,7 +126,7 @@ impl CopyOptionGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CopyOptionGroup`.
+/// Orchestration and serialization glue logic for `CopyOptionGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

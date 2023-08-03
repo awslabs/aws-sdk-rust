@@ -146,7 +146,7 @@ impl UpdateGraphqlApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateGraphqlApi`.
+/// Orchestration and serialization glue logic for `UpdateGraphqlApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

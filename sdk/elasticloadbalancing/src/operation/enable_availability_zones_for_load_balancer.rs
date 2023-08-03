@@ -111,7 +111,7 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableAvailabilityZonesForLoadBalancer`.
+/// Orchestration and serialization glue logic for `EnableAvailabilityZonesForLoadBalancer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

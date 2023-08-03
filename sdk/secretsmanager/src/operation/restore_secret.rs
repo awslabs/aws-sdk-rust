@@ -131,7 +131,7 @@ impl RestoreSecretInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreSecret`.
+/// Orchestration and serialization glue logic for `RestoreSecret`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

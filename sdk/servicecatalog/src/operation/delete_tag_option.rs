@@ -131,7 +131,7 @@ impl DeleteTagOptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTagOption`.
+/// Orchestration and serialization glue logic for `DeleteTagOption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeleteServiceLinkedRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteServiceLinkedRole`.
+/// Orchestration and serialization glue logic for `DeleteServiceLinkedRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

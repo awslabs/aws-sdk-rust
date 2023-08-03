@@ -126,7 +126,7 @@ impl CopyDbClusterSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CopyDBClusterSnapshot`.
+/// Orchestration and serialization glue logic for `CopyDBClusterSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

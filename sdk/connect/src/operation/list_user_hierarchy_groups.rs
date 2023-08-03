@@ -158,7 +158,7 @@ impl ListUserHierarchyGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListUserHierarchyGroups`.
+/// Orchestration and serialization glue logic for `ListUserHierarchyGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateSnapshotScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSnapshotSchedule`.
+/// Orchestration and serialization glue logic for `UpdateSnapshotSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

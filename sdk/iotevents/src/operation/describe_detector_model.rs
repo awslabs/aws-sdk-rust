@@ -150,7 +150,7 @@ impl DescribeDetectorModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDetectorModel`.
+/// Orchestration and serialization glue logic for `DescribeDetectorModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

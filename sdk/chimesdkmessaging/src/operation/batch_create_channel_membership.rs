@@ -161,7 +161,7 @@ impl BatchCreateChannelMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchCreateChannelMembership`.
+/// Orchestration and serialization glue logic for `BatchCreateChannelMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeClientPropertiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClientProperties`.
+/// Orchestration and serialization glue logic for `DescribeClientProperties`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateAppInstanceBotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAppInstanceBot`.
+/// Orchestration and serialization glue logic for `UpdateAppInstanceBot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

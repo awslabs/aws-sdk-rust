@@ -131,7 +131,7 @@ impl PutLabelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutLabel`.
+/// Orchestration and serialization glue logic for `PutLabel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

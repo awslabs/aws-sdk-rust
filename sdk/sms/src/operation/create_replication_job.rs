@@ -133,7 +133,7 @@ impl CreateReplicationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateReplicationJob`.
+/// Orchestration and serialization glue logic for `CreateReplicationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

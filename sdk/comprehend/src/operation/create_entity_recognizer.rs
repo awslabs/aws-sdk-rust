@@ -135,7 +135,7 @@ impl CreateEntityRecognizerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEntityRecognizer`.
+/// Orchestration and serialization glue logic for `CreateEntityRecognizer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

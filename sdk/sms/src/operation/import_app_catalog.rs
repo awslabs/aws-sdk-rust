@@ -131,7 +131,7 @@ impl ImportAppCatalogInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportAppCatalog`.
+/// Orchestration and serialization glue logic for `ImportAppCatalog`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

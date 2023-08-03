@@ -133,7 +133,7 @@ impl DescribeDataSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDataSource`.
+/// Orchestration and serialization glue logic for `DescribeDataSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl StartStreamEncryptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartStreamEncryption`.
+/// Orchestration and serialization glue logic for `StartStreamEncryption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

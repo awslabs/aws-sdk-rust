@@ -160,7 +160,7 @@ impl DeleteRequestValidatorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRequestValidator`.
+/// Orchestration and serialization glue logic for `DeleteRequestValidator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl DeleteControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteControl`.
+/// Orchestration and serialization glue logic for `DeleteControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

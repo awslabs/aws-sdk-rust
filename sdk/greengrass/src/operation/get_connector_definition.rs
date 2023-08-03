@@ -136,7 +136,7 @@ impl GetConnectorDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConnectorDefinition`.
+/// Orchestration and serialization glue logic for `GetConnectorDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

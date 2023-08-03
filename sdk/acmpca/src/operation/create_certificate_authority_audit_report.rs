@@ -116,7 +116,7 @@ impl CreateCertificateAuthorityAuditReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCertificateAuthorityAuditReport`.
+/// Orchestration and serialization glue logic for `CreateCertificateAuthorityAuditReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

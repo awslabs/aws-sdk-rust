@@ -138,7 +138,7 @@ impl ListSolFunctionInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSolFunctionInstances`.
+/// Orchestration and serialization glue logic for `ListSolFunctionInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

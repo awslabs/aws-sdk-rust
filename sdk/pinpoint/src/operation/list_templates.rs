@@ -147,7 +147,7 @@ impl ListTemplatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTemplates`.
+/// Orchestration and serialization glue logic for `ListTemplates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

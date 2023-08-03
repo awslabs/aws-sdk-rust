@@ -131,7 +131,7 @@ impl CreateBranchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBranch`.
+/// Orchestration and serialization glue logic for `CreateBranch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

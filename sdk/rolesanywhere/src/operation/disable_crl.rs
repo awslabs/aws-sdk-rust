@@ -132,7 +132,7 @@ impl DisableCrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableCrl`.
+/// Orchestration and serialization glue logic for `DisableCrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

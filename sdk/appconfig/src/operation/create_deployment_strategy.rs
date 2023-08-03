@@ -126,7 +126,7 @@ impl CreateDeploymentStrategyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDeploymentStrategy`.
+/// Orchestration and serialization glue logic for `CreateDeploymentStrategy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

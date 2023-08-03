@@ -132,7 +132,7 @@ impl GetServiceNetworkVpcAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceNetworkVpcAssociation`.
+/// Orchestration and serialization glue logic for `GetServiceNetworkVpcAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

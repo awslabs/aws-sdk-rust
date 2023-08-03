@@ -136,7 +136,7 @@ impl DescribeAppInstanceBotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAppInstanceBot`.
+/// Orchestration and serialization glue logic for `DescribeAppInstanceBot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

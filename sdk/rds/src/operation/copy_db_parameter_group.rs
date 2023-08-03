@@ -126,7 +126,7 @@ impl CopyDbParameterGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CopyDBParameterGroup`.
+/// Orchestration and serialization glue logic for `CopyDBParameterGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

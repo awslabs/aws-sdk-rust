@@ -170,7 +170,7 @@ impl UpgradeLensReviewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpgradeLensReview`.
+/// Orchestration and serialization glue logic for `UpgradeLensReview`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListServiceQuotasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServiceQuotas`.
+/// Orchestration and serialization glue logic for `ListServiceQuotas`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

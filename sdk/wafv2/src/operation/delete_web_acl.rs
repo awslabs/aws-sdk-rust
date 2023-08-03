@@ -131,7 +131,7 @@ impl DeleteWebAclInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWebACL`.
+/// Orchestration and serialization glue logic for `DeleteWebACL`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

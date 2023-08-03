@@ -149,7 +149,7 @@ impl GetLensInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLens`.
+/// Orchestration and serialization glue logic for `GetLens`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

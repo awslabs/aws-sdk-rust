@@ -126,7 +126,7 @@ impl UpdateAccountPasswordPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAccountPasswordPolicy`.
+/// Orchestration and serialization glue logic for `UpdateAccountPasswordPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -135,7 +135,7 @@ impl UpdateStorageVirtualMachineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStorageVirtualMachine`.
+/// Orchestration and serialization glue logic for `UpdateStorageVirtualMachine`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -29,9 +29,9 @@ impl TransferDomainToAnotherAwsAccountFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -49,8 +49,8 @@ impl TransferDomainToAnotherAwsAccountFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>>
+                         {
         let op = self
             .inner
             .build()
@@ -68,16 +68,16 @@ impl TransferDomainToAnotherAwsAccountFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccount, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>
     >{
         self.customize_middleware().await
     }

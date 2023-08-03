@@ -131,7 +131,7 @@ impl ListGrantsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGrants`.
+/// Orchestration and serialization glue logic for `ListGrants`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

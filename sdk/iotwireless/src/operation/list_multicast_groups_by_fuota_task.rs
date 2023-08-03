@@ -148,7 +148,7 @@ impl ListMulticastGroupsByFuotaTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMulticastGroupsByFuotaTask`.
+/// Orchestration and serialization glue logic for `ListMulticastGroupsByFuotaTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

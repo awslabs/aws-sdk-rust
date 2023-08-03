@@ -133,7 +133,7 @@ impl DeleteProjectPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProjectPolicy`.
+/// Orchestration and serialization glue logic for `DeleteProjectPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

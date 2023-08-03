@@ -134,7 +134,7 @@ impl ListFuotaTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFuotaTasks`.
+/// Orchestration and serialization glue logic for `ListFuotaTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

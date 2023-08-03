@@ -127,7 +127,7 @@ impl DescribeClusterSecurityGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClusterSecurityGroups`.
+/// Orchestration and serialization glue logic for `DescribeClusterSecurityGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

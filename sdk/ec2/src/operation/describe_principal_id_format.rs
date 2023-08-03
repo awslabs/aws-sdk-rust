@@ -126,7 +126,7 @@ impl DescribePrincipalIdFormatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePrincipalIdFormat`.
+/// Orchestration and serialization glue logic for `DescribePrincipalIdFormat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateProjectVisibilityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateProjectVisibility`.
+/// Orchestration and serialization glue logic for `UpdateProjectVisibility`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl PutBackupPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBackupPolicy`.
+/// Orchestration and serialization glue logic for `PutBackupPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

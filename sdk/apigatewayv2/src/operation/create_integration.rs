@@ -146,7 +146,7 @@ impl CreateIntegrationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateIntegration`.
+/// Orchestration and serialization glue logic for `CreateIntegration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

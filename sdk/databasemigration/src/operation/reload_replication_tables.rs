@@ -131,7 +131,7 @@ impl ReloadReplicationTablesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReloadReplicationTables`.
+/// Orchestration and serialization glue logic for `ReloadReplicationTables`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

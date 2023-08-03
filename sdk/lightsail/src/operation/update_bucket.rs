@@ -131,7 +131,7 @@ impl UpdateBucketInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBucket`.
+/// Orchestration and serialization glue logic for `UpdateBucket`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

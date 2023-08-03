@@ -131,7 +131,7 @@ impl ListCrawlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCrawls`.
+/// Orchestration and serialization glue logic for `ListCrawls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

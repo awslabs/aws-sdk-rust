@@ -133,7 +133,7 @@ impl DeleteImageVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteImageVersion`.
+/// Orchestration and serialization glue logic for `DeleteImageVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

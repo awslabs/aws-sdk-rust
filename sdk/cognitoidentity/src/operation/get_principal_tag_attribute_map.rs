@@ -131,7 +131,7 @@ impl GetPrincipalTagAttributeMapInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPrincipalTagAttributeMap`.
+/// Orchestration and serialization glue logic for `GetPrincipalTagAttributeMap`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

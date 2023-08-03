@@ -126,7 +126,7 @@ impl DescribePoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePolicies`.
+/// Orchestration and serialization glue logic for `DescribePolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

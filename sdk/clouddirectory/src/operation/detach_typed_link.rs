@@ -131,7 +131,7 @@ impl DetachTypedLinkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachTypedLink`.
+/// Orchestration and serialization glue logic for `DetachTypedLink`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

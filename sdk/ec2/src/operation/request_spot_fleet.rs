@@ -126,7 +126,7 @@ impl RequestSpotFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RequestSpotFleet`.
+/// Orchestration and serialization glue logic for `RequestSpotFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

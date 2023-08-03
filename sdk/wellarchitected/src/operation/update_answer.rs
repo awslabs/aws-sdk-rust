@@ -190,7 +190,7 @@ impl UpdateAnswerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAnswer`.
+/// Orchestration and serialization glue logic for `UpdateAnswer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

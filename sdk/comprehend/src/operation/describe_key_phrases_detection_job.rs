@@ -125,7 +125,7 @@ impl DescribeKeyPhrasesDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeKeyPhrasesDetectionJob`.
+/// Orchestration and serialization glue logic for `DescribeKeyPhrasesDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

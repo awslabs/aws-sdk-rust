@@ -131,7 +131,7 @@ impl UpdatePullRequestTitleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePullRequestTitle`.
+/// Orchestration and serialization glue logic for `UpdatePullRequestTitle`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

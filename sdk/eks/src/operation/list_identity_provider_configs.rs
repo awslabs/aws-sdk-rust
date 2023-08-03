@@ -158,7 +158,7 @@ impl ListIdentityProviderConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIdentityProviderConfigs`.
+/// Orchestration and serialization glue logic for `ListIdentityProviderConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

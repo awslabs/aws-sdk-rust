@@ -131,7 +131,7 @@ impl CreateNotebookInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNotebookInstance`.
+/// Orchestration and serialization glue logic for `CreateNotebookInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

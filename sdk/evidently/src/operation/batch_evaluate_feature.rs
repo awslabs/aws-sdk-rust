@@ -150,7 +150,7 @@ impl BatchEvaluateFeatureInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchEvaluateFeature`.
+/// Orchestration and serialization glue logic for `BatchEvaluateFeature`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

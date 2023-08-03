@@ -131,7 +131,7 @@ impl DescribeBatchPredictionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBatchPredictions`.
+/// Orchestration and serialization glue logic for `DescribeBatchPredictions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

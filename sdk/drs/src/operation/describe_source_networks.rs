@@ -127,7 +127,7 @@ impl DescribeSourceNetworksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSourceNetworks`.
+/// Orchestration and serialization glue logic for `DescribeSourceNetworks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

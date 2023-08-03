@@ -170,7 +170,7 @@ impl UpdateRevisionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRevision`.
+/// Orchestration and serialization glue logic for `UpdateRevision`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

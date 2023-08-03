@@ -170,7 +170,7 @@ impl UpdateDataSetPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDataSetPermissions`.
+/// Orchestration and serialization glue logic for `UpdateDataSetPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl GetVpnConnectionDeviceSampleConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVpnConnectionDeviceSampleConfiguration`.
+/// Orchestration and serialization glue logic for `GetVpnConnectionDeviceSampleConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

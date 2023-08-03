@@ -134,7 +134,7 @@ impl CancelAnnotationImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelAnnotationImportJob`.
+/// Orchestration and serialization glue logic for `CancelAnnotationImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

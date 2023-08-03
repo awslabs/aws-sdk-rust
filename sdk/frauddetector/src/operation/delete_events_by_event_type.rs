@@ -131,7 +131,7 @@ impl DeleteEventsByEventTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEventsByEventType`.
+/// Orchestration and serialization glue logic for `DeleteEventsByEventType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

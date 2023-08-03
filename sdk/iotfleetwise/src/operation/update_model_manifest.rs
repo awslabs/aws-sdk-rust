@@ -133,7 +133,7 @@ impl UpdateModelManifestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateModelManifest`.
+/// Orchestration and serialization glue logic for `UpdateModelManifest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateClusterConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateClusterConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateClusterConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

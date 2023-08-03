@@ -150,7 +150,7 @@ impl ListCaCertificatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCACertificates`.
+/// Orchestration and serialization glue logic for `ListCACertificates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

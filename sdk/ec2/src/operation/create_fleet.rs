@@ -126,7 +126,7 @@ impl CreateFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFleet`.
+/// Orchestration and serialization glue logic for `CreateFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

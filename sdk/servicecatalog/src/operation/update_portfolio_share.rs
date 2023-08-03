@@ -133,7 +133,7 @@ impl UpdatePortfolioShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePortfolioShare`.
+/// Orchestration and serialization glue logic for `UpdatePortfolioShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

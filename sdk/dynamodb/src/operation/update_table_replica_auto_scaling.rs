@@ -132,7 +132,7 @@ impl UpdateTableReplicaAutoScalingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTableReplicaAutoScaling`.
+/// Orchestration and serialization glue logic for `UpdateTableReplicaAutoScaling`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

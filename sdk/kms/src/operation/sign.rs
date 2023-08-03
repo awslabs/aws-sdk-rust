@@ -128,7 +128,7 @@ impl SignInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `Sign`.
+/// Orchestration and serialization glue logic for `Sign`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

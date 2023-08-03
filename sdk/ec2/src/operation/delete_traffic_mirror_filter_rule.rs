@@ -127,7 +127,7 @@ impl DeleteTrafficMirrorFilterRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTrafficMirrorFilterRule`.
+/// Orchestration and serialization glue logic for `DeleteTrafficMirrorFilterRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -135,7 +135,7 @@ impl ListStorageSystemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStorageSystems`.
+/// Orchestration and serialization glue logic for `ListStorageSystems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

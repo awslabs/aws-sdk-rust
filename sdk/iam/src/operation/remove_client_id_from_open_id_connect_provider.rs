@@ -111,7 +111,7 @@ impl RemoveClientIdFromOpenIdConnectProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveClientIDFromOpenIDConnectProvider`.
+/// Orchestration and serialization glue logic for `RemoveClientIDFromOpenIDConnectProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

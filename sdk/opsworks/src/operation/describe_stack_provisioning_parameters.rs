@@ -116,7 +116,7 @@ impl DescribeStackProvisioningParametersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStackProvisioningParameters`.
+/// Orchestration and serialization glue logic for `DescribeStackProvisioningParameters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

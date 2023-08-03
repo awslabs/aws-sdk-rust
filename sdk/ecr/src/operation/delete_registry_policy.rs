@@ -126,7 +126,7 @@ impl DeleteRegistryPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRegistryPolicy`.
+/// Orchestration and serialization glue logic for `DeleteRegistryPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ModifyClusterSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyClusterSnapshot`.
+/// Orchestration and serialization glue logic for `ModifyClusterSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

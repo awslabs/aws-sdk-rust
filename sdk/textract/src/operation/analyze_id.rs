@@ -131,7 +131,7 @@ impl AnalyzeIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AnalyzeID`.
+/// Orchestration and serialization glue logic for `AnalyzeID`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

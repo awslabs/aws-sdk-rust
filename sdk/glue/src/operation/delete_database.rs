@@ -131,7 +131,7 @@ impl DeleteDatabaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDatabase`.
+/// Orchestration and serialization glue logic for `DeleteDatabase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

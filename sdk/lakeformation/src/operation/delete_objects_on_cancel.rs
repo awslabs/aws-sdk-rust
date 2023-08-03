@@ -126,7 +126,7 @@ impl DeleteObjectsOnCancelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteObjectsOnCancel`.
+/// Orchestration and serialization glue logic for `DeleteObjectsOnCancel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl DisassociateApplicationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateApplications`.
+/// Orchestration and serialization glue logic for `DisassociateApplications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

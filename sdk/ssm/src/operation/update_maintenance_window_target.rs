@@ -132,7 +132,7 @@ impl UpdateMaintenanceWindowTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMaintenanceWindowTarget`.
+/// Orchestration and serialization glue logic for `UpdateMaintenanceWindowTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

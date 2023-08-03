@@ -131,7 +131,7 @@ impl DeleteTaskDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTaskDefinitions`.
+/// Orchestration and serialization glue logic for `DeleteTaskDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

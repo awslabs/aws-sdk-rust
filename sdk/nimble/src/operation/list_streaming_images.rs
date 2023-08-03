@@ -155,7 +155,7 @@ impl ListStreamingImagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStreamingImages`.
+/// Orchestration and serialization glue logic for `ListStreamingImages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

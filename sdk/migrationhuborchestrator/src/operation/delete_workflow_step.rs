@@ -179,7 +179,7 @@ impl DeleteWorkflowStepInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkflowStep`.
+/// Orchestration and serialization glue logic for `DeleteWorkflowStep`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

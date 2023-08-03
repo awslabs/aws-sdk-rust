@@ -160,7 +160,7 @@ impl ListEulaAcceptancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEulaAcceptances`.
+/// Orchestration and serialization glue logic for `ListEulaAcceptances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

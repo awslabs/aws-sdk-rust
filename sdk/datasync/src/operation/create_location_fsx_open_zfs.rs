@@ -131,7 +131,7 @@ impl CreateLocationFsxOpenZfsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLocationFsxOpenZfs`.
+/// Orchestration and serialization glue logic for `CreateLocationFsxOpenZfs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

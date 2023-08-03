@@ -126,7 +126,7 @@ impl CreateNetworkAclEntryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNetworkAclEntry`.
+/// Orchestration and serialization glue logic for `CreateNetworkAclEntry`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

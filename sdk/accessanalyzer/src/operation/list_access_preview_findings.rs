@@ -150,7 +150,7 @@ impl ListAccessPreviewFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccessPreviewFindings`.
+/// Orchestration and serialization glue logic for `ListAccessPreviewFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

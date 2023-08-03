@@ -126,7 +126,7 @@ impl CreateLedgerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLedger`.
+/// Orchestration and serialization glue logic for `CreateLedger`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl StartCelebrityRecognitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartCelebrityRecognition`.
+/// Orchestration and serialization glue logic for `StartCelebrityRecognition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

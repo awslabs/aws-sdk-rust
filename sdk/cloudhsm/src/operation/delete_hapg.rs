@@ -131,7 +131,7 @@ impl DeleteHapgInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHapg`.
+/// Orchestration and serialization glue logic for `DeleteHapg`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

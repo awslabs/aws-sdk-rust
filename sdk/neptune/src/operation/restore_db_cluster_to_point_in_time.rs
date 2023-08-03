@@ -120,7 +120,7 @@ impl RestoreDbClusterToPointInTimeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreDBClusterToPointInTime`.
+/// Orchestration and serialization glue logic for `RestoreDBClusterToPointInTime`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

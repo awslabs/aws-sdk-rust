@@ -131,7 +131,7 @@ impl StopQueryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopQuery`.
+/// Orchestration and serialization glue logic for `StopQuery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

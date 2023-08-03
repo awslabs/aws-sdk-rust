@@ -116,7 +116,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLicenseManagerReportGenerator`.
+/// Orchestration and serialization glue logic for `UpdateLicenseManagerReportGenerator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

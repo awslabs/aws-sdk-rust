@@ -156,7 +156,7 @@ impl CreateUsagePlanKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateUsagePlanKey`.
+/// Orchestration and serialization glue logic for `CreateUsagePlanKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

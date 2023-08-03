@@ -135,7 +135,7 @@ impl PutConfigurationSetReputationOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutConfigurationSetReputationOptions`.
+/// Orchestration and serialization glue logic for `PutConfigurationSetReputationOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

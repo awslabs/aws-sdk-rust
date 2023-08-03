@@ -124,7 +124,7 @@ impl GetPoliciesStatsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPoliciesStats`.
+/// Orchestration and serialization glue logic for `GetPoliciesStats`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

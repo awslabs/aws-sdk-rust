@@ -134,7 +134,7 @@ impl GetVariantStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVariantStore`.
+/// Orchestration and serialization glue logic for `GetVariantStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

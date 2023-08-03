@@ -111,7 +111,7 @@ impl GetTransitGatewayRouteTablePropagationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTransitGatewayRouteTablePropagations`.
+/// Orchestration and serialization glue logic for `GetTransitGatewayRouteTablePropagations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

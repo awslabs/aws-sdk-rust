@@ -133,7 +133,7 @@ impl GetLifecyclePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLifecyclePolicy`.
+/// Orchestration and serialization glue logic for `GetLifecyclePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

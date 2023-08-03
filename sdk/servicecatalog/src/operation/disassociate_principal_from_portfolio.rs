@@ -116,7 +116,7 @@ impl DisassociatePrincipalFromPortfolioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociatePrincipalFromPortfolio`.
+/// Orchestration and serialization glue logic for `DisassociatePrincipalFromPortfolio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

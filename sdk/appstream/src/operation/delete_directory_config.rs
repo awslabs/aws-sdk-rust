@@ -131,7 +131,7 @@ impl DeleteDirectoryConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDirectoryConfig`.
+/// Orchestration and serialization glue logic for `DeleteDirectoryConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

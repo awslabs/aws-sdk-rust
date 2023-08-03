@@ -131,7 +131,7 @@ impl DescribeScalingPlanResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeScalingPlanResources`.
+/// Orchestration and serialization glue logic for `DescribeScalingPlanResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl RegisterWorkflowTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterWorkflowType`.
+/// Orchestration and serialization glue logic for `RegisterWorkflowType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

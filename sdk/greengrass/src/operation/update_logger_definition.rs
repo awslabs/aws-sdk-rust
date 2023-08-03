@@ -150,7 +150,7 @@ impl UpdateLoggerDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLoggerDefinition`.
+/// Orchestration and serialization glue logic for `UpdateLoggerDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl BatchGetTokenBalanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetTokenBalance`.
+/// Orchestration and serialization glue logic for `BatchGetTokenBalance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

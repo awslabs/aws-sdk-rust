@@ -135,7 +135,7 @@ impl UpdateSiteRackPhysicalPropertiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSiteRackPhysicalProperties`.
+/// Orchestration and serialization glue logic for `UpdateSiteRackPhysicalProperties`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

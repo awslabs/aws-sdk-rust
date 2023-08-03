@@ -128,7 +128,7 @@ impl GetDataLakeSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataLakeSettings`.
+/// Orchestration and serialization glue logic for `GetDataLakeSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

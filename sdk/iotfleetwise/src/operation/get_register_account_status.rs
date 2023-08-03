@@ -124,7 +124,7 @@ impl GetRegisterAccountStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRegisterAccountStatus`.
+/// Orchestration and serialization glue logic for `GetRegisterAccountStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

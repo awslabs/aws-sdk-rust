@@ -173,7 +173,7 @@ impl DeleteEvaluationFormInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEvaluationForm`.
+/// Orchestration and serialization glue logic for `DeleteEvaluationForm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

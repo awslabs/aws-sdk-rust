@@ -172,7 +172,7 @@ impl ListResourceRecordSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourceRecordSets`.
+/// Orchestration and serialization glue logic for `ListResourceRecordSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

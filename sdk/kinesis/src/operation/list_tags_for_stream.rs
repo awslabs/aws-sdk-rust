@@ -135,7 +135,7 @@ impl ListTagsForStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTagsForStream`.
+/// Orchestration and serialization glue logic for `ListTagsForStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

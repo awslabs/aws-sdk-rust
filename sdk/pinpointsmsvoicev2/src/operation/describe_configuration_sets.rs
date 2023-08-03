@@ -131,7 +131,7 @@ impl DescribeConfigurationSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConfigurationSets`.
+/// Orchestration and serialization glue logic for `DescribeConfigurationSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

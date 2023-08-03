@@ -63,12 +63,8 @@
 
 use crate::provider_config::ProviderConfig;
 use crate::sts;
-use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
-use aws_sdk_sts::config::Region;
-use aws_sdk_sts::middleware::DefaultMiddleware;
-use aws_sdk_sts::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput;
-use aws_smithy_client::erase::DynConnector;
+use aws_sdk_sts::Client as StsClient;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal::{Env, Fs};
 use std::borrow::Cow;
@@ -85,8 +81,7 @@ const ENV_VAR_SESSION_NAME: &str = "AWS_ROLE_SESSION_NAME";
 pub struct WebIdentityTokenCredentialsProvider {
     source: Source,
     fs: Fs,
-    client: aws_smithy_client::Client<DynConnector, DefaultMiddleware>,
-    region: Option<Region>,
+    sts_client: StsClient,
 }
 
 impl WebIdentityTokenCredentialsProvider {
@@ -152,12 +147,7 @@ impl WebIdentityTokenCredentialsProvider {
         let conf = self.source()?;
         load_credentials(
             &self.fs,
-            &self.client,
-            &self.region.as_ref().cloned().ok_or_else(|| {
-                CredentialsError::invalid_configuration(
-                    "region is required for WebIdentityTokenProvider",
-                )
-            })?,
+            &self.sts_client,
             &conf.web_identity_token_file,
             &conf.role_arn,
             &conf.session_name,
@@ -208,21 +198,18 @@ impl Builder {
     /// builder, this function will panic.
     pub fn build(self) -> WebIdentityTokenCredentialsProvider {
         let conf = self.config.unwrap_or_default();
-        let client = conf.sts_client();
         let source = self.source.unwrap_or_else(|| Source::Env(conf.env()));
         WebIdentityTokenCredentialsProvider {
             source,
             fs: conf.fs(),
-            client,
-            region: conf.region(),
+            sts_client: StsClient::from_conf(conf.sts_client_config().build()),
         }
     }
 }
 
 async fn load_credentials(
     fs: &Fs,
-    client: &aws_smithy_client::Client<DynConnector, DefaultMiddleware>,
-    region: &Region,
+    sts_client: &StsClient,
     token_file: impl AsRef<Path>,
     role_arn: &str,
     session_name: &str,
@@ -234,24 +221,17 @@ async fn load_credentials(
     let token = String::from_utf8(token).map_err(|_utf_8_error| {
         CredentialsError::unhandled("WebIdentityToken was not valid UTF-8")
     })?;
-    let conf = aws_sdk_sts::Config::builder()
-        .region(region.clone())
-        .credentials_cache(CredentialsCache::no_caching())
-        .build();
 
-    let operation = AssumeRoleWithWebIdentityInput::builder()
+    let resp = sts_client.assume_role_with_web_identity()
         .role_arn(role_arn)
         .role_session_name(session_name)
         .web_identity_token(token)
-        .build()
-        .expect("valid operation")
-        .make_operation(&conf)
+        .send()
         .await
-        .expect("valid operation");
-    let resp = client.call(operation).await.map_err(|sdk_error| {
-        tracing::warn!(error = %DisplayErrorContext(&sdk_error), "STS returned an error assuming web identity role");
-        CredentialsError::provider_error(sdk_error)
-    })?;
+        .map_err(|sdk_error| {
+            tracing::warn!(error = %DisplayErrorContext(&sdk_error), "STS returned an error assuming web identity role");
+            CredentialsError::provider_error(sdk_error)
+        })?;
     sts::util::into_credentials(resp.credentials, "WebIdentityToken")
 }
 

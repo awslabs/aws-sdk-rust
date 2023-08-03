@@ -133,7 +133,7 @@ impl DescribeLocationNfsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocationNfs`.
+/// Orchestration and serialization glue logic for `DescribeLocationNfs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

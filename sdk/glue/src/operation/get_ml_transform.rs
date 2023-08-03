@@ -131,7 +131,7 @@ impl GetMlTransformInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMLTransform`.
+/// Orchestration and serialization glue logic for `GetMLTransform`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

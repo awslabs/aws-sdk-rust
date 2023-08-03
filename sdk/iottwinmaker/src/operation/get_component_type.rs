@@ -158,7 +158,7 @@ impl GetComponentTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetComponentType`.
+/// Orchestration and serialization glue logic for `GetComponentType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

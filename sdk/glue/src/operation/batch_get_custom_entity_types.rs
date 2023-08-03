@@ -131,7 +131,7 @@ impl BatchGetCustomEntityTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetCustomEntityTypes`.
+/// Orchestration and serialization glue logic for `BatchGetCustomEntityTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

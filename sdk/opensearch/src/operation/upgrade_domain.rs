@@ -127,7 +127,7 @@ impl UpgradeDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpgradeDomain`.
+/// Orchestration and serialization glue logic for `UpgradeDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

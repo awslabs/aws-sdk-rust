@@ -133,7 +133,7 @@ impl PutQueryDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutQueryDefinition`.
+/// Orchestration and serialization glue logic for `PutQueryDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

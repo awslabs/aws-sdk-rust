@@ -112,7 +112,7 @@ impl GetPortfolioSummaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPortfolioSummary`.
+/// Orchestration and serialization glue logic for `GetPortfolioSummary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

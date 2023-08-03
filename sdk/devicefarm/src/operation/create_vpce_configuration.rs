@@ -131,7 +131,7 @@ impl CreateVpceConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVPCEConfiguration`.
+/// Orchestration and serialization glue logic for `CreateVPCEConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

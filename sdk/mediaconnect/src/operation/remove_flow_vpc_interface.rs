@@ -156,7 +156,7 @@ impl RemoveFlowVpcInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveFlowVpcInterface`.
+/// Orchestration and serialization glue logic for `RemoveFlowVpcInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

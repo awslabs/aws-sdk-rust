@@ -126,7 +126,7 @@ impl GetImagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetImages`.
+/// Orchestration and serialization glue logic for `GetImages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

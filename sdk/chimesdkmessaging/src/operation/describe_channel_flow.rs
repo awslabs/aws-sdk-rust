@@ -136,7 +136,7 @@ impl DescribeChannelFlowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeChannelFlow`.
+/// Orchestration and serialization glue logic for `DescribeChannelFlow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeleteVpcInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpc`.
+/// Orchestration and serialization glue logic for `DeleteVpc`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

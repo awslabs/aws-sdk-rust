@@ -164,7 +164,7 @@ impl CreateFunctionUrlConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFunctionUrlConfig`.
+/// Orchestration and serialization glue logic for `CreateFunctionUrlConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

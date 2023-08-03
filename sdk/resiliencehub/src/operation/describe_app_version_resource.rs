@@ -127,7 +127,7 @@ impl DescribeAppVersionResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAppVersionResource`.
+/// Orchestration and serialization glue logic for `DescribeAppVersionResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

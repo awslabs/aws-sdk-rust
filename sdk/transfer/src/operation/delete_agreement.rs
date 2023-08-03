@@ -131,7 +131,7 @@ impl DeleteAgreementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAgreement`.
+/// Orchestration and serialization glue logic for `DeleteAgreement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

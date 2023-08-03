@@ -131,7 +131,7 @@ impl AddAttributesToFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddAttributesToFindings`.
+/// Orchestration and serialization glue logic for `AddAttributesToFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

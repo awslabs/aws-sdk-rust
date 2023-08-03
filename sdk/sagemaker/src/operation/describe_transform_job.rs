@@ -133,7 +133,7 @@ impl DescribeTransformJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTransformJob`.
+/// Orchestration and serialization glue logic for `DescribeTransformJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

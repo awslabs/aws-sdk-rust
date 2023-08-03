@@ -131,7 +131,7 @@ impl DisassociateElasticIpInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateElasticIp`.
+/// Orchestration and serialization glue logic for `DisassociateElasticIp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

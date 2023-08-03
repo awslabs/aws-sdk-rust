@@ -148,7 +148,7 @@ impl UpdateKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateKey`.
+/// Orchestration and serialization glue logic for `UpdateKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

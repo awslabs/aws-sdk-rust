@@ -131,7 +131,7 @@ impl ListDataQualityRulesetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDataQualityRulesets`.
+/// Orchestration and serialization glue logic for `ListDataQualityRulesets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

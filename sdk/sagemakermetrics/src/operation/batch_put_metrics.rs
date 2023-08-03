@@ -126,7 +126,7 @@ impl BatchPutMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchPutMetrics`.
+/// Orchestration and serialization glue logic for `BatchPutMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

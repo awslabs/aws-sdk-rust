@@ -126,7 +126,7 @@ impl StartResourceScanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartResourceScan`.
+/// Orchestration and serialization glue logic for `StartResourceScan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

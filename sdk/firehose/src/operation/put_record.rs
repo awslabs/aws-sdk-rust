@@ -131,7 +131,7 @@ impl PutRecordInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutRecord`.
+/// Orchestration and serialization glue logic for `PutRecord`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

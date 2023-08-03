@@ -126,7 +126,7 @@ impl CreateDbInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDBInstance`.
+/// Orchestration and serialization glue logic for `CreateDBInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

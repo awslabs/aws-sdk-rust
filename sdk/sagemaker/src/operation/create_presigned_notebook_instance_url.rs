@@ -116,7 +116,7 @@ impl CreatePresignedNotebookInstanceUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePresignedNotebookInstanceUrl`.
+/// Orchestration and serialization glue logic for `CreatePresignedNotebookInstanceUrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

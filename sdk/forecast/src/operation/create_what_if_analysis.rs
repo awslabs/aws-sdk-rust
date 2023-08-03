@@ -131,7 +131,7 @@ impl CreateWhatIfAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWhatIfAnalysis`.
+/// Orchestration and serialization glue logic for `CreateWhatIfAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

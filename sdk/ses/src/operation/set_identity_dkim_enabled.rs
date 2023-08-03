@@ -126,7 +126,7 @@ impl SetIdentityDkimEnabledInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetIdentityDkimEnabled`.
+/// Orchestration and serialization glue logic for `SetIdentityDkimEnabled`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

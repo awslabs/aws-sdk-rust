@@ -133,7 +133,7 @@ impl ListPortfolioAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPortfolioAccess`.
+/// Orchestration and serialization glue logic for `ListPortfolioAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

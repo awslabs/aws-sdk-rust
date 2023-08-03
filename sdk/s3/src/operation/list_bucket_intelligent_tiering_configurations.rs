@@ -124,7 +124,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBucketIntelligentTieringConfigurations`.
+/// Orchestration and serialization glue logic for `ListBucketIntelligentTieringConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateLocationSmbInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLocationSmb`.
+/// Orchestration and serialization glue logic for `CreateLocationSmb`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListLogSubscriptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLogSubscriptions`.
+/// Orchestration and serialization glue logic for `ListLogSubscriptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

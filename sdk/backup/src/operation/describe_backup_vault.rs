@@ -136,7 +136,7 @@ impl DescribeBackupVaultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBackupVault`.
+/// Orchestration and serialization glue logic for `DescribeBackupVault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

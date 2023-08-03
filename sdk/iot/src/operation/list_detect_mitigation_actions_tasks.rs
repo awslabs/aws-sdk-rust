@@ -148,7 +148,7 @@ impl ListDetectMitigationActionsTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDetectMitigationActionsTasks`.
+/// Orchestration and serialization glue logic for `ListDetectMitigationActionsTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl StartTriggerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartTrigger`.
+/// Orchestration and serialization glue logic for `StartTrigger`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

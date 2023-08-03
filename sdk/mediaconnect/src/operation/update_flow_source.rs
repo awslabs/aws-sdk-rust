@@ -170,7 +170,7 @@ impl UpdateFlowSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFlowSource`.
+/// Orchestration and serialization glue logic for `UpdateFlowSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

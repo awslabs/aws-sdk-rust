@@ -135,7 +135,7 @@ impl RetryPipelineExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RetryPipelineExecution`.
+/// Orchestration and serialization glue logic for `RetryPipelineExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

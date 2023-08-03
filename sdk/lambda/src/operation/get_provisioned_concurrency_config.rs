@@ -155,7 +155,7 @@ impl GetProvisionedConcurrencyConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetProvisionedConcurrencyConfig`.
+/// Orchestration and serialization glue logic for `GetProvisionedConcurrencyConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

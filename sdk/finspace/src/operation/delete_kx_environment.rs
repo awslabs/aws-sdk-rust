@@ -136,7 +136,7 @@ impl DeleteKxEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteKxEnvironment`.
+/// Orchestration and serialization glue logic for `DeleteKxEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

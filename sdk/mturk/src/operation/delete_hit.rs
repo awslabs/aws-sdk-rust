@@ -131,7 +131,7 @@ impl DeleteHitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHIT`.
+/// Orchestration and serialization glue logic for `DeleteHIT`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

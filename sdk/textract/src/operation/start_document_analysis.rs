@@ -131,7 +131,7 @@ impl StartDocumentAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDocumentAnalysis`.
+/// Orchestration and serialization glue logic for `StartDocumentAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

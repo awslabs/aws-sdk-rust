@@ -131,7 +131,7 @@ impl ListStatementsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStatements`.
+/// Orchestration and serialization glue logic for `ListStatements`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

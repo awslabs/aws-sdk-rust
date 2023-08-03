@@ -136,7 +136,7 @@ impl DescribeDomainHealthInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDomainHealth`.
+/// Orchestration and serialization glue logic for `DescribeDomainHealth`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

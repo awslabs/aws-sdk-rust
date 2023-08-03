@@ -158,7 +158,7 @@ impl ListCidrLocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCidrLocations`.
+/// Orchestration and serialization glue logic for `ListCidrLocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

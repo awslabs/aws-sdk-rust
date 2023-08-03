@@ -180,7 +180,7 @@ impl TransferCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TransferCertificate`.
+/// Orchestration and serialization glue logic for `TransferCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

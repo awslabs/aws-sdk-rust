@@ -17,6 +17,7 @@ default = []
 http-auth = ["dep:zeroize"]
 
 [dependencies]
+bytes = "1"
 http = "0.2.3"
 tracing = "0.1"
 

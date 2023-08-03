@@ -112,7 +112,7 @@ impl GetPackageConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPackageConfiguration`.
+/// Orchestration and serialization glue logic for `GetPackageConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

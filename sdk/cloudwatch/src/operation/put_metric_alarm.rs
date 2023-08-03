@@ -128,7 +128,7 @@ impl PutMetricAlarmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutMetricAlarm`.
+/// Orchestration and serialization glue logic for `PutMetricAlarm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

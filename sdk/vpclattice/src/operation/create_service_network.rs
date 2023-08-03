@@ -132,7 +132,7 @@ impl CreateServiceNetworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateServiceNetwork`.
+/// Orchestration and serialization glue logic for `CreateServiceNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

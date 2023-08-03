@@ -128,7 +128,7 @@ impl DescribeHostsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHosts`.
+/// Orchestration and serialization glue logic for `DescribeHosts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateTaskSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTaskSet`.
+/// Orchestration and serialization glue logic for `UpdateTaskSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

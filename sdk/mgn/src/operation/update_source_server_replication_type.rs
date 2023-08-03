@@ -112,7 +112,7 @@ impl UpdateSourceServerReplicationTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSourceServerReplicationType`.
+/// Orchestration and serialization glue logic for `UpdateSourceServerReplicationType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

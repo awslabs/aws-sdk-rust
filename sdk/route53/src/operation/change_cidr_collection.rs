@@ -146,7 +146,7 @@ impl ChangeCidrCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ChangeCidrCollection`.
+/// Orchestration and serialization glue logic for `ChangeCidrCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

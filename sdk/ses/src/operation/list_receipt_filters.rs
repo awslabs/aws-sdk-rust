@@ -119,7 +119,7 @@ impl ListReceiptFiltersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListReceiptFilters`.
+/// Orchestration and serialization glue logic for `ListReceiptFilters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

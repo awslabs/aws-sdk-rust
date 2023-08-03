@@ -131,7 +131,7 @@ impl ListAssociationVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssociationVersions`.
+/// Orchestration and serialization glue logic for `ListAssociationVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

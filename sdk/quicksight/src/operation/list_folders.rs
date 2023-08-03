@@ -161,7 +161,7 @@ impl ListFoldersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFolders`.
+/// Orchestration and serialization glue logic for `ListFolders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

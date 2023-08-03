@@ -126,7 +126,7 @@ impl UpdateSiteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSite`.
+/// Orchestration and serialization glue logic for `UpdateSite`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

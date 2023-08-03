@@ -131,7 +131,7 @@ impl ResendOperationAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResendOperationAuthorization`.
+/// Orchestration and serialization glue logic for `ResendOperationAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

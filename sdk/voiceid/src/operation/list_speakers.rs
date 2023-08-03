@@ -131,7 +131,7 @@ impl ListSpeakersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSpeakers`.
+/// Orchestration and serialization glue logic for `ListSpeakers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

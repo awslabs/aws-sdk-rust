@@ -132,7 +132,7 @@ impl DeleteSchemaMappingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSchemaMapping`.
+/// Orchestration and serialization glue logic for `DeleteSchemaMapping`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

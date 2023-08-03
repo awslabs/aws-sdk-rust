@@ -127,7 +127,7 @@ impl AssumeRoleWithWebIdentityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssumeRoleWithWebIdentity`.
+/// Orchestration and serialization glue logic for `AssumeRoleWithWebIdentity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

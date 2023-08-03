@@ -116,7 +116,7 @@ impl DeleteOrganizationConformancePackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteOrganizationConformancePack`.
+/// Orchestration and serialization glue logic for `DeleteOrganizationConformancePack`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

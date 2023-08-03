@@ -131,7 +131,7 @@ impl CreateUserPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateUserPool`.
+/// Orchestration and serialization glue logic for `CreateUserPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

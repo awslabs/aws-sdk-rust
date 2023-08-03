@@ -128,7 +128,7 @@ impl GetWorkingLocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorkingLocation`.
+/// Orchestration and serialization glue logic for `GetWorkingLocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

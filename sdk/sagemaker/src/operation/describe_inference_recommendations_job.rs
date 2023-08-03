@@ -116,7 +116,7 @@ impl DescribeInferenceRecommendationsJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInferenceRecommendationsJob`.
+/// Orchestration and serialization glue logic for `DescribeInferenceRecommendationsJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

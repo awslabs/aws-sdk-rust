@@ -126,7 +126,7 @@ impl GetLfTagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLFTag`.
+/// Orchestration and serialization glue logic for `GetLFTag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

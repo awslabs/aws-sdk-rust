@@ -184,7 +184,7 @@ impl PutRestApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutRestApi`.
+/// Orchestration and serialization glue logic for `PutRestApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

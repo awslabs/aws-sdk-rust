@@ -140,7 +140,7 @@ impl CompleteSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CompleteSnapshot`.
+/// Orchestration and serialization glue logic for `CompleteSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

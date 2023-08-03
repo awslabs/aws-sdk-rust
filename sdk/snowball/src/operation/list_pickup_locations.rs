@@ -133,7 +133,7 @@ impl ListPickupLocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPickupLocations`.
+/// Orchestration and serialization glue logic for `ListPickupLocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetMlModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMLModel`.
+/// Orchestration and serialization glue logic for `GetMLModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

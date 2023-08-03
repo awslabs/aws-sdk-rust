@@ -116,7 +116,7 @@ impl ListAccountAssignmentDeletionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccountAssignmentDeletionStatus`.
+/// Orchestration and serialization glue logic for `ListAccountAssignmentDeletionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

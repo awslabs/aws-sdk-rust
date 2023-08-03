@@ -133,7 +133,7 @@ impl CreateResolverRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateResolverRule`.
+/// Orchestration and serialization glue logic for `CreateResolverRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

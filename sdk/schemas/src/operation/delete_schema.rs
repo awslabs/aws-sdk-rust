@@ -156,7 +156,7 @@ impl DeleteSchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSchema`.
+/// Orchestration and serialization glue logic for `DeleteSchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

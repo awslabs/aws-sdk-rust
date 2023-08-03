@@ -126,7 +126,7 @@ impl AddTagsToResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddTagsToResource`.
+/// Orchestration and serialization glue logic for `AddTagsToResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

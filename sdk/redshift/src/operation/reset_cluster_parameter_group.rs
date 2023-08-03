@@ -126,7 +126,7 @@ impl ResetClusterParameterGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetClusterParameterGroup`.
+/// Orchestration and serialization glue logic for `ResetClusterParameterGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

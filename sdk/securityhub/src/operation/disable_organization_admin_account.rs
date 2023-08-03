@@ -121,7 +121,7 @@ impl DisableOrganizationAdminAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableOrganizationAdminAccount`.
+/// Orchestration and serialization glue logic for `DisableOrganizationAdminAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

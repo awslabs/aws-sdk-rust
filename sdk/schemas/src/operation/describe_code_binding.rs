@@ -186,7 +186,7 @@ impl DescribeCodeBindingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCodeBinding`.
+/// Orchestration and serialization glue logic for `DescribeCodeBinding`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

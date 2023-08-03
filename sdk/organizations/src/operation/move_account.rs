@@ -131,7 +131,7 @@ impl MoveAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MoveAccount`.
+/// Orchestration and serialization glue logic for `MoveAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

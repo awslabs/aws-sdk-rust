@@ -116,7 +116,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDirectConnectGatewayAssociationProposal`.
+/// Orchestration and serialization glue logic for `DeleteDirectConnectGatewayAssociationProposal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

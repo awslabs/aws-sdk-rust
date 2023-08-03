@@ -136,7 +136,7 @@ impl DeleteIpAccessSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIpAccessSettings`.
+/// Orchestration and serialization glue logic for `DeleteIpAccessSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

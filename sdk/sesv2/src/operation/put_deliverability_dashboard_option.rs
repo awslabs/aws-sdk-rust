@@ -121,7 +121,7 @@ impl PutDeliverabilityDashboardOptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutDeliverabilityDashboardOption`.
+/// Orchestration and serialization glue logic for `PutDeliverabilityDashboardOption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

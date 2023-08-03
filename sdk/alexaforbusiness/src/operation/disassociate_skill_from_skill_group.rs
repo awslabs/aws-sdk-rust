@@ -125,7 +125,7 @@ impl DisassociateSkillFromSkillGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateSkillFromSkillGroup`.
+/// Orchestration and serialization glue logic for `DisassociateSkillFromSkillGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

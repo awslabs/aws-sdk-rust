@@ -131,7 +131,7 @@ impl DeleteImpersonationRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteImpersonationRole`.
+/// Orchestration and serialization glue logic for `DeleteImpersonationRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

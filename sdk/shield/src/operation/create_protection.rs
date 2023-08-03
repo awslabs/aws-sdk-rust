@@ -131,7 +131,7 @@ impl CreateProtectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateProtection`.
+/// Orchestration and serialization glue logic for `CreateProtection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

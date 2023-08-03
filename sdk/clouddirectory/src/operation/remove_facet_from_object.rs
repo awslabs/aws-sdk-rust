@@ -131,7 +131,7 @@ impl RemoveFacetFromObjectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveFacetFromObject`.
+/// Orchestration and serialization glue logic for `RemoveFacetFromObject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

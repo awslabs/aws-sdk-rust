@@ -126,7 +126,7 @@ impl DescribeVpcAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVpcAttribute`.
+/// Orchestration and serialization glue logic for `DescribeVpcAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

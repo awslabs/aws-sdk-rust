@@ -156,7 +156,7 @@ impl DescribeAgentStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAgentStatus`.
+/// Orchestration and serialization glue logic for `DescribeAgentStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

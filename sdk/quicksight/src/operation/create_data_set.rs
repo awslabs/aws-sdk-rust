@@ -150,7 +150,7 @@ impl CreateDataSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataSet`.
+/// Orchestration and serialization glue logic for `CreateDataSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -138,7 +138,7 @@ impl GetVpcLinksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVpcLinks`.
+/// Orchestration and serialization glue logic for `GetVpcLinks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

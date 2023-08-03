@@ -170,7 +170,7 @@ impl CreateApplicationVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateApplicationVersion`.
+/// Orchestration and serialization glue logic for `CreateApplicationVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

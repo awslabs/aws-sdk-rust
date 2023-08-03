@@ -128,7 +128,7 @@ impl CancelDeploymentJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelDeploymentJob`.
+/// Orchestration and serialization glue logic for `CancelDeploymentJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

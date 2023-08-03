@@ -111,7 +111,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCustomVerificationEmailTemplate`.
+/// Orchestration and serialization glue logic for `UpdateCustomVerificationEmailTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

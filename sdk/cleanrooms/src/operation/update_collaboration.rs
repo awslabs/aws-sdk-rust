@@ -152,7 +152,7 @@ impl UpdateCollaborationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCollaboration`.
+/// Orchestration and serialization glue logic for `UpdateCollaboration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

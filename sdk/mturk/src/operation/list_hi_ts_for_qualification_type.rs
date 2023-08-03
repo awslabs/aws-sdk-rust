@@ -132,7 +132,7 @@ impl ListHiTsForQualificationTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHITsForQualificationType`.
+/// Orchestration and serialization glue logic for `ListHITsForQualificationType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

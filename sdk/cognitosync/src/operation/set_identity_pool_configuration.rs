@@ -150,7 +150,7 @@ impl SetIdentityPoolConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetIdentityPoolConfiguration`.
+/// Orchestration and serialization glue logic for `SetIdentityPoolConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

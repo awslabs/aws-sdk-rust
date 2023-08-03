@@ -180,7 +180,7 @@ impl ListHumanLoopsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHumanLoops`.
+/// Orchestration and serialization glue logic for `ListHumanLoops`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl DisassociateThirdPartyFirewallInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateThirdPartyFirewall`.
+/// Orchestration and serialization glue logic for `DisassociateThirdPartyFirewall`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

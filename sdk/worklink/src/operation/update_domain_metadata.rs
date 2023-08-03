@@ -128,7 +128,7 @@ impl UpdateDomainMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDomainMetadata`.
+/// Orchestration and serialization glue logic for `UpdateDomainMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

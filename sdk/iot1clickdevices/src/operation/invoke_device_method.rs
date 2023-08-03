@@ -148,7 +148,7 @@ impl InvokeDeviceMethodInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InvokeDeviceMethod`.
+/// Orchestration and serialization glue logic for `InvokeDeviceMethod`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

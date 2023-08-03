@@ -133,7 +133,7 @@ impl DescribeProductViewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeProductView`.
+/// Orchestration and serialization glue logic for `DescribeProductView`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

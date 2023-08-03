@@ -149,7 +149,7 @@ impl UpdateResourceProfileDetectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResourceProfileDetections`.
+/// Orchestration and serialization glue logic for `UpdateResourceProfileDetections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

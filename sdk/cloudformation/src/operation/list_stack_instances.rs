@@ -126,7 +126,7 @@ impl ListStackInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStackInstances`.
+/// Orchestration and serialization glue logic for `ListStackInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

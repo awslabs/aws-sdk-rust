@@ -131,7 +131,7 @@ impl DeregisterContainerInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterContainerInstance`.
+/// Orchestration and serialization glue logic for `DeregisterContainerInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

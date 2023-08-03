@@ -133,7 +133,7 @@ impl GetSearchSuggestionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSearchSuggestions`.
+/// Orchestration and serialization glue logic for `GetSearchSuggestions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

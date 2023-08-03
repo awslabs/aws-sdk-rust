@@ -131,7 +131,7 @@ impl DeleteRemoteAccessSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRemoteAccessSession`.
+/// Orchestration and serialization glue logic for `DeleteRemoteAccessSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

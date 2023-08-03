@@ -131,7 +131,7 @@ impl GetPublicKeyCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPublicKeyCertificate`.
+/// Orchestration and serialization glue logic for `GetPublicKeyCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

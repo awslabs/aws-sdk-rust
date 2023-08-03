@@ -152,7 +152,7 @@ impl RevokeSigningProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RevokeSigningProfile`.
+/// Orchestration and serialization glue logic for `RevokeSigningProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

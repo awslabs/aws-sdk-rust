@@ -128,7 +128,7 @@ impl AssociateServiceRoleToAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateServiceRoleToAccount`.
+/// Orchestration and serialization glue logic for `AssociateServiceRoleToAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

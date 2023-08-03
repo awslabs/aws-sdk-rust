@@ -126,7 +126,7 @@ impl CreateGlobalClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateGlobalCluster`.
+/// Orchestration and serialization glue logic for `CreateGlobalCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

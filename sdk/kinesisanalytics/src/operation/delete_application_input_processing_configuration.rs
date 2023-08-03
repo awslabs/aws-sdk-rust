@@ -116,7 +116,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteApplicationInputProcessingConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteApplicationInputProcessingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -166,7 +166,7 @@ impl ListProxySessionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProxySessions`.
+/// Orchestration and serialization glue logic for `ListProxySessions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

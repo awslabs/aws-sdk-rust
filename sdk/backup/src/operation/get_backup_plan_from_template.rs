@@ -136,7 +136,7 @@ impl GetBackupPlanFromTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBackupPlanFromTemplate`.
+/// Orchestration and serialization glue logic for `GetBackupPlanFromTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

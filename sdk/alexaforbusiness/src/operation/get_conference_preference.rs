@@ -124,7 +124,7 @@ impl GetConferencePreferenceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConferencePreference`.
+/// Orchestration and serialization glue logic for `GetConferencePreference`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

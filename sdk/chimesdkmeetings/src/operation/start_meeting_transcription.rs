@@ -160,7 +160,7 @@ impl StartMeetingTranscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartMeetingTranscription`.
+/// Orchestration and serialization glue logic for `StartMeetingTranscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

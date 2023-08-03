@@ -124,7 +124,7 @@ impl DisableProactiveEngagementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableProactiveEngagement`.
+/// Orchestration and serialization glue logic for `DisableProactiveEngagement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

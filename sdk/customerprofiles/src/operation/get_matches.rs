@@ -161,7 +161,7 @@ impl GetMatchesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMatches`.
+/// Orchestration and serialization glue logic for `GetMatches`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

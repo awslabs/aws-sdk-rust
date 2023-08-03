@@ -130,7 +130,7 @@ impl CreateCoreDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCoreDefinition`.
+/// Orchestration and serialization glue logic for `CreateCoreDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

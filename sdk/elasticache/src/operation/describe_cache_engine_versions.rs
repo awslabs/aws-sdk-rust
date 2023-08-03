@@ -126,7 +126,7 @@ impl DescribeCacheEngineVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCacheEngineVersions`.
+/// Orchestration and serialization glue logic for `DescribeCacheEngineVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

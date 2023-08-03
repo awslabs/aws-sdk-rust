@@ -131,7 +131,7 @@ impl UpdateRulesOfIpGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRulesOfIpGroup`.
+/// Orchestration and serialization glue logic for `UpdateRulesOfIpGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

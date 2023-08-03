@@ -112,7 +112,7 @@ impl UpdateAutomatedDiscoveryConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAutomatedDiscoveryConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateAutomatedDiscoveryConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

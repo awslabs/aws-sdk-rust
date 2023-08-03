@@ -131,7 +131,7 @@ impl DeleteAppImageConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppImageConfig`.
+/// Orchestration and serialization glue logic for `DeleteAppImageConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

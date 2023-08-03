@@ -136,7 +136,7 @@ impl ValidateSolFunctionPackageContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ValidateSolFunctionPackageContent`.
+/// Orchestration and serialization glue logic for `ValidateSolFunctionPackageContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

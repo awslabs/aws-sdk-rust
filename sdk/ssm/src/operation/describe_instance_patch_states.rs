@@ -131,7 +131,7 @@ impl DescribeInstancePatchStatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInstancePatchStates`.
+/// Orchestration and serialization glue logic for `DescribeInstancePatchStates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl CreateThingTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateThingType`.
+/// Orchestration and serialization glue logic for `CreateThingType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

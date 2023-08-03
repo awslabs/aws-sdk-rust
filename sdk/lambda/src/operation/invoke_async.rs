@@ -153,7 +153,7 @@ impl InvokeAsyncInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InvokeAsync`.
+/// Orchestration and serialization glue logic for `InvokeAsync`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

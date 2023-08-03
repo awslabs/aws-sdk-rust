@@ -128,7 +128,7 @@ impl ModifyIpamPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyIpamPool`.
+/// Orchestration and serialization glue logic for `ModifyIpamPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl GetSigningPlatformInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSigningPlatform`.
+/// Orchestration and serialization glue logic for `GetSigningPlatform`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

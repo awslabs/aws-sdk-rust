@@ -133,7 +133,7 @@ impl TerminateWorkspacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TerminateWorkspaces`.
+/// Orchestration and serialization glue logic for `TerminateWorkspaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

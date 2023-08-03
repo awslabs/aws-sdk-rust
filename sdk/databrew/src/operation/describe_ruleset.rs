@@ -132,7 +132,7 @@ impl DescribeRulesetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRuleset`.
+/// Orchestration and serialization glue logic for `DescribeRuleset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

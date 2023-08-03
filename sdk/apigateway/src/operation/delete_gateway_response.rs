@@ -160,7 +160,7 @@ impl DeleteGatewayResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGatewayResponse`.
+/// Orchestration and serialization glue logic for `DeleteGatewayResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

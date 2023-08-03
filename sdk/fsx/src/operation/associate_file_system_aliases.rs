@@ -135,7 +135,7 @@ impl AssociateFileSystemAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateFileSystemAliases`.
+/// Orchestration and serialization glue logic for `AssociateFileSystemAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

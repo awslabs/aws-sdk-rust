@@ -131,7 +131,7 @@ impl ListTestGridSessionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTestGridSessions`.
+/// Orchestration and serialization glue logic for `ListTestGridSessions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -190,7 +190,7 @@ impl UpdateBotLocaleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBotLocale`.
+/// Orchestration and serialization glue logic for `UpdateBotLocale`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl RollbackStackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RollbackStack`.
+/// Orchestration and serialization glue logic for `RollbackStack`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

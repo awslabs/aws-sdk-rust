@@ -131,7 +131,7 @@ impl ListBusinessReportSchedulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBusinessReportSchedules`.
+/// Orchestration and serialization glue logic for `ListBusinessReportSchedules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

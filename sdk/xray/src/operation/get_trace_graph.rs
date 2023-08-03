@@ -126,7 +126,7 @@ impl GetTraceGraphInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTraceGraph`.
+/// Orchestration and serialization glue logic for `GetTraceGraph`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

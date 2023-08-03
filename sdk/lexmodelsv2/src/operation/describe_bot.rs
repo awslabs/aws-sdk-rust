@@ -132,7 +132,7 @@ impl DescribeBotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBot`.
+/// Orchestration and serialization glue logic for `DescribeBot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

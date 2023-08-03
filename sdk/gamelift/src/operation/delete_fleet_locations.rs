@@ -133,7 +133,7 @@ impl DeleteFleetLocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFleetLocations`.
+/// Orchestration and serialization glue logic for `DeleteFleetLocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

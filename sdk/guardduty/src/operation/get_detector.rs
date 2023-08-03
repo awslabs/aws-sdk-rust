@@ -132,7 +132,7 @@ impl GetDetectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDetector`.
+/// Orchestration and serialization glue logic for `GetDetector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

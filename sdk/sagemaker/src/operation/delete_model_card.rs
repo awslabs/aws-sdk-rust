@@ -131,7 +131,7 @@ impl DeleteModelCardInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteModelCard`.
+/// Orchestration and serialization glue logic for `DeleteModelCard`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

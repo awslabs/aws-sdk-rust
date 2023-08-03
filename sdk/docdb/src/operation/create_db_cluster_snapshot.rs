@@ -126,7 +126,7 @@ impl CreateDbClusterSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDBClusterSnapshot`.
+/// Orchestration and serialization glue logic for `CreateDBClusterSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

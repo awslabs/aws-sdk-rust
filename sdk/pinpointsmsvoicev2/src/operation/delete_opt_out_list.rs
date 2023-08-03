@@ -131,7 +131,7 @@ impl DeleteOptOutListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteOptOutList`.
+/// Orchestration and serialization glue logic for `DeleteOptOutList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

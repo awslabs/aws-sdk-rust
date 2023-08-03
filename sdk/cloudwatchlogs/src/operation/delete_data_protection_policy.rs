@@ -131,7 +131,7 @@ impl DeleteDataProtectionPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataProtectionPolicy`.
+/// Orchestration and serialization glue logic for `DeleteDataProtectionPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

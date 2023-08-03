@@ -133,7 +133,7 @@ impl StartPersonTrackingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartPersonTracking`.
+/// Orchestration and serialization glue logic for `StartPersonTracking`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

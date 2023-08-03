@@ -172,7 +172,7 @@ impl CreateRoomMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRoomMembership`.
+/// Orchestration and serialization glue logic for `CreateRoomMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

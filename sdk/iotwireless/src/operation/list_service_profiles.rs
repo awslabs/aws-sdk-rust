@@ -134,7 +134,7 @@ impl ListServiceProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServiceProfiles`.
+/// Orchestration and serialization glue logic for `ListServiceProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

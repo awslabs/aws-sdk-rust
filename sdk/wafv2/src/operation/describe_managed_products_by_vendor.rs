@@ -125,7 +125,7 @@ impl DescribeManagedProductsByVendorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeManagedProductsByVendor`.
+/// Orchestration and serialization glue logic for `DescribeManagedProductsByVendor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

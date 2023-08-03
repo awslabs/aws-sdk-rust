@@ -135,7 +135,7 @@ impl ListRealtimeLogConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRealtimeLogConfigs`.
+/// Orchestration and serialization glue logic for `ListRealtimeLogConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

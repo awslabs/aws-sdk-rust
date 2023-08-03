@@ -149,7 +149,7 @@ impl DeleteAllowListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAllowList`.
+/// Orchestration and serialization glue logic for `DeleteAllowList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

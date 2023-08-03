@@ -112,7 +112,7 @@ impl StartOrganizationServiceAccessUpdateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartOrganizationServiceAccessUpdate`.
+/// Orchestration and serialization glue logic for `StartOrganizationServiceAccessUpdate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

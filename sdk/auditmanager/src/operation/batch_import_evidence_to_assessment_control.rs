@@ -168,7 +168,7 @@ impl BatchImportEvidenceToAssessmentControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchImportEvidenceToAssessmentControl`.
+/// Orchestration and serialization glue logic for `BatchImportEvidenceToAssessmentControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

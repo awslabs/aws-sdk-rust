@@ -156,7 +156,7 @@ impl GetDataSetImportTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataSetImportTask`.
+/// Orchestration and serialization glue logic for `GetDataSetImportTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl BatchUpdateVehicleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpdateVehicle`.
+/// Orchestration and serialization glue logic for `BatchUpdateVehicle`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

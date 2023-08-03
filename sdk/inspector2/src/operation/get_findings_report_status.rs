@@ -126,7 +126,7 @@ impl GetFindingsReportStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFindingsReportStatus`.
+/// Orchestration and serialization glue logic for `GetFindingsReportStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

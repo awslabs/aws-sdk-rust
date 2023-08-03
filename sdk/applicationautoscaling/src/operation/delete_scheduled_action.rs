@@ -131,7 +131,7 @@ impl DeleteScheduledActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteScheduledAction`.
+/// Orchestration and serialization glue logic for `DeleteScheduledAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

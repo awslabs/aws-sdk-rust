@@ -130,7 +130,7 @@ impl CreateNatGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNatGateway`.
+/// Orchestration and serialization glue logic for `CreateNatGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl SearchNetworkProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchNetworkProfiles`.
+/// Orchestration and serialization glue logic for `SearchNetworkProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

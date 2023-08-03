@@ -131,7 +131,7 @@ impl GetOutcomesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOutcomes`.
+/// Orchestration and serialization glue logic for `GetOutcomes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

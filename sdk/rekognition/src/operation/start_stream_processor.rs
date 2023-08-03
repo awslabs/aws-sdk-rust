@@ -133,7 +133,7 @@ impl StartStreamProcessorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartStreamProcessor`.
+/// Orchestration and serialization glue logic for `StartStreamProcessor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DisableFastSnapshotRestoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableFastSnapshotRestores`.
+/// Orchestration and serialization glue logic for `DisableFastSnapshotRestores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

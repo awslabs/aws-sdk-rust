@@ -131,7 +131,7 @@ impl DescribeRefreshSchemasStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRefreshSchemasStatus`.
+/// Orchestration and serialization glue logic for `DescribeRefreshSchemasStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

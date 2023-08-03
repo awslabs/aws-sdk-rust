@@ -131,7 +131,7 @@ impl GetIdentitySourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIdentitySource`.
+/// Orchestration and serialization glue logic for `GetIdentitySource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

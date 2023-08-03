@@ -128,7 +128,7 @@ impl CreateKxEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateKxEnvironment`.
+/// Orchestration and serialization glue logic for `CreateKxEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

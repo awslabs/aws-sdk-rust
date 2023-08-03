@@ -159,7 +159,7 @@ impl GetRoleCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRoleCredentials`.
+/// Orchestration and serialization glue logic for `GetRoleCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

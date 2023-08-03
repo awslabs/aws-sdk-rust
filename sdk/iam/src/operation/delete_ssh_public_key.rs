@@ -126,7 +126,7 @@ impl DeleteSshPublicKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSSHPublicKey`.
+/// Orchestration and serialization glue logic for `DeleteSSHPublicKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

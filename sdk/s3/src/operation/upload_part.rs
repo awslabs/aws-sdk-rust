@@ -457,7 +457,7 @@ impl UploadPartInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UploadPart`.
+/// Orchestration and serialization glue logic for `UploadPart`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

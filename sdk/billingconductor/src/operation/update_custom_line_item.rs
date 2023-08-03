@@ -127,7 +127,7 @@ impl UpdateCustomLineItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCustomLineItem`.
+/// Orchestration and serialization glue logic for `UpdateCustomLineItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteStudioLifecycleConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStudioLifecycleConfig`.
+/// Orchestration and serialization glue logic for `DeleteStudioLifecycleConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

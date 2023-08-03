@@ -156,7 +156,7 @@ impl DeleteDomainAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDomainAssociation`.
+/// Orchestration and serialization glue logic for `DeleteDomainAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

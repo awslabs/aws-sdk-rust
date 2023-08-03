@@ -131,7 +131,7 @@ impl ListAppsListsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppsLists`.
+/// Orchestration and serialization glue logic for `ListAppsLists`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl AdminLinkProviderForUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminLinkProviderForUser`.
+/// Orchestration and serialization glue logic for `AdminLinkProviderForUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

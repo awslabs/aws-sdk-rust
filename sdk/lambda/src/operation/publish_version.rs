@@ -150,7 +150,7 @@ impl PublishVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PublishVersion`.
+/// Orchestration and serialization glue logic for `PublishVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

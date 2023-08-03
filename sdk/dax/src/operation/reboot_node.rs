@@ -131,7 +131,7 @@ impl RebootNodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RebootNode`.
+/// Orchestration and serialization glue logic for `RebootNode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

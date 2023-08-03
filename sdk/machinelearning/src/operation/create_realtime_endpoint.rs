@@ -131,7 +131,7 @@ impl CreateRealtimeEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRealtimeEndpoint`.
+/// Orchestration and serialization glue logic for `CreateRealtimeEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

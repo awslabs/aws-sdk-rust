@@ -98,7 +98,7 @@ impl DisassociateServiceRoleFromAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateServiceRoleFromAccount`.
+/// Orchestration and serialization glue logic for `DisassociateServiceRoleFromAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

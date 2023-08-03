@@ -131,7 +131,7 @@ impl DeleteWorkforceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkforce`.
+/// Orchestration and serialization glue logic for `DeleteWorkforce`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl GetRelationalDatabaseSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRelationalDatabaseSnapshot`.
+/// Orchestration and serialization glue logic for `GetRelationalDatabaseSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

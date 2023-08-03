@@ -126,7 +126,7 @@ impl FailoverGlobalClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `FailoverGlobalCluster`.
+/// Orchestration and serialization glue logic for `FailoverGlobalCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

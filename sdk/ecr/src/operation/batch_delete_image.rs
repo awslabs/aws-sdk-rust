@@ -131,7 +131,7 @@ impl BatchDeleteImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteImage`.
+/// Orchestration and serialization glue logic for `BatchDeleteImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

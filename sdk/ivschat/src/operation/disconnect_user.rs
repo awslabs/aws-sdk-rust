@@ -126,7 +126,7 @@ impl DisconnectUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisconnectUser`.
+/// Orchestration and serialization glue logic for `DisconnectUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

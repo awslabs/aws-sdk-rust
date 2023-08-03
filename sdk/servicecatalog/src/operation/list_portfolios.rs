@@ -131,7 +131,7 @@ impl ListPortfoliosInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPortfolios`.
+/// Orchestration and serialization glue logic for `ListPortfolios`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl GetRevisionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRevision`.
+/// Orchestration and serialization glue logic for `GetRevision`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

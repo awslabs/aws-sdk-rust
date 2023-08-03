@@ -126,7 +126,7 @@ impl CreateSmsSandboxPhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSMSSandboxPhoneNumber`.
+/// Orchestration and serialization glue logic for `CreateSMSSandboxPhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

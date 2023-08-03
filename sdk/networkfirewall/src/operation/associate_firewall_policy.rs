@@ -131,7 +131,7 @@ impl AssociateFirewallPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateFirewallPolicy`.
+/// Orchestration and serialization glue logic for `AssociateFirewallPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

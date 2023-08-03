@@ -126,7 +126,7 @@ impl CreateReceiptFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateReceiptFilter`.
+/// Orchestration and serialization glue logic for `CreateReceiptFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

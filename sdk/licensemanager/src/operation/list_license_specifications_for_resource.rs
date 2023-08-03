@@ -116,7 +116,7 @@ impl ListLicenseSpecificationsForResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLicenseSpecificationsForResource`.
+/// Orchestration and serialization glue logic for `ListLicenseSpecificationsForResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

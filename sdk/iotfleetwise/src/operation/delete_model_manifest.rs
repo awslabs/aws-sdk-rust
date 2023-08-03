@@ -133,7 +133,7 @@ impl DeleteModelManifestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteModelManifest`.
+/// Orchestration and serialization glue logic for `DeleteModelManifest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeSnapshotCopyGrantsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSnapshotCopyGrants`.
+/// Orchestration and serialization glue logic for `DescribeSnapshotCopyGrants`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeAutoMlJobV2Input {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAutoMLJobV2`.
+/// Orchestration and serialization glue logic for `DescribeAutoMLJobV2`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateOpsMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateOpsMetadata`.
+/// Orchestration and serialization glue logic for `CreateOpsMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

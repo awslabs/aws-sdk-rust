@@ -131,7 +131,7 @@ impl GetDistributionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDistributions`.
+/// Orchestration and serialization glue logic for `GetDistributions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

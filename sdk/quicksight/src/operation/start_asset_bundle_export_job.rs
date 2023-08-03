@@ -150,7 +150,7 @@ impl StartAssetBundleExportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartAssetBundleExportJob`.
+/// Orchestration and serialization glue logic for `StartAssetBundleExportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -173,7 +173,7 @@ impl DeleteObjectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteObjects`.
+/// Orchestration and serialization glue logic for `DeleteObjects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

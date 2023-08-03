@@ -126,7 +126,7 @@ impl BatchStartInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchStart`.
+/// Orchestration and serialization glue logic for `BatchStart`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

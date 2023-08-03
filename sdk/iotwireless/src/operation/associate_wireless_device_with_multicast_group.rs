@@ -131,7 +131,7 @@ impl AssociateWirelessDeviceWithMulticastGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateWirelessDeviceWithMulticastGroup`.
+/// Orchestration and serialization glue logic for `AssociateWirelessDeviceWithMulticastGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

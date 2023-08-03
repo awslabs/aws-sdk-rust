@@ -116,7 +116,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCustomRoutingAcceleratorAttributes`.
+/// Orchestration and serialization glue logic for `DescribeCustomRoutingAcceleratorAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

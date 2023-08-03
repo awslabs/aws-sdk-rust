@@ -177,7 +177,7 @@ impl BatchCreateCustomVocabularyItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchCreateCustomVocabularyItem`.
+/// Orchestration and serialization glue logic for `BatchCreateCustomVocabularyItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

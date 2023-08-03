@@ -136,7 +136,7 @@ impl RejectInboundConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RejectInboundConnection`.
+/// Orchestration and serialization glue logic for `RejectInboundConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl ListBillingGroupCostReportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBillingGroupCostReports`.
+/// Orchestration and serialization glue logic for `ListBillingGroupCostReports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

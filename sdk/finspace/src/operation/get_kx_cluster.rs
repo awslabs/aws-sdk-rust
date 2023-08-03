@@ -156,7 +156,7 @@ impl GetKxClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetKxCluster`.
+/// Orchestration and serialization glue logic for `GetKxCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

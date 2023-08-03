@@ -156,7 +156,7 @@ impl GetIngestionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIngestion`.
+/// Orchestration and serialization glue logic for `GetIngestion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

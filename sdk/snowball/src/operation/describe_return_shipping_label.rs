@@ -131,7 +131,7 @@ impl DescribeReturnShippingLabelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReturnShippingLabel`.
+/// Orchestration and serialization glue logic for `DescribeReturnShippingLabel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

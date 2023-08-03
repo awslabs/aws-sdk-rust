@@ -155,7 +155,7 @@ impl GetObjectTaggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetObjectTagging`.
+/// Orchestration and serialization glue logic for `GetObjectTagging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

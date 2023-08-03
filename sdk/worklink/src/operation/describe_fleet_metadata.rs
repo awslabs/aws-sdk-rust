@@ -126,7 +126,7 @@ impl DescribeFleetMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetMetadata`.
+/// Orchestration and serialization glue logic for `DescribeFleetMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ProvisionPublicIpv4PoolCidrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ProvisionPublicIpv4PoolCidr`.
+/// Orchestration and serialization glue logic for `ProvisionPublicIpv4PoolCidr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

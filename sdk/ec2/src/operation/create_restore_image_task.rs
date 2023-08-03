@@ -126,7 +126,7 @@ impl CreateRestoreImageTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRestoreImageTask`.
+/// Orchestration and serialization glue logic for `CreateRestoreImageTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

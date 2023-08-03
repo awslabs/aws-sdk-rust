@@ -127,7 +127,7 @@ impl StartMonitoringMemberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartMonitoringMember`.
+/// Orchestration and serialization glue logic for `StartMonitoringMember`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

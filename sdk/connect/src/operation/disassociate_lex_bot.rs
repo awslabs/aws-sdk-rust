@@ -177,7 +177,7 @@ impl DisassociateLexBotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateLexBot`.
+/// Orchestration and serialization glue logic for `DisassociateLexBot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

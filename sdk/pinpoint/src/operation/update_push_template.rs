@@ -172,7 +172,7 @@ impl UpdatePushTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePushTemplate`.
+/// Orchestration and serialization glue logic for `UpdatePushTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

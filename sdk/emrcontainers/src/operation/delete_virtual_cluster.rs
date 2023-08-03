@@ -132,7 +132,7 @@ impl DeleteVirtualClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVirtualCluster`.
+/// Orchestration and serialization glue logic for `DeleteVirtualCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

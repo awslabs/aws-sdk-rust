@@ -126,7 +126,7 @@ impl DescribeSnapshotAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSnapshotAttribute`.
+/// Orchestration and serialization glue logic for `DescribeSnapshotAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl GetEventSourceMappingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEventSourceMapping`.
+/// Orchestration and serialization glue logic for `GetEventSourceMapping`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

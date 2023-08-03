@@ -183,7 +183,7 @@ impl DescribeGatewayRouteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeGatewayRoute`.
+/// Orchestration and serialization glue logic for `DescribeGatewayRoute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -138,7 +138,7 @@ impl GetLayerVersionByArnInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLayerVersionByArn`.
+/// Orchestration and serialization glue logic for `GetLayerVersionByArn`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

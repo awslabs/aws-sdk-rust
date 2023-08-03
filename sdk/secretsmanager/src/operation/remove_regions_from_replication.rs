@@ -131,7 +131,7 @@ impl RemoveRegionsFromReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveRegionsFromReplication`.
+/// Orchestration and serialization glue logic for `RemoveRegionsFromReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

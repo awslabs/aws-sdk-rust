@@ -127,7 +127,7 @@ impl DeleteRolePermissionsBoundaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRolePermissionsBoundary`.
+/// Orchestration and serialization glue logic for `DeleteRolePermissionsBoundary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

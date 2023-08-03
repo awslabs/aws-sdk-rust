@@ -131,7 +131,7 @@ impl CreateAuditSuppressionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAuditSuppression`.
+/// Orchestration and serialization glue logic for `CreateAuditSuppression`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

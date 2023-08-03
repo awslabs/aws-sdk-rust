@@ -150,7 +150,7 @@ impl UpdateApiKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateApiKey`.
+/// Orchestration and serialization glue logic for `UpdateApiKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

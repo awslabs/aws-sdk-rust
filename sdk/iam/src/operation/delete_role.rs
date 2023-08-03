@@ -126,7 +126,7 @@ impl DeleteRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRole`.
+/// Orchestration and serialization glue logic for `DeleteRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

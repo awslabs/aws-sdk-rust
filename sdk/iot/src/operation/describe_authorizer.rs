@@ -136,7 +136,7 @@ impl DescribeAuthorizerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAuthorizer`.
+/// Orchestration and serialization glue logic for `DescribeAuthorizer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

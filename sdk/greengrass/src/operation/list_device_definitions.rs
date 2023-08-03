@@ -135,7 +135,7 @@ impl ListDeviceDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDeviceDefinitions`.
+/// Orchestration and serialization glue logic for `ListDeviceDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

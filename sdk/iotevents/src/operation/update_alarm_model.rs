@@ -150,7 +150,7 @@ impl UpdateAlarmModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAlarmModel`.
+/// Orchestration and serialization glue logic for `UpdateAlarmModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl UpdateQueueMaxContactsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateQueueMaxContacts`.
+/// Orchestration and serialization glue logic for `UpdateQueueMaxContacts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

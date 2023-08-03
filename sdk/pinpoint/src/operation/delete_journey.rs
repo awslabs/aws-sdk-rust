@@ -156,7 +156,7 @@ impl DeleteJourneyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteJourney`.
+/// Orchestration and serialization glue logic for `DeleteJourney`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

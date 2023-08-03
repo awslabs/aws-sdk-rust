@@ -136,7 +136,7 @@ impl DeleteHumanLoopInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHumanLoop`.
+/// Orchestration and serialization glue logic for `DeleteHumanLoop`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

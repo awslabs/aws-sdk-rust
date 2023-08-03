@@ -126,7 +126,7 @@ impl StopAssessmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopAssessment`.
+/// Orchestration and serialization glue logic for `StopAssessment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

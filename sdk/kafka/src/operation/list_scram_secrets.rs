@@ -158,7 +158,7 @@ impl ListScramSecretsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListScramSecrets`.
+/// Orchestration and serialization glue logic for `ListScramSecrets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

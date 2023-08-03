@@ -131,7 +131,7 @@ impl TestRepositoryTriggersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestRepositoryTriggers`.
+/// Orchestration and serialization glue logic for `TestRepositoryTriggers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

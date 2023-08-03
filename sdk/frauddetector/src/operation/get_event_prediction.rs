@@ -133,7 +133,7 @@ impl GetEventPredictionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEventPrediction`.
+/// Orchestration and serialization glue logic for `GetEventPrediction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

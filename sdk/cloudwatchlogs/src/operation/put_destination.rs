@@ -131,7 +131,7 @@ impl PutDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutDestination`.
+/// Orchestration and serialization glue logic for `PutDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListDiscoveredResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDiscoveredResources`.
+/// Orchestration and serialization glue logic for `ListDiscoveredResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

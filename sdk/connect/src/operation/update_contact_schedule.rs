@@ -126,7 +126,7 @@ impl UpdateContactScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContactSchedule`.
+/// Orchestration and serialization glue logic for `UpdateContactSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

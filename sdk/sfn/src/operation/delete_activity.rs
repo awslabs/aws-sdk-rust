@@ -131,7 +131,7 @@ impl DeleteActivityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteActivity`.
+/// Orchestration and serialization glue logic for `DeleteActivity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

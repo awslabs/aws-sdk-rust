@@ -131,7 +131,7 @@ impl GetEventSelectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEventSelectors`.
+/// Orchestration and serialization glue logic for `GetEventSelectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

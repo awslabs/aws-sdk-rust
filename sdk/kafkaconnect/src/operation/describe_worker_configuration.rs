@@ -136,7 +136,7 @@ impl DescribeWorkerConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorkerConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeWorkerConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

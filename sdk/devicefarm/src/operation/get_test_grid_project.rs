@@ -133,7 +133,7 @@ impl GetTestGridProjectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTestGridProject`.
+/// Orchestration and serialization glue logic for `GetTestGridProject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

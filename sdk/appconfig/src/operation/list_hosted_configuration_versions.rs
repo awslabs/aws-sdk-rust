@@ -177,7 +177,7 @@ impl ListHostedConfigurationVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHostedConfigurationVersions`.
+/// Orchestration and serialization glue logic for `ListHostedConfigurationVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

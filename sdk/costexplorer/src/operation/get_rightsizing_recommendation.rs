@@ -131,7 +131,7 @@ impl GetRightsizingRecommendationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRightsizingRecommendation`.
+/// Orchestration and serialization glue logic for `GetRightsizingRecommendation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

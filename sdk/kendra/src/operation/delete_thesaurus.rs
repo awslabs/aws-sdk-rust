@@ -131,7 +131,7 @@ impl DeleteThesaurusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteThesaurus`.
+/// Orchestration and serialization glue logic for `DeleteThesaurus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

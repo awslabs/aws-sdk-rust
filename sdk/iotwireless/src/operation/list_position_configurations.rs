@@ -143,7 +143,7 @@ impl ListPositionConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPositionConfigurations`.
+/// Orchestration and serialization glue logic for `ListPositionConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

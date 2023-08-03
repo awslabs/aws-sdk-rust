@@ -131,7 +131,7 @@ impl DeleteSecretInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSecret`.
+/// Orchestration and serialization glue logic for `DeleteSecret`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

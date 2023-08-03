@@ -136,7 +136,7 @@ impl GetBootstrapBrokersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBootstrapBrokers`.
+/// Orchestration and serialization glue logic for `GetBootstrapBrokers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

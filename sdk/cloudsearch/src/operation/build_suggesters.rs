@@ -128,7 +128,7 @@ impl BuildSuggestersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BuildSuggesters`.
+/// Orchestration and serialization glue logic for `BuildSuggesters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

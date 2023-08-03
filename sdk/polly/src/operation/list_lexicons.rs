@@ -126,7 +126,7 @@ impl ListLexiconsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLexicons`.
+/// Orchestration and serialization glue logic for `ListLexicons`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

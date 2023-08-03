@@ -167,7 +167,7 @@ impl ListUpdatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListUpdates`.
+/// Orchestration and serialization glue logic for `ListUpdates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopDBInstanceAutomatedBackupsReplication`.
+/// Orchestration and serialization glue logic for `StopDBInstanceAutomatedBackupsReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

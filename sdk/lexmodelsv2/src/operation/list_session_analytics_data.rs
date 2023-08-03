@@ -146,7 +146,7 @@ impl ListSessionAnalyticsDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSessionAnalyticsData`.
+/// Orchestration and serialization glue logic for `ListSessionAnalyticsData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

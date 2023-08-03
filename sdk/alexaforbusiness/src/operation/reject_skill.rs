@@ -131,7 +131,7 @@ impl RejectSkillInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RejectSkill`.
+/// Orchestration and serialization glue logic for `RejectSkill`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

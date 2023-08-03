@@ -131,7 +131,7 @@ impl DeleteWebhookInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWebhook`.
+/// Orchestration and serialization glue logic for `DeleteWebhook`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

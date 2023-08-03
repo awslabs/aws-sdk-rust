@@ -131,7 +131,7 @@ impl DescribePullRequestEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePullRequestEvents`.
+/// Orchestration and serialization glue logic for `DescribePullRequestEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

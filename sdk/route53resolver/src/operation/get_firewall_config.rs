@@ -131,7 +131,7 @@ impl GetFirewallConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFirewallConfig`.
+/// Orchestration and serialization glue logic for `GetFirewallConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

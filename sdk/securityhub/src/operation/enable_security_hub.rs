@@ -126,7 +126,7 @@ impl EnableSecurityHubInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableSecurityHub`.
+/// Orchestration and serialization glue logic for `EnableSecurityHub`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

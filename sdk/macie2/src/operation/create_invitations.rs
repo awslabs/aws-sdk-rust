@@ -126,7 +126,7 @@ impl CreateInvitationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateInvitations`.
+/// Orchestration and serialization glue logic for `CreateInvitations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

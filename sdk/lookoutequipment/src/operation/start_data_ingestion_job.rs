@@ -135,7 +135,7 @@ impl StartDataIngestionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDataIngestionJob`.
+/// Orchestration and serialization glue logic for `StartDataIngestionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

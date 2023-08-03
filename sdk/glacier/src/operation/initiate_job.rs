@@ -179,7 +179,7 @@ impl InitiateJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InitiateJob`.
+/// Orchestration and serialization glue logic for `InitiateJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

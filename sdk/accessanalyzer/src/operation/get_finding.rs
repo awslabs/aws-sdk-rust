@@ -159,7 +159,7 @@ impl GetFindingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFinding`.
+/// Orchestration and serialization glue logic for `GetFinding`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ContainsPiiEntitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ContainsPiiEntities`.
+/// Orchestration and serialization glue logic for `ContainsPiiEntities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

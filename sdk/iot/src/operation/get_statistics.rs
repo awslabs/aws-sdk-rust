@@ -126,7 +126,7 @@ impl GetStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetStatistics`.
+/// Orchestration and serialization glue logic for `GetStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

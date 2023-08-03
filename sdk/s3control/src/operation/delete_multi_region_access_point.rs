@@ -150,7 +150,7 @@ impl DeleteMultiRegionAccessPointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMultiRegionAccessPoint`.
+/// Orchestration and serialization glue logic for `DeleteMultiRegionAccessPoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

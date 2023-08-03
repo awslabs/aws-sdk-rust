@@ -156,7 +156,7 @@ impl DeleteUserHierarchyGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUserHierarchyGroup`.
+/// Orchestration and serialization glue logic for `DeleteUserHierarchyGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl CreateTrafficMirrorSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrafficMirrorSession`.
+/// Orchestration and serialization glue logic for `CreateTrafficMirrorSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

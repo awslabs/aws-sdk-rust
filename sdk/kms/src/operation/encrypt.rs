@@ -130,7 +130,7 @@ impl EncryptInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `Encrypt`.
+/// Orchestration and serialization glue logic for `Encrypt`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

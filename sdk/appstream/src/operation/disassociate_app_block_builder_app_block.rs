@@ -116,7 +116,7 @@ impl DisassociateAppBlockBuilderAppBlockInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateAppBlockBuilderAppBlock`.
+/// Orchestration and serialization glue logic for `DisassociateAppBlockBuilderAppBlock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

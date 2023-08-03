@@ -22,9 +22,9 @@ impl ListDistributionsByResponseHeadersPolicyIdFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyId, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyId, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -42,8 +42,8 @@ impl ListDistributionsByResponseHeadersPolicyIdFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>>
+                         {
         let op = self
             .inner
             .build()
@@ -61,16 +61,16 @@ impl ListDistributionsByResponseHeadersPolicyIdFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyId, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyId, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdError>
     >{
         self.customize_middleware().await
     }

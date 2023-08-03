@@ -126,7 +126,7 @@ impl AssociateAddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateAddress`.
+/// Orchestration and serialization glue logic for `AssociateAddress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

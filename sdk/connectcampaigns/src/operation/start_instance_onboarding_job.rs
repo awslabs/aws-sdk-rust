@@ -150,7 +150,7 @@ impl StartInstanceOnboardingJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartInstanceOnboardingJob`.
+/// Orchestration and serialization glue logic for `StartInstanceOnboardingJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl GetLoadBalancerTlsCertificatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLoadBalancerTlsCertificates`.
+/// Orchestration and serialization glue logic for `GetLoadBalancerTlsCertificates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

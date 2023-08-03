@@ -146,7 +146,7 @@ impl UpdateEventIntegrationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEventIntegration`.
+/// Orchestration and serialization glue logic for `UpdateEventIntegration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

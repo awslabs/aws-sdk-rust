@@ -116,7 +116,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInlinePolicyFromPermissionSet`.
+/// Orchestration and serialization glue logic for `DeleteInlinePolicyFromPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

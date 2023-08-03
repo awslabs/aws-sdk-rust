@@ -127,7 +127,7 @@ impl DescribeStorageSystemResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStorageSystemResources`.
+/// Orchestration and serialization glue logic for `DescribeStorageSystemResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

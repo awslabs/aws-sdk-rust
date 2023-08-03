@@ -146,7 +146,7 @@ impl CreateFeatureInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFeature`.
+/// Orchestration and serialization glue logic for `CreateFeature`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

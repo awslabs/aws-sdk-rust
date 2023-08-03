@@ -170,7 +170,7 @@ impl GetVoiceToneAnalysisTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVoiceToneAnalysisTask`.
+/// Orchestration and serialization glue logic for `GetVoiceToneAnalysisTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

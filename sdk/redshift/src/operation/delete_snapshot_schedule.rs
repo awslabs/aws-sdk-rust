@@ -126,7 +126,7 @@ impl DeleteSnapshotScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSnapshotSchedule`.
+/// Orchestration and serialization glue logic for `DeleteSnapshotSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

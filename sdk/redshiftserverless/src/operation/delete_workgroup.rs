@@ -131,7 +131,7 @@ impl DeleteWorkgroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkgroup`.
+/// Orchestration and serialization glue logic for `DeleteWorkgroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

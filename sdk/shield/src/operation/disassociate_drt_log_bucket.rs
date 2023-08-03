@@ -131,7 +131,7 @@ impl DisassociateDrtLogBucketInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateDRTLogBucket`.
+/// Orchestration and serialization glue logic for `DisassociateDRTLogBucket`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

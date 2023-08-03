@@ -131,7 +131,7 @@ impl GetActivityTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetActivityTask`.
+/// Orchestration and serialization glue logic for `GetActivityTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

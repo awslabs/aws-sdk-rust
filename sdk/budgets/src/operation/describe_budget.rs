@@ -131,7 +131,7 @@ impl DescribeBudgetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBudget`.
+/// Orchestration and serialization glue logic for `DescribeBudget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

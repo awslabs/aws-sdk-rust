@@ -131,7 +131,7 @@ impl ListDeploymentConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDeploymentConfigs`.
+/// Orchestration and serialization glue logic for `ListDeploymentConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

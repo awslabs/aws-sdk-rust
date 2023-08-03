@@ -164,7 +164,7 @@ impl AssociateUserSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateUserSettings`.
+/// Orchestration and serialization glue logic for `AssociateUserSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

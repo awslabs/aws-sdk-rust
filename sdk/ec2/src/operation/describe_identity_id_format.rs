@@ -126,7 +126,7 @@ impl DescribeIdentityIdFormatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeIdentityIdFormat`.
+/// Orchestration and serialization glue logic for `DescribeIdentityIdFormat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

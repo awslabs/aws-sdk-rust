@@ -126,7 +126,7 @@ impl ProvisionDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ProvisionDevice`.
+/// Orchestration and serialization glue logic for `ProvisionDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

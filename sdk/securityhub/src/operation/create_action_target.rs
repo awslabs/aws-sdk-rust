@@ -128,7 +128,7 @@ impl CreateActionTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateActionTarget`.
+/// Orchestration and serialization glue logic for `CreateActionTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl DeleteIdentityPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIdentityPool`.
+/// Orchestration and serialization glue logic for `DeleteIdentityPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

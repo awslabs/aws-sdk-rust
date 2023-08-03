@@ -129,7 +129,7 @@ impl ConfigureAccessPointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfigureAccessPoint`.
+/// Orchestration and serialization glue logic for `ConfigureAccessPoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

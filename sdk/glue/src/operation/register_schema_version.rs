@@ -131,7 +131,7 @@ impl RegisterSchemaVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterSchemaVersion`.
+/// Orchestration and serialization glue logic for `RegisterSchemaVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl StartRecommendationReportGenerationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartRecommendationReportGeneration`.
+/// Orchestration and serialization glue logic for `StartRecommendationReportGeneration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

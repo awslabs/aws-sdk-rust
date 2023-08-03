@@ -126,7 +126,7 @@ impl GetSshPublicKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSSHPublicKey`.
+/// Orchestration and serialization glue logic for `GetSSHPublicKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

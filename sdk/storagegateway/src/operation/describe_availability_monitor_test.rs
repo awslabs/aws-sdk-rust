@@ -125,7 +125,7 @@ impl DescribeAvailabilityMonitorTestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAvailabilityMonitorTest`.
+/// Orchestration and serialization glue logic for `DescribeAvailabilityMonitorTest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

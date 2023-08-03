@@ -126,7 +126,7 @@ impl GetIdentityPoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIdentityPolicies`.
+/// Orchestration and serialization glue logic for `GetIdentityPolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

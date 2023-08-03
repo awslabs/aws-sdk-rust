@@ -126,7 +126,7 @@ impl DescribeCacheClustersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCacheClusters`.
+/// Orchestration and serialization glue logic for `DescribeCacheClusters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

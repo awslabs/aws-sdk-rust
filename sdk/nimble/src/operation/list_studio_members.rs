@@ -158,7 +158,7 @@ impl ListStudioMembersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStudioMembers`.
+/// Orchestration and serialization glue logic for `ListStudioMembers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

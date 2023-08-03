@@ -131,7 +131,7 @@ impl CreateLayerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLayer`.
+/// Orchestration and serialization glue logic for `CreateLayer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl DeregisterInstanceEventNotificationAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterInstanceEventNotificationAttributes`.
+/// Orchestration and serialization glue logic for `DeregisterInstanceEventNotificationAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

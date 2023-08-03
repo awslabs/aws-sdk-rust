@@ -131,7 +131,7 @@ impl DescribePredictorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePredictor`.
+/// Orchestration and serialization glue logic for `DescribePredictor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

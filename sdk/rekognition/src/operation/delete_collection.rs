@@ -131,7 +131,7 @@ impl DeleteCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCollection`.
+/// Orchestration and serialization glue logic for `DeleteCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

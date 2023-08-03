@@ -126,7 +126,7 @@ impl ResetImageAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetImageAttribute`.
+/// Orchestration and serialization glue logic for `ResetImageAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

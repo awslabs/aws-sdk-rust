@@ -126,7 +126,7 @@ impl GetStreamKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetStreamKey`.
+/// Orchestration and serialization glue logic for `GetStreamKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

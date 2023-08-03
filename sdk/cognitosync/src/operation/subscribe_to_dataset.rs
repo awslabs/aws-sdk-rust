@@ -188,7 +188,7 @@ impl SubscribeToDatasetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SubscribeToDataset`.
+/// Orchestration and serialization glue logic for `SubscribeToDataset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

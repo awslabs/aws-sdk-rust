@@ -127,7 +127,7 @@ impl DescribeRecoveryInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRecoveryInstances`.
+/// Orchestration and serialization glue logic for `DescribeRecoveryInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

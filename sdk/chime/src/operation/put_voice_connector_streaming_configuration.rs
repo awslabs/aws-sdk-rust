@@ -135,7 +135,7 @@ impl PutVoiceConnectorStreamingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutVoiceConnectorStreamingConfiguration`.
+/// Orchestration and serialization glue logic for `PutVoiceConnectorStreamingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

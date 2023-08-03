@@ -171,7 +171,7 @@ impl GetChangeLogsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetChangeLogs`.
+/// Orchestration and serialization glue logic for `GetChangeLogs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

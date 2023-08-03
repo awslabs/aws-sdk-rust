@@ -116,7 +116,7 @@ impl UpdateAutomaticTapeCreationPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAutomaticTapeCreationPolicy`.
+/// Orchestration and serialization glue logic for `UpdateAutomaticTapeCreationPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

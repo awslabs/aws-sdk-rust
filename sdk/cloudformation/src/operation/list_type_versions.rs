@@ -126,7 +126,7 @@ impl ListTypeVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTypeVersions`.
+/// Orchestration and serialization glue logic for `ListTypeVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

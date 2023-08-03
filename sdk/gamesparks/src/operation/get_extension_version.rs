@@ -176,7 +176,7 @@ impl GetExtensionVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetExtensionVersion`.
+/// Orchestration and serialization glue logic for `GetExtensionVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

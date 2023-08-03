@@ -126,7 +126,7 @@ impl ListImageScanFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImageScanFindings`.
+/// Orchestration and serialization glue logic for `ListImageScanFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

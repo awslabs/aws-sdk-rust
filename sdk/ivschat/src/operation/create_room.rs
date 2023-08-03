@@ -126,7 +126,7 @@ impl CreateRoomInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRoom`.
+/// Orchestration and serialization glue logic for `CreateRoom`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

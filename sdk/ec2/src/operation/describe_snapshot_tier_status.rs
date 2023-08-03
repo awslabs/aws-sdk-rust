@@ -126,7 +126,7 @@ impl DescribeSnapshotTierStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSnapshotTierStatus`.
+/// Orchestration and serialization glue logic for `DescribeSnapshotTierStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl PutFileSystemPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutFileSystemPolicy`.
+/// Orchestration and serialization glue logic for `PutFileSystemPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

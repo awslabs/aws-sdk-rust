@@ -133,7 +133,7 @@ impl DeregisterEcsClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterEcsCluster`.
+/// Orchestration and serialization glue logic for `DeregisterEcsCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

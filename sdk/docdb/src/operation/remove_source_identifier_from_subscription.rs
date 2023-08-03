@@ -111,7 +111,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveSourceIdentifierFromSubscription`.
+/// Orchestration and serialization glue logic for `RemoveSourceIdentifierFromSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

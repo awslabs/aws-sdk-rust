@@ -131,7 +131,7 @@ impl DescribeForecastInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeForecast`.
+/// Orchestration and serialization glue logic for `DescribeForecast`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

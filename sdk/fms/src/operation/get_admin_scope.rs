@@ -131,7 +131,7 @@ impl GetAdminScopeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAdminScope`.
+/// Orchestration and serialization glue logic for `GetAdminScope`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -134,7 +134,7 @@ impl ListSubscribersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSubscribers`.
+/// Orchestration and serialization glue logic for `ListSubscribers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

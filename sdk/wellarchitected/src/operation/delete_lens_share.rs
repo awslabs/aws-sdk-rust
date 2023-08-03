@@ -188,7 +188,7 @@ impl DeleteLensShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLensShare`.
+/// Orchestration and serialization glue logic for `DeleteLensShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

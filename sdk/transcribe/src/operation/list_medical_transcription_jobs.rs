@@ -166,7 +166,7 @@ impl ListMedicalTranscriptionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMedicalTranscriptionJobs`.
+/// Orchestration and serialization glue logic for `ListMedicalTranscriptionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

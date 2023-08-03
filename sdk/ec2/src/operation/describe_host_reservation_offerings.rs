@@ -120,7 +120,7 @@ impl DescribeHostReservationOfferingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHostReservationOfferings`.
+/// Orchestration and serialization glue logic for `DescribeHostReservationOfferings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

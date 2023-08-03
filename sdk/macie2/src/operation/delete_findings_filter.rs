@@ -132,7 +132,7 @@ impl DeleteFindingsFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFindingsFilter`.
+/// Orchestration and serialization glue logic for `DeleteFindingsFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

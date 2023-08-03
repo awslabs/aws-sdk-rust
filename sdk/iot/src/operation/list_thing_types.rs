@@ -142,7 +142,7 @@ impl ListThingTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListThingTypes`.
+/// Orchestration and serialization glue logic for `ListThingTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl StartQueryPlanningInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartQueryPlanning`.
+/// Orchestration and serialization glue logic for `StartQueryPlanning`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

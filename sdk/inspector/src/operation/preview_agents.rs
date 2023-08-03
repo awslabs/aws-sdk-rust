@@ -131,7 +131,7 @@ impl PreviewAgentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PreviewAgents`.
+/// Orchestration and serialization glue logic for `PreviewAgents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

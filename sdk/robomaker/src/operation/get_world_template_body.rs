@@ -126,7 +126,7 @@ impl GetWorldTemplateBodyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorldTemplateBody`.
+/// Orchestration and serialization glue logic for `GetWorldTemplateBody`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

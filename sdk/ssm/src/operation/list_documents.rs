@@ -131,7 +131,7 @@ impl ListDocumentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDocuments`.
+/// Orchestration and serialization glue logic for `ListDocuments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

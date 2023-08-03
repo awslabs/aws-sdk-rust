@@ -126,7 +126,7 @@ impl ReorderReceiptRuleSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReorderReceiptRuleSet`.
+/// Orchestration and serialization glue logic for `ReorderReceiptRuleSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

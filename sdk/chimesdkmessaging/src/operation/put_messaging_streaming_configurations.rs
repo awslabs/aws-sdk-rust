@@ -135,7 +135,7 @@ impl PutMessagingStreamingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutMessagingStreamingConfigurations`.
+/// Orchestration and serialization glue logic for `PutMessagingStreamingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

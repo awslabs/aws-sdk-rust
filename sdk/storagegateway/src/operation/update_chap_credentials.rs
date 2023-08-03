@@ -131,7 +131,7 @@ impl UpdateChapCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateChapCredentials`.
+/// Orchestration and serialization glue logic for `UpdateChapCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

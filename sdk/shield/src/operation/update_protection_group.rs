@@ -131,7 +131,7 @@ impl UpdateProtectionGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateProtectionGroup`.
+/// Orchestration and serialization glue logic for `UpdateProtectionGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

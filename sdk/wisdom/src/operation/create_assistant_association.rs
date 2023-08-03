@@ -154,7 +154,7 @@ impl CreateAssistantAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAssistantAssociation`.
+/// Orchestration and serialization glue logic for `CreateAssistantAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListHandshakesForAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHandshakesForAccount`.
+/// Orchestration and serialization glue logic for `ListHandshakesForAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

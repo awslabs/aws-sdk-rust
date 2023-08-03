@@ -134,7 +134,7 @@ impl ListInputsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInputs`.
+/// Orchestration and serialization glue logic for `ListInputs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

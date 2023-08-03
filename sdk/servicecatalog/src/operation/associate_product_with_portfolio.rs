@@ -132,7 +132,7 @@ impl AssociateProductWithPortfolioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateProductWithPortfolio`.
+/// Orchestration and serialization glue logic for `AssociateProductWithPortfolio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

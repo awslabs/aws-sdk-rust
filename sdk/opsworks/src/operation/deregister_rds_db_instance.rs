@@ -131,7 +131,7 @@ impl DeregisterRdsDbInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterRdsDbInstance`.
+/// Orchestration and serialization glue logic for `DeregisterRdsDbInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

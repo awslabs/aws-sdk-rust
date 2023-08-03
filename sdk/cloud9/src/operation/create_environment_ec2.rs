@@ -133,7 +133,7 @@ impl CreateEnvironmentEc2Input {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEnvironmentEC2`.
+/// Orchestration and serialization glue logic for `CreateEnvironmentEC2`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListAssociatedFleetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssociatedFleets`.
+/// Orchestration and serialization glue logic for `ListAssociatedFleets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

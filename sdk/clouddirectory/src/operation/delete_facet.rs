@@ -130,7 +130,7 @@ impl DeleteFacetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFacet`.
+/// Orchestration and serialization glue logic for `DeleteFacet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

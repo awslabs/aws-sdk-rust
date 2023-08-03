@@ -126,7 +126,7 @@ impl ReportInstanceStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReportInstanceStatus`.
+/// Orchestration and serialization glue logic for `ReportInstanceStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

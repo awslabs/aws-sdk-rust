@@ -131,7 +131,7 @@ impl DescribeParameterGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeParameterGroups`.
+/// Orchestration and serialization glue logic for `DescribeParameterGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

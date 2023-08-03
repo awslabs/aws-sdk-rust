@@ -186,7 +186,7 @@ impl ListFieldOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFieldOptions`.
+/// Orchestration and serialization glue logic for `ListFieldOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

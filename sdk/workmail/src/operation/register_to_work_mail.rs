@@ -133,7 +133,7 @@ impl RegisterToWorkMailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterToWorkMail`.
+/// Orchestration and serialization glue logic for `RegisterToWorkMail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl BatchDeleteGeofenceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteGeofence`.
+/// Orchestration and serialization glue logic for `BatchDeleteGeofence`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

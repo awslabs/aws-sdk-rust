@@ -133,7 +133,7 @@ impl CreatePartitionIndexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePartitionIndex`.
+/// Orchestration and serialization glue logic for `CreatePartitionIndex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

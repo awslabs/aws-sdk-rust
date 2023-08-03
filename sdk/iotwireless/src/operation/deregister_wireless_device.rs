@@ -153,7 +153,7 @@ impl DeregisterWirelessDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterWirelessDevice`.
+/// Orchestration and serialization glue logic for `DeregisterWirelessDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

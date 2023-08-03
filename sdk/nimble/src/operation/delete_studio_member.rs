@@ -161,7 +161,7 @@ impl DeleteStudioMemberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStudioMember`.
+/// Orchestration and serialization glue logic for `DeleteStudioMember`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

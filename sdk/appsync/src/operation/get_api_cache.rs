@@ -132,7 +132,7 @@ impl GetApiCacheInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApiCache`.
+/// Orchestration and serialization glue logic for `GetApiCache`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

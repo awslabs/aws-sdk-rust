@@ -130,7 +130,7 @@ impl TransferContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TransferContact`.
+/// Orchestration and serialization glue logic for `TransferContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

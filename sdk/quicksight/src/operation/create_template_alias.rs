@@ -192,7 +192,7 @@ impl CreateTemplateAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTemplateAlias`.
+/// Orchestration and serialization glue logic for `CreateTemplateAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

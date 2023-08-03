@@ -111,7 +111,7 @@ impl CreateTransitGatewayMulticastDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTransitGatewayMulticastDomain`.
+/// Orchestration and serialization glue logic for `CreateTransitGatewayMulticastDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

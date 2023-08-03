@@ -112,7 +112,7 @@ impl AssociateWebsiteAuthorizationProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateWebsiteAuthorizationProvider`.
+/// Orchestration and serialization glue logic for `AssociateWebsiteAuthorizationProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -134,7 +134,7 @@ impl CreateRescoreExecutionPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRescoreExecutionPlan`.
+/// Orchestration and serialization glue logic for `CreateRescoreExecutionPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

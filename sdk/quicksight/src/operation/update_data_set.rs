@@ -170,7 +170,7 @@ impl UpdateDataSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDataSet`.
+/// Orchestration and serialization glue logic for `UpdateDataSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

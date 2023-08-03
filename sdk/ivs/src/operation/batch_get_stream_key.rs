@@ -128,7 +128,7 @@ impl BatchGetStreamKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetStreamKey`.
+/// Orchestration and serialization glue logic for `BatchGetStreamKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl RollbackApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RollbackApplication`.
+/// Orchestration and serialization glue logic for `RollbackApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

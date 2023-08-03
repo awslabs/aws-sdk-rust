@@ -150,7 +150,7 @@ impl CreateAuthorizerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAuthorizer`.
+/// Orchestration and serialization glue logic for `CreateAuthorizer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

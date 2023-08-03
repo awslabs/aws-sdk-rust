@@ -164,7 +164,7 @@ impl ListOutpostsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOutposts`.
+/// Orchestration and serialization glue logic for `ListOutposts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

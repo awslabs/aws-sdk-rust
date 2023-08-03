@@ -136,7 +136,7 @@ impl GetCatalogItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCatalogItem`.
+/// Orchestration and serialization glue logic for `GetCatalogItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

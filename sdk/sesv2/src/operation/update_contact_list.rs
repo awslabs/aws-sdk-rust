@@ -150,7 +150,7 @@ impl UpdateContactListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContactList`.
+/// Orchestration and serialization glue logic for `UpdateContactList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

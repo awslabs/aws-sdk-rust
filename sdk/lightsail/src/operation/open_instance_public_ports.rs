@@ -131,7 +131,7 @@ impl OpenInstancePublicPortsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `OpenInstancePublicPorts`.
+/// Orchestration and serialization glue logic for `OpenInstancePublicPorts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

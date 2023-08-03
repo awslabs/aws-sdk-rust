@@ -150,7 +150,7 @@ impl ListWorkerFleetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWorkerFleets`.
+/// Orchestration and serialization glue logic for `ListWorkerFleets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

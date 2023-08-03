@@ -128,7 +128,7 @@ impl CreateKeyGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateKeyGroup`.
+/// Orchestration and serialization glue logic for `CreateKeyGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

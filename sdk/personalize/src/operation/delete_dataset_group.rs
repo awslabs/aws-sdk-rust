@@ -133,7 +133,7 @@ impl DeleteDatasetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDatasetGroup`.
+/// Orchestration and serialization glue logic for `DeleteDatasetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

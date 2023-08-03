@@ -156,7 +156,7 @@ impl RevokeFlowEntitlementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RevokeFlowEntitlement`.
+/// Orchestration and serialization glue logic for `RevokeFlowEntitlement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

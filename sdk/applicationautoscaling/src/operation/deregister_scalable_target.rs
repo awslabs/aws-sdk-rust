@@ -131,7 +131,7 @@ impl DeregisterScalableTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterScalableTarget`.
+/// Orchestration and serialization glue logic for `DeregisterScalableTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

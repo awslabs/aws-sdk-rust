@@ -116,7 +116,7 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNotebookInstanceLifecycleConfig`.
+/// Orchestration and serialization glue logic for `DeleteNotebookInstanceLifecycleConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

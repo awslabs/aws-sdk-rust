@@ -137,7 +137,7 @@ impl GetImagePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetImagePolicy`.
+/// Orchestration and serialization glue logic for `GetImagePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

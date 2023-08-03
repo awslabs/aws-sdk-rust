@@ -131,7 +131,7 @@ impl ListNotebookExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListNotebookExecutions`.
+/// Orchestration and serialization glue logic for `ListNotebookExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

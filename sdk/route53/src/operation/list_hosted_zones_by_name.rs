@@ -143,7 +143,7 @@ impl ListHostedZonesByNameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHostedZonesByName`.
+/// Orchestration and serialization glue logic for `ListHostedZonesByName`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

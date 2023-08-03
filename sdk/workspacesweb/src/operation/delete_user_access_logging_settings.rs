@@ -130,7 +130,7 @@ impl DeleteUserAccessLoggingSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUserAccessLoggingSettings`.
+/// Orchestration and serialization glue logic for `DeleteUserAccessLoggingSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

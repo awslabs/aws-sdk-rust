@@ -126,7 +126,7 @@ impl CreateVirtualMfaDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVirtualMFADevice`.
+/// Orchestration and serialization glue logic for `CreateVirtualMFADevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

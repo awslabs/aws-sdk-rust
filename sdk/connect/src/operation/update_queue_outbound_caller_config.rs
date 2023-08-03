@@ -164,7 +164,7 @@ impl UpdateQueueOutboundCallerConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateQueueOutboundCallerConfig`.
+/// Orchestration and serialization glue logic for `UpdateQueueOutboundCallerConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl AttachInstancesToLoadBalancerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachInstancesToLoadBalancer`.
+/// Orchestration and serialization glue logic for `AttachInstancesToLoadBalancer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

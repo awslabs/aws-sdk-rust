@@ -153,7 +153,7 @@ impl DeleteThingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteThingGroup`.
+/// Orchestration and serialization glue logic for `DeleteThingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

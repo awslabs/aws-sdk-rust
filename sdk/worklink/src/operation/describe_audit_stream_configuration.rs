@@ -121,7 +121,7 @@ impl DescribeAuditStreamConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAuditStreamConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeAuditStreamConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

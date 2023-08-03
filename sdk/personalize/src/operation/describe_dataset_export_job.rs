@@ -131,7 +131,7 @@ impl DescribeDatasetExportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDatasetExportJob`.
+/// Orchestration and serialization glue logic for `DescribeDatasetExportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl ListVirtualInterfaceTestHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVirtualInterfaceTestHistory`.
+/// Orchestration and serialization glue logic for `ListVirtualInterfaceTestHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

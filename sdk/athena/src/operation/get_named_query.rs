@@ -131,7 +131,7 @@ impl GetNamedQueryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetNamedQuery`.
+/// Orchestration and serialization glue logic for `GetNamedQuery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

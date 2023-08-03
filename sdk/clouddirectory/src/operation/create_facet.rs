@@ -130,7 +130,7 @@ impl CreateFacetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFacet`.
+/// Orchestration and serialization glue logic for `CreateFacet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

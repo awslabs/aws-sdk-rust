@@ -126,7 +126,7 @@ impl GetMetricStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMetricStatistics`.
+/// Orchestration and serialization glue logic for `GetMetricStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

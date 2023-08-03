@@ -126,7 +126,7 @@ impl EnableSerialConsoleAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableSerialConsoleAccess`.
+/// Orchestration and serialization glue logic for `EnableSerialConsoleAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

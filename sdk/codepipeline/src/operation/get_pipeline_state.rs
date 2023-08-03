@@ -131,7 +131,7 @@ impl GetPipelineStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPipelineState`.
+/// Orchestration and serialization glue logic for `GetPipelineState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

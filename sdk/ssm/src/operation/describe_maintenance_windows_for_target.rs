@@ -116,7 +116,7 @@ impl DescribeMaintenanceWindowsForTargetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMaintenanceWindowsForTarget`.
+/// Orchestration and serialization glue logic for `DescribeMaintenanceWindowsForTarget`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

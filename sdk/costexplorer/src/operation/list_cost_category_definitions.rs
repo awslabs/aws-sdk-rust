@@ -131,7 +131,7 @@ impl ListCostCategoryDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCostCategoryDefinitions`.
+/// Orchestration and serialization glue logic for `ListCostCategoryDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

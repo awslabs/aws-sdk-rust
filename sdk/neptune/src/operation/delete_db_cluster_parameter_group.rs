@@ -127,7 +127,7 @@ impl DeleteDbClusterParameterGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDBClusterParameterGroup`.
+/// Orchestration and serialization glue logic for `DeleteDBClusterParameterGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

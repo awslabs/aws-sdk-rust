@@ -136,7 +136,7 @@ impl DisassociateRepositoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateRepository`.
+/// Orchestration and serialization glue logic for `DisassociateRepository`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

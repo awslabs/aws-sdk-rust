@@ -121,7 +121,7 @@ impl DisassociateFromAdministratorAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateFromAdministratorAccount`.
+/// Orchestration and serialization glue logic for `DisassociateFromAdministratorAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

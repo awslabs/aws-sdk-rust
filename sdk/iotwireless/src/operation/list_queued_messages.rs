@@ -162,7 +162,7 @@ impl ListQueuedMessagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListQueuedMessages`.
+/// Orchestration and serialization glue logic for `ListQueuedMessages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

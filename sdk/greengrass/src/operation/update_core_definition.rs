@@ -152,7 +152,7 @@ impl UpdateCoreDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCoreDefinition`.
+/// Orchestration and serialization glue logic for `UpdateCoreDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

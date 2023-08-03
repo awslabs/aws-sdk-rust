@@ -148,7 +148,7 @@ impl StartSchemaCreationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartSchemaCreation`.
+/// Orchestration and serialization glue logic for `StartSchemaCreation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

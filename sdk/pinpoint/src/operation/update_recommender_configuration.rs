@@ -151,7 +151,7 @@ impl UpdateRecommenderConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRecommenderConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateRecommenderConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

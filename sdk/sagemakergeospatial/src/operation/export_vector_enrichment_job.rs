@@ -131,7 +131,7 @@ impl ExportVectorEnrichmentJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportVectorEnrichmentJob`.
+/// Orchestration and serialization glue logic for `ExportVectorEnrichmentJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

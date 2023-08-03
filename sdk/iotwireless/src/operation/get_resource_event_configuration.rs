@@ -165,7 +165,7 @@ impl GetResourceEventConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResourceEventConfiguration`.
+/// Orchestration and serialization glue logic for `GetResourceEventConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl BatchGetViewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetView`.
+/// Orchestration and serialization glue logic for `BatchGetView`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

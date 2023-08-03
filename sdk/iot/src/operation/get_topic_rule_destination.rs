@@ -132,7 +132,7 @@ impl GetTopicRuleDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTopicRuleDestination`.
+/// Orchestration and serialization glue logic for `GetTopicRuleDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

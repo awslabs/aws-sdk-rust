@@ -126,7 +126,7 @@ impl UpdateLinkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLink`.
+/// Orchestration and serialization glue logic for `UpdateLink`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

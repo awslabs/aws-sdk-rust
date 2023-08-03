@@ -131,7 +131,7 @@ impl ListHypervisorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHypervisors`.
+/// Orchestration and serialization glue logic for `ListHypervisors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

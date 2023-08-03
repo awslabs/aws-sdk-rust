@@ -126,7 +126,7 @@ impl CreateAccessKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAccessKey`.
+/// Orchestration and serialization glue logic for `CreateAccessKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

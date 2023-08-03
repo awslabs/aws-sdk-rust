@@ -126,7 +126,7 @@ impl ListNotificationRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListNotificationRules`.
+/// Orchestration and serialization glue logic for `ListNotificationRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

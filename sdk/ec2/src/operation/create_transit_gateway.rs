@@ -126,7 +126,7 @@ impl CreateTransitGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTransitGateway`.
+/// Orchestration and serialization glue logic for `CreateTransitGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

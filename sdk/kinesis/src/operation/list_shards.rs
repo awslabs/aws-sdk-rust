@@ -133,7 +133,7 @@ impl ListShardsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListShards`.
+/// Orchestration and serialization glue logic for `ListShards`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

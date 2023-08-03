@@ -128,7 +128,7 @@ impl UpdateFleetMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFleetMetadata`.
+/// Orchestration and serialization glue logic for `UpdateFleetMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

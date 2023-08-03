@@ -154,7 +154,7 @@ impl CreateRequestValidatorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRequestValidator`.
+/// Orchestration and serialization glue logic for `CreateRequestValidator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

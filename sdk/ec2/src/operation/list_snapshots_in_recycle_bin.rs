@@ -126,7 +126,7 @@ impl ListSnapshotsInRecycleBinInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSnapshotsInRecycleBin`.
+/// Orchestration and serialization glue logic for `ListSnapshotsInRecycleBin`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

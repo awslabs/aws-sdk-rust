@@ -170,7 +170,7 @@ impl UpdateTemplatePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTemplatePermissions`.
+/// Orchestration and serialization glue logic for `UpdateTemplatePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

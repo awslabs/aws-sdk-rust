@@ -152,7 +152,7 @@ impl ListUtteranceMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListUtteranceMetrics`.
+/// Orchestration and serialization glue logic for `ListUtteranceMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

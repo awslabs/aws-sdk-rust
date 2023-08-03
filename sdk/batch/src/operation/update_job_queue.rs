@@ -126,7 +126,7 @@ impl UpdateJobQueueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateJobQueue`.
+/// Orchestration and serialization glue logic for `UpdateJobQueue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

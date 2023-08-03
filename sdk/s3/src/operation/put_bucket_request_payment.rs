@@ -167,7 +167,7 @@ impl PutBucketRequestPaymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketRequestPayment`.
+/// Orchestration and serialization glue logic for `PutBucketRequestPayment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -162,7 +162,7 @@ impl UpdateThingShadowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateThingShadow`.
+/// Orchestration and serialization glue logic for `UpdateThingShadow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl UpdateBotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBot`.
+/// Orchestration and serialization glue logic for `UpdateBot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ListAnomalousLogGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnomalousLogGroups`.
+/// Orchestration and serialization glue logic for `ListAnomalousLogGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

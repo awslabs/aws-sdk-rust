@@ -143,7 +143,7 @@ impl ListDistributionsByCachePolicyIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDistributionsByCachePolicyId`.
+/// Orchestration and serialization glue logic for `ListDistributionsByCachePolicyId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

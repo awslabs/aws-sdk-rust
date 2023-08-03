@@ -164,7 +164,7 @@ impl UpdateAppAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAppAuthorization`.
+/// Orchestration and serialization glue logic for `UpdateAppAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

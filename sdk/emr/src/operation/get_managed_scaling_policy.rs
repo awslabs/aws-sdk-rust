@@ -131,7 +131,7 @@ impl GetManagedScalingPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetManagedScalingPolicy`.
+/// Orchestration and serialization glue logic for `GetManagedScalingPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

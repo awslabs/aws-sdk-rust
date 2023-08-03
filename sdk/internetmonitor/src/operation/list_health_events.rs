@@ -185,7 +185,7 @@ impl ListHealthEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHealthEvents`.
+/// Orchestration and serialization glue logic for `ListHealthEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

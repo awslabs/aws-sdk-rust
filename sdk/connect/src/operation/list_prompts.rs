@@ -158,7 +158,7 @@ impl ListPromptsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPrompts`.
+/// Orchestration and serialization glue logic for `ListPrompts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

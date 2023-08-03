@@ -133,7 +133,7 @@ impl ListSensorStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSensorStatistics`.
+/// Orchestration and serialization glue logic for `ListSensorStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

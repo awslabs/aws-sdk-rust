@@ -131,7 +131,7 @@ impl GetDevicePoolCompatibilityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDevicePoolCompatibility`.
+/// Orchestration and serialization glue logic for `GetDevicePoolCompatibility`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

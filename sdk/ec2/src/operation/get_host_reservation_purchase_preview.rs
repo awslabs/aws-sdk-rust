@@ -111,7 +111,7 @@ impl GetHostReservationPurchasePreviewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetHostReservationPurchasePreview`.
+/// Orchestration and serialization glue logic for `GetHostReservationPurchasePreview`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

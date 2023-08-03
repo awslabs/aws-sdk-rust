@@ -135,7 +135,7 @@ impl DeleteStorageLensConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStorageLensConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteStorageLensConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeprovisionIpamPoolCidrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeprovisionIpamPoolCidr`.
+/// Orchestration and serialization glue logic for `DeprovisionIpamPoolCidr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

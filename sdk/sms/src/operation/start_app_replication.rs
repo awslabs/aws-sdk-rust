@@ -133,7 +133,7 @@ impl StartAppReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartAppReplication`.
+/// Orchestration and serialization glue logic for `StartAppReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl DeleteModelPackageGroupPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteModelPackageGroupPolicy`.
+/// Orchestration and serialization glue logic for `DeleteModelPackageGroupPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -175,7 +175,7 @@ impl CreateStreamingSessionStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStreamingSessionStream`.
+/// Orchestration and serialization glue logic for `CreateStreamingSessionStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

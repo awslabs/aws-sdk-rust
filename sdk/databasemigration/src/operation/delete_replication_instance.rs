@@ -131,7 +131,7 @@ impl DeleteReplicationInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteReplicationInstance`.
+/// Orchestration and serialization glue logic for `DeleteReplicationInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

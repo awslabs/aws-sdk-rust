@@ -130,7 +130,7 @@ impl DeleteCrossAccountAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCrossAccountAuthorization`.
+/// Orchestration and serialization glue logic for `DeleteCrossAccountAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

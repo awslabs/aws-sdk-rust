@@ -125,7 +125,7 @@ impl DescribeQuerySuggestionsConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeQuerySuggestionsConfig`.
+/// Orchestration and serialization glue logic for `DescribeQuerySuggestionsConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

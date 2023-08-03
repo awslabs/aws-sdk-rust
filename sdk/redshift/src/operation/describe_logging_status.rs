@@ -126,7 +126,7 @@ impl DescribeLoggingStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLoggingStatus`.
+/// Orchestration and serialization glue logic for `DescribeLoggingStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetEntitlementsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEntitlements`.
+/// Orchestration and serialization glue logic for `GetEntitlements`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

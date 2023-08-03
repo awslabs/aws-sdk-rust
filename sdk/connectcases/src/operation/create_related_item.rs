@@ -170,7 +170,7 @@ impl CreateRelatedItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRelatedItem`.
+/// Orchestration and serialization glue logic for `CreateRelatedItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

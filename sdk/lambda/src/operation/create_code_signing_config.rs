@@ -127,7 +127,7 @@ impl CreateCodeSigningConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCodeSigningConfig`.
+/// Orchestration and serialization glue logic for `CreateCodeSigningConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

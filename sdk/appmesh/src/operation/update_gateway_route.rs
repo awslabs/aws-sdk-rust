@@ -203,7 +203,7 @@ impl UpdateGatewayRouteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateGatewayRoute`.
+/// Orchestration and serialization glue logic for `UpdateGatewayRoute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

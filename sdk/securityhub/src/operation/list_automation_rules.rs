@@ -134,7 +134,7 @@ impl ListAutomationRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAutomationRules`.
+/// Orchestration and serialization glue logic for `ListAutomationRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

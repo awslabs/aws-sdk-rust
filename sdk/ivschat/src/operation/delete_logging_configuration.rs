@@ -127,7 +127,7 @@ impl DeleteLoggingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLoggingConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteLoggingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeprecateDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeprecateDomain`.
+/// Orchestration and serialization glue logic for `DeprecateDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

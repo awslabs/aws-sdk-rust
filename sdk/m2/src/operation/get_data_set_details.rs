@@ -156,7 +156,7 @@ impl GetDataSetDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataSetDetails`.
+/// Orchestration and serialization glue logic for `GetDataSetDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateDiscovererInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDiscoverer`.
+/// Orchestration and serialization glue logic for `UpdateDiscoverer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

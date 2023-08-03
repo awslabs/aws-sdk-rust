@@ -128,7 +128,7 @@ impl GetDiscoveredSchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDiscoveredSchema`.
+/// Orchestration and serialization glue logic for `GetDiscoveredSchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

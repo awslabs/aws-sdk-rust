@@ -128,7 +128,7 @@ impl PutDataLakeSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutDataLakeSettings`.
+/// Orchestration and serialization glue logic for `PutDataLakeSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

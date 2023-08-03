@@ -138,7 +138,7 @@ impl DeleteAppInstanceUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppInstanceUser`.
+/// Orchestration and serialization glue logic for `DeleteAppInstanceUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

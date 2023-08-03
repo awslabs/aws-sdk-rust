@@ -116,7 +116,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteApplicationCloudWatchLoggingOption`.
+/// Orchestration and serialization glue logic for `DeleteApplicationCloudWatchLoggingOption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

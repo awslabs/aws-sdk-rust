@@ -142,7 +142,7 @@ impl ListV2LoggingLevelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListV2LoggingLevels`.
+/// Orchestration and serialization glue logic for `ListV2LoggingLevels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

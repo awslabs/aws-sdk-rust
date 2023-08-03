@@ -131,7 +131,7 @@ impl ListFirewallRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFirewallRules`.
+/// Orchestration and serialization glue logic for `ListFirewallRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

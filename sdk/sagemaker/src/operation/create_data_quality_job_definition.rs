@@ -125,7 +125,7 @@ impl CreateDataQualityJobDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataQualityJobDefinition`.
+/// Orchestration and serialization glue logic for `CreateDataQualityJobDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

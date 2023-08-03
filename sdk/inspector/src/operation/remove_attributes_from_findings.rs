@@ -131,7 +131,7 @@ impl RemoveAttributesFromFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveAttributesFromFindings`.
+/// Orchestration and serialization glue logic for `RemoveAttributesFromFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

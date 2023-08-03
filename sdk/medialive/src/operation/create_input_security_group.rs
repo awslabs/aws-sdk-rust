@@ -127,7 +127,7 @@ impl CreateInputSecurityGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateInputSecurityGroup`.
+/// Orchestration and serialization glue logic for `CreateInputSecurityGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

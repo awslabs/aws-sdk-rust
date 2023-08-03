@@ -131,7 +131,7 @@ impl ListRecommendersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRecommenders`.
+/// Orchestration and serialization glue logic for `ListRecommenders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

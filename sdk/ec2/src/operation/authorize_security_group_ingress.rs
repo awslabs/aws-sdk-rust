@@ -127,7 +127,7 @@ impl AuthorizeSecurityGroupIngressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AuthorizeSecurityGroupIngress`.
+/// Orchestration and serialization glue logic for `AuthorizeSecurityGroupIngress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

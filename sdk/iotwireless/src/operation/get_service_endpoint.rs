@@ -129,7 +129,7 @@ impl GetServiceEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceEndpoint`.
+/// Orchestration and serialization glue logic for `GetServiceEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

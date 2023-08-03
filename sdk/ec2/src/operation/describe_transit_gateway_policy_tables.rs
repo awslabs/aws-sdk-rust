@@ -111,7 +111,7 @@ impl DescribeTransitGatewayPolicyTablesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTransitGatewayPolicyTables`.
+/// Orchestration and serialization glue logic for `DescribeTransitGatewayPolicyTables`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

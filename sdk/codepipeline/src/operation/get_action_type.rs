@@ -131,7 +131,7 @@ impl GetActionTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetActionType`.
+/// Orchestration and serialization glue logic for `GetActionType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

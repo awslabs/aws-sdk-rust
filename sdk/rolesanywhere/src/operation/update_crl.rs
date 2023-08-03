@@ -146,7 +146,7 @@ impl UpdateCrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCrl`.
+/// Orchestration and serialization glue logic for `UpdateCrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

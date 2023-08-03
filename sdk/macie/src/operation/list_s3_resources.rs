@@ -131,7 +131,7 @@ impl ListS3ResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListS3Resources`.
+/// Orchestration and serialization glue logic for `ListS3Resources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

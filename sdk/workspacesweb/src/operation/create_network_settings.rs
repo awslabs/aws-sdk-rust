@@ -130,7 +130,7 @@ impl CreateNetworkSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNetworkSettings`.
+/// Orchestration and serialization glue logic for `CreateNetworkSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

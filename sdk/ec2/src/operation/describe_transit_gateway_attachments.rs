@@ -111,7 +111,7 @@ impl DescribeTransitGatewayAttachmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTransitGatewayAttachments`.
+/// Orchestration and serialization glue logic for `DescribeTransitGatewayAttachments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

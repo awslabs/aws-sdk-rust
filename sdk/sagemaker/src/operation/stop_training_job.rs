@@ -131,7 +131,7 @@ impl StopTrainingJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopTrainingJob`.
+/// Orchestration and serialization glue logic for `StopTrainingJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

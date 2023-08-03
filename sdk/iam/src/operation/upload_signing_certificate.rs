@@ -126,7 +126,7 @@ impl UploadSigningCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UploadSigningCertificate`.
+/// Orchestration and serialization glue logic for `UploadSigningCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

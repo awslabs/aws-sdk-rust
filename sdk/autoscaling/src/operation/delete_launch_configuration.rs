@@ -126,7 +126,7 @@ impl DeleteLaunchConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLaunchConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteLaunchConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl DeleteSlackWorkspaceConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSlackWorkspaceConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteSlackWorkspaceConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

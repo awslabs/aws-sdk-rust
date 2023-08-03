@@ -126,7 +126,7 @@ impl GetPermissionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPermission`.
+/// Orchestration and serialization glue logic for `GetPermission`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

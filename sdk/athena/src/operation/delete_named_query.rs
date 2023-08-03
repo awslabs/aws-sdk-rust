@@ -135,7 +135,7 @@ impl DeleteNamedQueryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNamedQuery`.
+/// Orchestration and serialization glue logic for `DeleteNamedQuery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

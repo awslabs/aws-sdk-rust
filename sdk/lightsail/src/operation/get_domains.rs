@@ -131,7 +131,7 @@ impl GetDomainsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDomains`.
+/// Orchestration and serialization glue logic for `GetDomains`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

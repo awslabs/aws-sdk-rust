@@ -120,7 +120,7 @@ impl BatchGetGraphMemberDatasourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetGraphMemberDatasources`.
+/// Orchestration and serialization glue logic for `BatchGetGraphMemberDatasources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

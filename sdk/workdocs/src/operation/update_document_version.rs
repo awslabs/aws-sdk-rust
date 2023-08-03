@@ -171,7 +171,7 @@ impl UpdateDocumentVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDocumentVersion`.
+/// Orchestration and serialization glue logic for `UpdateDocumentVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

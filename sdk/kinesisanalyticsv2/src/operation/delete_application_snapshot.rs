@@ -131,7 +131,7 @@ impl DeleteApplicationSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteApplicationSnapshot`.
+/// Orchestration and serialization glue logic for `DeleteApplicationSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl GetIdentityProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIdentityProvider`.
+/// Orchestration and serialization glue logic for `GetIdentityProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

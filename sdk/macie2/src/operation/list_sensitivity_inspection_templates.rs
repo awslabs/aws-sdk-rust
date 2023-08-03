@@ -120,7 +120,7 @@ impl ListSensitivityInspectionTemplatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSensitivityInspectionTemplates`.
+/// Orchestration and serialization glue logic for `ListSensitivityInspectionTemplates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

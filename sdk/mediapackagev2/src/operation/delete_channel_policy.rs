@@ -156,7 +156,7 @@ impl DeleteChannelPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteChannelPolicy`.
+/// Orchestration and serialization glue logic for `DeleteChannelPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

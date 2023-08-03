@@ -131,7 +131,7 @@ impl GetApprovalRuleTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApprovalRuleTemplate`.
+/// Orchestration and serialization glue logic for `GetApprovalRuleTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

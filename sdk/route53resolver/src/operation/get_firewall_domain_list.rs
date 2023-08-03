@@ -131,7 +131,7 @@ impl GetFirewallDomainListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFirewallDomainList`.
+/// Orchestration and serialization glue logic for `GetFirewallDomainList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

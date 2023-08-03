@@ -126,7 +126,7 @@ impl GetSubscriptionStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSubscriptionState`.
+/// Orchestration and serialization glue logic for `GetSubscriptionState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

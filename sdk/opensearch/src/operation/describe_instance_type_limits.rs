@@ -173,7 +173,7 @@ impl DescribeInstanceTypeLimitsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInstanceTypeLimits`.
+/// Orchestration and serialization glue logic for `DescribeInstanceTypeLimits`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

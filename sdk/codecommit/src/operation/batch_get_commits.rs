@@ -131,7 +131,7 @@ impl BatchGetCommitsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetCommits`.
+/// Orchestration and serialization glue logic for `BatchGetCommits`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -145,7 +145,7 @@ impl CreateFunctionDefinitionVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFunctionDefinitionVersion`.
+/// Orchestration and serialization glue logic for `CreateFunctionDefinitionVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateDistributionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDistribution`.
+/// Orchestration and serialization glue logic for `UpdateDistribution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

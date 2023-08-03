@@ -180,7 +180,7 @@ impl UntagAttendeeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UntagAttendee`.
+/// Orchestration and serialization glue logic for `UntagAttendee`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

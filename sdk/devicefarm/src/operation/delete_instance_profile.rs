@@ -131,7 +131,7 @@ impl DeleteInstanceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInstanceProfile`.
+/// Orchestration and serialization glue logic for `DeleteInstanceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl ListSourceRepositoryBranchesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSourceRepositoryBranches`.
+/// Orchestration and serialization glue logic for `ListSourceRepositoryBranches`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

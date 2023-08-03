@@ -172,7 +172,7 @@ impl CancelLegalHoldInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelLegalHold`.
+/// Orchestration and serialization glue logic for `CancelLegalHold`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

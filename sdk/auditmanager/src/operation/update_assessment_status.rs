@@ -150,7 +150,7 @@ impl UpdateAssessmentStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAssessmentStatus`.
+/// Orchestration and serialization glue logic for `UpdateAssessmentStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

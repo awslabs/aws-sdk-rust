@@ -132,7 +132,7 @@ impl DeleteTestSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTestSet`.
+/// Orchestration and serialization glue logic for `DeleteTestSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

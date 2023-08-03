@@ -3,6 +3,8 @@ allowed_external_types = [
     "aws_smithy_types::*",
     "aws_smithy_http::*",
 
+    "bytes::bytes::Bytes",
+
     "http::request::Request",
     "http::response::Response",
     "http::uri::Uri",

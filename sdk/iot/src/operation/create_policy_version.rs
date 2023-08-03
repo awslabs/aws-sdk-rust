@@ -169,7 +169,7 @@ impl CreatePolicyVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePolicyVersion`.
+/// Orchestration and serialization glue logic for `CreatePolicyVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

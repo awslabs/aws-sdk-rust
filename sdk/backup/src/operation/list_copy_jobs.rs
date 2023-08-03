@@ -220,7 +220,7 @@ impl ListCopyJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCopyJobs`.
+/// Orchestration and serialization glue logic for `ListCopyJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

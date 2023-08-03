@@ -21,9 +21,9 @@ impl DeleteCrossAccountAuthorizationFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl DeleteCrossAccountAuthorizationFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl DeleteCrossAccountAuthorizationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError>
     >{
         self.customize_middleware().await
     }

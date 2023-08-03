@@ -131,7 +131,7 @@ impl GetDefaultRetentionPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDefaultRetentionPolicy`.
+/// Orchestration and serialization glue logic for `GetDefaultRetentionPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl BatchDescribeMergeConflictsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDescribeMergeConflicts`.
+/// Orchestration and serialization glue logic for `BatchDescribeMergeConflicts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

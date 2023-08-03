@@ -127,7 +127,7 @@ impl DeregisterJobDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterJobDefinition`.
+/// Orchestration and serialization glue logic for `DeregisterJobDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

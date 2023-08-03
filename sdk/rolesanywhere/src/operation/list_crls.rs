@@ -134,7 +134,7 @@ impl ListCrlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCrls`.
+/// Orchestration and serialization glue logic for `ListCrls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteDiskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDisk`.
+/// Orchestration and serialization glue logic for `DeleteDisk`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

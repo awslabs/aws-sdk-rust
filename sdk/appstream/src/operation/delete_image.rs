@@ -131,7 +131,7 @@ impl DeleteImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteImage`.
+/// Orchestration and serialization glue logic for `DeleteImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

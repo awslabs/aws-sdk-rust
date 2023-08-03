@@ -158,7 +158,7 @@ impl ListDataSetImportHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDataSetImportHistory`.
+/// Orchestration and serialization glue logic for `ListDataSetImportHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

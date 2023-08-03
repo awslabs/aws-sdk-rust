@@ -170,7 +170,7 @@ impl ExportFormsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportForms`.
+/// Orchestration and serialization glue logic for `ExportForms`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

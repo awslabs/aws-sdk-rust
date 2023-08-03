@@ -126,7 +126,7 @@ impl ModifyDbProxyTargetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyDBProxyTargetGroup`.
+/// Orchestration and serialization glue logic for `ModifyDBProxyTargetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

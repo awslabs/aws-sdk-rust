@@ -135,7 +135,7 @@ impl StartTextTranslationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartTextTranslationJob`.
+/// Orchestration and serialization glue logic for `StartTextTranslationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

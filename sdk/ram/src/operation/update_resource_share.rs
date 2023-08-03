@@ -128,7 +128,7 @@ impl UpdateResourceShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResourceShare`.
+/// Orchestration and serialization glue logic for `UpdateResourceShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

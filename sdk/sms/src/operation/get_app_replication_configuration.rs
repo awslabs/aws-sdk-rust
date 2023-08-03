@@ -125,7 +125,7 @@ impl GetAppReplicationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAppReplicationConfiguration`.
+/// Orchestration and serialization glue logic for `GetAppReplicationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

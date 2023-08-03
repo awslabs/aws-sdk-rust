@@ -126,7 +126,7 @@ impl UpdateServiceIntegrationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateServiceIntegration`.
+/// Orchestration and serialization glue logic for `UpdateServiceIntegration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

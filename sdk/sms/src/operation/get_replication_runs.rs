@@ -133,7 +133,7 @@ impl GetReplicationRunsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReplicationRuns`.
+/// Orchestration and serialization glue logic for `GetReplicationRuns`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

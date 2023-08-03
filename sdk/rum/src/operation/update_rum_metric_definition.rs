@@ -150,7 +150,7 @@ impl UpdateRumMetricDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRumMetricDefinition`.
+/// Orchestration and serialization glue logic for `UpdateRumMetricDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

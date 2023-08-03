@@ -159,7 +159,7 @@ impl DescribeMountTargetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMountTargets`.
+/// Orchestration and serialization glue logic for `DescribeMountTargets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

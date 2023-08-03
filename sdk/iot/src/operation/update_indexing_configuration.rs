@@ -126,7 +126,7 @@ impl UpdateIndexingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIndexingConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateIndexingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

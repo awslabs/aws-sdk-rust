@@ -131,7 +131,7 @@ impl ListImageVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImageVersions`.
+/// Orchestration and serialization glue logic for `ListImageVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

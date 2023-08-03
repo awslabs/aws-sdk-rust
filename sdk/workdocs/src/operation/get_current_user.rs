@@ -116,7 +116,7 @@ impl GetCurrentUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCurrentUser`.
+/// Orchestration and serialization glue logic for `GetCurrentUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

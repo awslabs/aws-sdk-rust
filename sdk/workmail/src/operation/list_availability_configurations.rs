@@ -132,7 +132,7 @@ impl ListAvailabilityConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAvailabilityConfigurations`.
+/// Orchestration and serialization glue logic for `ListAvailabilityConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

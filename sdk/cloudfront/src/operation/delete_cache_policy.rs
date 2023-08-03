@@ -133,7 +133,7 @@ impl DeleteCachePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCachePolicy`.
+/// Orchestration and serialization glue logic for `DeleteCachePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

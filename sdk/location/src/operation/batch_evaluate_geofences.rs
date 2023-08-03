@@ -152,7 +152,7 @@ impl BatchEvaluateGeofencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchEvaluateGeofences`.
+/// Orchestration and serialization glue logic for `BatchEvaluateGeofences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

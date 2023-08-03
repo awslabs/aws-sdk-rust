@@ -126,7 +126,7 @@ impl SetSubscriptionAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetSubscriptionAttributes`.
+/// Orchestration and serialization glue logic for `SetSubscriptionAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

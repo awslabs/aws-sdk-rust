@@ -131,7 +131,7 @@ impl ListImpersonationRolesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImpersonationRoles`.
+/// Orchestration and serialization glue logic for `ListImpersonationRoles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

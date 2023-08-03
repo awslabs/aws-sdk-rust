@@ -126,7 +126,7 @@ impl CancelExportTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelExportTask`.
+/// Orchestration and serialization glue logic for `CancelExportTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

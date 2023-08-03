@@ -150,7 +150,7 @@ impl UpdateAdmChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAdmChannel`.
+/// Orchestration and serialization glue logic for `UpdateAdmChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

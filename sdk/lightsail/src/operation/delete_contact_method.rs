@@ -133,7 +133,7 @@ impl DeleteContactMethodInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteContactMethod`.
+/// Orchestration and serialization glue logic for `DeleteContactMethod`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

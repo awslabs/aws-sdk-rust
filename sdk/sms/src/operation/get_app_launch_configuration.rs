@@ -131,7 +131,7 @@ impl GetAppLaunchConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAppLaunchConfiguration`.
+/// Orchestration and serialization glue logic for `GetAppLaunchConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

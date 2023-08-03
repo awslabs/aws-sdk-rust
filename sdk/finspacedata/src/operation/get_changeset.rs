@@ -156,7 +156,7 @@ impl GetChangesetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetChangeset`.
+/// Orchestration and serialization glue logic for `GetChangeset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

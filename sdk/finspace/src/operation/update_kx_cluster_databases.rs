@@ -164,7 +164,7 @@ impl UpdateKxClusterDatabasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateKxClusterDatabases`.
+/// Orchestration and serialization glue logic for `UpdateKxClusterDatabases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

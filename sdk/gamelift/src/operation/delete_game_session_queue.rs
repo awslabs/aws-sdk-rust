@@ -131,7 +131,7 @@ impl DeleteGameSessionQueueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGameSessionQueue`.
+/// Orchestration and serialization glue logic for `DeleteGameSessionQueue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ContinueUpdateRollbackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ContinueUpdateRollback`.
+/// Orchestration and serialization glue logic for `ContinueUpdateRollback`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -115,3 +115,12 @@ impl From<TypeErasedError> for OrchestratorError<TypeErasedError> {
         Self::operation(err)
     }
 }
+
+impl<E> From<aws_smithy_http::byte_stream::error::Error> for OrchestratorError<E>
+where
+    E: Debug + std::error::Error + 'static,
+{
+    fn from(err: aws_smithy_http::byte_stream::error::Error) -> Self {
+        Self::other(err.into())
+    }
+}

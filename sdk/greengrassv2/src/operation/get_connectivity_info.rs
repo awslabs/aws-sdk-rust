@@ -136,7 +136,7 @@ impl GetConnectivityInfoInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConnectivityInfo`.
+/// Orchestration and serialization glue logic for `GetConnectivityInfo`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

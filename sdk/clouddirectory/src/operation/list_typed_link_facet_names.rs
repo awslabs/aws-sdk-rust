@@ -131,7 +131,7 @@ impl ListTypedLinkFacetNamesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTypedLinkFacetNames`.
+/// Orchestration and serialization glue logic for `ListTypedLinkFacetNames`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

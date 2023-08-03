@@ -168,7 +168,7 @@ impl InstantiateSolNetworkInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InstantiateSolNetworkInstance`.
+/// Orchestration and serialization glue logic for `InstantiateSolNetworkInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

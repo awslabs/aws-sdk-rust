@@ -146,7 +146,7 @@ impl SendDataToMulticastGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendDataToMulticastGroup`.
+/// Orchestration and serialization glue logic for `SendDataToMulticastGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

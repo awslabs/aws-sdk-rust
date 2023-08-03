@@ -131,7 +131,7 @@ impl ListSizeConstraintSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSizeConstraintSets`.
+/// Orchestration and serialization glue logic for `ListSizeConstraintSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

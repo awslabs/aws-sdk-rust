@@ -126,7 +126,7 @@ impl BatchDeleteScheduledActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteScheduledAction`.
+/// Orchestration and serialization glue logic for `BatchDeleteScheduledAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

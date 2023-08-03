@@ -116,7 +116,7 @@ impl ListAvailableManagedRuleGroupVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAvailableManagedRuleGroupVersions`.
+/// Orchestration and serialization glue logic for `ListAvailableManagedRuleGroupVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DetachUserPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachUserPolicy`.
+/// Orchestration and serialization glue logic for `DetachUserPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

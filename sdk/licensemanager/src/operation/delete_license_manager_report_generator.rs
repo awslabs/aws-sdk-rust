@@ -116,7 +116,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLicenseManagerReportGenerator`.
+/// Orchestration and serialization glue logic for `DeleteLicenseManagerReportGenerator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

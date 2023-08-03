@@ -131,7 +131,7 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
+/// Orchestration and serialization glue logic for `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

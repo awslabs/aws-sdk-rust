@@ -131,7 +131,7 @@ impl UpdateDevicePoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDevicePool`.
+/// Orchestration and serialization glue logic for `UpdateDevicePool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

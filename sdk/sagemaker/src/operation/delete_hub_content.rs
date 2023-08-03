@@ -131,7 +131,7 @@ impl DeleteHubContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHubContent`.
+/// Orchestration and serialization glue logic for `DeleteHubContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

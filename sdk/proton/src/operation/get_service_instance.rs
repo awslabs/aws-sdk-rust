@@ -133,7 +133,7 @@ impl GetServiceInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceInstance`.
+/// Orchestration and serialization glue logic for `GetServiceInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

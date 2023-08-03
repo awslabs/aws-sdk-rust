@@ -126,7 +126,7 @@ impl CreateSegmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSegment`.
+/// Orchestration and serialization glue logic for `CreateSegment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

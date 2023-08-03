@@ -125,7 +125,7 @@ impl GetPatchBaselineForPatchGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPatchBaselineForPatchGroup`.
+/// Orchestration and serialization glue logic for `GetPatchBaselineForPatchGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

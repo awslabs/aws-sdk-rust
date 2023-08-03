@@ -126,7 +126,7 @@ impl TagOpenIdConnectProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagOpenIDConnectProvider`.
+/// Orchestration and serialization glue logic for `TagOpenIDConnectProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

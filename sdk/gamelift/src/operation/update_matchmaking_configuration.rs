@@ -132,7 +132,7 @@ impl UpdateMatchmakingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMatchmakingConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateMatchmakingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

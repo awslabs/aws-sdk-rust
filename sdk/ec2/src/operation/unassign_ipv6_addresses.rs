@@ -126,7 +126,7 @@ impl UnassignIpv6AddressesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UnassignIpv6Addresses`.
+/// Orchestration and serialization glue logic for `UnassignIpv6Addresses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

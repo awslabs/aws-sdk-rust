@@ -150,7 +150,7 @@ impl UpdateRegistryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRegistry`.
+/// Orchestration and serialization glue logic for `UpdateRegistry`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

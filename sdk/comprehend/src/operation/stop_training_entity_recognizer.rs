@@ -131,7 +131,7 @@ impl StopTrainingEntityRecognizerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopTrainingEntityRecognizer`.
+/// Orchestration and serialization glue logic for `StopTrainingEntityRecognizer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

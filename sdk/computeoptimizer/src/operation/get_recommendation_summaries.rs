@@ -131,7 +131,7 @@ impl GetRecommendationSummariesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRecommendationSummaries`.
+/// Orchestration and serialization glue logic for `GetRecommendationSummaries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

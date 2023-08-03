@@ -131,7 +131,7 @@ impl DescribeReplicationConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReplicationConfigurations`.
+/// Orchestration and serialization glue logic for `DescribeReplicationConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

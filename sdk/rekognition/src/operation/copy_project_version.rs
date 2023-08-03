@@ -133,7 +133,7 @@ impl CopyProjectVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CopyProjectVersion`.
+/// Orchestration and serialization glue logic for `CopyProjectVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

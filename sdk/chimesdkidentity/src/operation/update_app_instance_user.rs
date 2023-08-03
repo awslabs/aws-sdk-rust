@@ -150,7 +150,7 @@ impl UpdateAppInstanceUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAppInstanceUser`.
+/// Orchestration and serialization glue logic for `UpdateAppInstanceUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

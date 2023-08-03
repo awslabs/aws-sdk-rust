@@ -111,7 +111,7 @@ impl DeleteNetworkInsightsAccessScopeAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNetworkInsightsAccessScopeAnalysis`.
+/// Orchestration and serialization glue logic for `DeleteNetworkInsightsAccessScopeAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

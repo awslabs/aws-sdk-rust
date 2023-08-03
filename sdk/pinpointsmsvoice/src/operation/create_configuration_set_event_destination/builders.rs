@@ -21,9 +21,9 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError>
     >{
         self.customize_middleware().await
     }

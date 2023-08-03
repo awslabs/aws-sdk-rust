@@ -170,7 +170,7 @@ impl UpdateFeatureInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFeature`.
+/// Orchestration and serialization glue logic for `UpdateFeature`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

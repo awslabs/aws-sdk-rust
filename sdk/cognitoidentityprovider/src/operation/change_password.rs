@@ -132,7 +132,7 @@ impl ChangePasswordInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ChangePassword`.
+/// Orchestration and serialization glue logic for `ChangePassword`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

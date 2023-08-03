@@ -131,7 +131,7 @@ impl ClaimGameServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ClaimGameServer`.
+/// Orchestration and serialization glue logic for `ClaimGameServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

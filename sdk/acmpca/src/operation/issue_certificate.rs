@@ -131,7 +131,7 @@ impl IssueCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `IssueCertificate`.
+/// Orchestration and serialization glue logic for `IssueCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

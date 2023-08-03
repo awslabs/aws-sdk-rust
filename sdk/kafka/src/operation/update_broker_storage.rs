@@ -152,7 +152,7 @@ impl UpdateBrokerStorageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBrokerStorage`.
+/// Orchestration and serialization glue logic for `UpdateBrokerStorage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

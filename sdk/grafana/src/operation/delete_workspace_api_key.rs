@@ -156,7 +156,7 @@ impl DeleteWorkspaceApiKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkspaceApiKey`.
+/// Orchestration and serialization glue logic for `DeleteWorkspaceApiKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

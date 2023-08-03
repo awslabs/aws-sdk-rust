@@ -134,7 +134,7 @@ impl DeleteUserAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUserAttributes`.
+/// Orchestration and serialization glue logic for `DeleteUserAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

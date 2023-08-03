@@ -170,7 +170,7 @@ impl UpdateProgramInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateProgram`.
+/// Orchestration and serialization glue logic for `UpdateProgram`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

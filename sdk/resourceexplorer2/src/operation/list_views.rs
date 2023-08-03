@@ -125,7 +125,7 @@ impl ListViewsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListViews`.
+/// Orchestration and serialization glue logic for `ListViews`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

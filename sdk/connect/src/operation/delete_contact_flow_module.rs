@@ -156,7 +156,7 @@ impl DeleteContactFlowModuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteContactFlowModule`.
+/// Orchestration and serialization glue logic for `DeleteContactFlowModule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

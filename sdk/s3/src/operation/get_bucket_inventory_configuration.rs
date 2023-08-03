@@ -142,7 +142,7 @@ impl GetBucketInventoryConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketInventoryConfiguration`.
+/// Orchestration and serialization glue logic for `GetBucketInventoryConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListGameServersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGameServers`.
+/// Orchestration and serialization glue logic for `ListGameServers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreateSnapshotCopyGrantInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSnapshotCopyGrant`.
+/// Orchestration and serialization glue logic for `CreateSnapshotCopyGrant`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

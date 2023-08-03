@@ -150,7 +150,7 @@ impl CreateDimensionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDimension`.
+/// Orchestration and serialization glue logic for `CreateDimension`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

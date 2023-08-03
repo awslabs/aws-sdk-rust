@@ -17,10 +17,8 @@ use crate::provider_config::ProviderConfig;
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
-use aws_sdk_sso::middleware::DefaultMiddleware as SsoMiddleware;
-use aws_sdk_sso::operation::get_role_credentials::GetRoleCredentialsInput;
 use aws_sdk_sso::types::RoleCredentials;
-use aws_smithy_client::erase::DynConnector;
+use aws_sdk_sso::{config::Builder as SsoConfigBuilder, Client as SsoClient, Config as SsoConfig};
 use aws_smithy_json::deserialize::Token;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
@@ -33,22 +31,10 @@ use std::fmt::{Display, Formatter};
 use std::io;
 use std::path::PathBuf;
 
+use crate::connector::expect_connector;
+use aws_smithy_types::retry::RetryConfig;
 use ring::digest;
 use zeroize::Zeroizing;
-
-impl crate::provider_config::ProviderConfig {
-    pub(crate) fn sso_client(
-        &self,
-    ) -> aws_smithy_client::Client<aws_smithy_client::erase::DynConnector, SsoMiddleware> {
-        use crate::connector::expect_connector;
-
-        let mut client_builder = aws_smithy_client::Client::builder()
-            .connector(expect_connector(self.connector(&Default::default())))
-            .middleware(SsoMiddleware::default());
-        client_builder.set_sleep_impl(self.sleep());
-        client_builder.build()
-    }
-}
 
 /// SSO Credentials Provider
 ///
@@ -60,8 +46,8 @@ impl crate::provider_config::ProviderConfig {
 pub struct SsoCredentialsProvider {
     fs: Fs,
     env: Env,
-    sso_config: SsoConfig,
-    client: aws_smithy_client::Client<DynConnector, SsoMiddleware>,
+    sso_provider_config: SsoProviderConfig,
+    sso_config: SsoConfigBuilder,
 }
 
 impl SsoCredentialsProvider {
@@ -70,20 +56,36 @@ impl SsoCredentialsProvider {
         Builder::new()
     }
 
-    pub(crate) fn new(provider_config: &ProviderConfig, sso_config: SsoConfig) -> Self {
+    pub(crate) fn new(
+        provider_config: &ProviderConfig,
+        sso_provider_config: SsoProviderConfig,
+    ) -> Self {
         let fs = provider_config.fs();
         let env = provider_config.env();
+
+        let mut sso_config = SsoConfig::builder()
+            .http_connector(expect_connector(
+                provider_config.connector(&Default::default()),
+            ))
+            .retry_config(RetryConfig::standard());
+        sso_config.set_sleep_impl(provider_config.sleep());
 
         SsoCredentialsProvider {
             fs,
             env,
-            client: provider_config.sso_client(),
+            sso_provider_config,
             sso_config,
         }
     }
 
     async fn credentials(&self) -> provider::Result {
-        load_sso_credentials(&self.sso_config, &self.client, &self.env, &self.fs).await
+        load_sso_credentials(
+            &self.sso_provider_config,
+            &self.sso_config,
+            &self.env,
+            &self.fs,
+        )
+        .await
     }
 }
 
@@ -152,7 +154,7 @@ impl Builder {
     /// - [`region`](Self::region)
     pub fn build(self) -> SsoCredentialsProvider {
         let provider_config = self.provider_config.unwrap_or_default();
-        let sso_config = SsoConfig {
+        let sso_config = SsoProviderConfig {
             account_id: self.account_id.expect("account_id must be set"),
             role_name: self.role_name.expect("role_name must be set"),
             start_url: self.start_url.expect("start_url must be set"),
@@ -194,7 +196,7 @@ impl Error for LoadTokenError {
 }
 
 #[derive(Debug)]
-pub(crate) struct SsoConfig {
+pub(crate) struct SsoProviderConfig {
     pub(crate) account_id: String,
     pub(crate) role_name: String,
     pub(crate) start_url: String,
@@ -202,31 +204,27 @@ pub(crate) struct SsoConfig {
 }
 
 async fn load_sso_credentials(
-    sso_config: &SsoConfig,
-    sso: &aws_smithy_client::Client<DynConnector, SsoMiddleware>,
+    sso_provider_config: &SsoProviderConfig,
+    sso_config: &SsoConfigBuilder,
     env: &Env,
     fs: &Fs,
 ) -> provider::Result {
-    let token = load_token(&sso_config.start_url, env, fs)
+    let token = load_token(&sso_provider_config.start_url, env, fs)
         .await
         .map_err(CredentialsError::provider_error)?;
-    let config = aws_sdk_sso::Config::builder()
-        .region(sso_config.region.clone())
+    let config = sso_config
+        .clone()
+        .region(sso_provider_config.region.clone())
         .credentials_cache(CredentialsCache::no_caching())
         .build();
-    let operation = GetRoleCredentialsInput::builder()
-        .role_name(&sso_config.role_name)
+    // TODO(enableNewSmithyRuntime): Use `customize().config_override()` to set the region instead of creating a new client once middleware is removed
+    let client = SsoClient::from_conf(config);
+    let resp = client
+        .get_role_credentials()
+        .role_name(&sso_provider_config.role_name)
         .access_token(&*token.access_token)
-        .account_id(&sso_config.account_id)
-        .build()
-        .map_err(|err| {
-            CredentialsError::unhandled(format!("could not construct SSO token input: {}", err))
-        })?
-        .make_operation(&config)
-        .await
-        .map_err(CredentialsError::unhandled)?;
-    let resp = sso
-        .call(operation)
+        .account_id(&sso_provider_config.account_id)
+        .send()
         .await
         .map_err(CredentialsError::provider_error)?;
     let credentials: RoleCredentials = resp

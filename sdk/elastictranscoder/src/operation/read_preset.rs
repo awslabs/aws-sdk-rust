@@ -132,7 +132,7 @@ impl ReadPresetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReadPreset`.
+/// Orchestration and serialization glue logic for `ReadPreset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -176,7 +176,7 @@ impl GetAssetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAsset`.
+/// Orchestration and serialization glue logic for `GetAsset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl TagQueueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagQueue`.
+/// Orchestration and serialization glue logic for `TagQueue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

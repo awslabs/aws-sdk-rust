@@ -131,7 +131,7 @@ impl UpdateAddressBookInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAddressBook`.
+/// Orchestration and serialization glue logic for `UpdateAddressBook`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -137,7 +137,7 @@ impl ListJournalS3ExportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListJournalS3Exports`.
+/// Orchestration and serialization glue logic for `ListJournalS3Exports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

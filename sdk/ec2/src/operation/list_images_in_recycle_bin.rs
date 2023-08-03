@@ -126,7 +126,7 @@ impl ListImagesInRecycleBinInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImagesInRecycleBin`.
+/// Orchestration and serialization glue logic for `ListImagesInRecycleBin`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

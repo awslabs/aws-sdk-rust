@@ -134,7 +134,7 @@ impl ListBrokersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBrokers`.
+/// Orchestration and serialization glue logic for `ListBrokers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

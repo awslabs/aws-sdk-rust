@@ -134,7 +134,7 @@ impl ListMeshesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMeshes`.
+/// Orchestration and serialization glue logic for `ListMeshes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

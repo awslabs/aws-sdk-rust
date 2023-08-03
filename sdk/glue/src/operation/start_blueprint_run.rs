@@ -131,7 +131,7 @@ impl StartBlueprintRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartBlueprintRun`.
+/// Orchestration and serialization glue logic for `StartBlueprintRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

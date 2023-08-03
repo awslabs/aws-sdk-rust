@@ -131,7 +131,7 @@ impl AssociateSkillWithSkillGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateSkillWithSkillGroup`.
+/// Orchestration and serialization glue logic for `AssociateSkillWithSkillGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

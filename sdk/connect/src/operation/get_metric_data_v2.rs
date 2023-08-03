@@ -126,7 +126,7 @@ impl GetMetricDataV2Input {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMetricDataV2`.
+/// Orchestration and serialization glue logic for `GetMetricDataV2`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

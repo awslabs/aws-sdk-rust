@@ -133,7 +133,7 @@ impl ListImportFailuresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImportFailures`.
+/// Orchestration and serialization glue logic for `ListImportFailures`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

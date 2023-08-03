@@ -126,7 +126,7 @@ impl ConfirmSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfirmSubscription`.
+/// Orchestration and serialization glue logic for `ConfirmSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

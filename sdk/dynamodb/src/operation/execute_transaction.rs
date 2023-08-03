@@ -135,7 +135,7 @@ impl ExecuteTransactionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExecuteTransaction`.
+/// Orchestration and serialization glue logic for `ExecuteTransaction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

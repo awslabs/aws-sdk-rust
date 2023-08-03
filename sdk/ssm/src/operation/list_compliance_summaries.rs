@@ -131,7 +131,7 @@ impl ListComplianceSummariesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListComplianceSummaries`.
+/// Orchestration and serialization glue logic for `ListComplianceSummaries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

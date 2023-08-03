@@ -126,7 +126,7 @@ impl ListResponsePlansInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResponsePlans`.
+/// Orchestration and serialization glue logic for `ListResponsePlans`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

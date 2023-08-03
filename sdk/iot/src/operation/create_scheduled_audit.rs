@@ -152,7 +152,7 @@ impl CreateScheduledAuditInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateScheduledAudit`.
+/// Orchestration and serialization glue logic for `CreateScheduledAudit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateSolutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSolution`.
+/// Orchestration and serialization glue logic for `CreateSolution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListTaskExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTaskExecutions`.
+/// Orchestration and serialization glue logic for `ListTaskExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

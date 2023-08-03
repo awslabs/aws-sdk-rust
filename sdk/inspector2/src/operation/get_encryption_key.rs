@@ -140,7 +140,7 @@ impl GetEncryptionKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEncryptionKey`.
+/// Orchestration and serialization glue logic for `GetEncryptionKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeleteCustomDbEngineVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomDBEngineVersion`.
+/// Orchestration and serialization glue logic for `DeleteCustomDBEngineVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

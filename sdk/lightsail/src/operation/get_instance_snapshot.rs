@@ -133,7 +133,7 @@ impl GetInstanceSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInstanceSnapshot`.
+/// Orchestration and serialization glue logic for `GetInstanceSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

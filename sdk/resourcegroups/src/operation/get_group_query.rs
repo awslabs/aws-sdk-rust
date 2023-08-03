@@ -126,7 +126,7 @@ impl GetGroupQueryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGroupQuery`.
+/// Orchestration and serialization glue logic for `GetGroupQuery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

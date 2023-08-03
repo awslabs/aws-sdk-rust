@@ -39,6 +39,12 @@ impl RuntimePlugins {
         Default::default()
     }
 
+    pub fn for_operation(operation: Box<dyn RuntimePlugin + Send + Sync>) -> Self {
+        let mut plugins = Self::new();
+        plugins.operation_plugins.push(operation);
+        plugins
+    }
+
     pub fn with_client_plugin(
         mut self,
         plugin: impl RuntimePlugin + Send + Sync + 'static,

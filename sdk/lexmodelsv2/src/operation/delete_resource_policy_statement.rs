@@ -174,7 +174,7 @@ impl DeleteResourcePolicyStatementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteResourcePolicyStatement`.
+/// Orchestration and serialization glue logic for `DeleteResourcePolicyStatement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

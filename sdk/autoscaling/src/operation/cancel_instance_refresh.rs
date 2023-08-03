@@ -126,7 +126,7 @@ impl CancelInstanceRefreshInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelInstanceRefresh`.
+/// Orchestration and serialization glue logic for `CancelInstanceRefresh`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

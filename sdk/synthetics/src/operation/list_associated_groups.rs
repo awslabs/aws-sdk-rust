@@ -152,7 +152,7 @@ impl ListAssociatedGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssociatedGroups`.
+/// Orchestration and serialization glue logic for `ListAssociatedGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

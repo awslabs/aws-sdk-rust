@@ -131,7 +131,7 @@ impl DeleteVirtualInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVirtualInterface`.
+/// Orchestration and serialization glue logic for `DeleteVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteApiKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteApiKey`.
+/// Orchestration and serialization glue logic for `DeleteApiKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

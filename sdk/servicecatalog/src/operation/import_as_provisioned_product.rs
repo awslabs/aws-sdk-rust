@@ -135,7 +135,7 @@ impl ImportAsProvisionedProductInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportAsProvisionedProduct`.
+/// Orchestration and serialization glue logic for `ImportAsProvisionedProduct`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

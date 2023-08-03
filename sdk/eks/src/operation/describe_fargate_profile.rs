@@ -156,7 +156,7 @@ impl DescribeFargateProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFargateProfile`.
+/// Orchestration and serialization glue logic for `DescribeFargateProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

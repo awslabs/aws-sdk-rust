@@ -132,7 +132,7 @@ impl DescribeNodeFromTemplateJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNodeFromTemplateJob`.
+/// Orchestration and serialization glue logic for `DescribeNodeFromTemplateJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

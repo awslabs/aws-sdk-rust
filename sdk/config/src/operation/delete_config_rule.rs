@@ -131,7 +131,7 @@ impl DeleteConfigRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteConfigRule`.
+/// Orchestration and serialization glue logic for `DeleteConfigRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

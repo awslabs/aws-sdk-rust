@@ -133,7 +133,7 @@ impl ListInferenceEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInferenceEvents`.
+/// Orchestration and serialization glue logic for `ListInferenceEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

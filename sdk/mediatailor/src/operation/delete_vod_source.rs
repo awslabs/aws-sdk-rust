@@ -156,7 +156,7 @@ impl DeleteVodSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVodSource`.
+/// Orchestration and serialization glue logic for `DeleteVodSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

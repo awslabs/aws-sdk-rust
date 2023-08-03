@@ -126,7 +126,7 @@ impl EnableImageDeprecationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableImageDeprecation`.
+/// Orchestration and serialization glue logic for `EnableImageDeprecation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

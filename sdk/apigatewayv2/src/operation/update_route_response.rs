@@ -192,7 +192,7 @@ impl UpdateRouteResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRouteResponse`.
+/// Orchestration and serialization glue logic for `UpdateRouteResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

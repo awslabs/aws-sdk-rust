@@ -126,7 +126,7 @@ impl DescribeClusterParametersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClusterParameters`.
+/// Orchestration and serialization glue logic for `DescribeClusterParameters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

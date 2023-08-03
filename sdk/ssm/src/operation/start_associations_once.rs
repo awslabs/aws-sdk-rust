@@ -131,7 +131,7 @@ impl StartAssociationsOnceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartAssociationsOnce`.
+/// Orchestration and serialization glue logic for `StartAssociationsOnce`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

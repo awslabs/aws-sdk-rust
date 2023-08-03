@@ -131,7 +131,7 @@ impl GetFolderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFolder`.
+/// Orchestration and serialization glue logic for `GetFolder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

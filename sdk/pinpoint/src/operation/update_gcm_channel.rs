@@ -150,7 +150,7 @@ impl UpdateGcmChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateGcmChannel`.
+/// Orchestration and serialization glue logic for `UpdateGcmChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -142,7 +142,7 @@ impl ListClusterSnapshotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListClusterSnapshots`.
+/// Orchestration and serialization glue logic for `ListClusterSnapshots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

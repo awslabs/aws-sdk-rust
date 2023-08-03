@@ -112,7 +112,7 @@ impl CreateFieldLevelEncryptionProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFieldLevelEncryptionProfile`.
+/// Orchestration and serialization glue logic for `CreateFieldLevelEncryptionProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

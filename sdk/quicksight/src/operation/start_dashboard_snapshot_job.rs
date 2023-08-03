@@ -170,7 +170,7 @@ impl StartDashboardSnapshotJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDashboardSnapshotJob`.
+/// Orchestration and serialization glue logic for `StartDashboardSnapshotJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

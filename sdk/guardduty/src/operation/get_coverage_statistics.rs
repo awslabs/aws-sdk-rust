@@ -150,7 +150,7 @@ impl GetCoverageStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCoverageStatistics`.
+/// Orchestration and serialization glue logic for `GetCoverageStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

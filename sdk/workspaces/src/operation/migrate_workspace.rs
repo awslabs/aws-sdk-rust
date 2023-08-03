@@ -131,7 +131,7 @@ impl MigrateWorkspaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MigrateWorkspace`.
+/// Orchestration and serialization glue logic for `MigrateWorkspace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

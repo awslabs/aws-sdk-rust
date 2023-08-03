@@ -131,7 +131,7 @@ impl StartConfigRulesEvaluationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartConfigRulesEvaluation`.
+/// Orchestration and serialization glue logic for `StartConfigRulesEvaluation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

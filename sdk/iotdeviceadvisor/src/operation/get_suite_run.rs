@@ -156,7 +156,7 @@ impl GetSuiteRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSuiteRun`.
+/// Orchestration and serialization glue logic for `GetSuiteRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

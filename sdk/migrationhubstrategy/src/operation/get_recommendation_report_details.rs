@@ -126,7 +126,7 @@ impl GetRecommendationReportDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRecommendationReportDetails`.
+/// Orchestration and serialization glue logic for `GetRecommendationReportDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

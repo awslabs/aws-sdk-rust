@@ -116,7 +116,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateInstanceAccessControlAttributeConfiguration`.
+/// Orchestration and serialization glue logic for `CreateInstanceAccessControlAttributeConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

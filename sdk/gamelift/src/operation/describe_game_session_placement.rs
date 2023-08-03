@@ -131,7 +131,7 @@ impl DescribeGameSessionPlacementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeGameSessionPlacement`.
+/// Orchestration and serialization glue logic for `DescribeGameSessionPlacement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl PutAppValidationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAppValidationConfiguration`.
+/// Orchestration and serialization glue logic for `PutAppValidationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl UpdateDatasetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDatasetGroup`.
+/// Orchestration and serialization glue logic for `UpdateDatasetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

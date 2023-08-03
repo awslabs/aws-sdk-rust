@@ -131,7 +131,7 @@ impl PutCorsPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutCorsPolicy`.
+/// Orchestration and serialization glue logic for `PutCorsPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

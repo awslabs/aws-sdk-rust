@@ -126,7 +126,7 @@ impl DescribeCacheParametersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCacheParameters`.
+/// Orchestration and serialization glue logic for `DescribeCacheParameters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl UpdateAlertInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAlert`.
+/// Orchestration and serialization glue logic for `UpdateAlert`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeMaintenanceWindowsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMaintenanceWindows`.
+/// Orchestration and serialization glue logic for `DescribeMaintenanceWindows`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

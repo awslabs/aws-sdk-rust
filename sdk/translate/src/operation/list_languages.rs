@@ -131,7 +131,7 @@ impl ListLanguagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLanguages`.
+/// Orchestration and serialization glue logic for `ListLanguages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

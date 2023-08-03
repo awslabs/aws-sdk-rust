@@ -133,7 +133,7 @@ impl ListAccessPoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccessPolicies`.
+/// Orchestration and serialization glue logic for `ListAccessPolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

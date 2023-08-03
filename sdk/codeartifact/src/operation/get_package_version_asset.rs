@@ -231,7 +231,7 @@ impl GetPackageVersionAssetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPackageVersionAsset`.
+/// Orchestration and serialization glue logic for `GetPackageVersionAsset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

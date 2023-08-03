@@ -131,7 +131,7 @@ impl AddJobFlowStepsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddJobFlowSteps`.
+/// Orchestration and serialization glue logic for `AddJobFlowSteps`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

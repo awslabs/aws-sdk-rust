@@ -175,7 +175,7 @@ impl GetSegmentVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSegmentVersions`.
+/// Orchestration and serialization glue logic for `GetSegmentVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl UpdateGlobalNetworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateGlobalNetwork`.
+/// Orchestration and serialization glue logic for `UpdateGlobalNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -129,7 +129,7 @@ impl ActivateNetworkSiteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ActivateNetworkSite`.
+/// Orchestration and serialization glue logic for `ActivateNetworkSite`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

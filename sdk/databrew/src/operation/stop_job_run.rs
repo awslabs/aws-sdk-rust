@@ -156,7 +156,7 @@ impl StopJobRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopJobRun`.
+/// Orchestration and serialization glue logic for `StopJobRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

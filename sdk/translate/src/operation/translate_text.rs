@@ -131,7 +131,7 @@ impl TranslateTextInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TranslateText`.
+/// Orchestration and serialization glue logic for `TranslateText`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

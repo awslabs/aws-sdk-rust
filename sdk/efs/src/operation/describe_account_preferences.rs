@@ -127,7 +127,7 @@ impl DescribeAccountPreferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAccountPreferences`.
+/// Orchestration and serialization glue logic for `DescribeAccountPreferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

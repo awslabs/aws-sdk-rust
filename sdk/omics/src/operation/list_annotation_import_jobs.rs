@@ -150,7 +150,7 @@ impl ListAnnotationImportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnnotationImportJobs`.
+/// Orchestration and serialization glue logic for `ListAnnotationImportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

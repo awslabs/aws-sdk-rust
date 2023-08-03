@@ -128,7 +128,7 @@ impl ListPolicyTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPolicyTags`.
+/// Orchestration and serialization glue logic for `ListPolicyTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

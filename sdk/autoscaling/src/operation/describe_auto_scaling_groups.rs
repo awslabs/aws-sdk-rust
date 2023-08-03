@@ -126,7 +126,7 @@ impl DescribeAutoScalingGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAutoScalingGroups`.
+/// Orchestration and serialization glue logic for `DescribeAutoScalingGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl RetryBuildInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RetryBuild`.
+/// Orchestration and serialization glue logic for `RetryBuild`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateTriggerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrigger`.
+/// Orchestration and serialization glue logic for `CreateTrigger`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

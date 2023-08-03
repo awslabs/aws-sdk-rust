@@ -131,7 +131,7 @@ impl CreateContextInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateContext`.
+/// Orchestration and serialization glue logic for `CreateContext`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

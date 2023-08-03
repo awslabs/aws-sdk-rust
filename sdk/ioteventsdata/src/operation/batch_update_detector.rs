@@ -128,7 +128,7 @@ impl BatchUpdateDetectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpdateDetector`.
+/// Orchestration and serialization glue logic for `BatchUpdateDetector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

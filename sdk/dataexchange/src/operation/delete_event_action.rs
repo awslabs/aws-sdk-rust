@@ -136,7 +136,7 @@ impl DeleteEventActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEventAction`.
+/// Orchestration and serialization glue logic for `DeleteEventAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

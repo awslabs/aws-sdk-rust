@@ -126,7 +126,7 @@ impl CreatePlatformApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePlatformApplication`.
+/// Orchestration and serialization glue logic for `CreatePlatformApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -186,7 +186,7 @@ impl GetBotChannelAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBotChannelAssociations`.
+/// Orchestration and serialization glue logic for `GetBotChannelAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

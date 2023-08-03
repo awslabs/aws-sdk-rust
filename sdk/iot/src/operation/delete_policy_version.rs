@@ -156,7 +156,7 @@ impl DeletePolicyVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePolicyVersion`.
+/// Orchestration and serialization glue logic for `DeletePolicyVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

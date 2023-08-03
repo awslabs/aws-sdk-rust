@@ -111,7 +111,7 @@ impl EnableReachabilityAnalyzerOrganizationSharingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableReachabilityAnalyzerOrganizationSharing`.
+/// Orchestration and serialization glue logic for `EnableReachabilityAnalyzerOrganizationSharing`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

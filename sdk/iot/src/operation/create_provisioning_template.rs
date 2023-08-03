@@ -127,7 +127,7 @@ impl CreateProvisioningTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateProvisioningTemplate`.
+/// Orchestration and serialization glue logic for `CreateProvisioningTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -134,7 +134,7 @@ impl UpdateUserAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateUserAttributes`.
+/// Orchestration and serialization glue logic for `UpdateUserAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

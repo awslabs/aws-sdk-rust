@@ -135,7 +135,7 @@ impl DeleteStorageVirtualMachineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteStorageVirtualMachine`.
+/// Orchestration and serialization glue logic for `DeleteStorageVirtualMachine`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

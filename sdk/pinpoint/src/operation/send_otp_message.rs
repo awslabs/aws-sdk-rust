@@ -150,7 +150,7 @@ impl SendOtpMessageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendOTPMessage`.
+/// Orchestration and serialization glue logic for `SendOTPMessage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

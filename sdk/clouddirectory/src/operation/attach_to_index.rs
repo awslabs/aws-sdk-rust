@@ -131,7 +131,7 @@ impl AttachToIndexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachToIndex`.
+/// Orchestration and serialization glue logic for `AttachToIndex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl EnableMetricsCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableMetricsCollection`.
+/// Orchestration and serialization glue logic for `EnableMetricsCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

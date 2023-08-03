@@ -156,7 +156,7 @@ impl DeletePrefetchScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePrefetchSchedule`.
+/// Orchestration and serialization glue logic for `DeletePrefetchSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

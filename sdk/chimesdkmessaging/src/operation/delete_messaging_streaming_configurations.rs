@@ -121,7 +121,7 @@ impl DeleteMessagingStreamingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMessagingStreamingConfigurations`.
+/// Orchestration and serialization glue logic for `DeleteMessagingStreamingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

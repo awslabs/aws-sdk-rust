@@ -116,7 +116,7 @@ impl DescribeOrganizationConfigRuleStatusesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeOrganizationConfigRuleStatuses`.
+/// Orchestration and serialization glue logic for `DescribeOrganizationConfigRuleStatuses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -194,7 +194,7 @@ impl UpdateMethodInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMethod`.
+/// Orchestration and serialization glue logic for `UpdateMethod`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

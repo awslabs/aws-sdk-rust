@@ -131,7 +131,7 @@ impl DescribeWorkspaceSnapshotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorkspaceSnapshots`.
+/// Orchestration and serialization glue logic for `DescribeWorkspaceSnapshots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

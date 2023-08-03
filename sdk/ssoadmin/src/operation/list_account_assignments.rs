@@ -131,7 +131,7 @@ impl ListAccountAssignmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccountAssignments`.
+/// Orchestration and serialization glue logic for `ListAccountAssignments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

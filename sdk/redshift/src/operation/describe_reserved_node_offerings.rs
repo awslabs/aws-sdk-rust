@@ -127,7 +127,7 @@ impl DescribeReservedNodeOfferingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReservedNodeOfferings`.
+/// Orchestration and serialization glue logic for `DescribeReservedNodeOfferings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl CreateVoiceConnectorGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVoiceConnectorGroup`.
+/// Orchestration and serialization glue logic for `CreateVoiceConnectorGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

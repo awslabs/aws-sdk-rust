@@ -111,7 +111,7 @@ impl DescribeVpcEndpointServicePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVpcEndpointServicePermissions`.
+/// Orchestration and serialization glue logic for `DescribeVpcEndpointServicePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetCostEstimateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCostEstimate`.
+/// Orchestration and serialization glue logic for `GetCostEstimate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

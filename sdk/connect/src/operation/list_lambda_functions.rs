@@ -158,7 +158,7 @@ impl ListLambdaFunctionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLambdaFunctions`.
+/// Orchestration and serialization glue logic for `ListLambdaFunctions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

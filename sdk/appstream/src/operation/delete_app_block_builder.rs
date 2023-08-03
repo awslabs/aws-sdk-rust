@@ -131,7 +131,7 @@ impl DeleteAppBlockBuilderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppBlockBuilder`.
+/// Orchestration and serialization glue logic for `DeleteAppBlockBuilder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

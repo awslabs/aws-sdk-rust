@@ -158,7 +158,7 @@ impl ListInstanceAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstanceAttributes`.
+/// Orchestration and serialization glue logic for `ListInstanceAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

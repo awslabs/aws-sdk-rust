@@ -167,7 +167,7 @@ impl ListChannelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListChannels`.
+/// Orchestration and serialization glue logic for `ListChannels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

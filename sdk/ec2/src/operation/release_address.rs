@@ -128,7 +128,7 @@ impl ReleaseAddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReleaseAddress`.
+/// Orchestration and serialization glue logic for `ReleaseAddress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

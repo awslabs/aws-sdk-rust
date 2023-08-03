@@ -113,7 +113,7 @@ impl GetLatestAssessmentIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLatestAssessmentId`.
+/// Orchestration and serialization glue logic for `GetLatestAssessmentId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

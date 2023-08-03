@@ -126,7 +126,7 @@ impl DeleteCustomerGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomerGateway`.
+/// Orchestration and serialization glue logic for `DeleteCustomerGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl SendDiagnosticInterruptInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendDiagnosticInterrupt`.
+/// Orchestration and serialization glue logic for `SendDiagnosticInterrupt`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

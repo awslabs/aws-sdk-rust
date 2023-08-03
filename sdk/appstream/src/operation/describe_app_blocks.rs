@@ -131,7 +131,7 @@ impl DescribeAppBlocksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAppBlocks`.
+/// Orchestration and serialization glue logic for `DescribeAppBlocks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

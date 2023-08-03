@@ -164,7 +164,7 @@ impl DisassociateQueueQuickConnectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateQueueQuickConnects`.
+/// Orchestration and serialization glue logic for `DisassociateQueueQuickConnects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

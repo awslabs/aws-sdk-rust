@@ -126,7 +126,7 @@ impl CreateLoadBalancerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLoadBalancer`.
+/// Orchestration and serialization glue logic for `CreateLoadBalancer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl AssociateRoleToGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateRoleToGroup`.
+/// Orchestration and serialization glue logic for `AssociateRoleToGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

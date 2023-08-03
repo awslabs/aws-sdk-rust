@@ -111,7 +111,7 @@ impl GetAssociatedEnclaveCertificateIamRolesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAssociatedEnclaveCertificateIamRoles`.
+/// Orchestration and serialization glue logic for `GetAssociatedEnclaveCertificateIamRoles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

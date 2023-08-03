@@ -128,7 +128,7 @@ impl AcceptResourceShareInvitationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptResourceShareInvitation`.
+/// Orchestration and serialization glue logic for `AcceptResourceShareInvitation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

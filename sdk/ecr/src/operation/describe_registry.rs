@@ -124,7 +124,7 @@ impl DescribeRegistryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRegistry`.
+/// Orchestration and serialization glue logic for `DescribeRegistry`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

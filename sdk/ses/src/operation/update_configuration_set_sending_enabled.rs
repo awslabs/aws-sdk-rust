@@ -111,7 +111,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateConfigurationSetSendingEnabled`.
+/// Orchestration and serialization glue logic for `UpdateConfigurationSetSendingEnabled`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

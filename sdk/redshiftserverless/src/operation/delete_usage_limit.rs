@@ -131,7 +131,7 @@ impl DeleteUsageLimitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUsageLimit`.
+/// Orchestration and serialization glue logic for `DeleteUsageLimit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

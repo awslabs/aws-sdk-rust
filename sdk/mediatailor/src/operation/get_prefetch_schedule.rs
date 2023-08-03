@@ -156,7 +156,7 @@ impl GetPrefetchScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPrefetchSchedule`.
+/// Orchestration and serialization glue logic for `GetPrefetchSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

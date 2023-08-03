@@ -131,7 +131,7 @@ impl PutMetricFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutMetricFilter`.
+/// Orchestration and serialization glue logic for `PutMetricFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

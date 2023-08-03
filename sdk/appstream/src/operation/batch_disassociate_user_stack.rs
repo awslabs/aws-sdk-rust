@@ -131,7 +131,7 @@ impl BatchDisassociateUserStackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDisassociateUserStack`.
+/// Orchestration and serialization glue logic for `BatchDisassociateUserStack`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

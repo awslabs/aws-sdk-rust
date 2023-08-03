@@ -148,7 +148,7 @@ impl ListEphemeridesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEphemerides`.
+/// Orchestration and serialization glue logic for `ListEphemerides`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

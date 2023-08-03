@@ -120,7 +120,7 @@ impl DisableVpcClassicLinkDnsSupportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableVpcClassicLinkDnsSupport`.
+/// Orchestration and serialization glue logic for `DisableVpcClassicLinkDnsSupport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

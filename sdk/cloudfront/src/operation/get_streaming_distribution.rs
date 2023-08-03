@@ -132,7 +132,7 @@ impl GetStreamingDistributionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetStreamingDistribution`.
+/// Orchestration and serialization glue logic for `GetStreamingDistribution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

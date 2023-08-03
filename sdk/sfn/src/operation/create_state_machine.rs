@@ -133,7 +133,7 @@ impl CreateStateMachineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStateMachine`.
+/// Orchestration and serialization glue logic for `CreateStateMachine`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

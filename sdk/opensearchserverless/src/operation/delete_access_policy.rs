@@ -137,7 +137,7 @@ impl DeleteAccessPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccessPolicy`.
+/// Orchestration and serialization glue logic for `DeleteAccessPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl AddRegionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddRegion`.
+/// Orchestration and serialization glue logic for `AddRegion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl CreateTrafficPolicyVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrafficPolicyVersion`.
+/// Orchestration and serialization glue logic for `CreateTrafficPolicyVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

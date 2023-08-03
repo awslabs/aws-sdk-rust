@@ -170,7 +170,7 @@ impl GetBackendApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBackendAPI`.
+/// Orchestration and serialization glue logic for `GetBackendAPI`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -116,7 +116,7 @@ impl DisassociateDelegationSignerFromDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateDelegationSignerFromDomain`.
+/// Orchestration and serialization glue logic for `DisassociateDelegationSignerFromDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

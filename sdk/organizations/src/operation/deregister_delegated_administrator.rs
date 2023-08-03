@@ -125,7 +125,7 @@ impl DeregisterDelegatedAdministratorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterDelegatedAdministrator`.
+/// Orchestration and serialization glue logic for `DeregisterDelegatedAdministrator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

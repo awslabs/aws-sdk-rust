@@ -111,7 +111,7 @@ impl DisassociateEnclaveCertificateIamRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateEnclaveCertificateIamRole`.
+/// Orchestration and serialization glue logic for `DisassociateEnclaveCertificateIamRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

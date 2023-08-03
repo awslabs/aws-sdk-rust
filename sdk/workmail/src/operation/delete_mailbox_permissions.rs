@@ -131,7 +131,7 @@ impl DeleteMailboxPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMailboxPermissions`.
+/// Orchestration and serialization glue logic for `DeleteMailboxPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

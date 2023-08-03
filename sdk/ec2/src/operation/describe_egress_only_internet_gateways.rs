@@ -111,7 +111,7 @@ impl DescribeEgressOnlyInternetGatewaysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEgressOnlyInternetGateways`.
+/// Orchestration and serialization glue logic for `DescribeEgressOnlyInternetGateways`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

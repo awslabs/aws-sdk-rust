@@ -126,7 +126,7 @@ impl DeletePricingRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePricingRule`.
+/// Orchestration and serialization glue logic for `DeletePricingRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

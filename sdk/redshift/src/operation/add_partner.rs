@@ -126,7 +126,7 @@ impl AddPartnerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddPartner`.
+/// Orchestration and serialization glue logic for `AddPartner`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

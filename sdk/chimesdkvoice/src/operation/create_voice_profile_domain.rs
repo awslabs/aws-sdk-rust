@@ -126,7 +126,7 @@ impl CreateVoiceProfileDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVoiceProfileDomain`.
+/// Orchestration and serialization glue logic for `CreateVoiceProfileDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

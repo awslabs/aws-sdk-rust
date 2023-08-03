@@ -131,7 +131,7 @@ impl GetContactPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContactPolicy`.
+/// Orchestration and serialization glue logic for `GetContactPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl DescribeLocalGatewayVirtualInterfacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocalGatewayVirtualInterfaces`.
+/// Orchestration and serialization glue logic for `DescribeLocalGatewayVirtualInterfaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl DisassociateNatGatewayAddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateNatGatewayAddress`.
+/// Orchestration and serialization glue logic for `DisassociateNatGatewayAddress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl AssociateAccountsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateAccounts`.
+/// Orchestration and serialization glue logic for `AssociateAccounts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

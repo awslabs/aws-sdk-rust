@@ -131,7 +131,7 @@ impl UpdateVariableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVariable`.
+/// Orchestration and serialization glue logic for `UpdateVariable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

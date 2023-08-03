@@ -128,7 +128,7 @@ impl BatchImportFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchImportFindings`.
+/// Orchestration and serialization glue logic for `BatchImportFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

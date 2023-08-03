@@ -116,7 +116,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMaintenanceWindowExecutionTaskInvocation`.
+/// Orchestration and serialization glue logic for `GetMaintenanceWindowExecutionTaskInvocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

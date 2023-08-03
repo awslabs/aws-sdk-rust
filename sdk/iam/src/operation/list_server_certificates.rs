@@ -126,7 +126,7 @@ impl ListServerCertificatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServerCertificates`.
+/// Orchestration and serialization glue logic for `ListServerCertificates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

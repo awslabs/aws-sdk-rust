@@ -126,7 +126,7 @@ impl AttachGroupPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachGroupPolicy`.
+/// Orchestration and serialization glue logic for `AttachGroupPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

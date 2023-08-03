@@ -131,7 +131,7 @@ impl DeleteConfigurationRecorderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteConfigurationRecorder`.
+/// Orchestration and serialization glue logic for `DeleteConfigurationRecorder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

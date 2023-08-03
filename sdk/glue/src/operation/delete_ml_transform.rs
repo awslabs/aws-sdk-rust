@@ -131,7 +131,7 @@ impl DeleteMlTransformInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMLTransform`.
+/// Orchestration and serialization glue logic for `DeleteMLTransform`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

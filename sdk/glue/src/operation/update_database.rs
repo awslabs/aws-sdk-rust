@@ -131,7 +131,7 @@ impl UpdateDatabaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDatabase`.
+/// Orchestration and serialization glue logic for `UpdateDatabase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

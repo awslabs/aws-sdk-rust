@@ -112,7 +112,7 @@ impl DeleteDataLakeOrganizationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataLakeOrganizationConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteDataLakeOrganizationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

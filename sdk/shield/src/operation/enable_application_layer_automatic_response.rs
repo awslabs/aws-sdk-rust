@@ -116,7 +116,7 @@ impl EnableApplicationLayerAutomaticResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableApplicationLayerAutomaticResponse`.
+/// Orchestration and serialization glue logic for `EnableApplicationLayerAutomaticResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

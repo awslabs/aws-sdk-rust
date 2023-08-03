@@ -141,7 +141,7 @@ impl GetContainerRecipePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContainerRecipePolicy`.
+/// Orchestration and serialization glue logic for `GetContainerRecipePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl DeleteEndpointConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEndpointConfig`.
+/// Orchestration and serialization glue logic for `DeleteEndpointConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -109,7 +109,7 @@ impl GetAssociationForServiceQuotaTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAssociationForServiceQuotaTemplate`.
+/// Orchestration and serialization glue logic for `GetAssociationForServiceQuotaTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

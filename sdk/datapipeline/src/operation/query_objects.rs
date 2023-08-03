@@ -131,7 +131,7 @@ impl QueryObjectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `QueryObjects`.
+/// Orchestration and serialization glue logic for `QueryObjects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

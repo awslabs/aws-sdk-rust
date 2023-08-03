@@ -131,7 +131,7 @@ impl CreateCloudFormationStackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCloudFormationStack`.
+/// Orchestration and serialization glue logic for `CreateCloudFormationStack`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

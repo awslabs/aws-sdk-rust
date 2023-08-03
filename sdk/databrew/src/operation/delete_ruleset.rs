@@ -132,7 +132,7 @@ impl DeleteRulesetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRuleset`.
+/// Orchestration and serialization glue logic for `DeleteRuleset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

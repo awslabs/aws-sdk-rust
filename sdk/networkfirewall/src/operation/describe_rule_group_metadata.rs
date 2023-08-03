@@ -131,7 +131,7 @@ impl DescribeRuleGroupMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRuleGroupMetadata`.
+/// Orchestration and serialization glue logic for `DescribeRuleGroupMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

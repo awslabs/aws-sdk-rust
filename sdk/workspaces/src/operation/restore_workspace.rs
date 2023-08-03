@@ -131,7 +131,7 @@ impl RestoreWorkspaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreWorkspace`.
+/// Orchestration and serialization glue logic for `RestoreWorkspace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

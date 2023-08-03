@@ -131,7 +131,7 @@ impl UpdateImpersonationRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateImpersonationRole`.
+/// Orchestration and serialization glue logic for `UpdateImpersonationRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

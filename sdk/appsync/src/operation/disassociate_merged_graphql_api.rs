@@ -156,7 +156,7 @@ impl DisassociateMergedGraphqlApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateMergedGraphqlApi`.
+/// Orchestration and serialization glue logic for `DisassociateMergedGraphqlApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

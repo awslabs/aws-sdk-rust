@@ -156,7 +156,7 @@ impl DeleteUserEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUserEndpoints`.
+/// Orchestration and serialization glue logic for `DeleteUserEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

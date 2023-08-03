@@ -135,7 +135,7 @@ impl PutSipMediaApplicationAlexaSkillConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSipMediaApplicationAlexaSkillConfiguration`.
+/// Orchestration and serialization glue logic for `PutSipMediaApplicationAlexaSkillConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

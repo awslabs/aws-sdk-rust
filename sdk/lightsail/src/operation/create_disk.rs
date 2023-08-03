@@ -131,7 +131,7 @@ impl CreateDiskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDisk`.
+/// Orchestration and serialization glue logic for `CreateDisk`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

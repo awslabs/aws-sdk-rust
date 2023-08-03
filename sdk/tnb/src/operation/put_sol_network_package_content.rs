@@ -151,7 +151,7 @@ impl PutSolNetworkPackageContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSolNetworkPackageContent`.
+/// Orchestration and serialization glue logic for `PutSolNetworkPackageContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

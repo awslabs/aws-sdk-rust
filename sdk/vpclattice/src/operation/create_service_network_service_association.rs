@@ -116,7 +116,7 @@ impl CreateServiceNetworkServiceAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateServiceNetworkServiceAssociation`.
+/// Orchestration and serialization glue logic for `CreateServiceNetworkServiceAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetSolFunctionPackageDescriptorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSolFunctionPackageDescriptor`.
+/// Orchestration and serialization glue logic for `GetSolFunctionPackageDescriptor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

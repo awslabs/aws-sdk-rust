@@ -126,7 +126,7 @@ impl StartMessageMoveTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartMessageMoveTask`.
+/// Orchestration and serialization glue logic for `StartMessageMoveTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

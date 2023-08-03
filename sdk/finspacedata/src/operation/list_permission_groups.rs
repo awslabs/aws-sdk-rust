@@ -131,7 +131,7 @@ impl ListPermissionGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPermissionGroups`.
+/// Orchestration and serialization glue logic for `ListPermissionGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

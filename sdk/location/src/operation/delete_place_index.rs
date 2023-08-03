@@ -138,7 +138,7 @@ impl DeletePlaceIndexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePlaceIndex`.
+/// Orchestration and serialization glue logic for `DeletePlaceIndex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeFeatureTransformationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFeatureTransformation`.
+/// Orchestration and serialization glue logic for `DescribeFeatureTransformation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

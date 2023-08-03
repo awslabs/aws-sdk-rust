@@ -136,7 +136,7 @@ impl DeleteFileSystemPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFileSystemPolicy`.
+/// Orchestration and serialization glue logic for `DeleteFileSystemPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

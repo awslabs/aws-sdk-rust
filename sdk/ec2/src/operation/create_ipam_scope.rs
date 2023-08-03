@@ -130,7 +130,7 @@ impl CreateIpamScopeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateIpamScope`.
+/// Orchestration and serialization glue logic for `CreateIpamScope`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

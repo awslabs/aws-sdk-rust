@@ -131,7 +131,7 @@ impl DeleteModelBiasJobDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteModelBiasJobDefinition`.
+/// Orchestration and serialization glue logic for `DeleteModelBiasJobDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

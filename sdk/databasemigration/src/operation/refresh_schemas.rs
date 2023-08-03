@@ -131,7 +131,7 @@ impl RefreshSchemasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RefreshSchemas`.
+/// Orchestration and serialization glue logic for `RefreshSchemas`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

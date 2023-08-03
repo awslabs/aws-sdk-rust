@@ -131,7 +131,7 @@ impl BatchDeleteTableVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteTableVersion`.
+/// Orchestration and serialization glue logic for `BatchDeleteTableVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

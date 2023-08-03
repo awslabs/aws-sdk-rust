@@ -131,7 +131,7 @@ impl ListMetricAttributionMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMetricAttributionMetrics`.
+/// Orchestration and serialization glue logic for `ListMetricAttributionMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

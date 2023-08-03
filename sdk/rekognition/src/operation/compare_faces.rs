@@ -131,7 +131,7 @@ impl CompareFacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CompareFaces`.
+/// Orchestration and serialization glue logic for `CompareFaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

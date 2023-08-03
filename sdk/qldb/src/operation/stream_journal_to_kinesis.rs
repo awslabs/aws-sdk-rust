@@ -150,7 +150,7 @@ impl StreamJournalToKinesisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StreamJournalToKinesis`.
+/// Orchestration and serialization glue logic for `StreamJournalToKinesis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

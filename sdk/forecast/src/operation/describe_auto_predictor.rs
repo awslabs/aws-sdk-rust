@@ -131,7 +131,7 @@ impl DescribeAutoPredictorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAutoPredictor`.
+/// Orchestration and serialization glue logic for `DescribeAutoPredictor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

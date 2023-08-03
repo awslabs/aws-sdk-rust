@@ -126,7 +126,7 @@ impl GetStorageLensConfigurationTaggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetStorageLensConfigurationTagging`.
+/// Orchestration and serialization glue logic for `GetStorageLensConfigurationTagging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

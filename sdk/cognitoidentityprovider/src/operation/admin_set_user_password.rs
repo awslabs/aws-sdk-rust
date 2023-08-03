@@ -131,7 +131,7 @@ impl AdminSetUserPasswordInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminSetUserPassword`.
+/// Orchestration and serialization glue logic for `AdminSetUserPassword`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

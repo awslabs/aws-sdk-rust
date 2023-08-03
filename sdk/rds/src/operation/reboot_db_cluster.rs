@@ -126,7 +126,7 @@ impl RebootDbClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RebootDBCluster`.
+/// Orchestration and serialization glue logic for `RebootDBCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

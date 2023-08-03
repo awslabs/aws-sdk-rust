@@ -133,7 +133,7 @@ impl ImportWorkspaceImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportWorkspaceImage`.
+/// Orchestration and serialization glue logic for `ImportWorkspaceImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

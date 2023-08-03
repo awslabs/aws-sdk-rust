@@ -160,7 +160,7 @@ impl ListAuditMitigationActionsExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAuditMitigationActionsExecutions`.
+/// Orchestration and serialization glue logic for `ListAuditMitigationActionsExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

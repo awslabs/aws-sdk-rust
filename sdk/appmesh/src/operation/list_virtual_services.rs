@@ -163,7 +163,7 @@ impl ListVirtualServicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVirtualServices`.
+/// Orchestration and serialization glue logic for `ListVirtualServices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

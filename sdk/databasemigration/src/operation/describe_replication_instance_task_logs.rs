@@ -116,7 +116,7 @@ impl DescribeReplicationInstanceTaskLogsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReplicationInstanceTaskLogs`.
+/// Orchestration and serialization glue logic for `DescribeReplicationInstanceTaskLogs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

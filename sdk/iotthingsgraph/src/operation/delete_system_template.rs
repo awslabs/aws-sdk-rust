@@ -133,7 +133,7 @@ impl DeleteSystemTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSystemTemplate`.
+/// Orchestration and serialization glue logic for `DeleteSystemTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -158,7 +158,7 @@ impl ListArchiveRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListArchiveRules`.
+/// Orchestration and serialization glue logic for `ListArchiveRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

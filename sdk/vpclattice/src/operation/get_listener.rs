@@ -156,7 +156,7 @@ impl GetListenerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetListener`.
+/// Orchestration and serialization glue logic for `GetListener`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

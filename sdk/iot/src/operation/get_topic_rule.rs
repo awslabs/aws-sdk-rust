@@ -132,7 +132,7 @@ impl GetTopicRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTopicRule`.
+/// Orchestration and serialization glue logic for `GetTopicRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

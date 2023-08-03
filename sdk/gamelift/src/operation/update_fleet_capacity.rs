@@ -133,7 +133,7 @@ impl UpdateFleetCapacityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFleetCapacity`.
+/// Orchestration and serialization glue logic for `UpdateFleetCapacity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

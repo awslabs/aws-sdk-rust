@@ -136,7 +136,7 @@ impl DescribeReportPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReportPlan`.
+/// Orchestration and serialization glue logic for `DescribeReportPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

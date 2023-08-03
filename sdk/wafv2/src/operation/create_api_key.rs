@@ -131,7 +131,7 @@ impl CreateApiKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAPIKey`.
+/// Orchestration and serialization glue logic for `CreateAPIKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

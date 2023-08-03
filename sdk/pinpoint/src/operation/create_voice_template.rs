@@ -150,7 +150,7 @@ impl CreateVoiceTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVoiceTemplate`.
+/// Orchestration and serialization glue logic for `CreateVoiceTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

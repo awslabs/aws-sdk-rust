@@ -146,7 +146,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListJournalKinesisStreamsForLedger`.
+/// Orchestration and serialization glue logic for `ListJournalKinesisStreamsForLedger`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

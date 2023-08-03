@@ -131,7 +131,7 @@ impl GetApplicationRevisionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApplicationRevision`.
+/// Orchestration and serialization glue logic for `GetApplicationRevision`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

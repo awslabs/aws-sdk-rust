@@ -150,7 +150,7 @@ impl AddNotificationChannelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddNotificationChannels`.
+/// Orchestration and serialization glue logic for `AddNotificationChannels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

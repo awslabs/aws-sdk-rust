@@ -131,7 +131,7 @@ impl StartLifecyclePolicyPreviewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartLifecyclePolicyPreview`.
+/// Orchestration and serialization glue logic for `StartLifecyclePolicyPreview`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

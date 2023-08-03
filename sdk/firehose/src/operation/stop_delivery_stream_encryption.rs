@@ -131,7 +131,7 @@ impl StopDeliveryStreamEncryptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopDeliveryStreamEncryption`.
+/// Orchestration and serialization glue logic for `StopDeliveryStreamEncryption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl GetContainerImagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContainerImages`.
+/// Orchestration and serialization glue logic for `GetContainerImages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

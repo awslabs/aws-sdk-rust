@@ -153,7 +153,7 @@ impl ListModelManifestNodesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListModelManifestNodes`.
+/// Orchestration and serialization glue logic for `ListModelManifestNodes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

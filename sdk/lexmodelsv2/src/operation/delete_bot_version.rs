@@ -173,7 +173,7 @@ impl DeleteBotVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBotVersion`.
+/// Orchestration and serialization glue logic for `DeleteBotVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

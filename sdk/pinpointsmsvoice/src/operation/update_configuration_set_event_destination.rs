@@ -149,7 +149,7 @@ impl UpdateConfigurationSetEventDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateConfigurationSetEventDestination`.
+/// Orchestration and serialization glue logic for `UpdateConfigurationSetEventDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -21,9 +21,9 @@ impl GetDeleteEventsByEventTypeStatusFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl GetDeleteEventsByEventTypeStatusFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl GetDeleteEventsByEventTypeStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>
     >{
         self.customize_middleware().await
     }

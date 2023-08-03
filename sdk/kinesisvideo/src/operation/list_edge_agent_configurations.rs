@@ -127,7 +127,7 @@ impl ListEdgeAgentConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEdgeAgentConfigurations`.
+/// Orchestration and serialization glue logic for `ListEdgeAgentConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

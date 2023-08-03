@@ -133,7 +133,7 @@ impl GetResolverEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResolverEndpoint`.
+/// Orchestration and serialization glue logic for `GetResolverEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

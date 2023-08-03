@@ -131,7 +131,7 @@ impl DescribeCustomKeyStoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCustomKeyStores`.
+/// Orchestration and serialization glue logic for `DescribeCustomKeyStores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

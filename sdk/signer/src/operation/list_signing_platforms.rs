@@ -149,7 +149,7 @@ impl ListSigningPlatformsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSigningPlatforms`.
+/// Orchestration and serialization glue logic for `ListSigningPlatforms`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

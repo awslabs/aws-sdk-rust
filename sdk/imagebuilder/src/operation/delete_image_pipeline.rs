@@ -140,7 +140,7 @@ impl DeleteImagePipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteImagePipeline`.
+/// Orchestration and serialization glue logic for `DeleteImagePipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

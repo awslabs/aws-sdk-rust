@@ -126,7 +126,7 @@ impl ReplaceRouteTableAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReplaceRouteTableAssociation`.
+/// Orchestration and serialization glue logic for `ReplaceRouteTableAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

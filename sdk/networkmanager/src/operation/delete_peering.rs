@@ -132,7 +132,7 @@ impl DeletePeeringInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePeering`.
+/// Orchestration and serialization glue logic for `DeletePeering`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

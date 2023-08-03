@@ -136,7 +136,7 @@ impl DeleteProvisioningTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProvisioningTemplate`.
+/// Orchestration and serialization glue logic for `DeleteProvisioningTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

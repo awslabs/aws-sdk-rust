@@ -23,9 +23,9 @@ impl AssociateTransitGatewayConnectPeerFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeer, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeer, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -43,8 +43,8 @@ impl AssociateTransitGatewayConnectPeerFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>>
+                         {
         let op = self
             .inner
             .build()
@@ -62,16 +62,16 @@ impl AssociateTransitGatewayConnectPeerFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeer, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeer, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError>
     >{
         self.customize_middleware().await
     }

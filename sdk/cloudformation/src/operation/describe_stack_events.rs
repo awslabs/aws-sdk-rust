@@ -126,7 +126,7 @@ impl DescribeStackEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStackEvents`.
+/// Orchestration and serialization glue logic for `DescribeStackEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

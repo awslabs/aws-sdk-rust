@@ -131,7 +131,7 @@ impl UpdateAnomalySubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAnomalySubscription`.
+/// Orchestration and serialization glue logic for `UpdateAnomalySubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

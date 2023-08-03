@@ -125,7 +125,7 @@ impl ConvertRecoveryPointToSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConvertRecoveryPointToSnapshot`.
+/// Orchestration and serialization glue logic for `ConvertRecoveryPointToSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

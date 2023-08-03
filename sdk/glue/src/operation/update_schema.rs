@@ -131,7 +131,7 @@ impl UpdateSchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSchema`.
+/// Orchestration and serialization glue logic for `UpdateSchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

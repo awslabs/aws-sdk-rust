@@ -116,7 +116,7 @@ impl NotifyResourceDeploymentStatusChangeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `NotifyResourceDeploymentStatusChange`.
+/// Orchestration and serialization glue logic for `NotifyResourceDeploymentStatusChange`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

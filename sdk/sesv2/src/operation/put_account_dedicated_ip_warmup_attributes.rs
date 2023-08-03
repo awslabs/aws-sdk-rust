@@ -112,7 +112,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAccountDedicatedIpWarmupAttributes`.
+/// Orchestration and serialization glue logic for `PutAccountDedicatedIpWarmupAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

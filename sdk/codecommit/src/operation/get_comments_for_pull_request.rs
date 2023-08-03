@@ -131,7 +131,7 @@ impl GetCommentsForPullRequestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCommentsForPullRequest`.
+/// Orchestration and serialization glue logic for `GetCommentsForPullRequest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

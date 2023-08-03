@@ -111,7 +111,7 @@ impl DisassociateTransitGatewayMulticastDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateTransitGatewayMulticastDomain`.
+/// Orchestration and serialization glue logic for `DisassociateTransitGatewayMulticastDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

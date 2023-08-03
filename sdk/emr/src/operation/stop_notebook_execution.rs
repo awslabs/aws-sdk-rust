@@ -131,7 +131,7 @@ impl StopNotebookExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopNotebookExecution`.
+/// Orchestration and serialization glue logic for `StopNotebookExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

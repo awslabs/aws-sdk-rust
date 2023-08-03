@@ -111,7 +111,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDBInstanceAutomatedBackupsReplication`.
+/// Orchestration and serialization glue logic for `StartDBInstanceAutomatedBackupsReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl PublishMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PublishMetrics`.
+/// Orchestration and serialization glue logic for `PublishMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

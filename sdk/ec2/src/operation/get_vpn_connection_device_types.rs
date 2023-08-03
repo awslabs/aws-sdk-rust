@@ -126,7 +126,7 @@ impl GetVpnConnectionDeviceTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVpnConnectionDeviceTypes`.
+/// Orchestration and serialization glue logic for `GetVpnConnectionDeviceTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

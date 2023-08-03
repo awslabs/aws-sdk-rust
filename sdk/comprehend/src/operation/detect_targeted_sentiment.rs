@@ -131,7 +131,7 @@ impl DetectTargetedSentimentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectTargetedSentiment`.
+/// Orchestration and serialization glue logic for `DetectTargetedSentiment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

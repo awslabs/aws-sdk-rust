@@ -152,7 +152,7 @@ impl UpdateFunctionCodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFunctionCode`.
+/// Orchestration and serialization glue logic for `UpdateFunctionCode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

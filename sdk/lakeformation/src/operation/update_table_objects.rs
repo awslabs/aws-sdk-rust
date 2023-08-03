@@ -128,7 +128,7 @@ impl UpdateTableObjectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTableObjects`.
+/// Orchestration and serialization glue logic for `UpdateTableObjects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

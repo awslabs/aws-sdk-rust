@@ -116,7 +116,7 @@ impl GetBucketNotificationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketNotificationConfiguration`.
+/// Orchestration and serialization glue logic for `GetBucketNotificationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

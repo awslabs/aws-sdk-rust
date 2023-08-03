@@ -135,7 +135,7 @@ impl ListConnectorDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListConnectorDefinitions`.
+/// Orchestration and serialization glue logic for `ListConnectorDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

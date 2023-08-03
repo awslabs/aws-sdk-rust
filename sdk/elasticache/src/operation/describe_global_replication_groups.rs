@@ -120,7 +120,7 @@ impl DescribeGlobalReplicationGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeGlobalReplicationGroups`.
+/// Orchestration and serialization glue logic for `DescribeGlobalReplicationGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

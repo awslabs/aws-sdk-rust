@@ -146,7 +146,7 @@ impl DescribeFunctionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFunction`.
+/// Orchestration and serialization glue logic for `DescribeFunction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

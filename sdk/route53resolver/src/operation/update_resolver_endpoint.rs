@@ -131,7 +131,7 @@ impl UpdateResolverEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResolverEndpoint`.
+/// Orchestration and serialization glue logic for `UpdateResolverEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

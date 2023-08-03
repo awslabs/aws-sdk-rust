@@ -126,7 +126,7 @@ impl AssociateDhcpOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateDhcpOptions`.
+/// Orchestration and serialization glue logic for `AssociateDhcpOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

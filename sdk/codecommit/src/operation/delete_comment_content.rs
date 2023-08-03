@@ -133,7 +133,7 @@ impl DeleteCommentContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCommentContent`.
+/// Orchestration and serialization glue logic for `DeleteCommentContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

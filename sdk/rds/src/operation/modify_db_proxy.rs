@@ -128,7 +128,7 @@ impl ModifyDbProxyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyDBProxy`.
+/// Orchestration and serialization glue logic for `ModifyDBProxy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

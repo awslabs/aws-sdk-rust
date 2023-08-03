@@ -124,7 +124,7 @@ impl GetRegistryPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRegistryPolicy`.
+/// Orchestration and serialization glue logic for `GetRegistryPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

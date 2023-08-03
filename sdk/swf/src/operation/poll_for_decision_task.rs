@@ -133,7 +133,7 @@ impl PollForDecisionTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PollForDecisionTask`.
+/// Orchestration and serialization glue logic for `PollForDecisionTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateIpSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateIPSet`.
+/// Orchestration and serialization glue logic for `CreateIPSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

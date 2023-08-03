@@ -131,7 +131,7 @@ impl DetachElasticLoadBalancerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachElasticLoadBalancer`.
+/// Orchestration and serialization glue logic for `DetachElasticLoadBalancer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl GenerateClientCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateClientCertificate`.
+/// Orchestration and serialization glue logic for `GenerateClientCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

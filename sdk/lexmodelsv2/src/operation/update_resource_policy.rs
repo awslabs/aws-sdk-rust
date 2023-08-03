@@ -165,7 +165,7 @@ impl UpdateResourcePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResourcePolicy`.
+/// Orchestration and serialization glue logic for `UpdateResourcePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

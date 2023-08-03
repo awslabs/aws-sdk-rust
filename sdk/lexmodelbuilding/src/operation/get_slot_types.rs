@@ -142,7 +142,7 @@ impl GetSlotTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSlotTypes`.
+/// Orchestration and serialization glue logic for `GetSlotTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

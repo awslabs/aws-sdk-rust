@@ -136,7 +136,7 @@ impl GetAuthPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAuthPolicy`.
+/// Orchestration and serialization glue logic for `GetAuthPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

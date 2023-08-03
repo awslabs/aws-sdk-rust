@@ -158,7 +158,7 @@ impl ListConfigurationRevisionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListConfigurationRevisions`.
+/// Orchestration and serialization glue logic for `ListConfigurationRevisions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

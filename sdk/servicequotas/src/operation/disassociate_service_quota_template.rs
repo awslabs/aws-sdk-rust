@@ -118,7 +118,7 @@ impl DisassociateServiceQuotaTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateServiceQuotaTemplate`.
+/// Orchestration and serialization glue logic for `DisassociateServiceQuotaTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

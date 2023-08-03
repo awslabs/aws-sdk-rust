@@ -126,7 +126,7 @@ impl ReplaceVpnTunnelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReplaceVpnTunnel`.
+/// Orchestration and serialization glue logic for `ReplaceVpnTunnel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

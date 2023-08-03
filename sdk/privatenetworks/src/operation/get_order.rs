@@ -132,7 +132,7 @@ impl GetOrderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOrder`.
+/// Orchestration and serialization glue logic for `GetOrder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

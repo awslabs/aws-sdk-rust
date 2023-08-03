@@ -137,7 +137,7 @@ impl CreateSecurityPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSecurityPolicy`.
+/// Orchestration and serialization glue logic for `CreateSecurityPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

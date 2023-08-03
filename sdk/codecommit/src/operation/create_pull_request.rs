@@ -135,7 +135,7 @@ impl CreatePullRequestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePullRequest`.
+/// Orchestration and serialization glue logic for `CreatePullRequest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListPermissionSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPermissionSets`.
+/// Orchestration and serialization glue logic for `ListPermissionSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

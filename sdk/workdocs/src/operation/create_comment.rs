@@ -174,7 +174,7 @@ impl CreateCommentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateComment`.
+/// Orchestration and serialization glue logic for `CreateComment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

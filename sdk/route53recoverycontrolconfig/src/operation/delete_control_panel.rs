@@ -136,7 +136,7 @@ impl DeleteControlPanelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteControlPanel`.
+/// Orchestration and serialization glue logic for `DeleteControlPanel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl PutBucketReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketReplication`.
+/// Orchestration and serialization glue logic for `PutBucketReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

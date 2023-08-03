@@ -170,7 +170,7 @@ impl DeleteBackendAuthInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBackendAuth`.
+/// Orchestration and serialization glue logic for `DeleteBackendAuth`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl EnableRadiusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableRadius`.
+/// Orchestration and serialization glue logic for `EnableRadius`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateMedicalVocabularyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMedicalVocabulary`.
+/// Orchestration and serialization glue logic for `CreateMedicalVocabulary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

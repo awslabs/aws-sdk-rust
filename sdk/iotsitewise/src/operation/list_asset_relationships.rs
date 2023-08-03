@@ -171,7 +171,7 @@ impl ListAssetRelationshipsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssetRelationships`.
+/// Orchestration and serialization glue logic for `ListAssetRelationships`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

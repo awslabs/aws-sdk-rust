@@ -170,7 +170,7 @@ impl StopLaunchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopLaunch`.
+/// Orchestration and serialization glue logic for `StopLaunch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

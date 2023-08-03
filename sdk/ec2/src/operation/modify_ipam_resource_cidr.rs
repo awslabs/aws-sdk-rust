@@ -126,7 +126,7 @@ impl ModifyIpamResourceCidrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyIpamResourceCidr`.
+/// Orchestration and serialization glue logic for `ModifyIpamResourceCidr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -121,7 +121,7 @@ impl ListVoiceConnectorTerminationCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVoiceConnectorTerminationCredentials`.
+/// Orchestration and serialization glue logic for `ListVoiceConnectorTerminationCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl TestAvailabilityConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestAvailabilityConfiguration`.
+/// Orchestration and serialization glue logic for `TestAvailabilityConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

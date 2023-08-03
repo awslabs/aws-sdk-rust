@@ -135,7 +135,7 @@ impl CreateVolumeFromBackupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVolumeFromBackup`.
+/// Orchestration and serialization glue logic for `CreateVolumeFromBackup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

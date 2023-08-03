@@ -130,7 +130,7 @@ impl ModifyVerifiedAccessEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyVerifiedAccessEndpoint`.
+/// Orchestration and serialization glue logic for `ModifyVerifiedAccessEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

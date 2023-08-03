@@ -126,7 +126,7 @@ impl CreateInstanceExportTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateInstanceExportTask`.
+/// Orchestration and serialization glue logic for `CreateInstanceExportTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

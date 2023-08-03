@@ -143,7 +143,7 @@ impl DescribeBrokerEngineTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBrokerEngineTypes`.
+/// Orchestration and serialization glue logic for `DescribeBrokerEngineTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

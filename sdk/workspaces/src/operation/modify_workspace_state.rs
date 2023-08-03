@@ -133,7 +133,7 @@ impl ModifyWorkspaceStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyWorkspaceState`.
+/// Orchestration and serialization glue logic for `ModifyWorkspaceState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

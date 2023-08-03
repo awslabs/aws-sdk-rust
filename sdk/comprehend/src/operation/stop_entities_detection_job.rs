@@ -131,7 +131,7 @@ impl StopEntitiesDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopEntitiesDetectionJob`.
+/// Orchestration and serialization glue logic for `StopEntitiesDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

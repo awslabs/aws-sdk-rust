@@ -128,7 +128,7 @@ impl PutTelemetryRecordsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutTelemetryRecords`.
+/// Orchestration and serialization glue logic for `PutTelemetryRecords`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

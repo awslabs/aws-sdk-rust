@@ -130,7 +130,7 @@ impl CreateDomainNameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDomainName`.
+/// Orchestration and serialization glue logic for `CreateDomainName`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl BatchGetApplicationRevisionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetApplicationRevisions`.
+/// Orchestration and serialization glue logic for `BatchGetApplicationRevisions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

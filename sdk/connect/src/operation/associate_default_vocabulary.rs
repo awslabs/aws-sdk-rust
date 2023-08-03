@@ -170,7 +170,7 @@ impl AssociateDefaultVocabularyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateDefaultVocabulary`.
+/// Orchestration and serialization glue logic for `AssociateDefaultVocabulary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

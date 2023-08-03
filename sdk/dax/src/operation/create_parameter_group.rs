@@ -133,7 +133,7 @@ impl CreateParameterGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateParameterGroup`.
+/// Orchestration and serialization glue logic for `CreateParameterGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

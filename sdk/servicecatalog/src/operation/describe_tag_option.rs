@@ -131,7 +131,7 @@ impl DescribeTagOptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTagOption`.
+/// Orchestration and serialization glue logic for `DescribeTagOption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

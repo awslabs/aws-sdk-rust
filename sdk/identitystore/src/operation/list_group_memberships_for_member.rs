@@ -132,7 +132,7 @@ impl ListGroupMembershipsForMemberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGroupMembershipsForMember`.
+/// Orchestration and serialization glue logic for `ListGroupMembershipsForMember`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

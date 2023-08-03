@@ -135,7 +135,7 @@ impl PutEmailIdentityDkimSigningAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutEmailIdentityDkimSigningAttributes`.
+/// Orchestration and serialization glue logic for `PutEmailIdentityDkimSigningAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

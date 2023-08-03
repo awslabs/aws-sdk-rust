@@ -139,7 +139,7 @@ impl ListOriginEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOriginEndpoints`.
+/// Orchestration and serialization glue logic for `ListOriginEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

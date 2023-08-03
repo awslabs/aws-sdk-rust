@@ -131,7 +131,7 @@ impl CreateAssessmentTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAssessmentTemplate`.
+/// Orchestration and serialization glue logic for `CreateAssessmentTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

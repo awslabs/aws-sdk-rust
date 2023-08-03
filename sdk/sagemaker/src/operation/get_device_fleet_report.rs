@@ -131,7 +131,7 @@ impl GetDeviceFleetReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDeviceFleetReport`.
+/// Orchestration and serialization glue logic for `GetDeviceFleetReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

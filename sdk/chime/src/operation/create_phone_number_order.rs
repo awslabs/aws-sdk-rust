@@ -126,7 +126,7 @@ impl CreatePhoneNumberOrderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePhoneNumberOrder`.
+/// Orchestration and serialization glue logic for `CreatePhoneNumberOrder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

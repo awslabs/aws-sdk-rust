@@ -228,7 +228,7 @@ impl GetDashboardEmbedUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDashboardEmbedUrl`.
+/// Orchestration and serialization glue logic for `GetDashboardEmbedUrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

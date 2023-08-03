@@ -131,7 +131,7 @@ impl DescribeGlobalTableSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeGlobalTableSettings`.
+/// Orchestration and serialization glue logic for `DescribeGlobalTableSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

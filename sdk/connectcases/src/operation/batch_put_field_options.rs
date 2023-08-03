@@ -170,7 +170,7 @@ impl BatchPutFieldOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchPutFieldOptions`.
+/// Orchestration and serialization glue logic for `BatchPutFieldOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

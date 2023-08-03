@@ -133,7 +133,7 @@ impl UpdatePrimaryRegionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePrimaryRegion`.
+/// Orchestration and serialization glue logic for `UpdatePrimaryRegion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

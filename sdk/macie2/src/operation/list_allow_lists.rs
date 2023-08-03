@@ -134,7 +134,7 @@ impl ListAllowListsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAllowLists`.
+/// Orchestration and serialization glue logic for `ListAllowLists`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

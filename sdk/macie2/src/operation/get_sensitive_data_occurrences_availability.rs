@@ -121,7 +121,7 @@ impl GetSensitiveDataOccurrencesAvailabilityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSensitiveDataOccurrencesAvailability`.
+/// Orchestration and serialization glue logic for `GetSensitiveDataOccurrencesAvailability`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

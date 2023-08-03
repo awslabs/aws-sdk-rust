@@ -120,7 +120,7 @@ impl DeleteDbInstanceAutomatedBackupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDBInstanceAutomatedBackup`.
+/// Orchestration and serialization glue logic for `DeleteDBInstanceAutomatedBackup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

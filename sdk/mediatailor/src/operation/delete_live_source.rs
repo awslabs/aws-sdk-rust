@@ -156,7 +156,7 @@ impl DeleteLiveSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLiveSource`.
+/// Orchestration and serialization glue logic for `DeleteLiveSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

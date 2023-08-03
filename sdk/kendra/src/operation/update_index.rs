@@ -131,7 +131,7 @@ impl UpdateIndexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIndex`.
+/// Orchestration and serialization glue logic for `UpdateIndex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

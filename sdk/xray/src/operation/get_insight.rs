@@ -126,7 +126,7 @@ impl GetInsightInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInsight`.
+/// Orchestration and serialization glue logic for `GetInsight`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

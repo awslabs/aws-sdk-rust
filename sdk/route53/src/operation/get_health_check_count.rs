@@ -113,7 +113,7 @@ impl GetHealthCheckCountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetHealthCheckCount`.
+/// Orchestration and serialization glue logic for `GetHealthCheckCount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

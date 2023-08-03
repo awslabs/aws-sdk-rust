@@ -188,7 +188,7 @@ impl DeleteWorkloadShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkloadShare`.
+/// Orchestration and serialization glue logic for `DeleteWorkloadShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

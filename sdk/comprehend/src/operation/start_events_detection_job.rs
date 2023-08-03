@@ -135,7 +135,7 @@ impl StartEventsDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartEventsDetectionJob`.
+/// Orchestration and serialization glue logic for `StartEventsDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl AcceptTransitGatewayMulticastDomainAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptTransitGatewayMulticastDomainAssociations`.
+/// Orchestration and serialization glue logic for `AcceptTransitGatewayMulticastDomainAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl ListGroupsOlderThanOrderingIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGroupsOlderThanOrderingId`.
+/// Orchestration and serialization glue logic for `ListGroupsOlderThanOrderingId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -161,7 +161,7 @@ impl GetLensVersionDifferenceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLensVersionDifference`.
+/// Orchestration and serialization glue logic for `GetLensVersionDifference`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

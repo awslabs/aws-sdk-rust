@@ -136,7 +136,7 @@ impl GetVoiceConnectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVoiceConnector`.
+/// Orchestration and serialization glue logic for `GetVoiceConnector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

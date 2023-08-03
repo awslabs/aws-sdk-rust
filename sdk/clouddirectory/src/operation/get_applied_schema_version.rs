@@ -130,7 +130,7 @@ impl GetAppliedSchemaVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAppliedSchemaVersion`.
+/// Orchestration and serialization glue logic for `GetAppliedSchemaVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

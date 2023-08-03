@@ -126,7 +126,7 @@ impl DescribeImportImageTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeImportImageTasks`.
+/// Orchestration and serialization glue logic for `DescribeImportImageTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

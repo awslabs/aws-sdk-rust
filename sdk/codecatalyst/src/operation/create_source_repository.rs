@@ -177,7 +177,7 @@ impl CreateSourceRepositoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSourceRepository`.
+/// Orchestration and serialization glue logic for `CreateSourceRepository`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

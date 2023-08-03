@@ -117,7 +117,7 @@ impl GetUserAttributeVerificationCodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUserAttributeVerificationCode`.
+/// Orchestration and serialization glue logic for `GetUserAttributeVerificationCode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

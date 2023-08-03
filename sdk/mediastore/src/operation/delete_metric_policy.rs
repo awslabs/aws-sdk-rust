@@ -133,7 +133,7 @@ impl DeleteMetricPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMetricPolicy`.
+/// Orchestration and serialization glue logic for `DeleteMetricPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

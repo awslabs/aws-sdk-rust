@@ -116,7 +116,7 @@ impl DescribeBudgetNotificationsForAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBudgetNotificationsForAccount`.
+/// Orchestration and serialization glue logic for `DescribeBudgetNotificationsForAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

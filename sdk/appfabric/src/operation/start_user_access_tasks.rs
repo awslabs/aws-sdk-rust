@@ -126,7 +126,7 @@ impl StartUserAccessTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartUserAccessTasks`.
+/// Orchestration and serialization glue logic for `StartUserAccessTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CheckoutBorrowLicenseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CheckoutBorrowLicense`.
+/// Orchestration and serialization glue logic for `CheckoutBorrowLicense`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

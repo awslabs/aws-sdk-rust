@@ -170,7 +170,7 @@ impl UpdateBackendApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBackendAPI`.
+/// Orchestration and serialization glue logic for `UpdateBackendAPI`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

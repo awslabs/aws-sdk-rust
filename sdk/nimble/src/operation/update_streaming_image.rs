@@ -177,7 +177,7 @@ impl UpdateStreamingImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStreamingImage`.
+/// Orchestration and serialization glue logic for `UpdateStreamingImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

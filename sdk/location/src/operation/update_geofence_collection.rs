@@ -152,7 +152,7 @@ impl UpdateGeofenceCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateGeofenceCollection`.
+/// Orchestration and serialization glue logic for `UpdateGeofenceCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

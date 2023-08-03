@@ -163,7 +163,7 @@ impl CreateVaultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVault`.
+/// Orchestration and serialization glue logic for `CreateVault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

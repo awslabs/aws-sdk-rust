@@ -135,7 +135,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutVoiceConnectorEmergencyCallingConfiguration`.
+/// Orchestration and serialization glue logic for `PutVoiceConnectorEmergencyCallingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreateSbomExportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSbomExport`.
+/// Orchestration and serialization glue logic for `CreateSbomExport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

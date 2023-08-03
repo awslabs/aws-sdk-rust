@@ -150,7 +150,7 @@ impl RotateIngestEndpointCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RotateIngestEndpointCredentials`.
+/// Orchestration and serialization glue logic for `RotateIngestEndpointCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

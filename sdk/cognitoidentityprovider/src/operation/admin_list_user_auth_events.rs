@@ -131,7 +131,7 @@ impl AdminListUserAuthEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminListUserAuthEvents`.
+/// Orchestration and serialization glue logic for `AdminListUserAuthEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

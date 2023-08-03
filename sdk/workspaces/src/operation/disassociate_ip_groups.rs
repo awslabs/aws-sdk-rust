@@ -133,7 +133,7 @@ impl DisassociateIpGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateIpGroups`.
+/// Orchestration and serialization glue logic for `DisassociateIpGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListBuildBatchesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBuildBatches`.
+/// Orchestration and serialization glue logic for `ListBuildBatches`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

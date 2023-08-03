@@ -126,7 +126,7 @@ impl ListManagedInsightRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListManagedInsightRules`.
+/// Orchestration and serialization glue logic for `ListManagedInsightRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -183,7 +183,7 @@ impl AssociateDeviceWithPlacementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateDeviceWithPlacement`.
+/// Orchestration and serialization glue logic for `AssociateDeviceWithPlacement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

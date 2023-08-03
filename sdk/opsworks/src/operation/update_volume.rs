@@ -131,7 +131,7 @@ impl UpdateVolumeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVolume`.
+/// Orchestration and serialization glue logic for `UpdateVolume`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

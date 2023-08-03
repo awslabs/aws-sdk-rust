@@ -135,7 +135,7 @@ impl StartSentimentDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartSentimentDetectionJob`.
+/// Orchestration and serialization glue logic for `StartSentimentDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -141,7 +141,7 @@ impl GetBucketPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketPolicy`.
+/// Orchestration and serialization glue logic for `GetBucketPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

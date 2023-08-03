@@ -126,7 +126,7 @@ impl DescribeIpamScopesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeIpamScopes`.
+/// Orchestration and serialization glue logic for `DescribeIpamScopes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

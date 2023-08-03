@@ -131,7 +131,7 @@ impl DeleteAlgorithmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAlgorithm`.
+/// Orchestration and serialization glue logic for `DeleteAlgorithm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

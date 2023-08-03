@@ -131,7 +131,7 @@ impl ListPortfoliosForProductInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPortfoliosForProduct`.
+/// Orchestration and serialization glue logic for `ListPortfoliosForProduct`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

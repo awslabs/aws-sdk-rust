@@ -111,7 +111,7 @@ impl GetIdentityNotificationAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIdentityNotificationAttributes`.
+/// Orchestration and serialization glue logic for `GetIdentityNotificationAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

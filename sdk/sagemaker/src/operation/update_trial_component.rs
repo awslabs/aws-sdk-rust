@@ -133,7 +133,7 @@ impl UpdateTrialComponentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTrialComponent`.
+/// Orchestration and serialization glue logic for `UpdateTrialComponent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

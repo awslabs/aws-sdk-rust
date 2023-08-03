@@ -178,7 +178,7 @@ impl ListResolversInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResolvers`.
+/// Orchestration and serialization glue logic for `ListResolvers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

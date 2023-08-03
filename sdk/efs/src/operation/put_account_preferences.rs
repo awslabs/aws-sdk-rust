@@ -127,7 +127,7 @@ impl PutAccountPreferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAccountPreferences`.
+/// Orchestration and serialization glue logic for `PutAccountPreferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl PutAccountConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAccountConfiguration`.
+/// Orchestration and serialization glue logic for `PutAccountConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

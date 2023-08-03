@@ -150,7 +150,7 @@ impl UpdateExtensionAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateExtensionAssociation`.
+/// Orchestration and serialization glue logic for `UpdateExtensionAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

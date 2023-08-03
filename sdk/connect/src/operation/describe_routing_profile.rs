@@ -156,7 +156,7 @@ impl DescribeRoutingProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRoutingProfile`.
+/// Orchestration and serialization glue logic for `DescribeRoutingProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

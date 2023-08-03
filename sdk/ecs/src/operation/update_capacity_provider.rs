@@ -131,7 +131,7 @@ impl UpdateCapacityProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCapacityProvider`.
+/// Orchestration and serialization glue logic for `UpdateCapacityProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

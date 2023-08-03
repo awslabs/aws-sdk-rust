@@ -136,7 +136,7 @@ impl DescribeSourceLocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSourceLocation`.
+/// Orchestration and serialization glue logic for `DescribeSourceLocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

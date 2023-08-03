@@ -136,7 +136,7 @@ impl GetManagedResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetManagedResource`.
+/// Orchestration and serialization glue logic for `GetManagedResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

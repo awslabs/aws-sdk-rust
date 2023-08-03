@@ -150,7 +150,7 @@ impl UpdateGatewayInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateGatewayInstance`.
+/// Orchestration and serialization glue logic for `UpdateGatewayInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

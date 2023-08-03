@@ -165,7 +165,7 @@ impl ListAssetModelPropertiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssetModelProperties`.
+/// Orchestration and serialization glue logic for `ListAssetModelProperties`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

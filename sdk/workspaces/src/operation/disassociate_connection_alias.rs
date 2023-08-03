@@ -131,7 +131,7 @@ impl DisassociateConnectionAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateConnectionAlias`.
+/// Orchestration and serialization glue logic for `DisassociateConnectionAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

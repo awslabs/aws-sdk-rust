@@ -133,7 +133,7 @@ impl AssociateMacSecKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateMacSecKey`.
+/// Orchestration and serialization glue logic for `AssociateMacSecKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

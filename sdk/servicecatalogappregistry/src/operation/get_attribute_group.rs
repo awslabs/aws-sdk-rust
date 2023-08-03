@@ -136,7 +136,7 @@ impl GetAttributeGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAttributeGroup`.
+/// Orchestration and serialization glue logic for `GetAttributeGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

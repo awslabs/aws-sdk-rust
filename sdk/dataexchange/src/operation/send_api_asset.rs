@@ -132,7 +132,7 @@ impl SendApiAssetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendApiAsset`.
+/// Orchestration and serialization glue logic for `SendApiAsset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

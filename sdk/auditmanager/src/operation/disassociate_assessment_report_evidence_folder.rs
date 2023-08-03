@@ -135,7 +135,7 @@ impl DisassociateAssessmentReportEvidenceFolderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateAssessmentReportEvidenceFolder`.
+/// Orchestration and serialization glue logic for `DisassociateAssessmentReportEvidenceFolder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

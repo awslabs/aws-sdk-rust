@@ -116,7 +116,7 @@ impl UpdateApplicationMaintenanceConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateApplicationMaintenanceConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateApplicationMaintenanceConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

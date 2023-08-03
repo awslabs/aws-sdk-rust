@@ -131,7 +131,7 @@ impl ListParallelDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListParallelData`.
+/// Orchestration and serialization glue logic for `ListParallelData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

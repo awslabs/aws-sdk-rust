@@ -131,7 +131,7 @@ impl CreateQualificationTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateQualificationType`.
+/// Orchestration and serialization glue logic for `CreateQualificationType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

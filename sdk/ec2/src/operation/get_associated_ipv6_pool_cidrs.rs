@@ -126,7 +126,7 @@ impl GetAssociatedIpv6PoolCidrsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAssociatedIpv6PoolCidrs`.
+/// Orchestration and serialization glue logic for `GetAssociatedIpv6PoolCidrs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

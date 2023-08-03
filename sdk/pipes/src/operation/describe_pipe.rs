@@ -132,7 +132,7 @@ impl DescribePipeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePipe`.
+/// Orchestration and serialization glue logic for `DescribePipe`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -221,7 +221,7 @@ impl UpdateSlotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSlot`.
+/// Orchestration and serialization glue logic for `UpdateSlot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

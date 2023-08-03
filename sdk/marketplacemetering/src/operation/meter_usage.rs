@@ -131,7 +131,7 @@ impl MeterUsageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MeterUsage`.
+/// Orchestration and serialization glue logic for `MeterUsage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

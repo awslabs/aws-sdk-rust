@@ -126,7 +126,7 @@ impl EstimateTemplateCostInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EstimateTemplateCost`.
+/// Orchestration and serialization glue logic for `EstimateTemplateCost`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

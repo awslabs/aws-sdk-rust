@@ -174,7 +174,7 @@ impl UpdateAddonInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAddon`.
+/// Orchestration and serialization glue logic for `UpdateAddon`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

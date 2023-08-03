@@ -131,7 +131,7 @@ impl UpdateFileSystemAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFileSystemAssociation`.
+/// Orchestration and serialization glue logic for `UpdateFileSystemAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

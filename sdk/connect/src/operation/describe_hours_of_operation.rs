@@ -156,7 +156,7 @@ impl DescribeHoursOfOperationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHoursOfOperation`.
+/// Orchestration and serialization glue logic for `DescribeHoursOfOperation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

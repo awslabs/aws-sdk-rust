@@ -111,7 +111,7 @@ impl DescribeVerifiedAccessTrustProvidersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVerifiedAccessTrustProviders`.
+/// Orchestration and serialization glue logic for `DescribeVerifiedAccessTrustProviders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

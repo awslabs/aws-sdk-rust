@@ -126,7 +126,7 @@ impl GetParticipantInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetParticipant`.
+/// Orchestration and serialization glue logic for `GetParticipant`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

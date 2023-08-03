@@ -133,7 +133,7 @@ impl PutCommentReactionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutCommentReaction`.
+/// Orchestration and serialization glue logic for `PutCommentReaction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

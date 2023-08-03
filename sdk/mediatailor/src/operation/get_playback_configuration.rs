@@ -132,7 +132,7 @@ impl GetPlaybackConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPlaybackConfiguration`.
+/// Orchestration and serialization glue logic for `GetPlaybackConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

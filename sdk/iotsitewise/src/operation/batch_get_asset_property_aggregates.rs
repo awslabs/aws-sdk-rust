@@ -123,7 +123,7 @@ impl BatchGetAssetPropertyAggregatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetAssetPropertyAggregates`.
+/// Orchestration and serialization glue logic for `BatchGetAssetPropertyAggregates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

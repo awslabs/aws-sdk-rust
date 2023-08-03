@@ -123,7 +123,7 @@ impl DeleteAccountAuditConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccountAuditConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteAccountAuditConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

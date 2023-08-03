@@ -170,7 +170,7 @@ impl CreateVirtualServiceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVirtualService`.
+/// Orchestration and serialization glue logic for `CreateVirtualService`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

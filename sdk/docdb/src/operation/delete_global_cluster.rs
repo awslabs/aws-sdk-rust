@@ -126,7 +126,7 @@ impl DeleteGlobalClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGlobalCluster`.
+/// Orchestration and serialization glue logic for `DeleteGlobalCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

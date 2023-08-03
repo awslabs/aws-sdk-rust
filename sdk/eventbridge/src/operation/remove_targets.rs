@@ -131,7 +131,7 @@ impl RemoveTargetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveTargets`.
+/// Orchestration and serialization glue logic for `RemoveTargets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

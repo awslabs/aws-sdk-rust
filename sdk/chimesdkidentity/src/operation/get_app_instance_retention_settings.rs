@@ -130,7 +130,7 @@ impl GetAppInstanceRetentionSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAppInstanceRetentionSettings`.
+/// Orchestration and serialization glue logic for `GetAppInstanceRetentionSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

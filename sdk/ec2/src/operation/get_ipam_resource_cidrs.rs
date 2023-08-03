@@ -126,7 +126,7 @@ impl GetIpamResourceCidrsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIpamResourceCidrs`.
+/// Orchestration and serialization glue logic for `GetIpamResourceCidrs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

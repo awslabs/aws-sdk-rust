@@ -133,7 +133,7 @@ impl UpdateTaskProtectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTaskProtection`.
+/// Orchestration and serialization glue logic for `UpdateTaskProtection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

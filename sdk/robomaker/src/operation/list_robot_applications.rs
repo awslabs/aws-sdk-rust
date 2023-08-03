@@ -126,7 +126,7 @@ impl ListRobotApplicationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRobotApplications`.
+/// Orchestration and serialization glue logic for `ListRobotApplications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListResourcesForWebAclInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourcesForWebACL`.
+/// Orchestration and serialization glue logic for `ListResourcesForWebACL`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

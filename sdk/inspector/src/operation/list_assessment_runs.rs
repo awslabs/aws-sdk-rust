@@ -133,7 +133,7 @@ impl ListAssessmentRunsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssessmentRuns`.
+/// Orchestration and serialization glue logic for `ListAssessmentRuns`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -172,7 +172,7 @@ impl GetReadinessCheckResourceStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReadinessCheckResourceStatus`.
+/// Orchestration and serialization glue logic for `GetReadinessCheckResourceStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

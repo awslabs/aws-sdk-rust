@@ -132,7 +132,7 @@ impl DescribeResourcePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeResourcePolicy`.
+/// Orchestration and serialization glue logic for `DescribeResourcePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

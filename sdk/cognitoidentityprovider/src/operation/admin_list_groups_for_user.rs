@@ -131,7 +131,7 @@ impl AdminListGroupsForUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminListGroupsForUser`.
+/// Orchestration and serialization glue logic for `AdminListGroupsForUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

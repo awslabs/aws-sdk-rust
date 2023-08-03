@@ -113,7 +113,7 @@ impl CreateAccessTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAccessToken`.
+/// Orchestration and serialization glue logic for `CreateAccessToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

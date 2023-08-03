@@ -112,7 +112,7 @@ impl ListWebsiteCertificateAuthoritiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWebsiteCertificateAuthorities`.
+/// Orchestration and serialization glue logic for `ListWebsiteCertificateAuthorities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

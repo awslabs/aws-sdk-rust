@@ -155,7 +155,7 @@ impl GetGameConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGameConfiguration`.
+/// Orchestration and serialization glue logic for `GetGameConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl RemoveAutoTerminationPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveAutoTerminationPolicy`.
+/// Orchestration and serialization glue logic for `RemoveAutoTerminationPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

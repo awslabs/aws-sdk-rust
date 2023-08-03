@@ -119,7 +119,7 @@ impl DeleteAccountPasswordPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccountPasswordPolicy`.
+/// Orchestration and serialization glue logic for `DeleteAccountPasswordPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

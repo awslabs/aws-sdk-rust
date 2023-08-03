@@ -113,7 +113,7 @@ impl DescribeAcceleratorTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAcceleratorTypes`.
+/// Orchestration and serialization glue logic for `DescribeAcceleratorTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl SwapEnvironmentCnamEsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SwapEnvironmentCNAMEs`.
+/// Orchestration and serialization glue logic for `SwapEnvironmentCNAMEs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

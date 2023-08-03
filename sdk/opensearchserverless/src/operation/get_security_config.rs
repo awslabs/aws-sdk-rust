@@ -131,7 +131,7 @@ impl GetSecurityConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSecurityConfig`.
+/// Orchestration and serialization glue logic for `GetSecurityConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl GetSpeechSynthesisTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSpeechSynthesisTask`.
+/// Orchestration and serialization glue logic for `GetSpeechSynthesisTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

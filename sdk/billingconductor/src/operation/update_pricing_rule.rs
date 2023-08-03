@@ -126,7 +126,7 @@ impl UpdatePricingRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePricingRule`.
+/// Orchestration and serialization glue logic for `UpdatePricingRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

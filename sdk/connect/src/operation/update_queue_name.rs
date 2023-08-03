@@ -170,7 +170,7 @@ impl UpdateQueueNameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateQueueName`.
+/// Orchestration and serialization glue logic for `UpdateQueueName`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

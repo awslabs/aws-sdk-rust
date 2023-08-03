@@ -116,7 +116,7 @@ impl DescribeConnectionsOnInterconnectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConnectionsOnInterconnect`.
+/// Orchestration and serialization glue logic for `DescribeConnectionsOnInterconnect`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

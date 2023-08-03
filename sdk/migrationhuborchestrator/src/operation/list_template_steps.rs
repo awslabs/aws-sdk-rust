@@ -170,7 +170,7 @@ impl ListTemplateStepsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTemplateSteps`.
+/// Orchestration and serialization glue logic for `ListTemplateSteps`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

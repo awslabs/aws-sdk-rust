@@ -131,7 +131,7 @@ impl GetLicenseConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLicenseConfiguration`.
+/// Orchestration and serialization glue logic for `GetLicenseConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

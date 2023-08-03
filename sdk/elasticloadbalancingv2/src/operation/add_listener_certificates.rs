@@ -126,7 +126,7 @@ impl AddListenerCertificatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddListenerCertificates`.
+/// Orchestration and serialization glue logic for `AddListenerCertificates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

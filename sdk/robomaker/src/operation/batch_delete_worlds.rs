@@ -126,7 +126,7 @@ impl BatchDeleteWorldsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteWorlds`.
+/// Orchestration and serialization glue logic for `BatchDeleteWorlds`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

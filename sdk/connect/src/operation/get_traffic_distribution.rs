@@ -132,7 +132,7 @@ impl GetTrafficDistributionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTrafficDistribution`.
+/// Orchestration and serialization glue logic for `GetTrafficDistribution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

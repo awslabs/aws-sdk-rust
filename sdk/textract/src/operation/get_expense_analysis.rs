@@ -133,7 +133,7 @@ impl GetExpenseAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetExpenseAnalysis`.
+/// Orchestration and serialization glue logic for `GetExpenseAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

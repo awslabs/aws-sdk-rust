@@ -133,7 +133,7 @@ impl CreateFeatureGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFeatureGroup`.
+/// Orchestration and serialization glue logic for `CreateFeatureGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

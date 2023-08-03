@@ -133,7 +133,7 @@ impl UpdateAnomalyMonitorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAnomalyMonitor`.
+/// Orchestration and serialization glue logic for `UpdateAnomalyMonitor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

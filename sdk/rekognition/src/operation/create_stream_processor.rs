@@ -131,7 +131,7 @@ impl CreateStreamProcessorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStreamProcessor`.
+/// Orchestration and serialization glue logic for `CreateStreamProcessor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl CreateDeviceDefinitionVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDeviceDefinitionVersion`.
+/// Orchestration and serialization glue logic for `CreateDeviceDefinitionVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

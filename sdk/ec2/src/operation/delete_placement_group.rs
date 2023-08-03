@@ -126,7 +126,7 @@ impl DeletePlacementGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePlacementGroup`.
+/// Orchestration and serialization glue logic for `DeletePlacementGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

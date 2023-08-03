@@ -133,7 +133,7 @@ impl PutDestinationPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutDestinationPolicy`.
+/// Orchestration and serialization glue logic for `PutDestinationPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

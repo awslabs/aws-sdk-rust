@@ -132,7 +132,7 @@ impl GetFaceLivenessSessionResultsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFaceLivenessSessionResults`.
+/// Orchestration and serialization glue logic for `GetFaceLivenessSessionResults`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

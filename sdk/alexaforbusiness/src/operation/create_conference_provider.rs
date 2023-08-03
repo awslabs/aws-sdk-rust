@@ -135,7 +135,7 @@ impl CreateConferenceProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateConferenceProvider`.
+/// Orchestration and serialization glue logic for `CreateConferenceProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

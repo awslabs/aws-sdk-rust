@@ -132,7 +132,7 @@ impl GetCloudFormationStackRecordsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCloudFormationStackRecords`.
+/// Orchestration and serialization glue logic for `GetCloudFormationStackRecords`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

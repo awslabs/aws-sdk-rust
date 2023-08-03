@@ -136,7 +136,7 @@ impl GetBulkPublishDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBulkPublishDetails`.
+/// Orchestration and serialization glue logic for `GetBulkPublishDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

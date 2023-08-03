@@ -150,7 +150,7 @@ impl UpdateFunctionConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFunctionConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateFunctionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

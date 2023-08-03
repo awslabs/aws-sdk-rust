@@ -127,7 +127,7 @@ impl DeleteSignalingChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSignalingChannel`.
+/// Orchestration and serialization glue logic for `DeleteSignalingChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

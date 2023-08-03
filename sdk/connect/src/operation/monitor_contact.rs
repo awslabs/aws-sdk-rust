@@ -130,7 +130,7 @@ impl MonitorContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MonitorContact`.
+/// Orchestration and serialization glue logic for `MonitorContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

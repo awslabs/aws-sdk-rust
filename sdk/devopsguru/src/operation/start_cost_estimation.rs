@@ -132,7 +132,7 @@ impl StartCostEstimationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartCostEstimation`.
+/// Orchestration and serialization glue logic for `StartCostEstimation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

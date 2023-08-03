@@ -131,7 +131,7 @@ impl DeleteFirewallDomainListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFirewallDomainList`.
+/// Orchestration and serialization glue logic for `DeleteFirewallDomainList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

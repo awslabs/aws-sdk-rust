@@ -156,7 +156,7 @@ impl RemoveFlowSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveFlowSource`.
+/// Orchestration and serialization glue logic for `RemoveFlowSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

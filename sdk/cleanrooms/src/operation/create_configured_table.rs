@@ -126,7 +126,7 @@ impl CreateConfiguredTableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateConfiguredTable`.
+/// Orchestration and serialization glue logic for `CreateConfiguredTable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

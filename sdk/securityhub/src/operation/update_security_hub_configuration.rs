@@ -120,7 +120,7 @@ impl UpdateSecurityHubConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSecurityHubConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateSecurityHubConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

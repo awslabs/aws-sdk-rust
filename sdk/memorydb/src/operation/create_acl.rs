@@ -131,7 +131,7 @@ impl CreateAclInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateACL`.
+/// Orchestration and serialization glue logic for `CreateACL`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

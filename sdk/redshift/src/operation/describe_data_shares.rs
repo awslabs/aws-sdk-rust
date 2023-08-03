@@ -126,7 +126,7 @@ impl DescribeDataSharesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDataShares`.
+/// Orchestration and serialization glue logic for `DescribeDataShares`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

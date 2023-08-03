@@ -130,7 +130,7 @@ impl CreateWorkerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorker`.
+/// Orchestration and serialization glue logic for `CreateWorker`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

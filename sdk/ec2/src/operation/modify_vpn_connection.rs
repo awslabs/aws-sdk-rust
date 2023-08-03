@@ -126,7 +126,7 @@ impl ModifyVpnConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyVpnConnection`.
+/// Orchestration and serialization glue logic for `ModifyVpnConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

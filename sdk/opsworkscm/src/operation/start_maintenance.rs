@@ -131,7 +131,7 @@ impl StartMaintenanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartMaintenance`.
+/// Orchestration and serialization glue logic for `StartMaintenance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

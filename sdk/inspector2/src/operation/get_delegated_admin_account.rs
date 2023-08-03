@@ -113,7 +113,7 @@ impl GetDelegatedAdminAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDelegatedAdminAccount`.
+/// Orchestration and serialization glue logic for `GetDelegatedAdminAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

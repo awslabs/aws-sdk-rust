@@ -131,7 +131,7 @@ impl DetachFromIndexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachFromIndex`.
+/// Orchestration and serialization glue logic for `DetachFromIndex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl BatchUpdateScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpdateSchedule`.
+/// Orchestration and serialization glue logic for `BatchUpdateSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

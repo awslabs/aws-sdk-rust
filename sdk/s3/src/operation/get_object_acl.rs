@@ -158,7 +158,7 @@ impl GetObjectAclInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetObjectAcl`.
+/// Orchestration and serialization glue logic for `GetObjectAcl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

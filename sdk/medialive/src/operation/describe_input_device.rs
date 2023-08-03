@@ -136,7 +136,7 @@ impl DescribeInputDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInputDevice`.
+/// Orchestration and serialization glue logic for `DescribeInputDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

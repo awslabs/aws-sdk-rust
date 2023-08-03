@@ -132,7 +132,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListChannelsModeratedByAppInstanceUser`.
+/// Orchestration and serialization glue logic for `ListChannelsModeratedByAppInstanceUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl AssociateTagOptionWithResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateTagOptionWithResource`.
+/// Orchestration and serialization glue logic for `AssociateTagOptionWithResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

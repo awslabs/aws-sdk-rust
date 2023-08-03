@@ -170,7 +170,7 @@ impl BatchUpdateRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpdateRule`.
+/// Orchestration and serialization glue logic for `BatchUpdateRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

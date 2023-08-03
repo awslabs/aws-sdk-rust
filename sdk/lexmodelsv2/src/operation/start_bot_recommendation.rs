@@ -183,7 +183,7 @@ impl StartBotRecommendationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartBotRecommendation`.
+/// Orchestration and serialization glue logic for `StartBotRecommendation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

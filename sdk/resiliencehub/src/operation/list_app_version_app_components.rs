@@ -127,7 +127,7 @@ impl ListAppVersionAppComponentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppVersionAppComponents`.
+/// Orchestration and serialization glue logic for `ListAppVersionAppComponents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

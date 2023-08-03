@@ -132,7 +132,7 @@ impl DeleteFuotaTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFuotaTask`.
+/// Orchestration and serialization glue logic for `DeleteFuotaTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

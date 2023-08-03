@@ -177,7 +177,7 @@ impl PutSnapshotBlockInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSnapshotBlock`.
+/// Orchestration and serialization glue logic for `PutSnapshotBlock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

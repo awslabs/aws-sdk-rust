@@ -131,7 +131,7 @@ impl GetTemplateSyncStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTemplateSyncStatus`.
+/// Orchestration and serialization glue logic for `GetTemplateSyncStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

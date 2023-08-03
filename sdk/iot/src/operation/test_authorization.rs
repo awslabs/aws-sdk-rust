@@ -140,7 +140,7 @@ impl TestAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestAuthorization`.
+/// Orchestration and serialization glue logic for `TestAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

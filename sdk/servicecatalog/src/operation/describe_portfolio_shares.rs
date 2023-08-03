@@ -131,7 +131,7 @@ impl DescribePortfolioSharesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePortfolioShares`.
+/// Orchestration and serialization glue logic for `DescribePortfolioShares`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

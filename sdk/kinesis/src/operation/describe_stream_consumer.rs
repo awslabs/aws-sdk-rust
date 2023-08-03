@@ -134,7 +134,7 @@ impl DescribeStreamConsumerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStreamConsumer`.
+/// Orchestration and serialization glue logic for `DescribeStreamConsumer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -134,7 +134,7 @@ impl ListAccessorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccessors`.
+/// Orchestration and serialization glue logic for `ListAccessors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl DeleteDeliveryStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDeliveryStream`.
+/// Orchestration and serialization glue logic for `DeleteDeliveryStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -138,7 +138,7 @@ impl DeleteTrackerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTracker`.
+/// Orchestration and serialization glue logic for `DeleteTracker`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

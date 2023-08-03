@@ -131,7 +131,7 @@ impl GetBlueprintRunsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBlueprintRuns`.
+/// Orchestration and serialization glue logic for `GetBlueprintRuns`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

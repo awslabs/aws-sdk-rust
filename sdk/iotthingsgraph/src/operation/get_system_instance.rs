@@ -131,7 +131,7 @@ impl GetSystemInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSystemInstance`.
+/// Orchestration and serialization glue logic for `GetSystemInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

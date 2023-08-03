@@ -131,7 +131,7 @@ impl DetachStaticIpInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachStaticIp`.
+/// Orchestration and serialization glue logic for `DetachStaticIp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

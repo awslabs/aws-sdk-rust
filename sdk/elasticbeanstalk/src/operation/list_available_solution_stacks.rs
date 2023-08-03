@@ -119,7 +119,7 @@ impl ListAvailableSolutionStacksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAvailableSolutionStacks`.
+/// Orchestration and serialization glue logic for `ListAvailableSolutionStacks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

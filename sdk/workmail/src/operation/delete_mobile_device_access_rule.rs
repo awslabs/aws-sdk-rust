@@ -131,7 +131,7 @@ impl DeleteMobileDeviceAccessRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMobileDeviceAccessRule`.
+/// Orchestration and serialization glue logic for `DeleteMobileDeviceAccessRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

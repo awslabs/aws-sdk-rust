@@ -133,7 +133,7 @@ impl ListRoutingControlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRoutingControls`.
+/// Orchestration and serialization glue logic for `ListRoutingControls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

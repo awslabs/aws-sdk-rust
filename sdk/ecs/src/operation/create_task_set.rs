@@ -131,7 +131,7 @@ impl CreateTaskSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTaskSet`.
+/// Orchestration and serialization glue logic for `CreateTaskSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

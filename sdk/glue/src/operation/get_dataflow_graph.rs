@@ -131,7 +131,7 @@ impl GetDataflowGraphInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataflowGraph`.
+/// Orchestration and serialization glue logic for `GetDataflowGraph`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

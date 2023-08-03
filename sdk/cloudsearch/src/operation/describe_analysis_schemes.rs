@@ -126,7 +126,7 @@ impl DescribeAnalysisSchemesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAnalysisSchemes`.
+/// Orchestration and serialization glue logic for `DescribeAnalysisSchemes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

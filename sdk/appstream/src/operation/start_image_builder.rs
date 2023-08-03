@@ -131,7 +131,7 @@ impl StartImageBuilderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartImageBuilder`.
+/// Orchestration and serialization glue logic for `StartImageBuilder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

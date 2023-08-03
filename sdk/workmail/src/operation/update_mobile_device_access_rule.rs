@@ -131,7 +131,7 @@ impl UpdateMobileDeviceAccessRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMobileDeviceAccessRule`.
+/// Orchestration and serialization glue logic for `UpdateMobileDeviceAccessRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

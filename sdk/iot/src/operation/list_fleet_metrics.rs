@@ -134,7 +134,7 @@ impl ListFleetMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFleetMetrics`.
+/// Orchestration and serialization glue logic for `ListFleetMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

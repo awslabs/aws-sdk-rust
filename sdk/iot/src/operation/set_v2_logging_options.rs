@@ -128,7 +128,7 @@ impl SetV2LoggingOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetV2LoggingOptions`.
+/// Orchestration and serialization glue logic for `SetV2LoggingOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

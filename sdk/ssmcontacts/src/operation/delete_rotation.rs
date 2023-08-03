@@ -131,7 +131,7 @@ impl DeleteRotationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRotation`.
+/// Orchestration and serialization glue logic for `DeleteRotation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

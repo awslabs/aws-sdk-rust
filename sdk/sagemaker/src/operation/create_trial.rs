@@ -131,7 +131,7 @@ impl CreateTrialInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrial`.
+/// Orchestration and serialization glue logic for `CreateTrial`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

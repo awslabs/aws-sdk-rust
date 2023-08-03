@@ -131,7 +131,7 @@ impl AdminSetUserSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminSetUserSettings`.
+/// Orchestration and serialization glue logic for `AdminSetUserSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl SearchUsersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchUsers`.
+/// Orchestration and serialization glue logic for `SearchUsers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

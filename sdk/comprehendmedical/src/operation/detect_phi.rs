@@ -131,7 +131,7 @@ impl DetectPhiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectPHI`.
+/// Orchestration and serialization glue logic for `DetectPHI`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

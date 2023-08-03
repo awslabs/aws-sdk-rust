@@ -131,7 +131,7 @@ impl GetAggregateResourceConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAggregateResourceConfig`.
+/// Orchestration and serialization glue logic for `GetAggregateResourceConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

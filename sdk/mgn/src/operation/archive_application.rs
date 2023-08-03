@@ -126,7 +126,7 @@ impl ArchiveApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ArchiveApplication`.
+/// Orchestration and serialization glue logic for `ArchiveApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

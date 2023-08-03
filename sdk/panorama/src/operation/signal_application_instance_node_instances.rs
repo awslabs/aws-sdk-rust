@@ -135,7 +135,7 @@ impl SignalApplicationInstanceNodeInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SignalApplicationInstanceNodeInstances`.
+/// Orchestration and serialization glue logic for `SignalApplicationInstanceNodeInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

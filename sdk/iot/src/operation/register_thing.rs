@@ -126,7 +126,7 @@ impl RegisterThingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterThing`.
+/// Orchestration and serialization glue logic for `RegisterThing`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

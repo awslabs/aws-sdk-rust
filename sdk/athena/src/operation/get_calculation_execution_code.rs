@@ -131,7 +131,7 @@ impl GetCalculationExecutionCodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCalculationExecutionCode`.
+/// Orchestration and serialization glue logic for `GetCalculationExecutionCode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl StopDataSourceSyncJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopDataSourceSyncJob`.
+/// Orchestration and serialization glue logic for `StopDataSourceSyncJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

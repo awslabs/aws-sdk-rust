@@ -126,7 +126,7 @@ impl CheckDnsAvailabilityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CheckDNSAvailability`.
+/// Orchestration and serialization glue logic for `CheckDNSAvailability`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

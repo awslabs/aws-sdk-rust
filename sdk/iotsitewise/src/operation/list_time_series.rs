@@ -157,7 +157,7 @@ impl ListTimeSeriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTimeSeries`.
+/// Orchestration and serialization glue logic for `ListTimeSeries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

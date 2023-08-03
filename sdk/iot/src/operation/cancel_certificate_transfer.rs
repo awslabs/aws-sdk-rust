@@ -136,7 +136,7 @@ impl CancelCertificateTransferInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelCertificateTransfer`.
+/// Orchestration and serialization glue logic for `CancelCertificateTransfer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

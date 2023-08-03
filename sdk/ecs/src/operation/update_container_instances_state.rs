@@ -132,7 +132,7 @@ impl UpdateContainerInstancesStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContainerInstancesState`.
+/// Orchestration and serialization glue logic for `UpdateContainerInstancesState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

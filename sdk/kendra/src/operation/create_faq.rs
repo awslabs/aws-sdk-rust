@@ -135,7 +135,7 @@ impl CreateFaqInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFaq`.
+/// Orchestration and serialization glue logic for `CreateFaq`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

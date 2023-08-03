@@ -112,7 +112,7 @@ impl UpdateDataLakeExceptionSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDataLakeExceptionSubscription`.
+/// Orchestration and serialization glue logic for `UpdateDataLakeExceptionSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

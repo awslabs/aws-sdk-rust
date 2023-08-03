@@ -133,7 +133,7 @@ impl ReportTaskProgressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReportTaskProgress`.
+/// Orchestration and serialization glue logic for `ReportTaskProgress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

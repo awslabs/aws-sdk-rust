@@ -119,7 +119,7 @@ impl CreateStorageLocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStorageLocation`.
+/// Orchestration and serialization glue logic for `CreateStorageLocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl GetDeploymentGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDeploymentGroup`.
+/// Orchestration and serialization glue logic for `GetDeploymentGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

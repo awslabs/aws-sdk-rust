@@ -135,7 +135,7 @@ impl ListDistributionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDistributions`.
+/// Orchestration and serialization glue logic for `ListDistributions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

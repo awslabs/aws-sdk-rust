@@ -116,7 +116,7 @@ impl DescribeAggregateComplianceByConfigRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAggregateComplianceByConfigRules`.
+/// Orchestration and serialization glue logic for `DescribeAggregateComplianceByConfigRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

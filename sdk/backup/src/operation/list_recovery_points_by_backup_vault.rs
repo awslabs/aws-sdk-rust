@@ -206,7 +206,7 @@ impl ListRecoveryPointsByBackupVaultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRecoveryPointsByBackupVault`.
+/// Orchestration and serialization glue logic for `ListRecoveryPointsByBackupVault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

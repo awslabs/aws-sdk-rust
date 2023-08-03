@@ -170,7 +170,7 @@ impl UpdateFieldInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateField`.
+/// Orchestration and serialization glue logic for `UpdateField`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

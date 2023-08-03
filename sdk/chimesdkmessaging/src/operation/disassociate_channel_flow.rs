@@ -157,7 +157,7 @@ impl DisassociateChannelFlowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateChannelFlow`.
+/// Orchestration and serialization glue logic for `DisassociateChannelFlow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

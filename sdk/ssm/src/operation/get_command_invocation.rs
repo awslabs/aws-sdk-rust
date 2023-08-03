@@ -133,7 +133,7 @@ impl GetCommandInvocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCommandInvocation`.
+/// Orchestration and serialization glue logic for `GetCommandInvocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

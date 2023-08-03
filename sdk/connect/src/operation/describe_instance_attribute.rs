@@ -156,7 +156,7 @@ impl DescribeInstanceAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInstanceAttribute`.
+/// Orchestration and serialization glue logic for `DescribeInstanceAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

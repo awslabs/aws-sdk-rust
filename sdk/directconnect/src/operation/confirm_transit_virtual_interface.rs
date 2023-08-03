@@ -125,7 +125,7 @@ impl ConfirmTransitVirtualInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfirmTransitVirtualInterface`.
+/// Orchestration and serialization glue logic for `ConfirmTransitVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

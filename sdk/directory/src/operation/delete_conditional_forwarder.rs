@@ -131,7 +131,7 @@ impl DeleteConditionalForwarderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteConditionalForwarder`.
+/// Orchestration and serialization glue logic for `DeleteConditionalForwarder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

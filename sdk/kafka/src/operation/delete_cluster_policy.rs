@@ -136,7 +136,7 @@ impl DeleteClusterPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteClusterPolicy`.
+/// Orchestration and serialization glue logic for `DeleteClusterPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

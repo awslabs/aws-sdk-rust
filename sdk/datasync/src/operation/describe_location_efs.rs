@@ -133,7 +133,7 @@ impl DescribeLocationEfsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocationEfs`.
+/// Orchestration and serialization glue logic for `DescribeLocationEfs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

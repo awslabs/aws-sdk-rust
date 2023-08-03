@@ -126,7 +126,7 @@ impl DeleteTargetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTargetGroup`.
+/// Orchestration and serialization glue logic for `DeleteTargetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

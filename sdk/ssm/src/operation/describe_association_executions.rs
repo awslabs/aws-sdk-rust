@@ -131,7 +131,7 @@ impl DescribeAssociationExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAssociationExecutions`.
+/// Orchestration and serialization glue logic for `DescribeAssociationExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl SendEventInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendEvent`.
+/// Orchestration and serialization glue logic for `SendEvent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

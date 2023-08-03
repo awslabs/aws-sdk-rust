@@ -125,7 +125,7 @@ impl ListResolverEndpointIpAddressesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResolverEndpointIpAddresses`.
+/// Orchestration and serialization glue logic for `ListResolverEndpointIpAddresses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

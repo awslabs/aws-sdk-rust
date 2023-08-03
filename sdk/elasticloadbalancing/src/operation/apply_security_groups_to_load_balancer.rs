@@ -111,7 +111,7 @@ impl ApplySecurityGroupsToLoadBalancerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ApplySecurityGroupsToLoadBalancer`.
+/// Orchestration and serialization glue logic for `ApplySecurityGroupsToLoadBalancer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

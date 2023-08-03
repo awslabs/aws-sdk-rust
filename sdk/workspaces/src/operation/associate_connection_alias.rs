@@ -131,7 +131,7 @@ impl AssociateConnectionAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateConnectionAlias`.
+/// Orchestration and serialization glue logic for `AssociateConnectionAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

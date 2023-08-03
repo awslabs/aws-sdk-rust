@@ -134,7 +134,7 @@ impl GetBucketAclInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketAcl`.
+/// Orchestration and serialization glue logic for `GetBucketAcl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

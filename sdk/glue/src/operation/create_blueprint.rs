@@ -131,7 +131,7 @@ impl CreateBlueprintInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBlueprint`.
+/// Orchestration and serialization glue logic for `CreateBlueprint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

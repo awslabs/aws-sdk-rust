@@ -125,7 +125,7 @@ impl ListModelQualityJobDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListModelQualityJobDefinitions`.
+/// Orchestration and serialization glue logic for `ListModelQualityJobDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

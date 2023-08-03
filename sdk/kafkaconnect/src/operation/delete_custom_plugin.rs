@@ -136,7 +136,7 @@ impl DeleteCustomPluginInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomPlugin`.
+/// Orchestration and serialization glue logic for `DeleteCustomPlugin`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

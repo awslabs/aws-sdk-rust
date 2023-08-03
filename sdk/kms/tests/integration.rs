@@ -3,20 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_kms as kms;
-use aws_sdk_kms::middleware::DefaultMiddleware;
 use aws_sdk_kms::operation::RequestId;
 use aws_smithy_client::test_connection::TestConnection;
-use aws_smithy_client::{Client as CoreClient, SdkError};
+use aws_smithy_client::SdkError;
 use aws_smithy_http::body::SdkBody;
 use http::header::AUTHORIZATION;
 use http::Uri;
 use kms::config::{Config, Credentials, Region};
-use kms::operation::generate_random::GenerateRandomInput;
 use std::time::{Duration, UNIX_EPOCH};
-
-type Client<C> = CoreClient<C, DefaultMiddleware>;
 
 // TODO(DVR): having the full HTTP requests right in the code is a bit gross, consider something
 // like https://github.com/davidbarsky/sigv4/blob/master/aws-sigv4/src/lib.rs#L283-L315 to store
@@ -34,9 +29,9 @@ async fn generate_random_cn() {
             .body(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#).unwrap())
     ]);
     let conf = Config::builder()
+        .http_connector(conn.clone())
         .region(Region::new("cn-north-1"))
         .credentials_provider(Credentials::for_tests())
-        .http_connector(conn.clone())
         .build();
     let client = kms::Client::from_conf(conf);
     let _ = client
@@ -68,22 +63,27 @@ async fn generate_random() {
             .status(http::StatusCode::from_u16(200).unwrap())
             .body(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#).unwrap())
     ]);
-    let client = Client::new(conn.clone());
     let conf = Config::builder()
+        .http_connector(conn.clone())
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
         .build();
-    let mut op = GenerateRandomInput::builder()
+    let client = kms::Client::from_conf(conf);
+    let resp = client
+        .generate_random()
         .number_of_bytes(64)
-        .build()
-        .unwrap()
-        .make_operation(&conf)
+        .customize()
         .await
-        .expect("valid operation");
-    op.properties_mut()
-        .insert(UNIX_EPOCH + Duration::from_secs(1614952162));
-    op.properties_mut().insert(AwsUserAgent::for_tests());
-    let resp = client.call(op).await.expect("request should succeed");
+        .expect("customizable")
+        .mutate_request(|req| {
+            // Remove the invocation ID since the signed request above doesn't have it
+            req.headers_mut().remove("amz-sdk-invocation-id");
+        })
+        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1614952162))
+        .user_agent_for_tests()
+        .send()
+        .await
+        .expect("request should succeed");
     // primitive checksum
     assert_eq!(
         resp.plaintext
@@ -106,27 +106,22 @@ async fn generate_random_malformed_response() {
             // last `}` replaced with a space, invalid JSON
             .body(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA==" "#).unwrap())
     ]);
-    let client = Client::new(conn.clone());
     let conf = Config::builder()
+        .http_connector(conn.clone())
         .region(Region::new("us-east-1"))
         .credentials_provider(Credentials::for_tests())
         .build();
-    let op = GenerateRandomInput::builder()
+    let client = kms::Client::from_conf(conf);
+    client
+        .generate_random()
         .number_of_bytes(64)
-        .build()
-        .unwrap()
-        .make_operation(&conf)
+        .send()
         .await
-        .expect("valid operation");
-    client.call(op).await.expect_err("response was malformed");
+        .expect_err("response was malformed");
 }
 
 #[tokio::test]
 async fn generate_random_keystore_not_found() {
-    let conf = Config::builder()
-        .region(Region::new("us-east-1"))
-        .credentials_provider(Credentials::for_tests())
-        .build();
     let conn = TestConnection::new(vec![(
         http::Request::builder()
             .header("content-type", "application/x-amz-json-1.1")
@@ -150,21 +145,26 @@ async fn generate_random_keystore_not_found() {
             .header("content-length", "44")
             .body(r#"{"__type":"CustomKeyStoreNotFoundException"}"#).unwrap())
     ]);
+    let conf = Config::builder()
+        .http_connector(conn.clone())
+        .region(Region::new("us-east-1"))
+        .credentials_provider(Credentials::for_tests())
+        .build();
+    let client = kms::Client::from_conf(conf);
 
-    let mut op = GenerateRandomInput::builder()
+    let err = client
+        .generate_random()
         .number_of_bytes(64)
         .custom_key_store_id("does not exist")
-        .build()
-        .unwrap()
-        .make_operation(&conf)
+        .customize()
         .await
-        .expect("valid operation");
+        .expect("customizable")
+        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1614955644))
+        .user_agent_for_tests()
+        .send()
+        .await
+        .expect_err("key store doesn't exist");
 
-    op.properties_mut()
-        .insert(UNIX_EPOCH + Duration::from_secs(1614955644));
-    op.properties_mut().insert(AwsUserAgent::for_tests());
-    let client = Client::new(conn.clone());
-    let err = client.call(op).await.expect_err("key store doesn't exist");
     let inner = match err {
         SdkError::ServiceError(context) => context.into_err(),
         other => panic!("Incorrect error received: {:}", other),

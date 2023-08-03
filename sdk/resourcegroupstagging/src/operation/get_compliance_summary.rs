@@ -133,7 +133,7 @@ impl GetComplianceSummaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetComplianceSummary`.
+/// Orchestration and serialization glue logic for `GetComplianceSummary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

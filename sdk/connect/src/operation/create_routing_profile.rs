@@ -152,7 +152,7 @@ impl CreateRoutingProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRoutingProfile`.
+/// Orchestration and serialization glue logic for `CreateRoutingProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

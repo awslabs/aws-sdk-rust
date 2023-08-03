@@ -150,7 +150,7 @@ impl DeleteDatasetContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDatasetContent`.
+/// Orchestration and serialization glue logic for `DeleteDatasetContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

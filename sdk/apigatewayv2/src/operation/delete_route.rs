@@ -156,7 +156,7 @@ impl DeleteRouteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRoute`.
+/// Orchestration and serialization glue logic for `DeleteRoute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

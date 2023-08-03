@@ -157,7 +157,7 @@ impl DeleteAlertManagerDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAlertManagerDefinition`.
+/// Orchestration and serialization glue logic for `DeleteAlertManagerDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

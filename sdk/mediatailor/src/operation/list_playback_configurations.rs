@@ -133,7 +133,7 @@ impl ListPlaybackConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPlaybackConfigurations`.
+/// Orchestration and serialization glue logic for `ListPlaybackConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

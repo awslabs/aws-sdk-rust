@@ -131,7 +131,7 @@ impl UpdatePortfolioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePortfolio`.
+/// Orchestration and serialization glue logic for `UpdatePortfolio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

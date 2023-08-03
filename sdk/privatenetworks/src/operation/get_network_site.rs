@@ -136,7 +136,7 @@ impl GetNetworkSiteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetNetworkSite`.
+/// Orchestration and serialization glue logic for `GetNetworkSite`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

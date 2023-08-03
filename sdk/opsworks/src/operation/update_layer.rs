@@ -131,7 +131,7 @@ impl UpdateLayerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLayer`.
+/// Orchestration and serialization glue logic for `UpdateLayer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreateCacheParameterGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCacheParameterGroup`.
+/// Orchestration and serialization glue logic for `CreateCacheParameterGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

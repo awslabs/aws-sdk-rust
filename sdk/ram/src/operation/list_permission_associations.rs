@@ -127,7 +127,7 @@ impl ListPermissionAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPermissionAssociations`.
+/// Orchestration and serialization glue logic for `ListPermissionAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

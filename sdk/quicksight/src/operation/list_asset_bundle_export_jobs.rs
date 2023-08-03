@@ -161,7 +161,7 @@ impl ListAssetBundleExportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssetBundleExportJobs`.
+/// Orchestration and serialization glue logic for `ListAssetBundleExportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

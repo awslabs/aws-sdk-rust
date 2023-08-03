@@ -131,7 +131,7 @@ impl CreateActivityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateActivity`.
+/// Orchestration and serialization glue logic for `CreateActivity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

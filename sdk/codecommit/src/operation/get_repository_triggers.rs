@@ -131,7 +131,7 @@ impl GetRepositoryTriggersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRepositoryTriggers`.
+/// Orchestration and serialization glue logic for `GetRepositoryTriggers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

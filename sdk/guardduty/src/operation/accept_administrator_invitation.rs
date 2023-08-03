@@ -150,7 +150,7 @@ impl AcceptAdministratorInvitationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptAdministratorInvitation`.
+/// Orchestration and serialization glue logic for `AcceptAdministratorInvitation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

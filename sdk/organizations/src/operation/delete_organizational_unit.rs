@@ -131,7 +131,7 @@ impl DeleteOrganizationalUnitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteOrganizationalUnit`.
+/// Orchestration and serialization glue logic for `DeleteOrganizationalUnit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

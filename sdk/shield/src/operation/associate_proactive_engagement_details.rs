@@ -116,7 +116,7 @@ impl AssociateProactiveEngagementDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateProactiveEngagementDetails`.
+/// Orchestration and serialization glue logic for `AssociateProactiveEngagementDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteWorkspaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkspace`.
+/// Orchestration and serialization glue logic for `DeleteWorkspace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

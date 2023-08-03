@@ -126,7 +126,7 @@ impl DescribeAvailabilityZonesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAvailabilityZones`.
+/// Orchestration and serialization glue logic for `DescribeAvailabilityZones`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

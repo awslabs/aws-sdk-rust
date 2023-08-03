@@ -152,7 +152,7 @@ impl ListProvisioningTemplateVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProvisioningTemplateVersions`.
+/// Orchestration and serialization glue logic for `ListProvisioningTemplateVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

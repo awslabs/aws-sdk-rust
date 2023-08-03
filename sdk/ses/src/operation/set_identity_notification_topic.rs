@@ -126,7 +126,7 @@ impl SetIdentityNotificationTopicInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetIdentityNotificationTopic`.
+/// Orchestration and serialization glue logic for `SetIdentityNotificationTopic`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteSolFunctionPackageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSolFunctionPackage`.
+/// Orchestration and serialization glue logic for `DeleteSolFunctionPackage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -145,7 +145,7 @@ impl PutVoiceConnectorTerminationCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutVoiceConnectorTerminationCredentials`.
+/// Orchestration and serialization glue logic for `PutVoiceConnectorTerminationCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

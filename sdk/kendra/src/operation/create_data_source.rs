@@ -135,7 +135,7 @@ impl CreateDataSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataSource`.
+/// Orchestration and serialization glue logic for `CreateDataSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

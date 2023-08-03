@@ -131,7 +131,7 @@ impl ListDeviceFleetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDeviceFleets`.
+/// Orchestration and serialization glue logic for `ListDeviceFleets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeMaintenanceStartTimeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMaintenanceStartTime`.
+/// Orchestration and serialization glue logic for `DescribeMaintenanceStartTime`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

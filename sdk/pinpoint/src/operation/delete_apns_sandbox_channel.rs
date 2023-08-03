@@ -136,7 +136,7 @@ impl DeleteApnsSandboxChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteApnsSandboxChannel`.
+/// Orchestration and serialization glue logic for `DeleteApnsSandboxChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

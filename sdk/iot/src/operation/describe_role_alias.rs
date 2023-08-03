@@ -132,7 +132,7 @@ impl DescribeRoleAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRoleAlias`.
+/// Orchestration and serialization glue logic for `DescribeRoleAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

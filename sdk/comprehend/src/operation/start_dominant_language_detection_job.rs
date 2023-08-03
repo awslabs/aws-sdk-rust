@@ -120,7 +120,7 @@ impl StartDominantLanguageDetectionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDominantLanguageDetectionJob`.
+/// Orchestration and serialization glue logic for `StartDominantLanguageDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

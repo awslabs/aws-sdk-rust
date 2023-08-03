@@ -126,7 +126,7 @@ impl ExecuteChangeSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExecuteChangeSet`.
+/// Orchestration and serialization glue logic for `ExecuteChangeSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

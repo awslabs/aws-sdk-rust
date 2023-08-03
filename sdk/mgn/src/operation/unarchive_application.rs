@@ -128,7 +128,7 @@ impl UnarchiveApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UnarchiveApplication`.
+/// Orchestration and serialization glue logic for `UnarchiveApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

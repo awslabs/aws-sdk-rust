@@ -131,7 +131,7 @@ impl StartContentModerationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartContentModeration`.
+/// Orchestration and serialization glue logic for `StartContentModeration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

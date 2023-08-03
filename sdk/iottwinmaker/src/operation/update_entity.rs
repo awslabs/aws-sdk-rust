@@ -172,7 +172,7 @@ impl UpdateEntityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEntity`.
+/// Orchestration and serialization glue logic for `UpdateEntity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

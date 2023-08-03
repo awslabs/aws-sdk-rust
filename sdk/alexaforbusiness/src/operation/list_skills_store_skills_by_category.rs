@@ -125,7 +125,7 @@ impl ListSkillsStoreSkillsByCategoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSkillsStoreSkillsByCategory`.
+/// Orchestration and serialization glue logic for `ListSkillsStoreSkillsByCategory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl RevokeClusterSecurityGroupIngressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RevokeClusterSecurityGroupIngress`.
+/// Orchestration and serialization glue logic for `RevokeClusterSecurityGroupIngress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

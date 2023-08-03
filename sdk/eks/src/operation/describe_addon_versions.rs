@@ -175,7 +175,7 @@ impl DescribeAddonVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAddonVersions`.
+/// Orchestration and serialization glue logic for `DescribeAddonVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

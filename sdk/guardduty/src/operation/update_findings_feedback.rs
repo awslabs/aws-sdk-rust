@@ -150,7 +150,7 @@ impl UpdateFindingsFeedbackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFindingsFeedback`.
+/// Orchestration and serialization glue logic for `UpdateFindingsFeedback`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

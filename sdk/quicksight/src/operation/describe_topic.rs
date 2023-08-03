@@ -156,7 +156,7 @@ impl DescribeTopicInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTopic`.
+/// Orchestration and serialization glue logic for `DescribeTopic`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl SetSecurityTokenServicePreferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetSecurityTokenServicePreferences`.
+/// Orchestration and serialization glue logic for `SetSecurityTokenServicePreferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

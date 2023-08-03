@@ -120,7 +120,7 @@ impl DescribeLocalGatewayRouteTablesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocalGatewayRouteTables`.
+/// Orchestration and serialization glue logic for `DescribeLocalGatewayRouteTables`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

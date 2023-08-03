@@ -170,7 +170,7 @@ impl UpdateUserIdentityInfoInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateUserIdentityInfo`.
+/// Orchestration and serialization glue logic for `UpdateUserIdentityInfo`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

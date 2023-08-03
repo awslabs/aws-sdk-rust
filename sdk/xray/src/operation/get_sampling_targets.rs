@@ -128,7 +128,7 @@ impl GetSamplingTargetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSamplingTargets`.
+/// Orchestration and serialization glue logic for `GetSamplingTargets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

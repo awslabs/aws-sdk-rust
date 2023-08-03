@@ -172,7 +172,7 @@ impl ImportBackendStorageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportBackendStorage`.
+/// Orchestration and serialization glue logic for `ImportBackendStorage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

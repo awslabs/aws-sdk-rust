@@ -131,7 +131,7 @@ impl DescribeMigrationTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMigrationTask`.
+/// Orchestration and serialization glue logic for `DescribeMigrationTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

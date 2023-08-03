@@ -131,7 +131,7 @@ impl RestoreServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreServer`.
+/// Orchestration and serialization glue logic for `RestoreServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

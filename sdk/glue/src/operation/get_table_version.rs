@@ -131,7 +131,7 @@ impl GetTableVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTableVersion`.
+/// Orchestration and serialization glue logic for `GetTableVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

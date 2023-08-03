@@ -131,7 +131,7 @@ impl DescribeQueryDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeQueryDefinitions`.
+/// Orchestration and serialization glue logic for `DescribeQueryDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

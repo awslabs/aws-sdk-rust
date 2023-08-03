@@ -126,7 +126,7 @@ impl ListPlatformApplicationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPlatformApplications`.
+/// Orchestration and serialization glue logic for `ListPlatformApplications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

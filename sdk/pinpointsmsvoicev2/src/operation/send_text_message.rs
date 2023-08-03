@@ -131,7 +131,7 @@ impl SendTextMessageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendTextMessage`.
+/// Orchestration and serialization glue logic for `SendTextMessage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

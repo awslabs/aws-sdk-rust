@@ -162,7 +162,7 @@ impl PutAuditEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAuditEvents`.
+/// Orchestration and serialization glue logic for `PutAuditEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

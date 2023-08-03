@@ -169,7 +169,7 @@ impl ListMedicalVocabulariesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMedicalVocabularies`.
+/// Orchestration and serialization glue logic for `ListMedicalVocabularies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

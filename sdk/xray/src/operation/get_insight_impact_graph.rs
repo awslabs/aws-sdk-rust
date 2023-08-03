@@ -126,7 +126,7 @@ impl GetInsightImpactGraphInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInsightImpactGraph`.
+/// Orchestration and serialization glue logic for `GetInsightImpactGraph`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

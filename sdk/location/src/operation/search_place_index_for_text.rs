@@ -166,7 +166,7 @@ impl SearchPlaceIndexForTextInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchPlaceIndexForText`.
+/// Orchestration and serialization glue logic for `SearchPlaceIndexForText`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

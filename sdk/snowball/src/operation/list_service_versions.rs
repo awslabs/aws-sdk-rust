@@ -133,7 +133,7 @@ impl ListServiceVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServiceVersions`.
+/// Orchestration and serialization glue logic for `ListServiceVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CancelBatchImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelBatchImportJob`.
+/// Orchestration and serialization glue logic for `CancelBatchImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

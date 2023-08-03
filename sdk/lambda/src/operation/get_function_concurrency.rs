@@ -136,7 +136,7 @@ impl GetFunctionConcurrencyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFunctionConcurrency`.
+/// Orchestration and serialization glue logic for `GetFunctionConcurrency`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

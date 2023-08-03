@@ -116,7 +116,7 @@ impl TransferDomainToAnotherAwsAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TransferDomainToAnotherAwsAccount`.
+/// Orchestration and serialization glue logic for `TransferDomainToAnotherAwsAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

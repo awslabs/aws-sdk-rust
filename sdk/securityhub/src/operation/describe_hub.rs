@@ -126,7 +126,7 @@ impl DescribeHubInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHub`.
+/// Orchestration and serialization glue logic for `DescribeHub`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

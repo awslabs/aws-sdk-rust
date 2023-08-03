@@ -136,7 +136,7 @@ impl GetConnectInstanceConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConnectInstanceConfig`.
+/// Orchestration and serialization glue logic for `GetConnectInstanceConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

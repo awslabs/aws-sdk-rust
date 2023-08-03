@@ -127,7 +127,7 @@ impl UpdateRealtimeLogConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRealtimeLogConfig`.
+/// Orchestration and serialization glue logic for `UpdateRealtimeLogConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

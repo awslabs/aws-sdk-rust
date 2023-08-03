@@ -150,7 +150,7 @@ impl SendUsersMessagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendUsersMessages`.
+/// Orchestration and serialization glue logic for `SendUsersMessages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

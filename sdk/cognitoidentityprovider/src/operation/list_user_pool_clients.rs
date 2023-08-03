@@ -133,7 +133,7 @@ impl ListUserPoolClientsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListUserPoolClients`.
+/// Orchestration and serialization glue logic for `ListUserPoolClients`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

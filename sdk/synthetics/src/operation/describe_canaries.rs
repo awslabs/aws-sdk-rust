@@ -126,7 +126,7 @@ impl DescribeCanariesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCanaries`.
+/// Orchestration and serialization glue logic for `DescribeCanaries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

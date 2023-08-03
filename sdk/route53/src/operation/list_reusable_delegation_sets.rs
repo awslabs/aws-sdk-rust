@@ -135,7 +135,7 @@ impl ListReusableDelegationSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListReusableDelegationSets`.
+/// Orchestration and serialization glue logic for `ListReusableDelegationSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

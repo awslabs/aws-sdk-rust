@@ -156,7 +156,7 @@ impl GetPartnerAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPartnerAccount`.
+/// Orchestration and serialization glue logic for `GetPartnerAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl DeleteSegmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSegment`.
+/// Orchestration and serialization glue logic for `DeleteSegment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

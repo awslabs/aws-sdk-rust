@@ -131,7 +131,7 @@ impl StartEarthObservationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartEarthObservationJob`.
+/// Orchestration and serialization glue logic for `StartEarthObservationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

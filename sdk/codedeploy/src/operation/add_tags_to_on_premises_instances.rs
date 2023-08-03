@@ -132,7 +132,7 @@ impl AddTagsToOnPremisesInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddTagsToOnPremisesInstances`.
+/// Orchestration and serialization glue logic for `AddTagsToOnPremisesInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

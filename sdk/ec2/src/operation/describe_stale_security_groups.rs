@@ -126,7 +126,7 @@ impl DescribeStaleSecurityGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStaleSecurityGroups`.
+/// Orchestration and serialization glue logic for `DescribeStaleSecurityGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

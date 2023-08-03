@@ -150,7 +150,7 @@ impl ArchiveFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ArchiveFindings`.
+/// Orchestration and serialization glue logic for `ArchiveFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

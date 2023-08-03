@@ -176,7 +176,7 @@ impl DeleteRouteRequestParameterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRouteRequestParameter`.
+/// Orchestration and serialization glue logic for `DeleteRouteRequestParameter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

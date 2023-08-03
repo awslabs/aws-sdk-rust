@@ -134,7 +134,7 @@ impl ListSatellitesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSatellites`.
+/// Orchestration and serialization glue logic for `ListSatellites`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

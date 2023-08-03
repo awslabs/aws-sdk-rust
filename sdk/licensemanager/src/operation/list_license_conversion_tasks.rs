@@ -131,7 +131,7 @@ impl ListLicenseConversionTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLicenseConversionTasks`.
+/// Orchestration and serialization glue logic for `ListLicenseConversionTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

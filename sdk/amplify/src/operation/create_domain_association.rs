@@ -146,7 +146,7 @@ impl CreateDomainAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDomainAssociation`.
+/// Orchestration and serialization glue logic for `CreateDomainAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

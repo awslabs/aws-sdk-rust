@@ -158,7 +158,7 @@ impl GetUpgradeHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUpgradeHistory`.
+/// Orchestration and serialization glue logic for `GetUpgradeHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

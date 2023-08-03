@@ -132,7 +132,7 @@ impl UnlinkIdentityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UnlinkIdentity`.
+/// Orchestration and serialization glue logic for `UnlinkIdentity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

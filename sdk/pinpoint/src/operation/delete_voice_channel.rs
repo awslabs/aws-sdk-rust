@@ -136,7 +136,7 @@ impl DeleteVoiceChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVoiceChannel`.
+/// Orchestration and serialization glue logic for `DeleteVoiceChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

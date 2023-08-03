@@ -131,7 +131,7 @@ impl CreateWorkspaceBundleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorkspaceBundle`.
+/// Orchestration and serialization glue logic for `CreateWorkspaceBundle`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

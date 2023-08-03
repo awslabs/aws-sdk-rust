@@ -131,7 +131,7 @@ impl AssociateWirelessDeviceWithFuotaTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateWirelessDeviceWithFuotaTask`.
+/// Orchestration and serialization glue logic for `AssociateWirelessDeviceWithFuotaTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

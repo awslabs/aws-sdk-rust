@@ -120,7 +120,7 @@ impl DeleteNotificationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNotificationConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteNotificationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

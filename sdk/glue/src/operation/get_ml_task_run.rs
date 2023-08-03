@@ -131,7 +131,7 @@ impl GetMlTaskRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMLTaskRun`.
+/// Orchestration and serialization glue logic for `GetMLTaskRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

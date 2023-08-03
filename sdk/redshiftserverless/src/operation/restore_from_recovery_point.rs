@@ -131,7 +131,7 @@ impl RestoreFromRecoveryPointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreFromRecoveryPoint`.
+/// Orchestration and serialization glue logic for `RestoreFromRecoveryPoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

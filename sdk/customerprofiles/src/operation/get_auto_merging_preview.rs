@@ -150,7 +150,7 @@ impl GetAutoMergingPreviewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAutoMergingPreview`.
+/// Orchestration and serialization glue logic for `GetAutoMergingPreview`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl CreateParticipantConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateParticipantConnection`.
+/// Orchestration and serialization glue logic for `CreateParticipantConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

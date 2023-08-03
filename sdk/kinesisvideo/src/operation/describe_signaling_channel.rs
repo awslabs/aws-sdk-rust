@@ -127,7 +127,7 @@ impl DescribeSignalingChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSignalingChannel`.
+/// Orchestration and serialization glue logic for `DescribeSignalingChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

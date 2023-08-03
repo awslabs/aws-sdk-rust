@@ -126,7 +126,7 @@ impl RejectInvitationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RejectInvitation`.
+/// Orchestration and serialization glue logic for `RejectInvitation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

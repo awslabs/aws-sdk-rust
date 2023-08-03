@@ -131,7 +131,7 @@ impl StartRemediationExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartRemediationExecution`.
+/// Orchestration and serialization glue logic for `StartRemediationExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

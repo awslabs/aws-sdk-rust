@@ -126,7 +126,7 @@ impl DescribeSpotPriceHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSpotPriceHistory`.
+/// Orchestration and serialization glue logic for `DescribeSpotPriceHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

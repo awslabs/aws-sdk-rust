@@ -136,7 +136,7 @@ impl DisassociateNetworkSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateNetworkSettings`.
+/// Orchestration and serialization glue logic for `DisassociateNetworkSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

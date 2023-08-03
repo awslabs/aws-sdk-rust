@@ -136,7 +136,7 @@ impl DeleteInputSecurityGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInputSecurityGroup`.
+/// Orchestration and serialization glue logic for `DeleteInputSecurityGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

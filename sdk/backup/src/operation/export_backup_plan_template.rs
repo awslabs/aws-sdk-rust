@@ -136,7 +136,7 @@ impl ExportBackupPlanTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportBackupPlanTemplate`.
+/// Orchestration and serialization glue logic for `ExportBackupPlanTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -135,7 +135,7 @@ impl CreatePortfolioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePortfolio`.
+/// Orchestration and serialization glue logic for `CreatePortfolio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

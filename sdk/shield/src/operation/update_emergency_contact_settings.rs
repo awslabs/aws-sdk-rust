@@ -125,7 +125,7 @@ impl UpdateEmergencyContactSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEmergencyContactSettings`.
+/// Orchestration and serialization glue logic for `UpdateEmergencyContactSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

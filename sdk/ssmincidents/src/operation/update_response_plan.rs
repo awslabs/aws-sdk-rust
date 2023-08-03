@@ -132,7 +132,7 @@ impl UpdateResponsePlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResponsePlan`.
+/// Orchestration and serialization glue logic for `UpdateResponsePlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

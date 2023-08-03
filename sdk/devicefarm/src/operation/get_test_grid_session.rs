@@ -133,7 +133,7 @@ impl GetTestGridSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTestGridSession`.
+/// Orchestration and serialization glue logic for `GetTestGridSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

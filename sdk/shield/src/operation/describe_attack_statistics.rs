@@ -124,7 +124,7 @@ impl DescribeAttackStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAttackStatistics`.
+/// Orchestration and serialization glue logic for `DescribeAttackStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

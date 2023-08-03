@@ -126,7 +126,7 @@ impl CreateDiscovererInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDiscoverer`.
+/// Orchestration and serialization glue logic for `CreateDiscoverer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

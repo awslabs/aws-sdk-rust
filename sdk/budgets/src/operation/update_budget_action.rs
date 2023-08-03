@@ -133,7 +133,7 @@ impl UpdateBudgetActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBudgetAction`.
+/// Orchestration and serialization glue logic for `UpdateBudgetAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

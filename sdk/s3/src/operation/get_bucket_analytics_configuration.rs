@@ -142,7 +142,7 @@ impl GetBucketAnalyticsConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketAnalyticsConfiguration`.
+/// Orchestration and serialization glue logic for `GetBucketAnalyticsConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

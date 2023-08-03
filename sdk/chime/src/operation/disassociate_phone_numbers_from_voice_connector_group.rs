@@ -145,7 +145,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociatePhoneNumbersFromVoiceConnectorGroup`.
+/// Orchestration and serialization glue logic for `DisassociatePhoneNumbersFromVoiceConnectorGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

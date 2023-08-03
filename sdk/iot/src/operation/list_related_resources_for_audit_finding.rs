@@ -136,7 +136,7 @@ impl ListRelatedResourcesForAuditFindingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRelatedResourcesForAuditFinding`.
+/// Orchestration and serialization glue logic for `ListRelatedResourcesForAuditFinding`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

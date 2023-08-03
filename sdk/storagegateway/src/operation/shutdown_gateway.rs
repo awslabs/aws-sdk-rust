@@ -131,7 +131,7 @@ impl ShutdownGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ShutdownGateway`.
+/// Orchestration and serialization glue logic for `ShutdownGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeleteVpcPeeringConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpcPeeringConnection`.
+/// Orchestration and serialization glue logic for `DeleteVpcPeeringConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

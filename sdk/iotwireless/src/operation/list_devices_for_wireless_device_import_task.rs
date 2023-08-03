@@ -141,7 +141,7 @@ impl ListDevicesForWirelessDeviceImportTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDevicesForWirelessDeviceImportTask`.
+/// Orchestration and serialization glue logic for `ListDevicesForWirelessDeviceImportTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

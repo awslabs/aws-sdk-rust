@@ -167,7 +167,7 @@ impl PutBucketWebsiteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketWebsite`.
+/// Orchestration and serialization glue logic for `PutBucketWebsite`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

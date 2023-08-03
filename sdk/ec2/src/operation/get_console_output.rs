@@ -126,7 +126,7 @@ impl GetConsoleOutputInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConsoleOutput`.
+/// Orchestration and serialization glue logic for `GetConsoleOutput`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

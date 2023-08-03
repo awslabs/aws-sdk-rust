@@ -124,7 +124,7 @@ impl GetNotificationChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetNotificationChannel`.
+/// Orchestration and serialization glue logic for `GetNotificationChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

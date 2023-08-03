@@ -131,7 +131,7 @@ impl GetProtocolsListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetProtocolsList`.
+/// Orchestration and serialization glue logic for `GetProtocolsList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

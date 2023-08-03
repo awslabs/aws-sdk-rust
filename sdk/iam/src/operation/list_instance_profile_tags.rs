@@ -126,7 +126,7 @@ impl ListInstanceProfileTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstanceProfileTags`.
+/// Orchestration and serialization glue logic for `ListInstanceProfileTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

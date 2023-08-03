@@ -172,7 +172,7 @@ impl UpdateResourceEventConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResourceEventConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateResourceEventConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl DescribeHyperParameterTuningJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHyperParameterTuningJob`.
+/// Orchestration and serialization glue logic for `DescribeHyperParameterTuningJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

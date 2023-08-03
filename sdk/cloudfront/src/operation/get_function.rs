@@ -146,7 +146,7 @@ impl GetFunctionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFunction`.
+/// Orchestration and serialization glue logic for `GetFunction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

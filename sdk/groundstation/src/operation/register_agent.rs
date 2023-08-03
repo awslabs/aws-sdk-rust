@@ -126,7 +126,7 @@ impl RegisterAgentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterAgent`.
+/// Orchestration and serialization glue logic for `RegisterAgent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

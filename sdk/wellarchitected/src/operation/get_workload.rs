@@ -132,7 +132,7 @@ impl GetWorkloadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorkload`.
+/// Orchestration and serialization glue logic for `GetWorkload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

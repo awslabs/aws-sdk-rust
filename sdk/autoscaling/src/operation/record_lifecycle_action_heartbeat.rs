@@ -120,7 +120,7 @@ impl RecordLifecycleActionHeartbeatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RecordLifecycleActionHeartbeat`.
+/// Orchestration and serialization glue logic for `RecordLifecycleActionHeartbeat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

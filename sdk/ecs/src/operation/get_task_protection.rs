@@ -131,7 +131,7 @@ impl GetTaskProtectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTaskProtection`.
+/// Orchestration and serialization glue logic for `GetTaskProtection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

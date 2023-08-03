@@ -126,7 +126,7 @@ impl DeleteReplicationGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteReplicationGroup`.
+/// Orchestration and serialization glue logic for `DeleteReplicationGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

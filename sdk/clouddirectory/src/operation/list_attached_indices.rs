@@ -130,7 +130,7 @@ impl ListAttachedIndicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAttachedIndices`.
+/// Orchestration and serialization glue logic for `ListAttachedIndices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

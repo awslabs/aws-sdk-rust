@@ -172,7 +172,7 @@ impl DeleteBackendStorageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBackendStorage`.
+/// Orchestration and serialization glue logic for `DeleteBackendStorage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

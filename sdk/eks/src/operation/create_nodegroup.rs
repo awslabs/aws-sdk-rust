@@ -154,7 +154,7 @@ impl CreateNodegroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNodegroup`.
+/// Orchestration and serialization glue logic for `CreateNodegroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl AllocateHostedConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AllocateHostedConnection`.
+/// Orchestration and serialization glue logic for `AllocateHostedConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -129,7 +129,7 @@ impl DeleteAwsLogSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAwsLogSource`.
+/// Orchestration and serialization glue logic for `DeleteAwsLogSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

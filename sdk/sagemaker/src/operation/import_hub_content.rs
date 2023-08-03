@@ -131,7 +131,7 @@ impl ImportHubContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportHubContent`.
+/// Orchestration and serialization glue logic for `ImportHubContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

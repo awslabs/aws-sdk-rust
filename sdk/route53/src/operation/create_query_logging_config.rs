@@ -127,7 +127,7 @@ impl CreateQueryLoggingConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateQueryLoggingConfig`.
+/// Orchestration and serialization glue logic for `CreateQueryLoggingConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

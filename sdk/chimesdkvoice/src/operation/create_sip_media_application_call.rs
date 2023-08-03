@@ -151,7 +151,7 @@ impl CreateSipMediaApplicationCallInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSipMediaApplicationCall`.
+/// Orchestration and serialization glue logic for `CreateSipMediaApplicationCall`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

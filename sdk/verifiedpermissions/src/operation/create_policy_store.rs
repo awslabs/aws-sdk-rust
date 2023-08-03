@@ -135,7 +135,7 @@ impl CreatePolicyStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePolicyStore`.
+/// Orchestration and serialization glue logic for `CreatePolicyStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

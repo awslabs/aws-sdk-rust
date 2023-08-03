@@ -150,7 +150,7 @@ impl StartSpeakerSearchTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartSpeakerSearchTask`.
+/// Orchestration and serialization glue logic for `StartSpeakerSearchTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteDevicePoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDevicePool`.
+/// Orchestration and serialization glue logic for `DeleteDevicePool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

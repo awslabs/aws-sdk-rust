@@ -133,7 +133,7 @@ impl DeleteHostedZoneInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHostedZone`.
+/// Orchestration and serialization glue logic for `DeleteHostedZone`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

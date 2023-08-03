@@ -133,7 +133,7 @@ impl GetHostedZoneInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetHostedZone`.
+/// Orchestration and serialization glue logic for `GetHostedZone`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

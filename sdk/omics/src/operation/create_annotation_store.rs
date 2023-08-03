@@ -128,7 +128,7 @@ impl CreateAnnotationStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAnnotationStore`.
+/// Orchestration and serialization glue logic for `CreateAnnotationStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

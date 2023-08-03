@@ -131,7 +131,7 @@ impl ListKeyPhrasesDetectionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListKeyPhrasesDetectionJobs`.
+/// Orchestration and serialization glue logic for `ListKeyPhrasesDetectionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

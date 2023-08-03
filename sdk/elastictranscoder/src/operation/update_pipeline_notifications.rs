@@ -146,7 +146,7 @@ impl UpdatePipelineNotificationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePipelineNotifications`.
+/// Orchestration and serialization glue logic for `UpdatePipelineNotifications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

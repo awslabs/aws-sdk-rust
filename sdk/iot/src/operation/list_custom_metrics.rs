@@ -134,7 +134,7 @@ impl ListCustomMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCustomMetrics`.
+/// Orchestration and serialization glue logic for `ListCustomMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

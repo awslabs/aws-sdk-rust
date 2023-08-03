@@ -143,7 +143,7 @@ impl DescribeGatewayCapabilityConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeGatewayCapabilityConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeGatewayCapabilityConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl DeleteProvisionedConcurrencyConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProvisionedConcurrencyConfig`.
+/// Orchestration and serialization glue logic for `DeleteProvisionedConcurrencyConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

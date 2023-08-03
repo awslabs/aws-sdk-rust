@@ -130,7 +130,7 @@ impl CreateWirelessGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWirelessGateway`.
+/// Orchestration and serialization glue logic for `CreateWirelessGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

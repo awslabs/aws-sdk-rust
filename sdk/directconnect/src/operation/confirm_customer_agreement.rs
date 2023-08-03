@@ -131,7 +131,7 @@ impl ConfirmCustomerAgreementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfirmCustomerAgreement`.
+/// Orchestration and serialization glue logic for `ConfirmCustomerAgreement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

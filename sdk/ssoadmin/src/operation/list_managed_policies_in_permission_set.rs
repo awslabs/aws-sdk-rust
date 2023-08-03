@@ -116,7 +116,7 @@ impl ListManagedPoliciesInPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListManagedPoliciesInPermissionSet`.
+/// Orchestration and serialization glue logic for `ListManagedPoliciesInPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

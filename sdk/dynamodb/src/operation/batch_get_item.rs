@@ -131,7 +131,7 @@ impl BatchGetItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetItem`.
+/// Orchestration and serialization glue logic for `BatchGetItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

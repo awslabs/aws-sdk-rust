@@ -154,7 +154,7 @@ impl GetCalculatedAttributeForProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCalculatedAttributeForProfile`.
+/// Orchestration and serialization glue logic for `GetCalculatedAttributeForProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

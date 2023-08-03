@@ -126,7 +126,7 @@ impl StopStackSetOperationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopStackSetOperation`.
+/// Orchestration and serialization glue logic for `StopStackSetOperation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

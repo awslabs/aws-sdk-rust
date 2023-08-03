@@ -135,7 +135,7 @@ impl AssociateFirewallRuleGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateFirewallRuleGroup`.
+/// Orchestration and serialization glue logic for `AssociateFirewallRuleGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

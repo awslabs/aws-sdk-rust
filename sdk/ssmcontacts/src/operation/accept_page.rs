@@ -131,7 +131,7 @@ impl AcceptPageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptPage`.
+/// Orchestration and serialization glue logic for `AcceptPage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

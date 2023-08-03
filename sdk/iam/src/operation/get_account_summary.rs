@@ -119,7 +119,7 @@ impl GetAccountSummaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccountSummary`.
+/// Orchestration and serialization glue logic for `GetAccountSummary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

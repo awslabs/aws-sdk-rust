@@ -150,7 +150,7 @@ impl UpdateReservationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateReservation`.
+/// Orchestration and serialization glue logic for `UpdateReservation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

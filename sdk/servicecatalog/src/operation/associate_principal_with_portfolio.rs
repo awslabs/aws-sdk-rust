@@ -125,7 +125,7 @@ impl AssociatePrincipalWithPortfolioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociatePrincipalWithPortfolio`.
+/// Orchestration and serialization glue logic for `AssociatePrincipalWithPortfolio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

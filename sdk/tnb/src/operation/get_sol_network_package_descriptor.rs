@@ -130,7 +130,7 @@ impl GetSolNetworkPackageDescriptorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSolNetworkPackageDescriptor`.
+/// Orchestration and serialization glue logic for `GetSolNetworkPackageDescriptor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -116,7 +116,7 @@ impl DisassociateQualificationFromWorkerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateQualificationFromWorker`.
+/// Orchestration and serialization glue logic for `DisassociateQualificationFromWorker`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

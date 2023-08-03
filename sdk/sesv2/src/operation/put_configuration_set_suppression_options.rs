@@ -135,7 +135,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutConfigurationSetSuppressionOptions`.
+/// Orchestration and serialization glue logic for `PutConfigurationSetSuppressionOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

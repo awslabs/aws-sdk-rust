@@ -152,7 +152,7 @@ impl UpdateVoiceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVoiceProfile`.
+/// Orchestration and serialization glue logic for `UpdateVoiceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

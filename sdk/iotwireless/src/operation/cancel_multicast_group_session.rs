@@ -132,7 +132,7 @@ impl CancelMulticastGroupSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelMulticastGroupSession`.
+/// Orchestration and serialization glue logic for `CancelMulticastGroupSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

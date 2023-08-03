@@ -131,7 +131,7 @@ impl CreateRuleGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRuleGroup`.
+/// Orchestration and serialization glue logic for `CreateRuleGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

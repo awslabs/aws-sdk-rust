@@ -131,7 +131,7 @@ impl DescribeMetricAttributionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMetricAttribution`.
+/// Orchestration and serialization glue logic for `DescribeMetricAttribution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

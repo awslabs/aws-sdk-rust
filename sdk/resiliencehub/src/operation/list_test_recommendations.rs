@@ -127,7 +127,7 @@ impl ListTestRecommendationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTestRecommendations`.
+/// Orchestration and serialization glue logic for `ListTestRecommendations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

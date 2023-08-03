@@ -170,7 +170,7 @@ impl CreateDeploymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDeployment`.
+/// Orchestration and serialization glue logic for `CreateDeployment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

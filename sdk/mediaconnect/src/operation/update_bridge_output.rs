@@ -172,7 +172,7 @@ impl UpdateBridgeOutputInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBridgeOutput`.
+/// Orchestration and serialization glue logic for `UpdateBridgeOutput`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl SendTaskSuccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendTaskSuccess`.
+/// Orchestration and serialization glue logic for `SendTaskSuccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

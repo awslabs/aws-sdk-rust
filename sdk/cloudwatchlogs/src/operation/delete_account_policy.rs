@@ -133,7 +133,7 @@ impl DeleteAccountPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccountPolicy`.
+/// Orchestration and serialization glue logic for `DeleteAccountPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

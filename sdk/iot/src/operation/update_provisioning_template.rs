@@ -150,7 +150,7 @@ impl UpdateProvisioningTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateProvisioningTemplate`.
+/// Orchestration and serialization glue logic for `UpdateProvisioningTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

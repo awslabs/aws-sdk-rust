@@ -190,7 +190,7 @@ impl CreateThemeAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateThemeAlias`.
+/// Orchestration and serialization glue logic for `CreateThemeAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

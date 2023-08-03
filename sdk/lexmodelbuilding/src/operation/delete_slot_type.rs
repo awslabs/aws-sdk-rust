@@ -132,7 +132,7 @@ impl DeleteSlotTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSlotType`.
+/// Orchestration and serialization glue logic for `DeleteSlotType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

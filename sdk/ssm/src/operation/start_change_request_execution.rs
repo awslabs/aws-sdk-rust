@@ -131,7 +131,7 @@ impl StartChangeRequestExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartChangeRequestExecution`.
+/// Orchestration and serialization glue logic for `StartChangeRequestExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeWatchlistInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWatchlist`.
+/// Orchestration and serialization glue logic for `DescribeWatchlist`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

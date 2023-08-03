@@ -126,7 +126,7 @@ impl CreateHarvestJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateHarvestJob`.
+/// Orchestration and serialization glue logic for `CreateHarvestJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

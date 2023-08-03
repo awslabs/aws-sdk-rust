@@ -126,7 +126,7 @@ impl ResetAddressAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetAddressAttribute`.
+/// Orchestration and serialization glue logic for `ResetAddressAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

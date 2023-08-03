@@ -128,7 +128,7 @@ impl GetFindingStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFindingStatistics`.
+/// Orchestration and serialization glue logic for `GetFindingStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

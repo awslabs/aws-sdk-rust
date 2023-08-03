@@ -131,7 +131,7 @@ impl DeleteDetectorVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDetectorVersion`.
+/// Orchestration and serialization glue logic for `DeleteDetectorVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl UpdateDatasourcePackagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDatasourcePackages`.
+/// Orchestration and serialization glue logic for `UpdateDatasourcePackages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

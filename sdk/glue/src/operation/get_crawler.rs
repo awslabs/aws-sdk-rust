@@ -131,7 +131,7 @@ impl GetCrawlerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCrawler`.
+/// Orchestration and serialization glue logic for `GetCrawler`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

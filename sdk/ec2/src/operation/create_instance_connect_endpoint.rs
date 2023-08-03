@@ -131,7 +131,7 @@ impl CreateInstanceConnectEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateInstanceConnectEndpoint`.
+/// Orchestration and serialization glue logic for `CreateInstanceConnectEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

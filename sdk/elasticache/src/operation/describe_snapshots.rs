@@ -126,7 +126,7 @@ impl DescribeSnapshotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSnapshots`.
+/// Orchestration and serialization glue logic for `DescribeSnapshots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

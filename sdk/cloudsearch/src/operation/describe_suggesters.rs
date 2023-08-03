@@ -126,7 +126,7 @@ impl DescribeSuggestersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSuggesters`.
+/// Orchestration and serialization glue logic for `DescribeSuggesters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

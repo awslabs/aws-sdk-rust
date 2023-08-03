@@ -135,7 +135,7 @@ impl PostCommentForComparedCommitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PostCommentForComparedCommit`.
+/// Orchestration and serialization glue logic for `PostCommentForComparedCommit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

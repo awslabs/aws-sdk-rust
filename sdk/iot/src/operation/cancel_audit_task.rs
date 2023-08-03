@@ -132,7 +132,7 @@ impl CancelAuditTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelAuditTask`.
+/// Orchestration and serialization glue logic for `CancelAuditTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

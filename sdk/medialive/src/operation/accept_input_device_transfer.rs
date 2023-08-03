@@ -136,7 +136,7 @@ impl AcceptInputDeviceTransferInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptInputDeviceTransfer`.
+/// Orchestration and serialization glue logic for `AcceptInputDeviceTransfer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

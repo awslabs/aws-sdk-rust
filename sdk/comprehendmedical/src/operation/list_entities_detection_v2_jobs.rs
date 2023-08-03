@@ -131,7 +131,7 @@ impl ListEntitiesDetectionV2JobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEntitiesDetectionV2Jobs`.
+/// Orchestration and serialization glue logic for `ListEntitiesDetectionV2Jobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -138,7 +138,7 @@ impl DescribePlaceIndexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePlaceIndex`.
+/// Orchestration and serialization glue logic for `DescribePlaceIndex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

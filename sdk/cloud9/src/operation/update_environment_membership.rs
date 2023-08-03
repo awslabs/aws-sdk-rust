@@ -131,7 +131,7 @@ impl UpdateEnvironmentMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEnvironmentMembership`.
+/// Orchestration and serialization glue logic for `UpdateEnvironmentMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

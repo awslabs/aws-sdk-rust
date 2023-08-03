@@ -131,7 +131,7 @@ impl ListTagsForCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTagsForCertificate`.
+/// Orchestration and serialization glue logic for `ListTagsForCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

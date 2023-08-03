@@ -133,7 +133,7 @@ impl CreateModelVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateModelVersion`.
+/// Orchestration and serialization glue logic for `CreateModelVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

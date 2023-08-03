@@ -131,7 +131,7 @@ impl DeleteHostKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHostKey`.
+/// Orchestration and serialization glue logic for `DeleteHostKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

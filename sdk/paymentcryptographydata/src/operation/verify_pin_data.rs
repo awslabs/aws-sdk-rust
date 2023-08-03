@@ -126,7 +126,7 @@ impl VerifyPinDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `VerifyPinData`.
+/// Orchestration and serialization glue logic for `VerifyPinData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

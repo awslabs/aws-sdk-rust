@@ -131,7 +131,7 @@ impl GetPriceListFileUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPriceListFileUrl`.
+/// Orchestration and serialization glue logic for `GetPriceListFileUrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

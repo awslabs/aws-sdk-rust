@@ -135,7 +135,7 @@ impl CreateEventDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEventDestination`.
+/// Orchestration and serialization glue logic for `CreateEventDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

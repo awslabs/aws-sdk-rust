@@ -120,7 +120,7 @@ impl DescribeVerifiedAccessEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVerifiedAccessEndpoints`.
+/// Orchestration and serialization glue logic for `DescribeVerifiedAccessEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

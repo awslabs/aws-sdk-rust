@@ -133,7 +133,7 @@ impl RegisterEventTopicInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterEventTopic`.
+/// Orchestration and serialization glue logic for `RegisterEventTopic`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

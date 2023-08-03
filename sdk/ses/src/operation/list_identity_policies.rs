@@ -126,7 +126,7 @@ impl ListIdentityPoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIdentityPolicies`.
+/// Orchestration and serialization glue logic for `ListIdentityPolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListNamedQueriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListNamedQueries`.
+/// Orchestration and serialization glue logic for `ListNamedQueries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

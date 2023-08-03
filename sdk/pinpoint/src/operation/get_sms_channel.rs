@@ -136,7 +136,7 @@ impl GetSmsChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSmsChannel`.
+/// Orchestration and serialization glue logic for `GetSmsChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

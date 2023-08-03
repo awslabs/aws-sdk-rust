@@ -116,7 +116,7 @@ impl DescribeAggregationAuthorizationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAggregationAuthorizations`.
+/// Orchestration and serialization glue logic for `DescribeAggregationAuthorizations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

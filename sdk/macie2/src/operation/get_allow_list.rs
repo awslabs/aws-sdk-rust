@@ -132,7 +132,7 @@ impl GetAllowListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAllowList`.
+/// Orchestration and serialization glue logic for `GetAllowList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

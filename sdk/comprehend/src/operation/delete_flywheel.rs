@@ -131,7 +131,7 @@ impl DeleteFlywheelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFlywheel`.
+/// Orchestration and serialization glue logic for `DeleteFlywheel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

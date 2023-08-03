@@ -131,7 +131,7 @@ impl StartWorkspacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartWorkspaces`.
+/// Orchestration and serialization glue logic for `StartWorkspaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

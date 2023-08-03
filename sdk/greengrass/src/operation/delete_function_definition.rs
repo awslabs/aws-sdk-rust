@@ -136,7 +136,7 @@ impl DeleteFunctionDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFunctionDefinition`.
+/// Orchestration and serialization glue logic for `DeleteFunctionDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

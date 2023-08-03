@@ -131,7 +131,7 @@ impl DeleteTranscriptionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTranscriptionJob`.
+/// Orchestration and serialization glue logic for `DeleteTranscriptionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListResourceCatalogsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourceCatalogs`.
+/// Orchestration and serialization glue logic for `ListResourceCatalogs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

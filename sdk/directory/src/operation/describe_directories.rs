@@ -133,7 +133,7 @@ impl DescribeDirectoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDirectories`.
+/// Orchestration and serialization glue logic for `DescribeDirectories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

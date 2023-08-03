@@ -154,7 +154,7 @@ impl CreateKxDatabaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateKxDatabase`.
+/// Orchestration and serialization glue logic for `CreateKxDatabase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

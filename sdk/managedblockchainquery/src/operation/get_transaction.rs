@@ -126,7 +126,7 @@ impl GetTransactionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTransaction`.
+/// Orchestration and serialization glue logic for `GetTransaction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

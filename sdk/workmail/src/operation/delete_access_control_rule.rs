@@ -131,7 +131,7 @@ impl DeleteAccessControlRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccessControlRule`.
+/// Orchestration and serialization glue logic for `DeleteAccessControlRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl MoveAddressToVpcInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MoveAddressToVpc`.
+/// Orchestration and serialization glue logic for `MoveAddressToVpc`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

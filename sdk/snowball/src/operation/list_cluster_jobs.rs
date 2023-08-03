@@ -131,7 +131,7 @@ impl ListClusterJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListClusterJobs`.
+/// Orchestration and serialization glue logic for `ListClusterJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeNetworkInterfacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNetworkInterfaces`.
+/// Orchestration and serialization glue logic for `DescribeNetworkInterfaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

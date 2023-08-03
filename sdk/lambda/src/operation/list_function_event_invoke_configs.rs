@@ -152,7 +152,7 @@ impl ListFunctionEventInvokeConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFunctionEventInvokeConfigs`.
+/// Orchestration and serialization glue logic for `ListFunctionEventInvokeConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

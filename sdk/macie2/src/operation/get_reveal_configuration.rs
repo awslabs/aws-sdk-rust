@@ -112,7 +112,7 @@ impl GetRevealConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRevealConfiguration`.
+/// Orchestration and serialization glue logic for `GetRevealConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

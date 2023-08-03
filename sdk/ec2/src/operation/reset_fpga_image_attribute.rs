@@ -126,7 +126,7 @@ impl ResetFpgaImageAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetFpgaImageAttribute`.
+/// Orchestration and serialization glue logic for `ResetFpgaImageAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

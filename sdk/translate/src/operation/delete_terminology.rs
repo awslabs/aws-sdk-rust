@@ -131,7 +131,7 @@ impl DeleteTerminologyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTerminology`.
+/// Orchestration and serialization glue logic for `DeleteTerminology`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

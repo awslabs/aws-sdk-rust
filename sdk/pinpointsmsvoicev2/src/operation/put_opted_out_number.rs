@@ -133,7 +133,7 @@ impl PutOptedOutNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutOptedOutNumber`.
+/// Orchestration and serialization glue logic for `PutOptedOutNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

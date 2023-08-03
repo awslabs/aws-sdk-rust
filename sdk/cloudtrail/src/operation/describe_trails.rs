@@ -131,7 +131,7 @@ impl DescribeTrailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTrails`.
+/// Orchestration and serialization glue logic for `DescribeTrails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

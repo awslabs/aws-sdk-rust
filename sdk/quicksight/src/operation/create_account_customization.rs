@@ -164,7 +164,7 @@ impl CreateAccountCustomizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAccountCustomization`.
+/// Orchestration and serialization glue logic for `CreateAccountCustomization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

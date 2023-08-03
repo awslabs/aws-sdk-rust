@@ -133,7 +133,7 @@ impl GetProtectionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetProtectionStatus`.
+/// Orchestration and serialization glue logic for `GetProtectionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

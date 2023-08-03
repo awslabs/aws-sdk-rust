@@ -150,7 +150,7 @@ impl DescribeDomainChangeProgressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDomainChangeProgress`.
+/// Orchestration and serialization glue logic for `DescribeDomainChangeProgress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

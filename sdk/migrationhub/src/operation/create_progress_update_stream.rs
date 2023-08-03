@@ -131,7 +131,7 @@ impl CreateProgressUpdateStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateProgressUpdateStream`.
+/// Orchestration and serialization glue logic for `CreateProgressUpdateStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

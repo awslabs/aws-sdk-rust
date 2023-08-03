@@ -194,7 +194,7 @@ impl TestInvokeMethodInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestInvokeMethod`.
+/// Orchestration and serialization glue logic for `TestInvokeMethod`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

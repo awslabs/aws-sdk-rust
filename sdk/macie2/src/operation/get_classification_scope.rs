@@ -132,7 +132,7 @@ impl GetClassificationScopeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetClassificationScope`.
+/// Orchestration and serialization glue logic for `GetClassificationScope`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

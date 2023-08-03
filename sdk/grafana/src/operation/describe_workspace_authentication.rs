@@ -130,7 +130,7 @@ impl DescribeWorkspaceAuthenticationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorkspaceAuthentication`.
+/// Orchestration and serialization glue logic for `DescribeWorkspaceAuthentication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

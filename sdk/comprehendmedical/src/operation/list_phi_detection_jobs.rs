@@ -131,7 +131,7 @@ impl ListPhiDetectionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPHIDetectionJobs`.
+/// Orchestration and serialization glue logic for `ListPHIDetectionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

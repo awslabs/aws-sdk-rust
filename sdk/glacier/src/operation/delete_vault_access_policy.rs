@@ -163,7 +163,7 @@ impl DeleteVaultAccessPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVaultAccessPolicy`.
+/// Orchestration and serialization glue logic for `DeleteVaultAccessPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

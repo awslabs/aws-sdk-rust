@@ -157,7 +157,7 @@ impl DeletePermissionGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePermissionGroup`.
+/// Orchestration and serialization glue logic for `DeletePermissionGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

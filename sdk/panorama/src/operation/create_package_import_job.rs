@@ -126,7 +126,7 @@ impl CreatePackageImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePackageImportJob`.
+/// Orchestration and serialization glue logic for `CreatePackageImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

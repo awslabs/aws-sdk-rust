@@ -127,7 +127,7 @@ impl ListAppComponentCompliancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppComponentCompliances`.
+/// Orchestration and serialization glue logic for `ListAppComponentCompliances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -164,7 +164,7 @@ impl ConnectAppAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConnectAppAuthorization`.
+/// Orchestration and serialization glue logic for `ConnectAppAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl DescribeVerifiedAccessInstanceLoggingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVerifiedAccessInstanceLoggingConfigurations`.
+/// Orchestration and serialization glue logic for `DescribeVerifiedAccessInstanceLoggingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

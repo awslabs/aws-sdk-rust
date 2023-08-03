@@ -170,7 +170,7 @@ impl RevokeRevisionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RevokeRevision`.
+/// Orchestration and serialization glue logic for `RevokeRevision`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

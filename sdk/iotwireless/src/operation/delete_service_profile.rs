@@ -132,7 +132,7 @@ impl DeleteServiceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteServiceProfile`.
+/// Orchestration and serialization glue logic for `DeleteServiceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

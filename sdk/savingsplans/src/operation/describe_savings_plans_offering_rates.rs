@@ -112,7 +112,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSavingsPlansOfferingRates`.
+/// Orchestration and serialization glue logic for `DescribeSavingsPlansOfferingRates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ReleaseStaticIpInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReleaseStaticIp`.
+/// Orchestration and serialization glue logic for `ReleaseStaticIp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

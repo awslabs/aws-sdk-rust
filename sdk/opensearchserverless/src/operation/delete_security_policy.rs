@@ -137,7 +137,7 @@ impl DeleteSecurityPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSecurityPolicy`.
+/// Orchestration and serialization glue logic for `DeleteSecurityPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

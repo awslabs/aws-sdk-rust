@@ -158,7 +158,7 @@ impl GetGeofenceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGeofence`.
+/// Orchestration and serialization glue logic for `GetGeofence`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

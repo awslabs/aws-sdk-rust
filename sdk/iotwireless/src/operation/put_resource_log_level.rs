@@ -180,7 +180,7 @@ impl PutResourceLogLevelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutResourceLogLevel`.
+/// Orchestration and serialization glue logic for `PutResourceLogLevel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

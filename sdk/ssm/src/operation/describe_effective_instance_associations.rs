@@ -116,7 +116,7 @@ impl DescribeEffectiveInstanceAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEffectiveInstanceAssociations`.
+/// Orchestration and serialization glue logic for `DescribeEffectiveInstanceAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateInstanceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateInstanceProfile`.
+/// Orchestration and serialization glue logic for `CreateInstanceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

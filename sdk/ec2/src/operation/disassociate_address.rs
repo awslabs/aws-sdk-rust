@@ -126,7 +126,7 @@ impl DisassociateAddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateAddress`.
+/// Orchestration and serialization glue logic for `DisassociateAddress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

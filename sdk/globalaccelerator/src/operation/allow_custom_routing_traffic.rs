@@ -131,7 +131,7 @@ impl AllowCustomRoutingTrafficInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AllowCustomRoutingTraffic`.
+/// Orchestration and serialization glue logic for `AllowCustomRoutingTraffic`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

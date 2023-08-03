@@ -126,7 +126,7 @@ impl ChangeMessageVisibilityBatchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ChangeMessageVisibilityBatch`.
+/// Orchestration and serialization glue logic for `ChangeMessageVisibilityBatch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

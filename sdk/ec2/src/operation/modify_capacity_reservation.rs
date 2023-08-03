@@ -126,7 +126,7 @@ impl ModifyCapacityReservationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyCapacityReservation`.
+/// Orchestration and serialization glue logic for `ModifyCapacityReservation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

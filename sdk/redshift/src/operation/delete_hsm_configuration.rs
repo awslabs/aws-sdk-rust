@@ -126,7 +126,7 @@ impl DeleteHsmConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteHsmConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteHsmConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

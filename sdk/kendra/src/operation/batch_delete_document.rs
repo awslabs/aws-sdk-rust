@@ -133,7 +133,7 @@ impl BatchDeleteDocumentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteDocument`.
+/// Orchestration and serialization glue logic for `BatchDeleteDocument`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

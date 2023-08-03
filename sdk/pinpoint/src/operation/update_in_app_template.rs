@@ -172,7 +172,7 @@ impl UpdateInAppTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateInAppTemplate`.
+/// Orchestration and serialization glue logic for `UpdateInAppTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

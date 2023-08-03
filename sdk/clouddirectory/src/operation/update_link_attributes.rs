@@ -133,7 +133,7 @@ impl UpdateLinkAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLinkAttributes`.
+/// Orchestration and serialization glue logic for `UpdateLinkAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

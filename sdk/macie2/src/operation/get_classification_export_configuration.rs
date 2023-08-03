@@ -98,7 +98,7 @@ impl GetClassificationExportConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetClassificationExportConfiguration`.
+/// Orchestration and serialization glue logic for `GetClassificationExportConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

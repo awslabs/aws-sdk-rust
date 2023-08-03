@@ -121,7 +121,7 @@ impl UpdateIdentityProviderSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIdentityProviderSettings`.
+/// Orchestration and serialization glue logic for `UpdateIdentityProviderSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

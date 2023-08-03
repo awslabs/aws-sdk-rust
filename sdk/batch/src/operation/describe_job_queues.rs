@@ -126,7 +126,7 @@ impl DescribeJobQueuesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeJobQueues`.
+/// Orchestration and serialization glue logic for `DescribeJobQueues`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

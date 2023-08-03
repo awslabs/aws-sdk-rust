@@ -135,7 +135,7 @@ impl ListCoreDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCoreDefinitions`.
+/// Orchestration and serialization glue logic for `ListCoreDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

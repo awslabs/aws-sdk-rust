@@ -126,7 +126,7 @@ impl StopMetricStreamsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopMetricStreams`.
+/// Orchestration and serialization glue logic for `StopMetricStreams`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

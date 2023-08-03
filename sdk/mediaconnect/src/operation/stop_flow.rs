@@ -132,7 +132,7 @@ impl StopFlowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopFlow`.
+/// Orchestration and serialization glue logic for `StopFlow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

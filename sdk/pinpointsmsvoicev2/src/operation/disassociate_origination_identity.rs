@@ -129,7 +129,7 @@ impl DisassociateOriginationIdentityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateOriginationIdentity`.
+/// Orchestration and serialization glue logic for `DisassociateOriginationIdentity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetBucketRequestPaymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketRequestPayment`.
+/// Orchestration and serialization glue logic for `GetBucketRequestPayment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

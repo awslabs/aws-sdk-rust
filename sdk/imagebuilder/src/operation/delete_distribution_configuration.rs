@@ -135,7 +135,7 @@ impl DeleteDistributionConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDistributionConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteDistributionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

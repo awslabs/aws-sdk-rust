@@ -126,7 +126,7 @@ impl ModifySnapshotAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifySnapshotAttribute`.
+/// Orchestration and serialization glue logic for `ModifySnapshotAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

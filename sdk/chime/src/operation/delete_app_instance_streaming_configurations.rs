@@ -121,7 +121,7 @@ impl DeleteAppInstanceStreamingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppInstanceStreamingConfigurations`.
+/// Orchestration and serialization glue logic for `DeleteAppInstanceStreamingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

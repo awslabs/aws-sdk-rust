@@ -135,7 +135,7 @@ impl UpdateNetworkAnalyzerConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateNetworkAnalyzerConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateNetworkAnalyzerConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

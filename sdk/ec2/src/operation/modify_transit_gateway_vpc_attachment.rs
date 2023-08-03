@@ -111,7 +111,7 @@ impl ModifyTransitGatewayVpcAttachmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyTransitGatewayVpcAttachment`.
+/// Orchestration and serialization glue logic for `ModifyTransitGatewayVpcAttachment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

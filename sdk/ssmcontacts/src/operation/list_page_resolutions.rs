@@ -133,7 +133,7 @@ impl ListPageResolutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPageResolutions`.
+/// Orchestration and serialization glue logic for `ListPageResolutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

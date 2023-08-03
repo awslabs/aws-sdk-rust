@@ -143,7 +143,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDistributionsByResponseHeadersPolicyId`.
+/// Orchestration and serialization glue logic for `ListDistributionsByResponseHeadersPolicyId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

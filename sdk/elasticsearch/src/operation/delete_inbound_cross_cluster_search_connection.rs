@@ -121,7 +121,7 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInboundCrossClusterSearchConnection`.
+/// Orchestration and serialization glue logic for `DeleteInboundCrossClusterSearchConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

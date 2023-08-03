@@ -131,7 +131,7 @@ impl UpdateConnectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateConnector`.
+/// Orchestration and serialization glue logic for `UpdateConnector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

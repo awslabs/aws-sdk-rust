@@ -126,7 +126,7 @@ impl PutNotificationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutNotificationConfiguration`.
+/// Orchestration and serialization glue logic for `PutNotificationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl CreateManagedPrefixListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateManagedPrefixList`.
+/// Orchestration and serialization glue logic for `CreateManagedPrefixList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

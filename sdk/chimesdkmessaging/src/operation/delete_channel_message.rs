@@ -174,7 +174,7 @@ impl DeleteChannelMessageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteChannelMessage`.
+/// Orchestration and serialization glue logic for `DeleteChannelMessage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

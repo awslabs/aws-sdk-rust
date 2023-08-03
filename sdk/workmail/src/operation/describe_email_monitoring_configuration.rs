@@ -116,7 +116,7 @@ impl DescribeEmailMonitoringConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEmailMonitoringConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeEmailMonitoringConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

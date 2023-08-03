@@ -131,7 +131,7 @@ impl DescribeFleetAdvisorSchemasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetAdvisorSchemas`.
+/// Orchestration and serialization glue logic for `DescribeFleetAdvisorSchemas`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

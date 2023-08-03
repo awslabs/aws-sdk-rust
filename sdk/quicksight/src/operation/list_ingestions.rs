@@ -181,7 +181,7 @@ impl ListIngestionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIngestions`.
+/// Orchestration and serialization glue logic for `ListIngestions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

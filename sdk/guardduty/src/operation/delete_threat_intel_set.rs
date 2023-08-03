@@ -156,7 +156,7 @@ impl DeleteThreatIntelSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteThreatIntelSet`.
+/// Orchestration and serialization glue logic for `DeleteThreatIntelSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

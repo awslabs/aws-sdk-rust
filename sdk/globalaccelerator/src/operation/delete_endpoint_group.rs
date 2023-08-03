@@ -133,7 +133,7 @@ impl DeleteEndpointGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEndpointGroup`.
+/// Orchestration and serialization glue logic for `DeleteEndpointGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

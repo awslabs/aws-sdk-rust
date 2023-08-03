@@ -131,7 +131,7 @@ impl DescribeRiskConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRiskConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeRiskConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

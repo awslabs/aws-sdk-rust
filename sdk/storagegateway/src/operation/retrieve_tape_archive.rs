@@ -133,7 +133,7 @@ impl RetrieveTapeArchiveInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RetrieveTapeArchive`.
+/// Orchestration and serialization glue logic for `RetrieveTapeArchive`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

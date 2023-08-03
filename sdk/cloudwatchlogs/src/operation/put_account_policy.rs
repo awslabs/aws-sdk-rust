@@ -131,7 +131,7 @@ impl PutAccountPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAccountPolicy`.
+/// Orchestration and serialization glue logic for `PutAccountPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

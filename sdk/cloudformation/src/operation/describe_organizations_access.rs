@@ -126,7 +126,7 @@ impl DescribeOrganizationsAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeOrganizationsAccess`.
+/// Orchestration and serialization glue logic for `DescribeOrganizationsAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

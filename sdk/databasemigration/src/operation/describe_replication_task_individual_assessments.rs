@@ -116,7 +116,7 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReplicationTaskIndividualAssessments`.
+/// Orchestration and serialization glue logic for `DescribeReplicationTaskIndividualAssessments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

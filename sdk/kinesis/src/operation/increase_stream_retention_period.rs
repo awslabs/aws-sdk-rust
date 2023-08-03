@@ -134,7 +134,7 @@ impl IncreaseStreamRetentionPeriodInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `IncreaseStreamRetentionPeriod`.
+/// Orchestration and serialization glue logic for `IncreaseStreamRetentionPeriod`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

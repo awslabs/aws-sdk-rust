@@ -131,7 +131,7 @@ impl StartBuildBatchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartBuildBatch`.
+/// Orchestration and serialization glue logic for `StartBuildBatch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

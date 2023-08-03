@@ -116,7 +116,7 @@ impl DescribeEventDetailsForOrganizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEventDetailsForOrganization`.
+/// Orchestration and serialization glue logic for `DescribeEventDetailsForOrganization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

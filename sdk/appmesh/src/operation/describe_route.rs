@@ -183,7 +183,7 @@ impl DescribeRouteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRoute`.
+/// Orchestration and serialization glue logic for `DescribeRoute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

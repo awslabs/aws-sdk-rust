@@ -131,7 +131,7 @@ impl ResolveCustomerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResolveCustomer`.
+/// Orchestration and serialization glue logic for `ResolveCustomer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

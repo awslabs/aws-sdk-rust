@@ -158,7 +158,7 @@ impl ListKxDatabasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListKxDatabases`.
+/// Orchestration and serialization glue logic for `ListKxDatabases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

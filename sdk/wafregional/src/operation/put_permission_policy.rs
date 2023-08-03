@@ -133,7 +133,7 @@ impl PutPermissionPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutPermissionPolicy`.
+/// Orchestration and serialization glue logic for `PutPermissionPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

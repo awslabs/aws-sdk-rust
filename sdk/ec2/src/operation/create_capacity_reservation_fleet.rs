@@ -124,7 +124,7 @@ impl CreateCapacityReservationFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCapacityReservationFleet`.
+/// Orchestration and serialization glue logic for `CreateCapacityReservationFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

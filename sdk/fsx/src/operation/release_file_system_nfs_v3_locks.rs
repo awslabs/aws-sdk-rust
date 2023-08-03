@@ -135,7 +135,7 @@ impl ReleaseFileSystemNfsV3LocksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReleaseFileSystemNfsV3Locks`.
+/// Orchestration and serialization glue logic for `ReleaseFileSystemNfsV3Locks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -116,7 +116,7 @@ impl DescribePredictorBacktestExportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePredictorBacktestExportJob`.
+/// Orchestration and serialization glue logic for `DescribePredictorBacktestExportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

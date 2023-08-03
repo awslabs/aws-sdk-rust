@@ -125,7 +125,7 @@ impl AssociateServiceQuotaTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateServiceQuotaTemplate`.
+/// Orchestration and serialization glue logic for `AssociateServiceQuotaTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

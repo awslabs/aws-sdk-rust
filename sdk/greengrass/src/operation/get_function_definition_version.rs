@@ -164,7 +164,7 @@ impl GetFunctionDefinitionVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFunctionDefinitionVersion`.
+/// Orchestration and serialization glue logic for `GetFunctionDefinitionVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

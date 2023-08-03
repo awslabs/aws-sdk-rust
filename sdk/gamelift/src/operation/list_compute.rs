@@ -131,7 +131,7 @@ impl ListComputeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCompute`.
+/// Orchestration and serialization glue logic for `ListCompute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

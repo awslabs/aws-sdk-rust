@@ -131,7 +131,7 @@ impl GetDifferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDifferences`.
+/// Orchestration and serialization glue logic for `GetDifferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

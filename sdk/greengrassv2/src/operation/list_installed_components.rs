@@ -166,7 +166,7 @@ impl ListInstalledComponentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstalledComponents`.
+/// Orchestration and serialization glue logic for `ListInstalledComponents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

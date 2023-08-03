@@ -170,7 +170,7 @@ impl PutBotAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBotAlias`.
+/// Orchestration and serialization glue logic for `PutBotAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

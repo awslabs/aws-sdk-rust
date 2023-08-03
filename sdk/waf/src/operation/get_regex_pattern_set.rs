@@ -133,7 +133,7 @@ impl GetRegexPatternSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRegexPatternSet`.
+/// Orchestration and serialization glue logic for `GetRegexPatternSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

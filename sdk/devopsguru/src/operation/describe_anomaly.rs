@@ -146,7 +146,7 @@ impl DescribeAnomalyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAnomaly`.
+/// Orchestration and serialization glue logic for `DescribeAnomaly`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

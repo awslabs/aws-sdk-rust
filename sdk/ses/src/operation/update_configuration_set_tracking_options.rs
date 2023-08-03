@@ -111,7 +111,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateConfigurationSetTrackingOptions`.
+/// Orchestration and serialization glue logic for `UpdateConfigurationSetTrackingOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

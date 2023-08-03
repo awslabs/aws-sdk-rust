@@ -131,7 +131,7 @@ impl GetDownloadUrlForLayerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDownloadUrlForLayer`.
+/// Orchestration and serialization glue logic for `GetDownloadUrlForLayer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

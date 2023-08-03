@@ -126,7 +126,7 @@ impl ReleaseHostsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReleaseHosts`.
+/// Orchestration and serialization glue logic for `ReleaseHosts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -185,7 +185,7 @@ impl DisassociateExternalConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateExternalConnection`.
+/// Orchestration and serialization glue logic for `DisassociateExternalConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

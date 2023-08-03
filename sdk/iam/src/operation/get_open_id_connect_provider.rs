@@ -126,7 +126,7 @@ impl GetOpenIdConnectProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOpenIDConnectProvider`.
+/// Orchestration and serialization glue logic for `GetOpenIDConnectProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

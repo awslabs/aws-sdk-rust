@@ -146,7 +146,7 @@ impl UpdateCanaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCanary`.
+/// Orchestration and serialization glue logic for `UpdateCanary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

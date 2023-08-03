@@ -150,7 +150,7 @@ impl AddFlowVpcInterfacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddFlowVpcInterfaces`.
+/// Orchestration and serialization glue logic for `AddFlowVpcInterfaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

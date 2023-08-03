@@ -112,7 +112,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPricingPlansAssociatedWithPricingRule`.
+/// Orchestration and serialization glue logic for `ListPricingPlansAssociatedWithPricingRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

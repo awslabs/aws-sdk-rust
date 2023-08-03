@@ -119,7 +119,7 @@ impl GetSmsSandboxAccountStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSMSSandboxAccountStatus`.
+/// Orchestration and serialization glue logic for `GetSMSSandboxAccountStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

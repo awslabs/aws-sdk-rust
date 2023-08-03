@@ -146,7 +146,7 @@ impl UpdateAllowListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAllowList`.
+/// Orchestration and serialization glue logic for `UpdateAllowList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

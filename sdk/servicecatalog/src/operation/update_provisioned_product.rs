@@ -135,7 +135,7 @@ impl UpdateProvisionedProductInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateProvisionedProduct`.
+/// Orchestration and serialization glue logic for `UpdateProvisionedProduct`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

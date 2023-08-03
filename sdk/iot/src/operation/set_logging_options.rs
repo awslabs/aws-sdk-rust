@@ -126,7 +126,7 @@ impl SetLoggingOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetLoggingOptions`.
+/// Orchestration and serialization glue logic for `SetLoggingOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -171,7 +171,7 @@ impl RemoveResourcePermissionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveResourcePermission`.
+/// Orchestration and serialization glue logic for `RemoveResourcePermission`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

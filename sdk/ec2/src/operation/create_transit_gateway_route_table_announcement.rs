@@ -111,7 +111,7 @@ impl CreateTransitGatewayRouteTableAnnouncementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTransitGatewayRouteTableAnnouncement`.
+/// Orchestration and serialization glue logic for `CreateTransitGatewayRouteTableAnnouncement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

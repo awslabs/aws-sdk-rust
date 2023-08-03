@@ -133,7 +133,7 @@ impl UpdateNetworkProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateNetworkProfile`.
+/// Orchestration and serialization glue logic for `UpdateNetworkProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

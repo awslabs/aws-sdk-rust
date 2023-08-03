@@ -158,7 +158,7 @@ impl ListPublishingDestinationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPublishingDestinations`.
+/// Orchestration and serialization glue logic for `ListPublishingDestinations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

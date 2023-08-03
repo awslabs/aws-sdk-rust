@@ -128,7 +128,7 @@ impl SetV2LoggingLevelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetV2LoggingLevel`.
+/// Orchestration and serialization glue logic for `SetV2LoggingLevel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -176,7 +176,7 @@ impl DeleteRoomMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRoomMembership`.
+/// Orchestration and serialization glue logic for `DeleteRoomMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

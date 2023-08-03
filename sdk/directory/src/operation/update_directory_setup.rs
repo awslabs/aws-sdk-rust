@@ -133,7 +133,7 @@ impl UpdateDirectorySetupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDirectorySetup`.
+/// Orchestration and serialization glue logic for `UpdateDirectorySetup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

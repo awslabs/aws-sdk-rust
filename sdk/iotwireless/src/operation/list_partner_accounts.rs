@@ -134,7 +134,7 @@ impl ListPartnerAccountsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPartnerAccounts`.
+/// Orchestration and serialization glue logic for `ListPartnerAccounts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

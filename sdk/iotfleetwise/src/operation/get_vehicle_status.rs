@@ -153,7 +153,7 @@ impl GetVehicleStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVehicleStatus`.
+/// Orchestration and serialization glue logic for `GetVehicleStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

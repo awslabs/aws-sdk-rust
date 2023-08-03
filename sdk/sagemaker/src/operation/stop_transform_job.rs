@@ -131,7 +131,7 @@ impl StopTransformJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopTransformJob`.
+/// Orchestration and serialization glue logic for `StopTransformJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

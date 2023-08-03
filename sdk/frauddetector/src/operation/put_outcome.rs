@@ -131,7 +131,7 @@ impl PutOutcomeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutOutcome`.
+/// Orchestration and serialization glue logic for `PutOutcome`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

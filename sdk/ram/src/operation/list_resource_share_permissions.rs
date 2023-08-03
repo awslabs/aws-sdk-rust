@@ -127,7 +127,7 @@ impl ListResourceSharePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourceSharePermissions`.
+/// Orchestration and serialization glue logic for `ListResourceSharePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

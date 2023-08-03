@@ -131,7 +131,7 @@ impl ListModelBiasJobDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListModelBiasJobDefinitions`.
+/// Orchestration and serialization glue logic for `ListModelBiasJobDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

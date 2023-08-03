@@ -111,7 +111,7 @@ impl DescribeReservedNodeExchangeStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReservedNodeExchangeStatus`.
+/// Orchestration and serialization glue logic for `DescribeReservedNodeExchangeStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

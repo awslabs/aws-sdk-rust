@@ -133,7 +133,7 @@ impl ListCodeRepositoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCodeRepositories`.
+/// Orchestration and serialization glue logic for `ListCodeRepositories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

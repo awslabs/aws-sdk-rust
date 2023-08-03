@@ -133,7 +133,7 @@ impl DescribeLogPatternInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLogPattern`.
+/// Orchestration and serialization glue logic for `DescribeLogPattern`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

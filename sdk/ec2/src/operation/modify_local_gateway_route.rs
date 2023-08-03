@@ -126,7 +126,7 @@ impl ModifyLocalGatewayRouteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyLocalGatewayRoute`.
+/// Orchestration and serialization glue logic for `ModifyLocalGatewayRoute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

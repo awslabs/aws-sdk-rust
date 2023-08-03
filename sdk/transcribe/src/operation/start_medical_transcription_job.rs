@@ -131,7 +131,7 @@ impl StartMedicalTranscriptionJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartMedicalTranscriptionJob`.
+/// Orchestration and serialization glue logic for `StartMedicalTranscriptionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

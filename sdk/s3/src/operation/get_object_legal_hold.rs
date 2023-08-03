@@ -155,7 +155,7 @@ impl GetObjectLegalHoldInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetObjectLegalHold`.
+/// Orchestration and serialization glue logic for `GetObjectLegalHold`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

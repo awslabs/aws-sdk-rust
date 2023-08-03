@@ -126,7 +126,7 @@ impl CreateJobQueueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateJobQueue`.
+/// Orchestration and serialization glue logic for `CreateJobQueue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

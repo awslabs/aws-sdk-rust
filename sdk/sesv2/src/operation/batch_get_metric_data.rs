@@ -129,7 +129,7 @@ impl BatchGetMetricDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetMetricData`.
+/// Orchestration and serialization glue logic for `BatchGetMetricData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

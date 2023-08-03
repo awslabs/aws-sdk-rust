@@ -136,7 +136,7 @@ impl GetBuiltinIntentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBuiltinIntent`.
+/// Orchestration and serialization glue logic for `GetBuiltinIntent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

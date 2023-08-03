@@ -156,7 +156,7 @@ impl DeleteFeatureInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFeature`.
+/// Orchestration and serialization glue logic for `DeleteFeature`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

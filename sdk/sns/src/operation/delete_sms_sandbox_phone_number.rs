@@ -126,7 +126,7 @@ impl DeleteSmsSandboxPhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSMSSandboxPhoneNumber`.
+/// Orchestration and serialization glue logic for `DeleteSMSSandboxPhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

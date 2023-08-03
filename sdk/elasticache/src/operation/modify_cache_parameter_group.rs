@@ -126,7 +126,7 @@ impl ModifyCacheParameterGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyCacheParameterGroup`.
+/// Orchestration and serialization glue logic for `ModifyCacheParameterGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

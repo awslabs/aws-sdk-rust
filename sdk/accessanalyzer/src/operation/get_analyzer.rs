@@ -136,7 +136,7 @@ impl GetAnalyzerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAnalyzer`.
+/// Orchestration and serialization glue logic for `GetAnalyzer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

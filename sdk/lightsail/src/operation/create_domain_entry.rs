@@ -131,7 +131,7 @@ impl CreateDomainEntryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDomainEntry`.
+/// Orchestration and serialization glue logic for `CreateDomainEntry`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

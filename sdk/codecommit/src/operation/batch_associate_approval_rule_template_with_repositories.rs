@@ -116,7 +116,7 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchAssociateApprovalRuleTemplateWithRepositories`.
+/// Orchestration and serialization glue logic for `BatchAssociateApprovalRuleTemplateWithRepositories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

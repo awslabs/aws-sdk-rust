@@ -120,7 +120,7 @@ impl DescribeClientVpnTargetNetworksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClientVpnTargetNetworks`.
+/// Orchestration and serialization glue logic for `DescribeClientVpnTargetNetworks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

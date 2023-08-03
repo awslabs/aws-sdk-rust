@@ -126,7 +126,7 @@ impl RotateEncryptionKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RotateEncryptionKey`.
+/// Orchestration and serialization glue logic for `RotateEncryptionKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

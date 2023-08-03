@@ -134,7 +134,7 @@ impl ListInputDevicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInputDevices`.
+/// Orchestration and serialization glue logic for `ListInputDevices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

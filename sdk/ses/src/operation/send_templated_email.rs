@@ -126,7 +126,7 @@ impl SendTemplatedEmailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendTemplatedEmail`.
+/// Orchestration and serialization glue logic for `SendTemplatedEmail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

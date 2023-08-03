@@ -148,7 +148,7 @@ impl GetSyncJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSyncJob`.
+/// Orchestration and serialization glue logic for `GetSyncJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

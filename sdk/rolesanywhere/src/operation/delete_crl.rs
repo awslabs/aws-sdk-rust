@@ -132,7 +132,7 @@ impl DeleteCrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCrl`.
+/// Orchestration and serialization glue logic for `DeleteCrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

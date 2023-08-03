@@ -154,7 +154,7 @@ impl AssociateEncryptionConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateEncryptionConfig`.
+/// Orchestration and serialization glue logic for `AssociateEncryptionConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

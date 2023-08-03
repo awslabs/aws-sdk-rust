@@ -166,7 +166,7 @@ impl ListLensReviewsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLensReviews`.
+/// Orchestration and serialization glue logic for `ListLensReviews`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

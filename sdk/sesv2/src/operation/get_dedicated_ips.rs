@@ -140,7 +140,7 @@ impl GetDedicatedIpsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDedicatedIps`.
+/// Orchestration and serialization glue logic for `GetDedicatedIps`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

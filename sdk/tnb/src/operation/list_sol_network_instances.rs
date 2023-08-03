@@ -138,7 +138,7 @@ impl ListSolNetworkInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSolNetworkInstances`.
+/// Orchestration and serialization glue logic for `ListSolNetworkInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

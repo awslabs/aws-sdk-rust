@@ -188,7 +188,7 @@ impl UnsubscribeFromDatasetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UnsubscribeFromDataset`.
+/// Orchestration and serialization glue logic for `UnsubscribeFromDataset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

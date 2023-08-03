@@ -133,7 +133,7 @@ impl ListNetworkProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListNetworkProfiles`.
+/// Orchestration and serialization glue logic for `ListNetworkProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

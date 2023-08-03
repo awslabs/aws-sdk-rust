@@ -131,7 +131,7 @@ impl DescribeTestCasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTestCases`.
+/// Orchestration and serialization glue logic for `DescribeTestCases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

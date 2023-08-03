@@ -126,7 +126,7 @@ impl DeleteVpnConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpnConnection`.
+/// Orchestration and serialization glue logic for `DeleteVpnConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

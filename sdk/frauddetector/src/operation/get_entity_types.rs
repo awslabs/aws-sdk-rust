@@ -131,7 +131,7 @@ impl GetEntityTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEntityTypes`.
+/// Orchestration and serialization glue logic for `GetEntityTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

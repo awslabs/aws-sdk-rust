@@ -131,7 +131,7 @@ impl CreateWhatIfForecastInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWhatIfForecast`.
+/// Orchestration and serialization glue logic for `CreateWhatIfForecast`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

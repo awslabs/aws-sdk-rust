@@ -188,7 +188,7 @@ impl UpdateLaunchProfileMemberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLaunchProfileMember`.
+/// Orchestration and serialization glue logic for `UpdateLaunchProfileMember`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

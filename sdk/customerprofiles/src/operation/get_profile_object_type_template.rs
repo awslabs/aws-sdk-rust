@@ -132,7 +132,7 @@ impl GetProfileObjectTypeTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetProfileObjectTypeTemplate`.
+/// Orchestration and serialization glue logic for `GetProfileObjectTypeTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

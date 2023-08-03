@@ -93,7 +93,6 @@ impl Client {
     pub fn new(sdk_config: &::aws_types::sdk_config::SdkConfig) -> Self {
         Self::from_conf(sdk_config.into())
     }
-
     /// Creates a new client from the service [`Config`](crate::Config).
     ///
     /// # Panics
@@ -114,7 +113,7 @@ impl Client {
         let sleep_impl = conf.sleep_impl();
         if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
             panic!("An async sleep implementation is required for retries or timeouts to work. \
-                                    Set the `sleep_impl` on the Config passed into this function to fix this panic.");
+                                        Set the `sleep_impl` on the Config passed into this function to fix this panic.");
         }
 
         let connector = conf.http_connector().and_then(|c| {
@@ -161,7 +160,7 @@ impl Client {
         let client = builder.build();
 
         Self {
-            handle: std::sync::Arc::new(Handle { client, conf }),
+            handle: ::std::sync::Arc::new(Handle { client, conf }),
         }
     }
 }

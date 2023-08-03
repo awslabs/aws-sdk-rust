@@ -169,7 +169,7 @@ impl ListVocabulariesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVocabularies`.
+/// Orchestration and serialization glue logic for `ListVocabularies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

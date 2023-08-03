@@ -178,7 +178,7 @@ impl ListStageDeploymentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStageDeployments`.
+/// Orchestration and serialization glue logic for `ListStageDeployments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl AssociateSkillWithUsersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateSkillWithUsers`.
+/// Orchestration and serialization glue logic for `AssociateSkillWithUsers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

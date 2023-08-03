@@ -131,7 +131,7 @@ impl DeleteConnectionAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteConnectionAlias`.
+/// Orchestration and serialization glue logic for `DeleteConnectionAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

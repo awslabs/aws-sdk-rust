@@ -126,7 +126,7 @@ impl CreateOrUpdateTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateOrUpdateTags`.
+/// Orchestration and serialization glue logic for `CreateOrUpdateTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl AddCacheInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddCache`.
+/// Orchestration and serialization glue logic for `AddCache`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

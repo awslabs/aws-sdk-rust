@@ -131,7 +131,7 @@ impl BatchGetWorkflowsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetWorkflows`.
+/// Orchestration and serialization glue logic for `BatchGetWorkflows`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

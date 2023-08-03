@@ -133,7 +133,7 @@ impl SearchUsersByImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchUsersByImage`.
+/// Orchestration and serialization glue logic for `SearchUsersByImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

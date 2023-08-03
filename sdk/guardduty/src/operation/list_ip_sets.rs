@@ -158,7 +158,7 @@ impl ListIpSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIPSets`.
+/// Orchestration and serialization glue logic for `ListIPSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

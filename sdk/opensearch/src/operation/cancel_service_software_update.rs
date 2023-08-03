@@ -130,7 +130,7 @@ impl CancelServiceSoftwareUpdateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelServiceSoftwareUpdate`.
+/// Orchestration and serialization glue logic for `CancelServiceSoftwareUpdate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

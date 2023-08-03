@@ -170,7 +170,7 @@ impl PutBucketCorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketCors`.
+/// Orchestration and serialization glue logic for `PutBucketCors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

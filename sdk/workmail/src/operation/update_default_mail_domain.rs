@@ -131,7 +131,7 @@ impl UpdateDefaultMailDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDefaultMailDomain`.
+/// Orchestration and serialization glue logic for `UpdateDefaultMailDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

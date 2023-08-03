@@ -131,7 +131,7 @@ impl ListExplainabilityExportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListExplainabilityExports`.
+/// Orchestration and serialization glue logic for `ListExplainabilityExports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

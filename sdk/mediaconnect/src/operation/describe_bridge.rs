@@ -132,7 +132,7 @@ impl DescribeBridgeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBridge`.
+/// Orchestration and serialization glue logic for `DescribeBridge`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

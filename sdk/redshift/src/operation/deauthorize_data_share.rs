@@ -126,7 +126,7 @@ impl DeauthorizeDataShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeauthorizeDataShare`.
+/// Orchestration and serialization glue logic for `DeauthorizeDataShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

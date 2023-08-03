@@ -157,7 +157,7 @@ impl AcceptEulasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptEulas`.
+/// Orchestration and serialization glue logic for `AcceptEulas`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

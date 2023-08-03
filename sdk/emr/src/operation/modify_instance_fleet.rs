@@ -133,7 +133,7 @@ impl ModifyInstanceFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyInstanceFleet`.
+/// Orchestration and serialization glue logic for `ModifyInstanceFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

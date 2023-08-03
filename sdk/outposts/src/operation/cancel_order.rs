@@ -132,7 +132,7 @@ impl CancelOrderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelOrder`.
+/// Orchestration and serialization glue logic for `CancelOrder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

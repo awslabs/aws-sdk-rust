@@ -131,7 +131,7 @@ impl DeleteVehicleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVehicle`.
+/// Orchestration and serialization glue logic for `DeleteVehicle`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

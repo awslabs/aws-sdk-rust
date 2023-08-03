@@ -127,7 +127,7 @@ impl ListConnectorEntitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListConnectorEntities`.
+/// Orchestration and serialization glue logic for `ListConnectorEntities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

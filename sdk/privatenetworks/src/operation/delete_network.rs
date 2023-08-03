@@ -153,7 +153,7 @@ impl DeleteNetworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteNetwork`.
+/// Orchestration and serialization glue logic for `DeleteNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

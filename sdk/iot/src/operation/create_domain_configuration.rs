@@ -150,7 +150,7 @@ impl CreateDomainConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDomainConfiguration`.
+/// Orchestration and serialization glue logic for `CreateDomainConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

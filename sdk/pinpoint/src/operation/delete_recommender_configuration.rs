@@ -137,7 +137,7 @@ impl DeleteRecommenderConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRecommenderConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteRecommenderConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

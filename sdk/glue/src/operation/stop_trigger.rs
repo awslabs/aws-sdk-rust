@@ -131,7 +131,7 @@ impl StopTriggerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopTrigger`.
+/// Orchestration and serialization glue logic for `StopTrigger`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

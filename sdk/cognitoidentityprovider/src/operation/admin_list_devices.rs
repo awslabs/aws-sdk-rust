@@ -131,7 +131,7 @@ impl AdminListDevicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminListDevices`.
+/// Orchestration and serialization glue logic for `AdminListDevices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

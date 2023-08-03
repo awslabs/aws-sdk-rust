@@ -131,7 +131,7 @@ impl GetAnomaliesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAnomalies`.
+/// Orchestration and serialization glue logic for `GetAnomalies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

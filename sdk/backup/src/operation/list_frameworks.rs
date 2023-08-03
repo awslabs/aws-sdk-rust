@@ -134,7 +134,7 @@ impl ListFrameworksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFrameworks`.
+/// Orchestration and serialization glue logic for `ListFrameworks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

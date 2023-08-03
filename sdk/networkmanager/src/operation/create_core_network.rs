@@ -130,7 +130,7 @@ impl CreateCoreNetworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCoreNetwork`.
+/// Orchestration and serialization glue logic for `CreateCoreNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -151,7 +151,7 @@ impl UpdateOriginAccessControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateOriginAccessControl`.
+/// Orchestration and serialization glue logic for `UpdateOriginAccessControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

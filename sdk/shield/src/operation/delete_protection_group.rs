@@ -131,7 +131,7 @@ impl DeleteProtectionGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProtectionGroup`.
+/// Orchestration and serialization glue logic for `DeleteProtectionGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

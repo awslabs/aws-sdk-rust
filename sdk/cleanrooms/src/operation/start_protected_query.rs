@@ -152,7 +152,7 @@ impl StartProtectedQueryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartProtectedQuery`.
+/// Orchestration and serialization glue logic for `StartProtectedQuery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

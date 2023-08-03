@@ -126,7 +126,7 @@ impl DisableAlarmActionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableAlarmActions`.
+/// Orchestration and serialization glue logic for `DisableAlarmActions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

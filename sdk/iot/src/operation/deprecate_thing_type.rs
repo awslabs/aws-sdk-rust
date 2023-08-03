@@ -152,7 +152,7 @@ impl DeprecateThingTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeprecateThingType`.
+/// Orchestration and serialization glue logic for `DeprecateThingType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

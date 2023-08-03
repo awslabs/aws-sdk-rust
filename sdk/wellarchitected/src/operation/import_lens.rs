@@ -130,7 +130,7 @@ impl ImportLensInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportLens`.
+/// Orchestration and serialization glue logic for `ImportLens`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

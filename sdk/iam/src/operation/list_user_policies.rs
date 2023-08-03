@@ -126,7 +126,7 @@ impl ListUserPoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListUserPolicies`.
+/// Orchestration and serialization glue logic for `ListUserPolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

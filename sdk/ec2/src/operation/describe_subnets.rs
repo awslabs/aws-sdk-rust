@@ -128,7 +128,7 @@ impl DescribeSubnetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSubnets`.
+/// Orchestration and serialization glue logic for `DescribeSubnets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

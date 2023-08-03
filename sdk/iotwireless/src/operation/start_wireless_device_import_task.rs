@@ -132,7 +132,7 @@ impl StartWirelessDeviceImportTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartWirelessDeviceImportTask`.
+/// Orchestration and serialization glue logic for `StartWirelessDeviceImportTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

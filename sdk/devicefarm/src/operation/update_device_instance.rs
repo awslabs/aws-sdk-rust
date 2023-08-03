@@ -133,7 +133,7 @@ impl UpdateDeviceInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDeviceInstance`.
+/// Orchestration and serialization glue logic for `UpdateDeviceInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

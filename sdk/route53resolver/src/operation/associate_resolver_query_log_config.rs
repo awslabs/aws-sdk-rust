@@ -125,7 +125,7 @@ impl AssociateResolverQueryLogConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateResolverQueryLogConfig`.
+/// Orchestration and serialization glue logic for `AssociateResolverQueryLogConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

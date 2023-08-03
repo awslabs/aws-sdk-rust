@@ -131,7 +131,7 @@ impl RestoreTableFromBackupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreTableFromBackup`.
+/// Orchestration and serialization glue logic for `RestoreTableFromBackup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -145,7 +145,7 @@ impl ListApplicationInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListApplicationInstances`.
+/// Orchestration and serialization glue logic for `ListApplicationInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

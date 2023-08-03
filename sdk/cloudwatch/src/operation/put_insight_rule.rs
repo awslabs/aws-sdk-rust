@@ -128,7 +128,7 @@ impl PutInsightRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutInsightRule`.
+/// Orchestration and serialization glue logic for `PutInsightRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

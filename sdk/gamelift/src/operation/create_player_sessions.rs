@@ -133,7 +133,7 @@ impl CreatePlayerSessionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePlayerSessions`.
+/// Orchestration and serialization glue logic for `CreatePlayerSessions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

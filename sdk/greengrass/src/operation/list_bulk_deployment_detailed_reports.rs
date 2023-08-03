@@ -143,7 +143,7 @@ impl ListBulkDeploymentDetailedReportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBulkDeploymentDetailedReports`.
+/// Orchestration and serialization glue logic for `ListBulkDeploymentDetailedReports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

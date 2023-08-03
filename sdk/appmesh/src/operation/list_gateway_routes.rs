@@ -177,7 +177,7 @@ impl ListGatewayRoutesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGatewayRoutes`.
+/// Orchestration and serialization glue logic for `ListGatewayRoutes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl ListDataCellsFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDataCellsFilter`.
+/// Orchestration and serialization glue logic for `ListDataCellsFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl StartContactEvaluationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartContactEvaluation`.
+/// Orchestration and serialization glue logic for `StartContactEvaluation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

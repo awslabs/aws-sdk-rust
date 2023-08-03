@@ -126,7 +126,7 @@ impl DeleteGraphInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGraph`.
+/// Orchestration and serialization glue logic for `DeleteGraph`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl ModifyVpcEndpointServiceConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyVpcEndpointServiceConfiguration`.
+/// Orchestration and serialization glue logic for `ModifyVpcEndpointServiceConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

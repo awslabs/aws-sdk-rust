@@ -127,7 +127,7 @@ impl SendAlexaOfferToMasterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendAlexaOfferToMaster`.
+/// Orchestration and serialization glue logic for `SendAlexaOfferToMaster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ExpireSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExpireSession`.
+/// Orchestration and serialization glue logic for `ExpireSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

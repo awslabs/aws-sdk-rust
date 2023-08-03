@@ -131,7 +131,7 @@ impl DescribeConstraintInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConstraint`.
+/// Orchestration and serialization glue logic for `DescribeConstraint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

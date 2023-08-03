@@ -131,7 +131,7 @@ impl GetGeoMatchSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGeoMatchSet`.
+/// Orchestration and serialization glue logic for `GetGeoMatchSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

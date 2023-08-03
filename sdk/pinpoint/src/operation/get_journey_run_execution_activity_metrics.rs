@@ -195,7 +195,7 @@ impl GetJourneyRunExecutionActivityMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetJourneyRunExecutionActivityMetrics`.
+/// Orchestration and serialization glue logic for `GetJourneyRunExecutionActivityMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

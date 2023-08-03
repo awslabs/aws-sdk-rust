@@ -127,7 +127,7 @@ impl ResolveComponentCandidatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResolveComponentCandidates`.
+/// Orchestration and serialization glue logic for `ResolveComponentCandidates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

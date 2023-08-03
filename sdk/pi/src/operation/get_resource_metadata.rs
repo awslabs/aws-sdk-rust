@@ -133,7 +133,7 @@ impl GetResourceMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResourceMetadata`.
+/// Orchestration and serialization glue logic for `GetResourceMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

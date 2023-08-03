@@ -131,7 +131,7 @@ impl GetRotationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRotation`.
+/// Orchestration and serialization glue logic for `GetRotation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

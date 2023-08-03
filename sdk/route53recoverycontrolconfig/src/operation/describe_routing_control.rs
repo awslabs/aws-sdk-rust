@@ -136,7 +136,7 @@ impl DescribeRoutingControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRoutingControl`.
+/// Orchestration and serialization glue logic for `DescribeRoutingControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

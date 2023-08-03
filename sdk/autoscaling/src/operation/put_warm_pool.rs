@@ -126,7 +126,7 @@ impl PutWarmPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutWarmPool`.
+/// Orchestration and serialization glue logic for `PutWarmPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateKeyspaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateKeyspace`.
+/// Orchestration and serialization glue logic for `CreateKeyspace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

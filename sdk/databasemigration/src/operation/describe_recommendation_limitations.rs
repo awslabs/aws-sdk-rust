@@ -116,7 +116,7 @@ impl DescribeRecommendationLimitationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRecommendationLimitations`.
+/// Orchestration and serialization glue logic for `DescribeRecommendationLimitations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

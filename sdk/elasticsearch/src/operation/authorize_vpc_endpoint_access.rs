@@ -150,7 +150,7 @@ impl AuthorizeVpcEndpointAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AuthorizeVpcEndpointAccess`.
+/// Orchestration and serialization glue logic for `AuthorizeVpcEndpointAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

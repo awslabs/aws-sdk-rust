@@ -159,7 +159,7 @@ impl ListTargetsForSecurityProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTargetsForSecurityProfile`.
+/// Orchestration and serialization glue logic for `ListTargetsForSecurityProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

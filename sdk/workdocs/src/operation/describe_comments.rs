@@ -182,7 +182,7 @@ impl DescribeCommentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeComments`.
+/// Orchestration and serialization glue logic for `DescribeComments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl UpdateTopicPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTopicPermissions`.
+/// Orchestration and serialization glue logic for `UpdateTopicPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

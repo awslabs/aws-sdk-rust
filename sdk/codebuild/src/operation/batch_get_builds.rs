@@ -131,7 +131,7 @@ impl BatchGetBuildsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetBuilds`.
+/// Orchestration and serialization glue logic for `BatchGetBuilds`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

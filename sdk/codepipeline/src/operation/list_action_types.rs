@@ -131,7 +131,7 @@ impl ListActionTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListActionTypes`.
+/// Orchestration and serialization glue logic for `ListActionTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

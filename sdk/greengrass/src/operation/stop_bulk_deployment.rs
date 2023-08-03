@@ -136,7 +136,7 @@ impl StopBulkDeploymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopBulkDeployment`.
+/// Orchestration and serialization glue logic for `StopBulkDeployment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

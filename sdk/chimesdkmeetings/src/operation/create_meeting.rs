@@ -130,7 +130,7 @@ impl CreateMeetingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMeeting`.
+/// Orchestration and serialization glue logic for `CreateMeeting`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

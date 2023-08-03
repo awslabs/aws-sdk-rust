@@ -126,7 +126,7 @@ impl DescribeWorldInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorld`.
+/// Orchestration and serialization glue logic for `DescribeWorld`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

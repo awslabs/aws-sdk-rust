@@ -150,7 +150,7 @@ impl CreateMeetingDialOutInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMeetingDialOut`.
+/// Orchestration and serialization glue logic for `CreateMeetingDialOut`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

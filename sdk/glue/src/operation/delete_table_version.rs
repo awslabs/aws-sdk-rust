@@ -133,7 +133,7 @@ impl DeleteTableVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTableVersion`.
+/// Orchestration and serialization glue logic for `DeleteTableVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

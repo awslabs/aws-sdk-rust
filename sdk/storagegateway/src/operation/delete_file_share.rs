@@ -131,7 +131,7 @@ impl DeleteFileShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFileShare`.
+/// Orchestration and serialization glue logic for `DeleteFileShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

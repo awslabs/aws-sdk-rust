@@ -132,7 +132,7 @@ impl DisassociateDiscoveredResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateDiscoveredResource`.
+/// Orchestration and serialization glue logic for `DisassociateDiscoveredResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

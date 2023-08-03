@@ -111,7 +111,7 @@ impl DescribeInstanceCreditSpecificationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInstanceCreditSpecifications`.
+/// Orchestration and serialization glue logic for `DescribeInstanceCreditSpecifications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteBgpPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBGPPeer`.
+/// Orchestration and serialization glue logic for `DeleteBGPPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

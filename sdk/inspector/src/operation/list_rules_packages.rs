@@ -131,7 +131,7 @@ impl ListRulesPackagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRulesPackages`.
+/// Orchestration and serialization glue logic for `ListRulesPackages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteExperimentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteExperiment`.
+/// Orchestration and serialization glue logic for `DeleteExperiment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

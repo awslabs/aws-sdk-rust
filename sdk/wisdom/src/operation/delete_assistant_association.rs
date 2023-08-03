@@ -156,7 +156,7 @@ impl DeleteAssistantAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAssistantAssociation`.
+/// Orchestration and serialization glue logic for `DeleteAssistantAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

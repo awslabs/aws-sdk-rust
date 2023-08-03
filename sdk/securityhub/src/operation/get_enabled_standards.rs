@@ -128,7 +128,7 @@ impl GetEnabledStandardsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEnabledStandards`.
+/// Orchestration and serialization glue logic for `GetEnabledStandards`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

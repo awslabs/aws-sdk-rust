@@ -150,7 +150,7 @@ impl UpdateExtensionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateExtension`.
+/// Orchestration and serialization glue logic for `UpdateExtension`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

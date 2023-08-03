@@ -127,7 +127,7 @@ impl DeleteRobotApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRobotApplication`.
+/// Orchestration and serialization glue logic for `DeleteRobotApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

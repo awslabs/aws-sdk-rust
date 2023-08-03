@@ -132,7 +132,7 @@ impl GetAccessorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccessor`.
+/// Orchestration and serialization glue logic for `GetAccessor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

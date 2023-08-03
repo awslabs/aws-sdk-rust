@@ -125,7 +125,7 @@ impl CreateUsageReportSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateUsageReportSubscription`.
+/// Orchestration and serialization glue logic for `CreateUsageReportSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

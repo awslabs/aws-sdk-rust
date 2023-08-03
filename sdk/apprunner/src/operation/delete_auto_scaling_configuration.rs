@@ -125,7 +125,7 @@ impl DeleteAutoScalingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAutoScalingConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteAutoScalingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

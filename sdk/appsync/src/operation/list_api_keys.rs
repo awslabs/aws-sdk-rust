@@ -154,7 +154,7 @@ impl ListApiKeysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListApiKeys`.
+/// Orchestration and serialization glue logic for `ListApiKeys`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl GetContainerServicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContainerServices`.
+/// Orchestration and serialization glue logic for `GetContainerServices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

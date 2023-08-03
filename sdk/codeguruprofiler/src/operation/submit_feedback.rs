@@ -164,7 +164,7 @@ impl SubmitFeedbackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SubmitFeedback`.
+/// Orchestration and serialization glue logic for `SubmitFeedback`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

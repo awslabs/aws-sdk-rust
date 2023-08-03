@@ -120,7 +120,7 @@ impl ListOpenIdConnectProviderTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOpenIDConnectProviderTags`.
+/// Orchestration and serialization glue logic for `ListOpenIDConnectProviderTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

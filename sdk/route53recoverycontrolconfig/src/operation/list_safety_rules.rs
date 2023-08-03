@@ -158,7 +158,7 @@ impl ListSafetyRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSafetyRules`.
+/// Orchestration and serialization glue logic for `ListSafetyRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

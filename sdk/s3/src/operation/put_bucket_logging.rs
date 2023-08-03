@@ -167,7 +167,7 @@ impl PutBucketLoggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketLogging`.
+/// Orchestration and serialization glue logic for `PutBucketLogging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

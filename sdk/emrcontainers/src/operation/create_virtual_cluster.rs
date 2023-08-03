@@ -132,7 +132,7 @@ impl CreateVirtualClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVirtualCluster`.
+/// Orchestration and serialization glue logic for `CreateVirtualCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

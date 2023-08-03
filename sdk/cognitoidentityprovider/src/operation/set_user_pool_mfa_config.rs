@@ -131,7 +131,7 @@ impl SetUserPoolMfaConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetUserPoolMfaConfig`.
+/// Orchestration and serialization glue logic for `SetUserPoolMfaConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

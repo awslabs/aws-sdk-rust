@@ -132,7 +132,7 @@ impl DeleteSipRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSipRule`.
+/// Orchestration and serialization glue logic for `DeleteSipRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

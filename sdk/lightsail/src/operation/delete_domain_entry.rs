@@ -131,7 +131,7 @@ impl DeleteDomainEntryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDomainEntry`.
+/// Orchestration and serialization glue logic for `DeleteDomainEntry`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

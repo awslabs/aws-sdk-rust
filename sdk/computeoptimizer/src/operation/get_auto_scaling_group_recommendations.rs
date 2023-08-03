@@ -116,7 +116,7 @@ impl GetAutoScalingGroupRecommendationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAutoScalingGroupRecommendations`.
+/// Orchestration and serialization glue logic for `GetAutoScalingGroupRecommendations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

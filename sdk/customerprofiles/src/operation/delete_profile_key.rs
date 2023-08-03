@@ -150,7 +150,7 @@ impl DeleteProfileKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProfileKey`.
+/// Orchestration and serialization glue logic for `DeleteProfileKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

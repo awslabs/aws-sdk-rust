@@ -120,7 +120,7 @@ impl ModifyDefaultCreditSpecificationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyDefaultCreditSpecification`.
+/// Orchestration and serialization glue logic for `ModifyDefaultCreditSpecification`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

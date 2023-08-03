@@ -131,7 +131,7 @@ impl TerminateAppInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TerminateApp`.
+/// Orchestration and serialization glue logic for `TerminateApp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

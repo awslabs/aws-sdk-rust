@@ -126,7 +126,7 @@ impl UngroupResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UngroupResources`.
+/// Orchestration and serialization glue logic for `UngroupResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

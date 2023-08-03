@@ -133,7 +133,7 @@ impl CreateCompilationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCompilationJob`.
+/// Orchestration and serialization glue logic for `CreateCompilationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

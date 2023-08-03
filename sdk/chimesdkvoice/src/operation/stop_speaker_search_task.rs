@@ -160,7 +160,7 @@ impl StopSpeakerSearchTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopSpeakerSearchTask`.
+/// Orchestration and serialization glue logic for `StopSpeakerSearchTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

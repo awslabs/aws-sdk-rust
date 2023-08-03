@@ -131,7 +131,7 @@ impl DeleteSubnetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSubnetGroup`.
+/// Orchestration and serialization glue logic for `DeleteSubnetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

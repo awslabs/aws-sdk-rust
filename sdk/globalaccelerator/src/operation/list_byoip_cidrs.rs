@@ -131,7 +131,7 @@ impl ListByoipCidrsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListByoipCidrs`.
+/// Orchestration and serialization glue logic for `ListByoipCidrs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ClaimDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ClaimDevice`.
+/// Orchestration and serialization glue logic for `ClaimDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

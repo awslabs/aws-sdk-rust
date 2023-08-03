@@ -150,7 +150,7 @@ impl CreateUserHierarchyGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateUserHierarchyGroup`.
+/// Orchestration and serialization glue logic for `CreateUserHierarchyGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

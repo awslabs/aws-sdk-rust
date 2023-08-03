@@ -125,7 +125,7 @@ impl BatchGetAggregateResourceConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetAggregateResourceConfig`.
+/// Orchestration and serialization glue logic for `BatchGetAggregateResourceConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

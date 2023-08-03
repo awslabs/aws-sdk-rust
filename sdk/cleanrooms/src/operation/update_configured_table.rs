@@ -150,7 +150,7 @@ impl UpdateConfiguredTableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateConfiguredTable`.
+/// Orchestration and serialization glue logic for `UpdateConfiguredTable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

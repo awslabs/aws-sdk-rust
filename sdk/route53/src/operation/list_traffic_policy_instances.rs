@@ -158,7 +158,7 @@ impl ListTrafficPolicyInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTrafficPolicyInstances`.
+/// Orchestration and serialization glue logic for `ListTrafficPolicyInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

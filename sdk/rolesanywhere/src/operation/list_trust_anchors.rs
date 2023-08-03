@@ -134,7 +134,7 @@ impl ListTrustAnchorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTrustAnchors`.
+/// Orchestration and serialization glue logic for `ListTrustAnchors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

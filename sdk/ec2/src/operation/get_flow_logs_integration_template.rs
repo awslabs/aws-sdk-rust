@@ -120,7 +120,7 @@ impl GetFlowLogsIntegrationTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFlowLogsIntegrationTemplate`.
+/// Orchestration and serialization glue logic for `GetFlowLogsIntegrationTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

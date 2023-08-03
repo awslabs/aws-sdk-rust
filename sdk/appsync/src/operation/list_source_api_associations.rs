@@ -158,7 +158,7 @@ impl ListSourceApiAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSourceApiAssociations`.
+/// Orchestration and serialization glue logic for `ListSourceApiAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

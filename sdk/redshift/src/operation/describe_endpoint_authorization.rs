@@ -126,7 +126,7 @@ impl DescribeEndpointAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEndpointAuthorization`.
+/// Orchestration and serialization glue logic for `DescribeEndpointAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeleteJobQueueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteJobQueue`.
+/// Orchestration and serialization glue logic for `DeleteJobQueue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

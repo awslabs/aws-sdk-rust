@@ -131,7 +131,7 @@ impl DescribeCachediScsiVolumesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCachediSCSIVolumes`.
+/// Orchestration and serialization glue logic for `DescribeCachediSCSIVolumes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

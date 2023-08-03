@@ -130,7 +130,7 @@ impl EnableMacieInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableMacie`.
+/// Orchestration and serialization glue logic for `EnableMacie`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

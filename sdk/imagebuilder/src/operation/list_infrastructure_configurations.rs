@@ -121,7 +121,7 @@ impl ListInfrastructureConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInfrastructureConfigurations`.
+/// Orchestration and serialization glue logic for `ListInfrastructureConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

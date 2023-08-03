@@ -116,7 +116,7 @@ impl PutPermissionsBoundaryToPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutPermissionsBoundaryToPermissionSet`.
+/// Orchestration and serialization glue logic for `PutPermissionsBoundaryToPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

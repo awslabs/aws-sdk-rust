@@ -170,7 +170,7 @@ impl UpdateConfigurationProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateConfigurationProfile`.
+/// Orchestration and serialization glue logic for `UpdateConfigurationProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

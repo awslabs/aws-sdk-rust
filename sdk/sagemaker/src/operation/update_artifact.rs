@@ -131,7 +131,7 @@ impl UpdateArtifactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateArtifact`.
+/// Orchestration and serialization glue logic for `UpdateArtifact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -158,7 +158,7 @@ impl ListHoursOfOperationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHoursOfOperations`.
+/// Orchestration and serialization glue logic for `ListHoursOfOperations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ImportSshPublicKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportSshPublicKey`.
+/// Orchestration and serialization glue logic for `ImportSshPublicKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

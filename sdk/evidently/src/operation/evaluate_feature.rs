@@ -172,7 +172,7 @@ impl EvaluateFeatureInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EvaluateFeature`.
+/// Orchestration and serialization glue logic for `EvaluateFeature`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

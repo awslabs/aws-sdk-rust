@@ -126,7 +126,7 @@ impl ModifyTargetGroupAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyTargetGroupAttributes`.
+/// Orchestration and serialization glue logic for `ModifyTargetGroupAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

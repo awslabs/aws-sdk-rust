@@ -133,7 +133,7 @@ impl DeleteLanguageModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLanguageModel`.
+/// Orchestration and serialization glue logic for `DeleteLanguageModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

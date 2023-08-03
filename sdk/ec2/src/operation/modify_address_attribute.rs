@@ -126,7 +126,7 @@ impl ModifyAddressAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyAddressAttribute`.
+/// Orchestration and serialization glue logic for `ModifyAddressAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -121,7 +121,7 @@ impl GetAppInstanceStreamingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAppInstanceStreamingConfigurations`.
+/// Orchestration and serialization glue logic for `GetAppInstanceStreamingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

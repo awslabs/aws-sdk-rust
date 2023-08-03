@@ -131,7 +131,7 @@ impl UpdateHypervisorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateHypervisor`.
+/// Orchestration and serialization glue logic for `UpdateHypervisor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

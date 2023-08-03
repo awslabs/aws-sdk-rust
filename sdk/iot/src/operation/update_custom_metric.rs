@@ -152,7 +152,7 @@ impl UpdateCustomMetricInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCustomMetric`.
+/// Orchestration and serialization glue logic for `UpdateCustomMetric`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

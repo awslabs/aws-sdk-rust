@@ -111,7 +111,7 @@ impl DescribeValidDbInstanceModificationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeValidDBInstanceModifications`.
+/// Orchestration and serialization glue logic for `DescribeValidDBInstanceModifications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

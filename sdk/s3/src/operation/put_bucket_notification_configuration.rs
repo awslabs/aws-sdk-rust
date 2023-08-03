@@ -130,7 +130,7 @@ impl PutBucketNotificationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketNotificationConfiguration`.
+/// Orchestration and serialization glue logic for `PutBucketNotificationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

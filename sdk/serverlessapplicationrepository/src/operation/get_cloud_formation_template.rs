@@ -156,7 +156,7 @@ impl GetCloudFormationTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCloudFormationTemplate`.
+/// Orchestration and serialization glue logic for `GetCloudFormationTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -181,7 +181,7 @@ impl ListThemeVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListThemeVersions`.
+/// Orchestration and serialization glue logic for `ListThemeVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

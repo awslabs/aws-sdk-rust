@@ -126,7 +126,7 @@ impl SubscribeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `Subscribe`.
+/// Orchestration and serialization glue logic for `Subscribe`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

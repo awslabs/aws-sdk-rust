@@ -111,7 +111,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DecreaseNodeGroupsInGlobalReplicationGroup`.
+/// Orchestration and serialization glue logic for `DecreaseNodeGroupsInGlobalReplicationGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

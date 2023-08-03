@@ -120,7 +120,7 @@ impl DeleteTransitGatewayConnectPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTransitGatewayConnectPeer`.
+/// Orchestration and serialization glue logic for `DeleteTransitGatewayConnectPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

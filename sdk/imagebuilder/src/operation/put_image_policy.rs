@@ -126,7 +126,7 @@ impl PutImagePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutImagePolicy`.
+/// Orchestration and serialization glue logic for `PutImagePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

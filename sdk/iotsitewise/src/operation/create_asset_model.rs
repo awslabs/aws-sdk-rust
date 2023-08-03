@@ -132,7 +132,7 @@ impl CreateAssetModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAssetModel`.
+/// Orchestration and serialization glue logic for `CreateAssetModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

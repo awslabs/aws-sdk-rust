@@ -170,7 +170,7 @@ impl UpdateParticipantRoleConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateParticipantRoleConfig`.
+/// Orchestration and serialization glue logic for `UpdateParticipantRoleConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

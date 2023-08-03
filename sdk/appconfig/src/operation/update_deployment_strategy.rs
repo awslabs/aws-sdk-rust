@@ -150,7 +150,7 @@ impl UpdateDeploymentStrategyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDeploymentStrategy`.
+/// Orchestration and serialization glue logic for `UpdateDeploymentStrategy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -202,7 +202,7 @@ impl SearchAssociatedTranscriptsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchAssociatedTranscripts`.
+/// Orchestration and serialization glue logic for `SearchAssociatedTranscripts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

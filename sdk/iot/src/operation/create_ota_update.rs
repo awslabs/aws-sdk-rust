@@ -150,7 +150,7 @@ impl CreateOtaUpdateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateOTAUpdate`.
+/// Orchestration and serialization glue logic for `CreateOTAUpdate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

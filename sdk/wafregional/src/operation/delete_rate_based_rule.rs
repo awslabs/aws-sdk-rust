@@ -133,7 +133,7 @@ impl DeleteRateBasedRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRateBasedRule`.
+/// Orchestration and serialization glue logic for `DeleteRateBasedRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

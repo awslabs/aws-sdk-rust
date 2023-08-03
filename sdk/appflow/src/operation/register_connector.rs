@@ -130,7 +130,7 @@ impl RegisterConnectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterConnector`.
+/// Orchestration and serialization glue logic for `RegisterConnector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

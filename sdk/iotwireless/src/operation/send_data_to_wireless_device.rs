@@ -146,7 +146,7 @@ impl SendDataToWirelessDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendDataToWirelessDevice`.
+/// Orchestration and serialization glue logic for `SendDataToWirelessDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

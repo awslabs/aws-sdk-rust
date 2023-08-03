@@ -133,7 +133,7 @@ impl DeleteResourceServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteResourceServer`.
+/// Orchestration and serialization glue logic for `DeleteResourceServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

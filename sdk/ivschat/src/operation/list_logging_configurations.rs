@@ -127,7 +127,7 @@ impl ListLoggingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLoggingConfigurations`.
+/// Orchestration and serialization glue logic for `ListLoggingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

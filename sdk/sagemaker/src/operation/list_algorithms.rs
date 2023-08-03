@@ -131,7 +131,7 @@ impl ListAlgorithmsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAlgorithms`.
+/// Orchestration and serialization glue logic for `ListAlgorithms`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

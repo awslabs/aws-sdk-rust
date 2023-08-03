@@ -150,7 +150,7 @@ impl GrantFlowEntitlementsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GrantFlowEntitlements`.
+/// Orchestration and serialization glue logic for `GrantFlowEntitlements`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

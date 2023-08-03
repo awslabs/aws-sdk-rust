@@ -132,7 +132,7 @@ impl GetOpenIdTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOpenIdToken`.
+/// Orchestration and serialization glue logic for `GetOpenIdToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

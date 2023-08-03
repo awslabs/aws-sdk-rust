@@ -158,7 +158,7 @@ impl GetReadSetMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReadSetMetadata`.
+/// Orchestration and serialization glue logic for `GetReadSetMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl AddThingToThingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddThingToThingGroup`.
+/// Orchestration and serialization glue logic for `AddThingToThingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

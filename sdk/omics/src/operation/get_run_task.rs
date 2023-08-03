@@ -153,7 +153,7 @@ impl GetRunTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRunTask`.
+/// Orchestration and serialization glue logic for `GetRunTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteMonitoringSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMonitoringSubscription`.
+/// Orchestration and serialization glue logic for `DeleteMonitoringSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

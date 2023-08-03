@@ -143,7 +143,7 @@ impl ListProvisionedCapacityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProvisionedCapacity`.
+/// Orchestration and serialization glue logic for `ListProvisionedCapacity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl DescribeUploadBufferInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeUploadBuffer`.
+/// Orchestration and serialization glue logic for `DescribeUploadBuffer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

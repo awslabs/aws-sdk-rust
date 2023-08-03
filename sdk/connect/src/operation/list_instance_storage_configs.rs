@@ -169,7 +169,7 @@ impl ListInstanceStorageConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstanceStorageConfigs`.
+/// Orchestration and serialization glue logic for `ListInstanceStorageConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl UpdateDomainEndpointOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDomainEndpointOptions`.
+/// Orchestration and serialization glue logic for `UpdateDomainEndpointOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

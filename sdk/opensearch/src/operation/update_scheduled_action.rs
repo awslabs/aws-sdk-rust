@@ -150,7 +150,7 @@ impl UpdateScheduledActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateScheduledAction`.
+/// Orchestration and serialization glue logic for `UpdateScheduledAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

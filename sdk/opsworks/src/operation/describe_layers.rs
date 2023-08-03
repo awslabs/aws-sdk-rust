@@ -131,7 +131,7 @@ impl DescribeLayersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLayers`.
+/// Orchestration and serialization glue logic for `DescribeLayers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

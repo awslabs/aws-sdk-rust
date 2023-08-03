@@ -131,7 +131,7 @@ impl StartAppBlockBuilderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartAppBlockBuilder`.
+/// Orchestration and serialization glue logic for `StartAppBlockBuilder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

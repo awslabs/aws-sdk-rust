@@ -127,7 +127,7 @@ impl DeleteAlternateContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAlternateContact`.
+/// Orchestration and serialization glue logic for `DeleteAlternateContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

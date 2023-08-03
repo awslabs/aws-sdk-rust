@@ -133,7 +133,7 @@ impl AdvertiseByoipCidrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdvertiseByoipCidr`.
+/// Orchestration and serialization glue logic for `AdvertiseByoipCidr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

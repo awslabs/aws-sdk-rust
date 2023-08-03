@@ -126,7 +126,7 @@ impl DeleteDhcpOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDhcpOptions`.
+/// Orchestration and serialization glue logic for `DeleteDhcpOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

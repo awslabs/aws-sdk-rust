@@ -158,7 +158,7 @@ impl ListLoggerDefinitionVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLoggerDefinitionVersions`.
+/// Orchestration and serialization glue logic for `ListLoggerDefinitionVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

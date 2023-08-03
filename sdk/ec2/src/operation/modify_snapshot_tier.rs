@@ -126,7 +126,7 @@ impl ModifySnapshotTierInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifySnapshotTier`.
+/// Orchestration and serialization glue logic for `ModifySnapshotTier`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

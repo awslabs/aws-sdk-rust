@@ -131,7 +131,7 @@ impl PutAccountSettingDefaultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAccountSettingDefault`.
+/// Orchestration and serialization glue logic for `PutAccountSettingDefault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

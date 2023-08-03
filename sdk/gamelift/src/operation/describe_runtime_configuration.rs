@@ -131,7 +131,7 @@ impl DescribeRuntimeConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRuntimeConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeRuntimeConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

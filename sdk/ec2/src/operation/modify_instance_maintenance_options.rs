@@ -120,7 +120,7 @@ impl ModifyInstanceMaintenanceOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyInstanceMaintenanceOptions`.
+/// Orchestration and serialization glue logic for `ModifyInstanceMaintenanceOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

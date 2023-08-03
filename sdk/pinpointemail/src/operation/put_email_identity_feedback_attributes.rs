@@ -135,7 +135,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutEmailIdentityFeedbackAttributes`.
+/// Orchestration and serialization glue logic for `PutEmailIdentityFeedbackAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

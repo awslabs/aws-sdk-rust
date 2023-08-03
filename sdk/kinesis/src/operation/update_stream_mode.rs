@@ -133,7 +133,7 @@ impl UpdateStreamModeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStreamMode`.
+/// Orchestration and serialization glue logic for `UpdateStreamMode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

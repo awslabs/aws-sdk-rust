@@ -131,7 +131,7 @@ impl CreateEvaluationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEvaluation`.
+/// Orchestration and serialization glue logic for `CreateEvaluation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

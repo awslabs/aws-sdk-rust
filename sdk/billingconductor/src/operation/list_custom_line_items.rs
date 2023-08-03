@@ -129,7 +129,7 @@ impl ListCustomLineItemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCustomLineItems`.
+/// Orchestration and serialization glue logic for `ListCustomLineItems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

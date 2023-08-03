@@ -146,7 +146,7 @@ impl UpdateLedgerPermissionsModeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLedgerPermissionsMode`.
+/// Orchestration and serialization glue logic for `UpdateLedgerPermissionsMode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

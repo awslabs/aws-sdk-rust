@@ -184,7 +184,7 @@ impl AssociateExternalConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateExternalConnection`.
+/// Orchestration and serialization glue logic for `AssociateExternalConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

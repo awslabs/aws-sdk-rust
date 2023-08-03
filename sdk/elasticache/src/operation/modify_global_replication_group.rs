@@ -126,7 +126,7 @@ impl ModifyGlobalReplicationGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyGlobalReplicationGroup`.
+/// Orchestration and serialization glue logic for `ModifyGlobalReplicationGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -170,7 +170,7 @@ impl ListBackendJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBackendJobs`.
+/// Orchestration and serialization glue logic for `ListBackendJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

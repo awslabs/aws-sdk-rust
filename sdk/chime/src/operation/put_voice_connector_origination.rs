@@ -150,7 +150,7 @@ impl PutVoiceConnectorOriginationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutVoiceConnectorOrigination`.
+/// Orchestration and serialization glue logic for `PutVoiceConnectorOrigination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

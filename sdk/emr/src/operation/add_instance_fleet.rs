@@ -131,7 +131,7 @@ impl AddInstanceFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddInstanceFleet`.
+/// Orchestration and serialization glue logic for `AddInstanceFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

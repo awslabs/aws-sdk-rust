@@ -131,7 +131,7 @@ impl DeprecateWorkflowTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeprecateWorkflowType`.
+/// Orchestration and serialization glue logic for `DeprecateWorkflowType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

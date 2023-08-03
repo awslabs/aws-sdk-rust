@@ -114,8 +114,9 @@ where
                 );
             }
             (Err(actual_error), GenericTestResult::Ok(expected_creds)) => panic!(
-                "expected credentials ({:?}) but an error was returned: {:?}",
-                expected_creds, actual_error
+                "expected credentials ({:?}) but an error was returned: {}",
+                expected_creds,
+                DisplayErrorContext(&actual_error)
             ),
             (Ok(creds), GenericTestResult::ErrorContains(substr)) => panic!(
                 "expected an error containing: `{}`, but a result was returned: {:?}",

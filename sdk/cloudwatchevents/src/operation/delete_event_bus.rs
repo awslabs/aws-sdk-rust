@@ -131,7 +131,7 @@ impl DeleteEventBusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEventBus`.
+/// Orchestration and serialization glue logic for `DeleteEventBus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -148,7 +148,7 @@ impl CreateIntentVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateIntentVersion`.
+/// Orchestration and serialization glue logic for `CreateIntentVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

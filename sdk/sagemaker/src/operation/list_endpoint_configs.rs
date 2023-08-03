@@ -133,7 +133,7 @@ impl ListEndpointConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEndpointConfigs`.
+/// Orchestration and serialization glue logic for `ListEndpointConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

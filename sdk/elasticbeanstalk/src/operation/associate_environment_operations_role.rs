@@ -111,7 +111,7 @@ impl AssociateEnvironmentOperationsRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateEnvironmentOperationsRole`.
+/// Orchestration and serialization glue logic for `AssociateEnvironmentOperationsRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

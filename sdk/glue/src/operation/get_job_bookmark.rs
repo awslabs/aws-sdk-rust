@@ -131,7 +131,7 @@ impl GetJobBookmarkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetJobBookmark`.
+/// Orchestration and serialization glue logic for `GetJobBookmark`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

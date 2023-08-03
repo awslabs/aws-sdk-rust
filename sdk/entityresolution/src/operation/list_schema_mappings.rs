@@ -134,7 +134,7 @@ impl ListSchemaMappingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSchemaMappings`.
+/// Orchestration and serialization glue logic for `ListSchemaMappings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

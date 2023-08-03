@@ -150,7 +150,7 @@ impl BatchGetSchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetSchema`.
+/// Orchestration and serialization glue logic for `BatchGetSchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

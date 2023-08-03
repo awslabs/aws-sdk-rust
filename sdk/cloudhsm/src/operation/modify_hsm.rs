@@ -131,7 +131,7 @@ impl ModifyHsmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyHsm`.
+/// Orchestration and serialization glue logic for `ModifyHsm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

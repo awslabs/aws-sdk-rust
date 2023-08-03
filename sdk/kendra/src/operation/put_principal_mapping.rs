@@ -133,7 +133,7 @@ impl PutPrincipalMappingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutPrincipalMapping`.
+/// Orchestration and serialization glue logic for `PutPrincipalMapping`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

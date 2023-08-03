@@ -180,7 +180,7 @@ impl ListTypesByAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTypesByAssociation`.
+/// Orchestration and serialization glue logic for `ListTypesByAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

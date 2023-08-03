@@ -131,7 +131,7 @@ impl FilterLogEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `FilterLogEvents`.
+/// Orchestration and serialization glue logic for `FilterLogEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

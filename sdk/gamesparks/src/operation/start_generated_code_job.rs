@@ -170,7 +170,7 @@ impl StartGeneratedCodeJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartGeneratedCodeJob`.
+/// Orchestration and serialization glue logic for `StartGeneratedCodeJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

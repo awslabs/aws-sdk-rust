@@ -125,7 +125,7 @@ impl DeleteUsageReportSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUsageReportSubscription`.
+/// Orchestration and serialization glue logic for `DeleteUsageReportSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

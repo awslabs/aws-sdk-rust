@@ -131,7 +131,7 @@ impl GetPullRequestOverrideStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPullRequestOverrideState`.
+/// Orchestration and serialization glue logic for `GetPullRequestOverrideState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

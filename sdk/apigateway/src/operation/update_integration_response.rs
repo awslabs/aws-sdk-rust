@@ -206,7 +206,7 @@ impl UpdateIntegrationResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIntegrationResponse`.
+/// Orchestration and serialization glue logic for `UpdateIntegrationResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

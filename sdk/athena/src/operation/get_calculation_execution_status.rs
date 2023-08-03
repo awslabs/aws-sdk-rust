@@ -132,7 +132,7 @@ impl GetCalculationExecutionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCalculationExecutionStatus`.
+/// Orchestration and serialization glue logic for `GetCalculationExecutionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

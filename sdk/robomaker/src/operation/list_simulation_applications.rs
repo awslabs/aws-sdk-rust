@@ -127,7 +127,7 @@ impl ListSimulationApplicationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSimulationApplications`.
+/// Orchestration and serialization glue logic for `ListSimulationApplications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateSpaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSpace`.
+/// Orchestration and serialization glue logic for `CreateSpace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

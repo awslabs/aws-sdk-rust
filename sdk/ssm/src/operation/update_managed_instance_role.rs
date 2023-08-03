@@ -131,7 +131,7 @@ impl UpdateManagedInstanceRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateManagedInstanceRole`.
+/// Orchestration and serialization glue logic for `UpdateManagedInstanceRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

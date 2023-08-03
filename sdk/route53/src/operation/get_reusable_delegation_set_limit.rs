@@ -158,7 +158,7 @@ impl GetReusableDelegationSetLimitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReusableDelegationSetLimit`.
+/// Orchestration and serialization glue logic for `GetReusableDelegationSetLimit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

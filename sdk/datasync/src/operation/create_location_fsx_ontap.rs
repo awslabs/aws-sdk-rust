@@ -131,7 +131,7 @@ impl CreateLocationFsxOntapInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLocationFsxOntap`.
+/// Orchestration and serialization glue logic for `CreateLocationFsxOntap`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl CreateOutboundConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateOutboundConnection`.
+/// Orchestration and serialization glue logic for `CreateOutboundConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

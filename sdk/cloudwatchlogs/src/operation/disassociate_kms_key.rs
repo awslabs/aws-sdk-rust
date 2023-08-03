@@ -133,7 +133,7 @@ impl DisassociateKmsKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateKmsKey`.
+/// Orchestration and serialization glue logic for `DisassociateKmsKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

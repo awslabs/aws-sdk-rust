@@ -127,7 +127,7 @@ impl CreateRecordingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRecordingConfiguration`.
+/// Orchestration and serialization glue logic for `CreateRecordingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

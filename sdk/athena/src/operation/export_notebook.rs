@@ -131,7 +131,7 @@ impl ExportNotebookInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportNotebook`.
+/// Orchestration and serialization glue logic for `ExportNotebook`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

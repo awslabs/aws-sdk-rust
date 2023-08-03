@@ -131,7 +131,7 @@ impl DescribeEndpointSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEndpointSettings`.
+/// Orchestration and serialization glue logic for `DescribeEndpointSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

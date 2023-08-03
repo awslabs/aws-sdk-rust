@@ -131,7 +131,7 @@ impl DeleteUserDefinedFunctionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUserDefinedFunction`.
+/// Orchestration and serialization glue logic for `DeleteUserDefinedFunction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

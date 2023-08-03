@@ -131,7 +131,7 @@ impl GetFaceDetectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFaceDetection`.
+/// Orchestration and serialization glue logic for `GetFaceDetection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl DisassociateTransitGatewayRouteTableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateTransitGatewayRouteTable`.
+/// Orchestration and serialization glue logic for `DisassociateTransitGatewayRouteTable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

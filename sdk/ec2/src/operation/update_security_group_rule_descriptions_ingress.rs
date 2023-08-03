@@ -111,7 +111,7 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSecurityGroupRuleDescriptionsIngress`.
+/// Orchestration and serialization glue logic for `UpdateSecurityGroupRuleDescriptionsIngress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteVoiceConnectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVoiceConnector`.
+/// Orchestration and serialization glue logic for `DeleteVoiceConnector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

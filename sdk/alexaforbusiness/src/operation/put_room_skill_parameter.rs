@@ -131,7 +131,7 @@ impl PutRoomSkillParameterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutRoomSkillParameter`.
+/// Orchestration and serialization glue logic for `PutRoomSkillParameter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

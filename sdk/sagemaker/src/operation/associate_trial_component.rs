@@ -131,7 +131,7 @@ impl AssociateTrialComponentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateTrialComponent`.
+/// Orchestration and serialization glue logic for `AssociateTrialComponent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateTrustAnchorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTrustAnchor`.
+/// Orchestration and serialization glue logic for `UpdateTrustAnchor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

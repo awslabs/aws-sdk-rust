@@ -152,7 +152,7 @@ impl AddFlowMediaStreamsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddFlowMediaStreams`.
+/// Orchestration and serialization glue logic for `AddFlowMediaStreams`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl SearchDataSourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchDataSources`.
+/// Orchestration and serialization glue logic for `SearchDataSources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

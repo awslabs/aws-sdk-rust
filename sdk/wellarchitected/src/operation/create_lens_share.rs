@@ -150,7 +150,7 @@ impl CreateLensShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLensShare`.
+/// Orchestration and serialization glue logic for `CreateLensShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

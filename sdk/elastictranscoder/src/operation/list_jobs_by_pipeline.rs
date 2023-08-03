@@ -155,7 +155,7 @@ impl ListJobsByPipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListJobsByPipeline`.
+/// Orchestration and serialization glue logic for `ListJobsByPipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

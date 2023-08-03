@@ -126,7 +126,7 @@ impl ListWorldsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWorlds`.
+/// Orchestration and serialization glue logic for `ListWorlds`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

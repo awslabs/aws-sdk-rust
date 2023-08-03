@@ -152,7 +152,7 @@ impl ListAnnotationStoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnnotationStores`.
+/// Orchestration and serialization glue logic for `ListAnnotationStores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

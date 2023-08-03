@@ -131,7 +131,7 @@ impl EnableDomainAutoRenewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableDomainAutoRenew`.
+/// Orchestration and serialization glue logic for `EnableDomainAutoRenew`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

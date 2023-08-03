@@ -127,7 +127,7 @@ impl DeleteRecoveryInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRecoveryInstance`.
+/// Orchestration and serialization glue logic for `DeleteRecoveryInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

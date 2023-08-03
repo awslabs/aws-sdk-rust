@@ -131,7 +131,7 @@ impl GetLoggingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLoggingConfiguration`.
+/// Orchestration and serialization glue logic for `GetLoggingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

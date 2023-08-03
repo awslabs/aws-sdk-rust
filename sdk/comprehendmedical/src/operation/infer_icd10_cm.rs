@@ -131,7 +131,7 @@ impl InferIcd10CmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InferICD10CM`.
+/// Orchestration and serialization glue logic for `InferICD10CM`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

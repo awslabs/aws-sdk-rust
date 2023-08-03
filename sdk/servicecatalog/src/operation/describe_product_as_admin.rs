@@ -131,7 +131,7 @@ impl DescribeProductAsAdminInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeProductAsAdmin`.
+/// Orchestration and serialization glue logic for `DescribeProductAsAdmin`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

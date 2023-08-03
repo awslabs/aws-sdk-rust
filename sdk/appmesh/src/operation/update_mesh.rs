@@ -150,7 +150,7 @@ impl UpdateMeshInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMesh`.
+/// Orchestration and serialization glue logic for `UpdateMesh`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

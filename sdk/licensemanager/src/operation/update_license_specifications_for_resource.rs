@@ -116,7 +116,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLicenseSpecificationsForResource`.
+/// Orchestration and serialization glue logic for `UpdateLicenseSpecificationsForResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

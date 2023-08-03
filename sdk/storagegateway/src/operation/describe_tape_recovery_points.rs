@@ -131,7 +131,7 @@ impl DescribeTapeRecoveryPointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTapeRecoveryPoints`.
+/// Orchestration and serialization glue logic for `DescribeTapeRecoveryPoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

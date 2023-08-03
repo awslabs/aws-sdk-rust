@@ -202,7 +202,7 @@ impl InvokeScreenAutomationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InvokeScreenAutomation`.
+/// Orchestration and serialization glue logic for `InvokeScreenAutomation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

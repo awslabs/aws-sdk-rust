@@ -133,7 +133,7 @@ impl UpdateMyUserProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMyUserProfile`.
+/// Orchestration and serialization glue logic for `UpdateMyUserProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

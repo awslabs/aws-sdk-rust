@@ -150,7 +150,7 @@ impl AssociateLambdaFunctionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateLambdaFunction`.
+/// Orchestration and serialization glue logic for `AssociateLambdaFunction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

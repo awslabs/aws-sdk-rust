@@ -162,7 +162,7 @@ impl GetBasePathMappingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBasePathMappings`.
+/// Orchestration and serialization glue logic for `GetBasePathMappings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

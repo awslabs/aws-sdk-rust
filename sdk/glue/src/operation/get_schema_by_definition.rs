@@ -131,7 +131,7 @@ impl GetSchemaByDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSchemaByDefinition`.
+/// Orchestration and serialization glue logic for `GetSchemaByDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

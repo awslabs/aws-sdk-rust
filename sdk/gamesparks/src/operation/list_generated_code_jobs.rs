@@ -178,7 +178,7 @@ impl ListGeneratedCodeJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGeneratedCodeJobs`.
+/// Orchestration and serialization glue logic for `ListGeneratedCodeJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

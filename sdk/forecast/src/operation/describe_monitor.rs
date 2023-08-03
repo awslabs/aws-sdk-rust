@@ -131,7 +131,7 @@ impl DescribeMonitorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMonitor`.
+/// Orchestration and serialization glue logic for `DescribeMonitor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

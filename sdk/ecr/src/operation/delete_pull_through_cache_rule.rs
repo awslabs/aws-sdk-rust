@@ -131,7 +131,7 @@ impl DeletePullThroughCacheRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePullThroughCacheRule`.
+/// Orchestration and serialization glue logic for `DeletePullThroughCacheRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

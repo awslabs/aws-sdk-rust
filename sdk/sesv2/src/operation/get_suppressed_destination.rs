@@ -136,7 +136,7 @@ impl GetSuppressedDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSuppressedDestination`.
+/// Orchestration and serialization glue logic for `GetSuppressedDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

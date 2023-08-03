@@ -125,7 +125,7 @@ impl ListMobileDeviceAccessOverridesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMobileDeviceAccessOverrides`.
+/// Orchestration and serialization glue logic for `ListMobileDeviceAccessOverrides`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

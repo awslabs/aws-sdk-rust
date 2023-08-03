@@ -112,7 +112,7 @@ impl ValidateAssessmentReportIntegrityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ValidateAssessmentReportIntegrity`.
+/// Orchestration and serialization glue logic for `ValidateAssessmentReportIntegrity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

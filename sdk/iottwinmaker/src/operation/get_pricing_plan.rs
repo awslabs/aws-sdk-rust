@@ -114,7 +114,7 @@ impl GetPricingPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPricingPlan`.
+/// Orchestration and serialization glue logic for `GetPricingPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl CreateClientVpnEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateClientVpnEndpoint`.
+/// Orchestration and serialization glue logic for `CreateClientVpnEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

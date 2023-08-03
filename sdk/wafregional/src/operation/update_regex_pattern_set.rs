@@ -131,7 +131,7 @@ impl UpdateRegexPatternSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRegexPatternSet`.
+/// Orchestration and serialization glue logic for `UpdateRegexPatternSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

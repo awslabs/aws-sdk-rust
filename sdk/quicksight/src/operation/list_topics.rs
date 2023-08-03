@@ -161,7 +161,7 @@ impl ListTopicsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTopics`.
+/// Orchestration and serialization glue logic for `ListTopics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

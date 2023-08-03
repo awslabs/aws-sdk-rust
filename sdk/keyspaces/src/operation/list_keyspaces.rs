@@ -131,7 +131,7 @@ impl ListKeyspacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListKeyspaces`.
+/// Orchestration and serialization glue logic for `ListKeyspaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

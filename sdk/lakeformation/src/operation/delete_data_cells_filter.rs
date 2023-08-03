@@ -126,7 +126,7 @@ impl DeleteDataCellsFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataCellsFilter`.
+/// Orchestration and serialization glue logic for `DeleteDataCellsFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

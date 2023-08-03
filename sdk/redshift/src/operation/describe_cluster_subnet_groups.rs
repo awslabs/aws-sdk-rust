@@ -126,7 +126,7 @@ impl DescribeClusterSubnetGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClusterSubnetGroups`.
+/// Orchestration and serialization glue logic for `DescribeClusterSubnetGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

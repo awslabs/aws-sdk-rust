@@ -116,7 +116,7 @@ impl ListAvailableManagementCidrRangesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAvailableManagementCidrRanges`.
+/// Orchestration and serialization glue logic for `ListAvailableManagementCidrRanges`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

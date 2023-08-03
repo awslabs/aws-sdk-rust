@@ -126,7 +126,7 @@ impl GetClusterCredentialsWithIamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetClusterCredentialsWithIAM`.
+/// Orchestration and serialization glue logic for `GetClusterCredentialsWithIAM`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

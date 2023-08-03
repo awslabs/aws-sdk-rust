@@ -126,7 +126,7 @@ impl DeleteLoadBalancerListenersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLoadBalancerListeners`.
+/// Orchestration and serialization glue logic for `DeleteLoadBalancerListeners`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl DescribeRecommendationExportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRecommendationExportJobs`.
+/// Orchestration and serialization glue logic for `DescribeRecommendationExportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

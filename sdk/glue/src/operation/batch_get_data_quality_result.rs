@@ -131,7 +131,7 @@ impl BatchGetDataQualityResultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetDataQualityResult`.
+/// Orchestration and serialization glue logic for `BatchGetDataQualityResult`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

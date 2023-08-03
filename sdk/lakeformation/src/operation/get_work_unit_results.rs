@@ -130,7 +130,7 @@ impl GetWorkUnitResultsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorkUnitResults`.
+/// Orchestration and serialization glue logic for `GetWorkUnitResults`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

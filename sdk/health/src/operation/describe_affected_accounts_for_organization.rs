@@ -116,7 +116,7 @@ impl DescribeAffectedAccountsForOrganizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAffectedAccountsForOrganization`.
+/// Orchestration and serialization glue logic for `DescribeAffectedAccountsForOrganization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

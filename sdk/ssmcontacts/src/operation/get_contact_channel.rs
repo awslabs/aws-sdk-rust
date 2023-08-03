@@ -131,7 +131,7 @@ impl GetContactChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContactChannel`.
+/// Orchestration and serialization glue logic for `GetContactChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

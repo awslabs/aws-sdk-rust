@@ -126,7 +126,7 @@ impl GetEbsDefaultKmsKeyIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEbsDefaultKmsKeyId`.
+/// Orchestration and serialization glue logic for `GetEbsDefaultKmsKeyId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

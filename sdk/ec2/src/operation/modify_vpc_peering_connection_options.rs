@@ -111,7 +111,7 @@ impl ModifyVpcPeeringConnectionOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyVpcPeeringConnectionOptions`.
+/// Orchestration and serialization glue logic for `ModifyVpcPeeringConnectionOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

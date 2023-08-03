@@ -126,7 +126,7 @@ impl AssociateInstanceEventWindowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateInstanceEventWindow`.
+/// Orchestration and serialization glue logic for `AssociateInstanceEventWindow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

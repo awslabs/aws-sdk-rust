@@ -133,7 +133,7 @@ impl DescribeObservationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeObservation`.
+/// Orchestration and serialization glue logic for `DescribeObservation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

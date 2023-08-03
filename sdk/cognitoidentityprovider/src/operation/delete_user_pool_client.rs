@@ -131,7 +131,7 @@ impl DeleteUserPoolClientInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUserPoolClient`.
+/// Orchestration and serialization glue logic for `DeleteUserPoolClient`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

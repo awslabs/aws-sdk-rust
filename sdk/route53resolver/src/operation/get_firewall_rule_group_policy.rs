@@ -131,7 +131,7 @@ impl GetFirewallRuleGroupPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFirewallRuleGroupPolicy`.
+/// Orchestration and serialization glue logic for `GetFirewallRuleGroupPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

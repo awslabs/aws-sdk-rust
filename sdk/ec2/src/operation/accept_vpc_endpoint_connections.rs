@@ -126,7 +126,7 @@ impl AcceptVpcEndpointConnectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AcceptVpcEndpointConnections`.
+/// Orchestration and serialization glue logic for `AcceptVpcEndpointConnections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

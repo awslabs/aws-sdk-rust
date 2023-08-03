@@ -131,7 +131,7 @@ impl ListOutgoingTypedLinksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOutgoingTypedLinks`.
+/// Orchestration and serialization glue logic for `ListOutgoingTypedLinks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

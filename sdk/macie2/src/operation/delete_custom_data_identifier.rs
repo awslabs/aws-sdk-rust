@@ -132,7 +132,7 @@ impl DeleteCustomDataIdentifierInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomDataIdentifier`.
+/// Orchestration and serialization glue logic for `DeleteCustomDataIdentifier`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

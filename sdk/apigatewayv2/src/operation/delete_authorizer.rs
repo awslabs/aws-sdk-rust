@@ -156,7 +156,7 @@ impl DeleteAuthorizerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAuthorizer`.
+/// Orchestration and serialization glue logic for `DeleteAuthorizer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

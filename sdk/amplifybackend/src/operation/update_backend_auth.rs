@@ -170,7 +170,7 @@ impl UpdateBackendAuthInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBackendAuth`.
+/// Orchestration and serialization glue logic for `UpdateBackendAuth`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

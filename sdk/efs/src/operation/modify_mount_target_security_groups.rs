@@ -144,7 +144,7 @@ impl ModifyMountTargetSecurityGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyMountTargetSecurityGroups`.
+/// Orchestration and serialization glue logic for `ModifyMountTargetSecurityGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

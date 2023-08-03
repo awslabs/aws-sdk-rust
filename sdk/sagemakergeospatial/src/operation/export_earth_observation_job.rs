@@ -131,7 +131,7 @@ impl ExportEarthObservationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportEarthObservationJob`.
+/// Orchestration and serialization glue logic for `ExportEarthObservationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

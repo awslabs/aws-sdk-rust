@@ -127,7 +127,7 @@ impl DeleteCustomLineItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomLineItem`.
+/// Orchestration and serialization glue logic for `DeleteCustomLineItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

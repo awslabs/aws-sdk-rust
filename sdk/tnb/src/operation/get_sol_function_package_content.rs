@@ -137,7 +137,7 @@ impl GetSolFunctionPackageContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSolFunctionPackageContent`.
+/// Orchestration and serialization glue logic for `GetSolFunctionPackageContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

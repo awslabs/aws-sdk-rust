@@ -127,7 +127,7 @@ impl ListPublishedSchemaArnsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPublishedSchemaArns`.
+/// Orchestration and serialization glue logic for `ListPublishedSchemaArns`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

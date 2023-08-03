@@ -171,7 +171,7 @@ impl ListDomainDeliverabilityCampaignsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDomainDeliverabilityCampaigns`.
+/// Orchestration and serialization glue logic for `ListDomainDeliverabilityCampaigns`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

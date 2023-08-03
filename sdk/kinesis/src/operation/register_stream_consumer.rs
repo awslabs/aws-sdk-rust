@@ -133,7 +133,7 @@ impl RegisterStreamConsumerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterStreamConsumer`.
+/// Orchestration and serialization glue logic for `RegisterStreamConsumer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

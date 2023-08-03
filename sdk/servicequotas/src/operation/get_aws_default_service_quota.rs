@@ -131,7 +131,7 @@ impl GetAwsDefaultServiceQuotaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAWSDefaultServiceQuota`.
+/// Orchestration and serialization glue logic for `GetAWSDefaultServiceQuota`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

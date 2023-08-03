@@ -128,7 +128,7 @@ impl DeleteCoipPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCoipPool`.
+/// Orchestration and serialization glue logic for `DeleteCoipPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -152,7 +152,7 @@ impl DisassociateVpcFromHostedZoneInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateVPCFromHostedZone`.
+/// Orchestration and serialization glue logic for `DisassociateVPCFromHostedZone`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

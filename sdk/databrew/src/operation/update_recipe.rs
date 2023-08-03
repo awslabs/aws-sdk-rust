@@ -146,7 +146,7 @@ impl UpdateRecipeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRecipe`.
+/// Orchestration and serialization glue logic for `UpdateRecipe`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

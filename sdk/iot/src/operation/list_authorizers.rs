@@ -147,7 +147,7 @@ impl ListAuthorizersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAuthorizers`.
+/// Orchestration and serialization glue logic for `ListAuthorizers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

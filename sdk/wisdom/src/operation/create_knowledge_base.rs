@@ -132,7 +132,7 @@ impl CreateKnowledgeBaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateKnowledgeBase`.
+/// Orchestration and serialization glue logic for `CreateKnowledgeBase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

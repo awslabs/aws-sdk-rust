@@ -136,7 +136,7 @@ impl GetRestApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRestApi`.
+/// Orchestration and serialization glue logic for `GetRestApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

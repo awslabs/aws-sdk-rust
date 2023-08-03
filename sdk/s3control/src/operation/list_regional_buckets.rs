@@ -140,7 +140,7 @@ impl ListRegionalBucketsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRegionalBuckets`.
+/// Orchestration and serialization glue logic for `ListRegionalBuckets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

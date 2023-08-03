@@ -127,7 +127,7 @@ impl UpdateTableStorageOptimizerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTableStorageOptimizer`.
+/// Orchestration and serialization glue logic for `UpdateTableStorageOptimizer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

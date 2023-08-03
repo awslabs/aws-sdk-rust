@@ -158,7 +158,7 @@ impl ListAlarmsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAlarms`.
+/// Orchestration and serialization glue logic for `ListAlarms`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

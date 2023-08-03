@@ -131,7 +131,7 @@ impl GetTrailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTrail`.
+/// Orchestration and serialization glue logic for `GetTrail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

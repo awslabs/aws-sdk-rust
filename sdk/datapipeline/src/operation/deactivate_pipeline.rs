@@ -131,7 +131,7 @@ impl DeactivatePipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeactivatePipeline`.
+/// Orchestration and serialization glue logic for `DeactivatePipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

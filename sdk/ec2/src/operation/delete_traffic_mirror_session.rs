@@ -126,7 +126,7 @@ impl DeleteTrafficMirrorSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTrafficMirrorSession`.
+/// Orchestration and serialization glue logic for `DeleteTrafficMirrorSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

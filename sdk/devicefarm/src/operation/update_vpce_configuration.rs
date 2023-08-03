@@ -131,7 +131,7 @@ impl UpdateVpceConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVPCEConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateVPCEConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl AssociateDrtRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateDRTRole`.
+/// Orchestration and serialization glue logic for `AssociateDRTRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

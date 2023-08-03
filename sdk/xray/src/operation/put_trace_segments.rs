@@ -126,7 +126,7 @@ impl PutTraceSegmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutTraceSegments`.
+/// Orchestration and serialization glue logic for `PutTraceSegments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

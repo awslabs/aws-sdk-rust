@@ -194,7 +194,7 @@ impl PutObjectAclInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutObjectAcl`.
+/// Orchestration and serialization glue logic for `PutObjectAcl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DescribeSecurityProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSecurityProfile`.
+/// Orchestration and serialization glue logic for `DescribeSecurityProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

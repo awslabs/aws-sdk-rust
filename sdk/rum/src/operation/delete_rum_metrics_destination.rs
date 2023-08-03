@@ -164,7 +164,7 @@ impl DeleteRumMetricsDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRumMetricsDestination`.
+/// Orchestration and serialization glue logic for `DeleteRumMetricsDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

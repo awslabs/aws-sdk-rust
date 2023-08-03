@@ -164,7 +164,7 @@ impl AssociateTrustStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateTrustStore`.
+/// Orchestration and serialization glue logic for `AssociateTrustStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

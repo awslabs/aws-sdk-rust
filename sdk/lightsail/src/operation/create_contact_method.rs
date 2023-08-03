@@ -133,7 +133,7 @@ impl CreateContactMethodInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateContactMethod`.
+/// Orchestration and serialization glue logic for `CreateContactMethod`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

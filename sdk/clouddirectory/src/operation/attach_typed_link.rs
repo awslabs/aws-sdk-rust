@@ -131,7 +131,7 @@ impl AttachTypedLinkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachTypedLink`.
+/// Orchestration and serialization glue logic for `AttachTypedLink`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

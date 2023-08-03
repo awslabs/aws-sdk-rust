@@ -131,7 +131,7 @@ impl UpdateContributorInsightsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContributorInsights`.
+/// Orchestration and serialization glue logic for `UpdateContributorInsights`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

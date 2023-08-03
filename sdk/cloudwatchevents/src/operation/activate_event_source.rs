@@ -133,7 +133,7 @@ impl ActivateEventSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ActivateEventSource`.
+/// Orchestration and serialization glue logic for `ActivateEventSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

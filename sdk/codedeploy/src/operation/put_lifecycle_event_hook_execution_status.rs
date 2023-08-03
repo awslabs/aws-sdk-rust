@@ -116,7 +116,7 @@ impl PutLifecycleEventHookExecutionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutLifecycleEventHookExecutionStatus`.
+/// Orchestration and serialization glue logic for `PutLifecycleEventHookExecutionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

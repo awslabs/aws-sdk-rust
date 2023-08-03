@@ -133,7 +133,7 @@ impl GetBucketAccessKeysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketAccessKeys`.
+/// Orchestration and serialization glue logic for `GetBucketAccessKeys`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

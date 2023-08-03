@@ -132,7 +132,7 @@ impl DeleteAppAssessmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppAssessment`.
+/// Orchestration and serialization glue logic for `DeleteAppAssessment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

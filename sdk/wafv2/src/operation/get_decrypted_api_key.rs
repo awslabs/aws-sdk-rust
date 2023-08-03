@@ -133,7 +133,7 @@ impl GetDecryptedApiKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDecryptedAPIKey`.
+/// Orchestration and serialization glue logic for `GetDecryptedAPIKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

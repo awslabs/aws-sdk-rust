@@ -141,7 +141,7 @@ impl DescribeDataSetRefreshPropertiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDataSetRefreshProperties`.
+/// Orchestration and serialization glue logic for `DescribeDataSetRefreshProperties`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

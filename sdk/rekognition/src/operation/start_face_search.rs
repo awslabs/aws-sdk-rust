@@ -131,7 +131,7 @@ impl StartFaceSearchInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartFaceSearch`.
+/// Orchestration and serialization glue logic for `StartFaceSearch`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

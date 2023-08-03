@@ -131,7 +131,7 @@ impl CreateDirectoryConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDirectoryConfig`.
+/// Orchestration and serialization glue logic for `CreateDirectoryConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

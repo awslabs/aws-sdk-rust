@@ -126,7 +126,7 @@ impl DescribeFleetInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetInstances`.
+/// Orchestration and serialization glue logic for `DescribeFleetInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -125,7 +125,7 @@ impl ListOrganizationPortfolioAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOrganizationPortfolioAccess`.
+/// Orchestration and serialization glue logic for `ListOrganizationPortfolioAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

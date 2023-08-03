@@ -134,7 +134,7 @@ impl ListOfferingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOfferings`.
+/// Orchestration and serialization glue logic for `ListOfferings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

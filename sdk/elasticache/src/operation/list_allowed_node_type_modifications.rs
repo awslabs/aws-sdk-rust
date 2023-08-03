@@ -111,7 +111,7 @@ impl ListAllowedNodeTypeModificationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAllowedNodeTypeModifications`.
+/// Orchestration and serialization glue logic for `ListAllowedNodeTypeModifications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

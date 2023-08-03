@@ -111,7 +111,7 @@ impl DeregisterInstancesFromLoadBalancerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterInstancesFromLoadBalancer`.
+/// Orchestration and serialization glue logic for `DeregisterInstancesFromLoadBalancer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

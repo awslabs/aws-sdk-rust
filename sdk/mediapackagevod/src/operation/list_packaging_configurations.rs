@@ -143,7 +143,7 @@ impl ListPackagingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPackagingConfigurations`.
+/// Orchestration and serialization glue logic for `ListPackagingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

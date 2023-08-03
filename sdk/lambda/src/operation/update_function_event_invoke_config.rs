@@ -158,7 +158,7 @@ impl UpdateFunctionEventInvokeConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFunctionEventInvokeConfig`.
+/// Orchestration and serialization glue logic for `UpdateFunctionEventInvokeConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

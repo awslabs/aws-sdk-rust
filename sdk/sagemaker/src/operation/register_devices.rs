@@ -131,7 +131,7 @@ impl RegisterDevicesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterDevices`.
+/// Orchestration and serialization glue logic for `RegisterDevices`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

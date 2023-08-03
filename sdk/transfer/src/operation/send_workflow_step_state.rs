@@ -131,7 +131,7 @@ impl SendWorkflowStepStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendWorkflowStepState`.
+/// Orchestration and serialization glue logic for `SendWorkflowStepState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

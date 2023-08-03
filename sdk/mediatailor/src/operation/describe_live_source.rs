@@ -156,7 +156,7 @@ impl DescribeLiveSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLiveSource`.
+/// Orchestration and serialization glue logic for `DescribeLiveSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

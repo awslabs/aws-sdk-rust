@@ -144,7 +144,7 @@ impl CreateConfiguredTableAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateConfiguredTableAssociation`.
+/// Orchestration and serialization glue logic for `CreateConfiguredTableAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

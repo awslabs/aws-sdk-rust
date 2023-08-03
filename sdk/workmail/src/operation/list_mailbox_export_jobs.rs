@@ -131,7 +131,7 @@ impl ListMailboxExportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMailboxExportJobs`.
+/// Orchestration and serialization glue logic for `ListMailboxExportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

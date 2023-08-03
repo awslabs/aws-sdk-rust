@@ -131,7 +131,7 @@ impl CreateAgreementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAgreement`.
+/// Orchestration and serialization glue logic for `CreateAgreement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

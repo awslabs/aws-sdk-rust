@@ -126,7 +126,7 @@ impl GetEndpointAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEndpointAttributes`.
+/// Orchestration and serialization glue logic for `GetEndpointAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

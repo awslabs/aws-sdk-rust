@@ -161,7 +161,7 @@ impl ListProfileObjectTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProfileObjectTypes`.
+/// Orchestration and serialization glue logic for `ListProfileObjectTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

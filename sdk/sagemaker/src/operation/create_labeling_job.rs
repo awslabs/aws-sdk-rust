@@ -131,7 +131,7 @@ impl CreateLabelingJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLabelingJob`.
+/// Orchestration and serialization glue logic for `CreateLabelingJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

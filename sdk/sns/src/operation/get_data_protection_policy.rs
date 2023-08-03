@@ -126,7 +126,7 @@ impl GetDataProtectionPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataProtectionPolicy`.
+/// Orchestration and serialization glue logic for `GetDataProtectionPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

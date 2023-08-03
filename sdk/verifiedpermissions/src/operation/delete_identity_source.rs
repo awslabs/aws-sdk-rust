@@ -133,7 +133,7 @@ impl DeleteIdentitySourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIdentitySource`.
+/// Orchestration and serialization glue logic for `DeleteIdentitySource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

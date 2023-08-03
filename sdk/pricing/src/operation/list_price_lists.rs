@@ -131,7 +131,7 @@ impl ListPriceListsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPriceLists`.
+/// Orchestration and serialization glue logic for `ListPriceLists`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

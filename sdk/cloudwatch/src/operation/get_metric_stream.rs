@@ -126,7 +126,7 @@ impl GetMetricStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMetricStream`.
+/// Orchestration and serialization glue logic for `GetMetricStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

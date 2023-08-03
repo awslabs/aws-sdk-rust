@@ -131,7 +131,7 @@ impl UpdateRadiusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRadius`.
+/// Orchestration and serialization glue logic for `UpdateRadius`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

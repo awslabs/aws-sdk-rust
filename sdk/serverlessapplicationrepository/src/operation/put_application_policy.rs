@@ -152,7 +152,7 @@ impl PutApplicationPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutApplicationPolicy`.
+/// Orchestration and serialization glue logic for `PutApplicationPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

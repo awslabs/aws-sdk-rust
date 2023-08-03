@@ -128,7 +128,7 @@ impl ListPhoneNumbersV2Input {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPhoneNumbersV2`.
+/// Orchestration and serialization glue logic for `ListPhoneNumbersV2`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

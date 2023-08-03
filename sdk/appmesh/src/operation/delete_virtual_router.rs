@@ -170,7 +170,7 @@ impl DeleteVirtualRouterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVirtualRouter`.
+/// Orchestration and serialization glue logic for `DeleteVirtualRouter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

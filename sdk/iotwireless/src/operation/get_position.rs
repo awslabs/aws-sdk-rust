@@ -156,7 +156,7 @@ impl GetPositionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPosition`.
+/// Orchestration and serialization glue logic for `GetPosition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

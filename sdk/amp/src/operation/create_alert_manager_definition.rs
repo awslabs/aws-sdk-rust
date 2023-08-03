@@ -154,7 +154,7 @@ impl CreateAlertManagerDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAlertManagerDefinition`.
+/// Orchestration and serialization glue logic for `CreateAlertManagerDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

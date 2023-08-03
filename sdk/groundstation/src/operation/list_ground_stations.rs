@@ -142,7 +142,7 @@ impl ListGroundStationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGroundStations`.
+/// Orchestration and serialization glue logic for `ListGroundStations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

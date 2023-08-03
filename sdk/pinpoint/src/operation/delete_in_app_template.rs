@@ -150,7 +150,7 @@ impl DeleteInAppTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInAppTemplate`.
+/// Orchestration and serialization glue logic for `DeleteInAppTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

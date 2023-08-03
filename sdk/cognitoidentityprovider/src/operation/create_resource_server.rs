@@ -133,7 +133,7 @@ impl CreateResourceServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateResourceServer`.
+/// Orchestration and serialization glue logic for `CreateResourceServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl DescribeJobLogItemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeJobLogItems`.
+/// Orchestration and serialization glue logic for `DescribeJobLogItems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

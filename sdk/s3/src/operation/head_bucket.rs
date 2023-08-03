@@ -123,7 +123,7 @@ impl HeadBucketInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `HeadBucket`.
+/// Orchestration and serialization glue logic for `HeadBucket`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

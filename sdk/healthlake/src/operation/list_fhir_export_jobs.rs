@@ -133,7 +133,7 @@ impl ListFhirExportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFHIRExportJobs`.
+/// Orchestration and serialization glue logic for `ListFHIRExportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

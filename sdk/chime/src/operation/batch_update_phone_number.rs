@@ -136,7 +136,7 @@ impl BatchUpdatePhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpdatePhoneNumber`.
+/// Orchestration and serialization glue logic for `BatchUpdatePhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

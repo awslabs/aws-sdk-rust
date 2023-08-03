@@ -151,7 +151,7 @@ impl RegisterCaCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterCACertificate`.
+/// Orchestration and serialization glue logic for `RegisterCACertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

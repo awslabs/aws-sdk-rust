@@ -126,7 +126,7 @@ impl DeleteLfTagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLFTag`.
+/// Orchestration and serialization glue logic for `DeleteLFTag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

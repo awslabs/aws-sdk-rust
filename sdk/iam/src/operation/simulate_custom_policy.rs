@@ -126,7 +126,7 @@ impl SimulateCustomPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SimulateCustomPolicy`.
+/// Orchestration and serialization glue logic for `SimulateCustomPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

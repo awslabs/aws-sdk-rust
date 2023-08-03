@@ -158,7 +158,7 @@ impl UpdateConfiguredTableAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateConfiguredTableAssociation`.
+/// Orchestration and serialization glue logic for `UpdateConfiguredTableAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

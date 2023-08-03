@@ -133,7 +133,7 @@ impl EnableEnhancedMonitoringInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableEnhancedMonitoring`.
+/// Orchestration and serialization glue logic for `EnableEnhancedMonitoring`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

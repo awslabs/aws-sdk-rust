@@ -132,7 +132,7 @@ impl DescribeClassificationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClassificationJob`.
+/// Orchestration and serialization glue logic for `DescribeClassificationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

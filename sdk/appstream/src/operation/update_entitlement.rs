@@ -131,7 +131,7 @@ impl UpdateEntitlementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEntitlement`.
+/// Orchestration and serialization glue logic for `UpdateEntitlement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

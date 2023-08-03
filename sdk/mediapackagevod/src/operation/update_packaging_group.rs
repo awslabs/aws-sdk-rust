@@ -148,7 +148,7 @@ impl UpdatePackagingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePackagingGroup`.
+/// Orchestration and serialization glue logic for `UpdatePackagingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

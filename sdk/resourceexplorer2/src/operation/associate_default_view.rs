@@ -127,7 +127,7 @@ impl AssociateDefaultViewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateDefaultView`.
+/// Orchestration and serialization glue logic for `AssociateDefaultView`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

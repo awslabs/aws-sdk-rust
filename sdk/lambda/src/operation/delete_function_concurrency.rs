@@ -136,7 +136,7 @@ impl DeleteFunctionConcurrencyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFunctionConcurrency`.
+/// Orchestration and serialization glue logic for `DeleteFunctionConcurrency`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DeleteDbSecurityGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDBSecurityGroup`.
+/// Orchestration and serialization glue logic for `DeleteDBSecurityGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl CreateDataIntegrationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataIntegration`.
+/// Orchestration and serialization glue logic for `CreateDataIntegration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

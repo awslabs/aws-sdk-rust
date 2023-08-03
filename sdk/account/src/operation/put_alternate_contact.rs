@@ -128,7 +128,7 @@ impl PutAlternateContactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAlternateContact`.
+/// Orchestration and serialization glue logic for `PutAlternateContact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

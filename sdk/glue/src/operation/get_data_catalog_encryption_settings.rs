@@ -116,7 +116,7 @@ impl GetDataCatalogEncryptionSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataCatalogEncryptionSettings`.
+/// Orchestration and serialization glue logic for `GetDataCatalogEncryptionSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

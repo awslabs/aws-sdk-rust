@@ -131,7 +131,7 @@ impl GetSigningCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSigningCertificate`.
+/// Orchestration and serialization glue logic for `GetSigningCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

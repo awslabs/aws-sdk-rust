@@ -163,7 +163,7 @@ impl GetVaultLockInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVaultLock`.
+/// Orchestration and serialization glue logic for `GetVaultLock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

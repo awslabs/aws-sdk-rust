@@ -133,7 +133,7 @@ impl StartLabelDetectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartLabelDetection`.
+/// Orchestration and serialization glue logic for `StartLabelDetection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

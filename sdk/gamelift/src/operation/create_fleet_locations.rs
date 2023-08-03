@@ -133,7 +133,7 @@ impl CreateFleetLocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFleetLocations`.
+/// Orchestration and serialization glue logic for `CreateFleetLocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

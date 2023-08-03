@@ -133,7 +133,7 @@ impl BatchDetectEntitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDetectEntities`.
+/// Orchestration and serialization glue logic for `BatchDetectEntities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

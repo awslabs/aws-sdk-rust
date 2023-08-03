@@ -131,7 +131,7 @@ impl DeleteResourcesByExternalIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteResourcesByExternalId`.
+/// Orchestration and serialization glue logic for `DeleteResourcesByExternalId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

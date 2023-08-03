@@ -131,7 +131,7 @@ impl GenerateDataKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateDataKey`.
+/// Orchestration and serialization glue logic for `GenerateDataKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl CreateSimulationApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSimulationApplication`.
+/// Orchestration and serialization glue logic for `CreateSimulationApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeEffectivePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEffectivePolicy`.
+/// Orchestration and serialization glue logic for `DescribeEffectivePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

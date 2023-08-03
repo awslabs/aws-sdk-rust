@@ -132,7 +132,7 @@ impl DescribeSigningJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSigningJob`.
+/// Orchestration and serialization glue logic for `DescribeSigningJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

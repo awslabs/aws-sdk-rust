@@ -136,7 +136,7 @@ impl DeleteSipMediaApplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSipMediaApplication`.
+/// Orchestration and serialization glue logic for `DeleteSipMediaApplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

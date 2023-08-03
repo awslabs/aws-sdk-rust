@@ -131,7 +131,7 @@ impl CreateEdgePackagingJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEdgePackagingJob`.
+/// Orchestration and serialization glue logic for `CreateEdgePackagingJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

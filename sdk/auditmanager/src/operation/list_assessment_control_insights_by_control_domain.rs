@@ -158,7 +158,7 @@ impl ListAssessmentControlInsightsByControlDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssessmentControlInsightsByControlDomain`.
+/// Orchestration and serialization glue logic for `ListAssessmentControlInsightsByControlDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -156,7 +156,7 @@ impl DescribeNamespaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNamespace`.
+/// Orchestration and serialization glue logic for `DescribeNamespace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

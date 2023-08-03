@@ -119,7 +119,7 @@ impl GetSendStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSendStatistics`.
+/// Orchestration and serialization glue logic for `GetSendStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

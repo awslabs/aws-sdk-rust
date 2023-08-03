@@ -97,7 +97,7 @@ impl DescribeAccountAuditConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAccountAuditConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeAccountAuditConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

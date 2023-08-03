@@ -125,7 +125,7 @@ impl DeleteRelationalDatabaseSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRelationalDatabaseSnapshot`.
+/// Orchestration and serialization glue logic for `DeleteRelationalDatabaseSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

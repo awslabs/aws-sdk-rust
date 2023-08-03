@@ -134,7 +134,7 @@ impl GetRunGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRunGroup`.
+/// Orchestration and serialization glue logic for `GetRunGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl UntagOpenIdConnectProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UntagOpenIDConnectProvider`.
+/// Orchestration and serialization glue logic for `UntagOpenIDConnectProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

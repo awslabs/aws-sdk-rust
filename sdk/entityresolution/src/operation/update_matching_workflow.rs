@@ -150,7 +150,7 @@ impl UpdateMatchingWorkflowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMatchingWorkflow`.
+/// Orchestration and serialization glue logic for `UpdateMatchingWorkflow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

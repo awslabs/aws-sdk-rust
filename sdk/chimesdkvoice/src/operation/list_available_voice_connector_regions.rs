@@ -98,7 +98,7 @@ impl ListAvailableVoiceConnectorRegionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAvailableVoiceConnectorRegions`.
+/// Orchestration and serialization glue logic for `ListAvailableVoiceConnectorRegions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

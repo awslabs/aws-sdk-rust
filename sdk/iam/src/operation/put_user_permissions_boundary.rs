@@ -126,7 +126,7 @@ impl PutUserPermissionsBoundaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutUserPermissionsBoundary`.
+/// Orchestration and serialization glue logic for `PutUserPermissionsBoundary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

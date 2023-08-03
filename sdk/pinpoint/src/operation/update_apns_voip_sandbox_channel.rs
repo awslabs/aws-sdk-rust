@@ -150,7 +150,7 @@ impl UpdateApnsVoipSandboxChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateApnsVoipSandboxChannel`.
+/// Orchestration and serialization glue logic for `UpdateApnsVoipSandboxChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

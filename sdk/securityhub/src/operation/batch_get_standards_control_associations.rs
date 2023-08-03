@@ -111,7 +111,7 @@ impl BatchGetStandardsControlAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetStandardsControlAssociations`.
+/// Orchestration and serialization glue logic for `BatchGetStandardsControlAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

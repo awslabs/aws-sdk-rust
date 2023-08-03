@@ -124,7 +124,7 @@ impl DeleteOrganizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteOrganization`.
+/// Orchestration and serialization glue logic for `DeleteOrganization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

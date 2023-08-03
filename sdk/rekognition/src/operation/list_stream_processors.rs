@@ -133,7 +133,7 @@ impl ListStreamProcessorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStreamProcessors`.
+/// Orchestration and serialization glue logic for `ListStreamProcessors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

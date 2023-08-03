@@ -126,7 +126,7 @@ impl GetFindingHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFindingHistory`.
+/// Orchestration and serialization glue logic for `GetFindingHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

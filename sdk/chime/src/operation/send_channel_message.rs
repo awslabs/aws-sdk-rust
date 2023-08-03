@@ -159,7 +159,7 @@ impl SendChannelMessageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendChannelMessage`.
+/// Orchestration and serialization glue logic for `SendChannelMessage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

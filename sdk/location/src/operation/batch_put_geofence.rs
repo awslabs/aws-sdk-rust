@@ -152,7 +152,7 @@ impl BatchPutGeofenceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchPutGeofence`.
+/// Orchestration and serialization glue logic for `BatchPutGeofence`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

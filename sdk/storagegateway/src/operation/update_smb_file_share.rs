@@ -133,7 +133,7 @@ impl UpdateSmbFileShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSMBFileShare`.
+/// Orchestration and serialization glue logic for `UpdateSMBFileShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -113,7 +113,7 @@ impl DisassociateFromMasterAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateFromMasterAccount`.
+/// Orchestration and serialization glue logic for `DisassociateFromMasterAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

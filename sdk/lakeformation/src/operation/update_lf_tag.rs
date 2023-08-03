@@ -126,7 +126,7 @@ impl UpdateLfTagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLFTag`.
+/// Orchestration and serialization glue logic for `UpdateLFTag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

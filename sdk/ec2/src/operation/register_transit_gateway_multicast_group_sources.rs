@@ -111,7 +111,7 @@ impl RegisterTransitGatewayMulticastGroupSourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterTransitGatewayMulticastGroupSources`.
+/// Orchestration and serialization glue logic for `RegisterTransitGatewayMulticastGroupSources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

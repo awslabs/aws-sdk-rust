@@ -131,7 +131,7 @@ impl GetWorkflowRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorkflowRun`.
+/// Orchestration and serialization glue logic for `GetWorkflowRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

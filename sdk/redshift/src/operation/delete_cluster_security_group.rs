@@ -126,7 +126,7 @@ impl DeleteClusterSecurityGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteClusterSecurityGroup`.
+/// Orchestration and serialization glue logic for `DeleteClusterSecurityGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

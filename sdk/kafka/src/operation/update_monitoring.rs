@@ -150,7 +150,7 @@ impl UpdateMonitoringInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMonitoring`.
+/// Orchestration and serialization glue logic for `UpdateMonitoring`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

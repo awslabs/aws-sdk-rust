@@ -150,7 +150,7 @@ impl DisassociateRecoveryPointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateRecoveryPoint`.
+/// Orchestration and serialization glue logic for `DisassociateRecoveryPoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

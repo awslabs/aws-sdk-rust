@@ -131,7 +131,7 @@ impl ListOrganizationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOrganizations`.
+/// Orchestration and serialization glue logic for `ListOrganizations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

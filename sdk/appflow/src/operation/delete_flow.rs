@@ -126,7 +126,7 @@ impl DeleteFlowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFlow`.
+/// Orchestration and serialization glue logic for `DeleteFlow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

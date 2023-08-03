@@ -116,7 +116,7 @@ impl ListAwsServiceAccessForOrganizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAWSServiceAccessForOrganization`.
+/// Orchestration and serialization glue logic for `ListAWSServiceAccessForOrganization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetEventPredictionMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEventPredictionMetadata`.
+/// Orchestration and serialization glue logic for `GetEventPredictionMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

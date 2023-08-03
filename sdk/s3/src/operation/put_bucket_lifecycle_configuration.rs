@@ -161,7 +161,7 @@ impl PutBucketLifecycleConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBucketLifecycleConfiguration`.
+/// Orchestration and serialization glue logic for `PutBucketLifecycleConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

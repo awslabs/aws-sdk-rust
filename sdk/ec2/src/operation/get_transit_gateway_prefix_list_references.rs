@@ -111,7 +111,7 @@ impl GetTransitGatewayPrefixListReferencesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTransitGatewayPrefixListReferences`.
+/// Orchestration and serialization glue logic for `GetTransitGatewayPrefixListReferences`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

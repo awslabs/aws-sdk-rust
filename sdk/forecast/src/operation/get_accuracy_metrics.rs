@@ -133,7 +133,7 @@ impl GetAccuracyMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccuracyMetrics`.
+/// Orchestration and serialization glue logic for `GetAccuracyMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl DecryptDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DecryptData`.
+/// Orchestration and serialization glue logic for `DecryptData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

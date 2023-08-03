@@ -131,7 +131,7 @@ impl ListContextsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListContexts`.
+/// Orchestration and serialization glue logic for `ListContexts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

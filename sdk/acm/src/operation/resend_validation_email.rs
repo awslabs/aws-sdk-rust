@@ -131,7 +131,7 @@ impl ResendValidationEmailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResendValidationEmail`.
+/// Orchestration and serialization glue logic for `ResendValidationEmail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

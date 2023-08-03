@@ -126,7 +126,7 @@ impl GetAccessKeyInfoInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccessKeyInfo`.
+/// Orchestration and serialization glue logic for `GetAccessKeyInfo`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

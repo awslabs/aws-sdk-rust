@@ -131,7 +131,7 @@ impl ListDatasetGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDatasetGroups`.
+/// Orchestration and serialization glue logic for `ListDatasetGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

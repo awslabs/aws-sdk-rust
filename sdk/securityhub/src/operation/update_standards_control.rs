@@ -150,7 +150,7 @@ impl UpdateStandardsControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStandardsControl`.
+/// Orchestration and serialization glue logic for `UpdateStandardsControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

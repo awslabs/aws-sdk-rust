@@ -133,7 +133,7 @@ impl DescribeDeviceFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDeviceFleet`.
+/// Orchestration and serialization glue logic for `DescribeDeviceFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

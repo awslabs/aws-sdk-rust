@@ -131,7 +131,7 @@ impl QueryForecastInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `QueryForecast`.
+/// Orchestration and serialization glue logic for `QueryForecast`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

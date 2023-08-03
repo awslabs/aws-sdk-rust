@@ -116,7 +116,7 @@ impl DisassociateTagOptionFromResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateTagOptionFromResource`.
+/// Orchestration and serialization glue logic for `DisassociateTagOptionFromResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

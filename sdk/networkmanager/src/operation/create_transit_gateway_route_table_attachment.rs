@@ -116,7 +116,7 @@ impl CreateTransitGatewayRouteTableAttachmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTransitGatewayRouteTableAttachment`.
+/// Orchestration and serialization glue logic for `CreateTransitGatewayRouteTableAttachment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

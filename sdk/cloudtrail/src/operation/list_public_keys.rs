@@ -131,7 +131,7 @@ impl ListPublicKeysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPublicKeys`.
+/// Orchestration and serialization glue logic for `ListPublicKeys`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

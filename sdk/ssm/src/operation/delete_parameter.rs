@@ -131,7 +131,7 @@ impl DeleteParameterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteParameter`.
+/// Orchestration and serialization glue logic for `DeleteParameter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

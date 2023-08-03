@@ -145,7 +145,7 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVoiceConnectorTerminationCredentials`.
+/// Orchestration and serialization glue logic for `DeleteVoiceConnectorTerminationCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

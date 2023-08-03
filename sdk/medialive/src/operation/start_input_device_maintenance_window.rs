@@ -121,7 +121,7 @@ impl StartInputDeviceMaintenanceWindowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartInputDeviceMaintenanceWindow`.
+/// Orchestration and serialization glue logic for `StartInputDeviceMaintenanceWindow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

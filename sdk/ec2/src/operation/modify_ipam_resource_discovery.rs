@@ -126,7 +126,7 @@ impl ModifyIpamResourceDiscoveryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyIpamResourceDiscovery`.
+/// Orchestration and serialization glue logic for `ModifyIpamResourceDiscovery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

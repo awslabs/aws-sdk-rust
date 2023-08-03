@@ -146,7 +146,7 @@ impl CreatePipeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePipe`.
+/// Orchestration and serialization glue logic for `CreatePipe`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

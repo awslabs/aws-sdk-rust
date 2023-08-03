@@ -130,7 +130,7 @@ impl CreateFolderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateFolder`.
+/// Orchestration and serialization glue logic for `CreateFolder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

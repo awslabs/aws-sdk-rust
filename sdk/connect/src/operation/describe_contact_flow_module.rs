@@ -156,7 +156,7 @@ impl DescribeContactFlowModuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeContactFlowModule`.
+/// Orchestration and serialization glue logic for `DescribeContactFlowModule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

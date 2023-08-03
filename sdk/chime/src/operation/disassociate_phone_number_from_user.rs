@@ -160,7 +160,7 @@ impl DisassociatePhoneNumberFromUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociatePhoneNumberFromUser`.
+/// Orchestration and serialization glue logic for `DisassociatePhoneNumberFromUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

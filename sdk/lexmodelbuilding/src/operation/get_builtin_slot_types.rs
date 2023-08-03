@@ -147,7 +147,7 @@ impl GetBuiltinSlotTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBuiltinSlotTypes`.
+/// Orchestration and serialization glue logic for `GetBuiltinSlotTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

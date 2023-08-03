@@ -133,7 +133,7 @@ impl UpdateRuleMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRuleMetadata`.
+/// Orchestration and serialization glue logic for `UpdateRuleMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

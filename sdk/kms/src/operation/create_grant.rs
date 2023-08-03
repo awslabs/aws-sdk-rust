@@ -131,7 +131,7 @@ impl CreateGrantInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateGrant`.
+/// Orchestration and serialization glue logic for `CreateGrant`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -179,7 +179,7 @@ impl GetDocumentVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDocumentVersion`.
+/// Orchestration and serialization glue logic for `GetDocumentVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

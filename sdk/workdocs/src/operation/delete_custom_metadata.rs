@@ -166,7 +166,7 @@ impl DeleteCustomMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomMetadata`.
+/// Orchestration and serialization glue logic for `DeleteCustomMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

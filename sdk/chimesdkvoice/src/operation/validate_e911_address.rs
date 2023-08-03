@@ -129,7 +129,7 @@ impl ValidateE911AddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ValidateE911Address`.
+/// Orchestration and serialization glue logic for `ValidateE911Address`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl ListSubscriptionsByTopicInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSubscriptionsByTopic`.
+/// Orchestration and serialization glue logic for `ListSubscriptionsByTopic`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

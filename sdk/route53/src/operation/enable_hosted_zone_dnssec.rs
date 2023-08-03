@@ -137,7 +137,7 @@ impl EnableHostedZoneDnssecInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableHostedZoneDNSSEC`.
+/// Orchestration and serialization glue logic for `EnableHostedZoneDNSSEC`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

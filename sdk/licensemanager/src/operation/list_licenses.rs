@@ -131,7 +131,7 @@ impl ListLicensesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLicenses`.
+/// Orchestration and serialization glue logic for `ListLicenses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

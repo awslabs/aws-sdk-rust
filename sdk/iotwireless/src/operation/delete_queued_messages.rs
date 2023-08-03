@@ -165,7 +165,7 @@ impl DeleteQueuedMessagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteQueuedMessages`.
+/// Orchestration and serialization glue logic for `DeleteQueuedMessages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

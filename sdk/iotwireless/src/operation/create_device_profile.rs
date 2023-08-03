@@ -132,7 +132,7 @@ impl CreateDeviceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDeviceProfile`.
+/// Orchestration and serialization glue logic for `CreateDeviceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

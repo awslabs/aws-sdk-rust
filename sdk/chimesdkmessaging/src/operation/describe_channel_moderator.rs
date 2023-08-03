@@ -157,7 +157,7 @@ impl DescribeChannelModeratorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeChannelModerator`.
+/// Orchestration and serialization glue logic for `DescribeChannelModerator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

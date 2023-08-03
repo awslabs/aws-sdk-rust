@@ -126,7 +126,7 @@ impl CreateServiceLinkedRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateServiceLinkedRole`.
+/// Orchestration and serialization glue logic for `CreateServiceLinkedRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

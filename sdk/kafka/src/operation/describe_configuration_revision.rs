@@ -154,7 +154,7 @@ impl DescribeConfigurationRevisionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConfigurationRevision`.
+/// Orchestration and serialization glue logic for `DescribeConfigurationRevision`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

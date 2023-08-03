@@ -131,7 +131,7 @@ impl DeleteBandwidthRateLimitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBandwidthRateLimit`.
+/// Orchestration and serialization glue logic for `DeleteBandwidthRateLimit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

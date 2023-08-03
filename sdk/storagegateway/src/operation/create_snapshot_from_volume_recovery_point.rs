@@ -116,7 +116,7 @@ impl CreateSnapshotFromVolumeRecoveryPointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSnapshotFromVolumeRecoveryPoint`.
+/// Orchestration and serialization glue logic for `CreateSnapshotFromVolumeRecoveryPoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

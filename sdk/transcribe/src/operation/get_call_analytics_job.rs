@@ -133,7 +133,7 @@ impl GetCallAnalyticsJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCallAnalyticsJob`.
+/// Orchestration and serialization glue logic for `GetCallAnalyticsJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

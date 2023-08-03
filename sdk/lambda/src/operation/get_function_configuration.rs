@@ -150,7 +150,7 @@ impl GetFunctionConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFunctionConfiguration`.
+/// Orchestration and serialization glue logic for `GetFunctionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

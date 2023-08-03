@@ -128,7 +128,7 @@ impl DeleteIncidentRecordInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIncidentRecord`.
+/// Orchestration and serialization glue logic for `DeleteIncidentRecord`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

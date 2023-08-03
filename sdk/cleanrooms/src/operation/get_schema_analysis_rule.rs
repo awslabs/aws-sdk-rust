@@ -169,7 +169,7 @@ impl GetSchemaAnalysisRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSchemaAnalysisRule`.
+/// Orchestration and serialization glue logic for `GetSchemaAnalysisRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

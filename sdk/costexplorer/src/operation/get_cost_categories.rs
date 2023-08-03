@@ -131,7 +131,7 @@ impl GetCostCategoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCostCategories`.
+/// Orchestration and serialization glue logic for `GetCostCategories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl ListVariantStoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVariantStores`.
+/// Orchestration and serialization glue logic for `ListVariantStores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

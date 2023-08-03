@@ -131,7 +131,7 @@ impl DeleteBucketAccessKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBucketAccessKey`.
+/// Orchestration and serialization glue logic for `DeleteBucketAccessKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

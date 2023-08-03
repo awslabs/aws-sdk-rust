@@ -111,7 +111,7 @@ impl CreateLocalGatewayRouteTableVpcAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLocalGatewayRouteTableVpcAssociation`.
+/// Orchestration and serialization glue logic for `CreateLocalGatewayRouteTableVpcAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

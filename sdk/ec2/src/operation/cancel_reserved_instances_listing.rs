@@ -120,7 +120,7 @@ impl CancelReservedInstancesListingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelReservedInstancesListing`.
+/// Orchestration and serialization glue logic for `CancelReservedInstancesListing`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

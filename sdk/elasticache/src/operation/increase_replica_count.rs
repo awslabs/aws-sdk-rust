@@ -126,7 +126,7 @@ impl IncreaseReplicaCountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `IncreaseReplicaCount`.
+/// Orchestration and serialization glue logic for `IncreaseReplicaCount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

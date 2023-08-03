@@ -136,7 +136,7 @@ impl DescribeCustomPluginInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCustomPlugin`.
+/// Orchestration and serialization glue logic for `DescribeCustomPlugin`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

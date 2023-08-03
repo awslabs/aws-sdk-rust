@@ -155,7 +155,7 @@ impl DeleteDomainPermissionsPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDomainPermissionsPolicy`.
+/// Orchestration and serialization glue logic for `DeleteDomainPermissionsPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

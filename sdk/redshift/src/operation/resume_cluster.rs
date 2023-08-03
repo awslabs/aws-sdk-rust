@@ -128,7 +128,7 @@ impl ResumeClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResumeCluster`.
+/// Orchestration and serialization glue logic for `ResumeCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

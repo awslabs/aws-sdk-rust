@@ -131,7 +131,7 @@ impl DescribeAppImageConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAppImageConfig`.
+/// Orchestration and serialization glue logic for `DescribeAppImageConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl DeleteSignalCatalogInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSignalCatalog`.
+/// Orchestration and serialization glue logic for `DeleteSignalCatalog`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

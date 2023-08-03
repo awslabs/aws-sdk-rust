@@ -177,7 +177,7 @@ impl BatchDeleteCustomVocabularyItemInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteCustomVocabularyItem`.
+/// Orchestration and serialization glue logic for `BatchDeleteCustomVocabularyItem`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

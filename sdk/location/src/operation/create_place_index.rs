@@ -128,7 +128,7 @@ impl CreatePlaceIndexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePlaceIndex`.
+/// Orchestration and serialization glue logic for `CreatePlaceIndex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

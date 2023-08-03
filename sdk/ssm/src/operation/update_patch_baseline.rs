@@ -133,7 +133,7 @@ impl UpdatePatchBaselineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePatchBaseline`.
+/// Orchestration and serialization glue logic for `UpdatePatchBaseline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

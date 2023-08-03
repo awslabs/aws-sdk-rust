@@ -156,7 +156,7 @@ impl RemoveNotificationChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveNotificationChannel`.
+/// Orchestration and serialization glue logic for `RemoveNotificationChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -158,7 +158,7 @@ impl DeleteSyncJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSyncJob`.
+/// Orchestration and serialization glue logic for `DeleteSyncJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

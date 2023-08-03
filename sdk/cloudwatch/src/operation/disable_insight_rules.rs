@@ -126,7 +126,7 @@ impl DisableInsightRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableInsightRules`.
+/// Orchestration and serialization glue logic for `DisableInsightRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

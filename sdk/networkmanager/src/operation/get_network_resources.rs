@@ -200,7 +200,7 @@ impl GetNetworkResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetNetworkResources`.
+/// Orchestration and serialization glue logic for `GetNetworkResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

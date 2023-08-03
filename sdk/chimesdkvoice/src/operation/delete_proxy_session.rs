@@ -156,7 +156,7 @@ impl DeleteProxySessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProxySession`.
+/// Orchestration and serialization glue logic for `DeleteProxySession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

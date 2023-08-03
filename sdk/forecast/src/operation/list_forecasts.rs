@@ -131,7 +131,7 @@ impl ListForecastsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListForecasts`.
+/// Orchestration and serialization glue logic for `ListForecasts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

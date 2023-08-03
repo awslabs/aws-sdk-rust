@@ -131,7 +131,7 @@ impl CreateDocumentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDocument`.
+/// Orchestration and serialization glue logic for `CreateDocument`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

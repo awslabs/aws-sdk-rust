@@ -153,7 +153,7 @@ impl DeleteCustomLogSourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomLogSource`.
+/// Orchestration and serialization glue logic for `DeleteCustomLogSource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

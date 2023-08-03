@@ -131,7 +131,7 @@ impl CreateLagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLag`.
+/// Orchestration and serialization glue logic for `CreateLag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

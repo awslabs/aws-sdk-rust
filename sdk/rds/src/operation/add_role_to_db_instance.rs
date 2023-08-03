@@ -126,7 +126,7 @@ impl AddRoleToDbInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddRoleToDBInstance`.
+/// Orchestration and serialization glue logic for `AddRoleToDBInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

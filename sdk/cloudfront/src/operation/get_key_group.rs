@@ -132,7 +132,7 @@ impl GetKeyGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetKeyGroup`.
+/// Orchestration and serialization glue logic for `GetKeyGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeScheduledActionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeScheduledActions`.
+/// Orchestration and serialization glue logic for `DescribeScheduledActions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

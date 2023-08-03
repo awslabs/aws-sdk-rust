@@ -125,7 +125,7 @@ impl UpdateCostAllocationTagsStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCostAllocationTagsStatus`.
+/// Orchestration and serialization glue logic for `UpdateCostAllocationTagsStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

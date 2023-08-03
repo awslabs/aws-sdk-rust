@@ -137,7 +137,7 @@ impl ListMeetingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMeetings`.
+/// Orchestration and serialization glue logic for `ListMeetings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

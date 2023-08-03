@@ -132,7 +132,7 @@ impl DisassociateFirewallRuleGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateFirewallRuleGroup`.
+/// Orchestration and serialization glue logic for `DisassociateFirewallRuleGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

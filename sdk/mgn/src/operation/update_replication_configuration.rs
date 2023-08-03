@@ -128,7 +128,7 @@ impl UpdateReplicationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateReplicationConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateReplicationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

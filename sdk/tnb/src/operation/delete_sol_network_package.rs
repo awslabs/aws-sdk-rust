@@ -136,7 +136,7 @@ impl DeleteSolNetworkPackageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSolNetworkPackage`.
+/// Orchestration and serialization glue logic for `DeleteSolNetworkPackage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeFleetCapacityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetCapacity`.
+/// Orchestration and serialization glue logic for `DescribeFleetCapacity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

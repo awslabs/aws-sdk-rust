@@ -176,7 +176,7 @@ impl DescribeThemeAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeThemeAlias`.
+/// Orchestration and serialization glue logic for `DescribeThemeAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

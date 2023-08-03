@@ -131,7 +131,7 @@ impl AdminDeleteUserAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminDeleteUserAttributes`.
+/// Orchestration and serialization glue logic for `AdminDeleteUserAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

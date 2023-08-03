@@ -125,7 +125,7 @@ impl AllocatePublicVirtualInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AllocatePublicVirtualInterface`.
+/// Orchestration and serialization glue logic for `AllocatePublicVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

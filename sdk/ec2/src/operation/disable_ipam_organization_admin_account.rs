@@ -111,7 +111,7 @@ impl DisableIpamOrganizationAdminAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableIpamOrganizationAdminAccount`.
+/// Orchestration and serialization glue logic for `DisableIpamOrganizationAdminAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

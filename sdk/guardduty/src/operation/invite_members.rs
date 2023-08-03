@@ -150,7 +150,7 @@ impl InviteMembersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InviteMembers`.
+/// Orchestration and serialization glue logic for `InviteMembers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

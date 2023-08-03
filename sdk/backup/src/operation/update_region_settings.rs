@@ -128,7 +128,7 @@ impl UpdateRegionSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRegionSettings`.
+/// Orchestration and serialization glue logic for `UpdateRegionSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

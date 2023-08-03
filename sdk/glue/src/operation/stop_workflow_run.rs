@@ -131,7 +131,7 @@ impl StopWorkflowRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopWorkflowRun`.
+/// Orchestration and serialization glue logic for `StopWorkflowRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

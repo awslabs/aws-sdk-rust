@@ -126,7 +126,7 @@ impl CreateCellInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCell`.
+/// Orchestration and serialization glue logic for `CreateCell`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl ListTransactionEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTransactionEvents`.
+/// Orchestration and serialization glue logic for `ListTransactionEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

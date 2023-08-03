@@ -130,7 +130,7 @@ impl DeleteVerifiedAccessGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVerifiedAccessGroup`.
+/// Orchestration and serialization glue logic for `DeleteVerifiedAccessGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

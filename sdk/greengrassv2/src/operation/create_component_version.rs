@@ -131,7 +131,7 @@ impl CreateComponentVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateComponentVersion`.
+/// Orchestration and serialization glue logic for `CreateComponentVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

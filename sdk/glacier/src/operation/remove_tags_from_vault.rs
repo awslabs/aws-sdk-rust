@@ -189,7 +189,7 @@ impl RemoveTagsFromVaultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveTagsFromVault`.
+/// Orchestration and serialization glue logic for `RemoveTagsFromVault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

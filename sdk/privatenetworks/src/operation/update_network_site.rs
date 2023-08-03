@@ -126,7 +126,7 @@ impl UpdateNetworkSiteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateNetworkSite`.
+/// Orchestration and serialization glue logic for `UpdateNetworkSite`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -7,7 +7,9 @@ use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime_api::client::interceptors::{
     BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
 };
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::config_bag::ConfigBag;
+use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
 
@@ -33,16 +35,18 @@ impl<F, E> MapRequestInterceptor<F, E> {
 
 impl<F, E> Interceptor for MapRequestInterceptor<F, E>
 where
-    F: Fn(&mut http::Request<SdkBody>) -> Result<(), E> + Send + Sync + 'static,
-    E: std::error::Error + Send + Sync + 'static,
+    F: Fn(HttpRequest) -> Result<HttpRequest, E> + Send + Sync + 'static,
+    E: StdError + Send + Sync + 'static,
 {
     fn modify_before_signing(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
         _cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let request = context.request_mut();
-        (self.f)(request)?;
+        let mut request = HttpRequest::new(SdkBody::taken());
+        std::mem::swap(&mut request, context.request_mut());
+        let mut mapped = (self.f)(request)?;
+        std::mem::swap(&mut mapped, context.request_mut());
 
         Ok(())
     }
@@ -66,7 +70,7 @@ impl<F> MutateRequestInterceptor<F> {
 
 impl<F> Interceptor for MutateRequestInterceptor<F>
 where
-    F: Fn(&mut http::Request<SdkBody>) + Send + Sync + 'static,
+    F: Fn(&mut HttpRequest) + Send + Sync + 'static,
 {
     fn modify_before_signing(
         &self,

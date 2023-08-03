@@ -201,7 +201,7 @@ impl DeregisterPackageVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterPackageVersion`.
+/// Orchestration and serialization glue logic for `DeregisterPackageVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

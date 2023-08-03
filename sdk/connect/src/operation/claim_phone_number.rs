@@ -130,7 +130,7 @@ impl ClaimPhoneNumberInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ClaimPhoneNumber`.
+/// Orchestration and serialization glue logic for `ClaimPhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

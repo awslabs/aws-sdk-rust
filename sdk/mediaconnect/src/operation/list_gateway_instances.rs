@@ -139,7 +139,7 @@ impl ListGatewayInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGatewayInstances`.
+/// Orchestration and serialization glue logic for `ListGatewayInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

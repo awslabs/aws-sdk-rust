@@ -135,7 +135,7 @@ impl AssociateTransitGatewayConnectPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateTransitGatewayConnectPeer`.
+/// Orchestration and serialization glue logic for `AssociateTransitGatewayConnectPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

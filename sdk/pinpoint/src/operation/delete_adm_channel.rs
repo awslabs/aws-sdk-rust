@@ -136,7 +136,7 @@ impl DeleteAdmChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAdmChannel`.
+/// Orchestration and serialization glue logic for `DeleteAdmChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

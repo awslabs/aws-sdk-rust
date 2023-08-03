@@ -150,7 +150,7 @@ impl CreateAgentStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAgentStatus`.
+/// Orchestration and serialization glue logic for `CreateAgentStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

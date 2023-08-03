@@ -131,7 +131,7 @@ impl UpdateLicenseConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLicenseConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateLicenseConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

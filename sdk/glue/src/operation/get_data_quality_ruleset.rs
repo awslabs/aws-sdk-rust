@@ -131,7 +131,7 @@ impl GetDataQualityRulesetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataQualityRuleset`.
+/// Orchestration and serialization glue logic for `GetDataQualityRuleset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

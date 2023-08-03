@@ -111,7 +111,7 @@ impl GetServiceLinkedRoleDeletionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceLinkedRoleDeletionStatus`.
+/// Orchestration and serialization glue logic for `GetServiceLinkedRoleDeletionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

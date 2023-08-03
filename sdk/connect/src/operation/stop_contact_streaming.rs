@@ -129,7 +129,7 @@ impl StopContactStreamingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopContactStreaming`.
+/// Orchestration and serialization glue logic for `StopContactStreaming`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

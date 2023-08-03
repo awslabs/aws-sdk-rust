@@ -175,7 +175,7 @@ impl GetSegmentImportJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSegmentImportJobs`.
+/// Orchestration and serialization glue logic for `GetSegmentImportJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

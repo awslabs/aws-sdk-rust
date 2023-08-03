@@ -126,7 +126,7 @@ impl PutCompositeAlarmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutCompositeAlarm`.
+/// Orchestration and serialization glue logic for `PutCompositeAlarm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

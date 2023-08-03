@@ -131,7 +131,7 @@ impl DeleteDataCatalogInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataCatalog`.
+/// Orchestration and serialization glue logic for `DeleteDataCatalog`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

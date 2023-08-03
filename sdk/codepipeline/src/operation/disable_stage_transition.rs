@@ -131,7 +131,7 @@ impl DisableStageTransitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableStageTransition`.
+/// Orchestration and serialization glue logic for `DisableStageTransition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

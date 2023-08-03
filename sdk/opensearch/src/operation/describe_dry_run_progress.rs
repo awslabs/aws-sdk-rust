@@ -158,7 +158,7 @@ impl DescribeDryRunProgressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDryRunProgress`.
+/// Orchestration and serialization glue logic for `DescribeDryRunProgress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

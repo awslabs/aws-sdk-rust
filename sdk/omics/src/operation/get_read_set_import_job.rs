@@ -158,7 +158,7 @@ impl GetReadSetImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReadSetImportJob`.
+/// Orchestration and serialization glue logic for `GetReadSetImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

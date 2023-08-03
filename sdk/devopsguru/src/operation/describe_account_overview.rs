@@ -126,7 +126,7 @@ impl DescribeAccountOverviewInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAccountOverview`.
+/// Orchestration and serialization glue logic for `DescribeAccountOverview`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

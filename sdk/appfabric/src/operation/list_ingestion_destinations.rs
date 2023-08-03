@@ -172,7 +172,7 @@ impl ListIngestionDestinationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIngestionDestinations`.
+/// Orchestration and serialization glue logic for `ListIngestionDestinations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

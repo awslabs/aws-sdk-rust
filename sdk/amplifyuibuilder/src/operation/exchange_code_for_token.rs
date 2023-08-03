@@ -148,7 +148,7 @@ impl ExchangeCodeForTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExchangeCodeForToken`.
+/// Orchestration and serialization glue logic for `ExchangeCodeForToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -145,7 +145,7 @@ impl CreateResourceDefinitionVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateResourceDefinitionVersion`.
+/// Orchestration and serialization glue logic for `CreateResourceDefinitionVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

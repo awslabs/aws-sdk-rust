@@ -126,7 +126,7 @@ impl UpdateEventConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEventConfigurations`.
+/// Orchestration and serialization glue logic for `UpdateEventConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

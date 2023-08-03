@@ -212,7 +212,7 @@ impl GetMapTileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMapTile`.
+/// Orchestration and serialization glue logic for `GetMapTile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

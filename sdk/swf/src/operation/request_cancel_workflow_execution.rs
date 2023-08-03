@@ -125,7 +125,7 @@ impl RequestCancelWorkflowExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RequestCancelWorkflowExecution`.
+/// Orchestration and serialization glue logic for `RequestCancelWorkflowExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

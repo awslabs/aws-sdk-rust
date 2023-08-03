@@ -164,7 +164,7 @@ impl UpdateRoutingProfileConcurrencyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRoutingProfileConcurrency`.
+/// Orchestration and serialization glue logic for `UpdateRoutingProfileConcurrency`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

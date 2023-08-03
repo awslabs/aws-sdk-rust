@@ -126,7 +126,7 @@ impl UpdateAccountSendingEnabledInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAccountSendingEnabled`.
+/// Orchestration and serialization glue logic for `UpdateAccountSendingEnabled`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

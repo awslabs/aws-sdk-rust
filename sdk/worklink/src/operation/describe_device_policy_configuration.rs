@@ -112,7 +112,7 @@ impl DescribeDevicePolicyConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDevicePolicyConfiguration`.
+/// Orchestration and serialization glue logic for `DescribeDevicePolicyConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

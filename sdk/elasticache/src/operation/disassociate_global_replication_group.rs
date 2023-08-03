@@ -111,7 +111,7 @@ impl DisassociateGlobalReplicationGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateGlobalReplicationGroup`.
+/// Orchestration and serialization glue logic for `DisassociateGlobalReplicationGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

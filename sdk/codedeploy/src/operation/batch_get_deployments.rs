@@ -133,7 +133,7 @@ impl BatchGetDeploymentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetDeployments`.
+/// Orchestration and serialization glue logic for `BatchGetDeployments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

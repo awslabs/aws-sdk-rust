@@ -131,7 +131,7 @@ impl GetWebAclForResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWebACLForResource`.
+/// Orchestration and serialization glue logic for `GetWebACLForResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

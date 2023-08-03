@@ -135,7 +135,7 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSipMediaApplicationLoggingConfiguration`.
+/// Orchestration and serialization glue logic for `PutSipMediaApplicationLoggingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

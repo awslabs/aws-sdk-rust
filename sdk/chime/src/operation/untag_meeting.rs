@@ -156,7 +156,7 @@ impl UntagMeetingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UntagMeeting`.
+/// Orchestration and serialization glue logic for `UntagMeeting`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

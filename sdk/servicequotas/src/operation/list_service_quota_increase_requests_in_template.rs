@@ -116,7 +116,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServiceQuotaIncreaseRequestsInTemplate`.
+/// Orchestration and serialization glue logic for `ListServiceQuotaIncreaseRequestsInTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

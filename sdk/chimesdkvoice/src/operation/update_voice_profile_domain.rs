@@ -150,7 +150,7 @@ impl UpdateVoiceProfileDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVoiceProfileDomain`.
+/// Orchestration and serialization glue logic for `UpdateVoiceProfileDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeMetricSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMetricSet`.
+/// Orchestration and serialization glue logic for `DescribeMetricSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

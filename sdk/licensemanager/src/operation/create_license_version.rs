@@ -133,7 +133,7 @@ impl CreateLicenseVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLicenseVersion`.
+/// Orchestration and serialization glue logic for `CreateLicenseVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

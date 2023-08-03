@@ -133,7 +133,7 @@ impl SearchFlowExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchFlowExecutions`.
+/// Orchestration and serialization glue logic for `SearchFlowExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteDecoderManifestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDecoderManifest`.
+/// Orchestration and serialization glue logic for `DeleteDecoderManifest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

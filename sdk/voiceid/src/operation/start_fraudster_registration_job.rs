@@ -136,7 +136,7 @@ impl StartFraudsterRegistrationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartFraudsterRegistrationJob`.
+/// Orchestration and serialization glue logic for `StartFraudsterRegistrationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

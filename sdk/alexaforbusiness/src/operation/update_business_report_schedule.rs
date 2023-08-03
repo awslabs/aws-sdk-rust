@@ -131,7 +131,7 @@ impl UpdateBusinessReportScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBusinessReportSchedule`.
+/// Orchestration and serialization glue logic for `UpdateBusinessReportSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -173,7 +173,7 @@ impl DeleteBotAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBotAlias`.
+/// Orchestration and serialization glue logic for `DeleteBotAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

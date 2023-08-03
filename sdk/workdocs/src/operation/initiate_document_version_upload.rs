@@ -128,7 +128,7 @@ impl InitiateDocumentVersionUploadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `InitiateDocumentVersionUpload`.
+/// Orchestration and serialization glue logic for `InitiateDocumentVersionUpload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

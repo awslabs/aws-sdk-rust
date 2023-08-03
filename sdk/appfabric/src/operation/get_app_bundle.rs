@@ -136,7 +136,7 @@ impl GetAppBundleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAppBundle`.
+/// Orchestration and serialization glue logic for `GetAppBundle`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

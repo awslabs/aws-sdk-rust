@@ -131,7 +131,7 @@ impl ListVpcIngressConnectionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVpcIngressConnections`.
+/// Orchestration and serialization glue logic for `ListVpcIngressConnections`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

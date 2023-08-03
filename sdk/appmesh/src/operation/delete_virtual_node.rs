@@ -170,7 +170,7 @@ impl DeleteVirtualNodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVirtualNode`.
+/// Orchestration and serialization glue logic for `DeleteVirtualNode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

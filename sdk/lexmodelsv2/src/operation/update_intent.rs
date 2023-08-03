@@ -202,7 +202,7 @@ impl UpdateIntentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIntent`.
+/// Orchestration and serialization glue logic for `UpdateIntent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

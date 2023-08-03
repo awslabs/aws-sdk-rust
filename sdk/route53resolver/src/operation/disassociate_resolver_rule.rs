@@ -131,7 +131,7 @@ impl DisassociateResolverRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateResolverRule`.
+/// Orchestration and serialization glue logic for `DisassociateResolverRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

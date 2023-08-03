@@ -174,7 +174,7 @@ impl SearchSchemasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchSchemas`.
+/// Orchestration and serialization glue logic for `SearchSchemas`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

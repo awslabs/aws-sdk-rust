@@ -131,7 +131,7 @@ impl ListDataIngestionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDataIngestionJobs`.
+/// Orchestration and serialization glue logic for `ListDataIngestionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

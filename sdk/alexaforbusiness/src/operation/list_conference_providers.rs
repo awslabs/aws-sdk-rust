@@ -131,7 +131,7 @@ impl ListConferenceProvidersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListConferenceProviders`.
+/// Orchestration and serialization glue logic for `ListConferenceProviders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

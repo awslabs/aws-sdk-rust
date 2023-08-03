@@ -112,7 +112,7 @@ impl PromotePermissionCreatedFromPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PromotePermissionCreatedFromPolicy`.
+/// Orchestration and serialization glue logic for `PromotePermissionCreatedFromPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

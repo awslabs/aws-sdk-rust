@@ -131,7 +131,7 @@ impl CreateLocationAzureBlobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLocationAzureBlob`.
+/// Orchestration and serialization glue logic for `CreateLocationAzureBlob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

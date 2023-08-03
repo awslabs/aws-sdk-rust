@@ -132,7 +132,7 @@ impl DeleteDeviceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDeviceProfile`.
+/// Orchestration and serialization glue logic for `DeleteDeviceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

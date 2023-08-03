@@ -126,7 +126,7 @@ impl CreateAssessmentFrameworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAssessmentFramework`.
+/// Orchestration and serialization glue logic for `CreateAssessmentFramework`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

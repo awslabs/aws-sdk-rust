@@ -170,7 +170,7 @@ impl UpdateJourneyStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateJourneyState`.
+/// Orchestration and serialization glue logic for `UpdateJourneyState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

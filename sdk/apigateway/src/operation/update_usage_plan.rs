@@ -154,7 +154,7 @@ impl UpdateUsagePlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateUsagePlan`.
+/// Orchestration and serialization glue logic for `UpdateUsagePlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CancelResourceRequestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelResourceRequest`.
+/// Orchestration and serialization glue logic for `CancelResourceRequest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

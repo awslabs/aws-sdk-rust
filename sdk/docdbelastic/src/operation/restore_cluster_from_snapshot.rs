@@ -150,7 +150,7 @@ impl RestoreClusterFromSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreClusterFromSnapshot`.
+/// Orchestration and serialization glue logic for `RestoreClusterFromSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

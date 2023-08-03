@@ -126,7 +126,7 @@ impl RollbackInstanceRefreshInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RollbackInstanceRefresh`.
+/// Orchestration and serialization glue logic for `RollbackInstanceRefresh`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

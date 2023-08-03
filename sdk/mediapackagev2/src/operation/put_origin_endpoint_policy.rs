@@ -183,7 +183,7 @@ impl PutOriginEndpointPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutOriginEndpointPolicy`.
+/// Orchestration and serialization glue logic for `PutOriginEndpointPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -120,7 +120,7 @@ impl CreateReservedInstancesListingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateReservedInstancesListing`.
+/// Orchestration and serialization glue logic for `CreateReservedInstancesListing`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

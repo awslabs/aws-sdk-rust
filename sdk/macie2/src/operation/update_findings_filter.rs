@@ -152,7 +152,7 @@ impl UpdateFindingsFilterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFindingsFilter`.
+/// Orchestration and serialization glue logic for `UpdateFindingsFilter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

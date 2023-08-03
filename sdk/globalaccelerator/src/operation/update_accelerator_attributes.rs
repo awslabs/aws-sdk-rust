@@ -131,7 +131,7 @@ impl UpdateAcceleratorAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAcceleratorAttributes`.
+/// Orchestration and serialization glue logic for `UpdateAcceleratorAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

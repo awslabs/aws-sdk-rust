@@ -121,7 +121,7 @@ impl DeleteBackupVaultLockConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBackupVaultLockConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteBackupVaultLockConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeIdentityProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeIdentityProvider`.
+/// Orchestration and serialization glue logic for `DescribeIdentityProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

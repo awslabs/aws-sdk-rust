@@ -133,7 +133,7 @@ impl DescribeElasticIpsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeElasticIps`.
+/// Orchestration and serialization glue logic for `DescribeElasticIps`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

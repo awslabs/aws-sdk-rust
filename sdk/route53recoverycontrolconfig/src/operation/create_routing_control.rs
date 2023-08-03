@@ -132,7 +132,7 @@ impl CreateRoutingControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRoutingControl`.
+/// Orchestration and serialization glue logic for `CreateRoutingControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

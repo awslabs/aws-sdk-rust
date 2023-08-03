@@ -127,7 +127,7 @@ impl CreateComputeEnvironmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateComputeEnvironment`.
+/// Orchestration and serialization glue logic for `CreateComputeEnvironment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl SearchPromptsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchPrompts`.
+/// Orchestration and serialization glue logic for `SearchPrompts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

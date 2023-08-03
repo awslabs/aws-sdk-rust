@@ -126,7 +126,7 @@ impl DeletePublicIpv4PoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePublicIpv4Pool`.
+/// Orchestration and serialization glue logic for `DeletePublicIpv4Pool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

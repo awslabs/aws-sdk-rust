@@ -131,7 +131,7 @@ impl CancelStatementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelStatement`.
+/// Orchestration and serialization glue logic for `CancelStatement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

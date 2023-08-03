@@ -144,7 +144,7 @@ impl PutVerificationStateOnViolationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutVerificationStateOnViolation`.
+/// Orchestration and serialization glue logic for `PutVerificationStateOnViolation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

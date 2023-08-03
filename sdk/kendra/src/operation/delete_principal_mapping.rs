@@ -131,7 +131,7 @@ impl DeletePrincipalMappingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePrincipalMapping`.
+/// Orchestration and serialization glue logic for `DeletePrincipalMapping`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

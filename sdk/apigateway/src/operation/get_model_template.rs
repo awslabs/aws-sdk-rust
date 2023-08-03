@@ -160,7 +160,7 @@ impl GetModelTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetModelTemplate`.
+/// Orchestration and serialization glue logic for `GetModelTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

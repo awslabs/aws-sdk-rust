@@ -129,7 +129,7 @@ impl StartDocumentClassificationJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDocumentClassificationJob`.
+/// Orchestration and serialization glue logic for `StartDocumentClassificationJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -109,7 +109,7 @@ impl DescribeHealthServiceStatusForOrganizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHealthServiceStatusForOrganization`.
+/// Orchestration and serialization glue logic for `DescribeHealthServiceStatusForOrganization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

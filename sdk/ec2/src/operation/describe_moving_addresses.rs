@@ -126,7 +126,7 @@ impl DescribeMovingAddressesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMovingAddresses`.
+/// Orchestration and serialization glue logic for `DescribeMovingAddresses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

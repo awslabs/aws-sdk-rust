@@ -133,7 +133,7 @@ impl BatchGetCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetCollection`.
+/// Orchestration and serialization glue logic for `BatchGetCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

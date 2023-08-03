@@ -139,7 +139,7 @@ impl DisassociateIdentityProviderConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateIdentityProviderConfig`.
+/// Orchestration and serialization glue logic for `DisassociateIdentityProviderConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

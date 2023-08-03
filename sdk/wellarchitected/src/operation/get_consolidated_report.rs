@@ -150,7 +150,7 @@ impl GetConsolidatedReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetConsolidatedReport`.
+/// Orchestration and serialization glue logic for `GetConsolidatedReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

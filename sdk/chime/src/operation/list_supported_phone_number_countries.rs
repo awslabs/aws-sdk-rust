@@ -118,7 +118,7 @@ impl ListSupportedPhoneNumberCountriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSupportedPhoneNumberCountries`.
+/// Orchestration and serialization glue logic for `ListSupportedPhoneNumberCountries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

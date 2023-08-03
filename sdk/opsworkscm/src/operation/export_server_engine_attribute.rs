@@ -131,7 +131,7 @@ impl ExportServerEngineAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportServerEngineAttribute`.
+/// Orchestration and serialization glue logic for `ExportServerEngineAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl UpgradeElasticsearchDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpgradeElasticsearchDomain`.
+/// Orchestration and serialization glue logic for `UpgradeElasticsearchDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

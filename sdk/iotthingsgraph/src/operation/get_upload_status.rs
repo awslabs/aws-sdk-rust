@@ -131,7 +131,7 @@ impl GetUploadStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUploadStatus`.
+/// Orchestration and serialization glue logic for `GetUploadStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

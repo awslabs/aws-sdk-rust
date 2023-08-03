@@ -131,7 +131,7 @@ impl CreateAlgorithmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAlgorithm`.
+/// Orchestration and serialization glue logic for `CreateAlgorithm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

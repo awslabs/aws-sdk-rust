@@ -130,7 +130,7 @@ impl DeleteVerifiedAccessEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVerifiedAccessEndpoint`.
+/// Orchestration and serialization glue logic for `DeleteVerifiedAccessEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

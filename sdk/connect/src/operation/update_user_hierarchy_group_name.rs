@@ -170,7 +170,7 @@ impl UpdateUserHierarchyGroupNameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateUserHierarchyGroupName`.
+/// Orchestration and serialization glue logic for `UpdateUserHierarchyGroupName`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

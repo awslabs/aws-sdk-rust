@@ -176,7 +176,7 @@ impl TestInvokeAuthorizerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestInvokeAuthorizer`.
+/// Orchestration and serialization glue logic for `TestInvokeAuthorizer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

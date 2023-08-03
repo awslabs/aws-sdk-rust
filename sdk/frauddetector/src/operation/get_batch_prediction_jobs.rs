@@ -131,7 +131,7 @@ impl GetBatchPredictionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBatchPredictionJobs`.
+/// Orchestration and serialization glue logic for `GetBatchPredictionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

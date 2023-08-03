@@ -132,7 +132,7 @@ impl DeleteAppMonitorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAppMonitor`.
+/// Orchestration and serialization glue logic for `DeleteAppMonitor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

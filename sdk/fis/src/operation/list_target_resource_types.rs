@@ -134,7 +134,7 @@ impl ListTargetResourceTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTargetResourceTypes`.
+/// Orchestration and serialization glue logic for `ListTargetResourceTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

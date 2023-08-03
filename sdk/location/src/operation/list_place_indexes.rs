@@ -129,7 +129,7 @@ impl ListPlaceIndexesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPlaceIndexes`.
+/// Orchestration and serialization glue logic for `ListPlaceIndexes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

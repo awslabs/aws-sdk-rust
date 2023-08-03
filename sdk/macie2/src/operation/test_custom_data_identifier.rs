@@ -127,7 +127,7 @@ impl TestCustomDataIdentifierInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TestCustomDataIdentifier`.
+/// Orchestration and serialization glue logic for `TestCustomDataIdentifier`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

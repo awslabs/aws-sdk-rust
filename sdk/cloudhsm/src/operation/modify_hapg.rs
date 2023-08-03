@@ -131,7 +131,7 @@ impl ModifyHapgInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyHapg`.
+/// Orchestration and serialization glue logic for `ModifyHapg`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

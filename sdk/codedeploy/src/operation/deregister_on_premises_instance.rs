@@ -131,7 +131,7 @@ impl DeregisterOnPremisesInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterOnPremisesInstance`.
+/// Orchestration and serialization glue logic for `DeregisterOnPremisesInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

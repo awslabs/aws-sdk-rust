@@ -127,7 +127,7 @@ impl ListDelegatedAdminAccountsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDelegatedAdminAccounts`.
+/// Orchestration and serialization glue logic for `ListDelegatedAdminAccounts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

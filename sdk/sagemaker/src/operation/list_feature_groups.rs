@@ -131,7 +131,7 @@ impl ListFeatureGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFeatureGroups`.
+/// Orchestration and serialization glue logic for `ListFeatureGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -166,7 +166,7 @@ impl CalculateRouteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CalculateRoute`.
+/// Orchestration and serialization glue logic for `CalculateRoute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

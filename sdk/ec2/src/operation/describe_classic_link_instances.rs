@@ -126,7 +126,7 @@ impl DescribeClassicLinkInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClassicLinkInstances`.
+/// Orchestration and serialization glue logic for `DescribeClassicLinkInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

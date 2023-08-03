@@ -133,7 +133,7 @@ impl DescribeSpendLimitsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSpendLimits`.
+/// Orchestration and serialization glue logic for `DescribeSpendLimits`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

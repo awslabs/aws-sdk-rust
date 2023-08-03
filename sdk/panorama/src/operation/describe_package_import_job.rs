@@ -132,7 +132,7 @@ impl DescribePackageImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePackageImportJob`.
+/// Orchestration and serialization glue logic for `DescribePackageImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

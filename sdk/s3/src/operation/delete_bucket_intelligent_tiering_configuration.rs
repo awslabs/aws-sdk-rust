@@ -131,7 +131,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBucketIntelligentTieringConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteBucketIntelligentTieringConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

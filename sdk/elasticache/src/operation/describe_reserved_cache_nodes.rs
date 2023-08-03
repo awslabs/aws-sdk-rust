@@ -126,7 +126,7 @@ impl DescribeReservedCacheNodesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReservedCacheNodes`.
+/// Orchestration and serialization glue logic for `DescribeReservedCacheNodes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

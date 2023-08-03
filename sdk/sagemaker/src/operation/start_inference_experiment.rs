@@ -131,7 +131,7 @@ impl StartInferenceExperimentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartInferenceExperiment`.
+/// Orchestration and serialization glue logic for `StartInferenceExperiment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

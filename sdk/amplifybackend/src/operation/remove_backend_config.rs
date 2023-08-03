@@ -132,7 +132,7 @@ impl RemoveBackendConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveBackendConfig`.
+/// Orchestration and serialization glue logic for `RemoveBackendConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

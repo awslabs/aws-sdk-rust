@@ -126,7 +126,7 @@ impl DescribeFpgaImageAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFpgaImageAttribute`.
+/// Orchestration and serialization glue logic for `DescribeFpgaImageAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

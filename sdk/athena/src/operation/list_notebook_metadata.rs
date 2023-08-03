@@ -133,7 +133,7 @@ impl ListNotebookMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListNotebookMetadata`.
+/// Orchestration and serialization glue logic for `ListNotebookMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

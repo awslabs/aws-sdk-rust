@@ -131,7 +131,7 @@ impl DeleteLabelGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLabelGroup`.
+/// Orchestration and serialization glue logic for `DeleteLabelGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeLocalGatewaysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocalGateways`.
+/// Orchestration and serialization glue logic for `DescribeLocalGateways`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateAccessLogSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAccessLogSubscription`.
+/// Orchestration and serialization glue logic for `UpdateAccessLogSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

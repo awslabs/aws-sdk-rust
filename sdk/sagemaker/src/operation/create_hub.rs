@@ -131,7 +131,7 @@ impl CreateHubInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateHub`.
+/// Orchestration and serialization glue logic for `CreateHub`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

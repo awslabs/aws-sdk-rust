@@ -142,7 +142,7 @@ impl ListRoleAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRoleAliases`.
+/// Orchestration and serialization glue logic for `ListRoleAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

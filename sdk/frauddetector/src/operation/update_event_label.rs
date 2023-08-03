@@ -131,7 +131,7 @@ impl UpdateEventLabelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEventLabel`.
+/// Orchestration and serialization glue logic for `UpdateEventLabel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

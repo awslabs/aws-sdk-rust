@@ -116,7 +116,7 @@ impl AttachManagedPolicyToPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachManagedPolicyToPermissionSet`.
+/// Orchestration and serialization glue logic for `AttachManagedPolicyToPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

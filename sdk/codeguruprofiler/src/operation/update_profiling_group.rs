@@ -152,7 +152,7 @@ impl UpdateProfilingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateProfilingGroup`.
+/// Orchestration and serialization glue logic for `UpdateProfilingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

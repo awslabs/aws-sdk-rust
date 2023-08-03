@@ -146,7 +146,7 @@ impl UpdateGameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateGame`.
+/// Orchestration and serialization glue logic for `UpdateGame`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

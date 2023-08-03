@@ -150,7 +150,7 @@ impl GetMetricDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMetricData`.
+/// Orchestration and serialization glue logic for `GetMetricData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

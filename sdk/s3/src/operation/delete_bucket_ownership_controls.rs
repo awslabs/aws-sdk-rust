@@ -132,7 +132,7 @@ impl DeleteBucketOwnershipControlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBucketOwnershipControls`.
+/// Orchestration and serialization glue logic for `DeleteBucketOwnershipControls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

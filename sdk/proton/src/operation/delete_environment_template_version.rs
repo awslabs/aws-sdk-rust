@@ -125,7 +125,7 @@ impl DeleteEnvironmentTemplateVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEnvironmentTemplateVersion`.
+/// Orchestration and serialization glue logic for `DeleteEnvironmentTemplateVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

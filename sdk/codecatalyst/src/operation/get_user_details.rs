@@ -118,7 +118,7 @@ impl GetUserDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUserDetails`.
+/// Orchestration and serialization glue logic for `GetUserDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl UpdateTrafficDistributionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateTrafficDistribution`.
+/// Orchestration and serialization glue logic for `UpdateTrafficDistribution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

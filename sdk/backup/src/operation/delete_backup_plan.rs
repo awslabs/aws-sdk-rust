@@ -136,7 +136,7 @@ impl DeleteBackupPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBackupPlan`.
+/// Orchestration and serialization glue logic for `DeleteBackupPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

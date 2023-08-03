@@ -126,7 +126,7 @@ impl ModifyDbSubnetGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyDBSubnetGroup`.
+/// Orchestration and serialization glue logic for `ModifyDBSubnetGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

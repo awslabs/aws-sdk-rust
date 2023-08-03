@@ -111,7 +111,7 @@ impl GetNetworkInsightsAccessScopeContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetNetworkInsightsAccessScopeContent`.
+/// Orchestration and serialization glue logic for `GetNetworkInsightsAccessScopeContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

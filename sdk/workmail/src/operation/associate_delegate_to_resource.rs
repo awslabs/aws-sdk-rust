@@ -131,7 +131,7 @@ impl AssociateDelegateToResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateDelegateToResource`.
+/// Orchestration and serialization glue logic for `AssociateDelegateToResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

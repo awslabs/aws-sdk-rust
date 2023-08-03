@@ -128,7 +128,7 @@ impl GetResourceLfTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResourceLFTags`.
+/// Orchestration and serialization glue logic for `GetResourceLFTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

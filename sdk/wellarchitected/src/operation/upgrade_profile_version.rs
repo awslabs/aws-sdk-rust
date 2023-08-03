@@ -174,7 +174,7 @@ impl UpgradeProfileVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpgradeProfileVersion`.
+/// Orchestration and serialization glue logic for `UpgradeProfileVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

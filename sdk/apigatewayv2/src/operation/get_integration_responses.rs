@@ -178,7 +178,7 @@ impl GetIntegrationResponsesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIntegrationResponses`.
+/// Orchestration and serialization glue logic for `GetIntegrationResponses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

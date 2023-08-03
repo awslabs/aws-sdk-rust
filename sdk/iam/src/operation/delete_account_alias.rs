@@ -126,7 +126,7 @@ impl DeleteAccountAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccountAlias`.
+/// Orchestration and serialization glue logic for `DeleteAccountAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

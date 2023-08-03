@@ -116,7 +116,7 @@ impl ListProvisioningArtifactsForServiceActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProvisioningArtifactsForServiceAction`.
+/// Orchestration and serialization glue logic for `ListProvisioningArtifactsForServiceAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

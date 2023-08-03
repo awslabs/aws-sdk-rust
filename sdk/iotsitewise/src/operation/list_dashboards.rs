@@ -152,7 +152,7 @@ impl ListDashboardsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDashboards`.
+/// Orchestration and serialization glue logic for `ListDashboards`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

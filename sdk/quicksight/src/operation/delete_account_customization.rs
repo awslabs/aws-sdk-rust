@@ -150,7 +150,7 @@ impl DeleteAccountCustomizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccountCustomization`.
+/// Orchestration and serialization glue logic for `DeleteAccountCustomization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

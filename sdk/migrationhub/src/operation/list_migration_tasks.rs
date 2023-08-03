@@ -133,7 +133,7 @@ impl ListMigrationTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMigrationTasks`.
+/// Orchestration and serialization glue logic for `ListMigrationTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

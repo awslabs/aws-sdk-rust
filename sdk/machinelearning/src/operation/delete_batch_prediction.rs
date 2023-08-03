@@ -131,7 +131,7 @@ impl DeleteBatchPredictionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBatchPrediction`.
+/// Orchestration and serialization glue logic for `DeleteBatchPrediction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

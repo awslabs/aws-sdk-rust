@@ -131,7 +131,7 @@ impl DeleteLocationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLocation`.
+/// Orchestration and serialization glue logic for `DeleteLocation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

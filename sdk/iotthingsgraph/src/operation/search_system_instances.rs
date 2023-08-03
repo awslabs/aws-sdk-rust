@@ -131,7 +131,7 @@ impl SearchSystemInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchSystemInstances`.
+/// Orchestration and serialization glue logic for `SearchSystemInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

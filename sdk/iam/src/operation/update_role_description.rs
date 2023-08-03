@@ -126,7 +126,7 @@ impl UpdateRoleDescriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRoleDescription`.
+/// Orchestration and serialization glue logic for `UpdateRoleDescription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

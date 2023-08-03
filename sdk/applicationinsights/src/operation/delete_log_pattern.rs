@@ -131,7 +131,7 @@ impl DeleteLogPatternInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLogPattern`.
+/// Orchestration and serialization glue logic for `DeleteLogPattern`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

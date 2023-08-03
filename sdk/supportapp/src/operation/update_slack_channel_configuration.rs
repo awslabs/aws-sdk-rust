@@ -121,7 +121,7 @@ impl UpdateSlackChannelConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSlackChannelConfiguration`.
+/// Orchestration and serialization glue logic for `UpdateSlackChannelConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

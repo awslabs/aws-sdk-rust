@@ -126,7 +126,7 @@ impl CreateVpnGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVpnGateway`.
+/// Orchestration and serialization glue logic for `CreateVpnGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl DeleteCidrCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCidrCollection`.
+/// Orchestration and serialization glue logic for `DeleteCidrCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

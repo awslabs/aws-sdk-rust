@@ -156,7 +156,7 @@ impl GetLayoutInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLayout`.
+/// Orchestration and serialization glue logic for `GetLayout`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

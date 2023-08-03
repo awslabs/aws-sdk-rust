@@ -136,7 +136,7 @@ impl DisassociateApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateApi`.
+/// Orchestration and serialization glue logic for `DisassociateApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

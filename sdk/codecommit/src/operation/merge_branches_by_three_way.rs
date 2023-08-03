@@ -131,7 +131,7 @@ impl MergeBranchesByThreeWayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MergeBranchesByThreeWay`.
+/// Orchestration and serialization glue logic for `MergeBranchesByThreeWay`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

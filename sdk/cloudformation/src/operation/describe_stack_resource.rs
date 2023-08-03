@@ -126,7 +126,7 @@ impl DescribeStackResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStackResource`.
+/// Orchestration and serialization glue logic for `DescribeStackResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UpdateReportGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateReportGroup`.
+/// Orchestration and serialization glue logic for `UpdateReportGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

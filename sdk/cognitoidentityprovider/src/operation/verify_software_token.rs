@@ -133,7 +133,7 @@ impl VerifySoftwareTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `VerifySoftwareToken`.
+/// Orchestration and serialization glue logic for `VerifySoftwareToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

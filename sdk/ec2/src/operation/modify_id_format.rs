@@ -128,7 +128,7 @@ impl ModifyIdFormatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyIdFormat`.
+/// Orchestration and serialization glue logic for `ModifyIdFormat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

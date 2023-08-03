@@ -127,7 +127,7 @@ impl ListAppVersionResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppVersionResources`.
+/// Orchestration and serialization glue logic for `ListAppVersionResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

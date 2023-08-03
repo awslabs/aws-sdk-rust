@@ -112,7 +112,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelElasticsearchServiceSoftwareUpdate`.
+/// Orchestration and serialization glue logic for `CancelElasticsearchServiceSoftwareUpdate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

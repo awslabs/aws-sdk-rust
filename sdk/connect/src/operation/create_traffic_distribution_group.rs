@@ -125,7 +125,7 @@ impl CreateTrafficDistributionGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrafficDistributionGroup`.
+/// Orchestration and serialization glue logic for `CreateTrafficDistributionGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

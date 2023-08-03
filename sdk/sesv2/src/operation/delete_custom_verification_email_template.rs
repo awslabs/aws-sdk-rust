@@ -121,7 +121,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomVerificationEmailTemplate`.
+/// Orchestration and serialization glue logic for `DeleteCustomVerificationEmailTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

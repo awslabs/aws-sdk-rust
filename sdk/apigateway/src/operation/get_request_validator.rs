@@ -160,7 +160,7 @@ impl GetRequestValidatorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRequestValidator`.
+/// Orchestration and serialization glue logic for `GetRequestValidator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

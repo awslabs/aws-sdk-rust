@@ -131,7 +131,7 @@ impl DetectSentimentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectSentiment`.
+/// Orchestration and serialization glue logic for `DetectSentiment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

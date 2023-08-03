@@ -131,7 +131,7 @@ impl UpdateMapRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMapRun`.
+/// Orchestration and serialization glue logic for `UpdateMapRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl DescribeAppVersionResourcesResolutionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAppVersionResourcesResolutionStatus`.
+/// Orchestration and serialization glue logic for `DescribeAppVersionResourcesResolutionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

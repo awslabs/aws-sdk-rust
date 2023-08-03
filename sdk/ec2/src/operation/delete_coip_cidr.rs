@@ -128,7 +128,7 @@ impl DeleteCoipCidrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCoipCidr`.
+/// Orchestration and serialization glue logic for `DeleteCoipCidr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

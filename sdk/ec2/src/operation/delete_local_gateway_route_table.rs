@@ -126,7 +126,7 @@ impl DeleteLocalGatewayRouteTableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLocalGatewayRouteTable`.
+/// Orchestration and serialization glue logic for `DeleteLocalGatewayRouteTable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

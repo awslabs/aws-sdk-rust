@@ -131,7 +131,7 @@ impl DescribeMonitoringScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeMonitoringSchedule`.
+/// Orchestration and serialization glue logic for `DescribeMonitoringSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

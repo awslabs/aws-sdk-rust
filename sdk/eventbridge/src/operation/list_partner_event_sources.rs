@@ -131,7 +131,7 @@ impl ListPartnerEventSourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPartnerEventSources`.
+/// Orchestration and serialization glue logic for `ListPartnerEventSources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

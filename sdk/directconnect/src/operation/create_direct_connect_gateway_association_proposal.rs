@@ -116,7 +116,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDirectConnectGatewayAssociationProposal`.
+/// Orchestration and serialization glue logic for `CreateDirectConnectGatewayAssociationProposal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

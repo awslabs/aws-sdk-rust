@@ -153,7 +153,7 @@ impl DeleteFleetMetricInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFleetMetric`.
+/// Orchestration and serialization glue logic for `DeleteFleetMetric`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

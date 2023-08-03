@@ -132,7 +132,7 @@ impl BatchDeleteFeaturedResultsSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteFeaturedResultsSet`.
+/// Orchestration and serialization glue logic for `BatchDeleteFeaturedResultsSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

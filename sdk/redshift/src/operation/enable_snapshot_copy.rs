@@ -126,7 +126,7 @@ impl EnableSnapshotCopyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableSnapshotCopy`.
+/// Orchestration and serialization glue logic for `EnableSnapshotCopy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

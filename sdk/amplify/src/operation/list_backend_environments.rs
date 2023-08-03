@@ -160,7 +160,7 @@ impl ListBackendEnvironmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBackendEnvironments`.
+/// Orchestration and serialization glue logic for `ListBackendEnvironments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

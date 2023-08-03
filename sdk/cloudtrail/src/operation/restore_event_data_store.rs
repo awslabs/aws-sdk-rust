@@ -131,7 +131,7 @@ impl RestoreEventDataStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreEventDataStore`.
+/// Orchestration and serialization glue logic for `RestoreEventDataStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

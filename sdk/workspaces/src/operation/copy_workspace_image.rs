@@ -133,7 +133,7 @@ impl CopyWorkspaceImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CopyWorkspaceImage`.
+/// Orchestration and serialization glue logic for `CopyWorkspaceImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

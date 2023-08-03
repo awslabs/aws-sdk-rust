@@ -126,7 +126,7 @@ impl DescribeFleetHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetHistory`.
+/// Orchestration and serialization glue logic for `DescribeFleetHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -176,7 +176,7 @@ impl GetThemeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTheme`.
+/// Orchestration and serialization glue logic for `GetTheme`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

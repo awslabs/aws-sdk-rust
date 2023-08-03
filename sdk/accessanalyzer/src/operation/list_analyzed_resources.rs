@@ -126,7 +126,7 @@ impl ListAnalyzedResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnalyzedResources`.
+/// Orchestration and serialization glue logic for `ListAnalyzedResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

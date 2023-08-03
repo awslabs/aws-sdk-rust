@@ -111,7 +111,7 @@ impl SearchTransitGatewayMulticastGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchTransitGatewayMulticastGroups`.
+/// Orchestration and serialization glue logic for `SearchTransitGatewayMulticastGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

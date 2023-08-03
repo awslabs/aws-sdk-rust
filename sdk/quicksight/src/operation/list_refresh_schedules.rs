@@ -156,7 +156,7 @@ impl ListRefreshSchedulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRefreshSchedules`.
+/// Orchestration and serialization glue logic for `ListRefreshSchedules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

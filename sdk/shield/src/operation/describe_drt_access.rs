@@ -124,7 +124,7 @@ impl DescribeDrtAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDRTAccess`.
+/// Orchestration and serialization glue logic for `DescribeDRTAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

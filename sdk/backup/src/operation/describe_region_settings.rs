@@ -112,7 +112,7 @@ impl DescribeRegionSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRegionSettings`.
+/// Orchestration and serialization glue logic for `DescribeRegionSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

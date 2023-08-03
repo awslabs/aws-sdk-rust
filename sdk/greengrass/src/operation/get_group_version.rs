@@ -156,7 +156,7 @@ impl GetGroupVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGroupVersion`.
+/// Orchestration and serialization glue logic for `GetGroupVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

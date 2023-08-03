@@ -157,7 +157,7 @@ impl GetIntrospectionSchemaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIntrospectionSchema`.
+/// Orchestration and serialization glue logic for `GetIntrospectionSchema`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

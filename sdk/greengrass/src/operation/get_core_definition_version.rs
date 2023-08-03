@@ -150,7 +150,7 @@ impl GetCoreDefinitionVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCoreDefinitionVersion`.
+/// Orchestration and serialization glue logic for `GetCoreDefinitionVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

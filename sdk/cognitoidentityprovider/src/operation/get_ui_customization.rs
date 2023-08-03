@@ -133,7 +133,7 @@ impl GetUiCustomizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUICustomization`.
+/// Orchestration and serialization glue logic for `GetUICustomization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

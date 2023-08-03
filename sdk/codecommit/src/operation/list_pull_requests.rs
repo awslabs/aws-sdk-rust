@@ -131,7 +131,7 @@ impl ListPullRequestsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPullRequests`.
+/// Orchestration and serialization glue logic for `ListPullRequests`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

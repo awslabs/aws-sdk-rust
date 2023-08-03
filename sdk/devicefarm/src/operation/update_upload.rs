@@ -131,7 +131,7 @@ impl UpdateUploadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateUpload`.
+/// Orchestration and serialization glue logic for `UpdateUpload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl UpdateBrowserSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBrowserSettings`.
+/// Orchestration and serialization glue logic for `UpdateBrowserSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

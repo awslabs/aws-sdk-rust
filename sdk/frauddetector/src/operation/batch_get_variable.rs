@@ -131,7 +131,7 @@ impl BatchGetVariableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetVariable`.
+/// Orchestration and serialization glue logic for `BatchGetVariable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

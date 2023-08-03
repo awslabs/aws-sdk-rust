@@ -131,7 +131,7 @@ impl DeleteBucketEncryptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBucketEncryption`.
+/// Orchestration and serialization glue logic for `DeleteBucketEncryption`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

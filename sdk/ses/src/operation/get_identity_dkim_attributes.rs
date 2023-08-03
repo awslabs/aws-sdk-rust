@@ -126,7 +126,7 @@ impl GetIdentityDkimAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIdentityDkimAttributes`.
+/// Orchestration and serialization glue logic for `GetIdentityDkimAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

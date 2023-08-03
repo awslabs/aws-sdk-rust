@@ -131,7 +131,7 @@ impl ListSupportedInstanceTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSupportedInstanceTypes`.
+/// Orchestration and serialization glue logic for `ListSupportedInstanceTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

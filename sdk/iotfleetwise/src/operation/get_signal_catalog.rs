@@ -131,7 +131,7 @@ impl GetSignalCatalogInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSignalCatalog`.
+/// Orchestration and serialization glue logic for `GetSignalCatalog`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

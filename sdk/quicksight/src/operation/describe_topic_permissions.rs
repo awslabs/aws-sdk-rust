@@ -156,7 +156,7 @@ impl DescribeTopicPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTopicPermissions`.
+/// Orchestration and serialization glue logic for `DescribeTopicPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

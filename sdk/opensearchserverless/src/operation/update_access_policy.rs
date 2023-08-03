@@ -137,7 +137,7 @@ impl UpdateAccessPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAccessPolicy`.
+/// Orchestration and serialization glue logic for `UpdateAccessPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetTypedLinkFacetInformationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTypedLinkFacetInformation`.
+/// Orchestration and serialization glue logic for `GetTypedLinkFacetInformation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

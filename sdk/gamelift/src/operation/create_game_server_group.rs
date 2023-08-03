@@ -131,7 +131,7 @@ impl CreateGameServerGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateGameServerGroup`.
+/// Orchestration and serialization glue logic for `CreateGameServerGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

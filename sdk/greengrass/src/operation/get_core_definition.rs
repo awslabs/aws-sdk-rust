@@ -136,7 +136,7 @@ impl GetCoreDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCoreDefinition`.
+/// Orchestration and serialization glue logic for `GetCoreDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -204,7 +204,7 @@ impl UploadMultipartPartInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UploadMultipartPart`.
+/// Orchestration and serialization glue logic for `UploadMultipartPart`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

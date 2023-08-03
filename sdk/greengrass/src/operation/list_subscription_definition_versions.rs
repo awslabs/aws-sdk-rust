@@ -143,7 +143,7 @@ impl ListSubscriptionDefinitionVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSubscriptionDefinitionVersions`.
+/// Orchestration and serialization glue logic for `ListSubscriptionDefinitionVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

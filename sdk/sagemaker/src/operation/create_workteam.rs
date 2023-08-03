@@ -131,7 +131,7 @@ impl CreateWorkteamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorkteam`.
+/// Orchestration and serialization glue logic for `CreateWorkteam`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

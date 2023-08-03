@@ -127,7 +127,7 @@ impl BatchGetSecurityControlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetSecurityControls`.
+/// Orchestration and serialization glue logic for `BatchGetSecurityControls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

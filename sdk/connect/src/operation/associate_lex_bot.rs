@@ -150,7 +150,7 @@ impl AssociateLexBotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateLexBot`.
+/// Orchestration and serialization glue logic for `AssociateLexBot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteFindingAggregatorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFindingAggregator`.
+/// Orchestration and serialization glue logic for `DeleteFindingAggregator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

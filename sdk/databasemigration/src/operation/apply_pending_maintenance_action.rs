@@ -132,7 +132,7 @@ impl ApplyPendingMaintenanceActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ApplyPendingMaintenanceAction`.
+/// Orchestration and serialization glue logic for `ApplyPendingMaintenanceAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

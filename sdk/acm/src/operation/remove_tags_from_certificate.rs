@@ -131,7 +131,7 @@ impl RemoveTagsFromCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveTagsFromCertificate`.
+/// Orchestration and serialization glue logic for `RemoveTagsFromCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

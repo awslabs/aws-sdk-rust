@@ -130,7 +130,7 @@ impl CreateConnectPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateConnectPeer`.
+/// Orchestration and serialization glue logic for `CreateConnectPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

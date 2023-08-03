@@ -131,7 +131,7 @@ impl GetServiceInstanceSyncStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceInstanceSyncStatus`.
+/// Orchestration and serialization glue logic for `GetServiceInstanceSyncStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl RegisterInstancesWithLoadBalancerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterInstancesWithLoadBalancer`.
+/// Orchestration and serialization glue logic for `RegisterInstancesWithLoadBalancer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

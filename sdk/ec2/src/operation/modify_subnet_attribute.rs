@@ -126,7 +126,7 @@ impl ModifySubnetAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifySubnetAttribute`.
+/// Orchestration and serialization glue logic for `ModifySubnetAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

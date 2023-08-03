@@ -178,7 +178,7 @@ impl ListExtensionVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListExtensionVersions`.
+/// Orchestration and serialization glue logic for `ListExtensionVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

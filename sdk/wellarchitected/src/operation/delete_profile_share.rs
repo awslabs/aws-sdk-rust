@@ -188,7 +188,7 @@ impl DeleteProfileShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteProfileShare`.
+/// Orchestration and serialization glue logic for `DeleteProfileShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

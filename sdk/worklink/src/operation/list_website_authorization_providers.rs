@@ -112,7 +112,7 @@ impl ListWebsiteAuthorizationProvidersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWebsiteAuthorizationProviders`.
+/// Orchestration and serialization glue logic for `ListWebsiteAuthorizationProviders`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

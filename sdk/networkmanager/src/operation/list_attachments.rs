@@ -163,7 +163,7 @@ impl ListAttachmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAttachments`.
+/// Orchestration and serialization glue logic for `ListAttachments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

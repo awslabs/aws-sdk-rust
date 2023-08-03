@@ -5,12 +5,14 @@
 
 //! Assume credentials for a role through the AWS Security Token Service (STS).
 
+use crate::connector::expect_connector;
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
-use aws_sdk_sts::middleware::DefaultMiddleware;
-use aws_sdk_sts::operation::assume_role::{AssumeRoleError, AssumeRoleInput};
+use aws_sdk_sts::operation::assume_role::builders::AssumeRoleFluentBuilder;
+use aws_sdk_sts::operation::assume_role::AssumeRoleError;
 use aws_sdk_sts::types::PolicyDescriptorType;
+use aws_sdk_sts::Client as StsClient;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_types::error::display::DisplayErrorContext;
@@ -46,9 +48,7 @@ pub struct AssumeRoleProvider {
 
 #[derive(Debug)]
 struct Inner {
-    sts: aws_smithy_client::Client<DynConnector, DefaultMiddleware>,
-    conf: aws_sdk_sts::Config,
-    op: AssumeRoleInput,
+    fluent_builder: AssumeRoleFluentBuilder,
 }
 
 impl AssumeRoleProvider {
@@ -208,41 +208,29 @@ impl AssumeRoleProviderBuilder {
             .credentials_cache
             .unwrap_or_else(CredentialsCache::no_caching);
 
-        let config = aws_sdk_sts::Config::builder()
+        let mut config = aws_sdk_sts::Config::builder()
             .credentials_cache(credentials_cache)
             .credentials_provider(provider)
             .region(self.region.clone())
-            .build();
-
-        let conn = conf
-            .connector(&Default::default())
-            .expect("A connector must be provided");
-        let mut client_builder = aws_smithy_client::Client::builder()
-            .connector(conn)
-            .middleware(DefaultMiddleware::new());
-        client_builder.set_sleep_impl(conf.sleep());
-        let client = client_builder.build();
+            .http_connector(expect_connector(conf.connector(&Default::default())));
+        config.set_sleep_impl(conf.sleep());
 
         let session_name = self
             .session_name
             .unwrap_or_else(|| super::util::default_session_name("assume-role-provider"));
 
-        let operation = AssumeRoleInput::builder()
+        let sts_client = StsClient::from_conf(config.build());
+        let fluent_builder = sts_client
+            .assume_role()
             .set_role_arn(Some(self.role_arn))
             .set_external_id(self.external_id)
             .set_role_session_name(Some(session_name))
             .set_policy(self.policy)
             .set_policy_arns(self.policy_arns)
-            .set_duration_seconds(self.session_length.map(|dur| dur.as_secs() as i32))
-            .build()
-            .expect("operation is valid");
+            .set_duration_seconds(self.session_length.map(|dur| dur.as_secs() as i32));
 
         AssumeRoleProvider {
-            inner: Inner {
-                sts: client,
-                conf: config,
-                op: operation,
-            },
+            inner: Inner { fluent_builder },
         }
     }
 }
@@ -250,14 +238,8 @@ impl AssumeRoleProviderBuilder {
 impl Inner {
     async fn credentials(&self) -> provider::Result {
         tracing::debug!("retrieving assumed credentials");
-        let op = self
-            .op
-            .clone()
-            .make_operation(&self.conf)
-            .await
-            .expect("valid operation");
 
-        let assumed = self.sts.call(op).in_current_span().await;
+        let assumed = self.fluent_builder.clone().send().in_current_span().await;
         match assumed {
             Ok(assumed) => {
                 tracing::debug!(

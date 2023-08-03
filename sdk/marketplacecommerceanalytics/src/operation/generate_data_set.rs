@@ -131,7 +131,7 @@ impl GenerateDataSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateDataSet`.
+/// Orchestration and serialization glue logic for `GenerateDataSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

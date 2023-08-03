@@ -136,7 +136,7 @@ impl DeleteCustomMetricInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCustomMetric`.
+/// Orchestration and serialization glue logic for `DeleteCustomMetric`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

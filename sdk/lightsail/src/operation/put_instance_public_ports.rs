@@ -131,7 +131,7 @@ impl PutInstancePublicPortsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutInstancePublicPorts`.
+/// Orchestration and serialization glue logic for `PutInstancePublicPorts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

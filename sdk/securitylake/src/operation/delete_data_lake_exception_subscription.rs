@@ -98,7 +98,7 @@ impl DeleteDataLakeExceptionSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDataLakeExceptionSubscription`.
+/// Orchestration and serialization glue logic for `DeleteDataLakeExceptionSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

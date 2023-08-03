@@ -120,7 +120,7 @@ impl DescribeLaunchTemplateVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLaunchTemplateVersions`.
+/// Orchestration and serialization glue logic for `DescribeLaunchTemplateVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

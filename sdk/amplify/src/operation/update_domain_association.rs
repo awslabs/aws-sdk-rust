@@ -170,7 +170,7 @@ impl UpdateDomainAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDomainAssociation`.
+/// Orchestration and serialization glue logic for `UpdateDomainAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

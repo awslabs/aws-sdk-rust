@@ -131,7 +131,7 @@ impl UpdateEventDataStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateEventDataStore`.
+/// Orchestration and serialization glue logic for `UpdateEventDataStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

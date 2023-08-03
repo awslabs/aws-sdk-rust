@@ -133,7 +133,7 @@ impl PutComplianceItemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutComplianceItems`.
+/// Orchestration and serialization glue logic for `PutComplianceItems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

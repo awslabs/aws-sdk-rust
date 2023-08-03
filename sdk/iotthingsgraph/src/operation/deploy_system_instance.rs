@@ -133,7 +133,7 @@ impl DeploySystemInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeploySystemInstance`.
+/// Orchestration and serialization glue logic for `DeploySystemInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

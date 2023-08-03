@@ -162,7 +162,7 @@ impl ChannelFlowCallbackInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ChannelFlowCallback`.
+/// Orchestration and serialization glue logic for `ChannelFlowCallback`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

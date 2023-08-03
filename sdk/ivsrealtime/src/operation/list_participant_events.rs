@@ -126,7 +126,7 @@ impl ListParticipantEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListParticipantEvents`.
+/// Orchestration and serialization glue logic for `ListParticipantEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

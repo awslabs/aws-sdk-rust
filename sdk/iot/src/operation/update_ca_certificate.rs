@@ -174,7 +174,7 @@ impl UpdateCaCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCACertificate`.
+/// Orchestration and serialization glue logic for `UpdateCACertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

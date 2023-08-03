@@ -132,7 +132,7 @@ impl ConfirmPublicVirtualInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfirmPublicVirtualInterface`.
+/// Orchestration and serialization glue logic for `ConfirmPublicVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

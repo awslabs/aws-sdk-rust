@@ -131,7 +131,7 @@ impl RecordActivityTaskHeartbeatInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RecordActivityTaskHeartbeat`.
+/// Orchestration and serialization glue logic for `RecordActivityTaskHeartbeat`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

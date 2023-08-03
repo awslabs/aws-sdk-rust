@@ -156,7 +156,7 @@ impl ListAppInstanceBotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppInstanceBots`.
+/// Orchestration and serialization glue logic for `ListAppInstanceBots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

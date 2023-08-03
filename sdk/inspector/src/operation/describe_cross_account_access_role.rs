@@ -118,7 +118,7 @@ impl DescribeCrossAccountAccessRoleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCrossAccountAccessRole`.
+/// Orchestration and serialization glue logic for `DescribeCrossAccountAccessRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

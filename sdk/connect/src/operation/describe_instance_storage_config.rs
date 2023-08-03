@@ -177,7 +177,7 @@ impl DescribeInstanceStorageConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInstanceStorageConfig`.
+/// Orchestration and serialization glue logic for `DescribeInstanceStorageConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

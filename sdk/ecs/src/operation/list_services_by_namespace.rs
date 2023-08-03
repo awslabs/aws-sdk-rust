@@ -131,7 +131,7 @@ impl ListServicesByNamespaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServicesByNamespace`.
+/// Orchestration and serialization glue logic for `ListServicesByNamespace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl GetCapacityReservationUsageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCapacityReservationUsage`.
+/// Orchestration and serialization glue logic for `GetCapacityReservationUsage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

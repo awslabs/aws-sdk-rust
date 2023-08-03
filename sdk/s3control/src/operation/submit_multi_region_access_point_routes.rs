@@ -154,7 +154,7 @@ impl SubmitMultiRegionAccessPointRoutesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SubmitMultiRegionAccessPointRoutes`.
+/// Orchestration and serialization glue logic for `SubmitMultiRegionAccessPointRoutes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

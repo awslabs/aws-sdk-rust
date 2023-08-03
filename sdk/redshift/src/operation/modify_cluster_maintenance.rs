@@ -126,7 +126,7 @@ impl ModifyClusterMaintenanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyClusterMaintenance`.
+/// Orchestration and serialization glue logic for `ModifyClusterMaintenance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

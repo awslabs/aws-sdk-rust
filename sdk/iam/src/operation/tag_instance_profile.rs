@@ -126,7 +126,7 @@ impl TagInstanceProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TagInstanceProfile`.
+/// Orchestration and serialization glue logic for `TagInstanceProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

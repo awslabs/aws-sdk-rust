@@ -154,7 +154,7 @@ impl BatchDeleteReadSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteReadSet`.
+/// Orchestration and serialization glue logic for `BatchDeleteReadSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

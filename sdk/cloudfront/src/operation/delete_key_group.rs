@@ -136,7 +136,7 @@ impl DeleteKeyGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteKeyGroup`.
+/// Orchestration and serialization glue logic for `DeleteKeyGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

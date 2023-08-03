@@ -160,7 +160,7 @@ impl DeletePermissionVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePermissionVersion`.
+/// Orchestration and serialization glue logic for `DeletePermissionVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

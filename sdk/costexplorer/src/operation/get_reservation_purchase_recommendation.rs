@@ -116,7 +116,7 @@ impl GetReservationPurchaseRecommendationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReservationPurchaseRecommendation`.
+/// Orchestration and serialization glue logic for `GetReservationPurchaseRecommendation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl GetStatementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetStatement`.
+/// Orchestration and serialization glue logic for `GetStatement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

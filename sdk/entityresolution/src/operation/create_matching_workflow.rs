@@ -126,7 +126,7 @@ impl CreateMatchingWorkflowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMatchingWorkflow`.
+/// Orchestration and serialization glue logic for `CreateMatchingWorkflow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

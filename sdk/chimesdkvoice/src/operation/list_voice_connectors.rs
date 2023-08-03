@@ -137,7 +137,7 @@ impl ListVoiceConnectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVoiceConnectors`.
+/// Orchestration and serialization glue logic for `ListVoiceConnectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

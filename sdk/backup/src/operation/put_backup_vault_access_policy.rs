@@ -150,7 +150,7 @@ impl PutBackupVaultAccessPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBackupVaultAccessPolicy`.
+/// Orchestration and serialization glue logic for `PutBackupVaultAccessPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

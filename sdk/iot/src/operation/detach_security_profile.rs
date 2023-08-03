@@ -164,7 +164,7 @@ impl DetachSecurityProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachSecurityProfile`.
+/// Orchestration and serialization glue logic for `DetachSecurityProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

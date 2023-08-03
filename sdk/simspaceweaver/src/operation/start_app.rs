@@ -130,7 +130,7 @@ impl StartAppInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartApp`.
+/// Orchestration and serialization glue logic for `StartApp`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -134,7 +134,7 @@ impl ListIpAccessSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIpAccessSettings`.
+/// Orchestration and serialization glue logic for `ListIpAccessSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

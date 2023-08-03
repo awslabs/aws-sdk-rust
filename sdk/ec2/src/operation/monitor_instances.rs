@@ -126,7 +126,7 @@ impl MonitorInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MonitorInstances`.
+/// Orchestration and serialization glue logic for `MonitorInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

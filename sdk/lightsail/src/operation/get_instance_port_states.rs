@@ -131,7 +131,7 @@ impl GetInstancePortStatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInstancePortStates`.
+/// Orchestration and serialization glue logic for `GetInstancePortStates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

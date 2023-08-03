@@ -133,7 +133,7 @@ impl DeleteImageBuilderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteImageBuilder`.
+/// Orchestration and serialization glue logic for `DeleteImageBuilder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

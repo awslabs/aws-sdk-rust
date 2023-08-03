@@ -111,7 +111,7 @@ impl GetReservedNodeExchangeConfigurationOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReservedNodeExchangeConfigurationOptions`.
+/// Orchestration and serialization glue logic for `GetReservedNodeExchangeConfigurationOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

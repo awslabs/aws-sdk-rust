@@ -116,7 +116,7 @@ impl DescribeAffectedEntitiesForOrganizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAffectedEntitiesForOrganization`.
+/// Orchestration and serialization glue logic for `DescribeAffectedEntitiesForOrganization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

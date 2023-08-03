@@ -131,7 +131,7 @@ impl GetServiceSyncConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceSyncConfig`.
+/// Orchestration and serialization glue logic for `GetServiceSyncConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

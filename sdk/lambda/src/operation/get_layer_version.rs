@@ -155,7 +155,7 @@ impl GetLayerVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLayerVersion`.
+/// Orchestration and serialization glue logic for `GetLayerVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

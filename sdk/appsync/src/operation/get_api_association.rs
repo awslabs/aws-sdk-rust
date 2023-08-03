@@ -136,7 +136,7 @@ impl GetApiAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApiAssociation`.
+/// Orchestration and serialization glue logic for `GetApiAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

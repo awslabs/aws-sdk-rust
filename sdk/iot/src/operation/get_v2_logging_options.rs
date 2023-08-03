@@ -112,7 +112,7 @@ impl GetV2LoggingOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetV2LoggingOptions`.
+/// Orchestration and serialization glue logic for `GetV2LoggingOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

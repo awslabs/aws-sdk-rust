@@ -116,7 +116,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRequestedServiceQuotaChangeHistoryByQuota`.
+/// Orchestration and serialization glue logic for `ListRequestedServiceQuotaChangeHistoryByQuota`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

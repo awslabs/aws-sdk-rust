@@ -133,7 +133,7 @@ impl ListByteMatchSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListByteMatchSets`.
+/// Orchestration and serialization glue logic for `ListByteMatchSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl UpdateFleetMetricInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFleetMetric`.
+/// Orchestration and serialization glue logic for `UpdateFleetMetric`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl DescribeDirectConnectGatewaysInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDirectConnectGateways`.
+/// Orchestration and serialization glue logic for `DescribeDirectConnectGateways`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

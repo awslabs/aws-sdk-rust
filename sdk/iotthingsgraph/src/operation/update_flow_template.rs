@@ -133,7 +133,7 @@ impl UpdateFlowTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFlowTemplate`.
+/// Orchestration and serialization glue logic for `UpdateFlowTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

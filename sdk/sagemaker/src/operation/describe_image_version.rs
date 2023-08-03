@@ -133,7 +133,7 @@ impl DescribeImageVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeImageVersion`.
+/// Orchestration and serialization glue logic for `DescribeImageVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

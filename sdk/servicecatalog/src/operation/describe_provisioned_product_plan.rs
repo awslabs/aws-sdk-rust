@@ -125,7 +125,7 @@ impl DescribeProvisionedProductPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeProvisionedProductPlan`.
+/// Orchestration and serialization glue logic for `DescribeProvisionedProductPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

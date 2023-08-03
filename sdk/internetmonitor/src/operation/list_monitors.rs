@@ -139,7 +139,7 @@ impl ListMonitorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMonitors`.
+/// Orchestration and serialization glue logic for `ListMonitors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

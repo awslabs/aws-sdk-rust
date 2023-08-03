@@ -132,7 +132,7 @@ impl DisassociateConnectionFromLagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateConnectionFromLag`.
+/// Orchestration and serialization glue logic for `DisassociateConnectionFromLag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

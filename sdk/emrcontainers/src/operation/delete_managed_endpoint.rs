@@ -156,7 +156,7 @@ impl DeleteManagedEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteManagedEndpoint`.
+/// Orchestration and serialization glue logic for `DeleteManagedEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -146,7 +146,7 @@ impl UpdateReportDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateReportDefinition`.
+/// Orchestration and serialization glue logic for `UpdateReportDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

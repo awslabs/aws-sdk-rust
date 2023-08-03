@@ -131,7 +131,7 @@ impl AdminDisableUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AdminDisableUser`.
+/// Orchestration and serialization glue logic for `AdminDisableUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

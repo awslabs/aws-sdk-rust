@@ -131,7 +131,7 @@ impl AssociateWirelessGatewayWithThingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateWirelessGatewayWithThing`.
+/// Orchestration and serialization glue logic for `AssociateWirelessGatewayWithThing`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

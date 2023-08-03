@@ -133,7 +133,7 @@ impl UpdateShardCountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateShardCount`.
+/// Orchestration and serialization glue logic for `UpdateShardCount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

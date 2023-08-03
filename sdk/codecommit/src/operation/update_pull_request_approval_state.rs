@@ -125,7 +125,7 @@ impl UpdatePullRequestApprovalStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePullRequestApprovalState`.
+/// Orchestration and serialization glue logic for `UpdatePullRequestApprovalState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

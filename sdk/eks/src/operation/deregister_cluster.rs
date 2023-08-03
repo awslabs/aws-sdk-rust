@@ -132,7 +132,7 @@ impl DeregisterClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterCluster`.
+/// Orchestration and serialization glue logic for `DeregisterCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

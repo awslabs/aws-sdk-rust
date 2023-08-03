@@ -126,7 +126,7 @@ impl DeleteInsightRulesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInsightRules`.
+/// Orchestration and serialization glue logic for `DeleteInsightRules`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

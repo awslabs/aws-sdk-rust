@@ -131,7 +131,7 @@ impl DeleteCertificateAuthorityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCertificateAuthority`.
+/// Orchestration and serialization glue logic for `DeleteCertificateAuthority`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

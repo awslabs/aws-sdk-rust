@@ -126,7 +126,7 @@ impl GetIpamDiscoveredAccountsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIpamDiscoveredAccounts`.
+/// Orchestration and serialization glue logic for `GetIpamDiscoveredAccounts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

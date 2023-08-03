@@ -131,7 +131,7 @@ impl GetResourceConfigHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResourceConfigHistory`.
+/// Orchestration and serialization glue logic for `GetResourceConfigHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

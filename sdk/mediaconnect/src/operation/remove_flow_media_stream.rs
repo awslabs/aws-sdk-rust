@@ -156,7 +156,7 @@ impl RemoveFlowMediaStreamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveFlowMediaStream`.
+/// Orchestration and serialization glue logic for `RemoveFlowMediaStream`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

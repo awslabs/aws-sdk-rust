@@ -116,7 +116,7 @@ impl CreateMediaInsightsPipelineConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMediaInsightsPipelineConfiguration`.
+/// Orchestration and serialization glue logic for `CreateMediaInsightsPipelineConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

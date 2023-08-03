@@ -131,7 +131,7 @@ impl StopFleetActionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopFleetActions`.
+/// Orchestration and serialization glue logic for `StopFleetActions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

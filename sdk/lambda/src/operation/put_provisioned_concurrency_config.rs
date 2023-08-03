@@ -169,7 +169,7 @@ impl PutProvisionedConcurrencyConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutProvisionedConcurrencyConfig`.
+/// Orchestration and serialization glue logic for `PutProvisionedConcurrencyConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

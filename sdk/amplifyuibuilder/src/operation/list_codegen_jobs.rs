@@ -178,7 +178,7 @@ impl ListCodegenJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCodegenJobs`.
+/// Orchestration and serialization glue logic for `ListCodegenJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

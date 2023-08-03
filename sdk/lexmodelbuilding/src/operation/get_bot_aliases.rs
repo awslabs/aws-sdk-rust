@@ -162,7 +162,7 @@ impl GetBotAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBotAliases`.
+/// Orchestration and serialization glue logic for `GetBotAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

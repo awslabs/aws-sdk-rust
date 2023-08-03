@@ -163,7 +163,7 @@ impl DisassociateDeviceFromPlacementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateDeviceFromPlacement`.
+/// Orchestration and serialization glue logic for `DisassociateDeviceFromPlacement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteWorkteamInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkteam`.
+/// Orchestration and serialization glue logic for `DeleteWorkteam`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

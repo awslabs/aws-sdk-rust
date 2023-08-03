@@ -127,7 +127,7 @@ impl StartProductSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartProductSubscription`.
+/// Orchestration and serialization glue logic for `StartProductSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

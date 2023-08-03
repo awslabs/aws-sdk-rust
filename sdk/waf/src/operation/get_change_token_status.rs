@@ -131,7 +131,7 @@ impl GetChangeTokenStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetChangeTokenStatus`.
+/// Orchestration and serialization glue logic for `GetChangeTokenStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

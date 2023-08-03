@@ -131,7 +131,7 @@ impl DescribeHomeRegionControlsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHomeRegionControls`.
+/// Orchestration and serialization glue logic for `DescribeHomeRegionControls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

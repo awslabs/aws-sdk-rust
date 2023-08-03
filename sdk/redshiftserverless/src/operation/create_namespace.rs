@@ -131,7 +131,7 @@ impl CreateNamespaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNamespace`.
+/// Orchestration and serialization glue logic for `CreateNamespace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

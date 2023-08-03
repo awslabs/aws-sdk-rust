@@ -157,7 +157,7 @@ impl CreateStreamingImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStreamingImage`.
+/// Orchestration and serialization glue logic for `CreateStreamingImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

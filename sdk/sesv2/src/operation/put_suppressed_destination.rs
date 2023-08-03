@@ -127,7 +127,7 @@ impl PutSuppressedDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSuppressedDestination`.
+/// Orchestration and serialization glue logic for `PutSuppressedDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

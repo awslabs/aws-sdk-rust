@@ -137,7 +137,7 @@ impl GetFieldLevelEncryptionConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetFieldLevelEncryptionConfig`.
+/// Orchestration and serialization glue logic for `GetFieldLevelEncryptionConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

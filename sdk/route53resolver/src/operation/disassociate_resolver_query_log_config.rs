@@ -116,7 +116,7 @@ impl DisassociateResolverQueryLogConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateResolverQueryLogConfig`.
+/// Orchestration and serialization glue logic for `DisassociateResolverQueryLogConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

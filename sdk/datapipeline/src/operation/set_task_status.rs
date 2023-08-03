@@ -131,7 +131,7 @@ impl SetTaskStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetTaskStatus`.
+/// Orchestration and serialization glue logic for `SetTaskStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

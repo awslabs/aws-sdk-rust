@@ -132,7 +132,7 @@ impl RegisterWebhookWithThirdPartyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterWebhookWithThirdParty`.
+/// Orchestration and serialization glue logic for `RegisterWebhookWithThirdParty`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl GetIndexingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIndexingConfiguration`.
+/// Orchestration and serialization glue logic for `GetIndexingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

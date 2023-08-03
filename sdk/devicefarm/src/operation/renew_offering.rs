@@ -131,7 +131,7 @@ impl RenewOfferingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RenewOffering`.
+/// Orchestration and serialization glue logic for `RenewOffering`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

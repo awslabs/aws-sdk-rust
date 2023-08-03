@@ -24,9 +24,9 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -44,8 +44,8 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
+                         {
         let op = self
             .inner
             .build()
@@ -63,16 +63,16 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
     >{
         self.customize_middleware().await
     }

@@ -126,7 +126,7 @@ impl GetContactInformationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContactInformation`.
+/// Orchestration and serialization glue logic for `GetContactInformation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

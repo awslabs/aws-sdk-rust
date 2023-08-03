@@ -121,7 +121,7 @@ impl GetMessagingStreamingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMessagingStreamingConfigurations`.
+/// Orchestration and serialization glue logic for `GetMessagingStreamingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeleteWatchlistInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWatchlist`.
+/// Orchestration and serialization glue logic for `DeleteWatchlist`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

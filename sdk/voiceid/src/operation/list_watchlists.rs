@@ -131,7 +131,7 @@ impl ListWatchlistsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWatchlists`.
+/// Orchestration and serialization glue logic for `ListWatchlists`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

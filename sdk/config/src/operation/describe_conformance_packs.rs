@@ -131,7 +131,7 @@ impl DescribeConformancePacksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConformancePacks`.
+/// Orchestration and serialization glue logic for `DescribeConformancePacks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl StopSimulationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopSimulation`.
+/// Orchestration and serialization glue logic for `StopSimulation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

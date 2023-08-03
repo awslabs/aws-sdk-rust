@@ -132,7 +132,7 @@ impl UpdateStackSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStackSet`.
+/// Orchestration and serialization glue logic for `UpdateStackSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

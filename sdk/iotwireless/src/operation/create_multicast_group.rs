@@ -132,7 +132,7 @@ impl CreateMulticastGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMulticastGroup`.
+/// Orchestration and serialization glue logic for `CreateMulticastGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl SetReceiptRulePositionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetReceiptRulePosition`.
+/// Orchestration and serialization glue logic for `SetReceiptRulePosition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

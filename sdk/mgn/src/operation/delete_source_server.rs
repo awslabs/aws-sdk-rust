@@ -128,7 +128,7 @@ impl DeleteSourceServerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSourceServer`.
+/// Orchestration and serialization glue logic for `DeleteSourceServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl ListResourceServersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResourceServers`.
+/// Orchestration and serialization glue logic for `ListResourceServers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

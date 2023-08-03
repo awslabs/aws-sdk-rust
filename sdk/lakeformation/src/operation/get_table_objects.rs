@@ -126,7 +126,7 @@ impl GetTableObjectsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTableObjects`.
+/// Orchestration and serialization glue logic for `GetTableObjects`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

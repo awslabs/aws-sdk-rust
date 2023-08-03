@@ -116,7 +116,7 @@ impl StartMlLabelingSetGenerationTaskRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartMLLabelingSetGenerationTaskRun`.
+/// Orchestration and serialization glue logic for `StartMLLabelingSetGenerationTaskRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

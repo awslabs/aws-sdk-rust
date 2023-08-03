@@ -131,7 +131,7 @@ impl ListMailboxPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMailboxPermissions`.
+/// Orchestration and serialization glue logic for `ListMailboxPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

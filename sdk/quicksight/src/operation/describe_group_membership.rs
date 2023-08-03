@@ -188,7 +188,7 @@ impl DescribeGroupMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeGroupMembership`.
+/// Orchestration and serialization glue logic for `DescribeGroupMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

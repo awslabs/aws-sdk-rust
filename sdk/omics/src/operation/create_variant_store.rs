@@ -130,7 +130,7 @@ impl CreateVariantStoreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVariantStore`.
+/// Orchestration and serialization glue logic for `CreateVariantStore`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

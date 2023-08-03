@@ -142,7 +142,7 @@ impl ListChannelsAssociatedWithChannelFlowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListChannelsAssociatedWithChannelFlow`.
+/// Orchestration and serialization glue logic for `ListChannelsAssociatedWithChannelFlow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

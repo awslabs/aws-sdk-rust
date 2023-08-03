@@ -125,7 +125,7 @@ impl DescribeBudgetPerformanceHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBudgetPerformanceHistory`.
+/// Orchestration and serialization glue logic for `DescribeBudgetPerformanceHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

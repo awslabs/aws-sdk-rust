@@ -133,7 +133,7 @@ impl UpdateResolverConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResolverConfig`.
+/// Orchestration and serialization glue logic for `UpdateResolverConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

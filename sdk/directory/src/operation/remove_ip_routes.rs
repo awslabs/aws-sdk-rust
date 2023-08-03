@@ -131,7 +131,7 @@ impl RemoveIpRoutesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveIpRoutes`.
+/// Orchestration and serialization glue logic for `RemoveIpRoutes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreatePublicIpv4PoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePublicIpv4Pool`.
+/// Orchestration and serialization glue logic for `CreatePublicIpv4Pool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

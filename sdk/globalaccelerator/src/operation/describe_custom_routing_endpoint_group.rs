@@ -116,7 +116,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCustomRoutingEndpointGroup`.
+/// Orchestration and serialization glue logic for `DescribeCustomRoutingEndpointGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

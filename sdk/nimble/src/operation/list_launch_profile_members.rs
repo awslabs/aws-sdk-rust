@@ -178,7 +178,7 @@ impl ListLaunchProfileMembersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLaunchProfileMembers`.
+/// Orchestration and serialization glue logic for `ListLaunchProfileMembers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

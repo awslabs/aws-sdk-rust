@@ -136,7 +136,7 @@ impl GetSdkTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSdkType`.
+/// Orchestration and serialization glue logic for `GetSdkType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

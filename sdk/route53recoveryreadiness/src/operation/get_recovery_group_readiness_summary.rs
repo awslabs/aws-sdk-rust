@@ -143,7 +143,7 @@ impl GetRecoveryGroupReadinessSummaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRecoveryGroupReadinessSummary`.
+/// Orchestration and serialization glue logic for `GetRecoveryGroupReadinessSummary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

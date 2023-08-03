@@ -131,7 +131,7 @@ impl DescribeChapCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeChapCredentials`.
+/// Orchestration and serialization glue logic for `DescribeChapCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

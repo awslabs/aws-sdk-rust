@@ -157,7 +157,7 @@ impl DeactivateKeySigningKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeactivateKeySigningKey`.
+/// Orchestration and serialization glue logic for `DeactivateKeySigningKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

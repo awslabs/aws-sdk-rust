@@ -120,7 +120,7 @@ impl BatchDescribeTypeConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDescribeTypeConfigurations`.
+/// Orchestration and serialization glue logic for `BatchDescribeTypeConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

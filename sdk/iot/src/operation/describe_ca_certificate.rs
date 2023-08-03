@@ -136,7 +136,7 @@ impl DescribeCaCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCACertificate`.
+/// Orchestration and serialization glue logic for `DescribeCACertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

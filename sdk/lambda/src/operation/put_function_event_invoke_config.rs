@@ -164,7 +164,7 @@ impl PutFunctionEventInvokeConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutFunctionEventInvokeConfig`.
+/// Orchestration and serialization glue logic for `PutFunctionEventInvokeConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

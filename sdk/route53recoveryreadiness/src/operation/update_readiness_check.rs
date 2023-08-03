@@ -152,7 +152,7 @@ impl UpdateReadinessCheckInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateReadinessCheck`.
+/// Orchestration and serialization glue logic for `UpdateReadinessCheck`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

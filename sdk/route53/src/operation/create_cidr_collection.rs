@@ -127,7 +127,7 @@ impl CreateCidrCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCidrCollection`.
+/// Orchestration and serialization glue logic for `CreateCidrCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

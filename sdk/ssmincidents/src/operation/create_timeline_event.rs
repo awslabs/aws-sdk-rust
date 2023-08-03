@@ -132,7 +132,7 @@ impl CreateTimelineEventInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTimelineEvent`.
+/// Orchestration and serialization glue logic for `CreateTimelineEvent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

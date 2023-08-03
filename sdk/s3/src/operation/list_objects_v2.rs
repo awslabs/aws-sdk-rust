@@ -184,7 +184,7 @@ impl ListObjectsV2Input {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListObjectsV2`.
+/// Orchestration and serialization glue logic for `ListObjectsV2`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

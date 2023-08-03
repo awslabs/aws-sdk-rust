@@ -131,7 +131,7 @@ impl GetCalendarStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCalendarState`.
+/// Orchestration and serialization glue logic for `GetCalendarState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

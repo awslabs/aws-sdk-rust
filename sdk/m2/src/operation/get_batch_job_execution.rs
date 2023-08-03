@@ -156,7 +156,7 @@ impl GetBatchJobExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBatchJobExecution`.
+/// Orchestration and serialization glue logic for `GetBatchJobExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl CreateChangesetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateChangeset`.
+/// Orchestration and serialization glue logic for `CreateChangeset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

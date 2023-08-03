@@ -161,7 +161,7 @@ impl ListAttendeesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAttendees`.
+/// Orchestration and serialization glue logic for `ListAttendees`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateHostInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateHost`.
+/// Orchestration and serialization glue logic for `CreateHost`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

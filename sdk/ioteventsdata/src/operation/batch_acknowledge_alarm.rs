@@ -126,7 +126,7 @@ impl BatchAcknowledgeAlarmInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchAcknowledgeAlarm`.
+/// Orchestration and serialization glue logic for `BatchAcknowledgeAlarm`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

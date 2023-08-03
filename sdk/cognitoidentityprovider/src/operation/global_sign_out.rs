@@ -131,7 +131,7 @@ impl GlobalSignOutInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GlobalSignOut`.
+/// Orchestration and serialization glue logic for `GlobalSignOut`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

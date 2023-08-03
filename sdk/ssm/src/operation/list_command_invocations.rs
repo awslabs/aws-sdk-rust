@@ -131,7 +131,7 @@ impl ListCommandInvocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCommandInvocations`.
+/// Orchestration and serialization glue logic for `ListCommandInvocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

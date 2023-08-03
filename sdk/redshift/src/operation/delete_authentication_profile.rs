@@ -126,7 +126,7 @@ impl DeleteAuthenticationProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAuthenticationProfile`.
+/// Orchestration and serialization glue logic for `DeleteAuthenticationProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

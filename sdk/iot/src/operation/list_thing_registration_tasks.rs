@@ -140,7 +140,7 @@ impl ListThingRegistrationTasksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListThingRegistrationTasks`.
+/// Orchestration and serialization glue logic for `ListThingRegistrationTasks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

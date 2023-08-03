@@ -170,7 +170,7 @@ impl CreateVirtualRouterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVirtualRouter`.
+/// Orchestration and serialization glue logic for `CreateVirtualRouter`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

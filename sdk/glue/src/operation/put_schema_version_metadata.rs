@@ -131,7 +131,7 @@ impl PutSchemaVersionMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSchemaVersionMetadata`.
+/// Orchestration and serialization glue logic for `PutSchemaVersionMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

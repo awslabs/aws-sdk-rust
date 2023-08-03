@@ -126,7 +126,7 @@ impl SearchQueuesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchQueues`.
+/// Orchestration and serialization glue logic for `SearchQueues`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

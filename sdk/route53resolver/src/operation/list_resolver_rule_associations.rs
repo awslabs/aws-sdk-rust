@@ -131,7 +131,7 @@ impl ListResolverRuleAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResolverRuleAssociations`.
+/// Orchestration and serialization glue logic for `ListResolverRuleAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

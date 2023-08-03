@@ -136,7 +136,7 @@ impl GetSatelliteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSatellite`.
+/// Orchestration and serialization glue logic for `GetSatellite`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

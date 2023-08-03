@@ -126,7 +126,7 @@ impl SearchLocalGatewayRoutesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchLocalGatewayRoutes`.
+/// Orchestration and serialization glue logic for `SearchLocalGatewayRoutes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

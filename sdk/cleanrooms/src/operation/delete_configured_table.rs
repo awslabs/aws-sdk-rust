@@ -136,7 +136,7 @@ impl DeleteConfiguredTableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteConfiguredTable`.
+/// Orchestration and serialization glue logic for `DeleteConfiguredTable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

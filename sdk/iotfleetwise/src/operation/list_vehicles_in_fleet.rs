@@ -155,7 +155,7 @@ impl ListVehiclesInFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVehiclesInFleet`.
+/// Orchestration and serialization glue logic for `ListVehiclesInFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

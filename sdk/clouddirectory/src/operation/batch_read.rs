@@ -130,7 +130,7 @@ impl BatchReadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchRead`.
+/// Orchestration and serialization glue logic for `BatchRead`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl CreateStreamingDistributionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStreamingDistribution`.
+/// Orchestration and serialization glue logic for `CreateStreamingDistribution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

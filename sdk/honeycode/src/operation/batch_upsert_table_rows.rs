@@ -170,7 +170,7 @@ impl BatchUpsertTableRowsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpsertTableRows`.
+/// Orchestration and serialization glue logic for `BatchUpsertTableRows`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

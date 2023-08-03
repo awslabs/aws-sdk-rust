@@ -131,7 +131,7 @@ impl GetQueryRuntimeStatisticsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetQueryRuntimeStatistics`.
+/// Orchestration and serialization glue logic for `GetQueryRuntimeStatistics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

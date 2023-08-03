@@ -131,7 +131,7 @@ impl DetectModerationLabelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectModerationLabels`.
+/// Orchestration and serialization glue logic for `DetectModerationLabels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

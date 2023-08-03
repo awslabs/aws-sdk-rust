@@ -137,7 +137,7 @@ impl ListEventLogsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEventLogs`.
+/// Orchestration and serialization glue logic for `ListEventLogs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

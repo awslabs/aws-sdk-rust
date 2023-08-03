@@ -133,7 +133,7 @@ impl ListLogPatternSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLogPatternSets`.
+/// Orchestration and serialization glue logic for `ListLogPatternSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

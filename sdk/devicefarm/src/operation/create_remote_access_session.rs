@@ -131,7 +131,7 @@ impl CreateRemoteAccessSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRemoteAccessSession`.
+/// Orchestration and serialization glue logic for `CreateRemoteAccessSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

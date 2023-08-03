@@ -131,7 +131,7 @@ impl ListCalculationExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCalculationExecutions`.
+/// Orchestration and serialization glue logic for `ListCalculationExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

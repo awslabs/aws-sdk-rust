@@ -133,7 +133,7 @@ impl DeletePortfolioShareInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePortfolioShare`.
+/// Orchestration and serialization glue logic for `DeletePortfolioShare`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

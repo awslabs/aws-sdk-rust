@@ -128,7 +128,7 @@ impl ListGroupResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListGroupResources`.
+/// Orchestration and serialization glue logic for `ListGroupResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

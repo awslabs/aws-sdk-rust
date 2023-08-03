@@ -133,7 +133,7 @@ impl StartProjectVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartProjectVersion`.
+/// Orchestration and serialization glue logic for `StartProjectVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

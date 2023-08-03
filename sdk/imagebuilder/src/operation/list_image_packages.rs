@@ -126,7 +126,7 @@ impl ListImagePackagesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListImagePackages`.
+/// Orchestration and serialization glue logic for `ListImagePackages`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

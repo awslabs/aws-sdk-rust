@@ -126,7 +126,7 @@ impl ListStackSetOperationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStackSetOperations`.
+/// Orchestration and serialization glue logic for `ListStackSetOperations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

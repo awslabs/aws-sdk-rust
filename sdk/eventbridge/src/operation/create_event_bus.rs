@@ -131,7 +131,7 @@ impl CreateEventBusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEventBus`.
+/// Orchestration and serialization glue logic for `CreateEventBus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

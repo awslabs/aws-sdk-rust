@@ -150,7 +150,7 @@ impl CreateWorkspaceApiKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateWorkspaceApiKey`.
+/// Orchestration and serialization glue logic for `CreateWorkspaceApiKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

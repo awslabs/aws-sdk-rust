@@ -126,7 +126,7 @@ impl GetIpamPoolAllocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetIpamPoolAllocations`.
+/// Orchestration and serialization glue logic for `GetIpamPoolAllocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

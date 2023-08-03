@@ -135,7 +135,7 @@ impl ListHealthChecksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListHealthChecks`.
+/// Orchestration and serialization glue logic for `ListHealthChecks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -155,7 +155,7 @@ impl DeleteObjectTaggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteObjectTagging`.
+/// Orchestration and serialization glue logic for `DeleteObjectTagging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

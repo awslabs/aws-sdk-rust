@@ -371,7 +371,7 @@ impl SynthesizeSpeechInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SynthesizeSpeech`.
+/// Orchestration and serialization glue logic for `SynthesizeSpeech`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

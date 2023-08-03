@@ -131,7 +131,7 @@ impl GetPullRequestInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPullRequest`.
+/// Orchestration and serialization glue logic for `GetPullRequest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

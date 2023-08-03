@@ -127,7 +127,7 @@ impl DescribeRecoverySnapshotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRecoverySnapshots`.
+/// Orchestration and serialization glue logic for `DescribeRecoverySnapshots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

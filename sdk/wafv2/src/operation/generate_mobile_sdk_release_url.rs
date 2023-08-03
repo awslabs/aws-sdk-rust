@@ -131,7 +131,7 @@ impl GenerateMobileSdkReleaseUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateMobileSdkReleaseUrl`.
+/// Orchestration and serialization glue logic for `GenerateMobileSdkReleaseUrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

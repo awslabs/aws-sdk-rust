@@ -131,7 +131,7 @@ impl GetSavingsPlansCoverageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSavingsPlansCoverage`.
+/// Orchestration and serialization glue logic for `GetSavingsPlansCoverage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

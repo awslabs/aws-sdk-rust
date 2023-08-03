@@ -131,7 +131,7 @@ impl GetDiscoveredResourceCountsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDiscoveredResourceCounts`.
+/// Orchestration and serialization glue logic for `GetDiscoveredResourceCounts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

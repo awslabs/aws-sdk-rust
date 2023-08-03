@@ -131,7 +131,7 @@ impl DeregisterComputeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterCompute`.
+/// Orchestration and serialization glue logic for `DeregisterCompute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

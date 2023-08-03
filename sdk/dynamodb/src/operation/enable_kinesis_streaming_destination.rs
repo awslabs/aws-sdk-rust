@@ -116,7 +116,7 @@ impl EnableKinesisStreamingDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableKinesisStreamingDestination`.
+/// Orchestration and serialization glue logic for `EnableKinesisStreamingDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

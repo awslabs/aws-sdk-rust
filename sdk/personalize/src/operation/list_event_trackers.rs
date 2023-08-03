@@ -131,7 +131,7 @@ impl ListEventTrackersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEventTrackers`.
+/// Orchestration and serialization glue logic for `ListEventTrackers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

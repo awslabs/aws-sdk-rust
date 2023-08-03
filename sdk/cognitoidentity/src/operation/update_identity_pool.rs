@@ -133,7 +133,7 @@ impl UpdateIdentityPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIdentityPool`.
+/// Orchestration and serialization glue logic for `UpdateIdentityPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

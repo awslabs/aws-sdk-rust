@@ -150,7 +150,7 @@ impl MergeProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MergeProfiles`.
+/// Orchestration and serialization glue logic for `MergeProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

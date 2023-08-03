@@ -133,7 +133,7 @@ impl DisassociateConnectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateConnector`.
+/// Orchestration and serialization glue logic for `DisassociateConnector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

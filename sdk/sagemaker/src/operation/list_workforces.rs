@@ -131,7 +131,7 @@ impl ListWorkforcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListWorkforces`.
+/// Orchestration and serialization glue logic for `ListWorkforces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

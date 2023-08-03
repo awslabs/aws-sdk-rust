@@ -131,7 +131,7 @@ impl MergeBranchesBySquashInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MergeBranchesBySquash`.
+/// Orchestration and serialization glue logic for `MergeBranchesBySquash`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

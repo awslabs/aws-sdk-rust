@@ -136,7 +136,7 @@ impl DescribeClusterOperationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeClusterOperation`.
+/// Orchestration and serialization glue logic for `DescribeClusterOperation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

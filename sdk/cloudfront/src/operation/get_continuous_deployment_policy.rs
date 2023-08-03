@@ -137,7 +137,7 @@ impl GetContinuousDeploymentPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContinuousDeploymentPolicy`.
+/// Orchestration and serialization glue logic for `GetContinuousDeploymentPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

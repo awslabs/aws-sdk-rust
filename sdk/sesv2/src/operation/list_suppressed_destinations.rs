@@ -165,7 +165,7 @@ impl ListSuppressedDestinationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSuppressedDestinations`.
+/// Orchestration and serialization glue logic for `ListSuppressedDestinations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

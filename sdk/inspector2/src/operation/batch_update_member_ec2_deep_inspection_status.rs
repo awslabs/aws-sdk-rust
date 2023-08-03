@@ -112,7 +112,7 @@ impl BatchUpdateMemberEc2DeepInspectionStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpdateMemberEc2DeepInspectionStatus`.
+/// Orchestration and serialization glue logic for `BatchUpdateMemberEc2DeepInspectionStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

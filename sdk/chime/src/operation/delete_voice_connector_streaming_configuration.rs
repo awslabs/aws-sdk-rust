@@ -121,7 +121,7 @@ impl DeleteVoiceConnectorStreamingConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVoiceConnectorStreamingConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteVoiceConnectorStreamingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

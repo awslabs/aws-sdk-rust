@@ -116,7 +116,7 @@ impl DeleteLoadBalancerTlsCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLoadBalancerTlsCertificate`.
+/// Orchestration and serialization glue logic for `DeleteLoadBalancerTlsCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

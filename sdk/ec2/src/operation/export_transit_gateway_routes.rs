@@ -126,7 +126,7 @@ impl ExportTransitGatewayRoutesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportTransitGatewayRoutes`.
+/// Orchestration and serialization glue logic for `ExportTransitGatewayRoutes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

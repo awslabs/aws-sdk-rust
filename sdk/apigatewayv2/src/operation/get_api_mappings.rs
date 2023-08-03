@@ -158,7 +158,7 @@ impl GetApiMappingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApiMappings`.
+/// Orchestration and serialization glue logic for `GetApiMappings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

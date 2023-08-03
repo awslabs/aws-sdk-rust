@@ -156,7 +156,7 @@ impl DeleteIngestionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIngestion`.
+/// Orchestration and serialization glue logic for `DeleteIngestion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

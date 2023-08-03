@@ -126,7 +126,7 @@ impl DescribeSourceRegionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSourceRegions`.
+/// Orchestration and serialization glue logic for `DescribeSourceRegions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateDevicePoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDevicePool`.
+/// Orchestration and serialization glue logic for `CreateDevicePool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

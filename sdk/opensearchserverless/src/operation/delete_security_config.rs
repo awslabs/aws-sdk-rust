@@ -137,7 +137,7 @@ impl DeleteSecurityConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSecurityConfig`.
+/// Orchestration and serialization glue logic for `DeleteSecurityConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

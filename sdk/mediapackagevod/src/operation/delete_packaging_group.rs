@@ -132,7 +132,7 @@ impl DeletePackagingGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePackagingGroup`.
+/// Orchestration and serialization glue logic for `DeletePackagingGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

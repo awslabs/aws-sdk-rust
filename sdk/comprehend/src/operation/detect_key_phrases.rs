@@ -131,7 +131,7 @@ impl DetectKeyPhrasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectKeyPhrases`.
+/// Orchestration and serialization glue logic for `DetectKeyPhrases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

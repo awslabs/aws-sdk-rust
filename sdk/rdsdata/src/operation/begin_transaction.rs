@@ -126,7 +126,7 @@ impl BeginTransactionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BeginTransaction`.
+/// Orchestration and serialization glue logic for `BeginTransaction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl UpdateSamlProviderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSAMLProvider`.
+/// Orchestration and serialization glue logic for `UpdateSAMLProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -161,7 +161,7 @@ impl ListAppInstanceUserEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAppInstanceUserEndpoints`.
+/// Orchestration and serialization glue logic for `ListAppInstanceUserEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

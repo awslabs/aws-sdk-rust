@@ -128,7 +128,7 @@ impl UpdateDataRetentionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDataRetention`.
+/// Orchestration and serialization glue logic for `UpdateDataRetention`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

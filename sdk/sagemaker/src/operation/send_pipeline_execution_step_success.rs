@@ -120,7 +120,7 @@ impl SendPipelineExecutionStepSuccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendPipelineExecutionStepSuccess`.
+/// Orchestration and serialization glue logic for `SendPipelineExecutionStepSuccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

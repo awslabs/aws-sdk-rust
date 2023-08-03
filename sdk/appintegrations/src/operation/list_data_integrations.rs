@@ -134,7 +134,7 @@ impl ListDataIntegrationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDataIntegrations`.
+/// Orchestration and serialization glue logic for `ListDataIntegrations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

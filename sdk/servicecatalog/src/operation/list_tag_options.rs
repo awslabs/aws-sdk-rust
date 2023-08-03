@@ -131,7 +131,7 @@ impl ListTagOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListTagOptions`.
+/// Orchestration and serialization glue logic for `ListTagOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

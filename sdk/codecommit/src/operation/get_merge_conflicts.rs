@@ -131,7 +131,7 @@ impl GetMergeConflictsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMergeConflicts`.
+/// Orchestration and serialization glue logic for `GetMergeConflicts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

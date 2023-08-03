@@ -126,7 +126,7 @@ impl RemoveUserFromGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveUserFromGroup`.
+/// Orchestration and serialization glue logic for `RemoveUserFromGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

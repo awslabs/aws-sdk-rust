@@ -133,7 +133,7 @@ impl ListVirtualMachinesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVirtualMachines`.
+/// Orchestration and serialization glue logic for `ListVirtualMachines`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -128,7 +128,7 @@ impl DeleteWarmPoolInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWarmPool`.
+/// Orchestration and serialization glue logic for `DeleteWarmPool`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

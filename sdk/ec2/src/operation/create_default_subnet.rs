@@ -126,7 +126,7 @@ impl CreateDefaultSubnetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDefaultSubnet`.
+/// Orchestration and serialization glue logic for `CreateDefaultSubnet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -148,7 +148,7 @@ impl UpdateBackendConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBackendConfig`.
+/// Orchestration and serialization glue logic for `UpdateBackendConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

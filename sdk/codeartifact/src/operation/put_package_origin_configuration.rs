@@ -208,7 +208,7 @@ impl PutPackageOriginConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutPackageOriginConfiguration`.
+/// Orchestration and serialization glue logic for `PutPackageOriginConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

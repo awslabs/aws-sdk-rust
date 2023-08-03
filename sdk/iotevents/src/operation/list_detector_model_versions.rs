@@ -158,7 +158,7 @@ impl ListDetectorModelVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDetectorModelVersions`.
+/// Orchestration and serialization glue logic for `ListDetectorModelVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

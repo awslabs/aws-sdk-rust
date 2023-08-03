@@ -149,7 +149,7 @@ impl DeleteCoreNetworkPolicyVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCoreNetworkPolicyVersion`.
+/// Orchestration and serialization glue logic for `DeleteCoreNetworkPolicyVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

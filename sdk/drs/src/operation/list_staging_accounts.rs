@@ -134,7 +134,7 @@ impl ListStagingAccountsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStagingAccounts`.
+/// Orchestration and serialization glue logic for `ListStagingAccounts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

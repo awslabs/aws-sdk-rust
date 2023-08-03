@@ -116,7 +116,7 @@ impl PutFindingsPublicationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutFindingsPublicationConfiguration`.
+/// Orchestration and serialization glue logic for `PutFindingsPublicationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

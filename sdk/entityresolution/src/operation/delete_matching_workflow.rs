@@ -136,7 +136,7 @@ impl DeleteMatchingWorkflowInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMatchingWorkflow`.
+/// Orchestration and serialization glue logic for `DeleteMatchingWorkflow`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

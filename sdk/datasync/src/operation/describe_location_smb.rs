@@ -133,7 +133,7 @@ impl DescribeLocationSmbInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocationSmb`.
+/// Orchestration and serialization glue logic for `DescribeLocationSmb`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

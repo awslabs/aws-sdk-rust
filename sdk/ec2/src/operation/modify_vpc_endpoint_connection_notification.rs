@@ -111,7 +111,7 @@ impl ModifyVpcEndpointConnectionNotificationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyVpcEndpointConnectionNotification`.
+/// Orchestration and serialization glue logic for `ModifyVpcEndpointConnectionNotification`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

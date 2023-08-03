@@ -131,7 +131,7 @@ impl DeletePredictorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePredictor`.
+/// Orchestration and serialization glue logic for `DeletePredictor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

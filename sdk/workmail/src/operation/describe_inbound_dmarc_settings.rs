@@ -131,7 +131,7 @@ impl DescribeInboundDmarcSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInboundDmarcSettings`.
+/// Orchestration and serialization glue logic for `DescribeInboundDmarcSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -204,7 +204,7 @@ impl GetContainerServiceMetricDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContainerServiceMetricData`.
+/// Orchestration and serialization glue logic for `GetContainerServiceMetricData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

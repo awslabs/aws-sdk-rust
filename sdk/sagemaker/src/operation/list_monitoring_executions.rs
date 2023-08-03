@@ -131,7 +131,7 @@ impl ListMonitoringExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMonitoringExecutions`.
+/// Orchestration and serialization glue logic for `ListMonitoringExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

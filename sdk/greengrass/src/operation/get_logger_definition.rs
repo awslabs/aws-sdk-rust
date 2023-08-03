@@ -136,7 +136,7 @@ impl GetLoggerDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLoggerDefinition`.
+/// Orchestration and serialization glue logic for `GetLoggerDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

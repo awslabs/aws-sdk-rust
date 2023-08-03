@@ -192,7 +192,7 @@ impl DeleteMethodResponseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMethodResponse`.
+/// Orchestration and serialization glue logic for `DeleteMethodResponse`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

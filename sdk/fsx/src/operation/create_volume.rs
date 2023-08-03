@@ -135,7 +135,7 @@ impl CreateVolumeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateVolume`.
+/// Orchestration and serialization glue logic for `CreateVolume`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

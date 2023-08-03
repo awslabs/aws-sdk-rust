@@ -116,7 +116,7 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOrganizationConfigRuleDetailedStatus`.
+/// Orchestration and serialization glue logic for `GetOrganizationConfigRuleDetailedStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

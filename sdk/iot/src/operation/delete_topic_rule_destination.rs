@@ -132,7 +132,7 @@ impl DeleteTopicRuleDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTopicRuleDestination`.
+/// Orchestration and serialization glue logic for `DeleteTopicRuleDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

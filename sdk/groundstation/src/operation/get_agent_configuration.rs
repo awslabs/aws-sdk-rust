@@ -132,7 +132,7 @@ impl GetAgentConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAgentConfiguration`.
+/// Orchestration and serialization glue logic for `GetAgentConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

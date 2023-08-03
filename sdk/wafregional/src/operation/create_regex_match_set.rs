@@ -133,7 +133,7 @@ impl CreateRegexMatchSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRegexMatchSet`.
+/// Orchestration and serialization glue logic for `CreateRegexMatchSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

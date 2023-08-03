@@ -126,7 +126,7 @@ impl DescribePrefixListsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePrefixLists`.
+/// Orchestration and serialization glue logic for `DescribePrefixLists`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

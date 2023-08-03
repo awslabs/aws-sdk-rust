@@ -133,7 +133,7 @@ impl UpdateSystemTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSystemTemplate`.
+/// Orchestration and serialization glue logic for `UpdateSystemTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

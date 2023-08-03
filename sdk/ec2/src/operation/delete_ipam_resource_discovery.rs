@@ -126,7 +126,7 @@ impl DeleteIpamResourceDiscoveryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIpamResourceDiscovery`.
+/// Orchestration and serialization glue logic for `DeleteIpamResourceDiscovery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

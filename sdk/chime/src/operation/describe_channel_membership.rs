@@ -159,7 +159,7 @@ impl DescribeChannelMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeChannelMembership`.
+/// Orchestration and serialization glue logic for `DescribeChannelMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

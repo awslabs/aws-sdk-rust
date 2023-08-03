@@ -156,7 +156,7 @@ impl CancelPipelineReprocessingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelPipelineReprocessing`.
+/// Orchestration and serialization glue logic for `CancelPipelineReprocessing`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

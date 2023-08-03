@@ -126,7 +126,7 @@ impl DeleteCacheSecurityGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCacheSecurityGroup`.
+/// Orchestration and serialization glue logic for `DeleteCacheSecurityGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

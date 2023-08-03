@@ -136,7 +136,7 @@ impl GetCoreNetworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCoreNetwork`.
+/// Orchestration and serialization glue logic for `GetCoreNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

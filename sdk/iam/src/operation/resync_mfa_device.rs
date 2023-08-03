@@ -126,7 +126,7 @@ impl ResyncMfaDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResyncMFADevice`.
+/// Orchestration and serialization glue logic for `ResyncMFADevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

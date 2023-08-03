@@ -120,7 +120,7 @@ impl ResetServiceSpecificCredentialInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetServiceSpecificCredential`.
+/// Orchestration and serialization glue logic for `ResetServiceSpecificCredential`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

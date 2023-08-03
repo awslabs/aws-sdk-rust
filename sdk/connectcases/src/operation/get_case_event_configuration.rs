@@ -136,7 +136,7 @@ impl GetCaseEventConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCaseEventConfiguration`.
+/// Orchestration and serialization glue logic for `GetCaseEventConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -148,7 +148,7 @@ impl CreateBackendStorageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBackendStorage`.
+/// Orchestration and serialization glue logic for `CreateBackendStorage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

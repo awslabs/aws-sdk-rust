@@ -131,7 +131,7 @@ impl UpdateLagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateLag`.
+/// Orchestration and serialization glue logic for `UpdateLag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -119,7 +119,7 @@ impl GetAccountPasswordPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccountPasswordPolicy`.
+/// Orchestration and serialization glue logic for `GetAccountPasswordPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

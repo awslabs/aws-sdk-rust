@@ -131,7 +131,7 @@ impl CreatePreparedStatementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePreparedStatement`.
+/// Orchestration and serialization glue logic for `CreatePreparedStatement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

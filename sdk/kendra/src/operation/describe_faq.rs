@@ -131,7 +131,7 @@ impl DescribeFaqInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFaq`.
+/// Orchestration and serialization glue logic for `DescribeFaq`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

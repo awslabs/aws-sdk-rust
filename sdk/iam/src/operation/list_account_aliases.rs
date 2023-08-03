@@ -126,7 +126,7 @@ impl ListAccountAliasesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccountAliases`.
+/// Orchestration and serialization glue logic for `ListAccountAliases`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

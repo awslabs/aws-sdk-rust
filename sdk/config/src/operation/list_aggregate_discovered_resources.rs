@@ -125,7 +125,7 @@ impl ListAggregateDiscoveredResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAggregateDiscoveredResources`.
+/// Orchestration and serialization glue logic for `ListAggregateDiscoveredResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

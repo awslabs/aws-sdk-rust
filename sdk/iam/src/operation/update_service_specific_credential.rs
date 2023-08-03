@@ -120,7 +120,7 @@ impl UpdateServiceSpecificCredentialInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateServiceSpecificCredential`.
+/// Orchestration and serialization glue logic for `UpdateServiceSpecificCredential`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

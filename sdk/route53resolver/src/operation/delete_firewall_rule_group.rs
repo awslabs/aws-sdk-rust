@@ -131,7 +131,7 @@ impl DeleteFirewallRuleGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFirewallRuleGroup`.
+/// Orchestration and serialization glue logic for `DeleteFirewallRuleGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

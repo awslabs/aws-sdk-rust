@@ -127,7 +127,7 @@ impl GetHlsStreamingSessionUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetHLSStreamingSessionURL`.
+/// Orchestration and serialization glue logic for `GetHLSStreamingSessionURL`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

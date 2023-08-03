@@ -139,7 +139,7 @@ impl ListAnalyzersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnalyzers`.
+/// Orchestration and serialization glue logic for `ListAnalyzers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

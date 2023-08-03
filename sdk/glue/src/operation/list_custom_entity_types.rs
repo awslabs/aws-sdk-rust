@@ -131,7 +131,7 @@ impl ListCustomEntityTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCustomEntityTypes`.
+/// Orchestration and serialization glue logic for `ListCustomEntityTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

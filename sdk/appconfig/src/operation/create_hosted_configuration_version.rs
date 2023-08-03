@@ -159,7 +159,7 @@ impl CreateHostedConfigurationVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateHostedConfigurationVersion`.
+/// Orchestration and serialization glue logic for `CreateHostedConfigurationVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

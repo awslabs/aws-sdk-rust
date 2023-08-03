@@ -150,7 +150,7 @@ impl ListLayersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLayers`.
+/// Orchestration and serialization glue logic for `ListLayers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

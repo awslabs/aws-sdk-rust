@@ -126,7 +126,7 @@ impl UpdateWorkerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorker`.
+/// Orchestration and serialization glue logic for `UpdateWorker`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

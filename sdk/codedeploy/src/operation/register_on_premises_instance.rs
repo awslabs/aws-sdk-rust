@@ -131,7 +131,7 @@ impl RegisterOnPremisesInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterOnPremisesInstance`.
+/// Orchestration and serialization glue logic for `RegisterOnPremisesInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

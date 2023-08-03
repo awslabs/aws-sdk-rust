@@ -133,7 +133,7 @@ impl CreateTrialComponentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateTrialComponent`.
+/// Orchestration and serialization glue logic for `CreateTrialComponent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

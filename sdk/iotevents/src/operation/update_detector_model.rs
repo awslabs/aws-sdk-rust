@@ -152,7 +152,7 @@ impl UpdateDetectorModelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDetectorModel`.
+/// Orchestration and serialization glue logic for `UpdateDetectorModel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

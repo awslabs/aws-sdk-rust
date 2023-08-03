@@ -150,7 +150,7 @@ impl UpdateMultiplexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMultiplex`.
+/// Orchestration and serialization glue logic for `UpdateMultiplex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

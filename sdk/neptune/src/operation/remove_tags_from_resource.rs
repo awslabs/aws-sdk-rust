@@ -126,7 +126,7 @@ impl RemoveTagsFromResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveTagsFromResource`.
+/// Orchestration and serialization glue logic for `RemoveTagsFromResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

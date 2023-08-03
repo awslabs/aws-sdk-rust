@@ -138,7 +138,7 @@ impl ListDecoderManifestNetworkInterfacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDecoderManifestNetworkInterfaces`.
+/// Orchestration and serialization glue logic for `ListDecoderManifestNetworkInterfaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

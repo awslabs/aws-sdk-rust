@@ -131,7 +131,7 @@ impl ListVpcConnectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVpcConnectors`.
+/// Orchestration and serialization glue logic for `ListVpcConnectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

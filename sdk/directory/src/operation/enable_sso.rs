@@ -131,7 +131,7 @@ impl EnableSsoInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableSso`.
+/// Orchestration and serialization glue logic for `EnableSso`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

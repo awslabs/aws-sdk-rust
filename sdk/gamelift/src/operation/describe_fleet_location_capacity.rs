@@ -132,7 +132,7 @@ impl DescribeFleetLocationCapacityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetLocationCapacity`.
+/// Orchestration and serialization glue logic for `DescribeFleetLocationCapacity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

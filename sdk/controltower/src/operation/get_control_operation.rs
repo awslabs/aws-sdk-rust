@@ -128,7 +128,7 @@ impl GetControlOperationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetControlOperation`.
+/// Orchestration and serialization glue logic for `GetControlOperation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

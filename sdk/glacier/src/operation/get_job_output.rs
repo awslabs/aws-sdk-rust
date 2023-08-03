@@ -187,7 +187,7 @@ impl GetJobOutputInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetJobOutput`.
+/// Orchestration and serialization glue logic for `GetJobOutput`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

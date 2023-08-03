@@ -149,7 +149,7 @@ impl DescribeRecipeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRecipe`.
+/// Orchestration and serialization glue logic for `DescribeRecipe`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

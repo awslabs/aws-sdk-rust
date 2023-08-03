@@ -131,7 +131,7 @@ impl GetObjectLockConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetObjectLockConfiguration`.
+/// Orchestration and serialization glue logic for `GetObjectLockConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

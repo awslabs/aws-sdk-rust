@@ -133,7 +133,7 @@ impl ListInstanceFleetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInstanceFleets`.
+/// Orchestration and serialization glue logic for `ListInstanceFleets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

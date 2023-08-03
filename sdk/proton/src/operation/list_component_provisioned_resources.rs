@@ -116,7 +116,7 @@ impl ListComponentProvisionedResourcesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListComponentProvisionedResources`.
+/// Orchestration and serialization glue logic for `ListComponentProvisionedResources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

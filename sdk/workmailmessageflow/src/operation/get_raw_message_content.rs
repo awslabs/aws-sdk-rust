@@ -132,7 +132,7 @@ impl GetRawMessageContentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRawMessageContent`.
+/// Orchestration and serialization glue logic for `GetRawMessageContent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

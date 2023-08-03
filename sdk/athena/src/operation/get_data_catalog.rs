@@ -131,7 +131,7 @@ impl GetDataCatalogInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataCatalog`.
+/// Orchestration and serialization glue logic for `GetDataCatalog`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

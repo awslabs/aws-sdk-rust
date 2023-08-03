@@ -125,7 +125,7 @@ impl GetResolverQueryLogConfigPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResolverQueryLogConfigPolicy`.
+/// Orchestration and serialization glue logic for `GetResolverQueryLogConfigPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

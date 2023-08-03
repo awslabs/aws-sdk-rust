@@ -116,7 +116,7 @@ impl AssociateAppBlockBuilderAppBlockInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateAppBlockBuilderAppBlock`.
+/// Orchestration and serialization glue logic for `AssociateAppBlockBuilderAppBlock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

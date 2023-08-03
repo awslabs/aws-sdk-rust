@@ -133,7 +133,7 @@ impl ListResolverConfigsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListResolverConfigs`.
+/// Orchestration and serialization glue logic for `ListResolverConfigs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

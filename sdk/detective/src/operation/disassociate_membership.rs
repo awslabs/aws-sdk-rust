@@ -126,7 +126,7 @@ impl DisassociateMembershipInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateMembership`.
+/// Orchestration and serialization glue logic for `DisassociateMembership`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

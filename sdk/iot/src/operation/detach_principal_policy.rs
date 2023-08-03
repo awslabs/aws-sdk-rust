@@ -137,7 +137,7 @@ impl DetachPrincipalPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetachPrincipalPolicy`.
+/// Orchestration and serialization glue logic for `DetachPrincipalPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

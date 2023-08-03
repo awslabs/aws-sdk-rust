@@ -112,7 +112,7 @@ impl GetTemporaryGluePartitionCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTemporaryGluePartitionCredentials`.
+/// Orchestration and serialization glue logic for `GetTemporaryGluePartitionCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

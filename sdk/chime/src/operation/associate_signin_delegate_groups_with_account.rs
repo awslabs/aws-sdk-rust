@@ -141,7 +141,7 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateSigninDelegateGroupsWithAccount`.
+/// Orchestration and serialization glue logic for `AssociateSigninDelegateGroupsWithAccount`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

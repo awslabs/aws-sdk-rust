@@ -131,7 +131,7 @@ impl ListQualificationTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListQualificationTypes`.
+/// Orchestration and serialization glue logic for `ListQualificationTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

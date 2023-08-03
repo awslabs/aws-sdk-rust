@@ -153,7 +153,7 @@ impl ListDecoderManifestSignalsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDecoderManifestSignals`.
+/// Orchestration and serialization glue logic for `ListDecoderManifestSignals`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

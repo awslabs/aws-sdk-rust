@@ -131,7 +131,7 @@ impl GetMailboxDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMailboxDetails`.
+/// Orchestration and serialization glue logic for `GetMailboxDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreateAccountAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAccountAlias`.
+/// Orchestration and serialization glue logic for `CreateAccountAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

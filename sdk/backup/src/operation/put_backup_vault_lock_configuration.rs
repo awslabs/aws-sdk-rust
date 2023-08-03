@@ -144,7 +144,7 @@ impl PutBackupVaultLockConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutBackupVaultLockConfiguration`.
+/// Orchestration and serialization glue logic for `PutBackupVaultLockConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

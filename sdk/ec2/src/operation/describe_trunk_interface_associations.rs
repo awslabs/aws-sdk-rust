@@ -111,7 +111,7 @@ impl DescribeTrunkInterfaceAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTrunkInterfaceAssociations`.
+/// Orchestration and serialization glue logic for `DescribeTrunkInterfaceAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

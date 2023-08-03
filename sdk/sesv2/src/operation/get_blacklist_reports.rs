@@ -138,7 +138,7 @@ impl GetBlacklistReportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBlacklistReports`.
+/// Orchestration and serialization glue logic for `GetBlacklistReports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

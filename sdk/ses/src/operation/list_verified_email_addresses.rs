@@ -119,7 +119,7 @@ impl ListVerifiedEmailAddressesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVerifiedEmailAddresses`.
+/// Orchestration and serialization glue logic for `ListVerifiedEmailAddresses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

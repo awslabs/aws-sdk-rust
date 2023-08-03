@@ -129,7 +129,7 @@ impl UpdateDataRepositoryAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateDataRepositoryAssociation`.
+/// Orchestration and serialization glue logic for `UpdateDataRepositoryAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

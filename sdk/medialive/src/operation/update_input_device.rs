@@ -150,7 +150,7 @@ impl UpdateInputDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateInputDevice`.
+/// Orchestration and serialization glue logic for `UpdateInputDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

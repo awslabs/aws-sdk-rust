@@ -128,7 +128,7 @@ impl CancelFindingsReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelFindingsReport`.
+/// Orchestration and serialization glue logic for `CancelFindingsReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -129,7 +129,7 @@ impl RunPipelineActivityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RunPipelineActivity`.
+/// Orchestration and serialization glue logic for `RunPipelineActivity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

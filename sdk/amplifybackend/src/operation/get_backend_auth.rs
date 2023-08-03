@@ -170,7 +170,7 @@ impl GetBackendAuthInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBackendAuth`.
+/// Orchestration and serialization glue logic for `GetBackendAuth`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

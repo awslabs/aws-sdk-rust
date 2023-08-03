@@ -126,7 +126,7 @@ impl CreateBridgeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBridge`.
+/// Orchestration and serialization glue logic for `CreateBridge`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

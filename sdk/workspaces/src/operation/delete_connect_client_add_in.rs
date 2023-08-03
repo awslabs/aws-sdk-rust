@@ -131,7 +131,7 @@ impl DeleteConnectClientAddInInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteConnectClientAddIn`.
+/// Orchestration and serialization glue logic for `DeleteConnectClientAddIn`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

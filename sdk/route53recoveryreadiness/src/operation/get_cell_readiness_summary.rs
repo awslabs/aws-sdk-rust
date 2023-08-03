@@ -154,7 +154,7 @@ impl GetCellReadinessSummaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCellReadinessSummary`.
+/// Orchestration and serialization glue logic for `GetCellReadinessSummary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

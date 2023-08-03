@@ -131,7 +131,7 @@ impl PutConfigurationAggregatorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutConfigurationAggregator`.
+/// Orchestration and serialization glue logic for `PutConfigurationAggregator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

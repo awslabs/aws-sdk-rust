@@ -21,9 +21,9 @@ impl DeleteTextMessageSpendLimitOverrideFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverride, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverride, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -41,8 +41,8 @@ impl DeleteTextMessageSpendLimitOverrideFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>>
+                         {
         let op = self
             .inner
             .build()
@@ -60,16 +60,16 @@ impl DeleteTextMessageSpendLimitOverrideFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverride, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverride, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideError>
     >{
         self.customize_middleware().await
     }

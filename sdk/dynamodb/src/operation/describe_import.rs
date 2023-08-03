@@ -131,7 +131,7 @@ impl DescribeImportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeImport`.
+/// Orchestration and serialization glue logic for `DescribeImport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DescribeVirtualInterfacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVirtualInterfaces`.
+/// Orchestration and serialization glue logic for `DescribeVirtualInterfaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -144,7 +144,7 @@ impl PutAppInstanceRetentionSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAppInstanceRetentionSettings`.
+/// Orchestration and serialization glue logic for `PutAppInstanceRetentionSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

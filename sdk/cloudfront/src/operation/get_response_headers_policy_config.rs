@@ -130,7 +130,7 @@ impl GetResponseHeadersPolicyConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResponseHeadersPolicyConfig`.
+/// Orchestration and serialization glue logic for `GetResponseHeadersPolicyConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

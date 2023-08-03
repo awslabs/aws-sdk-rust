@@ -132,7 +132,7 @@ impl CreateGuiSessionAccessDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateGUISessionAccessDetails`.
+/// Orchestration and serialization glue logic for `CreateGUISessionAccessDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

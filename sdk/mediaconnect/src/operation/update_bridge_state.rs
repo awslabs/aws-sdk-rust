@@ -150,7 +150,7 @@ impl UpdateBridgeStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBridgeState`.
+/// Orchestration and serialization glue logic for `UpdateBridgeState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -112,7 +112,7 @@ impl GetMacieSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetMacieSession`.
+/// Orchestration and serialization glue logic for `GetMacieSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

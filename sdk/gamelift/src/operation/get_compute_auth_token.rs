@@ -133,7 +133,7 @@ impl GetComputeAuthTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetComputeAuthToken`.
+/// Orchestration and serialization glue logic for `GetComputeAuthToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

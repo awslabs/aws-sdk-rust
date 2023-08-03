@@ -169,7 +169,7 @@ impl DeleteIamPolicyAssignmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIAMPolicyAssignment`.
+/// Orchestration and serialization glue logic for `DeleteIAMPolicyAssignment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

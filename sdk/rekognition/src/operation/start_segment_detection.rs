@@ -131,7 +131,7 @@ impl StartSegmentDetectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartSegmentDetection`.
+/// Orchestration and serialization glue logic for `StartSegmentDetection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -129,7 +129,7 @@ impl CreateCustomRoutingAcceleratorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateCustomRoutingAccelerator`.
+/// Orchestration and serialization glue logic for `CreateCustomRoutingAccelerator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

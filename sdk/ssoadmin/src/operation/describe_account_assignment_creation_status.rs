@@ -116,7 +116,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeAccountAssignmentCreationStatus`.
+/// Orchestration and serialization glue logic for `DescribeAccountAssignmentCreationStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

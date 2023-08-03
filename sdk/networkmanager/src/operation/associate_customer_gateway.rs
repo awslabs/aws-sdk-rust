@@ -150,7 +150,7 @@ impl AssociateCustomerGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateCustomerGateway`.
+/// Orchestration and serialization glue logic for `AssociateCustomerGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

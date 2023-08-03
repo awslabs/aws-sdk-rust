@@ -131,7 +131,7 @@ impl GetServiceSyncBlockerSummaryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceSyncBlockerSummary`.
+/// Orchestration and serialization glue logic for `GetServiceSyncBlockerSummary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -160,7 +160,7 @@ impl ListProjectAssetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListProjectAssets`.
+/// Orchestration and serialization glue logic for `ListProjectAssets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

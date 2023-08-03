@@ -131,7 +131,7 @@ impl GenerateRandomInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateRandom`.
+/// Orchestration and serialization glue logic for `GenerateRandom`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

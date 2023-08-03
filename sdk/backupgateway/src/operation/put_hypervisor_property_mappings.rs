@@ -132,7 +132,7 @@ impl PutHypervisorPropertyMappingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutHypervisorPropertyMappings`.
+/// Orchestration and serialization glue logic for `PutHypervisorPropertyMappings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

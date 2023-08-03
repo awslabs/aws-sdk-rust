@@ -155,7 +155,7 @@ impl PutStorageLensConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutStorageLensConfiguration`.
+/// Orchestration and serialization glue logic for `PutStorageLensConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

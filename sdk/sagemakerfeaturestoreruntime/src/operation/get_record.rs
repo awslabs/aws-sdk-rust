@@ -182,7 +182,7 @@ impl GetRecordInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRecord`.
+/// Orchestration and serialization glue logic for `GetRecord`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl StartBulkDeploymentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartBulkDeployment`.
+/// Orchestration and serialization glue logic for `StartBulkDeployment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

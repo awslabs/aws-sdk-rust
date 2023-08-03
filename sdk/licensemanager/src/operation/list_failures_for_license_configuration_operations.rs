@@ -116,7 +116,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFailuresForLicenseConfigurationOperations`.
+/// Orchestration and serialization glue logic for `ListFailuresForLicenseConfigurationOperations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -175,7 +175,7 @@ impl SampleChannelDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SampleChannelData`.
+/// Orchestration and serialization glue logic for `SampleChannelData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

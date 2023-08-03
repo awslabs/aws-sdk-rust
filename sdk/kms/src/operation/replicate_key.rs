@@ -131,7 +131,7 @@ impl ReplicateKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReplicateKey`.
+/// Orchestration and serialization glue logic for `ReplicateKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

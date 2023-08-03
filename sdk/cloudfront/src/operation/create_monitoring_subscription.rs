@@ -150,7 +150,7 @@ impl CreateMonitoringSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMonitoringSubscription`.
+/// Orchestration and serialization glue logic for `CreateMonitoringSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

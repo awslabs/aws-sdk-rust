@@ -136,7 +136,7 @@ impl GetRecommenderConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRecommenderConfiguration`.
+/// Orchestration and serialization glue logic for `GetRecommenderConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

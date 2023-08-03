@@ -119,7 +119,7 @@ impl GenerateCredentialReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateCredentialReport`.
+/// Orchestration and serialization glue logic for `GenerateCredentialReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

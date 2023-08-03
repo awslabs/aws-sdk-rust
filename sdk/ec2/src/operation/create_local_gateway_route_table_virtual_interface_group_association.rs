@@ -111,7 +111,7 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
+/// Orchestration and serialization glue logic for `CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

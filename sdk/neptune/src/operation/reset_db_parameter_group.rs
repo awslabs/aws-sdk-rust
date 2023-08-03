@@ -126,7 +126,7 @@ impl ResetDbParameterGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetDBParameterGroup`.
+/// Orchestration and serialization glue logic for `ResetDBParameterGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeChangeSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeChangeSet`.
+/// Orchestration and serialization glue logic for `DescribeChangeSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

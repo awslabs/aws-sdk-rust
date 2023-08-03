@@ -131,7 +131,7 @@ impl ListFlywheelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFlywheels`.
+/// Orchestration and serialization glue logic for `ListFlywheels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

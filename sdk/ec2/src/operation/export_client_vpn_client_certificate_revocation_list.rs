@@ -111,7 +111,7 @@ impl ExportClientVpnClientCertificateRevocationListInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ExportClientVpnClientCertificateRevocationList`.
+/// Orchestration and serialization glue logic for `ExportClientVpnClientCertificateRevocationList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

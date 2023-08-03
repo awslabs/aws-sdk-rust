@@ -127,7 +127,7 @@ impl DescribeResiliencyPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeResiliencyPolicy`.
+/// Orchestration and serialization glue logic for `DescribeResiliencyPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

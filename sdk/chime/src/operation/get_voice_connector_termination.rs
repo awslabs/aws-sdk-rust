@@ -136,7 +136,7 @@ impl GetVoiceConnectorTerminationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetVoiceConnectorTermination`.
+/// Orchestration and serialization glue logic for `GetVoiceConnectorTermination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

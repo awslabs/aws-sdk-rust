@@ -151,7 +151,7 @@ impl ChangeResourceRecordSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ChangeResourceRecordSets`.
+/// Orchestration and serialization glue logic for `ChangeResourceRecordSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

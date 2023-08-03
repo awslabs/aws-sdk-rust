@@ -156,7 +156,7 @@ impl StartIngestionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartIngestion`.
+/// Orchestration and serialization glue logic for `StartIngestion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

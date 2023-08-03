@@ -183,7 +183,7 @@ impl AbortMultipartUploadInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AbortMultipartUpload`.
+/// Orchestration and serialization glue logic for `AbortMultipartUpload`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

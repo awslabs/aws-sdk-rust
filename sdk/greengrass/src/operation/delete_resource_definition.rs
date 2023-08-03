@@ -136,7 +136,7 @@ impl DeleteResourceDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteResourceDefinition`.
+/// Orchestration and serialization glue logic for `DeleteResourceDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

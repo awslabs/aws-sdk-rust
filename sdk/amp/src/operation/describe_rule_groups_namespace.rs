@@ -156,7 +156,7 @@ impl DescribeRuleGroupsNamespaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRuleGroupsNamespace`.
+/// Orchestration and serialization glue logic for `DescribeRuleGroupsNamespace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

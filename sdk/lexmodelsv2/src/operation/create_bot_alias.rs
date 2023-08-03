@@ -146,7 +146,7 @@ impl CreateBotAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBotAlias`.
+/// Orchestration and serialization glue logic for `CreateBotAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

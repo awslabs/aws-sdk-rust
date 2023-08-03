@@ -132,7 +132,7 @@ impl ListFraudsterRegistrationJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFraudsterRegistrationJobs`.
+/// Orchestration and serialization glue logic for `ListFraudsterRegistrationJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

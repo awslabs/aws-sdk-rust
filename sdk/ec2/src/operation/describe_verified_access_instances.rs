@@ -120,7 +120,7 @@ impl DescribeVerifiedAccessInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVerifiedAccessInstances`.
+/// Orchestration and serialization glue logic for `DescribeVerifiedAccessInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

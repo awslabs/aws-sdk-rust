@@ -170,7 +170,7 @@ impl UpdateThreatIntelSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateThreatIntelSet`.
+/// Orchestration and serialization glue logic for `UpdateThreatIntelSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

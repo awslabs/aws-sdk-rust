@@ -135,7 +135,7 @@ impl UpdatePublicDnsNamespaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePublicDnsNamespace`.
+/// Orchestration and serialization glue logic for `UpdatePublicDnsNamespace`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

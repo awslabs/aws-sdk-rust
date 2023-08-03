@@ -133,7 +133,7 @@ impl DeleteOriginAccessControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteOriginAccessControl`.
+/// Orchestration and serialization glue logic for `DeleteOriginAccessControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

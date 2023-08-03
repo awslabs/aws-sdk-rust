@@ -126,7 +126,7 @@ impl EnableVgwRoutePropagationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableVgwRoutePropagation`.
+/// Orchestration and serialization glue logic for `EnableVgwRoutePropagation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

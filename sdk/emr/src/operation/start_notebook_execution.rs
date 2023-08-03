@@ -131,7 +131,7 @@ impl StartNotebookExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartNotebookExecution`.
+/// Orchestration and serialization glue logic for `StartNotebookExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

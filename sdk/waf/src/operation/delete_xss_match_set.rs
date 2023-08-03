@@ -133,7 +133,7 @@ impl DeleteXssMatchSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteXssMatchSet`.
+/// Orchestration and serialization glue logic for `DeleteXssMatchSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

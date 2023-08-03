@@ -131,7 +131,7 @@ impl DeleteTestGridProjectInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTestGridProject`.
+/// Orchestration and serialization glue logic for `DeleteTestGridProject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

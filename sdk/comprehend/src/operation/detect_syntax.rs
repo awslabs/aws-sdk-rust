@@ -131,7 +131,7 @@ impl DetectSyntaxInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DetectSyntax`.
+/// Orchestration and serialization glue logic for `DetectSyntax`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

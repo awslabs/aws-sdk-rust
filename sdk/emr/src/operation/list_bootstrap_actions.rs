@@ -133,7 +133,7 @@ impl ListBootstrapActionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBootstrapActions`.
+/// Orchestration and serialization glue logic for `ListBootstrapActions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

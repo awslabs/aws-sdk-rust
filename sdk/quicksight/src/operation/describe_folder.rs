@@ -156,7 +156,7 @@ impl DescribeFolderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFolder`.
+/// Orchestration and serialization glue logic for `DescribeFolder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

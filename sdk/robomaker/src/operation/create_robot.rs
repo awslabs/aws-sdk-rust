@@ -126,7 +126,7 @@ impl CreateRobotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateRobot`.
+/// Orchestration and serialization glue logic for `CreateRobot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

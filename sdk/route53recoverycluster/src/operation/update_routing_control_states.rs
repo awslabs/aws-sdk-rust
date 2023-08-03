@@ -131,7 +131,7 @@ impl UpdateRoutingControlStatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRoutingControlStates`.
+/// Orchestration and serialization glue logic for `UpdateRoutingControlStates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

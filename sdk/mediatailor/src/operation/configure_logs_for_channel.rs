@@ -126,7 +126,7 @@ impl ConfigureLogsForChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ConfigureLogsForChannel`.
+/// Orchestration and serialization glue logic for `ConfigureLogsForChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

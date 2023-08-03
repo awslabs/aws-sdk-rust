@@ -131,7 +131,7 @@ impl AddUploadBufferInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AddUploadBuffer`.
+/// Orchestration and serialization glue logic for `AddUploadBuffer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

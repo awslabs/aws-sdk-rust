@@ -128,7 +128,7 @@ impl BatchEnableStandardsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchEnableStandards`.
+/// Orchestration and serialization glue logic for `BatchEnableStandards`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

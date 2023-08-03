@@ -152,7 +152,7 @@ impl UpdateVpcAttachmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVpcAttachment`.
+/// Orchestration and serialization glue logic for `UpdateVpcAttachment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

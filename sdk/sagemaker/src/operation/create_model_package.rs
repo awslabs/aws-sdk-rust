@@ -137,7 +137,7 @@ impl CreateModelPackageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateModelPackage`.
+/// Orchestration and serialization glue logic for `CreateModelPackage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

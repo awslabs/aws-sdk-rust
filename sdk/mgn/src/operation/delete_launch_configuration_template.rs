@@ -112,7 +112,7 @@ impl DeleteLaunchConfigurationTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLaunchConfigurationTemplate`.
+/// Orchestration and serialization glue logic for `DeleteLaunchConfigurationTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

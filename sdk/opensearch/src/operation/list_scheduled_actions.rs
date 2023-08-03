@@ -158,7 +158,7 @@ impl ListScheduledActionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListScheduledActions`.
+/// Orchestration and serialization glue logic for `ListScheduledActions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -153,7 +153,7 @@ impl ListCallAnalyticsCategoriesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCallAnalyticsCategories`.
+/// Orchestration and serialization glue logic for `ListCallAnalyticsCategories`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

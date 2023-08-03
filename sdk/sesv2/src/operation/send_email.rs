@@ -127,7 +127,7 @@ impl SendEmailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SendEmail`.
+/// Orchestration and serialization glue logic for `SendEmail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

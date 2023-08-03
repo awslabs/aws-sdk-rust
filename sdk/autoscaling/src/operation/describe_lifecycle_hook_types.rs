@@ -119,7 +119,7 @@ impl DescribeLifecycleHookTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLifecycleHookTypes`.
+/// Orchestration and serialization glue logic for `DescribeLifecycleHookTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CreateDataflowEndpointGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataflowEndpointGroup`.
+/// Orchestration and serialization glue logic for `CreateDataflowEndpointGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

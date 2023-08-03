@@ -154,7 +154,7 @@ impl CreateDocumentationPartInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDocumentationPart`.
+/// Orchestration and serialization glue logic for `CreateDocumentationPart`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

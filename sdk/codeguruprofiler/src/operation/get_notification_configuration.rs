@@ -136,7 +136,7 @@ impl GetNotificationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetNotificationConfiguration`.
+/// Orchestration and serialization glue logic for `GetNotificationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

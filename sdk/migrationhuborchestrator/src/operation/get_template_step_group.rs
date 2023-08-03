@@ -156,7 +156,7 @@ impl GetTemplateStepGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTemplateStepGroup`.
+/// Orchestration and serialization glue logic for `GetTemplateStepGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

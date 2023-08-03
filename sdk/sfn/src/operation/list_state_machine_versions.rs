@@ -131,7 +131,7 @@ impl ListStateMachineVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStateMachineVersions`.
+/// Orchestration and serialization glue logic for `ListStateMachineVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -174,7 +174,7 @@ impl CreateComponentTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateComponentType`.
+/// Orchestration and serialization glue logic for `CreateComponentType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

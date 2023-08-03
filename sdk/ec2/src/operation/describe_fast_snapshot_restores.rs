@@ -126,7 +126,7 @@ impl DescribeFastSnapshotRestoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFastSnapshotRestores`.
+/// Orchestration and serialization glue logic for `DescribeFastSnapshotRestores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl CreateSavingsPlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSavingsPlan`.
+/// Orchestration and serialization glue logic for `CreateSavingsPlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

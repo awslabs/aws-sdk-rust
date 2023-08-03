@@ -170,7 +170,7 @@ impl UpdateUserRoutingProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateUserRoutingProfile`.
+/// Orchestration and serialization glue logic for `UpdateUserRoutingProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

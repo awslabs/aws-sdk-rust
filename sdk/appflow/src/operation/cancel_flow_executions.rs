@@ -129,7 +129,7 @@ impl CancelFlowExecutionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelFlowExecutions`.
+/// Orchestration and serialization glue logic for `CancelFlowExecutions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

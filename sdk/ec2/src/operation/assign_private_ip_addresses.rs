@@ -126,7 +126,7 @@ impl AssignPrivateIpAddressesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssignPrivateIpAddresses`.
+/// Orchestration and serialization glue logic for `AssignPrivateIpAddresses`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

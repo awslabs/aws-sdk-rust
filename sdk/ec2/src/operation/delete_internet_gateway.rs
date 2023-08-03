@@ -126,7 +126,7 @@ impl DeleteInternetGatewayInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInternetGateway`.
+/// Orchestration and serialization glue logic for `DeleteInternetGateway`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

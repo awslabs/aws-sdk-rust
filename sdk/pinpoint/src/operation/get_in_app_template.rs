@@ -150,7 +150,7 @@ impl GetInAppTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInAppTemplate`.
+/// Orchestration and serialization glue logic for `GetInAppTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

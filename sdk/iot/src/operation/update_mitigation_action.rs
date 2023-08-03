@@ -150,7 +150,7 @@ impl UpdateMitigationActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateMitigationAction`.
+/// Orchestration and serialization glue logic for `UpdateMitigationAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

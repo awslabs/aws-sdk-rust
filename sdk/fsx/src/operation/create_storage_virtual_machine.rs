@@ -135,7 +135,7 @@ impl CreateStorageVirtualMachineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStorageVirtualMachine`.
+/// Orchestration and serialization glue logic for `CreateStorageVirtualMachine`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl UpdateFirewallPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFirewallPolicy`.
+/// Orchestration and serialization glue logic for `UpdateFirewallPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

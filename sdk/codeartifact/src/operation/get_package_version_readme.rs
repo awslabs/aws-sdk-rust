@@ -210,7 +210,7 @@ impl GetPackageVersionReadmeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPackageVersionReadme`.
+/// Orchestration and serialization glue logic for `GetPackageVersionReadme`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

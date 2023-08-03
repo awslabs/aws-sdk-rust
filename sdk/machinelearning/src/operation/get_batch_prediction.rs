@@ -133,7 +133,7 @@ impl GetBatchPredictionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBatchPrediction`.
+/// Orchestration and serialization glue logic for `GetBatchPrediction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

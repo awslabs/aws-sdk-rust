@@ -131,7 +131,7 @@ impl DeleteAssessmentTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAssessmentTemplate`.
+/// Orchestration and serialization glue logic for `DeleteAssessmentTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ResumeServiceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResumeService`.
+/// Orchestration and serialization glue logic for `ResumeService`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

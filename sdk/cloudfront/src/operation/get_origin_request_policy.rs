@@ -132,7 +132,7 @@ impl GetOriginRequestPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetOriginRequestPolicy`.
+/// Orchestration and serialization glue logic for `GetOriginRequestPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

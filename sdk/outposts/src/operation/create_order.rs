@@ -126,7 +126,7 @@ impl CreateOrderInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateOrder`.
+/// Orchestration and serialization glue logic for `CreateOrder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

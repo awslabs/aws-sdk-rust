@@ -133,7 +133,7 @@ impl BatchDeletePartitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeletePartition`.
+/// Orchestration and serialization glue logic for `BatchDeletePartition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

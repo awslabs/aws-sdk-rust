@@ -111,7 +111,7 @@ impl GetReservedNodeExchangeOfferingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReservedNodeExchangeOfferings`.
+/// Orchestration and serialization glue logic for `GetReservedNodeExchangeOfferings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

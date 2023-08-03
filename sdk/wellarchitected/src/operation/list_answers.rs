@@ -199,7 +199,7 @@ impl ListAnswersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAnswers`.
+/// Orchestration and serialization glue logic for `ListAnswers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

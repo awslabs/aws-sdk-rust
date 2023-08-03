@@ -131,7 +131,7 @@ impl DisableClientAuthenticationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableClientAuthentication`.
+/// Orchestration and serialization glue logic for `DisableClientAuthentication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

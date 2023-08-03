@@ -131,7 +131,7 @@ impl DescribeModelCardExportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeModelCardExportJob`.
+/// Orchestration and serialization glue logic for `DescribeModelCardExportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

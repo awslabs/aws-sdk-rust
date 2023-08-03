@@ -126,7 +126,7 @@ impl CreateApplicationInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateApplicationInstance`.
+/// Orchestration and serialization glue logic for `CreateApplicationInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

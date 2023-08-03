@@ -111,7 +111,7 @@ impl DescribeNetworkInsightsAccessScopesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNetworkInsightsAccessScopes`.
+/// Orchestration and serialization glue logic for `DescribeNetworkInsightsAccessScopes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

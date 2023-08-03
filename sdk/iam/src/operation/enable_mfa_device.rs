@@ -126,7 +126,7 @@ impl EnableMfaDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableMFADevice`.
+/// Orchestration and serialization glue logic for `EnableMFADevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

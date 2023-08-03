@@ -131,7 +131,7 @@ impl GetRelationalDatabaseBundlesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRelationalDatabaseBundles`.
+/// Orchestration and serialization glue logic for `GetRelationalDatabaseBundles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

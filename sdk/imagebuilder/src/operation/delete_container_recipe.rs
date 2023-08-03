@@ -140,7 +140,7 @@ impl DeleteContainerRecipeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteContainerRecipe`.
+/// Orchestration and serialization glue logic for `DeleteContainerRecipe`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

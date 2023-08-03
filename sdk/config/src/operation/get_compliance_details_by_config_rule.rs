@@ -116,7 +116,7 @@ impl GetComplianceDetailsByConfigRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetComplianceDetailsByConfigRule`.
+/// Orchestration and serialization glue logic for `GetComplianceDetailsByConfigRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

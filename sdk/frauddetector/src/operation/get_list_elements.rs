@@ -131,7 +131,7 @@ impl GetListElementsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetListElements`.
+/// Orchestration and serialization glue logic for `GetListElements`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

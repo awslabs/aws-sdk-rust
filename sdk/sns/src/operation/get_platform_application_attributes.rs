@@ -120,7 +120,7 @@ impl GetPlatformApplicationAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetPlatformApplicationAttributes`.
+/// Orchestration and serialization glue logic for `GetPlatformApplicationAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

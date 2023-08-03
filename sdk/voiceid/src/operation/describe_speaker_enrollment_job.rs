@@ -131,7 +131,7 @@ impl DescribeSpeakerEnrollmentJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSpeakerEnrollmentJob`.
+/// Orchestration and serialization glue logic for `DescribeSpeakerEnrollmentJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

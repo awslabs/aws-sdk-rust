@@ -133,7 +133,7 @@ impl MoveReplicationTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `MoveReplicationTask`.
+/// Orchestration and serialization glue logic for `MoveReplicationTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

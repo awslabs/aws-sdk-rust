@@ -137,7 +137,7 @@ impl CreateNetworkProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNetworkProfile`.
+/// Orchestration and serialization glue logic for `CreateNetworkProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

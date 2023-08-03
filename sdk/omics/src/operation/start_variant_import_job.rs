@@ -128,7 +128,7 @@ impl StartVariantImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartVariantImportJob`.
+/// Orchestration and serialization glue logic for `StartVariantImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

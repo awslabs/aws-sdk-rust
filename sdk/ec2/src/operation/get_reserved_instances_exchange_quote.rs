@@ -111,7 +111,7 @@ impl GetReservedInstancesExchangeQuoteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReservedInstancesExchangeQuote`.
+/// Orchestration and serialization glue logic for `GetReservedInstancesExchangeQuote`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

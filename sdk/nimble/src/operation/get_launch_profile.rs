@@ -156,7 +156,7 @@ impl GetLaunchProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLaunchProfile`.
+/// Orchestration and serialization glue logic for `GetLaunchProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

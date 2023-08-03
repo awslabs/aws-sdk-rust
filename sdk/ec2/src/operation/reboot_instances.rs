@@ -128,7 +128,7 @@ impl RebootInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RebootInstances`.
+/// Orchestration and serialization glue logic for `RebootInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

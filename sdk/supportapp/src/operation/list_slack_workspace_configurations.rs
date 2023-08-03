@@ -121,7 +121,7 @@ impl ListSlackWorkspaceConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSlackWorkspaceConfigurations`.
+/// Orchestration and serialization glue logic for `ListSlackWorkspaceConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

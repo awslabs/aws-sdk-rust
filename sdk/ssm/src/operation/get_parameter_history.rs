@@ -133,7 +133,7 @@ impl GetParameterHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetParameterHistory`.
+/// Orchestration and serialization glue logic for `GetParameterHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

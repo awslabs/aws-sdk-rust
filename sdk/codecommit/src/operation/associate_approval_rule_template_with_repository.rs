@@ -116,7 +116,7 @@ impl AssociateApprovalRuleTemplateWithRepositoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateApprovalRuleTemplateWithRepository`.
+/// Orchestration and serialization glue logic for `AssociateApprovalRuleTemplateWithRepository`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

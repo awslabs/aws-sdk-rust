@@ -145,7 +145,7 @@ impl ListAssessmentFrameworksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssessmentFrameworks`.
+/// Orchestration and serialization glue logic for `ListAssessmentFrameworks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DescribeBackupPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBackupPolicy`.
+/// Orchestration and serialization glue logic for `DescribeBackupPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl BatchPutScheduledUpdateGroupActionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchPutScheduledUpdateGroupAction`.
+/// Orchestration and serialization glue logic for `BatchPutScheduledUpdateGroupAction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

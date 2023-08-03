@@ -128,7 +128,7 @@ impl RestoreDomainAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreDomainAccess`.
+/// Orchestration and serialization glue logic for `RestoreDomainAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

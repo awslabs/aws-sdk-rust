@@ -131,7 +131,7 @@ impl ListLocalDisksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLocalDisks`.
+/// Orchestration and serialization glue logic for `ListLocalDisks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

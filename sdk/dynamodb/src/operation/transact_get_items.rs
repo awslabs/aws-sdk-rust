@@ -131,7 +131,7 @@ impl TransactGetItemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `TransactGetItems`.
+/// Orchestration and serialization glue logic for `TransactGetItems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

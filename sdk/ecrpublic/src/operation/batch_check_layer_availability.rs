@@ -131,7 +131,7 @@ impl BatchCheckLayerAvailabilityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchCheckLayerAvailability`.
+/// Orchestration and serialization glue logic for `BatchCheckLayerAvailability`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

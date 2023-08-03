@@ -132,7 +132,7 @@ impl ListPoolOriginationIdentitiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPoolOriginationIdentities`.
+/// Orchestration and serialization glue logic for `ListPoolOriginationIdentities`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

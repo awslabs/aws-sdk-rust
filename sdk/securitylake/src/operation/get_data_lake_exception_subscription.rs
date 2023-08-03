@@ -98,7 +98,7 @@ impl GetDataLakeExceptionSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataLakeExceptionSubscription`.
+/// Orchestration and serialization glue logic for `GetDataLakeExceptionSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

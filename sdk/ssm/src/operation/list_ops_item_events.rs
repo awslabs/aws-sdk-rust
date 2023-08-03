@@ -133,7 +133,7 @@ impl ListOpsItemEventsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOpsItemEvents`.
+/// Orchestration and serialization glue logic for `ListOpsItemEvents`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

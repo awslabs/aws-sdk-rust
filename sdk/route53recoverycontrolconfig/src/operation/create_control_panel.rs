@@ -132,7 +132,7 @@ impl CreateControlPanelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateControlPanel`.
+/// Orchestration and serialization glue logic for `CreateControlPanel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

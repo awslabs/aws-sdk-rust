@@ -131,7 +131,7 @@ impl CheckDomainTransferabilityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CheckDomainTransferability`.
+/// Orchestration and serialization glue logic for `CheckDomainTransferability`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

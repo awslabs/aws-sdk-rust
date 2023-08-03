@@ -156,7 +156,7 @@ impl DeleteRoutingProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRoutingProfile`.
+/// Orchestration and serialization glue logic for `DeleteRoutingProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

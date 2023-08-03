@@ -131,7 +131,7 @@ impl DescribeEngagementInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEngagement`.
+/// Orchestration and serialization glue logic for `DescribeEngagement`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

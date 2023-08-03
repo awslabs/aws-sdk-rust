@@ -161,7 +161,7 @@ impl DisassociateInstanceStorageConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateInstanceStorageConfig`.
+/// Orchestration and serialization glue logic for `DisassociateInstanceStorageConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

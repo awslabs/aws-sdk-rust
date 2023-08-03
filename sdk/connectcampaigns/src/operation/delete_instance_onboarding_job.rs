@@ -136,7 +136,7 @@ impl DeleteInstanceOnboardingJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteInstanceOnboardingJob`.
+/// Orchestration and serialization glue logic for `DeleteInstanceOnboardingJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

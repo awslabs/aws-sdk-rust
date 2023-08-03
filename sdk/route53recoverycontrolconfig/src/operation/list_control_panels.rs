@@ -142,7 +142,7 @@ impl ListControlPanelsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListControlPanels`.
+/// Orchestration and serialization glue logic for `ListControlPanels`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

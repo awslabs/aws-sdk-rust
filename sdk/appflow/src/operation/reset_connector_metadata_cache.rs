@@ -127,7 +127,7 @@ impl ResetConnectorMetadataCacheInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetConnectorMetadataCache`.
+/// Orchestration and serialization glue logic for `ResetConnectorMetadataCache`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

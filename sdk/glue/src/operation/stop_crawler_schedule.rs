@@ -133,7 +133,7 @@ impl StopCrawlerScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopCrawlerSchedule`.
+/// Orchestration and serialization glue logic for `StopCrawlerSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

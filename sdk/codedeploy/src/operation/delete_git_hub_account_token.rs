@@ -131,7 +131,7 @@ impl DeleteGitHubAccountTokenInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGitHubAccountToken`.
+/// Orchestration and serialization glue logic for `DeleteGitHubAccountToken`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

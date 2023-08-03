@@ -152,7 +152,7 @@ impl AssociateConnectPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateConnectPeer`.
+/// Orchestration and serialization glue logic for `AssociateConnectPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

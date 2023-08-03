@@ -126,7 +126,7 @@ impl CreatePresetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePreset`.
+/// Orchestration and serialization glue logic for `CreatePreset`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -135,7 +135,7 @@ impl CreateExperienceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateExperience`.
+/// Orchestration and serialization glue logic for `CreateExperience`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

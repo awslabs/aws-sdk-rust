@@ -153,7 +153,7 @@ impl DescribeEntityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEntity`.
+/// Orchestration and serialization glue logic for `DescribeEntity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

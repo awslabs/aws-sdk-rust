@@ -126,7 +126,7 @@ impl ListClassificationJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListClassificationJobs`.
+/// Orchestration and serialization glue logic for `ListClassificationJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

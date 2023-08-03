@@ -202,7 +202,7 @@ impl UpdateBotRecommendationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateBotRecommendation`.
+/// Orchestration and serialization glue logic for `UpdateBotRecommendation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

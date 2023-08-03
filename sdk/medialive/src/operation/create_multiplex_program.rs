@@ -154,7 +154,7 @@ impl CreateMultiplexProgramInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMultiplexProgram`.
+/// Orchestration and serialization glue logic for `CreateMultiplexProgram`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

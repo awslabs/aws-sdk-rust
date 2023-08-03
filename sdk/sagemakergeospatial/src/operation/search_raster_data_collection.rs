@@ -127,7 +127,7 @@ impl SearchRasterDataCollectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SearchRasterDataCollection`.
+/// Orchestration and serialization glue logic for `SearchRasterDataCollection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

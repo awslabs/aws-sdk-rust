@@ -131,7 +131,7 @@ impl UpdateAppImageConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAppImageConfig`.
+/// Orchestration and serialization glue logic for `UpdateAppImageConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

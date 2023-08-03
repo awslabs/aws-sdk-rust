@@ -126,7 +126,7 @@ impl DescribePublisherInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribePublisher`.
+/// Orchestration and serialization glue logic for `DescribePublisher`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

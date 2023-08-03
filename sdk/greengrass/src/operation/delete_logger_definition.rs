@@ -136,7 +136,7 @@ impl DeleteLoggerDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteLoggerDefinition`.
+/// Orchestration and serialization glue logic for `DeleteLoggerDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

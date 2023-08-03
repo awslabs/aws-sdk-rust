@@ -126,7 +126,7 @@ impl ModifyDbClusterInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyDBCluster`.
+/// Orchestration and serialization glue logic for `ModifyDBCluster`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl ListSharedReportGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSharedReportGroups`.
+/// Orchestration and serialization glue logic for `ListSharedReportGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

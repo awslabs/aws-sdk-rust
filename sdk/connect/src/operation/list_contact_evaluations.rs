@@ -166,7 +166,7 @@ impl ListContactEvaluationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListContactEvaluations`.
+/// Orchestration and serialization glue logic for `ListContactEvaluations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

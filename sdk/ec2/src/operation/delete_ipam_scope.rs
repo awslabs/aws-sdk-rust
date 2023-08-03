@@ -126,7 +126,7 @@ impl DeleteIpamScopeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteIpamScope`.
+/// Orchestration and serialization glue logic for `DeleteIpamScope`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl UpdateRepositoryNameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRepositoryName`.
+/// Orchestration and serialization glue logic for `UpdateRepositoryName`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

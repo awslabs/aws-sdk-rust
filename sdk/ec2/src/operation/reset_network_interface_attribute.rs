@@ -120,7 +120,7 @@ impl ResetNetworkInterfaceAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetNetworkInterfaceAttribute`.
+/// Orchestration and serialization glue logic for `ResetNetworkInterfaceAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

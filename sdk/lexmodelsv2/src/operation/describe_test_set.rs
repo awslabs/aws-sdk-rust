@@ -132,7 +132,7 @@ impl DescribeTestSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeTestSet`.
+/// Orchestration and serialization glue logic for `DescribeTestSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

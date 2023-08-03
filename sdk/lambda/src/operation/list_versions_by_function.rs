@@ -158,7 +158,7 @@ impl ListVersionsByFunctionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVersionsByFunction`.
+/// Orchestration and serialization glue logic for `ListVersionsByFunction`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

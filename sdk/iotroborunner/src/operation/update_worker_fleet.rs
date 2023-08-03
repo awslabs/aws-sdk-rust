@@ -126,7 +126,7 @@ impl UpdateWorkerFleetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorkerFleet`.
+/// Orchestration and serialization glue logic for `UpdateWorkerFleet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

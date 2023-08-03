@@ -130,7 +130,7 @@ impl CreateConnectAttachmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateConnectAttachment`.
+/// Orchestration and serialization glue logic for `CreateConnectAttachment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

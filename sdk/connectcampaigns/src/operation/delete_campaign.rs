@@ -132,7 +132,7 @@ impl DeleteCampaignInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteCampaign`.
+/// Orchestration and serialization glue logic for `DeleteCampaign`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

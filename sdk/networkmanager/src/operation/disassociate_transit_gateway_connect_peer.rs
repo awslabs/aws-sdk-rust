@@ -135,7 +135,7 @@ impl DisassociateTransitGatewayConnectPeerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateTransitGatewayConnectPeer`.
+/// Orchestration and serialization glue logic for `DisassociateTransitGatewayConnectPeer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

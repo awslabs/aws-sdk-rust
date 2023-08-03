@@ -133,7 +133,7 @@ impl DescribeEvaluationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEvaluations`.
+/// Orchestration and serialization glue logic for `DescribeEvaluations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

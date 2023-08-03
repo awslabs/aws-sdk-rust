@@ -134,7 +134,7 @@ impl ListAssistantsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssistants`.
+/// Orchestration and serialization glue logic for `ListAssistants`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

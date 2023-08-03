@@ -131,7 +131,7 @@ impl GetDiskSnapshotsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDiskSnapshots`.
+/// Orchestration and serialization glue logic for `GetDiskSnapshots`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

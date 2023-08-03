@@ -124,7 +124,7 @@ impl DescribeOperatingSystemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeOperatingSystems`.
+/// Orchestration and serialization glue logic for `DescribeOperatingSystems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

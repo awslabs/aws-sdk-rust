@@ -126,7 +126,7 @@ impl UploadSshPublicKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UploadSSHPublicKey`.
+/// Orchestration and serialization glue logic for `UploadSSHPublicKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

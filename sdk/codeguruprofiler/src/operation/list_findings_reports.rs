@@ -194,7 +194,7 @@ impl ListFindingsReportsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFindingsReports`.
+/// Orchestration and serialization glue logic for `ListFindingsReports`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

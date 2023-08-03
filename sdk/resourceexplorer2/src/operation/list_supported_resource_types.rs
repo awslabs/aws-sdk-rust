@@ -126,7 +126,7 @@ impl ListSupportedResourceTypesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSupportedResourceTypes`.
+/// Orchestration and serialization glue logic for `ListSupportedResourceTypes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

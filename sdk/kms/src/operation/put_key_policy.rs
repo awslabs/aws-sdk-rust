@@ -131,7 +131,7 @@ impl PutKeyPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutKeyPolicy`.
+/// Orchestration and serialization glue logic for `PutKeyPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

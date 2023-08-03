@@ -126,7 +126,7 @@ impl CreateGraphInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateGraph`.
+/// Orchestration and serialization glue logic for `CreateGraph`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

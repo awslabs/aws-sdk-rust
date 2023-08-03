@@ -111,7 +111,7 @@ impl GetContextKeysForPrincipalPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContextKeysForPrincipalPolicy`.
+/// Orchestration and serialization glue logic for `GetContextKeysForPrincipalPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

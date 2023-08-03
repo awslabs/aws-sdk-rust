@@ -116,7 +116,7 @@ impl CreateMediaLiveConnectorPipelineInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMediaLiveConnectorPipeline`.
+/// Orchestration and serialization glue logic for `CreateMediaLiveConnectorPipeline`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -202,7 +202,7 @@ impl RecognizeTextInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RecognizeText`.
+/// Orchestration and serialization glue logic for `RecognizeText`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

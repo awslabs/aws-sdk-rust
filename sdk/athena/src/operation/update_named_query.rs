@@ -131,7 +131,7 @@ impl UpdateNamedQueryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateNamedQuery`.
+/// Orchestration and serialization glue logic for `UpdateNamedQuery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

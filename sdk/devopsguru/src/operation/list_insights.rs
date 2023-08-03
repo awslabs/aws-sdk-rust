@@ -126,7 +126,7 @@ impl ListInsightsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInsights`.
+/// Orchestration and serialization glue logic for `ListInsights`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

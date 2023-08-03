@@ -133,7 +133,7 @@ impl UpdateRateBasedRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRateBasedRule`.
+/// Orchestration and serialization glue logic for `UpdateRateBasedRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

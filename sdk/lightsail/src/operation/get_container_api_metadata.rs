@@ -124,7 +124,7 @@ impl GetContainerApiMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetContainerAPIMetadata`.
+/// Orchestration and serialization glue logic for `GetContainerAPIMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

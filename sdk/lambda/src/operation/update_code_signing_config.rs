@@ -150,7 +150,7 @@ impl UpdateCodeSigningConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCodeSigningConfig`.
+/// Orchestration and serialization glue logic for `UpdateCodeSigningConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

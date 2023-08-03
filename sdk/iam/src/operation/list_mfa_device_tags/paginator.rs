@@ -79,18 +79,20 @@ impl ListMfaDeviceTagsPaginator {
                     }
                 };
                 loop {
-                    let op = match input
-                        .make_operation(&handle.conf)
-                        .await
-                        .map_err(::aws_smithy_http::result::SdkError::construction_failure)
-                    {
-                        ::std::result::Result::Ok(op) => op,
-                        ::std::result::Result::Err(e) => {
-                            let _ = tx.send(::std::result::Result::Err(e)).await;
-                            return;
-                        }
+                    let resp = {
+                        let op = match input
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(::aws_smithy_http::result::SdkError::construction_failure)
+                        {
+                            ::std::result::Result::Ok(op) => op,
+                            ::std::result::Result::Err(e) => {
+                                let _ = tx.send(::std::result::Result::Err(e)).await;
+                                return;
+                            }
+                        };
+                        handle.client.call(op).await
                     };
-                    let resp = handle.client.call(op).await;
                     // If the input member is None or it was an error
                     let done = match resp {
                         ::std::result::Result::Ok(ref resp) => {

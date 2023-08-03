@@ -132,7 +132,7 @@ impl ListSourceLocationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSourceLocations`.
+/// Orchestration and serialization glue logic for `ListSourceLocations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

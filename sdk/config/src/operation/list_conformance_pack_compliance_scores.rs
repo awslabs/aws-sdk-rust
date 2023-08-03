@@ -116,7 +116,7 @@ impl ListConformancePackComplianceScoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListConformancePackComplianceScores`.
+/// Orchestration and serialization glue logic for `ListConformancePackComplianceScores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

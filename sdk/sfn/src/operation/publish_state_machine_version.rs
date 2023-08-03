@@ -131,7 +131,7 @@ impl PublishStateMachineVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PublishStateMachineVersion`.
+/// Orchestration and serialization glue logic for `PublishStateMachineVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

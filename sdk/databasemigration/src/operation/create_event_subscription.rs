@@ -131,7 +131,7 @@ impl CreateEventSubscriptionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEventSubscription`.
+/// Orchestration and serialization glue logic for `CreateEventSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

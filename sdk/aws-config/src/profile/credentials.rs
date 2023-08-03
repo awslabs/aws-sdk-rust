@@ -23,12 +23,13 @@
 //! through a series of providers.
 
 use crate::profile::credentials::exec::named::NamedProviderFactory;
-use crate::profile::credentials::exec::{ClientConfiguration, ProviderChain};
+use crate::profile::credentials::exec::ProviderChain;
 use crate::profile::parser::ProfileFileLoadError;
 use crate::profile::profile_file::ProfileFiles;
 use crate::profile::Profile;
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
+use aws_sdk_sts::config::Builder as StsConfigBuilder;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -141,7 +142,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 #[derive(Debug)]
 pub struct ProfileFileCredentialsProvider {
     factory: NamedProviderFactory,
-    client_config: ClientConfiguration,
+    sts_config: StsConfigBuilder,
     provider_config: ProviderConfig,
 }
 
@@ -181,7 +182,7 @@ impl ProfileFileCredentialsProvider {
         };
         for provider in inner_provider.chain().iter() {
             let next_creds = provider
-                .credentials(creds, &self.client_config)
+                .credentials(creds, &self.sts_config)
                 .instrument(tracing::debug_span!("load_assume_role", provider = ?provider))
                 .await;
             match next_creds {
@@ -440,14 +441,10 @@ impl Builder {
                 )
             });
         let factory = exec::named::NamedProviderFactory::new(named_providers);
-        let core_client = conf.sts_client();
 
         ProfileFileCredentialsProvider {
             factory,
-            client_config: ClientConfiguration {
-                sts_client: core_client,
-                region: conf.region(),
-            },
+            sts_config: conf.sts_client_config(),
             provider_config: conf,
         }
     }

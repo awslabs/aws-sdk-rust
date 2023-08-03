@@ -126,7 +126,7 @@ impl DeleteSubnetCidrReservationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSubnetCidrReservation`.
+/// Orchestration and serialization glue logic for `DeleteSubnetCidrReservation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

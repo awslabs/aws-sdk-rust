@@ -128,7 +128,7 @@ impl CreateSampleFindingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSampleFindings`.
+/// Orchestration and serialization glue logic for `CreateSampleFindings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

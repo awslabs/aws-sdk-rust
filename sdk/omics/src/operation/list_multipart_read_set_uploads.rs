@@ -160,7 +160,7 @@ impl ListMultipartReadSetUploadsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMultipartReadSetUploads`.
+/// Orchestration and serialization glue logic for `ListMultipartReadSetUploads`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

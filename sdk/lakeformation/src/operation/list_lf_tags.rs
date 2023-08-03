@@ -126,7 +126,7 @@ impl ListLfTagsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLFTags`.
+/// Orchestration and serialization glue logic for `ListLFTags`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

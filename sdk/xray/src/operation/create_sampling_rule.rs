@@ -128,7 +128,7 @@ impl CreateSamplingRuleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSamplingRule`.
+/// Orchestration and serialization glue logic for `CreateSamplingRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl CloneReceiptRuleSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CloneReceiptRuleSet`.
+/// Orchestration and serialization glue logic for `CloneReceiptRuleSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

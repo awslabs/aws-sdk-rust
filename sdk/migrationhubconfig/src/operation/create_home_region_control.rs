@@ -131,7 +131,7 @@ impl CreateHomeRegionControlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateHomeRegionControl`.
+/// Orchestration and serialization glue logic for `CreateHomeRegionControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

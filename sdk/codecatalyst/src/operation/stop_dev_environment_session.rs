@@ -175,7 +175,7 @@ impl StopDevEnvironmentSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopDevEnvironmentSession`.
+/// Orchestration and serialization glue logic for `StopDevEnvironmentSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DescribeFrameworkInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFramework`.
+/// Orchestration and serialization glue logic for `DescribeFramework`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

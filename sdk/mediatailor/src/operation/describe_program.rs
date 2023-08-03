@@ -156,7 +156,7 @@ impl DescribeProgramInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeProgram`.
+/// Orchestration and serialization glue logic for `DescribeProgram`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

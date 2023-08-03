@@ -168,7 +168,7 @@ impl ReimportApiInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ReimportApi`.
+/// Orchestration and serialization glue logic for `ReimportApi`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

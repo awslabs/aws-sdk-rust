@@ -135,7 +135,7 @@ impl PutConfigurationSetSendingOptionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutConfigurationSetSendingOptions`.
+/// Orchestration and serialization glue logic for `PutConfigurationSetSendingOptions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl CreateProposalInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateProposal`.
+/// Orchestration and serialization glue logic for `CreateProposal`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

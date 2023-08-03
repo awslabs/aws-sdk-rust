@@ -136,7 +136,7 @@ impl GetBulkDeploymentStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBulkDeploymentStatus`.
+/// Orchestration and serialization glue logic for `GetBulkDeploymentStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -132,7 +132,7 @@ impl GetDistributionConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDistributionConfig`.
+/// Orchestration and serialization glue logic for `GetDistributionConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

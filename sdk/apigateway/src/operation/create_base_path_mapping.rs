@@ -154,7 +154,7 @@ impl CreateBasePathMappingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateBasePathMapping`.
+/// Orchestration and serialization glue logic for `CreateBasePathMapping`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

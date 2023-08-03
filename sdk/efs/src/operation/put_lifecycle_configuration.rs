@@ -150,7 +150,7 @@ impl PutLifecycleConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutLifecycleConfiguration`.
+/// Orchestration and serialization glue logic for `PutLifecycleConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl UploadEntityDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UploadEntityDefinitions`.
+/// Orchestration and serialization glue logic for `UploadEntityDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

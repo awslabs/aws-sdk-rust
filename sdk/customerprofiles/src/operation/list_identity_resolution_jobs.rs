@@ -161,7 +161,7 @@ impl ListIdentityResolutionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIdentityResolutionJobs`.
+/// Orchestration and serialization glue logic for `ListIdentityResolutionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

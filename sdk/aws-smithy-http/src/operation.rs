@@ -60,6 +60,7 @@ pub struct Parts<H, R> {
     pub metadata: Option<Metadata>,
 }
 
+// TODO(enableNewSmithyRuntime): Delete `operation::Operation` when cleaning up middleware
 /// An [`Operation`] is a request paired with a response handler, retry classifier,
 /// and metadata that identifies the API being called.
 ///
@@ -159,6 +160,7 @@ impl<H> Operation<H, ()> {
     }
 }
 
+// TODO(enableNewSmithyRuntime): Delete `operation::Request` when cleaning up middleware
 /// Operation request type that associates a property bag with an underlying HTTP request.
 /// This type represents the request in the Tower `Service` in middleware so that middleware
 /// can share information with each other via the properties.
@@ -250,6 +252,7 @@ impl Request {
     }
 }
 
+// TODO(enableNewSmithyRuntime): Delete `operation::Response` when cleaning up middleware
 /// Operation response type that associates a property bag with an underlying HTTP response.
 /// This type represents the response in the Tower `Service` in middleware so that middleware
 /// can share information with each other via the properties.

@@ -131,7 +131,7 @@ impl DescribeStacksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStacks`.
+/// Orchestration and serialization glue logic for `DescribeStacks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

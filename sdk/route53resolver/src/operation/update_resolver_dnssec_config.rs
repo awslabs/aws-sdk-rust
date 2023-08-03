@@ -131,7 +131,7 @@ impl UpdateResolverDnssecConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateResolverDnssecConfig`.
+/// Orchestration and serialization glue logic for `UpdateResolverDnssecConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

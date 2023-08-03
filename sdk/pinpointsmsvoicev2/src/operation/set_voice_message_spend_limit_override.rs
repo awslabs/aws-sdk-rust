@@ -116,7 +116,7 @@ impl SetVoiceMessageSpendLimitOverrideInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetVoiceMessageSpendLimitOverride`.
+/// Orchestration and serialization glue logic for `SetVoiceMessageSpendLimitOverride`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

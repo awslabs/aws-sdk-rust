@@ -126,7 +126,7 @@ impl SignOutUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SignOutUser`.
+/// Orchestration and serialization glue logic for `SignOutUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

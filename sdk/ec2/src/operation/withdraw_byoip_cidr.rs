@@ -126,7 +126,7 @@ impl WithdrawByoipCidrInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `WithdrawByoipCidr`.
+/// Orchestration and serialization glue logic for `WithdrawByoipCidr`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

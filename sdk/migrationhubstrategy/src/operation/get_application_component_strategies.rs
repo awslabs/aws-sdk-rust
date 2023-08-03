@@ -121,7 +121,7 @@ impl GetApplicationComponentStrategiesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetApplicationComponentStrategies`.
+/// Orchestration and serialization glue logic for `GetApplicationComponentStrategies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

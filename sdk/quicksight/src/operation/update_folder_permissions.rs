@@ -170,7 +170,7 @@ impl UpdateFolderPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateFolderPermissions`.
+/// Orchestration and serialization glue logic for `UpdateFolderPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

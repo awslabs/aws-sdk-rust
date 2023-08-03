@@ -140,7 +140,7 @@ impl ListOriginRequestPoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListOriginRequestPolicies`.
+/// Orchestration and serialization glue logic for `ListOriginRequestPolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -208,7 +208,7 @@ impl UpdatePackageVersionsStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePackageVersionsStatus`.
+/// Orchestration and serialization glue logic for `UpdatePackageVersionsStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

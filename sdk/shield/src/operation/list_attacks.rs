@@ -131,7 +131,7 @@ impl ListAttacksInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAttacks`.
+/// Orchestration and serialization glue logic for `ListAttacks`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

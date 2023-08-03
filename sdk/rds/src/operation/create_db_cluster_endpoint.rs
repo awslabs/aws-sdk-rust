@@ -126,7 +126,7 @@ impl CreateDbClusterEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDBClusterEndpoint`.
+/// Orchestration and serialization glue logic for `CreateDBClusterEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

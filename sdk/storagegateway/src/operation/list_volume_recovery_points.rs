@@ -131,7 +131,7 @@ impl ListVolumeRecoveryPointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVolumeRecoveryPoints`.
+/// Orchestration and serialization glue logic for `ListVolumeRecoveryPoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

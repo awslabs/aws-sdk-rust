@@ -128,7 +128,7 @@ impl DescribeResizeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeResize`.
+/// Orchestration and serialization glue logic for `DescribeResize`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

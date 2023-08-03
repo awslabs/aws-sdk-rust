@@ -131,7 +131,7 @@ impl DeprecateActivityTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeprecateActivityType`.
+/// Orchestration and serialization glue logic for `DeprecateActivityType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

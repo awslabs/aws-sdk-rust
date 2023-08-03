@@ -136,7 +136,7 @@ impl GetCoreDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetCoreDevice`.
+/// Orchestration and serialization glue logic for `GetCoreDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

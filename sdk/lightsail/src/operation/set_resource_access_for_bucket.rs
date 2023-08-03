@@ -131,7 +131,7 @@ impl SetResourceAccessForBucketInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetResourceAccessForBucket`.
+/// Orchestration and serialization glue logic for `SetResourceAccessForBucket`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

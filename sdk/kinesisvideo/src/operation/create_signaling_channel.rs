@@ -127,7 +127,7 @@ impl CreateSignalingChannelInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSignalingChannel`.
+/// Orchestration and serialization glue logic for `CreateSignalingChannel`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

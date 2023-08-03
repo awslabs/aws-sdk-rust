@@ -131,7 +131,7 @@ impl CreateStudioLifecycleConfigInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateStudioLifecycleConfig`.
+/// Orchestration and serialization glue logic for `CreateStudioLifecycleConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

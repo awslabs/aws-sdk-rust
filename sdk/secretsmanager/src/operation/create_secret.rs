@@ -135,7 +135,7 @@ impl CreateSecretInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateSecret`.
+/// Orchestration and serialization glue logic for `CreateSecret`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

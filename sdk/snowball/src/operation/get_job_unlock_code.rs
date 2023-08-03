@@ -131,7 +131,7 @@ impl GetJobUnlockCodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetJobUnlockCode`.
+/// Orchestration and serialization glue logic for `GetJobUnlockCode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

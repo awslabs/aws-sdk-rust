@@ -142,7 +142,7 @@ impl ListDeviceProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDeviceProfiles`.
+/// Orchestration and serialization glue logic for `ListDeviceProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

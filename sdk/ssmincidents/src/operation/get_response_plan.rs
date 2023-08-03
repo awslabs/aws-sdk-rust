@@ -137,7 +137,7 @@ impl GetResponsePlanInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetResponsePlan`.
+/// Orchestration and serialization glue logic for `GetResponsePlan`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

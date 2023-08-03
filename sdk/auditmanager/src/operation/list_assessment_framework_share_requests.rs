@@ -131,7 +131,7 @@ impl ListAssessmentFrameworkShareRequestsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAssessmentFrameworkShareRequests`.
+/// Orchestration and serialization glue logic for `ListAssessmentFrameworkShareRequests`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

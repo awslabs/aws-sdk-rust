@@ -137,7 +137,7 @@ impl StartDiscoveryJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartDiscoveryJob`.
+/// Orchestration and serialization glue logic for `StartDiscoveryJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

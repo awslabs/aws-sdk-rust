@@ -131,7 +131,7 @@ impl StopIcd10CmInferenceJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopICD10CMInferenceJob`.
+/// Orchestration and serialization glue logic for `StopICD10CMInferenceJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

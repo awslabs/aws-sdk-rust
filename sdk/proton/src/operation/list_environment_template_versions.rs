@@ -125,7 +125,7 @@ impl ListEnvironmentTemplateVersionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEnvironmentTemplateVersions`.
+/// Orchestration and serialization glue logic for `ListEnvironmentTemplateVersions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

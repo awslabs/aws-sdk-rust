@@ -137,7 +137,7 @@ impl CreateEndpointGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateEndpointGroup`.
+/// Orchestration and serialization glue logic for `CreateEndpointGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateArtifactInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateArtifact`.
+/// Orchestration and serialization glue logic for `CreateArtifact`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

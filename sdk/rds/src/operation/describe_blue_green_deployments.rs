@@ -126,7 +126,7 @@ impl DescribeBlueGreenDeploymentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeBlueGreenDeployments`.
+/// Orchestration and serialization glue logic for `DescribeBlueGreenDeployments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

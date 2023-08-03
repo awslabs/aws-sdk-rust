@@ -131,7 +131,7 @@ impl UpdatePrimaryEmailAddressInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePrimaryEmailAddress`.
+/// Orchestration and serialization glue logic for `UpdatePrimaryEmailAddress`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

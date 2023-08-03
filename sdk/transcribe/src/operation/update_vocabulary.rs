@@ -131,7 +131,7 @@ impl UpdateVocabularyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateVocabulary`.
+/// Orchestration and serialization glue logic for `UpdateVocabulary`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

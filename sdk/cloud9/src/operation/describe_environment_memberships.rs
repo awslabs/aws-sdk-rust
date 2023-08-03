@@ -132,7 +132,7 @@ impl DescribeEnvironmentMembershipsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeEnvironmentMemberships`.
+/// Orchestration and serialization glue logic for `DescribeEnvironmentMemberships`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

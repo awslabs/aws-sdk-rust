@@ -176,7 +176,7 @@ impl DescribeRefreshScheduleInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeRefreshSchedule`.
+/// Orchestration and serialization glue logic for `DescribeRefreshSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

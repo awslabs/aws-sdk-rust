@@ -126,7 +126,7 @@ impl DisableSnapshotCopyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableSnapshotCopy`.
+/// Orchestration and serialization glue logic for `DisableSnapshotCopy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

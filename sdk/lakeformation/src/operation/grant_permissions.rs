@@ -126,7 +126,7 @@ impl GrantPermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GrantPermissions`.
+/// Orchestration and serialization glue logic for `GrantPermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

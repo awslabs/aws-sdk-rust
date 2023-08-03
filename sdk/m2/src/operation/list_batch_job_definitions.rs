@@ -163,7 +163,7 @@ impl ListBatchJobDefinitionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBatchJobDefinitions`.
+/// Orchestration and serialization glue logic for `ListBatchJobDefinitions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

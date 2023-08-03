@@ -150,7 +150,7 @@ impl PutAuthPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAuthPolicy`.
+/// Orchestration and serialization glue logic for `PutAuthPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

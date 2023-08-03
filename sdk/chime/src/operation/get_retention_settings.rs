@@ -136,7 +136,7 @@ impl GetRetentionSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetRetentionSettings`.
+/// Orchestration and serialization glue logic for `GetRetentionSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

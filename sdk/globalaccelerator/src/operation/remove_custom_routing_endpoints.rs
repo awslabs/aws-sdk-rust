@@ -131,7 +131,7 @@ impl RemoveCustomRoutingEndpointsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RemoveCustomRoutingEndpoints`.
+/// Orchestration and serialization glue logic for `RemoveCustomRoutingEndpoints`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

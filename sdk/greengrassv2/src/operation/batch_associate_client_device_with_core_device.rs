@@ -135,7 +135,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchAssociateClientDeviceWithCoreDevice`.
+/// Orchestration and serialization glue logic for `BatchAssociateClientDeviceWithCoreDevice`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

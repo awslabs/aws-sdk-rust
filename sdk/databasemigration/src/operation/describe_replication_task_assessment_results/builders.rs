@@ -22,9 +22,9 @@ impl DescribeReplicationTaskAssessmentResultsFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResults, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResults, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -42,8 +42,8 @@ impl DescribeReplicationTaskAssessmentResultsFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>>
+                         {
         let op = self
             .inner
             .build()
@@ -61,16 +61,16 @@ impl DescribeReplicationTaskAssessmentResultsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResults, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResults, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError>
     >{
         self.customize_middleware().await
     }

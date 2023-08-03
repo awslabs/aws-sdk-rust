@@ -131,7 +131,7 @@ impl BatchDeleteBuildsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteBuilds`.
+/// Orchestration and serialization glue logic for `BatchDeleteBuilds`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

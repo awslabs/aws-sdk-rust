@@ -131,7 +131,7 @@ impl UpdateRelationalDatabaseInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRelationalDatabase`.
+/// Orchestration and serialization glue logic for `UpdateRelationalDatabase`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

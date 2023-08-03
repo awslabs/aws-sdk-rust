@@ -116,7 +116,7 @@ impl GetEcsServiceRecommendationProjectedMetricsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetECSServiceRecommendationProjectedMetrics`.
+/// Orchestration and serialization glue logic for `GetECSServiceRecommendationProjectedMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -130,7 +130,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeReservedElasticsearchInstanceOfferings`.
+/// Orchestration and serialization glue logic for `DescribeReservedElasticsearchInstanceOfferings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

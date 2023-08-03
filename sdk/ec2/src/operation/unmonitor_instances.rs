@@ -126,7 +126,7 @@ impl UnmonitorInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UnmonitorInstances`.
+/// Orchestration and serialization glue logic for `UnmonitorInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

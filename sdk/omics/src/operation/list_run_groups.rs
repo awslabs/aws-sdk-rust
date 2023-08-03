@@ -144,7 +144,7 @@ impl ListRunGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRunGroups`.
+/// Orchestration and serialization glue logic for `ListRunGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

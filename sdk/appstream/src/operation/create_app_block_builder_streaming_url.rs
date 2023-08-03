@@ -116,7 +116,7 @@ impl CreateAppBlockBuilderStreamingUrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateAppBlockBuilderStreamingURL`.
+/// Orchestration and serialization glue logic for `CreateAppBlockBuilderStreamingURL`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

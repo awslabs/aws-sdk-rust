@@ -133,7 +133,7 @@ impl DeleteWorkspaceImageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteWorkspaceImage`.
+/// Orchestration and serialization glue logic for `DeleteWorkspaceImage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl EnableEbsEncryptionByDefaultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `EnableEbsEncryptionByDefault`.
+/// Orchestration and serialization glue logic for `EnableEbsEncryptionByDefault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl RequestUploadCredentialsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RequestUploadCredentials`.
+/// Orchestration and serialization glue logic for `RequestUploadCredentials`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

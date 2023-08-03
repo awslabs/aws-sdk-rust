@@ -133,7 +133,7 @@ impl ListVolumeInitiatorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListVolumeInitiators`.
+/// Orchestration and serialization glue logic for `ListVolumeInitiators`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

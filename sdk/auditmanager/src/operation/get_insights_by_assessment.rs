@@ -136,7 +136,7 @@ impl GetInsightsByAssessmentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInsightsByAssessment`.
+/// Orchestration and serialization glue logic for `GetInsightsByAssessment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl GetTraceSummariesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTraceSummaries`.
+/// Orchestration and serialization glue logic for `GetTraceSummaries`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

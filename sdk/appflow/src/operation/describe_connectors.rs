@@ -126,7 +126,7 @@ impl DescribeConnectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConnectors`.
+/// Orchestration and serialization glue logic for `DescribeConnectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

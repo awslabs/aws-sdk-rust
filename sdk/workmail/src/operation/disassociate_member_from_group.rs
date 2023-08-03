@@ -131,7 +131,7 @@ impl DisassociateMemberFromGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisassociateMemberFromGroup`.
+/// Orchestration and serialization glue logic for `DisassociateMemberFromGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

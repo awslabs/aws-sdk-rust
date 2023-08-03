@@ -137,7 +137,7 @@ impl GetDnssecInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDNSSEC`.
+/// Orchestration and serialization glue logic for `GetDNSSEC`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

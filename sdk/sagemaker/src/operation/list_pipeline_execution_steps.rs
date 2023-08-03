@@ -131,7 +131,7 @@ impl ListPipelineExecutionStepsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPipelineExecutionSteps`.
+/// Orchestration and serialization glue logic for `ListPipelineExecutionSteps`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

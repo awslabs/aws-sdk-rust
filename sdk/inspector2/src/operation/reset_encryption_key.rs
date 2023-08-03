@@ -128,7 +128,7 @@ impl ResetEncryptionKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetEncryptionKey`.
+/// Orchestration and serialization glue logic for `ResetEncryptionKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

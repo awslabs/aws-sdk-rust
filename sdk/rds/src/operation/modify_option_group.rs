@@ -126,7 +126,7 @@ impl ModifyOptionGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyOptionGroup`.
+/// Orchestration and serialization glue logic for `ModifyOptionGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

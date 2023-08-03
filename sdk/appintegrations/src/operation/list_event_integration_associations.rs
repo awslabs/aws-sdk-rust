@@ -152,7 +152,7 @@ impl ListEventIntegrationAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEventIntegrationAssociations`.
+/// Orchestration and serialization glue logic for `ListEventIntegrationAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

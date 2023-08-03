@@ -131,7 +131,7 @@ impl StartMlEvaluationTaskRunInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StartMLEvaluationTaskRun`.
+/// Orchestration and serialization glue logic for `StartMLEvaluationTaskRun`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl RestoreFromSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreFromSnapshot`.
+/// Orchestration and serialization glue logic for `RestoreFromSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

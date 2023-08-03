@@ -131,7 +131,7 @@ impl UpdateUsageLimitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateUsageLimit`.
+/// Orchestration and serialization glue logic for `UpdateUsageLimit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -98,7 +98,7 @@ impl GetDataLakeOrganizationConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDataLakeOrganizationConfiguration`.
+/// Orchestration and serialization glue logic for `GetDataLakeOrganizationConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

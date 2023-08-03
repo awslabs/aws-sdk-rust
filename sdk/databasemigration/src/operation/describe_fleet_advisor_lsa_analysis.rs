@@ -125,7 +125,7 @@ impl DescribeFleetAdvisorLsaAnalysisInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeFleetAdvisorLsaAnalysis`.
+/// Orchestration and serialization glue logic for `DescribeFleetAdvisorLsaAnalysis`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

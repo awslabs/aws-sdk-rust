@@ -128,7 +128,7 @@ impl GetQueryStateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetQueryState`.
+/// Orchestration and serialization glue logic for `GetQueryState`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

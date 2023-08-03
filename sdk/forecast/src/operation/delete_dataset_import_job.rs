@@ -131,7 +131,7 @@ impl DeleteDatasetImportJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDatasetImportJob`.
+/// Orchestration and serialization glue logic for `DeleteDatasetImportJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

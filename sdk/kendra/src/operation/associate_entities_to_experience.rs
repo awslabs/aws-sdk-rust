@@ -132,7 +132,7 @@ impl AssociateEntitiesToExperienceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AssociateEntitiesToExperience`.
+/// Orchestration and serialization glue logic for `AssociateEntitiesToExperience`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

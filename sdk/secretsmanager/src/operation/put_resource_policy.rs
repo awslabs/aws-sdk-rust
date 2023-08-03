@@ -131,7 +131,7 @@ impl PutResourcePolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutResourcePolicy`.
+/// Orchestration and serialization glue logic for `PutResourcePolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeCapacityReservationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCapacityReservations`.
+/// Orchestration and serialization glue logic for `DescribeCapacityReservations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

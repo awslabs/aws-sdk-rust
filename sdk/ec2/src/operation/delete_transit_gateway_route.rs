@@ -126,7 +126,7 @@ impl DeleteTransitGatewayRouteInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTransitGatewayRoute`.
+/// Orchestration and serialization glue logic for `DeleteTransitGatewayRoute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

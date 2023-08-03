@@ -133,7 +133,7 @@ impl CancelRotateSecretInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelRotateSecret`.
+/// Orchestration and serialization glue logic for `CancelRotateSecret`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

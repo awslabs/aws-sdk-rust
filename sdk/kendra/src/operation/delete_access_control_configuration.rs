@@ -125,7 +125,7 @@ impl DeleteAccessControlConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAccessControlConfiguration`.
+/// Orchestration and serialization glue logic for `DeleteAccessControlConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

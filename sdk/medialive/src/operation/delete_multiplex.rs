@@ -136,7 +136,7 @@ impl DeleteMultiplexInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMultiplex`.
+/// Orchestration and serialization glue logic for `DeleteMultiplex`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

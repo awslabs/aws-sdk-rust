@@ -125,7 +125,7 @@ impl GetLambdaFunctionRecommendationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetLambdaFunctionRecommendations`.
+/// Orchestration and serialization glue logic for `GetLambdaFunctionRecommendations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

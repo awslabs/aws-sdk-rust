@@ -150,7 +150,7 @@ impl UpdateWorkspaceAuthenticationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateWorkspaceAuthentication`.
+/// Orchestration and serialization glue logic for `UpdateWorkspaceAuthentication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

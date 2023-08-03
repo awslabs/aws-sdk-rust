@@ -140,7 +140,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAccessPointPolicyForObjectLambda`.
+/// Orchestration and serialization glue logic for `PutAccessPointPolicyForObjectLambda`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

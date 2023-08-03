@@ -156,7 +156,7 @@ impl GetSourceApiAssociationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSourceApiAssociation`.
+/// Orchestration and serialization glue logic for `GetSourceApiAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

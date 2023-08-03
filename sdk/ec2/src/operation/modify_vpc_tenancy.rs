@@ -126,7 +126,7 @@ impl ModifyVpcTenancyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyVpcTenancy`.
+/// Orchestration and serialization glue logic for `ModifyVpcTenancy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

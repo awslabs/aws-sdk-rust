@@ -126,7 +126,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccessPointPolicyStatusForObjectLambda`.
+/// Orchestration and serialization glue logic for `GetAccessPointPolicyStatusForObjectLambda`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

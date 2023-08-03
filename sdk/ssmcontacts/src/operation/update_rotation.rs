@@ -131,7 +131,7 @@ impl UpdateRotationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRotation`.
+/// Orchestration and serialization glue logic for `UpdateRotation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

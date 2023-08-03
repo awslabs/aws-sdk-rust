@@ -129,7 +129,7 @@ impl ListCrossAccountAuthorizationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListCrossAccountAuthorizations`.
+/// Orchestration and serialization glue logic for `ListCrossAccountAuthorizations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

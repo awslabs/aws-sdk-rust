@@ -131,7 +131,7 @@ impl PollForJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PollForJobs`.
+/// Orchestration and serialization glue logic for `PollForJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

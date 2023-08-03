@@ -167,7 +167,7 @@ impl DescribeResourcePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeResourcePermissions`.
+/// Orchestration and serialization glue logic for `DescribeResourcePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

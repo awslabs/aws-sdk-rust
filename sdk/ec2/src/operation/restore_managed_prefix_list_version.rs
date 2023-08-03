@@ -120,7 +120,7 @@ impl RestoreManagedPrefixListVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RestoreManagedPrefixListVersion`.
+/// Orchestration and serialization glue logic for `RestoreManagedPrefixListVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -156,7 +156,7 @@ impl CancelChangeSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelChangeSet`.
+/// Orchestration and serialization glue logic for `CancelChangeSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

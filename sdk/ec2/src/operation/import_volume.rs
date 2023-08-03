@@ -126,7 +126,7 @@ impl ImportVolumeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportVolume`.
+/// Orchestration and serialization glue logic for `ImportVolume`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

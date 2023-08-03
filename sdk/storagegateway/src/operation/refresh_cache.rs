@@ -131,7 +131,7 @@ impl RefreshCacheInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RefreshCache`.
+/// Orchestration and serialization glue logic for `RefreshCache`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

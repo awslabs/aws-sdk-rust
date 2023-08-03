@@ -126,7 +126,7 @@ impl AttachNetworkInterfaceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `AttachNetworkInterface`.
+/// Orchestration and serialization glue logic for `AttachNetworkInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -133,7 +133,7 @@ impl GetDetectorVersionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDetectorVersion`.
+/// Orchestration and serialization glue logic for `GetDetectorVersion`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

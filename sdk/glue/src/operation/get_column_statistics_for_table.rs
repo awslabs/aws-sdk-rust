@@ -131,7 +131,7 @@ impl GetColumnStatisticsForTableInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetColumnStatisticsForTable`.
+/// Orchestration and serialization glue logic for `GetColumnStatisticsForTable`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

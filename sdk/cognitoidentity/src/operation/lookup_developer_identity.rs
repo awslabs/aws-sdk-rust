@@ -131,7 +131,7 @@ impl LookupDeveloperIdentityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `LookupDeveloperIdentity`.
+/// Orchestration and serialization glue logic for `LookupDeveloperIdentity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

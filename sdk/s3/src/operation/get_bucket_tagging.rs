@@ -131,7 +131,7 @@ impl GetBucketTaggingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetBucketTagging`.
+/// Orchestration and serialization glue logic for `GetBucketTagging`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

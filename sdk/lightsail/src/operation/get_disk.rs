@@ -131,7 +131,7 @@ impl GetDiskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetDisk`.
+/// Orchestration and serialization glue logic for `GetDisk`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

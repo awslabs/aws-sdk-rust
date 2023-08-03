@@ -131,7 +131,7 @@ impl CreateModelCardInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateModelCard`.
+/// Orchestration and serialization glue logic for `CreateModelCard`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

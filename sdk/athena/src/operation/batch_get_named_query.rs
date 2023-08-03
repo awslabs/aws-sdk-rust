@@ -133,7 +133,7 @@ impl BatchGetNamedQueryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchGetNamedQuery`.
+/// Orchestration and serialization glue logic for `BatchGetNamedQuery`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

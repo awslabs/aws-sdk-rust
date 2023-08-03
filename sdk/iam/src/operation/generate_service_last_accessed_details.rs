@@ -111,7 +111,7 @@ impl GenerateServiceLastAccessedDetailsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateServiceLastAccessedDetails`.
+/// Orchestration and serialization glue logic for `GenerateServiceLastAccessedDetails`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

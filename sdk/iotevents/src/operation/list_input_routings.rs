@@ -126,7 +126,7 @@ impl ListInputRoutingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListInputRoutings`.
+/// Orchestration and serialization glue logic for `ListInputRoutings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

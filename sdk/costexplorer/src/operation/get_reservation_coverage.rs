@@ -131,7 +131,7 @@ impl GetReservationCoverageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReservationCoverage`.
+/// Orchestration and serialization glue logic for `GetReservationCoverage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

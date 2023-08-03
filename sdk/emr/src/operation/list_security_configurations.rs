@@ -131,7 +131,7 @@ impl ListSecurityConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSecurityConfigurations`.
+/// Orchestration and serialization glue logic for `ListSecurityConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

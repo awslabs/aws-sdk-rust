@@ -131,7 +131,7 @@ impl ListContainersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListContainers`.
+/// Orchestration and serialization glue logic for `ListContainers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

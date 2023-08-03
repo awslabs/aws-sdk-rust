@@ -134,7 +134,7 @@ impl ListDetectorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDetectors`.
+/// Orchestration and serialization glue logic for `ListDetectors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

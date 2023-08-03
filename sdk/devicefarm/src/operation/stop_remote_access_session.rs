@@ -131,7 +131,7 @@ impl StopRemoteAccessSessionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `StopRemoteAccessSession`.
+/// Orchestration and serialization glue logic for `StopRemoteAccessSession`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

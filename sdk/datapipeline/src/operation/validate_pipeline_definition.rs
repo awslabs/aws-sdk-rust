@@ -131,7 +131,7 @@ impl ValidatePipelineDefinitionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ValidatePipelineDefinition`.
+/// Orchestration and serialization glue logic for `ValidatePipelineDefinition`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

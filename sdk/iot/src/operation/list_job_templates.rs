@@ -134,7 +134,7 @@ impl ListJobTemplatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListJobTemplates`.
+/// Orchestration and serialization glue logic for `ListJobTemplates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

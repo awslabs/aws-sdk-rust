@@ -130,7 +130,7 @@ impl UpdateStackInstancesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateStackInstances`.
+/// Orchestration and serialization glue logic for `UpdateStackInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

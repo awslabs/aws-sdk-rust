@@ -126,7 +126,7 @@ impl DescribeIndexFieldsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeIndexFields`.
+/// Orchestration and serialization glue logic for `DescribeIndexFields`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

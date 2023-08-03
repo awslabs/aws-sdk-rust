@@ -127,7 +127,7 @@ impl UpdateApplicationSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateApplicationSettings`.
+/// Orchestration and serialization glue logic for `UpdateApplicationSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

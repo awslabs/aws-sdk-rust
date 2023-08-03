@@ -126,7 +126,7 @@ impl DeletePlaybackKeyPairInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePlaybackKeyPair`.
+/// Orchestration and serialization glue logic for `DeletePlaybackKeyPair`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

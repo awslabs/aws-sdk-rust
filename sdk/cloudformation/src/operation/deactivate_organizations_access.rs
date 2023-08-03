@@ -119,7 +119,7 @@ impl DeactivateOrganizationsAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeactivateOrganizationsAccess`.
+/// Orchestration and serialization glue logic for `DeactivateOrganizationsAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

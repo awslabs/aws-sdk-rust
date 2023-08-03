@@ -7,13 +7,18 @@ use self::auth::orchestrate_auth;
 use crate::client::orchestrator::endpoints::orchestrate_endpoint;
 use crate::client::orchestrator::http::read_body;
 use crate::client::timeout::{MaybeTimeout, ProvideMaybeTimeoutConfig, TimeoutKind};
+use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::byte_stream::ByteStream;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, Output};
 use aws_smithy_runtime_api::client::interceptors::{InterceptorContext, Interceptors};
-use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpResponse};
+use aws_smithy_runtime_api::client::orchestrator::{
+    BoxError, ConfigBagAccessors, HttpResponse, LoadedRequestBody,
+};
 use aws_smithy_runtime_api::client::retries::ShouldAttempt;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins;
 use aws_smithy_runtime_api::config_bag::ConfigBag;
+use std::mem;
 use tracing::{debug_span, Instrument};
 
 mod auth;
@@ -22,14 +27,18 @@ pub mod endpoints;
 mod http;
 pub mod interceptors;
 
+macro_rules! halt {
+    ([$ctx:ident] => $err:expr) => {{
+        $ctx.fail($err.into());
+        return;
+    }};
+}
+
 macro_rules! halt_on_err {
     ([$ctx:ident] => $expr:expr) => {
         match $expr {
             Ok(ok) => ok,
-            Err(err) => {
-                $ctx.fail(err);
-                return;
-            }
+            Err(err) => halt!([$ctx] => err),
         }
     };
 }
@@ -37,7 +46,7 @@ macro_rules! halt_on_err {
 macro_rules! continue_on_err {
     ([$ctx:ident] => $expr:expr) => {
         if let Err(err) = $expr {
-            $ctx.fail(err);
+            $ctx.fail(err.into());
         }
     };
 }
@@ -80,33 +89,41 @@ fn apply_configuration(
     runtime_plugins: &RuntimePlugins,
 ) -> Result<(), BoxError> {
     runtime_plugins.apply_client_configuration(cfg, interceptors.client_interceptors_mut())?;
-    continue_on_err!([ctx] =>interceptors.client_read_before_execution(ctx, cfg).map_err(Into::into));
+    continue_on_err!([ctx] =>interceptors.client_read_before_execution(ctx, cfg));
     runtime_plugins
         .apply_operation_configuration(cfg, interceptors.operation_interceptors_mut())?;
-    continue_on_err!([ctx] => interceptors.operation_read_before_execution(ctx, cfg).map_err(Into::into));
+    continue_on_err!([ctx] => interceptors.operation_read_before_execution(ctx, cfg));
 
     Ok(())
 }
 
 async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors: &Interceptors) {
     // Before serialization
-    halt_on_err!([ctx] => interceptors.read_before_serialization(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.modify_before_serialization(ctx, cfg).map_err(Into::into));
+    halt_on_err!([ctx] => interceptors.read_before_serialization(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.modify_before_serialization(ctx, cfg));
 
     // Serialization
     ctx.enter_serialization_phase();
     {
         let request_serializer = cfg.request_serializer();
         let input = ctx.take_input().expect("input set at this point");
-        let request =
-            halt_on_err!([ctx] => request_serializer.serialize_input(input).map_err(Into::into));
+        let request = halt_on_err!([ctx] => request_serializer.serialize_input(input));
         ctx.set_request(request);
+    }
+
+    // Load the request body into memory if configured to do so
+    if let LoadedRequestBody::Requested = cfg.loaded_request_body() {
+        let mut body = SdkBody::taken();
+        mem::swap(&mut body, ctx.request_mut().body_mut());
+        let loaded_body = halt_on_err!([ctx] => ByteStream::new(body).collect().await).into_bytes();
+        *ctx.request_mut().body_mut() = SdkBody::from(loaded_body.clone());
+        cfg.set_loaded_request_body(LoadedRequestBody::Loaded(loaded_body));
     }
 
     // Before transmit
     ctx.enter_before_transmit_phase();
-    halt_on_err!([ctx] => interceptors.read_after_serialization(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.modify_before_retry_loop(ctx, cfg).map_err(Into::into));
+    halt_on_err!([ctx] => interceptors.read_after_serialization(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.modify_before_retry_loop(ctx, cfg));
 
     let retry_strategy = cfg.retry_strategy();
     match retry_strategy.should_attempt_initial_request(cfg) {
@@ -114,11 +131,11 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
         Ok(ShouldAttempt::Yes) => { /* Keep going */ }
         // No, this request shouldn't be sent
         Ok(ShouldAttempt::No) => {
-            let err: Box<dyn std::error::Error + Send + Sync> = "The retry strategy indicates that an initial request shouldn't be made, but it did specify why.".into();
-            halt_on_err!([ctx] => Err(err.into()));
+            let err: BoxError = "The retry strategy indicates that an initial request shouldn't be made, but it did specify why.".into();
+            halt!([ctx] => err);
         }
         // No, we shouldn't make a request because...
-        Err(err) => halt_on_err!([ctx] => Err(err.into())),
+        Err(err) => halt!([ctx] => err),
         Ok(ShouldAttempt::YesAfterDelay(_)) => {
             unreachable!("Delaying the initial request is currently unsupported. If this feature is important to you, please file an issue in GitHub.")
         }
@@ -135,7 +152,7 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
         .await
         .expect("These are infallible; The retry strategy will decide whether to stop or not.");
         let retry_strategy = cfg.retry_strategy();
-        let should_attempt = halt_on_err!([ctx] => retry_strategy.should_attempt_retry(ctx, cfg).map_err(Into::into));
+        let should_attempt = halt_on_err!([ctx] => retry_strategy.should_attempt_retry(ctx, cfg));
         match should_attempt {
             // Yes, let's retry the request
             ShouldAttempt::Yes => continue,
@@ -156,30 +173,30 @@ async fn try_attempt(
     cfg: &mut ConfigBag,
     interceptors: &Interceptors,
 ) {
-    halt_on_err!([ctx] => interceptors.read_before_attempt(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => orchestrate_endpoint(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.modify_before_signing(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.read_before_signing(ctx, cfg).map_err(Into::into));
+    halt_on_err!([ctx] => interceptors.read_before_attempt(ctx, cfg));
+    halt_on_err!([ctx] => orchestrate_endpoint(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.modify_before_signing(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.read_before_signing(ctx, cfg));
 
-    halt_on_err!([ctx] => orchestrate_auth(ctx, cfg).await.map_err(Into::into));
+    halt_on_err!([ctx] => orchestrate_auth(ctx, cfg).await);
 
-    halt_on_err!([ctx] => interceptors.read_after_signing(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.modify_before_transmit(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.read_before_transmit(ctx, cfg).map_err(Into::into));
+    halt_on_err!([ctx] => interceptors.read_after_signing(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.modify_before_transmit(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.read_before_transmit(ctx, cfg));
 
     // The connection consumes the request but we need to keep a copy of it
     // within the interceptor context, so we clone it here.
     ctx.enter_transmit_phase();
     let call_result = halt_on_err!([ctx] => {
         let request = ctx.take_request();
-        cfg.connection().call(request).await.map_err(Into::into)
+        cfg.connection().call(request).await
     });
     ctx.set_response(call_result);
     ctx.enter_before_deserialization_phase();
 
-    halt_on_err!([ctx] => interceptors.read_after_transmit(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.modify_before_deserialization(ctx, cfg).map_err(Into::into));
-    halt_on_err!([ctx] => interceptors.read_before_deserialization(ctx, cfg).map_err(Into::into));
+    halt_on_err!([ctx] => interceptors.read_after_transmit(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.modify_before_deserialization(ctx, cfg));
+    halt_on_err!([ctx] => interceptors.read_before_deserialization(ctx, cfg));
 
     ctx.enter_deserialization_phase();
     let output_or_error = async {
@@ -198,7 +215,7 @@ async fn try_attempt(
     ctx.set_output_or_error(output_or_error);
 
     ctx.enter_after_deserialization_phase();
-    halt_on_err!([ctx] => interceptors.read_after_deserialization(ctx, cfg).map_err(Into::into));
+    halt_on_err!([ctx] => interceptors.read_after_deserialization(ctx, cfg));
 }
 
 async fn finally_attempt(
@@ -206,8 +223,8 @@ async fn finally_attempt(
     cfg: &mut ConfigBag,
     interceptors: &Interceptors,
 ) {
-    continue_on_err!([ctx] => interceptors.modify_before_attempt_completion(ctx, cfg).map_err(Into::into));
-    continue_on_err!([ctx] => interceptors.read_after_attempt(ctx, cfg).map_err(Into::into));
+    continue_on_err!([ctx] => interceptors.modify_before_attempt_completion(ctx, cfg));
+    continue_on_err!([ctx] => interceptors.read_after_attempt(ctx, cfg));
 }
 
 async fn finally_op(
@@ -215,8 +232,8 @@ async fn finally_op(
     cfg: &mut ConfigBag,
     interceptors: &Interceptors,
 ) {
-    continue_on_err!([ctx] => interceptors.modify_before_completion(ctx, cfg).map_err(Into::into));
-    continue_on_err!([ctx] => interceptors.read_after_execution(ctx, cfg).map_err(Into::into));
+    continue_on_err!([ctx] => interceptors.modify_before_completion(ctx, cfg));
+    continue_on_err!([ctx] => interceptors.read_after_execution(ctx, cfg));
 }
 
 #[cfg(all(test, feature = "test-util", feature = "anonymous-auth"))]

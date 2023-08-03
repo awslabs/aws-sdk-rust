@@ -131,7 +131,7 @@ impl ListMonitoringAlertHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListMonitoringAlertHistory`.
+/// Orchestration and serialization glue logic for `ListMonitoringAlertHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

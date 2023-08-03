@@ -133,7 +133,7 @@ impl DescribeUserProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeUserProfile`.
+/// Orchestration and serialization glue logic for `DescribeUserProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

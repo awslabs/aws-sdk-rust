@@ -131,7 +131,7 @@ impl GetUsageLimitInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUsageLimit`.
+/// Orchestration and serialization glue logic for `GetUsageLimit`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

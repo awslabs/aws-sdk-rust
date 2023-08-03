@@ -133,7 +133,7 @@ impl ListComponentOutputsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListComponentOutputs`.
+/// Orchestration and serialization glue logic for `ListComponentOutputs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

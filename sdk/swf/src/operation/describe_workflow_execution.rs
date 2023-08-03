@@ -131,7 +131,7 @@ impl DescribeWorkflowExecutionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorkflowExecution`.
+/// Orchestration and serialization glue logic for `DescribeWorkflowExecution`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl GetStudioInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetStudio`.
+/// Orchestration and serialization glue logic for `GetStudio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

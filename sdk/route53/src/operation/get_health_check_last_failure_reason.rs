@@ -130,7 +130,7 @@ impl GetHealthCheckLastFailureReasonInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetHealthCheckLastFailureReason`.
+/// Orchestration and serialization glue logic for `GetHealthCheckLastFailureReason`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

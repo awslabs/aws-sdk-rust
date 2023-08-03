@@ -142,7 +142,7 @@ impl ListManagedJobTemplatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListManagedJobTemplates`.
+/// Orchestration and serialization glue logic for `ListManagedJobTemplates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

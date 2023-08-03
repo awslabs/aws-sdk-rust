@@ -131,7 +131,7 @@ impl GetKeyRotationStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetKeyRotationStatus`.
+/// Orchestration and serialization glue logic for `GetKeyRotationStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

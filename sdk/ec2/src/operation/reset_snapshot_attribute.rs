@@ -126,7 +126,7 @@ impl ResetSnapshotAttributeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ResetSnapshotAttribute`.
+/// Orchestration and serialization glue logic for `ResetSnapshotAttribute`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

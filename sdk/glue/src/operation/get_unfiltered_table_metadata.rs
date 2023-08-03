@@ -131,7 +131,7 @@ impl GetUnfilteredTableMetadataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetUnfilteredTableMetadata`.
+/// Orchestration and serialization glue logic for `GetUnfilteredTableMetadata`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

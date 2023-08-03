@@ -148,7 +148,7 @@ impl UpdateCampaignNameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateCampaignName`.
+/// Orchestration and serialization glue logic for `UpdateCampaignName`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

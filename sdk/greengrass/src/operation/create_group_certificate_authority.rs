@@ -131,7 +131,7 @@ impl CreateGroupCertificateAuthorityInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateGroupCertificateAuthority`.
+/// Orchestration and serialization glue logic for `CreateGroupCertificateAuthority`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

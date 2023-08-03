@@ -143,7 +143,7 @@ impl ListPrincipalPoliciesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListPrincipalPolicies`.
+/// Orchestration and serialization glue logic for `ListPrincipalPolicies`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -127,7 +127,7 @@ impl ListAccountAssociationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListAccountAssociations`.
+/// Orchestration and serialization glue logic for `ListAccountAssociations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

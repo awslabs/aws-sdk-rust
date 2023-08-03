@@ -156,7 +156,7 @@ impl DeleteFargateProfileInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteFargateProfile`.
+/// Orchestration and serialization glue logic for `DeleteFargateProfile`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -111,7 +111,7 @@ impl DeleteVpcEndpointConnectionNotificationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpcEndpointConnectionNotifications`.
+/// Orchestration and serialization glue logic for `DeleteVpcEndpointConnectionNotifications`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

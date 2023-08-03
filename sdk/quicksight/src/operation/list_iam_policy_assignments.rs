@@ -189,7 +189,7 @@ impl ListIamPolicyAssignmentsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListIAMPolicyAssignments`.
+/// Orchestration and serialization glue logic for `ListIAMPolicyAssignments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -137,7 +137,7 @@ impl CreatePolicyTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreatePolicyTemplate`.
+/// Orchestration and serialization glue logic for `CreatePolicyTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

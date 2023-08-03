@@ -132,7 +132,7 @@ impl ListStorageLensConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListStorageLensConfigurations`.
+/// Orchestration and serialization glue logic for `ListStorageLensConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

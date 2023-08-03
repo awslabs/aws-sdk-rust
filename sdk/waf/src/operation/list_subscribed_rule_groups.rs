@@ -131,7 +131,7 @@ impl ListSubscribedRuleGroupsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListSubscribedRuleGroups`.
+/// Orchestration and serialization glue logic for `ListSubscribedRuleGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

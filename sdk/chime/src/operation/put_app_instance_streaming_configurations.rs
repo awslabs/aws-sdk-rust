@@ -135,7 +135,7 @@ impl PutAppInstanceStreamingConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutAppInstanceStreamingConfigurations`.
+/// Orchestration and serialization glue logic for `PutAppInstanceStreamingConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

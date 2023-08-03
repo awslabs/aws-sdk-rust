@@ -126,7 +126,7 @@ impl DescribeInstanceHealthInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeInstanceHealth`.
+/// Orchestration and serialization glue logic for `DescribeInstanceHealth`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

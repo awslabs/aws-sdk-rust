@@ -127,7 +127,7 @@ impl UpdateAppVersionAppComponentInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateAppVersionAppComponent`.
+/// Orchestration and serialization glue logic for `UpdateAppVersionAppComponent`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

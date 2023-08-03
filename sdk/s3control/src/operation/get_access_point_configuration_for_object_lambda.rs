@@ -126,7 +126,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAccessPointConfigurationForObjectLambda`.
+/// Orchestration and serialization glue logic for `GetAccessPointConfigurationForObjectLambda`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

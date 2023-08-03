@@ -133,7 +133,7 @@ impl DeauthorizeConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeauthorizeConnection`.
+/// Orchestration and serialization glue logic for `DeauthorizeConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

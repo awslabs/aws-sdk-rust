@@ -126,7 +126,7 @@ impl ModifyLaunchTemplateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyLaunchTemplate`.
+/// Orchestration and serialization glue logic for `ModifyLaunchTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

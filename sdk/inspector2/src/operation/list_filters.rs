@@ -126,7 +126,7 @@ impl ListFiltersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFilters`.
+/// Orchestration and serialization glue logic for `ListFilters`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

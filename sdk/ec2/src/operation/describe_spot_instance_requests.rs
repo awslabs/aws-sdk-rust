@@ -126,7 +126,7 @@ impl DescribeSpotInstanceRequestsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeSpotInstanceRequests`.
+/// Orchestration and serialization glue logic for `DescribeSpotInstanceRequests`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

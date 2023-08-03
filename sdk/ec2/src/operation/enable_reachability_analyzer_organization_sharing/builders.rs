@@ -22,9 +22,9 @@ impl EnableReachabilityAnalyzerOrganizationSharingFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharing, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -42,8 +42,8 @@ impl EnableReachabilityAnalyzerOrganizationSharingFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>>
+                         {
         let op = self
             .inner
             .build()
@@ -61,16 +61,16 @@ impl EnableReachabilityAnalyzerOrganizationSharingFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharing, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>
     >{
         self.customize_middleware().await
     }

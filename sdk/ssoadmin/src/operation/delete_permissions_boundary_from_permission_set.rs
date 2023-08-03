@@ -116,7 +116,7 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeletePermissionsBoundaryFromPermissionSet`.
+/// Orchestration and serialization glue logic for `DeletePermissionsBoundaryFromPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl DeregisterFromWorkMailInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeregisterFromWorkMail`.
+/// Orchestration and serialization glue logic for `DeregisterFromWorkMail`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

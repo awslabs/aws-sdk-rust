@@ -131,7 +131,7 @@ impl ListRotationOverridesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListRotationOverrides`.
+/// Orchestration and serialization glue logic for `ListRotationOverrides`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

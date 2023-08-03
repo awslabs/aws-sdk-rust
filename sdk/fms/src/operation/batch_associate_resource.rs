@@ -131,7 +131,7 @@ impl BatchAssociateResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchAssociateResource`.
+/// Orchestration and serialization glue logic for `BatchAssociateResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -116,7 +116,7 @@ impl ImportCertificateAuthorityCertificateInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportCertificateAuthorityCertificate`.
+/// Orchestration and serialization glue logic for `ImportCertificateAuthorityCertificate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -126,7 +126,7 @@ impl DescribeVolumeStatusInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeVolumeStatus`.
+/// Orchestration and serialization glue logic for `DescribeVolumeStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

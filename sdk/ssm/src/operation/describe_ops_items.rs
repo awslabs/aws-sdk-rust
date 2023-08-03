@@ -131,7 +131,7 @@ impl DescribeOpsItemsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeOpsItems`.
+/// Orchestration and serialization glue logic for `DescribeOpsItems`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

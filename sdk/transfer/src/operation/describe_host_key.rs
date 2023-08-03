@@ -131,7 +131,7 @@ impl DescribeHostKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeHostKey`.
+/// Orchestration and serialization glue logic for `DescribeHostKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

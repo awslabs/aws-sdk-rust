@@ -133,7 +133,7 @@ impl ListFhirDatastoresInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListFHIRDatastores`.
+/// Orchestration and serialization glue logic for `ListFHIRDatastores`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -148,7 +148,7 @@ impl RegisterAppInstanceUserEndpointInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterAppInstanceUserEndpoint`.
+/// Orchestration and serialization glue logic for `RegisterAppInstanceUserEndpoint`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

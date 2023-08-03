@@ -130,7 +130,7 @@ impl PutSchemaFromJsonInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutSchemaFromJson`.
+/// Orchestration and serialization glue logic for `PutSchemaFromJson`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

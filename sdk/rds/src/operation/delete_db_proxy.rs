@@ -128,7 +128,7 @@ impl DeleteDbProxyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteDBProxy`.
+/// Orchestration and serialization glue logic for `DeleteDBProxy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

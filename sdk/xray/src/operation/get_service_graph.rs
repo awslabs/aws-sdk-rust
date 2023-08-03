@@ -126,7 +126,7 @@ impl GetServiceGraphInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetServiceGraph`.
+/// Orchestration and serialization glue logic for `GetServiceGraph`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

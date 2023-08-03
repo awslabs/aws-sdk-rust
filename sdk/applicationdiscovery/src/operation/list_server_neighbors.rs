@@ -133,7 +133,7 @@ impl ListServerNeighborsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListServerNeighbors`.
+/// Orchestration and serialization glue logic for `ListServerNeighbors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

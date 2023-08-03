@@ -132,7 +132,7 @@ impl DeleteVpcPeeringAuthorizationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpcPeeringAuthorization`.
+/// Orchestration and serialization glue logic for `DeleteVpcPeeringAuthorization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

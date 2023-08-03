@@ -120,7 +120,7 @@ impl CreateNetworkInterfacePermissionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateNetworkInterfacePermission`.
+/// Orchestration and serialization glue logic for `CreateNetworkInterfacePermission`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

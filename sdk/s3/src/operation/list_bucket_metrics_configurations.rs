@@ -134,7 +134,7 @@ impl ListBucketMetricsConfigurationsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListBucketMetricsConfigurations`.
+/// Orchestration and serialization glue logic for `ListBucketMetricsConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

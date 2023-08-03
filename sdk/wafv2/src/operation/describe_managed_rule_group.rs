@@ -131,7 +131,7 @@ impl DescribeManagedRuleGroupInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeManagedRuleGroup`.
+/// Orchestration and serialization glue logic for `DescribeManagedRuleGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

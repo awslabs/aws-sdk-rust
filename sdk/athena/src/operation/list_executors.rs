@@ -131,7 +131,7 @@ impl ListExecutorsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListExecutors`.
+/// Orchestration and serialization glue logic for `ListExecutors`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

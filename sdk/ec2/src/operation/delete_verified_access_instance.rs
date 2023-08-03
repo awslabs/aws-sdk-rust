@@ -130,7 +130,7 @@ impl DeleteVerifiedAccessInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVerifiedAccessInstance`.
+/// Orchestration and serialization glue logic for `DeleteVerifiedAccessInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

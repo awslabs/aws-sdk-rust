@@ -131,7 +131,7 @@ impl DeleteEntityTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteEntityType`.
+/// Orchestration and serialization glue logic for `DeleteEntityType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl DescribeDashboardSnapshotJobResultInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeDashboardSnapshotJobResult`.
+/// Orchestration and serialization glue logic for `DescribeDashboardSnapshotJobResult`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -150,7 +150,7 @@ impl PutCaseEventConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutCaseEventConfiguration`.
+/// Orchestration and serialization glue logic for `PutCaseEventConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

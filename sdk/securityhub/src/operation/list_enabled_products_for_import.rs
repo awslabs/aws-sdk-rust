@@ -134,7 +134,7 @@ impl ListEnabledProductsForImportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEnabledProductsForImport`.
+/// Orchestration and serialization glue logic for `ListEnabledProductsForImport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

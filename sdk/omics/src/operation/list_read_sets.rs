@@ -174,7 +174,7 @@ impl ListReadSetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListReadSets`.
+/// Orchestration and serialization glue logic for `ListReadSets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -138,7 +138,7 @@ impl DeleteRouteCalculatorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteRouteCalculator`.
+/// Orchestration and serialization glue logic for `DeleteRouteCalculator`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

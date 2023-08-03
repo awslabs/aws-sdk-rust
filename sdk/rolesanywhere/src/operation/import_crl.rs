@@ -126,7 +126,7 @@ impl ImportCrlInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ImportCrl`.
+/// Orchestration and serialization glue logic for `ImportCrl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -17,6 +17,7 @@ use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_types::endpoint::Endpoint;
+use bytes::Bytes;
 use std::fmt;
 use std::future::Future as StdFuture;
 use std::pin::Pin;
@@ -100,6 +101,26 @@ impl RequestTime {
     }
 }
 
+/// Informs the orchestrator on whether or not the request body needs to be loaded into memory before transmit.
+///
+/// This enum gets placed into the `ConfigBag` to change the orchestrator behavior.
+/// Immediately after serialization (before the `read_after_serialization` interceptor hook),
+/// if it was set to `Requested` in the config bag, it will be replaced back into the config bag as
+/// `Loaded` with the request body contents for use in later interceptors.
+///
+/// This all happens before the attempt loop, so the loaded request body will remain available
+/// for interceptors that run in any subsequent retry attempts.
+#[non_exhaustive]
+#[derive(Clone, Debug)]
+pub enum LoadedRequestBody {
+    /// Don't attempt to load the request body into memory.
+    NotNeeded,
+    /// Attempt to load the request body into memory.
+    Requested,
+    /// The request body is already loaded.
+    Loaded(Bytes),
+}
+
 pub trait ConfigBagAccessors {
     fn auth_option_resolver_params(&self) -> &AuthOptionResolverParams;
     fn set_auth_option_resolver_params(
@@ -145,7 +166,12 @@ pub trait ConfigBagAccessors {
 
     fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>>;
     fn set_sleep_impl(&mut self, async_sleep: Option<Arc<dyn AsyncSleep>>);
+
+    fn loaded_request_body(&self) -> &LoadedRequestBody;
+    fn set_loaded_request_body(&mut self, loaded_request_body: LoadedRequestBody);
 }
+
+const NOT_NEEDED: LoadedRequestBody = LoadedRequestBody::NotNeeded;
 
 impl ConfigBagAccessors for ConfigBag {
     fn auth_option_resolver_params(&self) -> &AuthOptionResolverParams {
@@ -280,5 +306,13 @@ impl ConfigBagAccessors for ConfigBag {
         } else {
             self.unset::<Arc<dyn AsyncSleep>>();
         }
+    }
+
+    fn loaded_request_body(&self) -> &LoadedRequestBody {
+        self.get::<LoadedRequestBody>().unwrap_or(&NOT_NEEDED)
+    }
+
+    fn set_loaded_request_body(&mut self, loaded_request_body: LoadedRequestBody) {
+        self.put::<LoadedRequestBody>(loaded_request_body);
     }
 }

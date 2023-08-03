@@ -126,7 +126,7 @@ impl DescribeNetworkAclsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeNetworkAcls`.
+/// Orchestration and serialization glue logic for `DescribeNetworkAcls`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

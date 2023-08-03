@@ -131,7 +131,7 @@ impl CreateApplicationSnapshotInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateApplicationSnapshot`.
+/// Orchestration and serialization glue logic for `CreateApplicationSnapshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

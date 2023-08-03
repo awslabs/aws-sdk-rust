@@ -136,7 +136,7 @@ impl CancelSolNetworkOperationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CancelSolNetworkOperation`.
+/// Orchestration and serialization glue logic for `CancelSolNetworkOperation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

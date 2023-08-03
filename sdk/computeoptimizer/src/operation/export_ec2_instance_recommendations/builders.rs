@@ -23,9 +23,9 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
     }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn customize_middleware(self) -> ::std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                        ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>
+                        pub async fn customize_middleware(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>
     >{
         let handle = self.handle.clone();
         let operation = self
@@ -43,8 +43,8 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>>
-                     {
+                        pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>>
+                         {
         let op = self
             .inner
             .build()
@@ -62,16 +62,16 @@ impl ExportEC2InstanceRecommendationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> ::std::result::Result<crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>>
-                         {
+                            pub async fn send(self) -> ::std::result::Result<crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>>
+                             {
         self.send_middleware().await
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                        pub async fn customize(self) -> ::std::result::Result<
-                            crate::client::customize::CustomizableOperation<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
-                            ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>
+                            pub async fn customize(self) -> ::std::result::Result<
+                                crate::client::customize::CustomizableOperation<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                                ::aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError>
     >{
         self.customize_middleware().await
     }

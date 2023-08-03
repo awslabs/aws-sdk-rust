@@ -132,7 +132,7 @@ impl DescribeCustomRoutingListenerInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeCustomRoutingListener`.
+/// Orchestration and serialization glue logic for `DescribeCustomRoutingListener`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

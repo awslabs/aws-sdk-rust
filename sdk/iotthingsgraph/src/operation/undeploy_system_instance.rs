@@ -131,7 +131,7 @@ impl UndeploySystemInstanceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UndeploySystemInstance`.
+/// Orchestration and serialization glue logic for `UndeploySystemInstance`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -116,7 +116,7 @@ impl DescribeWorkspaceImagePermissionsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeWorkspaceImagePermissions`.
+/// Orchestration and serialization glue logic for `DescribeWorkspaceImagePermissions`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

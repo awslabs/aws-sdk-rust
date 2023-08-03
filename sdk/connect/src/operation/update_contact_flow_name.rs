@@ -170,7 +170,7 @@ impl UpdateContactFlowNameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateContactFlowName`.
+/// Orchestration and serialization glue logic for `UpdateContactFlowName`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

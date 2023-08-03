@@ -116,7 +116,7 @@ impl CreateLicenseConversionTaskForResourceInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLicenseConversionTaskForResource`.
+/// Orchestration and serialization glue logic for `CreateLicenseConversionTaskForResource`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -136,7 +136,7 @@ impl DeleteAuthPolicyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteAuthPolicy`.
+/// Orchestration and serialization glue logic for `DeleteAuthPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

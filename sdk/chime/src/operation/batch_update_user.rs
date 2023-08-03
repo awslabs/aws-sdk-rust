@@ -150,7 +150,7 @@ impl BatchUpdateUserInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchUpdateUser`.
+/// Orchestration and serialization glue logic for `BatchUpdateUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

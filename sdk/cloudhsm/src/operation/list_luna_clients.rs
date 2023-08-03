@@ -131,7 +131,7 @@ impl ListLunaClientsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListLunaClients`.
+/// Orchestration and serialization glue logic for `ListLunaClients`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

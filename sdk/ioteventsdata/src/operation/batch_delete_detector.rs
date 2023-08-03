@@ -128,7 +128,7 @@ impl BatchDeleteDetectorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `BatchDeleteDetector`.
+/// Orchestration and serialization glue logic for `BatchDeleteDetector`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

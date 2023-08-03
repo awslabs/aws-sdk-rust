@@ -131,7 +131,7 @@ impl CreateLicenseConfigurationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateLicenseConfiguration`.
+/// Orchestration and serialization glue logic for `CreateLicenseConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

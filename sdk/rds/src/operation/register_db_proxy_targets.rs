@@ -126,7 +126,7 @@ impl RegisterDbProxyTargetsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RegisterDBProxyTargets`.
+/// Orchestration and serialization glue logic for `RegisterDBProxyTargets`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

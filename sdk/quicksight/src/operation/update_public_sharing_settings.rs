@@ -150,7 +150,7 @@ impl UpdatePublicSharingSettingsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdatePublicSharingSettings`.
+/// Orchestration and serialization glue logic for `UpdatePublicSharingSettings`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

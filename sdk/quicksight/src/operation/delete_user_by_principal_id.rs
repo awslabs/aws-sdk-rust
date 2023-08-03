@@ -176,7 +176,7 @@ impl DeleteUserByPrincipalIdInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteUserByPrincipalId`.
+/// Orchestration and serialization glue logic for `DeleteUserByPrincipalId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

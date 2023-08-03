@@ -131,7 +131,7 @@ impl PutInventoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutInventory`.
+/// Orchestration and serialization glue logic for `PutInventory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

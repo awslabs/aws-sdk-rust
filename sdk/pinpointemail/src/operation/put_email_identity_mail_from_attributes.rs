@@ -135,7 +135,7 @@ impl PutEmailIdentityMailFromAttributesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutEmailIdentityMailFromAttributes`.
+/// Orchestration and serialization glue logic for `PutEmailIdentityMailFromAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

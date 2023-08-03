@@ -131,7 +131,7 @@ impl ListEnvironmentTemplatesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListEnvironmentTemplates`.
+/// Orchestration and serialization glue logic for `ListEnvironmentTemplates`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

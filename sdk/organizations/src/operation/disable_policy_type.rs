@@ -131,7 +131,7 @@ impl DisablePolicyTypeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisablePolicyType`.
+/// Orchestration and serialization glue logic for `DisablePolicyType`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

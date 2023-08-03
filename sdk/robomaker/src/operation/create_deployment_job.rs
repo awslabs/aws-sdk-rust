@@ -132,7 +132,7 @@ impl CreateDeploymentJobInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDeploymentJob`.
+/// Orchestration and serialization glue logic for `CreateDeploymentJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

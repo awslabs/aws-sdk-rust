@@ -158,7 +158,7 @@ impl GetSceneInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetScene`.
+/// Orchestration and serialization glue logic for `GetScene`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

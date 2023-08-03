@@ -127,7 +127,7 @@ impl DescribeConnectorProfilesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeConnectorProfiles`.
+/// Orchestration and serialization glue logic for `DescribeConnectorProfiles`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

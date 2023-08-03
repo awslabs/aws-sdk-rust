@@ -155,7 +155,7 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateRoutingProfileDefaultOutboundQueue`.
+/// Orchestration and serialization glue logic for `UpdateRoutingProfileDefaultOutboundQueue`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

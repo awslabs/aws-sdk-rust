@@ -137,7 +137,7 @@ impl GetReplicationSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetReplicationSet`.
+/// Orchestration and serialization glue logic for `GetReplicationSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

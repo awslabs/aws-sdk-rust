@@ -126,7 +126,7 @@ impl CreateElasticsearchDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateElasticsearchDomain`.
+/// Orchestration and serialization glue logic for `CreateElasticsearchDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

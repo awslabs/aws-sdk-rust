@@ -131,7 +131,7 @@ impl DeleteGrantInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGrant`.
+/// Orchestration and serialization glue logic for `DeleteGrant`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

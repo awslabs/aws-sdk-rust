@@ -130,7 +130,7 @@ impl CreateReplaceRootVolumeTaskInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateReplaceRootVolumeTask`.
+/// Orchestration and serialization glue logic for `CreateReplaceRootVolumeTask`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

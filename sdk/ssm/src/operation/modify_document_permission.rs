@@ -131,7 +131,7 @@ impl ModifyDocumentPermissionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ModifyDocumentPermission`.
+/// Orchestration and serialization glue logic for `ModifyDocumentPermission`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

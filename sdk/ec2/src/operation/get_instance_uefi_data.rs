@@ -126,7 +126,7 @@ impl GetInstanceUefiDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetInstanceUefiData`.
+/// Orchestration and serialization glue logic for `GetInstanceUefiData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

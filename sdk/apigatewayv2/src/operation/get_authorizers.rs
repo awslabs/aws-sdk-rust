@@ -154,7 +154,7 @@ impl GetAuthorizersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetAuthorizers`.
+/// Orchestration and serialization glue logic for `GetAuthorizers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

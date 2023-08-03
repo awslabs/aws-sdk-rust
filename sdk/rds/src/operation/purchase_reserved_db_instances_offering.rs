@@ -111,7 +111,7 @@ impl PurchaseReservedDbInstancesOfferingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PurchaseReservedDBInstancesOffering`.
+/// Orchestration and serialization glue logic for `PurchaseReservedDBInstancesOffering`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

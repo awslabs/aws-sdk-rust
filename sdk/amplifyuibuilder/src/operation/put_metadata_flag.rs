@@ -192,7 +192,7 @@ impl PutMetadataFlagInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutMetadataFlag`.
+/// Orchestration and serialization glue logic for `PutMetadataFlag`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

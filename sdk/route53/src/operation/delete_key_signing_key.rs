@@ -157,7 +157,7 @@ impl DeleteKeySigningKeyInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteKeySigningKey`.
+/// Orchestration and serialization glue logic for `DeleteKeySigningKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

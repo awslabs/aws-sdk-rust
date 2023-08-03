@@ -131,7 +131,7 @@ impl DescribeLocationFsxLustreInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeLocationFsxLustre`.
+/// Orchestration and serialization glue logic for `DescribeLocationFsxLustre`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

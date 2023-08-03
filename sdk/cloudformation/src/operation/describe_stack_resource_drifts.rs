@@ -126,7 +126,7 @@ impl DescribeStackResourceDriftsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeStackResourceDrifts`.
+/// Orchestration and serialization glue logic for `DescribeStackResourceDrifts`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

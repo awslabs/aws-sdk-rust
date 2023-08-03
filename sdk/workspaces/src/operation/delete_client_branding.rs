@@ -133,7 +133,7 @@ impl DeleteClientBrandingInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteClientBranding`.
+/// Orchestration and serialization glue logic for `DeleteClientBranding`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

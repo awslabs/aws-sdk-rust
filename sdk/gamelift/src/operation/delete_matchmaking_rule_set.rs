@@ -131,7 +131,7 @@ impl DeleteMatchmakingRuleSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteMatchmakingRuleSet`.
+/// Orchestration and serialization glue logic for `DeleteMatchmakingRuleSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

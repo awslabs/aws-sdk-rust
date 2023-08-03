@@ -126,7 +126,7 @@ impl SetIdentityMailFromDomainInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `SetIdentityMailFromDomain`.
+/// Orchestration and serialization glue logic for `SetIdentityMailFromDomain`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl RebootWorkspacesInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `RebootWorkspaces`.
+/// Orchestration and serialization glue logic for `RebootWorkspaces`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -131,7 +131,7 @@ impl CreateDataCatalogInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateDataCatalog`.
+/// Orchestration and serialization glue logic for `CreateDataCatalog`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

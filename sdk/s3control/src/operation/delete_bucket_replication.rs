@@ -142,7 +142,7 @@ impl DeleteBucketReplicationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteBucketReplication`.
+/// Orchestration and serialization glue logic for `DeleteBucketReplication`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

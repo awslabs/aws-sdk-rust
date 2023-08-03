@@ -136,7 +136,7 @@ impl DeleteSuppressedDestinationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteSuppressedDestination`.
+/// Orchestration and serialization glue logic for `DeleteSuppressedDestination`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

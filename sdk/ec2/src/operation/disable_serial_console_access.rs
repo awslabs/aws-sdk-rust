@@ -126,7 +126,7 @@ impl DisableSerialConsoleAccessInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DisableSerialConsoleAccess`.
+/// Orchestration and serialization glue logic for `DisableSerialConsoleAccess`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

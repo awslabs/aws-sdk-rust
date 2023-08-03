@@ -119,7 +119,7 @@ impl DescribeActiveReceiptRuleSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DescribeActiveReceiptRuleSet`.
+/// Orchestration and serialization glue logic for `DescribeActiveReceiptRuleSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

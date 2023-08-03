@@ -126,7 +126,7 @@ impl GetSampleDataInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetSampleData`.
+/// Orchestration and serialization glue logic for `GetSampleData`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

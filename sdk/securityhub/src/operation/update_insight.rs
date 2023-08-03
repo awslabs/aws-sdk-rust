@@ -146,7 +146,7 @@ impl UpdateInsightInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateInsight`.
+/// Orchestration and serialization glue logic for `UpdateInsight`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

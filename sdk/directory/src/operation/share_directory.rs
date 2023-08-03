@@ -131,7 +131,7 @@ impl ShareDirectoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ShareDirectory`.
+/// Orchestration and serialization glue logic for `ShareDirectory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

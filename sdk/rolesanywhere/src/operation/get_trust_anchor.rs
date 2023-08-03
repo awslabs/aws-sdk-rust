@@ -136,7 +136,7 @@ impl GetTrustAnchorInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetTrustAnchor`.
+/// Orchestration and serialization glue logic for `GetTrustAnchor`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

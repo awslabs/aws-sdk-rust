@@ -176,7 +176,7 @@ impl DeleteTemplateAliasInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteTemplateAlias`.
+/// Orchestration and serialization glue logic for `DeleteTemplateAlias`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

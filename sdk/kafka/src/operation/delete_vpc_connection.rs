@@ -132,7 +132,7 @@ impl DeleteVpcConnectionInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteVpcConnection`.
+/// Orchestration and serialization glue logic for `DeleteVpcConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

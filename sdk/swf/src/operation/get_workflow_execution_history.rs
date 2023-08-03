@@ -131,7 +131,7 @@ impl GetWorkflowExecutionHistoryInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetWorkflowExecutionHistory`.
+/// Orchestration and serialization glue logic for `GetWorkflowExecutionHistory`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

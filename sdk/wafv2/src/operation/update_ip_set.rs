@@ -131,7 +131,7 @@ impl UpdateIpSetInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateIPSet`.
+/// Orchestration and serialization glue logic for `UpdateIPSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

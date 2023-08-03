@@ -132,7 +132,7 @@ impl DeleteGameInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `DeleteGame`.
+/// Orchestration and serialization glue logic for `DeleteGame`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

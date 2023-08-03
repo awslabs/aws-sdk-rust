@@ -120,7 +120,7 @@ impl GetGroupsForCapacityReservationInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetGroupsForCapacityReservation`.
+/// Orchestration and serialization glue logic for `GetGroupsForCapacityReservation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

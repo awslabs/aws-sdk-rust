@@ -150,7 +150,7 @@ impl UpdateSolNetworkPackageInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `UpdateSolNetworkPackage`.
+/// Orchestration and serialization glue logic for `UpdateSolNetworkPackage`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

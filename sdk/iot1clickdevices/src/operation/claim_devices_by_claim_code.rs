@@ -132,7 +132,7 @@ impl ClaimDevicesByClaimCodeInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ClaimDevicesByClaimCode`.
+/// Orchestration and serialization glue logic for `ClaimDevicesByClaimCode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

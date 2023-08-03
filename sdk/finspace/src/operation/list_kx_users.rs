@@ -158,7 +158,7 @@ impl ListKxUsersInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListKxUsers`.
+/// Orchestration and serialization glue logic for `ListKxUsers`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

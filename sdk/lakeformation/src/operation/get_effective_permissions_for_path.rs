@@ -121,7 +121,7 @@ impl GetEffectivePermissionsForPathInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GetEffectivePermissionsForPath`.
+/// Orchestration and serialization glue logic for `GetEffectivePermissionsForPath`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

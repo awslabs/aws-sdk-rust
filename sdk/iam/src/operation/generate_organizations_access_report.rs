@@ -111,7 +111,7 @@ impl GenerateOrganizationsAccessReportInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `GenerateOrganizationsAccessReport`.
+/// Orchestration and serialization glue logic for `GenerateOrganizationsAccessReport`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

@@ -154,7 +154,7 @@ impl CreateMilestoneInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `CreateMilestone`.
+/// Orchestration and serialization glue logic for `CreateMilestone`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

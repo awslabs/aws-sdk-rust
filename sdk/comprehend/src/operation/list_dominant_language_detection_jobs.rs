@@ -116,7 +116,7 @@ impl ListDominantLanguageDetectionJobsInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `ListDominantLanguageDetectionJobs`.
+/// Orchestration and serialization glue logic for `ListDominantLanguageDetectionJobs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]

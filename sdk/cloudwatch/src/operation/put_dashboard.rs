@@ -126,7 +126,7 @@ impl PutDashboardInput {
         ::std::result::Result::Ok(op)
     }
 }
-/// `ParseStrictResponse` impl for `PutDashboard`.
+/// Orchestration and serialization glue logic for `PutDashboard`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]
