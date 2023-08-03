@@ -38,8 +38,9 @@ impl CreateFirewallRuleGroupInput {
             }
         };
         if self.creator_request_id.is_none() {
-            self.creator_request_id =
-                ::std::option::Option::Some(_config.make_token.make_idempotency_token());
+            self.creator_request_id = ::std::option::Option::Some(
+                _config.idempotency_token_provider.make_idempotency_token(),
+            );
         }
         let mut request = {
             fn uri_base(

@@ -38,8 +38,9 @@ impl UpdateProvisionedProductInput {
             }
         };
         if self.update_token.is_none() {
-            self.update_token =
-                ::std::option::Option::Some(_config.make_token.make_idempotency_token());
+            self.update_token = ::std::option::Option::Some(
+                _config.idempotency_token_provider.make_idempotency_token(),
+            );
         }
         let mut request = {
             fn uri_base(

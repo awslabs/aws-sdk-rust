@@ -18,7 +18,7 @@
 ///
 #[derive(::std::clone::Clone)]
 pub struct Config {
-    pub(crate) make_token: crate::idempotency_token::IdempotencyTokenProvider,
+    pub(crate) idempotency_token_provider: crate::idempotency_token::IdempotencyTokenProvider,
     pub(crate) endpoint_resolver:
         ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     retry_config: Option<::aws_smithy_types::retry::RetryConfig>,
@@ -48,8 +48,8 @@ impl Config {
     /// Returns a copy of the idempotency token provider.
     /// If a random token provider was configured,
     /// a newly-randomized token provider will be returned.
-    pub fn make_token(&self) -> crate::idempotency_token::IdempotencyTokenProvider {
-        self.make_token.clone()
+    pub fn idempotency_token_provider(&self) -> crate::idempotency_token::IdempotencyTokenProvider {
+        self.idempotency_token_provider.clone()
     }
     /// Returns the endpoint resolver.
     pub fn endpoint_resolver(
@@ -109,7 +109,8 @@ impl Config {
 /// Builder for creating a `Config`.
 #[derive(Clone, Default)]
 pub struct Builder {
-    make_token: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
+    idempotency_token_provider:
+        ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
     endpoint_resolver: ::std::option::Option<
         ::aws_smithy_http::endpoint::SharedEndpointResolver<crate::endpoint::Params>,
     >,
@@ -137,20 +138,26 @@ impl Builder {
         Self::default()
     }
     /// Sets the idempotency token provider to use for service calls that require tokens.
-    pub fn make_token(
+    pub fn idempotency_token_provider(
         mut self,
-        make_token: impl ::std::convert::Into<crate::idempotency_token::IdempotencyTokenProvider>,
+        idempotency_token_provider: impl ::std::convert::Into<
+            crate::idempotency_token::IdempotencyTokenProvider,
+        >,
     ) -> Self {
-        self.set_make_token(::std::option::Option::Some(make_token.into()));
+        self.set_idempotency_token_provider(::std::option::Option::Some(
+            idempotency_token_provider.into(),
+        ));
         self
     }
 
     /// Sets the idempotency token provider to use for service calls that require tokens.
-    pub fn set_make_token(
+    pub fn set_idempotency_token_provider(
         &mut self,
-        make_token: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
+        idempotency_token_provider: ::std::option::Option<
+            crate::idempotency_token::IdempotencyTokenProvider,
+        >,
     ) -> &mut Self {
-        self.make_token = make_token;
+        self.idempotency_token_provider = idempotency_token_provider;
         self
     }
     /// Sets the endpoint resolver to use when making requests.
@@ -567,7 +574,7 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
     pub fn set_test_defaults(&mut self) -> &mut Self {
-        self.set_make_token(Some("00000000-0000-4000-8000-000000000000".into()));
+        self.set_idempotency_token_provider(Some("00000000-0000-4000-8000-000000000000".into()));
         self.set_credentials_provider(Some(
             ::aws_credential_types::provider::SharedCredentialsProvider::new(
                 ::aws_credential_types::Credentials::for_tests(),
@@ -585,8 +592,8 @@ impl Builder {
     /// Builds a [`Config`].
     pub fn build(self) -> Config {
         Config {
-            make_token: self
-                .make_token
+            idempotency_token_provider: self
+                .idempotency_token_provider
                 .unwrap_or_else(crate::idempotency_token::default_provider),
             endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
                 ::aws_smithy_http::endpoint::SharedEndpointResolver::new(

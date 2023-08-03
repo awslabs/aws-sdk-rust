@@ -38,8 +38,9 @@ impl CreateFileSystemInput {
             }
         };
         if self.creation_token.is_none() {
-            self.creation_token =
-                ::std::option::Option::Some(_config.make_token.make_idempotency_token());
+            self.creation_token = ::std::option::Option::Some(
+                _config.idempotency_token_provider.make_idempotency_token(),
+            );
         }
         let mut request = {
             fn uri_base(

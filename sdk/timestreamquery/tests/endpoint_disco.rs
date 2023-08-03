@@ -29,7 +29,7 @@ async fn do_endpoint_discovery() {
         .time_source(SharedTimeSource::new(ts.clone()))
         .build();
     let conf = query::config::Builder::from(&config)
-        .make_token("0000-0000-0000")
+        .idempotency_token_provider("0000-0000-0000")
         .build();
     let (client, reloader) = query::Client::from_conf(conf)
         .enable_endpoint_discovery()

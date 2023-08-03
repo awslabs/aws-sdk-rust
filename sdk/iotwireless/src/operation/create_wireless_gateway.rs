@@ -38,8 +38,9 @@ impl CreateWirelessGatewayInput {
             }
         };
         if self.client_request_token.is_none() {
-            self.client_request_token =
-                ::std::option::Option::Some(_config.make_token.make_idempotency_token());
+            self.client_request_token = ::std::option::Option::Some(
+                _config.idempotency_token_provider.make_idempotency_token(),
+            );
         }
         let mut request = {
             fn uri_base(
